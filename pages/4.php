@@ -1,5 +1,8 @@
 <?php require_once('header.php'); ?>
 
+<?php 
+    $pfp = array('https://randomuser.me/api/portraits/women/90.jpg', 'https://randomuser.me/api/portraits/men/60.jpg', 'https://randomuser.me/api/portraits/women/60.jpg', 'https://randomuser.me/api/portraits/women/23.jpg', 'https://randomuser.me/api/portraits/men/18.jpg');
+?>
 
 <main class="site-main site-main--aside">
     <?php require_once('product-sidebar.php'); ?>
@@ -28,9 +31,6 @@
                         <div class="product__block">
                             <div class="product__block-top">
                                 <div class="product__block-person">
-                                    <?php 
-                                    $pfp = array('https://randomuser.me/api/portraits/women/90.jpg', 'https://randomuser.me/api/portraits/men/60.jpg', 'https://randomuser.me/api/portraits/women/60.jpg', 'https://randomuser.me/api/portraits/women/23.jpg', 'https://randomuser.me/api/portraits/men/18.jpg');
-                                    ?>
                                     <div class="product__block-photo" style="background-image: url(<?php echo "$pfp[$y]" ?>)">
                                         <?php if($y===1) { ?><div class="product__block-like-status"></div><?php } ?>
                                     </div>                    
@@ -69,7 +69,18 @@
                                     <tbody>
                                         <?php for($i=0;$i<4;$i++) { ?>
                                         <tr>
-                                        <td><?php if($i===3) { ?><p class="more">DAR</p><?php } else { ?> <p>09:15</p> <?php } ?></td>
+                                        <td><?php if($i===3) { ?><p class="calendar__more-button">DAR</p><?php } else { ?> <p>09:15</p> <?php } ?></td>
+                                            <td><p></p></td>
+                                            <td><p>09:15</p></td>
+                                            <td><p>09:15</p></td>
+                                            <td><p>09:15</p></td>
+                                            <td><p>09:15</p></td>
+                                            <td><p>09:15</p></td>
+                                        </tr>
+                                        <?php } ?>
+                                        <?php for($i=0;$i<4;$i++) { ?>
+                                        <tr class="calendar__more-times hidden">
+                                        <td><p>09:15</p></td>
                                             <td><p></p></td>
                                             <td><p>09:15</p></td>
                                             <td><p>09:15</p></td>

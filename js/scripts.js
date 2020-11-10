@@ -200,3 +200,7 @@ setInterval(function () {
         didScroll = false;
     }
 }, 250);
+
+var moreBtn = document.querySelector('.calendar__more-button');
+var moreTimes = document.querySelector('.calendar__more-times');
+

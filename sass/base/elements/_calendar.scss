@@ -2,6 +2,9 @@ table.calendar {
     width: 355px;
     margin: 0;
 
+    border-spacing: 0;
+    border-collapse: collapse;
+
     thead {}
 
     th {
@@ -9,9 +12,25 @@ table.calendar {
         font-weight: 600;
         padding-bottom: 5px;
         border-bottom: 2px solid #f7f7f8;
+        position: relative;
 
         &.active {
-            border-bottom-color: #e9636c;
+            //border-bottom-color: #e9636c;
+
+            &:after {
+                display:block;
+                clear:both;
+                content : "";
+                position: absolute;
+                left    : 0;
+                bottom  : -2px;
+                max-width:250px;
+                //height  : 1px;
+                width   : 44px;  /* or 100px */
+                border-bottom:2px solid #e9636c;
+                margin:0 auto;
+                padding:4px 0px;
+            }
         }
     }
 
@@ -32,13 +51,14 @@ table.calendar {
     }
 
     td {
-        padding: 4px 8px 4px 0;
+        padding: 6px 10px 6px 0;
+        border-spacing: 0;
 
         &:nth-child(7n) {
             padding-right: 0;
         }
 
-        .more {
+        .calendar__more-button {
             color: $orange;
         }
     }
@@ -71,5 +91,9 @@ table.calendar {
             color: $darkblue;
             background: $orange;
         }
+    }
+
+    .hidden {
+        display: none;
     }
 }

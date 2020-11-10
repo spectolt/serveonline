@@ -1059,6 +1059,8 @@ select {
 table.calendar {
   width: 355px;
   margin: 0;
+  border-spacing: 0;
+  border-collapse: collapse;
 }
 
 table.calendar th {
@@ -1066,10 +1068,22 @@ table.calendar th {
   font-weight: 600;
   padding-bottom: 5px;
   border-bottom: 2px solid #f7f7f8;
+  position: relative;
 }
 
-table.calendar th.active {
-  border-bottom-color: #e9636c;
+table.calendar th.active:after {
+  display: block;
+  clear: both;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  max-width: 250px;
+  width: 44px;
+  /* or 100px */
+  border-bottom: 2px solid #e9636c;
+  margin: 0 auto;
+  padding: 4px 0px;
 }
 
 table.calendar small {
@@ -1083,14 +1097,15 @@ table.calendar tbody tr:last-child td {
 }
 
 table.calendar td {
-  padding: 4px 8px 4px 0;
+  padding: 6px 10px 6px 0;
+  border-spacing: 0;
 }
 
 table.calendar td:nth-child(7n) {
   padding-right: 0;
 }
 
-table.calendar td .more {
+table.calendar td .calendar__more-button {
   color: #ff9954;
 }
 
@@ -1129,6 +1144,10 @@ table.calendar p:empty:hover {
 table.calendar p:hover {
   color: #101b51;
   background: #ff9954;
+}
+
+table.calendar .hidden {
+  display: none;
 }
 
 .work-hours {
@@ -6035,9 +6054,9 @@ section.product .product__nav-current {
 section.product .product__nav-current:before {
   content: "";
   width: 24px;
-  height: 22px;
+  height: 20px;
   background-size: 100%;
-  background-position: center;
+  background-position: center bottom;
   background-repeat: no-repeat;
   display: inline-block;
   background-image: url("img/icons/calendar.svg");

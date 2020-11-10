@@ -62,9 +62,9 @@ section.product {
         &:before {
           content: "";
           width: 24px;
-          height: 22px;
+          height: 20px;
           background-size: 100%;
-          background-position: center;
+          background-position: center bottom;
           background-repeat: no-repeat;
           display: inline-block;
           background-image: url("img/icons/calendar.svg");
