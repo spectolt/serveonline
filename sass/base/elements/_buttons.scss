@@ -1,0 +1,63 @@
+.button,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	font-family: 'Sen', sans-serif;
+	font-weight: 600;
+	border: 0;
+	border-radius: 5px;
+	background: $color__background-button;
+	color: $white;
+	line-height: 1;
+	padding: 12px;
+	display: inline-block;
+	cursor: pointer;
+
+	&:hover {
+		border-color: $color__border-button-hover;
+	}
+
+	&:active,
+	&:focus {
+		border-color: $color__border-button-focus;
+	}
+
+	&.orange {
+		border: 1px solid $orange;
+		background: $orange;
+	}
+
+	&.blue {
+		background: $blue;
+
+		&.transparent {
+			background: transparent;
+			color: $blue;
+			border: 1px solid $blue;
+		}
+	}
+
+	&.cyan {
+		background: $cyan;
+
+		&.transparent {
+			background: transparent;
+			color: $cyan;
+			border: 1px solid $cyan;
+		}
+	}
+
+	&.gray {
+		border: 1px solid $gray;
+		color: $gray;
+
+		&.transparent {
+			background: transparent;
+		}
+	}
+
+	&.small {
+		padding: 8px 10px;
+	}
+}
