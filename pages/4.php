@@ -6,7 +6,7 @@
     <div class="page-content">        
         <section class="breadcrumbs">
             <a href="#" class="breadcrumbs__change">Pakeisti</a>
-            <span class="breadcrumbs__location">GROŽIO SALONAI</span>
+            <!-- <span class="breadcrumbs__location">GROŽIO SALONAI</span> -->
             <button class="breadcrumbs__cart"><span>2</span></button>
         </section>
         <div class="page-content__wrapper">
@@ -44,24 +44,31 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="calendar-container">
+                                <div class="product__nav product__nav--person">
+                                <input type="text" name="date" class="product__nav-input" />
+                                <button class="product__nav-button product__nav-button--prev"></button>
+                                <div class="product__nav-current">2021 Sausio 10</div>
+                                <button class="product__nav-button product__nav-button--next"></button>
+                                </div>
                                 <table class="calendar">
                                     <thead>
                                         <tr>
                                             <th class="active">Pr<small>Sau10</small></th>
-                                            <th>An<small>Sau10</small></th>
-                                            <th>Tr<small>Sau10</small></th>
-                                            <th>Kt<small>Sau10</small></th>
-                                            <th>Pn<small>Sau10</small></th>
-                                            <th>Še<small>Sau10</small></th>
-                                            <th>Se<small>Sau10</small></th>
+                                            <th>An<small>Sau11</small></th>
+                                            <th>Tr<small>Sau12</small></th>
+                                            <th>Kt<small>Sau13</small></th>
+                                            <th>Pn<small>Sau14</small></th>
+                                            <th>Še<small>Sau15</small></th>
+                                            <th>Se<small>Sau16</small></th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php for($i=0;$i<4;$i++) { ?>
                                         <tr>
-                                            <td><p>09:15</p></td>
+                                        <td><?php if($i===3) { ?><p>DAR</p><?php } else { ?> <p>09:15</p> <?php } ?></td>
                                             <td><p></p></td>
-                                            <td><p class="active">09:15</p></td>
+                                            <td><p>09:15</p></td>
                                             <td><p>09:15</p></td>
                                             <td><p>09:15</p></td>
                                             <td><p>09:15</p></td>
@@ -70,6 +77,7 @@
                                         <?php } ?>
                                     </tbody>
                                 </table>
+                                        </div>
                             </div>
                             <?php if($y === 0) { ?>
                             <h3 class="product__block-recommend">Specialistas Jums rekomenduoja užsiregistruoti šiai procedūrai</h3>

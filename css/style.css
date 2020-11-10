@@ -1108,21 +1108,13 @@ table.calendar p {
   border-radius: 2px;
   width: 44px;
   height: 28px;
-  -webkit-transition: color .1s ease;
-  transition: color .1s ease;
-  cursor: pointer;
 }
 
 table.calendar p:empty {
   background: #ecedef;
 }
 
-table.calendar p:empty:hover {
-  background: #ecedef;
-  cursor: inherit;
-}
-
-table.calendar p:hover {
+table.calendar p.active {
   color: #101b51;
   background: #ff9954;
 }
@@ -1303,7 +1295,6 @@ table.calendar p:hover {
 
 .product-action__price {
   margin-top: 10px;
-  color: #5999b4;
 }
 
 .product-action__price strike {
@@ -5262,7 +5253,7 @@ body {
   top: 0;
   left: 0;
   height: calc(100vh);
-  color: #3b415b;
+  color: #282e4b;
   width: 280px;
 }
 
@@ -6024,7 +6015,6 @@ section.product .product__nav-current {
   cursor: pointer;
   font-family: 'Sen', sans-serif;
   font-size: 1.875em;
-  font-weight: 600;
   margin: 0 40px;
 }
 
@@ -6038,25 +6028,6 @@ section.product .product__nav-current:before {
   display: inline-block;
   background-image: url("img/icons/calendar.svg");
   margin-right: 20px;
-  background-size: contain;
-}
-
-section.product .product__nav--person {
-  width: 365px;
-  margin-bottom: 10px;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-section.product .product__nav--person .product__nav-current {
-  font-size: 1.125em;
-  margin: 0;
-}
-
-section.product .product__nav--person .product__nav-current:before {
-  height: 14px;
-  margin-right: 10px;
 }
 
 section.product .product__search {
@@ -6175,7 +6146,7 @@ section.product .product__block-info h2 {
 
 section.product .product__block-info span {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 section.product .product__block-info p {
@@ -6188,7 +6159,7 @@ section.product .product__block-info a {
 }
 
 section.product .product__block-info-actions {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 section.product .product__block-phone, section.product .product__block-distance, section.product .product__block-address {
@@ -6238,7 +6209,6 @@ section.product .product__block-distance:before {
 
 section.product .product__block-distance b {
   color: #ff9954;
-  margin-right: 5px;
 }
 
 section.product .product__block-like {

@@ -57,6 +57,7 @@ section.product {
                 cursor: pointer;
                 font-family: 'Sen', sans-serif;
                 font-size: 1.875em;
+                font-weight: 600;
                 margin: 0 40px;
 
                 &:before {
@@ -69,6 +70,23 @@ section.product {
                     display: inline-block;
                     background-image: url('img/icons/calendar.svg');
                     margin-right: 20px;
+                    background-size: contain;
+                }
+            }
+
+            &--person {
+                width: 365px;
+                margin-bottom: 10px;
+                justify-content: space-between;
+
+                .product__nav-current {
+                    font-size: 1.125em;
+                    margin: 0;
+                    
+                    &:before{
+                    height: 14px;
+                    margin-right: 10px;
+                    }
                 }
             }
         }
@@ -181,7 +199,7 @@ section.product {
 
                 span {
                     display: block;
-                    margin-bottom: 20px;
+                    margin-bottom: 10px;
                 }
 
                 p {
@@ -194,7 +212,7 @@ section.product {
                 }
 
                 &-actions {
-                    margin-top: 20px;
+                    margin-top: 10px;
                 }
             }
 
@@ -254,6 +272,7 @@ section.product {
 
                 b {
                     color: $orange;
+                    margin-right: 5px;
                 }
             }
 

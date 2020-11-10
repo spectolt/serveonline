@@ -51,12 +51,19 @@ table.calendar {
         border-radius: 2px;
         width: 44px;
         height: 28px;
+        transition: color .1s ease;
+        cursor: pointer;
 
         &:empty {
             background: #ecedef;
+
+            &:hover {
+                background: #ecedef;
+                cursor: inherit;
+            }
         }
 
-        &.active {
+        &:hover {
             color: $darkblue;
             background: $orange;
         }
