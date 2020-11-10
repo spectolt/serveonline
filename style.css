@@ -1090,6 +1090,10 @@ table.calendar td:nth-child(7n) {
   padding-right: 0;
 }
 
+table.calendar td .more {
+  color: #ff9954;
+}
+
 table.calendar p {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -5994,7 +5998,7 @@ section.product .product__nav-button {
 }
 
 section.product .product__nav-button:before {
-  content: '';
+  content: "";
   width: 8px;
   height: 15px;
   background-size: 100%;
@@ -6022,14 +6026,14 @@ section.product .product__nav-input {
 
 section.product .product__nav-current {
   cursor: pointer;
-  font-family: 'Sen', sans-serif;
+  font-family: "Sen", sans-serif;
   font-size: 1.875em;
   font-weight: 600;
   margin: 0 40px;
 }
 
 section.product .product__nav-current:before {
-  content: '';
+  content: "";
   width: 24px;
   height: 22px;
   background-size: 100%;
@@ -6068,7 +6072,7 @@ section.product .product__search:before {
 }
 
 section.product .product__search:after {
-  content: '';
+  content: "";
   position: absolute;
   right: 30px;
   top: 50%;
@@ -6119,6 +6123,10 @@ section.product .product__block-person {
   display: -ms-flexbox;
   display: flex;
   width: 55%;
+}
+
+section.product .product__block-like, section.product .product__block-more {
+  padding: 6px 12px;
 }
 
 section.product .product__block-company {
@@ -6201,7 +6209,7 @@ section.product .product__block-phone, section.product .product__block-distance,
 }
 
 section.product .product__block-phone:before, section.product .product__block-distance:before, section.product .product__block-address:before {
-  content: '';
+  content: "";
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -6273,7 +6281,7 @@ section.product .product__block-like-status {
 }
 
 section.product .product__block-like-status:before {
-  content: '';
+  content: "";
   width: 15.4px;
   height: 13.4px;
   background-size: cover;
@@ -6293,7 +6301,7 @@ section.product .product__block-like.product__block-like--active:before {
 }
 
 section.product .product__block-like:before {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 14px;
@@ -6310,7 +6318,7 @@ section.product .product__block-like:before {
 }
 
 section.product .product__block-recommend {
-  font-family: 'Sen', sans-serif;
+  font-family: "Sen", sans-serif;
   width: 100%;
   margin: 20px 0 10px 0;
 }
@@ -6336,7 +6344,7 @@ section.product .product__block-recommend {
 }
 
 .sliding-menu h4 {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   margin: 0 0 20px 0;
 }
