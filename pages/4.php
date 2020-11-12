@@ -49,7 +49,7 @@
                             <div class="product__block-top">
                                 <div class="product__block-person">
                                     <div class="product__block-photo" style="background-image: url(<?php echo "$pfp[$y]" ?>)">
-                                        <?php if($y===1) { ?><div class="product__block-like-status"></div><?php } ?>
+                                        <div class="product__block-like-status hidden"></div>
                                     </div>                    
                                     <div class="product__block-info">
                                         <h2>Ramunė Varnaliauskienė</h2>
@@ -60,7 +60,7 @@
                                         
                                         <div class="product__block-info-actions">
                                             <button class="button small orange product__block-more">Plačiau</button>
-                                            <button class="button small gray transparent product__block-like <?php if($y!==1) { ?>product__block-like--active<?php } ?>">Mano</button>
+                                            <button class="button small gray transparent product__block-like product__block-like--active">Mano</button>
                                         </div>
                                     </div>
                                 </div>

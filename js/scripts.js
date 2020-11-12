@@ -202,10 +202,9 @@ setInterval(function () {
 }, 250);
 
 var moreTimesBtn = $('.calendar__more-button');
-var moreTimes = document.querySelector('.calendar__more-times');
 
 $(moreTimesBtn).click(function(){
-    var times = $(this).closest('tbody').next('tbody');
+    var times = $(this).closest('tbody').next('.calendar__more-times');
     times.removeClass('hidden');
     $(this).removeClass("calendar__more-button");
     $(this).html('09:15');
@@ -216,4 +215,20 @@ var moreAreas = $('.breadcrumbs__more');
 
 moreAreasBtn.click(function(){
     moreAreas.toggleClass('breadcrumbs__more--toggled')
+})
+
+var likeBtn = $('.product__block-like')
+
+likeBtn.click(function(){
+    var like = $(this).closest('.product__block-person').find('.product__block-like-status');
+    var product = $(this).closest('.product__block');
+
+    like.toggleClass('hidden');
+    //product.parent().prepend(product);
+    $(this).toggleClass('product__block-like--active');
+
+    //$this.hasClass('hidden').closest('.productblock').parent().prepend(product);
+    if ($(this).hasClass('product__block-like--active')) {    } else {
+        product.parent().prepend(product);
+    }
 })
