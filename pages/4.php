@@ -1,17 +1,34 @@
-<?php require_once('header.php'); ?>
+<?php require_once('header-without-about.php'); ?>
 
 <?php 
     $pfp = array('https://randomuser.me/api/portraits/women/90.jpg', 'https://randomuser.me/api/portraits/men/60.jpg', 'https://randomuser.me/api/portraits/women/60.jpg', 'https://randomuser.me/api/portraits/women/23.jpg', 'https://randomuser.me/api/portraits/men/18.jpg');
+?>
+
+<?php
+    $areas = array('Klinikos ir estetinė medicina', 'Odontologijos klinikos', 'Grožio salonai', 'SPA ir masažo kabinetai', 'Sportas ir reabilitacija', 'Veterinarija');
+    $icons = array('../img/icons/clinic.svg', '../img/icons/odontology.svg', '../img/icons/beauty.svg', '../img/icons/spa.svg', '../img/icons/sport.svg', '../img/icons/vet.svg');
+    $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2')
 ?>
 
 <main class="site-main site-main--aside">
     <?php require_once('product-sidebar.php'); ?>
     <div class="page-content">        
         <section class="breadcrumbs">
-            <a href="#" class="breadcrumbs__change">Pakeisti</a>
+            <button class="breadcrumbs__change">Grožio salonai</button>
             <!-- <span class="breadcrumbs__location">GROŽIO SALONAI</span> -->
             <button class="breadcrumbs__cart"><span>2</span></button>
         </section>
+        <div class="breadcrumbs__more">
+                <ul>
+                    <?php for($y=0;$y<6;$y++) { ?>
+                        <li <?php if($y===2) {?> style="display:none" <?php } ?>>
+                    <div class="area-img" style="background-color: <?php echo "$colors[$y]" ?>">
+                            <img src=<?php echo "$icons[$y]" ?>>
+                            </div>
+                            <?php echo $areas[$y] ?></li>
+                    <?php } ?>
+                </ul>
+            </div>
         <div class="page-content__wrapper">
             <section class="product">
                 <div class="product__header">
@@ -77,9 +94,11 @@
                                             <td><p>09:15</p></td>
                                             <td><p>09:15</p></td>
                                         </tr>
+                                        </tbody>
                                         <?php } ?>
-                                        <?php for($i=0;$i<4;$i++) { ?>
-                                        <tr class="calendar__more-times hidden">
+                                        <tbody class="calendar__more-times hidden">
+                                        <?php for($i=0;$i<3;$i++) { ?>
+                                        <tr>
                                         <td><p>09:15</p></td>
                                             <td><p></p></td>
                                             <td><p>09:15</p></td>

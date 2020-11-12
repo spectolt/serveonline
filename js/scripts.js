@@ -201,6 +201,19 @@ setInterval(function () {
     }
 }, 250);
 
-var moreBtn = document.querySelector('.calendar__more-button');
+var moreTimesBtn = $('.calendar__more-button');
 var moreTimes = document.querySelector('.calendar__more-times');
 
+$(moreTimesBtn).click(function(){
+    var times = $(this).closest('tbody').next('tbody');
+    times.removeClass('hidden');
+    $(this).removeClass("calendar__more-button");
+    $(this).html('09:15');
+})
+
+var moreAreasBtn = $('.breadcrumbs__change');
+var moreAreas = $('.breadcrumbs__more');
+
+moreAreasBtn.click(function(){
+    moreAreas.toggleClass('breadcrumbs__more--toggled')
+})

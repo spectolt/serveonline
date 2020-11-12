@@ -1012,22 +1012,25 @@ select {
 
 .search-panel {
   position: absolute;
-  top: -100%;
+  top: 0;
   left: 0;
   width: 100%;
   z-index: 10;
   -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.49);
           box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.49);
-  -webkit-transition: top 0.2s ease-in-out;
-  transition: top 0.2s ease-in-out;
+  -webkit-transition: visibility 0s, opacity 0.1s ease-in-out;
+  transition: visibility 0s, opacity 0.1s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
 }
 
 .search-panel.search-panel--toggled {
-  top: 0;
+  visibility: visible;
+  opacity: 1;
 }
 
 .search-panel input[name="search"] {
-  padding: 17px 67px;
+  padding: 22px 67px;
   font-size: 24px;
   border: 0;
   border-radius: 0;
@@ -1037,7 +1040,7 @@ select {
 .search-panel .search-panel__close {
   position: absolute;
   top: 50%;
-  right: 17px;
+  right: 30px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   padding: 0;
@@ -1066,7 +1069,6 @@ table.calendar {
 table.calendar th {
   text-align: left;
   font-weight: 600;
-  padding-bottom: 5px;
   border-bottom: 2px solid #f7f7f8;
   position: relative;
 }
@@ -1092,12 +1094,8 @@ table.calendar small {
   font-size: 12px;
 }
 
-table.calendar tbody tr:last-child td {
-  padding-bottom: 0;
-}
-
 table.calendar td {
-  padding: 6px 10px 6px 0;
+  padding: 10px 10px 0 0;
   border-spacing: 0;
 }
 
@@ -5609,6 +5607,7 @@ section.breadcrumbs {
   background: #101b51;
   padding: 25px 30px;
   color: #fff;
+  position: relative;
 }
 
 section.breadcrumbs .breadcrumbs__change {
@@ -5619,14 +5618,31 @@ section.breadcrumbs .breadcrumbs__change {
       -ms-flex-align: center;
           align-items: center;
   color: #fff;
+  background: transparent;
+  padding: 0;
+  font-weight: normal;
 }
 
 section.breadcrumbs .breadcrumbs__change:before {
   content: '';
-  margin-right: 20px;
+  margin-right: 15px;
+  height: 30px;
+  width: 30px;
+  background-color: #ecedef;
+  background-image: url("img/icons/beauty.svg");
+  background-size: 50%;
+  border-radius: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: block;
+}
+
+section.breadcrumbs .breadcrumbs__change:after {
+  content: '';
+  margin-left: 15px;
   width: 13px;
   height: 14px;
-  background-image: url("img/icons/arrow-back.svg");
+  background-image: url("img/icons/angle-down-white.svg");
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -5979,6 +5995,68 @@ section.venue-info .product-action:last-child {
   margin-bottom: 0;
 }
 
+.breadcrumbs__more {
+  background-color: #101b51;
+  position: relative;
+  color: #fff;
+  width: 100%;
+  -webkit-transition: top .2s ease-in-out;
+  transition: top .2s ease-in-out;
+  display: none;
+  border-top: 1px solid #4a68ad;
+  padding: 20px 0;
+}
+
+.breadcrumbs__more ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  list-style: none;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 0;
+  -webkit-padding-start: 0;
+          padding-inline-start: 0;
+}
+
+.breadcrumbs__more ul li {
+  width: 15ch;
+  text-align: center;
+  cursor: pointer;
+}
+
+.breadcrumbs__more ul li .area-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 auto;
+  position: relative;
+  margin-bottom: 10px;
+  -webkit-transition: background-color .2s ease-in-out;
+  transition: background-color .2s ease-in-out;
+}
+
+.breadcrumbs__more ul li .area-img img {
+  position: absolute;
+  height: 50%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.breadcrumbs__more ul li .area-img:not(:hover) {
+  background-color: #ecedef !important;
+}
+
+.breadcrumbs__more--toggled {
+  display: block;
+}
+
 section.product {
   margin: 0 0 30px 0;
   width: 850px;
@@ -6024,7 +6102,7 @@ section.product .product__nav-button:before {
   background-position: center;
   background-repeat: no-repeat;
   display: block;
-  background-image: url("img/icons/angle-left.svg");
+  background-image: url("img/icons/angle-left-bold.svg");
 }
 
 section.product .product__nav-button--next:before {
@@ -6078,7 +6156,7 @@ section.product .product__nav--person .product__nav-current {
 }
 
 section.product .product__nav--person .product__nav-current:before {
-  height: 14px;
+  height: 12px;
   margin-right: 10px;
 }
 
@@ -6145,7 +6223,7 @@ section.product .product__block-person {
 }
 
 section.product .product__block-like, section.product .product__block-more {
-  padding: 6px 12px;
+  padding: 5px 12px;
 }
 
 section.product .product__block-company {

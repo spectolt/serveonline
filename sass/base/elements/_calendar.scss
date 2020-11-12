@@ -10,7 +10,7 @@ table.calendar {
     th {
         text-align: left;
         font-weight: 600;
-        padding-bottom: 5px;
+        //padding-bottom: 5px;
         border-bottom: 2px solid #f7f7f8;
         position: relative;
 
@@ -40,18 +40,18 @@ table.calendar {
         font-size: 12px;
     }
 
-    tbody {
-        tr {
-            &:last-child {
-                td {
-                    padding-bottom: 0;
-                }
-            }
-        }
-    }
+    // tbody {
+    //     tr {
+    //         &:last-child {
+    //             td {
+    //                 padding-bottom: 0;
+    //             }
+    //         }
+    //     }
+    // }
 
     td {
-        padding: 6px 10px 6px 0;
+        padding: 10px 10px 0 0;
         border-spacing: 0;
 
         &:nth-child(7n) {
