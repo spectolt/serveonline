@@ -60,8 +60,7 @@ section.product {
         padding: 0;
         border: none;
         text-align: left;
-        width: 15ch;
-        //max-width: 100%;
+        max-width: 16ch;
       }
 
       &-icon {
@@ -104,10 +103,12 @@ section.product {
         margin-bottom: 10px;
         justify-content: space-between;
 
-        .product__nav-current {
+        .product__nav-input {
           font-size: 1.125em;
           margin: 0;
+        }
 
+        .product__nav-icon {
           &:before {
             height: 12px;
             margin-right: 10px;

@@ -68,9 +68,11 @@
                                 </div>
                                 <div class="calendar-container">
                                 <div class="product__nav product__nav--person">
-                                <!-- <input type="text" name="date" class="product__nav-input" /> -->
                                 <button class="product__nav-button product__nav-button--prev"></button>
-                                <div class="product__nav-current">2021 Sausio 10</div>
+                                <div>
+                                    <span class="product__nav-icon"></span>
+                                    <input type="text" name="date" class="product__nav-input" readonly/>
+                                </div>
                                 <button class="product__nav-button product__nav-button--next"></button>
                                 </div>
                                 <table class="calendar">

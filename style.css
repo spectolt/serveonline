@@ -832,7 +832,7 @@ textarea {
 .checkbox label {
   position: relative;
   display: block;
-  font-size: 14px;
+  font-size: 1rem;
   -webkit-transition: color 0.2s ease-in-out;
   transition: color 0.2s ease-in-out;
   cursor: pointer;
@@ -6126,7 +6126,7 @@ section.product .product__nav-input {
   padding: 0;
   border: none;
   text-align: left;
-  width: 15ch;
+  max-width: 16ch;
 }
 
 section.product .product__nav-icon:before {
@@ -6150,12 +6150,12 @@ section.product .product__nav--person {
           justify-content: space-between;
 }
 
-section.product .product__nav--person .product__nav-current {
+section.product .product__nav--person .product__nav-input {
   font-size: 1.125em;
   margin: 0;
 }
 
-section.product .product__nav--person .product__nav-current:before {
+section.product .product__nav--person .product__nav-icon:before {
   height: 12px;
   margin-right: 10px;
 }
