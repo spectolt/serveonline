@@ -1018,8 +1018,8 @@ select {
   z-index: 10;
   -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.49);
           box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.49);
-  -webkit-transition: visibility 0s, opacity 0.1s ease-in-out;
-  transition: visibility 0s, opacity 0.1s ease-in-out;
+  -webkit-transition: visibility 0s, opacity 0.2s ease-in-out;
+  transition: visibility 0s, opacity 0.2s ease-in-out;
   visibility: hidden;
   opacity: 0;
 }
@@ -1029,23 +1029,38 @@ select {
   opacity: 1;
 }
 
-.search-panel input[name="search"] {
+.search-panel.search-panel--toggled .search-panel__close {
+  -webkit-transform: translateY(-50%) rotate(0deg);
+          transform: translateY(-50%) rotate(0deg);
+}
+
+.search-panel.search-panel--toggled input[name="search"] {
   padding: 22px 67px;
+}
+
+.search-panel input[name="search"] {
+  padding: 44px 67px 0 67px;
   font-size: 24px;
   border: 0;
   border-radius: 0;
   outline: none;
+  -webkit-transition: padding .2s ease-in-out;
+  transition: padding .2s ease-in-out;
 }
 
 .search-panel .search-panel__close {
   position: absolute;
   top: 50%;
   right: 30px;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  -webkit-transform: translateY(-50%) rotate(-90deg);
+          transform: translateY(-50%) rotate(-90deg);
   padding: 0;
   border: 0;
   background: transparent;
+  -webkit-transition: -webkit-transform .2s ease-in-out;
+  transition: -webkit-transform .2s ease-in-out;
+  transition: transform .2s ease-in-out;
+  transition: transform .2s ease-in-out, -webkit-transform .2s ease-in-out;
 }
 
 .search-panel .search-panel__close:before {
@@ -1333,6 +1348,10 @@ table.calendar p:hover {
   width: 12px;
   height: 13px;
   background-image: url("img/icons/price.svg");
+}
+
+.product-action button.cyan.transparent {
+  background-color: white;
 }
 
 .select2-container {
@@ -5251,7 +5270,7 @@ body {
 }
 
 .site-header .site-header__item--search a:before {
-  content: '';
+  content: "";
   width: 20px;
   height: 20px;
   background-image: url("img/icons/search.svg");
@@ -5302,11 +5321,12 @@ body {
   padding-top: 20px;
   padding-bottom: 20px;
   border-bottom-color: #ff9954;
+  border-right: 1px solid #e8e8e8;
 }
 
 .site-main--aside .site-aside__block--logo img {
   height: 30px;
-  margin: 0 auto;
+  margin-left: 15px;
   display: block;
 }
 
@@ -5320,7 +5340,7 @@ body {
 }
 
 .site-main--aside .site-aside__block--city:before {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 35px;
@@ -5415,18 +5435,18 @@ body {
 }
 
 .site-footer .site-footer__logo {
-  height: 45px;
+  height: 40px;
   display: block;
 }
 
 .site-footer .site-footer__menu a {
   position: relative;
   text-decoration: underline;
-  padding: 0 15px;
+  padding: 0 5px;
 }
 
 .site-footer .site-footer__menu a:after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   right: -15px;
@@ -5437,14 +5457,13 @@ body {
 }
 
 .site-footer .site-footer__menu {
-  margin: 0 35px;
   padding: 0;
   list-style: none;
 }
 
 .site-footer .site-footer__item {
   display: inline-block;
-  margin: 0 15px;
+  margin: 0 10px;
 }
 
 .site-footer .site-footer__item:last-child a:after {
@@ -5461,16 +5480,11 @@ body {
   margin: 0 0 0 auto;
 }
 
-.site-footer .site-footer__langs li {
-  display: inline-block;
-  margin: 0 8px;
-}
-
-.site-footer .site-footer__langs li:last-child {
-  margin-right: 0;
-}
-
-.site-footer .site-footer__langs li a {
+.site-footer .site-footer__langs button {
+  background-color: transparent;
+  color: #101b51;
+  font-weight: 400;
+  font-size: 0.75em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -5480,14 +5494,19 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-size: 0.750em;
-  background-color: #101b51;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  color: #fff;
-  -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.23);
-          box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.23);
+  padding: 0;
+}
+
+.site-footer .site-footer__langs button:after {
+  content: "";
+  width: 13px;
+  height: 15px;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: block;
+  background-image: url("img/icons/angle-down-thin.svg");
+  margin-left: 10px;
 }
 
 .hidden {

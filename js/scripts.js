@@ -18,40 +18,42 @@ $(document).ready(function () {
   //     }
   // })
 
-  $(".product__nav-input").datepicker({
-    showButtonPanel: true,
-    buttonText: "Pasirinkti",
-    minDate: "+0",
-    defaultDate: "+1",
-    dateFormat: "yy M dd",
-    monthNamesShort: [
-      "Sausio",
-      "Vasario",
-      "Kovo",
-      "Balandžio",
-      "Gegužės",
-      "Birželio",
-      "Liepos",
-      "Rugpjūčio",
-      "Rugsėjo",
-      "Spalio",
-      "Lapkričio",
-      "Gruodžio",
-    ],
+  $(".product__nav-input")
+    .datepicker({
+      showButtonPanel: true,
+      buttonText: "Pasirinkti",
+      minDate: "+0",
+      defaultDate: "+1",
+      dateFormat: "yy M dd",
+      monthNamesShort: [
+        "Sausio",
+        "Vasario",
+        "Kovo",
+        "Balandžio",
+        "Gegužės",
+        "Birželio",
+        "Liepos",
+        "Rugpjūčio",
+        "Rugsėjo",
+        "Spalio",
+        "Lapkričio",
+        "Gruodžio",
+      ],
 
-    onSelect: function () {
-      var contents = $(this).val();
-      var charlength = contents.length;
-      newWidth = charlength;
-      $(this).css({ width: newWidth + "ch" });
+      onSelect: function () {
+        var contents = $(this).val();
+        var charlength = contents.length;
+        newWidth = charlength;
+        $(this).css({ width: newWidth + "ch" });
 
-      var getDate = $(this).val();
-      $(".product__nav-input").datepicker("setDate", getDate);
-      $(this).blur();
-    },
-  }).datepicker("setDate", "+0");
+        var getDate = $(".product__nav-input:first").val();
+        $(".product__nav-input").datepicker("setDate", getDate);
+        $(this).blur();
+      },
+    })
+    .datepicker("setDate", "+0");
 
-//   $(".product__nav-input").datepicker("setDate", new Date());
+  //   $(".product__nav-input").datepicker("setDate", new Date());
   $(".product__nav-button--next").on("click", function () {
     var date = $(".product__nav-input").datepicker("getDate");
     date.setDate(date.getDate() + 7);
@@ -74,9 +76,20 @@ $(document).ready(function () {
     $(".product__nav-input").css({ width: newWidth + "ch" });
   });
 
-//   $(".product__nav-current").click(function () {
-//     $(".product__nav-input").datepicker("show");
-//   });
+//   let curr = new Date();
+//   let week = [];
+
+//   for (let i = 1; i <= 7; i++) {
+//     let first = curr.getDate() - curr.getDay() + i;
+//     let day = new Date(curr.setDate(first)).toISOString().slice(0, 10);
+//     week.push(day);
+//   }
+
+  console.log(week);
+
+  //   $(".product__nav-current").click(function () {
+  //     $(".product__nav-input").datepicker("show");
+  //   });
   // $(".product__nav-input").datepicker('show');
   $("body").customCalendar();
 

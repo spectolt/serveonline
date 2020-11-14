@@ -78,9 +78,9 @@
                                 <table class="calendar">
                                     <thead>
                                         <tr>
-                                            <th class="active">Pr<small>Sau10</small></th>
+                                            <th>Pr<small>Sau10</small></th>
                                             <th>An<small>Sau11</small></th>
-                                            <th>Tr<small>Sau12</small></th>
+                                            <th class="active">Tr<small>Sau12</small></th>
                                             <th>Kt<small>Sau13</small></th>
                                             <th>Pn<small>Sau14</small></th>
                                             <th>Še<small>Sau15</small></th>
