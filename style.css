@@ -5412,7 +5412,7 @@ body {
           flex-direction: column;
   position: relative;
   width: 850px;
-  margin: 60px 30px 30px 7.1vw;
+  margin: 60px 30px 30px 7.1%;
 }
 
 .site-main--aside .site-footer {
@@ -5631,6 +5631,7 @@ section.breadcrumbs {
   padding: 25px 30px;
   color: #fff;
   position: relative;
+  z-index: 1;
 }
 
 section.breadcrumbs .breadcrumbs__change {
@@ -6020,14 +6021,16 @@ section.venue-info .product-action:last-child {
 
 .breadcrumbs__more {
   background-color: #101b51;
-  position: relative;
+  margin-top: -50%;
   color: #fff;
   width: 100%;
   -webkit-transition: top .2s ease-in-out;
   transition: top .2s ease-in-out;
-  display: none;
+  z-index: 0;
   border-top: 1px solid #4a68ad;
   padding: 20px 0;
+  -webkit-transition: margin-top .2s ease-in-out, z-index .2s ease-in-out;
+  transition: margin-top .2s ease-in-out, z-index .2s ease-in-out;
 }
 
 .breadcrumbs__more ul {
@@ -6077,7 +6080,7 @@ section.venue-info .product-action:last-child {
 }
 
 .breadcrumbs__more--toggled {
-  display: block;
+  margin-top: 0;
 }
 
 section.product {

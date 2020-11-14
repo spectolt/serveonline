@@ -8,6 +8,7 @@ section {
         padding: 25px 30px;
         color: $white;
         position: relative;
+        z-index: 1;
 
         .breadcrumbs {
             &__change {
@@ -378,15 +379,17 @@ section {
 
 .breadcrumbs__more {
     background-color: $darkblue;
-   // top: -100%;
-    position: relative;
+    margin-top: -50%;
+    //position: relative;
     color: $white;
     width: 100%;
     transition: top .2s ease-in-out;
-   // z-index: -1;
-    display: none;
+    z-index: 0;
+    // display: none;
+    //opacity: 0;
     border-top: 1px solid $blue;
     padding: 20px 0;
+    transition: margin-top .2s ease-in-out, z-index .2s ease-in-out;
     
     ul {
         display: flex;
@@ -422,29 +425,11 @@ section {
                     background-color: $color__background-breadcrumbs !important;
                 }
             }
-
-            // &:nth-of-type(1) > .area-img:hover {
-            //     background-color: #fec994;
-            // }
-
-            // &:nth-of-type(2) > .area-img:hover {
-            //     background-color: #cce2ff;
-            // }
-
-            // &:nth-of-type(3) > .area-img:hover {
-            //     background-color: #ffefd8;
-            // }
-            // &:nth-of-type(4) > .area-img:hover {
-            //     background-color: #e2c4ae;
-            // }
-            // &:nth-of-type(5) > .area-img:hover {
-            //     background-color: #c1e1d2;
-            // }
         }
     }
 
     &--toggled {
-      //  top: 0;
-        display: block;
+        margin-top: 0;
+        //opacity: 1;
     }
 }
