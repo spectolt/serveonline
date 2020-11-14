@@ -909,7 +909,7 @@ textarea {
 .radio label {
   position: relative;
   display: block;
-  font-size: 14px;
+  font-size: 1rem;
   -webkit-transition: color 0.2s ease-in-out;
   transition: color 0.2s ease-in-out;
   cursor: pointer;
@@ -4890,6 +4890,10 @@ a.ui-button:active,
   margin-right: 10px;
 }
 
+.ui-datepicker {
+  z-index: 100 !important;
+}
+
 .ui-datepicker .ui-state-active,
 .ui-datepicker .ui-widget-content .ui-state-active,
 .ui-datepicker .ui-widget-header .ui-state-active,
@@ -6087,6 +6091,10 @@ section.product .product__nav {
       -ms-flex-align: center;
           align-items: center;
   position: relative;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 370px;
 }
 
 section.product .product__nav-button {
@@ -6111,25 +6119,17 @@ section.product .product__nav-button--next:before {
 }
 
 section.product .product__nav-input {
-  width: 0;
-  height: 0;
-  padding: 0;
-  border: 0;
-  visibility: hidden;
-  position: absolute;
-  bottom: -40px;
-  left: 0;
-}
-
-section.product .product__nav-current {
   cursor: pointer;
   font-family: "Sen", sans-serif;
   font-size: 1.875em;
   font-weight: 600;
-  margin: 0 40px;
+  padding: 0;
+  border: none;
+  text-align: left;
+  width: 15ch;
 }
 
-section.product .product__nav-current:before {
+section.product .product__nav-icon:before {
   content: "";
   width: 24px;
   height: 20px;

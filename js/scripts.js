@@ -15,18 +15,36 @@ $(document).ready(function () {
     //         $(this).trigger('change');
     //     }
     // })
+;
     $(".product__nav-input").datepicker({
         showButtonPanel: true,
         buttonText: 'Pasirinkti',
-        minDate: '+1',
-        defaultDate: '+1'
-    });
+        minDate: '+0',
+        defaultDate: '+1',
+        dateFormat: 'yy MM dd',
+
+        onSelect: function () {
+            var contents = $('.product__nav-input').val();
+        var charlength = contents.length;
+        newwidth =  charlength*16;
+        $('.product__nav-input').css({width:newwidth});
+        }
+    })
+
+    $('.product__nav-input').datepicker("setDate", new Date());
 
     $('.product__nav-current').click(function () {
         $(".product__nav-input").datepicker('show');
     })
     // $(".product__nav-input").datepicker('show');
     $('body').customCalendar();
+
+    $('a').click(function() {
+        var contents = $('.product__nav-input').val();
+        var charlength = contents.length;
+        newwidth =  charlength*16;
+        $('.product__nav-input').css({width:newwidth});
+    });
 
     $('#search').autocomplete({
         minLength: 0,
@@ -225,10 +243,13 @@ likeBtn.click(function(){
 
     like.toggleClass('hidden');
     //product.parent().prepend(product);
-    $(this).toggleClass('product__block-like--active');
+    $(this).toggleClass('product__block-like--active product__block-like--greyed-out');
 
     //$this.hasClass('hidden').closest('.productblock').parent().prepend(product);
-    if ($(this).hasClass('product__block-like--active')) {    } else {
+    if ($(this).hasClass('product__block-like--active')) {
+        var parent = $('.product__block-like--greyed-out:last').closest('.product__block');
+        $(product).insertAfter(parent);
+    } else {
         product.parent().prepend(product);
     }
 })

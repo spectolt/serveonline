@@ -18,6 +18,8 @@ section.product {
       display: flex;
       align-items: center;
       position: relative;
+      justify-content: space-between;
+      width: 370px;
 
       &-button {
         background: transparent;
@@ -42,23 +44,27 @@ section.product {
       }
 
       &-input {
-        width: 0;
-        height: 0;
-        padding: 0;
-        border: 0;
-        visibility: hidden;
-        position: absolute;
-        bottom: -40px;
-        left: 0;
-      }
-
-      &-current {
+        // width: 100px;
+        // height: auto;
+        // padding: 0;
+        // border: 1px solid black;
+        // //visibility: hidden;
+        // position: relative;
+        // bottom: 0;
+        // left: 0;
         cursor: pointer;
         font-family: "Sen", sans-serif;
         font-size: 1.875em;
         font-weight: 600;
-        margin: 0 40px;
+        //margin: 0 40px;
+        padding: 0;
+        border: none;
+        text-align: left;
+        width: 15ch;
+        //max-width: 100%;
+      }
 
+      &-icon {
         &:before {
           content: "";
           width: 24px;
@@ -71,6 +77,26 @@ section.product {
           margin-right: 20px;
           background-size: contain;
         }
+
+        // &-current {
+        //   cursor: pointer;
+        //   font-family: "Sen", sans-serif;
+        //   font-size: 1.875em;
+        //   font-weight: 600;
+        //   margin: 0 40px;
+
+        //   &:before {
+        //     content: "";
+        //     width: 24px;
+        //     height: 20px;
+        //     background-size: 100%;
+        //     background-position: center bottom;
+        //     background-repeat: no-repeat;
+        //     display: inline-block;
+        //     background-image: url("img/icons/calendar.svg");
+        //     margin-right: 20px;
+        //     background-size: contain;
+        //   }
       }
 
       &--person {
