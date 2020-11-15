@@ -139,7 +139,7 @@
 
                             <a href="#" class="pagination__button">1</a>
                             <a href="#" class="pagination__button">2</a>
-                            <a href="#" class="pagination__button">3</a>
+                            <a href="#" class="pagination__button pagination__button--active">3</a>
                             <a href="#" class="pagination__button">4</a>
                             <a href="#" class="pagination__button">...</a>
                             <a href="#" class="pagination__button">10</a>

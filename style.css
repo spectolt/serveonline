@@ -1291,6 +1291,11 @@ table.calendar .calendar__more-times--hidden {
   margin: 0 15px;
 }
 
+.pagination .pagination__button--active {
+  font-weight: 600;
+  border-bottom: 1px solid #101b51;
+}
+
 .pagination .pagination__button:before {
   content: '';
   display: inline-block;
@@ -1300,31 +1305,31 @@ table.calendar .calendar__more-times--hidden {
 }
 
 .pagination .pagination__button--first:before {
-  background-image: url("img/icons/double-angle-left.svg");
+  background-image: url("img/icons/angle-left-double.svg");
   width: 13.5px;
   height: 12px;
+  -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1);
 }
 
 .pagination .pagination__button--prev:before {
-  background-image: url("img/icons/angle-left.svg");
-  width: 8px;
-  height: 15px;
-}
-
-.pagination .pagination__button--next:before {
-  background-image: url("img/icons/angle-left.svg");
-  width: 8px;
-  height: 15px;
-  -webkit-transform: scale(-1, 1);
-          transform: scale(-1, 1);
-}
-
-.pagination .pagination__button--last:before {
-  background-image: url("img/icons/double-angle-left.svg");
-  width: 13.5px;
+  background-image: url("img/icons/angle-left-thin.svg");
+  width: 9px;
   height: 12px;
   -webkit-transform: scale(-1, 1);
           transform: scale(-1, 1);
+}
+
+.pagination .pagination__button--next:before {
+  background-image: url("img/icons/angle-left-thin.svg");
+  width: 9px;
+  height: 12px;
+}
+
+.pagination .pagination__button--last:before {
+  background-image: url("img/icons/angle-left-double.svg");
+  width: 13.5px;
+  height: 12px;
 }
 
 .pagination .pagination__info {

@@ -15,6 +15,11 @@
         &__button {
             margin: 0 15px;
 
+            &--active {
+                font-weight: 600;
+                border-bottom: 1px solid $darkblue;
+            }
+
             &:before {
                 content: '';
                 display: inline-block;
@@ -25,35 +30,37 @@
 
             &--first {
                 &:before {
-                    background-image: url('img/icons/double-angle-left.svg');
+                    background-image: url('img/icons/angle-left-double.svg');
                     width: 13.5px;
                     height: 12px;
+                    transform: scale(-1, 1);
                 }
             }
 
             &--prev {
                 &:before {
-                    background-image: url('img/icons/angle-left.svg');
-                    width: 8px;
-                    height: 15px;
+                    background-image: url('img/icons/angle-left-thin.svg');
+                    width: 9px;
+                    height: 12px;
+                    transform: scale(-1, 1);
                 }
             }
 
             &--next {
                 &:before {
-                    background-image: url('img/icons/angle-left.svg');
-                    width: 8px;
-                    height: 15px;
-                    transform: scale(-1, 1);
+                    background-image: url('img/icons/angle-left-thin.svg');
+                    width: 9px;
+                    height: 12px;
+                    
                 }
             }
 
             &--last {
                 &:before {
-                    background-image: url('img/icons/double-angle-left.svg');
+                    background-image: url('img/icons/angle-left-double.svg');
                     width: 13.5px;
                     height: 12px;
-                    transform: scale(-1, 1);
+                    
                 }
             }
         }
