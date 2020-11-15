@@ -43,7 +43,7 @@
                     </div>
                 </div>
                 <div class="product__search input-wrapper input-wrapper--briefcase">
-                    <input type="text" name="search" id="search" placeholder="Įveskite kelis paslaugos pavadinimo simbolius paieškai" />
+                    <input type="text" name="search" id="search" placeholder="Įveskite paslaugos pavadinimą" />
                 </div>
                 <div class="product__list">
                     <?php for($y=0;$y<5;$y++) { ?>
@@ -100,19 +100,21 @@
                                         </tr>
                                         </tbody>
                                         <?php } ?>
-                                        <tbody class="calendar__more-times hidden">
+                                        
                                         <?php for($i=0;$i<3;$i++) { ?>
+                                            <tbody class="calendar__more-times calendar__more-times--hidden">
                                         <tr>
                                         <td><p>09:15</p></td>
                                             <td><p></p></td>
-                                            <td><p>09:15</p></td>
-                                            <td><p>09:15</p></td>
-                                            <td><p>09:15</p></td>
-                                            <td><p>09:15</p></td>
-                                            <td><p>09:15</p></td>
+                                            <td><p>10:15</p></td>
+                                            <td><p>08:15</p></td>
+                                            <td><p>11:15</p></td>
+                                            <td><p>12:15</p></td>
+                                            <td><p>13:15</p></td>
                                         </tr>
+                                        </tbody>
                                         <?php } ?>
-                                    </tbody>
+                                    
                                 </table>
                                         </div>
                             </div>

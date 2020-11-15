@@ -5,9 +5,9 @@
         <li class="site-footer__item"><a href="#">Teisinės nuostatos</a></li>
         <li class="site-footer__item"><a href="#">Pagalba ir kontaktai</a></li>
     </ul>
-    <div class="site-footer__langs">
+    <!-- <div class="site-footer__langs">
         <button href="#">Lietuvių</br>kalba</button>
-    </div>
+    </div> -->
 </footer>
 
 </div>

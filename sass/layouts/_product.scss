@@ -2,12 +2,20 @@ section.product {
   margin: 0 0 30px 0;
   width: 850px;
 
+  @include breakpoint(sm) {
+    width: 100%;
+  }
+
   .product {
     &__header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       margin-bottom: 40px;
+
+      @include breakpoint(sm) {
+        flex-direction: column;
+      }
 
       h1 {
         margin: 0;
@@ -75,6 +83,10 @@ section.product {
           background-image: url("img/icons/calendar.svg");
           margin-right: 20px;
           background-size: contain;
+
+          @include breakpoint(sm) {
+            margin-right: 10px;
+          }
         }
 
         // &-current {
@@ -102,6 +114,10 @@ section.product {
         width: 365px;
         margin-bottom: 10px;
         justify-content: space-between;
+
+        @include breakpoint(sm) {
+          display: none;
+        }
 
         .product__nav-input {
           font-size: 1.125em;
@@ -157,12 +173,17 @@ section.product {
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
+        flex-wrap: wrap;
       }
 
       &-person {
         display: flex;
         // width: 47%;
         width: 55%;
+
+        @include breakpoint(sm) {
+          width: 100%;
+        }
       }
 
       &-like,
@@ -244,6 +265,10 @@ section.product {
 
         &-actions {
           margin-top: 10px;
+
+          @include breakpoint(sm) {
+            margin: 20px auto;
+          }
         }
       }
 
@@ -363,6 +388,12 @@ section.product {
         font-family: "Sen", sans-serif;
         width: 100%;
         margin: 20px 0 10px 0;
+
+        @include breakpoint(sm) {
+          text-align: center;
+          width: 70%;
+          margin: 20px auto 10px auto;
+        }
       }
     }
   }

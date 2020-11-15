@@ -56,7 +56,11 @@ $(document).ready(function () {
   //   $(".product__nav-input").datepicker("setDate", new Date());
   $(".product__nav-button--next").on("click", function () {
     var date = $(".product__nav-input").datepicker("getDate");
+    if (window.matchMedia("(max-width: 600px)").matches) {
+      date.setDate(date.getDate() + 1);
+    } else {
     date.setDate(date.getDate() + 7);
+    }
     $(".product__nav-input").datepicker("setDate", date);
 
     var contents = $(".product__nav-input").val();
@@ -67,7 +71,11 @@ $(document).ready(function () {
 
   $(".product__nav-button--prev").on("click", function () {
     var date = $(".product__nav-input").datepicker("getDate");
-    date.setDate(date.getDate() - 7);
+    if (window.matchMedia("(max-width: 600px)").matches) {
+      date.setDate(date.getDate() - 1);
+    } else {
+      date.setDate(date.getDate() - 7);
+    }
     $(".product__nav-input").datepicker("setDate", date);
 
     var contents = $(".product__nav-input").val();
@@ -152,6 +160,91 @@ $(document).ready(function () {
       .closest(".venue__description")
       .addClass("venue__description--visible");
   });
+
+  var moreTimesBtn = $(".calendar__more-button");
+
+  $(moreTimesBtn).click(function () {
+    var times = $(this).closest(".calendar").children(".calendar__more-times");
+    times.removeClass("calendar__more-times--hidden");
+    $(this).removeClass("calendar__more-button");
+    $(this).html("09:15");
+  });
+
+  var moreAreasBtn = $(".breadcrumbs__change");
+  var moreAreas = $(".breadcrumbs__more");
+
+  moreAreasBtn.click(function () {
+    moreAreas.toggleClass("breadcrumbs__more--toggled");
+  });
+
+  var likeBtn = $(".product__block-like");
+
+  likeBtn.click(function () {
+    var like = $(this)
+      .closest(".product__block-person")
+      .find(".product__block-like-status");
+    var product = $(this).closest(".product__block");
+
+    like.toggleClass("hidden");
+    //product.parent().prepend(product);
+    $(this).toggleClass(
+      "product__block-like--active product__block-like--greyed-out"
+    );
+
+    //$this.hasClass('hidden').closest('.productblock').parent().prepend(product);
+    if ($(this).hasClass("product__block-like--active")) {
+      var parent = $(".product__block-like--greyed-out:last").closest(
+        ".product__block"
+      );
+      $(product).insertAfter(parent);
+    } else {
+      product.parent().prepend(product);
+    }
+  });
+
+  var hamburgerBtn = $(".site-header__hamburger");
+
+  hamburgerBtn.click(function () {
+    $(".site-aside-container").addClass("site-aside-container--toggled");
+  });
+
+  $(document).click(function(event) {
+    //if you click on anything except the modal itself or the "open modal" link, close the modal
+    if (!$(event.target).closest(".site-aside,.site-header__hamburger").length) {
+      $("body").find(".site-aside-container").removeClass("site-aside-container--toggled");
+    }
+  });
+
+  function moveAction() {
+    $(".product__block-info-actions").each(function () {
+      if (window.matchMedia("(max-width: 600px)").matches) {
+        var calendar = $(this)
+          .closest(".product__block-person")
+          .next(".calendar-container");
+        $(this).insertAfter(calendar);
+      } else {
+        var initial = $(this).closest(".product__block-distance");
+        $(this).insertAfter(initial);
+      }
+    });
+  }
+  
+  function moveHeader() {
+    $(".site-header__menu--items").each(function () {
+      if (window.matchMedia("(max-width: 600px)").matches) {
+        var headerList = $(this).parent();
+        $(this).insertAfter(headerList);
+      } else {
+        var initial = $(this).closest(".product__block-distance");
+        $(this).insertAfter(initial);
+      }
+    });
+  }
+  
+  moveAction();
+  moveHeader();
+  // x.addListener(moveAction);
+  $(window).on("resize", moveAction);
 });
 
 $(window)
@@ -282,43 +375,11 @@ setInterval(function () {
   }
 }, 250);
 
-var moreTimesBtn = $(".calendar__more-button");
+// if(window.matchMedia('(max-width: 600px)').matches) {
+//   $(".product__block-info-actions").each(function () {
+//     var calendar = $(this).closest(".product__block-person").next(".calendar-container");
+//     $(this).insertAfter(calendar);
+//   });
+// };
 
-$(moreTimesBtn).click(function () {
-  var times = $(this).closest("tbody").next(".calendar__more-times");
-  times.removeClass("hidden");
-  $(this).removeClass("calendar__more-button");
-  $(this).html("09:15");
-});
 
-var moreAreasBtn = $(".breadcrumbs__change");
-var moreAreas = $(".breadcrumbs__more");
-
-moreAreasBtn.click(function () {
-  moreAreas.toggleClass("breadcrumbs__more--toggled");
-});
-
-var likeBtn = $(".product__block-like");
-
-likeBtn.click(function () {
-  var like = $(this)
-    .closest(".product__block-person")
-    .find(".product__block-like-status");
-  var product = $(this).closest(".product__block");
-
-  like.toggleClass("hidden");
-  //product.parent().prepend(product);
-  $(this).toggleClass(
-    "product__block-like--active product__block-like--greyed-out"
-  );
-
-  //$this.hasClass('hidden').closest('.productblock').parent().prepend(product);
-  if ($(this).hasClass("product__block-like--active")) {
-    var parent = $(".product__block-like--greyed-out:last").closest(
-      ".product__block"
-    );
-    $(product).insertAfter(parent);
-  } else {
-    product.parent().prepend(product);
-  }
-});

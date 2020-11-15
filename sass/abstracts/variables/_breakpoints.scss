@@ -1,0 +1,10 @@
+$breakpoint-sm: 600px;
+$breakpoint-xl: 1200px;
+
+@mixin breakpoint($size) {
+    @if ($size == sm) {
+        @media (max-width: $breakpoint-sm) {@content;}
+    } @else if ($size == xl) {
+        @media (max-width: $breakpoint-xl) {@content;}
+    }
+}

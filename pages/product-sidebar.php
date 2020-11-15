@@ -1,4 +1,4 @@
-
+<div class="site-aside-container">
     <aside class="site-aside">
         <div class="site-aside__block site-aside__block--logo site-aside__block--padding">
             <img src="../img/logo-sidebar.svg" />
@@ -141,3 +141,4 @@
 
         </div>
     </aside>
+</div>

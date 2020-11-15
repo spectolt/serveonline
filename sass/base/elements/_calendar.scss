@@ -32,6 +32,10 @@ table.calendar {
                 padding:4px 0px;
             }
         }
+
+        @include breakpoint(sm) {
+            display: none;
+        }
     }
 
     small {
@@ -50,6 +54,14 @@ table.calendar {
     //     }
     // }
 
+    @include breakpoint(sm) {
+        display: flex;
+        flex-direction: row;
+        overflow-x: scroll;
+        width: 450px;
+        margin-top: 30px;
+    }
+
     td {
         padding: 10px 10px 0 0;
         border-spacing: 0;
@@ -61,7 +73,16 @@ table.calendar {
         .calendar__more-button {
             color: $orange;
         }
+
+        @include breakpoint(sm) {
+            display: block;
+
+            &:not(:nth-child(3)) {
+                display: none;
+            } //wednesday taken as example
+        }
     }
+
 
     p {
         display: flex;
@@ -90,6 +111,18 @@ table.calendar {
         &:hover {
             color: $darkblue;
             background: $orange;
+        }
+
+        @include breakpoint(sm) {
+            width: 64px;
+        }
+    }
+
+    .calendar__more-times--hidden {
+        display: none;
+
+        @include breakpoint(sm) {
+            display: block;
         }
     }
 }

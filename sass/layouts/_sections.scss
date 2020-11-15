@@ -380,16 +380,16 @@ section {
 .breadcrumbs__more {
     background-color: $darkblue;
     margin-top: -50%;
-    //position: relative;
+    position: relative;
     color: $white;
     width: 100%;
     transition: top .2s ease-in-out;
     z-index: 0;
     // display: none;
-    //opacity: 0;
+    opacity: 0;
     border-top: 1px solid $blue;
     padding: 20px 0;
-    transition: margin-top .2s ease-in-out, z-index .2s ease-in-out;
+    transition: margin-top .2s ease-in-out, opacity .2s ease-in-out;
     
     ul {
         display: flex;
@@ -400,9 +400,14 @@ section {
         padding-inline-start: 0;
 
         li {
-            width: 15ch;
+            max-width: 15ch;
             text-align: center;
             cursor: pointer;
+            word-wrap: wrap;
+
+            @include breakpoint(sm) {
+                font-size: 0.75rem;
+            }
 
             .area-img {
                 width: 100px;
@@ -412,6 +417,11 @@ section {
                 position: relative;
                 margin-bottom: 10px;
                 transition: background-color .2s ease-in-out;
+
+                @include breakpoint(sm) {
+                    width: 75px;
+                    height: 75px;
+                }
 
                 img {
                     position: absolute;
@@ -430,6 +440,6 @@ section {
 
     &--toggled {
         margin-top: 0;
-        //opacity: 1;
+        opacity: 1;
     }
 }

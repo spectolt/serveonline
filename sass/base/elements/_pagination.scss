@@ -3,6 +3,7 @@
     padding-top: 32px;
     border-top: 1px solid $lightgray;
     display: flex;
+    flex-wrap: wrap;
 
     .pagination {
         &__list {
@@ -59,6 +60,10 @@
 
         &__info {
             margin-left: auto;
+
+            @include breakpoint(sm) {
+                margin-left: 0;
+            }
         }
     }
 }
