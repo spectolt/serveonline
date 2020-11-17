@@ -21,7 +21,7 @@
     <header class="site-header site-header--show">
         <button class="site-header__hamburger"></button>
         <img src="../img/logo.svg" class="site-header__logo" />
-        <ul class="site-header__menu">
+        <ul class="site-header__menu site-header__menu--main">
         <ul class="site-header__menu site-header__menu--items">
             <li class="site-header__item site-header__item--active"><a href="#">Specialistai</a></li>
             <li class="site-header__item"><a href="#">Įstaigos</a></li>

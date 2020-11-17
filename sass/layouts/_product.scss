@@ -19,6 +19,7 @@ section.product {
 
       h1 {
         margin: 0;
+        line-height: 1;
       }
     }
 
@@ -75,13 +76,13 @@ section.product {
         &:before {
           content: "";
           width: 24px;
-          height: 20px;
+          height: 22px;
           background-size: 100%;
           background-position: center bottom;
           background-repeat: no-repeat;
           display: inline-block;
           background-image: url("img/icons/calendar.svg");
-          margin-right: 20px;
+          margin-right: 12px;
           background-size: contain;
 
           @include breakpoint(sm) {
@@ -126,8 +127,9 @@ section.product {
 
         .product__nav-icon {
           &:before {
-            height: 12px;
-            margin-right: 10px;
+            height: 14px;
+            width: 15px;
+            margin-right: 7px;
           }
         }
       }
@@ -168,6 +170,10 @@ section.product {
       justify-content: space-between;
       padding: 40px 0;
       border-top: 1px solid $lightgray;
+
+      &:first-of-type {
+        border-top: none;
+      }
 
       &-top {
         display: flex;

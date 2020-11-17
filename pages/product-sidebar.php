@@ -113,7 +113,7 @@
             </div>            
 
             <div class="site-aside__block">
-                <h3 class="title title--padding">Specialūs psiūlymai</h3>
+                <h3 class="title title--padding">Specialūs pasiūlymai</h3>
                 <div class="checkbox">
                     <input name="offers[]" type="checkbox" id="o1" class="" value="1" />
                     <label for="o1">Šiuo metu taikomos nuolaidos</label>

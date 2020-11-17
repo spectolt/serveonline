@@ -47,7 +47,9 @@ $(document).ready(function () {
         $(this).css({ width: newWidth + "ch" });
 
         var getDate = $(".product__nav-input:first").val();
+        var getDate2 = $(this).val();
         $(".product__nav-input").datepicker("setDate", getDate);
+        $(this).datepicker("setDate", getDate2);
         $(this).blur();
       },
     })
@@ -181,7 +183,7 @@ $(document).ready(function () {
 
   likeBtn.click(function () {
     var like = $(this)
-      .closest(".product__block-person")
+      .closest(".product__block-top")
       .find(".product__block-like-status");
     var product = $(this).closest(".product__block");
 
@@ -215,37 +217,40 @@ $(document).ready(function () {
     }
   });
 
-  function moveAction() {
-    $(".product__block-info-actions").each(function () {
-      if (window.matchMedia("(max-width: 600px)").matches) {
-        var calendar = $(this)
-          .closest(".product__block-person")
-          .next(".calendar-container");
-        $(this).insertAfter(calendar);
-      } else {
-        var initial = $(this).closest(".product__block-distance");
-        $(this).insertAfter(initial);
-      }
-    });
-  }
-  
-  function moveHeader() {
-    $(".site-header__menu--items").each(function () {
-      if (window.matchMedia("(max-width: 600px)").matches) {
-        var headerList = $(this).parent();
-        $(this).insertAfter(headerList);
-      } else {
-        var initial = $(this).closest(".product__block-distance");
-        $(this).insertAfter(initial);
-      }
-    });
-  }
-  
   moveAction();
   moveHeader();
-  // x.addListener(moveAction);
-  $(window).on("resize", moveAction);
 });
+
+$(window).resize(function() {
+  // moveHeader();
+  moveAction();
+});
+
+function moveAction() {
+  $(".product__block-info-actions").each(function () {
+    if (window.matchMedia("(max-width: 600px)").matches) {
+      var calendar = $(this)
+        .closest(".product__block-person")
+        .next(".calendar-container");
+      $(this).insertAfter(calendar);
+    } else {
+      var initial = $(this).closest(".product__block-top").find(".product__block-distance");
+      $(this).insertAfter(initial);
+    }
+  });
+}
+
+function moveHeader() {
+  $(".site-header__menu--items").each(function () {
+    if (window.matchMedia("(max-width: 600px)").matches) {
+      var headerList = $(this).parent();
+      $(this).insertAfter(headerList);
+    } else {
+      var initial = $(this).closest(".site-header__menu-main");
+      $(this).prepend(initial);
+    }
+  });
+}
 
 $(window)
   .scroll(function () {

@@ -75,7 +75,7 @@
                                 </div>
                                 <button class="product__nav-button product__nav-button--next"></button>
                                 </div>
-                                <table class="calendar">
+                                <table class="calendar disable-scrollbars disable-scrollbars::-webkit-scrollbar">
                                     <thead>
                                         <tr>
                                             <th>Pr<small>Sau10</small></th>

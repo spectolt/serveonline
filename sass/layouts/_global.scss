@@ -105,6 +105,8 @@ body {
       }
 
       &--search {
+          margin-left: 30px;
+
         a {
           position: relative;
 
@@ -147,7 +149,6 @@ body {
     .site-aside-container {
         position: fixed; /* Stay in place */
         z-index: 0; /* Sit on top */
-        padding-top: 100px; /* Location of the box */
         left: 0;
         top: 0;
         width: 100%; /* Full width */
@@ -177,7 +178,7 @@ body {
         left: 0;
         height: 100%;
         color: $color__sidebar-main;
-        width: 280px;
+        width: 300px;
         z-index: 2;
 
         @include breakpoint(sm) {
@@ -252,6 +253,10 @@ body {
           padding: 10px 15px;
           transition: background 0.2s ease-in-out;
 
+          &:last-child {
+              padding-bottom: 0;
+          }
+
           &:hover,
           &:focus {
             background: #f7f6f6;
@@ -270,7 +275,7 @@ body {
       display: flex;
       flex-wrap: wrap;
       flex: 1;
-      margin-left: 280px;
+      margin-left: 300px;
 
       &__wrapper {
         display: flex;
@@ -323,13 +328,14 @@ body {
 .site-footer {
   display: flex;
   align-items: center;
-  padding: 30px 0;
+  padding: 40px 0;
   border-top: 1px solid $lightgray;
 
   .site-footer {
     &__logo {
-      height: 40px;
+      height: 30px;
       display: block;
+      margin-right: 30px;
       // margin: 20px 0;
     }
 
@@ -337,13 +343,13 @@ body {
       a {
         position: relative;
         text-decoration: underline;
-        padding: 0 5px;
+        //padding: 0 5px;
 
         &:after {
           content: "";
           position: absolute;
           top: 0;
-          right: -15px;
+          right: -20px;
           width: 1px;
           height: 100%;
           background: $darkblue;
@@ -360,7 +366,15 @@ body {
 
     &__item {
       display: inline-block;
-      margin: 0 10px;
+      margin: 0 20px;
+      
+      a {
+          padding: 0;
+      }
+
+      &:first-of-type {
+          margin-left: 0;
+      }
 
       &:last-child {
         a {
@@ -396,22 +410,22 @@ body {
         justify-content: center;
         padding: 0;
 
-        // &:before {
-        //   content: "";
-        //   position: relative;
-        //   width: 22px;
-        //   height: 22px;
-        //   background-size: 100%;
-        //   background-position: center;
-        //   background-repeat: no-repeat;
-        //   display: block;
-        //   background-image: url("img/icons/search-close.svg");
-        //   margin-right: 10px;
-        // }
+        &:before {
+          content: "";
+          position: relative;
+          width: 22px;
+          height: 22px;
+          background-size: 100%;
+          background-position: center;
+          background-repeat: no-repeat;
+          display: block;
+          background-image: url("img/icons/search-close.svg");
+          margin-right: 10px;
+        }
 
         &:after {
           content: "";
-          width: 13px;
+          width: 15px;
           height: 15px;
           background-size: 100%;
           background-position: center;
@@ -428,3 +442,12 @@ body {
 .hidden {
   display: none !important;
 }
+
+.disable-scrollbars {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE 10+ */
+    &::-webkit-scrollbar {
+      width: 0;
+      background: transparent; /* Chrome/Safari/Webkit */
+    }
+  }
