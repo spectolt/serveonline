@@ -38,6 +38,7 @@
                         <div>
                             <span class="product__nav-icon"></span>
                             <input type="text" name="date" class="product__nav-input" readonly/>
+                            <span id="value"></span>
                         </div>
                         <button class="product__nav-button product__nav-button--next"></button>
                     </div>
@@ -149,7 +150,10 @@
                             <a href="#" class="pagination__button pagination__button--last"></a>
                         </div>
                         <div class="pagination__info">
-                            Rodomos eilutės nuo <b>1 - 22</b>  iš  <b>9678</b>  |  Viso puslapių  <b>999</b>  
+                            Rodomos eilutės nuo <b>1 - 22</b>  iš  <b>9678</b>
+                        </div>
+                        <div class="pagination__info">
+                            Viso puslapių  <b>999</b>  
                         </div>
                     </div>
                 </div>

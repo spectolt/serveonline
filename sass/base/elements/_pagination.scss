@@ -4,12 +4,17 @@
     border-top: 1px solid $lightgray;
     display: flex;
     flex-wrap: wrap;
+    justify-content: flex-end;
 
     .pagination {
         &__list {
             display: flex;
             align-items: center;
-            margin: 0 -15px;
+            margin: 0 auto 0 -15px;
+
+            @include breakpoint(sm) {
+                margin: 0;
+            }
         }
 
         &__button {
@@ -67,9 +72,38 @@
 
         &__info {
             margin-left: auto;
+            position: relative;
+
+            &:after {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: -5px;
+                width: 1px;
+                height: 70%;
+                top: 15%;
+                background: $darkblue;
+                display: inline-block;
+              }
+
+              &:last-of-type {
+                  &:after {
+                      display: none;
+                  }
+
+                  @include breakpoint(sm) {
+                      width: 100%;
+                      text-align: center;
+                      margin: 0 auto;
+                  }
+              }
 
             @include breakpoint(sm) {
-                margin-left: 0;
+                margin: 20px auto;
+
+                &:after {
+                    display: none;
+                }
             }
         }
     }

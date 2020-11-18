@@ -15,11 +15,16 @@ section.product {
 
       @include breakpoint(sm) {
         flex-direction: column;
+        margin-bottom: 20px;
       }
 
       h1 {
         margin: 0;
         line-height: 1;
+
+        @include breakpoint(sm) {
+          margin-bottom: 20px;
+        }
       }
     }
 
@@ -52,15 +57,12 @@ section.product {
         }
       }
 
+      &-hide {
+        display:none;
+        white-space:pre;
+      }
+
       &-input {
-        // width: 100px;
-        // height: auto;
-        // padding: 0;
-        // border: 1px solid black;
-        // //visibility: hidden;
-        // position: relative;
-        // bottom: 0;
-        // left: 0;
         cursor: pointer;
         font-family: "Sen", sans-serif;
         font-size: 1.875em;
@@ -69,7 +71,11 @@ section.product {
         padding: 0;
         border: none;
         text-align: left;
-        max-width: 16ch;
+        max-width: 20ch;
+
+        @include breakpoint(xs) {
+          font-size: 1.125rem;
+        }
       }
 
       &-icon {
@@ -235,6 +241,11 @@ section.product {
         border-radius: 50%;
         box-shadow: 0px 12px 29px 0px rgba(0, 0, 0, 0.35);
         margin-right: 20px;
+
+        @include breakpoint(sm) {
+          width: 160px;
+          height: 160px;
+        }
 
         &--rectangle {
           width: 285px;

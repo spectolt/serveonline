@@ -18,6 +18,28 @@ $(document).ready(function () {
   //     }
   // })
 
+  function getTextWidth(el) {
+      // uses a cached canvas if available
+      var canvas = getTextWidth.canvas || (getTextWidth.canvas = document.createElement("canvas"));
+      var context = canvas.getContext("2d");
+      // get the full font style property
+      var font = window.getComputedStyle(el, null).getPropertyValue('font');
+      var text = el.value;
+      // set the font attr for the canvas text
+      context.font = font;
+      var textMeasurement = context.measureText(text);
+      return textMeasurement.width;
+    }
+    
+    function changeTextWidth() {
+      var inputs = document.getElementsByClassName('product__nav-input');
+      for (var i = 0; i < inputs.length; i++) {
+        var width = Math.floor(getTextWidth(inputs[i]));
+        var widthInPx = width + "px";
+        inputs[i].style.width = widthInPx;
+      }
+    }
+
   $(".product__nav-input")
     .datepicker({
       showButtonPanel: true,
@@ -41,10 +63,8 @@ $(document).ready(function () {
       ],
 
       onSelect: function () {
-        var contents = $(this).val();
-        var charlength = contents.length;
-        newWidth = charlength;
-        $(this).css({ width: newWidth + "ch" });
+        
+        changeTextWidth();
 
         var getDate = $(".product__nav-input:first").val();
         var getDate2 = $(this).val();
@@ -55,7 +75,17 @@ $(document).ready(function () {
     })
     .datepicker("setDate", "+0");
 
-  //   $(".product__nav-input").datepicker("setDate", new Date());
+    // function inputWidth() {
+    // var contents = $('.product__nav-input').val();
+    // var charlength = contents.length;
+    // newWidth = charlength;
+    // $('.product__nav-input').css({ width: newWidth + "ch" });
+    // }
+
+    // inputWidth();
+
+    changeTextWidth();
+    
   $(".product__nav-button--next").on("click", function () {
     var date = $(".product__nav-input").datepicker("getDate");
     if (window.matchMedia("(max-width: 600px)").matches) {
@@ -65,10 +95,7 @@ $(document).ready(function () {
     }
     $(".product__nav-input").datepicker("setDate", date);
 
-    var contents = $(".product__nav-input").val();
-    var charlength = contents.length;
-    newWidth = charlength;
-    $(".product__nav-input").css({ width: newWidth + "ch" });
+    changeTextWidth();
   });
 
   $(".product__nav-button--prev").on("click", function () {
@@ -80,10 +107,7 @@ $(document).ready(function () {
     }
     $(".product__nav-input").datepicker("setDate", date);
 
-    var contents = $(".product__nav-input").val();
-    var charlength = contents.length;
-    newWidth = charlength;
-    $(".product__nav-input").css({ width: newWidth + "ch" });
+    changeTextWidth();
   });
 
   //   $(".product__nav-current").click(function () {
@@ -188,12 +212,10 @@ $(document).ready(function () {
     var product = $(this).closest(".product__block");
 
     like.toggleClass("hidden");
-    //product.parent().prepend(product);
     $(this).toggleClass(
       "product__block-like--active product__block-like--greyed-out"
     );
 
-    //$this.hasClass('hidden').closest('.productblock').parent().prepend(product);
     if ($(this).hasClass("product__block-like--active")) {
       var parent = $(".product__block-like--greyed-out:last").closest(
         ".product__block"
@@ -218,7 +240,7 @@ $(document).ready(function () {
   });
 
   moveAction();
-  // moveHeader();
+  
 });
 
 function moveAction() {
@@ -249,8 +271,9 @@ function moveHeader() {
 }
 
 
+
+
 $(window).resize(function() {
-  // moveHeader();
   moveAction();
 });
 
