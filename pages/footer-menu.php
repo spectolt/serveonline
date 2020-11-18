@@ -7,6 +7,10 @@
     </ul>
     <div class="site-footer__langs">
         <button href="#">Lietuvių</br>kalba</button>
+        <div class="site-footer__langs-items">
+            <a href="#">Anglų kalba</a>
+            <a href="#">Rusų kalba</a>
+        </div>
     </div>
 </footer>
 

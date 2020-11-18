@@ -211,19 +211,14 @@ $(document).ready(function () {
   });
 
   $(document).click(function(event) {
-    //if you click on anything except the modal itself or the "open modal" link, close the modal
+    //if you click on anything except the modal itself or the hamburger menu, close the modal
     if (!$(event.target).closest(".site-aside,.site-header__hamburger").length) {
       $("body").find(".site-aside-container").removeClass("site-aside-container--toggled");
     }
   });
 
   moveAction();
-  moveHeader();
-});
-
-$(window).resize(function() {
   // moveHeader();
-  moveAction();
 });
 
 function moveAction() {
@@ -245,12 +240,19 @@ function moveHeader() {
     if (window.matchMedia("(max-width: 600px)").matches) {
       var headerList = $(this).parent();
       $(this).insertAfter(headerList);
-    } else {
-      var initial = $(this).closest(".site-header__menu-main");
-      $(this).prepend(initial);
     }
+    // else {
+    //   var initial = $(this).closest(".site-header__menu-main");
+    //   $(this).prepend(initial);
+    // }
   });
 }
+
+
+$(window).resize(function() {
+  // moveHeader();
+  moveAction();
+});
 
 $(window)
   .scroll(function () {

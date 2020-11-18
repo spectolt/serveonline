@@ -84,7 +84,7 @@
                 </div>
             </div>
             
-            <div class="site-aside__block site-aside__block--padding">
+            <div class="site-aside__block site-aside__block--hour site-aside__block--padding">
                 <h3 class="title">Aktuali valanda</h3>
                 <select name="time">
                     <option value="18">18:00</option>

@@ -7,8 +7,8 @@ body {
   font-size: 1rem;
   scroll-behavior: smooth;
   cursor: default;
-  height: 100%;
-  width: 100%;
+  //height: 100%;
+  //width: 100%;
 }
 
 body {
@@ -28,6 +28,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: flex-end;
   background: $darkblue;
   padding: 0 30px;
   // border-bottom: 1px solid #0a1235;
@@ -47,6 +48,20 @@ body {
   .site-header {
     &__hamburger {
       display: none;
+      background-color: transparent;
+      padding: 0;
+
+      &:before {
+        content: "";
+        width: 24px;
+        height: 22px;
+        background-size: 100%;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        display: inline-block;
+        background-image: url("img/icons/search.svg");
+        background-size: contain;
+      }
 
       @include breakpoint(sm) {
         display: block;
@@ -57,6 +72,8 @@ body {
       height: 30px;
       display: block;
       margin: 20px 0;
+      //flex: 1;
+      margin-right: auto;
 
       @include breakpoint(sm) {
         margin: 20px auto;
@@ -64,7 +81,7 @@ body {
     }
 
     &__menu {
-      margin: 0 -15px 0 auto;
+      margin: 0 -15px 0 0;
       padding: 0;
       list-style: none;
       display: flex;
@@ -75,6 +92,12 @@ body {
         margin: 0;
       }
 
+      &--main {
+          @include breakpoint(sm) {
+              order: 0;
+          }
+      }
+
       a {
         padding: 21px 0;
         color: $white;
@@ -82,10 +105,14 @@ body {
 
       &--items {
         background-color: $darkblue;
+        flex: 0;
 
         @include breakpoint(sm) {
           margin: 0 auto;
           padding: 10px 0;
+          align-items: center;
+          justify-content: center;
+          order: 1;
 
           li a {
             padding: 10px 0;
@@ -125,6 +152,7 @@ body {
             margin: 0;
           }
         }
+
         @include breakpoint(sm) {
           margin: 0;
         }
@@ -147,14 +175,13 @@ body {
     margin: 0;
 
     .site-aside-container {
-        position: fixed; /* Stay in place */
-        z-index: 0; /* Sit on top */
+        position: fixed; 
+        z-index: 0;
         left: 0;
         top: 0;
-        width: 100%; /* Full width */
-        height: 100%; /* Full height */
-        overflow: auto; /* Enable scroll if needed */
-        //display: none;
+        width: 100%; 
+        height: 100%; 
+        overflow: auto; 
 
         @include breakpoint(sm) {
             visibility: hidden;
@@ -177,7 +204,7 @@ body {
         top: 0;
         left: 0;
         height: 100%;
-        color: $color__sidebar-main;
+        color: $darkwashedblue;
         width: 300px;
         z-index: 2;
 
@@ -192,8 +219,10 @@ body {
 
         &__block {
           position: relative;
-          padding: 30px 0;
+          padding: 30px 0 20px 0;
           border-bottom: 1px solid $lightgray;
+
+          
 
           &--logo {
             padding-top: 20px;
@@ -216,6 +245,7 @@ body {
 
           &--city {
             position: relative;
+            padding-bottom: 30px;
 
             &:before {
               content: "";
@@ -237,6 +267,10 @@ body {
               padding-left: 50px;
             }
           }
+
+          &--hour {
+              padding-bottom: 30px;
+          }
         }
 
         .title {
@@ -252,10 +286,6 @@ body {
         .checkbox {
           padding: 10px 15px;
           transition: background 0.2s ease-in-out;
-
-          &:last-child {
-              padding-bottom: 0;
-          }
 
           &:hover,
           &:focus {
@@ -399,6 +429,9 @@ body {
       padding: 0;
       list-style: none;
       margin: 0 0 0 auto;
+      position: relative;
+    //   display: flex;
+    //   flex-direction: column;
 
       button {
         background-color: transparent;
@@ -409,31 +442,56 @@ body {
         align-items: center;
         justify-content: center;
         padding: 0;
+        margin-bottom: 5px;
 
         &:before {
           content: "";
           position: relative;
-          width: 22px;
-          height: 22px;
+          width: 20px;
+          height: 20px;
           background-size: 100%;
           background-position: center;
           background-repeat: no-repeat;
           display: block;
-          background-image: url("img/icons/search-close.svg");
-          margin-right: 10px;
+          background-image: url("img/icons/gaublys-2.svg");
+          fill: $darkblue;
+          margin-right: 5px;
         }
 
         &:after {
           content: "";
-          width: 15px;
-          height: 15px;
+          width: 14px;
+          height: 16px;
           background-size: 100%;
           background-position: center;
           background-repeat: no-repeat;
           display: block;
           background-image: url("img/icons/angle-down-thin.svg");
-          margin-left: 10px;
+          margin-left: 5px;
         }
+      }
+
+      &-items {
+        font-size: 0.75em;
+        position: absolute;
+        //display: inline-block;
+        width: 100%;
+        display: none;
+
+        a {
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+            padding: 5px 0;
+
+            &:hover {
+                font-weight: 600;
+            }
+        }
+      }
+
+      &:hover .site-footer__langs-items {
+          display: block;
       }
     }
   }
