@@ -1,69 +1,96 @@
 .product-action {
-    display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border-radius: 5px;
+  background: #f4f4f6;
+  padding: 14px 20px;
+  flex-wrap: wrap;
+
+  &__info {
+    @include breakpoint(sm) {
+      display: flex;
+      justify-content: space-between;
+      align-content: center;
+      flex-wrap: wrap;
+    }
+
+    h4 {
+      font-size: 1em;
+      margin: 0;
+      width: 100%;
+
+      @include breakpoint(sm) {
+          margin-bottom: 10px;
+      }
+    }
+
+    p {
+      font-size: 0.875em;
+      margin: 0;
+      max-width: 90%;
+    }
+  }
+
+  &__duration,
+  &__price {
+    display: inline-flex;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    border-radius: 5px;
-    background: #f4f4f6;
-    padding: 14px 20px;
+    font-weight: 500;
 
-    &__info {
-        h4 {
-            font-size: 1em;
-            margin: 0;
-        }
+    &:before {
+      content: "";
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin-right: 10px;
+      display: block;
+    }
+  }
 
-        p {
-            font-size: 0.875em;
-            margin: 0;
-            max-width: 90%;
-        }
+  &__duration {
+    margin: 10px 20px 0 0;
+
+    &:before {
+      width: 13px;
+      height: 13px;
+      background-image: url("img/icons/clock.svg");
     }
 
-    &__duration,
-    &__price {
-        display: inline-flex;
-        align-items: center;
-        font-weight: 500;
+    @include breakpoint(sm) {
+        margin: 0;
+    }
+  }
 
-        &:before {
-            content: '';
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            margin-right: 10px;
-            display: block;
-        }
+  &__price {
+    margin-top: 10px;
+    color: $cyan;
+
+    strike {
+      display: inline-block;
+      color: $orange;
+      margin-left: 10px;
     }
 
-    &__duration {
-        margin: 10px 20px 0 0;
-
-        &:before {
-            width: 13px;
-            height: 13px;
-            background-image: url('img/icons/clock.svg');
-        }
+    &:before {
+      width: 12px;
+      height: 13px;
+      background-image: url("img/icons/price.svg");
     }
 
-    &__price {
-        margin-top: 10px;
-        color: $cyan;
-
-        strike {
-            display: inline-block;
-            color: $orange;
-            margin-left: 10px;
-        }
-
-        &:before {
-            width: 12px;
-            height: 13px;
-            background-image: url('img/icons/price.svg');
-        }
+    @include breakpoint(sm) {
+        margin: 0;
     }
+  }
 
-    button.cyan.transparent {
-        background-color: white;
+  button.cyan.transparent {
+    background-color: white;
+  }
+
+  button.product-action__order {
+    @include breakpoint(sm) {
+      padding: 4px 10px;
     }
+  }
 }

@@ -46,6 +46,12 @@ input[type="submit"] {
 			color: $cyan;
 			border: 1px solid $cyan;
 		}
+
+		&.white {
+			background: $white;
+			color: $cyan;
+			border: 1px solid $blue;
+		}
 	}
 
 	&.gray {

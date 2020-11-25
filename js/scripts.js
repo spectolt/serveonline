@@ -19,26 +19,28 @@ $(document).ready(function () {
   // })
 
   function getTextWidth(el) {
-      // uses a cached canvas if available
-      var canvas = getTextWidth.canvas || (getTextWidth.canvas = document.createElement("canvas"));
-      var context = canvas.getContext("2d");
-      // get the full font style property
-      var font = window.getComputedStyle(el, null).getPropertyValue('font');
-      var text = el.value;
-      // set the font attr for the canvas text
-      context.font = font;
-      var textMeasurement = context.measureText(text);
-      return textMeasurement.width;
+    // uses a cached canvas if available
+    var canvas =
+      getTextWidth.canvas ||
+      (getTextWidth.canvas = document.createElement("canvas"));
+    var context = canvas.getContext("2d");
+    // get the full font style property
+    var font = window.getComputedStyle(el, null).getPropertyValue("font");
+    var text = el.value;
+    // set the font attr for the canvas text
+    context.font = font;
+    var textMeasurement = context.measureText(text);
+    return textMeasurement.width;
+  }
+
+  function changeTextWidth() {
+    var inputs = document.getElementsByClassName("product__nav-input");
+    for (var i = 0; i < inputs.length; i++) {
+      var width = Math.floor(getTextWidth(inputs[i]));
+      var widthInPx = width + 3 + "px";
+      inputs[i].style.width = widthInPx;
     }
-    
-    function changeTextWidth() {
-      var inputs = document.getElementsByClassName('product__nav-input');
-      for (var i = 0; i < inputs.length; i++) {
-        var width = Math.floor(getTextWidth(inputs[i]));
-        var widthInPx = width + "px";
-        inputs[i].style.width = widthInPx;
-      }
-    }
+  }
 
   $(".product__nav-input")
     .datepicker({
@@ -63,7 +65,6 @@ $(document).ready(function () {
       ],
 
       onSelect: function () {
-        
         changeTextWidth();
 
         var getDate = $(".product__nav-input:first").val();
@@ -75,23 +76,21 @@ $(document).ready(function () {
     })
     .datepicker("setDate", "+0");
 
-    // function inputWidth() {
-    // var contents = $('.product__nav-input').val();
-    // var charlength = contents.length;
-    // newWidth = charlength;
-    // $('.product__nav-input').css({ width: newWidth + "ch" });
-    // }
+  // function inputWidth() {
+  // var contents = $('.product__nav-input').val();
+  // var charlength = contents.length;
+  // newWidth = charlength;
+  // $('.product__nav-input').css({ width: newWidth + "ch" });
+  // }
 
-    // inputWidth();
+  // inputWidth();
 
-    changeTextWidth();
-    
   $(".product__nav-button--next").on("click", function () {
     var date = $(".product__nav-input").datepicker("getDate");
     if (window.matchMedia("(max-width: 600px)").matches) {
       date.setDate(date.getDate() + 1);
     } else {
-    date.setDate(date.getDate() + 7);
+      date.setDate(date.getDate() + 7);
     }
     $(".product__nav-input").datepicker("setDate", date);
 
@@ -155,7 +154,7 @@ $(document).ready(function () {
       $(this).data("uiAutocomplete").search($(this).val());
     })
     .autocomplete("instance")._renderItem = function (ul, item) {
-    console.log(item);
+    //console.log(item);
     return $("<li>")
       .append(
         "<div class='autocomplete-product'><span class='autocomplete-product-title'>" +
@@ -164,6 +163,10 @@ $(document).ready(function () {
           item.about +
           "</span><span class='autocomplete-product-duration'>" +
           item.duration +
+          "</span><a class='button cyan white small autocomplete-product-order' href='" +
+          item.choose +
+          "'>" +
+          "Pasirinkti</a>" +
           "</div>"
       )
       .appendTo(ul);
@@ -171,7 +174,7 @@ $(document).ready(function () {
 
   // autocomplete results width fix
   jQuery.ui.autocomplete.prototype._resizeMenu = function () {
-    console.log(this.element.outerWidth());
+    //console.log(this.element.outerWidth());
     this.menu.element.css("width", this.element.outerWidth());
   };
 
@@ -232,15 +235,38 @@ $(document).ready(function () {
     $(".site-aside-container").addClass("site-aside-container--toggled");
   });
 
-  $(document).click(function(event) {
+  $(document).click(function (event) {
     //if you click on anything except the modal itself or the hamburger menu, close the modal
-    if (!$(event.target).closest(".site-aside,.site-header__hamburger").length) {
-      $("body").find(".site-aside-container").removeClass("site-aside-container--toggled");
+    if (
+      !$(event.target).closest(".site-aside,.site-header__hamburger").length
+    ) {
+      $("body")
+        .find(".site-aside-container")
+        .removeClass("site-aside-container--toggled");
     }
   });
 
+  var timer_id;
+  $(window).resize(function () {
+    clearTimeout(timer_id);
+    timer_id = setTimeout(function () {
+      moveAction();
+      moveOrder();
+      changeTextWidth();
+    }, 300);
+  });
+
   moveAction();
-  
+  moveOrder();
+  changeTextWidth();
+
+  $('.product__search').on("click", function () {
+    if ($("#ui-id-1").css("display") == "block") {
+      $(".product__search").removeClass("rotate");
+    } else if ($("#ui-id-1").css("display") == "none") {
+      $(".product__search").addClass("rotate");
+    }
+  });
 });
 
 function moveAction() {
@@ -251,31 +277,40 @@ function moveAction() {
         .next(".calendar-container");
       $(this).insertAfter(calendar);
     } else {
-      var initial = $(this).closest(".product__block-top").find(".product__block-distance");
+      var initial = $(this)
+        .closest(".product__block-top")
+        .find(".product__block-distance");
       $(this).insertAfter(initial);
     }
   });
 }
 
-function moveHeader() {
-  $(".site-header__menu--items").each(function () {
+function moveOrder() {
+  $(".product-action__order").each(function () {
     if (window.matchMedia("(max-width: 600px)").matches) {
-      var headerList = $(this).parent();
-      $(this).insertAfter(headerList);
+      var actionInfo = $(this).prev(".product-action__info");
+      console.log(actionInfo);
+      $(actionInfo).append($(this));
+    } else {
+      var initial = $(this).closest(".product-action__info");
+      $(this).insertAfter(initial);
     }
-    // else {
-    //   var initial = $(this).closest(".site-header__menu-main");
-    //   $(this).prepend(initial);
-    // }
   });
 }
 
+var rotateBtn = function (el) {
+  el.toggleClass("rotate");
+};
 
-
-
-$(window).resize(function() {
-  moveAction();
+$(".breadcrumbs__change").on("click", function () {
+  rotateBtn($(this));
 });
+
+// $('.product__search').on('click', function() {
+//   if ($('#ul-id-1').is(":visible")) {
+//     rotateBtn($('.product__search'));
+//   }
+// });
 
 $(window)
   .scroll(function () {
@@ -294,19 +329,19 @@ $(window)
   .scroll();
 
 $.fn.customCalendar = function () {
-  var date = moment("2020-01-01"),
+  var date = moment("2020-01-06"),
     data = [
-      "2020-01-01 10:00",
-      "2020-01-01 11:00",
-      "2020-01-01 12:00",
-      "2020-01-01 13:00",
-      "2020-01-01 16:00",
-      "2020-01-02 10:00",
-      "2020-01-03 10:00",
-      "2020-01-04 12:35",
-      "2020-01-04 11:35",
-      "2020-01-05 08:00",
-      "2020-01-05 09:00",
+      "2020-01-06 10:00",
+      "2020-01-06 11:00",
+      "2020-01-06 12:00",
+      "2020-01-06 13:00",
+      "2020-01-06 16:00",
+      "2020-01-07 10:00",
+      "2020-01-08 10:00",
+      "2020-01-09 12:35",
+      "2020-01-09 11:35",
+      "2020-01-10 08:00",
+      "2020-01-10 09:00",
     ],
     week = [],
     rows = 0;
@@ -411,5 +446,3 @@ setInterval(function () {
 //     $(this).insertAfter(calendar);
 //   });
 // };
-
-

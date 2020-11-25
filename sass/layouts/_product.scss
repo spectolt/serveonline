@@ -35,6 +35,10 @@ section.product {
       justify-content: space-between;
       width: 370px;
 
+      @include breakpoint (sm) {
+        width: 90%;
+      }
+
       &-button {
         background: transparent;
         padding: 0;
@@ -160,7 +164,11 @@ section.product {
         background-size: 100%;
         background-position: center;
         background-repeat: no-repeat;
-        background-image: url("img/icons/angle-down.svg");
+        background-image: url("img/icons/angle-down-bold.svg");
+      }
+
+      &.rotate:after {
+        transform: translateY(-50%) scaleY(-1);
       }
 
       input {
@@ -243,8 +251,13 @@ section.product {
         margin-right: 20px;
 
         @include breakpoint(sm) {
-          width: 160px;
-          height: 160px;
+          //max-width: 100%;
+          //height: auto;
+          // max-height: 160px;
+          // max-width: 160px;
+          width: 35%;
+          height: 0;
+          padding-bottom: 35%;
         }
 
         &--rectangle {
@@ -351,6 +364,10 @@ section.product {
         margin-left: 20px;
         padding-left: 40px;
 
+        @include breakpoint(sm) {
+          //margin-left: 0px;
+        }
+
         &-status {
           position: absolute;
           left: 0;
@@ -362,12 +379,13 @@ section.product {
           height: 32px;
           border-radius: 50%;
           border: 1px solid $red;
+          background-color: $white;
 
           &:before {
             content: "";
             width: 15.4px;
             height: 13.4px;
-            background-size: cover;
+            background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
             background-image: url("img/icons/heart.svg");
@@ -392,7 +410,7 @@ section.product {
           transform: translateY(-50%);
           width: 15.5px;
           height: 13.37px;
-          background-size: cover;
+          background-size: contain;
           background-position: center;
           background-repeat: no-repeat;
           background-image: url("img/icons/unheart-gray.svg");

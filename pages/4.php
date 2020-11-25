@@ -1,7 +1,7 @@
 <?php require_once('header-without-about.php'); ?>
 
 <?php 
-    $pfp = array('https://randomuser.me/api/portraits/women/90.jpg', 'https://randomuser.me/api/portraits/men/60.jpg', 'https://randomuser.me/api/portraits/women/60.jpg', 'https://randomuser.me/api/portraits/women/23.jpg', 'https://randomuser.me/api/portraits/men/18.jpg');
+    $pfp = array('../img/1.jpg', '../img/2.jpg', '../img/3.jpg', '../img/4.jpg', '../img/5.jpg');
 ?>
 
 <?php
@@ -22,7 +22,7 @@
                 <ul>
                     <?php for($y=0;$y<6;$y++) { ?>
                         <li <?php if($y===2) {?> style="display:none" <?php } ?>>
-                    <div class="area-img" style="background-color: <?php echo "$colors[$y]" ?>">
+                    <div class="breadcrumbs__area-img" style="background-color: <?php echo "$colors[$y]" ?>">
                             <img src=<?php echo "$icons[$y]" ?>>
                             </div>
                             <?php echo $areas[$y] ?></li>
