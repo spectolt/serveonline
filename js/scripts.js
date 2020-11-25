@@ -328,6 +328,13 @@ $(window)
   })
   .scroll();
 
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 100) {
+      $('.breadcrumbs__more').removeClass('breadcrumbs__more--toggled');
+      $('.breadcrumbs__more').closest('.page-content').find('.breadcrumbs__change').removeClass('rotate');
+    }
+  });
+
 $.fn.customCalendar = function () {
   var date = moment("2020-01-06"),
     data = [

@@ -39,6 +39,10 @@
     align-items: center;
     font-weight: 500;
 
+    @include breakpoint(xs) {
+      font-size: 0.875rem;
+    }
+
     &:before {
       content: "";
       background-size: cover;

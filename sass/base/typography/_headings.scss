@@ -31,11 +31,27 @@ h2 {
 	&.title {
 		margin: 0 0 20px 0;
 	}
+
+	@include breakpoint(xs) {
+		font-size: 1.25rem;
+	}
 }
 
 h3 {
 
 	&.title {
 		margin: 0 0 20px 0;
+	}
+
+	@include breakpoint(xs) {
+		font-size: .875rem;
+	}
+}
+
+.paragraph, p {
+	font-size: 1rem;
+
+	@include breakpoint(xs) {
+		font-size: .75rem;
 	}
 }

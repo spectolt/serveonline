@@ -22,9 +22,9 @@
         <button class="site-header__hamburger"></button>
         <img src="../img/logo.svg" class="site-header__logo" />
         <ul class="site-header__menu site-header__menu--items">
-            <li class="site-header__item site-header__item--active"><a href="#">Specialistai</a></li>
-            <li class="site-header__item"><a href="#">Įstaigos</a></li>
-            <li class="site-header__item"><a href="#">Prisijungti</a></li>
+            <li class="site-header__item site-header__item--active paragraph"><a href="#">Specialistai</a></li>
+            <li class="site-header__item paragraph"><a href="#">Įstaigos</a></li>
+            <li class="site-header__item paragraph"><a href="#">Prisijungti</a></li>
         </ul>
         <ul class="site-header__menu site-header__menu--main">
         

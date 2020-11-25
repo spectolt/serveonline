@@ -83,10 +83,13 @@ section.product {
       }
 
       &-icon {
+        position: relative;
+        top: 2px;
+
         &:before {
           content: "";
-          width: 24px;
-          height: 22px;
+          width: 28px;
+          height: 30px;
           background-size: 100%;
           background-position: center bottom;
           background-repeat: no-repeat;
@@ -97,6 +100,12 @@ section.product {
 
           @include breakpoint(sm) {
             margin-right: 10px;
+            height: 28px;
+          }
+
+          @include breakpoint(sm) {
+            margin-right: 4px;
+            height: 18px;
           }
         }
 
@@ -137,9 +146,10 @@ section.product {
 
         .product__nav-icon {
           &:before {
-            height: 14px;
-            width: 15px;
+            height: 18px;
+            width: 18px;
             margin-right: 7px;
+            top: 0;
           }
         }
       }
@@ -147,6 +157,10 @@ section.product {
 
     &__search {
       margin-bottom: 40px;
+
+      @include breakpoint(xs) {
+        margin-bottom: 15px;
+      }
 
       &:before {
         left: 30px;
@@ -175,6 +189,10 @@ section.product {
         padding-left: 80px;
         padding-right: 80px;
         border-width: 2px;
+
+        @include breakpoint (xs) {
+          font-size: .875rem;
+        }
       }
     }
 
@@ -272,6 +290,11 @@ section.product {
         line-height: 28px;
         // width: 23.5%;
 
+        @include breakpoint(xs) {
+          font-size: 0.875rem;
+          line-height: 1.5;
+        }
+
         h2 {
           font-weight: 600;
           line-height: 30px;
@@ -282,6 +305,10 @@ section.product {
         span {
           display: block;
           margin-bottom: 10px;
+
+          @include breakpoint (xs) {
+            margin-bottom: 0;
+          }
         }
 
         p {
@@ -298,6 +325,10 @@ section.product {
 
           @include breakpoint(sm) {
             margin: 20px auto;
+          }
+
+          @include breakpoint(xs) {
+            margin: 10px auto 0;
           }
         }
       }

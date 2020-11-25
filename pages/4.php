@@ -14,8 +14,7 @@
     <?php require_once('product-sidebar.php'); ?>
     <div class="page-content">        
         <section class="breadcrumbs">
-            <button class="breadcrumbs__change">Grožio salonai</button>
-            <!-- <span class="breadcrumbs__location">GROŽIO SALONAI</span> -->
+            <button class="breadcrumbs__change paragraph">Grožio salonai</button>
             <button class="breadcrumbs__cart"><span>2</span></button>
         </section>
         <div class="breadcrumbs__more">

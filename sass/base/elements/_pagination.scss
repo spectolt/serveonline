@@ -45,6 +45,10 @@
                     height: 12px;
                     transform: scale(-1, 1);
                 }
+
+                @include breakpoint(xs) {
+                    margin-left: 0;
+                }
             }
 
             &--prev {
@@ -72,12 +76,19 @@
                     height: 12px;
                     
                 }
+                @include breakpoint(xs) {
+                    margin-right: 0;
+                }
             }
         }
 
         &__info {
             margin-left: auto;
             position: relative;
+
+            @include breakpoint(xs) {
+                font-size: .875rem;
+            }
 
             &:after {
                 content: "";
