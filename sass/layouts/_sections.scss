@@ -412,6 +412,7 @@ section {
     border-top: 1px solid $blue;
     padding: 20px 0;
     transition: margin-top .2s ease-in-out, opacity .2s ease-in-out;
+    display: none;
     
     ul {
         display: flex;
@@ -467,6 +468,7 @@ section {
 
     &--toggled {
         margin-top: 0;
+        display: block;
         opacity: 1;
 
         @include breakpoint(sm) {

@@ -6636,6 +6636,7 @@ section.venue-info .product-action:last-child {
   padding: 20px 0;
   -webkit-transition: margin-top .2s ease-in-out, opacity .2s ease-in-out;
   transition: margin-top .2s ease-in-out, opacity .2s ease-in-out;
+  display: none;
 }
 
 .breadcrumbs__more ul {
@@ -6708,6 +6709,7 @@ section.venue-info .product-action:last-child {
 
 .breadcrumbs__more--toggled {
   margin-top: 0;
+  display: block;
   opacity: 1;
 }
 
