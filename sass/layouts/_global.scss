@@ -38,6 +38,10 @@ body {
   opacity: 0;
   z-index: 3;
 
+  @include breakpoint(xs) {
+    padding: 0 20px;
+  }
+
   &.site-header--show {
     transform: translateY(0);
     transition: transform 100ms 100ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -61,6 +65,11 @@ body {
         display: inline-block;
         background-image: url("img/icons/search.svg");
         background-size: contain;
+
+        @include breakpoint(xs) {
+          width: 20px;
+          height: 20px;
+        }
       }
 
       @include breakpoint(xl) {
@@ -70,6 +79,10 @@ body {
 
       @include breakpoint(sm) {
         display: block;
+      }
+
+      @include breakpoint(xs) {
+        margin-right: 0;
       }
     }
 
@@ -81,7 +94,7 @@ body {
       margin-right: auto;
 
       @include breakpoint(xs) {
-        margin: 20px auto 10px auto;
+        margin: 20px auto;
         height: 23px;
       }
     }
@@ -115,13 +128,13 @@ body {
 
         @include breakpoint(sm) {
           margin: 0 auto;
-          padding: 10px 0;
+          padding: 20px 0 10px;
           align-items: center;
           justify-content: center;
           order: 1;
 
           li a {
-            padding: 10px 0;
+            padding: 7px 0;
           }
         }
       }
@@ -353,7 +366,7 @@ body {
       }
 
       @include breakpoint(xs) {
-        margin-top: 17px;
+        margin-top: 37px;
       }
 
       // height: 100%;
@@ -369,9 +382,9 @@ body {
       }
 
       .site-footer {
-        &__menu {
-          margin: 0;
-        }
+        // &__menu {
+        //   margin: 0;
+        // }
       }
     }
   }
@@ -390,7 +403,7 @@ body {
   }
 
   @include breakpoint(xs) {
-    padding-top: 20px;
+    padding-top: 30px;
   }
 
   .site-footer {
@@ -401,15 +414,24 @@ body {
       // margin: 20px 0;
 
       @include breakpoint(sm) {
-        margin: 0 0 10px;
+        margin: 0 0 20px;
       }
 
       @include breakpoint(xs) {
-        height: 20px;
+        height: 35px;
       }
     }
 
     &__menu {
+      margin: 0;
+
+      @include breakpoint(xs) {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+      }
+
       a {
         position: relative;
         text-decoration: underline;
@@ -458,11 +480,15 @@ body {
         }
       }
 
-      @include breakpoint(sm) {
+      @include breakpoint(xs) {
         display: block;
-        margin: 0 auto;
+        margin: 0 5px;
         padding: 10px 0;
         text-align: center;
+
+        &:last-of-type {
+          margin-right: 0;
+      }
       }
 
       &--active {
@@ -481,7 +507,7 @@ body {
     //   flex-direction: column;
 
     @include breakpoint(sm) {
-      margin: 10px 0;
+      margin: 20px 0 10px;
     }
 
       button {
@@ -507,34 +533,39 @@ body {
           display: block;
           background-image: url("img/icons/gaublys-2.svg");
           fill: $darkblue;
-          margin-right: 5px;
+          margin-right: 10px;
         }
 
-        &:after {
-          content: "";
-          width: 14px;
-          height: 16px;
-          background-size: 100%;
-          background-position: center;
-          background-repeat: no-repeat;
-          display: block;
-          background-image: url("img/icons/angle-down-thin.svg");
-          margin-left: 5px;
-        }
+        // &:after {
+        //   content: "";
+        //   width: 14px;
+        //   height: 16px;
+        //   background-size: 100%;
+        //   background-position: center;
+        //   background-repeat: no-repeat;
+        //   display: block;
+        //   background-image: url("img/icons/angle-down-thin.svg");
+        //   margin-left: 5px;
+        // }
       }
 
       &-items {
         font-size: 0.75em;
         position: absolute;
         //display: inline-block;
-        width: 100%;
+        width: calc(100% - 30px);
         display: none;
+        right: 0;
 
         a {
             display: block;
-            margin: 0 auto;
-            text-align: center;
-            padding: 5px 0;
+            //margin: 0 auto;
+            text-align: right;
+            margin-bottom: 5px;
+
+            @include breakpoint(xs) {
+              text-align: center;
+            }
 
             &:hover {
                 font-weight: 600;

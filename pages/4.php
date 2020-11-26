@@ -24,7 +24,7 @@
                     <div class="breadcrumbs__area-img" style="background-color: <?php echo "$colors[$y]" ?>">
                             <img src=<?php echo "$icons[$y]" ?>>
                             </div>
-                            <?php echo $areas[$y] ?></li>
+                            <p><?php echo $areas[$y] ?></p></li>
                     <?php } ?>
                 </ul>
             </div>

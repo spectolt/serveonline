@@ -116,8 +116,9 @@ table.calendar {
             background: $orange;
         }
 
-        @include breakpoint(sm) {
+        @include breakpoint(xs) {
             width: 64px;
+            font-weight: 600;
         }
     }
 

@@ -87,7 +87,7 @@ $(document).ready(function () {
 
   $(".product__nav-button--next").on("click", function () {
     var date = $(".product__nav-input").datepicker("getDate");
-    if (window.matchMedia("(max-width: 600px)").matches) {
+    if (window.matchMedia("(max-width: 480px)").matches) {
       date.setDate(date.getDate() + 1);
     } else {
       date.setDate(date.getDate() + 7);
@@ -99,7 +99,7 @@ $(document).ready(function () {
 
   $(".product__nav-button--prev").on("click", function () {
     var date = $(".product__nav-input").datepicker("getDate");
-    if (window.matchMedia("(max-width: 600px)").matches) {
+    if (window.matchMedia("(max-width: 480px)").matches) {
       date.setDate(date.getDate() - 1);
     } else {
       date.setDate(date.getDate() - 7);
@@ -130,6 +130,15 @@ $(document).ready(function () {
             response(data);
           },
         });
+      },
+      select: function (event, ui) {
+        $("input#search").attr("rel", ui.item.label);
+      },
+      open: function () {
+        $("input#search").attr("rel", 0);
+      },
+      close: function () {
+        if ($("input#search").attr("rel") == "0") $("input#search").val("");
       },
       // focus: function (event, ui) {
       //     // $("#project").val(ui.item.label);
@@ -260,7 +269,7 @@ $(document).ready(function () {
   moveOrder();
   changeTextWidth();
 
-  $('.product__search').on("click", function () {
+  $(".product__search").on("click", function () {
     if ($("#ui-id-1").css("display") == "block") {
       $(".product__search").removeClass("rotate");
     } else if ($("#ui-id-1").css("display") == "none") {
@@ -271,7 +280,7 @@ $(document).ready(function () {
 
 function moveAction() {
   $(".product__block-info-actions").each(function () {
-    if (window.matchMedia("(max-width: 600px)").matches) {
+    if (window.matchMedia("(max-width: 480px)").matches) {
       var calendar = $(this)
         .closest(".product__block-person")
         .next(".calendar-container");
@@ -287,7 +296,7 @@ function moveAction() {
 
 function moveOrder() {
   $(".product-action__order").each(function () {
-    if (window.matchMedia("(max-width: 600px)").matches) {
+    if (window.matchMedia("(max-width: 480px)").matches) {
       var actionInfo = $(this).prev(".product-action__info");
       console.log(actionInfo);
       $(actionInfo).append($(this));
@@ -328,12 +337,23 @@ $(window)
   })
   .scroll();
 
-  $(window).scroll(function() {
-    if ($(this).scrollTop() > 100) {
-      $('.breadcrumbs__more').removeClass('breadcrumbs__more--toggled');
-      $('.breadcrumbs__more').closest('.page-content').find('.breadcrumbs__change').removeClass('rotate');
-    }
-  });
+$(window).scroll(function () {
+  var autocompleteHeight = $(".ui-autocomplete").height();
+  var autocompleteOffsetTop = $(".ui-autocomplete").offset().top;
+
+  if ($(this).scrollTop() > (autocompleteHeight + autocompleteOffsetTop)) {
+    $("input#search").blur();
+    $(".ui-autocomplete").hide();
+  }
+
+  if ($(this).scrollTop() > 300) {
+    $(".breadcrumbs__more").removeClass("breadcrumbs__more--toggled");
+    $(".breadcrumbs__more")
+      .closest(".page-content")
+      .find(".breadcrumbs__change")
+      .removeClass("rotate");
+  }
+});
 
 $.fn.customCalendar = function () {
   var date = moment("2020-01-06"),

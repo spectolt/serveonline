@@ -164,6 +164,10 @@ section.product {
 
       &:before {
         left: 30px;
+
+        @include breakpoint(xs) {
+          left: 20px;
+        }
       }
 
       &:after {
@@ -179,6 +183,10 @@ section.product {
         background-position: center;
         background-repeat: no-repeat;
         background-image: url("img/icons/angle-down-bold.svg");
+
+        @include breakpoint(xs) {
+          right: 20px;
+        }
       }
 
       &.rotate:after {
@@ -189,9 +197,22 @@ section.product {
         padding-left: 80px;
         padding-right: 80px;
         border-width: 2px;
+        font-size: 1.5rem;
 
         @include breakpoint (xs) {
+          border-width: 1px;
           font-size: .875rem;
+          padding-left: 60px;
+          padding-right: 40px;
+        }
+
+        &::-webkit-input-placeholder {
+          font-size: 1.125rem;
+          vertical-align: center;
+
+          @include breakpoint(xs) {
+            font-size: .875rem;
+          }
         }
       }
     }
