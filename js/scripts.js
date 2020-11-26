@@ -152,9 +152,11 @@ $(document).ready(function () {
       },
       open: function () {
         $("input#search").attr("rel", 0);
+        $(".product__search").addClass("rotate");
       },
       close: function () {
         if ($("input#search").attr("rel") == "0") $("input#search").val("");
+        $(".product__search").removeClass("rotate");
       },
       // focus: function (event, ui) {
       //     // $("#project").val(ui.item.label);
@@ -287,13 +289,13 @@ $(document).ready(function () {
   changeTextWidth();
   changePadding();
 
-  $(".product__search").on("click", function () {
-    if ($("#ui-id-1").css("display") == "block") {
-      $(".product__search").removeClass("rotate");
-    } else if ($("#ui-id-1").css("display") == "none") {
-      $(".product__search").addClass("rotate");
-    }
-  });
+  // $(".product__search").on("click", function () {
+  //   if ($("#ui-id-1").css("display") == "block") {
+  //     $(".product__search").removeClass("rotate");
+  //   } else if ($("#ui-id-1").css("display") == "none") {
+  //     $(".product__search").addClass("rotate");
+  //   }
+  // });
 });
 
 function changePadding() {
@@ -307,6 +309,7 @@ function changePadding() {
     $('.calendar td').css('padding-right', timePadding);
   } else {
     $('.calendar td').css('padding-right', 10);
+    $('.calendar td:last-of-type').css('padding-right', 0);
   }
 }
 
