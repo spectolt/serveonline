@@ -226,12 +226,11 @@ body {
         left: 0;
         height: 100%;
         color: $darkwashedblue;
-        width: 300px;
-        
+        width: 300px;    
         background-color: $white;
 
         @include breakpoint(sm) {
-            width: 60%;
+            width: 75%;
           }
 
         &__blocks {
@@ -404,6 +403,7 @@ body {
 
   @include breakpoint(xs) {
     padding-top: 30px;
+    padding-bottom: 50px;
   }
 
   .site-footer {
@@ -519,7 +519,7 @@ body {
         align-items: center;
         justify-content: center;
         padding: 0;
-        margin-bottom: 5px;
+        //margin: 8px 0;
         font-family: 'Roboto', sans-serif;
 
         &:before {
@@ -561,7 +561,8 @@ body {
             display: block;
             //margin: 0 auto;
             text-align: right;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
+            transition: font-weight .2s ease-in-out;
 
             @include breakpoint(xs) {
               text-align: center;
@@ -569,6 +570,10 @@ body {
 
             &:hover {
                 font-weight: 600;
+            }
+
+            &:first-of-type {
+              margin-top: 5px;
             }
         }
       }

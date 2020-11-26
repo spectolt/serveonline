@@ -80,11 +80,17 @@ section.product {
         @include breakpoint(xs) {
           font-size: 1.125rem;
         }
+
+        &:focus {
+          color: $darkblue;
+        }
       }
 
       &-icon {
         position: relative;
         top: 2px;
+        padding: 0;
+        background: transparent;
 
         &:before {
           content: "";
@@ -97,6 +103,7 @@ section.product {
           background-image: url("img/icons/calendar.svg");
           margin-right: 12px;
           background-size: contain;
+          cursor: pointer;
 
           @include breakpoint(sm) {
             margin-right: 10px;
@@ -349,7 +356,7 @@ section.product {
           }
 
           @include breakpoint(xs) {
-            margin: 10px auto 0;
+            margin: 20px auto 0;
           }
         }
       }

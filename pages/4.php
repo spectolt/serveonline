@@ -35,8 +35,8 @@
                     <div class="product__nav">
                         <button class="product__nav-button product__nav-button--prev"></button>
                         <div>
-                            <span class="product__nav-icon"></span>
-                            <input type="text" name="date" class="product__nav-input" readonly/>
+                            <button class="product__nav-icon"></button>
+                            <input type="text" name="date" class="product__nav-input js-datepicker" readonly/>
                             <span id="value"></span>
                         </div>
                         <button class="product__nav-button product__nav-button--next"></button>

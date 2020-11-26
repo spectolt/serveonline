@@ -5725,7 +5725,7 @@ body {
 
 @media (max-width: 480px) {
   .site-main--aside .site-aside-container .site-aside {
-    width: 60%;
+    width: 75%;
   }
 }
 
@@ -5926,6 +5926,7 @@ body {
 @media (max-width: 480px) {
   .site-footer {
     padding-top: 30px;
+    padding-bottom: 50px;
   }
 }
 
@@ -6055,7 +6056,6 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 0;
-  margin-bottom: 5px;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -6084,7 +6084,9 @@ body {
 .site-footer .site-footer__langs-items a {
   display: block;
   text-align: right;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  -webkit-transition: font-weight .2s ease-in-out;
+  transition: font-weight .2s ease-in-out;
 }
 
 @media (max-width: 480px) {
@@ -6095,6 +6097,10 @@ body {
 
 .site-footer .site-footer__langs-items a:hover {
   font-weight: 600;
+}
+
+.site-footer .site-footer__langs-items a:first-of-type {
+  margin-top: 5px;
 }
 
 .site-footer .site-footer__langs:hover .site-footer__langs-items {
@@ -6890,9 +6896,15 @@ section.product .product__nav-input {
   }
 }
 
+section.product .product__nav-input:focus {
+  color: #101b51;
+}
+
 section.product .product__nav-icon {
   position: relative;
   top: 2px;
+  padding: 0;
+  background: transparent;
 }
 
 section.product .product__nav-icon:before {
@@ -6906,6 +6918,7 @@ section.product .product__nav-icon:before {
   background-image: url("img/icons/calendar.svg");
   margin-right: 12px;
   background-size: contain;
+  cursor: pointer;
 }
 
 @media (max-width: 480px) {
@@ -7169,7 +7182,7 @@ section.product .product__block-info-actions {
 
 @media (max-width: 480px) {
   section.product .product__block-info-actions {
-    margin: 10px auto 0;
+    margin: 20px auto 0;
   }
 }
 

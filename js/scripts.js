@@ -25,7 +25,17 @@ $(document).ready(function () {
       (getTextWidth.canvas = document.createElement("canvas"));
     var context = canvas.getContext("2d");
     // get the full font style property
-    var font = window.getComputedStyle(el, null).getPropertyValue("font");
+    let style = window.getComputedStyle(el, null);
+    let font = style.getPropertyValue('font');
+    // var font = window.getComputedStyle(el, null).getPropertyValue("font");
+    const fontStyle = style.getPropertyValue('font-style');
+      const fontVariant = style.getPropertyValue('font-variant');
+      const fontWeight = style.getPropertyValue('font-weight');
+      const fontSize = style.getPropertyValue('font-size');
+      const fontFamily = style.getPropertyValue('font-family');
+
+      font = (fontStyle + ' ' + fontVariant + ' ' + fontWeight + ' ' + fontSize + ' ' + fontFamily)
+        .replace(/ +/g, ' ').trim();
     var text = el.value;
     // set the font attr for the canvas text
     context.font = font;
@@ -45,6 +55,8 @@ $(document).ready(function () {
   $(".product__nav-input")
     .datepicker({
       showButtonPanel: true,
+      //showOn: "button",
+      buttonImage: "../img/icons/calendar.svg",
       buttonText: "Pasirinkti",
       minDate: "+0",
       defaultDate: "+1",
@@ -75,6 +87,10 @@ $(document).ready(function () {
       },
     })
     .datepicker("setDate", "+0");
+
+    $(".product__nav-icon").click(function() {
+      $(this).next(".product__nav-input").datepicker( "show" )
+    });
 
   // function inputWidth() {
   // var contents = $('.product__nav-input').val();
@@ -262,12 +278,14 @@ $(document).ready(function () {
       moveAction();
       moveOrder();
       changeTextWidth();
-    }, 300);
+      changePadding();
+    }, 100);
   });
 
   moveAction();
   moveOrder();
   changeTextWidth();
+  changePadding();
 
   $(".product__search").on("click", function () {
     if ($("#ui-id-1").css("display") == "block") {
@@ -277,6 +295,20 @@ $(document).ready(function () {
     }
   });
 });
+
+function changePadding() {
+  var windowWidth = $(window).width();
+  var timeWidth = $('.calendar td').width();
+  var margin = ($('div.page-content__wrapper').innerWidth() - $('div.page-content__wrapper').width()) / 2;
+  //var timePadding = $('td').css('padding-right');
+
+  if (window.matchMedia("(max-width: 480px)").matches) {
+    var timePadding = (windowWidth - (4.5 * timeWidth) - margin) / 4;
+    $('.calendar td').css('padding-right', timePadding);
+  } else {
+    $('.calendar td').css('padding-right', 10);
+  }
+}
 
 function moveAction() {
   $(".product__block-info-actions").each(function () {
@@ -298,7 +330,6 @@ function moveOrder() {
   $(".product-action__order").each(function () {
     if (window.matchMedia("(max-width: 480px)").matches) {
       var actionInfo = $(this).prev(".product-action__info");
-      console.log(actionInfo);
       $(actionInfo).append($(this));
     } else {
       var initial = $(this).closest(".product-action__info");
