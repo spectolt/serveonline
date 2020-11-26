@@ -5826,6 +5826,9 @@ body {
       -ms-flex: 1;
           flex: 1;
   margin-left: 300px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .site-main--aside .page-content__wrapper {
@@ -5852,7 +5855,7 @@ body {
 
 @media (max-width: 1180px) {
   .site-main--aside .page-content__wrapper {
-    margin: 60px auto 0 auto;
+    margin: 60px 30px 0 30px;
   }
 }
 
