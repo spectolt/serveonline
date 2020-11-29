@@ -54,11 +54,29 @@ $(document).ready(function () {
     return textMeasurement.width;
   }
 
+  $.datepicker._gotoToday = function (id) {
+    var inst = this._getInst($(id)[0]);
+
+    var date = new Date();
+    this._selectDay(
+      id,
+      date.getMonth(),
+      date.getFullYear(),
+      inst.dpDiv.find("td.ui-datepicker-today")
+    );
+    changeTextWidth();
+  };
+
+  var eventDates = {};
+  eventDates[new Date("12/12/2020")] = new Date("12/12/2020");
+  eventDates[new Date("01/01/2021")] = new Date("01/01/2021");
+  eventDates[new Date("01/13/2021")] = new Date("01/13/2021");
+
   $(".product__nav-input")
     .datepicker({
       showButtonPanel: true,
+      orientation: "bottom",
       buttonText: "Pasirinkti",
-      autoClose: false,
       minDate: "+0",
       defaultDate: "+1",
       dateFormat: "yy M dd",
@@ -85,6 +103,25 @@ $(document).ready(function () {
         $(".product__nav-input").datepicker("setDate", getDate);
         $(this).datepicker("setDate", getDate2);
         $(this).blur();
+      },
+      beforeShowDay: function (date) {
+        var highlight = eventDates[date];
+        if (highlight) {
+          return [true, "ui-datepicker-highlight", ""];
+        } else {
+          return [true, "", ""];
+        }
+      },
+      beforeShow: function () {
+        var position = $(this).closest(".product__nav");
+
+        window.setTimeout(function () {
+          $("#ui-datepicker-div").position({
+            my: "left top",
+            at: "left bottom",
+            of: position,
+          });
+        }, 1);
       },
     })
     .datepicker("setDate", "+0");
@@ -191,42 +228,26 @@ $(document).ready(function () {
       }
       //li = that._renderItemData(ul, item);
       if (item.category) {
-        return $("<li>").append(
-          "<div class='autocomplete-product'><span class='autocomplete-product-title'>" +
-            item.title +
-            "<a class='autocomplete-product-link' href='" +
-            item.link +
-            "'> Plačiau" +
-            "</a></span><span class='autocomplete-product-desc paragraph'>" +
-            item.about +
-            "</span><span class='autocomplete-product-duration'>" +
-            item.duration +
-            "</span><a class='button cyan white small autocomplete-product-order' href='" +
-            item.choose +
-            "'>" +
-            "Pasirinkti</a>" +
-            "</div>"
-        ).appendTo(ul);
+        return $("<li>")
+          .append(
+            "<div class='autocomplete-product'><span class='autocomplete-product-title'>" +
+              item.title +
+              "<a class='autocomplete-product-link' href='" +
+              item.link +
+              "'> Plačiau" +
+              "</a></span><span class='autocomplete-product-desc paragraph'>" +
+              item.about +
+              "</span><span class='autocomplete-product-duration'>" +
+              item.duration +
+              "</span><a class='button cyan white small autocomplete-product-order' href='" +
+              item.choose +
+              "'>" +
+              "Pasirinkti</a>" +
+              "</div>"
+          )
+          .appendTo(ul);
       }
     });
-    // return $("<li>")
-    //   .append(
-    //     "<div class='autocomplete-product'><span class='autocomplete-product-title'>" +
-    //       item.title +
-    //       "<a class='autocomplete-product-link' href='" +
-    //       item.link +
-    //       "'> Plačiau" +
-    //       "</a></span><span class='autocomplete-product-desc paragraph'>" +
-    //       item.about +
-    //       "</span><span class='autocomplete-product-duration'>" +
-    //       item.duration +
-    //       "</span><a class='button cyan white small autocomplete-product-order' href='" +
-    //       item.choose +
-    //       "'>" +
-    //       "Pasirinkti</a>" +
-    //       "</div>"
-    //   )
-    //   .appendTo(ul);
   };
 
   // autocomplete results width fix
