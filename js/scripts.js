@@ -26,16 +26,27 @@ $(document).ready(function () {
     var context = canvas.getContext("2d");
     // get the full font style property
     let style = window.getComputedStyle(el, null);
-    let font = style.getPropertyValue('font');
+    let font = style.getPropertyValue("font");
     // var font = window.getComputedStyle(el, null).getPropertyValue("font");
-    const fontStyle = style.getPropertyValue('font-style');
-      const fontVariant = style.getPropertyValue('font-variant');
-      const fontWeight = style.getPropertyValue('font-weight');
-      const fontSize = style.getPropertyValue('font-size');
-      const fontFamily = style.getPropertyValue('font-family');
+    const fontStyle = style.getPropertyValue("font-style");
+    const fontVariant = style.getPropertyValue("font-variant");
+    const fontWeight = style.getPropertyValue("font-weight");
+    const fontSize = style.getPropertyValue("font-size");
+    const fontFamily = style.getPropertyValue("font-family");
 
-      font = (fontStyle + ' ' + fontVariant + ' ' + fontWeight + ' ' + fontSize + ' ' + fontFamily)
-        .replace(/ +/g, ' ').trim();
+    font = (
+      fontStyle +
+      " " +
+      fontVariant +
+      " " +
+      fontWeight +
+      " " +
+      fontSize +
+      " " +
+      fontFamily
+    )
+      .replace(/ +/g, " ")
+      .trim();
     var text = el.value;
     // set the font attr for the canvas text
     context.font = font;
@@ -43,21 +54,11 @@ $(document).ready(function () {
     return textMeasurement.width;
   }
 
-  function changeTextWidth() {
-    var inputs = document.getElementsByClassName("product__nav-input");
-    for (var i = 0; i < inputs.length; i++) {
-      var width = Math.floor(getTextWidth(inputs[i]));
-      var widthInPx = width + 3 + "px";
-      inputs[i].style.width = widthInPx;
-    }
-  }
-
   $(".product__nav-input")
     .datepicker({
       showButtonPanel: true,
-      //showOn: "button",
-      buttonImage: "../img/icons/calendar.svg",
       buttonText: "Pasirinkti",
+      autoClose: false,
       minDate: "+0",
       defaultDate: "+1",
       dateFormat: "yy M dd",
@@ -88,18 +89,9 @@ $(document).ready(function () {
     })
     .datepicker("setDate", "+0");
 
-    $(".product__nav-icon").click(function() {
-      $(this).next(".product__nav-input").datepicker( "show" )
-    });
-
-  // function inputWidth() {
-  // var contents = $('.product__nav-input').val();
-  // var charlength = contents.length;
-  // newWidth = charlength;
-  // $('.product__nav-input').css({ width: newWidth + "ch" });
-  // }
-
-  // inputWidth();
+  $(".product__nav-icon").click(function () {
+    $(this).next(".product__nav-input").datepicker("show");
+  });
 
   $(".product__nav-button--next").on("click", function () {
     var date = $(".product__nav-input").datepicker("getDate");
@@ -125,18 +117,23 @@ $(document).ready(function () {
     changeTextWidth();
   });
 
-  //   $(".product__nav-current").click(function () {
-  //     $(".product__nav-input").datepicker("show");
-  //   });
-  // $(".product__nav-input").datepicker('show');
   $("body").customCalendar();
+
+  function changeTextWidth() {
+    var inputs = document.getElementsByClassName("product__nav-input");
+    for (var i = 0; i < inputs.length; i++) {
+      var width = Math.floor(getTextWidth(inputs[i]));
+      var widthInPx = width + 5 + "px";
+      inputs[i].style.width = widthInPx;
+    }
+  }
 
   $("#search")
     .autocomplete({
       minLength: 0,
       source: function (request, response) {
         $.ajax({
-          url: "https://api.mocki.io/v1/8ae023cd",
+          url: "https://5fc0bc01cb4d020016fe5d12.mockapi.io/products",
           // dataType: "jsonp",
           // data: {
           //     term: request.term
@@ -152,11 +149,11 @@ $(document).ready(function () {
       },
       open: function () {
         $("input#search").attr("rel", 0);
-        $(".product__search").addClass("rotate");
+        $(".product__search-arrow").addClass("rotate");
       },
       close: function () {
         if ($("input#search").attr("rel") == "0") $("input#search").val("");
-        $(".product__search").removeClass("rotate");
+        $(".product__search-arrow").removeClass("rotate");
       },
       // focus: function (event, ui) {
       //     // $("#project").val(ui.item.label);
@@ -180,23 +177,56 @@ $(document).ready(function () {
       // As noted by Jonny in his answer, with newer versions use uiAutocomplete
       $(this).data("uiAutocomplete").search($(this).val());
     })
-    .autocomplete("instance")._renderItem = function (ul, item) {
-    //console.log(item);
-    return $("<li>")
-      .append(
-        "<div class='autocomplete-product'><span class='autocomplete-product-title'>" +
-          item.title +
-          "</span><span class='autocomplete-product-desc'>" +
-          item.about +
-          "</span><span class='autocomplete-product-duration'>" +
-          item.duration +
-          "</span><a class='button cyan white small autocomplete-product-order' href='" +
-          item.choose +
-          "'>" +
-          "Pasirinkti</a>" +
-          "</div>"
-      )
-      .appendTo(ul);
+    .autocomplete("instance")._renderMenu = function (ul, items) {
+    var that = this;
+    var currentCategory = "";
+
+    $.each(items, function (index, item) {
+      var li;
+      if (item.category != currentCategory) {
+        ul.append(
+          "<h2 class='autocomplete-category'>" + item.category + "</h2>"
+        );
+        currentCategory = item.category;
+      }
+      //li = that._renderItemData(ul, item);
+      if (item.category) {
+        return $("<li>").append(
+          "<div class='autocomplete-product'><span class='autocomplete-product-title'>" +
+            item.title +
+            "<a class='autocomplete-product-link' href='" +
+            item.link +
+            "'> Plačiau" +
+            "</a></span><span class='autocomplete-product-desc paragraph'>" +
+            item.about +
+            "</span><span class='autocomplete-product-duration'>" +
+            item.duration +
+            "</span><a class='button cyan white small autocomplete-product-order' href='" +
+            item.choose +
+            "'>" +
+            "Pasirinkti</a>" +
+            "</div>"
+        ).appendTo(ul);
+      }
+    });
+    // return $("<li>")
+    //   .append(
+    //     "<div class='autocomplete-product'><span class='autocomplete-product-title'>" +
+    //       item.title +
+    //       "<a class='autocomplete-product-link' href='" +
+    //       item.link +
+    //       "'> Plačiau" +
+    //       "</a></span><span class='autocomplete-product-desc paragraph'>" +
+    //       item.about +
+    //       "</span><span class='autocomplete-product-duration'>" +
+    //       item.duration +
+    //       "</span><a class='button cyan white small autocomplete-product-order' href='" +
+    //       item.choose +
+    //       "'>" +
+    //       "Pasirinkti</a>" +
+    //       "</div>"
+    //   )
+    //   .appendTo(ul);
   };
 
   // autocomplete results width fix
@@ -204,6 +234,10 @@ $(document).ready(function () {
     //console.log(this.element.outerWidth());
     this.menu.element.css("width", this.element.outerWidth());
   };
+
+  $(".product__search-arrow").click(function () {
+    $("#search").trigger("focus");
+  });
 
   $(".venue__slider").slick({
     arrows: true,
@@ -284,32 +318,31 @@ $(document).ready(function () {
     }, 100);
   });
 
+  $(".select2-selection").click(function () {
+    $(this).find(".select2-selection__arrow b").toggleClass("rotate");
+  });
+
   moveAction();
   moveOrder();
   changeTextWidth();
   changePadding();
-
-  // $(".product__search").on("click", function () {
-  //   if ($("#ui-id-1").css("display") == "block") {
-  //     $(".product__search").removeClass("rotate");
-  //   } else if ($("#ui-id-1").css("display") == "none") {
-  //     $(".product__search").addClass("rotate");
-  //   }
-  // });
 });
 
 function changePadding() {
   var windowWidth = $(window).width();
-  var timeWidth = $('.calendar td').width();
-  var margin = ($('div.page-content__wrapper').innerWidth() - $('div.page-content__wrapper').width()) / 2;
+  var timeWidth = $(".calendar td").width();
+  var margin =
+    ($("div.page-content__wrapper").innerWidth() -
+      $("div.page-content__wrapper").width()) /
+    2;
   //var timePadding = $('td').css('padding-right');
 
   if (window.matchMedia("(max-width: 480px)").matches) {
-    var timePadding = (windowWidth - (4.5 * timeWidth) - margin) / 4;
-    $('.calendar td').css('padding-right', timePadding);
+    var timePadding = (windowWidth - 4.5 * timeWidth - margin) / 4;
+    $(".calendar td").css("padding-right", timePadding);
   } else {
-    $('.calendar td').css('padding-right', 10);
-    $('.calendar td:last-of-type').css('padding-right', 0);
+    $(".calendar td").css("padding-right", 10);
+    $(".calendar td:last-of-type").css("padding-right", 0);
   }
 }
 
@@ -349,12 +382,6 @@ $(".breadcrumbs__change").on("click", function () {
   rotateBtn($(this));
 });
 
-// $('.product__search').on('click', function() {
-//   if ($('#ul-id-1').is(":visible")) {
-//     rotateBtn($('.product__search'));
-//   }
-// });
-
 $(window)
   .scroll(function () {
     // sliding menu active on scroll
@@ -375,7 +402,7 @@ $(window).scroll(function () {
   var autocompleteHeight = $(".ui-autocomplete").height();
   var autocompleteOffsetTop = $(".ui-autocomplete").offset().top;
 
-  if ($(this).scrollTop() > (autocompleteHeight + autocompleteOffsetTop)) {
+  if ($(this).scrollTop() > autocompleteHeight + autocompleteOffsetTop) {
     $("input#search").blur();
     $(".ui-autocomplete").hide();
   }

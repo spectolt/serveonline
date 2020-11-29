@@ -420,7 +420,7 @@ section {
     display: none;
 
     @include breakpoint(xs) {
-        padding: 25px 20px 40px;
+        padding: 25px 20px 20px;
     }
     
     ul {

@@ -44,6 +44,7 @@
                 </div>
                 <div class="product__search input-wrapper input-wrapper--briefcase">
                     <input type="text" name="search" id="search" placeholder="Įveskite paslaugos pavadinimą" />
+                    <span class="product__search-arrow"></span>
                 </div>
                 <div class="product__list">
                     <?php for($y=0;$y<5;$y++) { ?>

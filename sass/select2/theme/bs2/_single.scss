@@ -39,17 +39,22 @@ $darkblue: #101b51;
     width: 20px;
 
     b {
-      border: solid $darkblue;
-      border-width: 0 1px 1px 0;
-      display: inline-block;
-      padding: 4px;
-      transform: rotate(45deg) translateY(-100%);
-      width: 0;
-      height: 0;
       top: 50%;
-      right: 25px;
+      right: 20px;
       position: absolute;
+      transform: translateY(-50%);
+      width: 14px;
+      height: 16px;
+      background-image: url("img/icons/angle-down-bold.svg");
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: block;
+      transition: transform 0.1s ease-in-out;
 
+      &.rotate {
+        transform: translateY(-50%) rotate(180deg);
+      }
     }
   }
 

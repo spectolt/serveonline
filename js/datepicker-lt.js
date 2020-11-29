@@ -13,7 +13,7 @@
 }( function( datepicker ) {
 
 datepicker.regional.lt = {
-	closeText: "Uždaryti",
+	closeText: "Pasirinkti",
 	prevText: "&#x3C;Atgal",
 	nextText: "Pirmyn&#x3E;",
 	currentText: "Šiandien",

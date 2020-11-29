@@ -35,7 +35,7 @@ section.product {
       justify-content: space-between;
       width: 370px;
 
-      @include breakpoint (sm) {
+      @include breakpoint(sm) {
         width: 90%;
       }
 
@@ -62,8 +62,8 @@ section.product {
       }
 
       &-hide {
-        display:none;
-        white-space:pre;
+        display: none;
+        white-space: pre;
       }
 
       &-input {
@@ -177,8 +177,7 @@ section.product {
         }
       }
 
-      &:after {
-        content: "";
+      &-arrow {
         position: absolute;
         right: 30px;
         top: 50%;
@@ -190,14 +189,16 @@ section.product {
         background-position: center;
         background-repeat: no-repeat;
         background-image: url("img/icons/angle-down-bold.svg");
+        transition: transform 0.2s ease-in-out;
+        cursor: pointer;
 
         @include breakpoint(xs) {
           right: 20px;
         }
-      }
 
-      &.rotate:after {
-        transform: translateY(-50%) scaleY(-1);
+        &.rotate {
+          transform: translateY(-50%) rotate(180deg);
+        }
       }
 
       input {
@@ -206,9 +207,9 @@ section.product {
         border-width: 2px;
         font-size: 1.5rem;
 
-        @include breakpoint (xs) {
+        @include breakpoint(xs) {
           border-width: 1px;
-          font-size: .875rem;
+          font-size: 0.875rem;
           padding-left: 60px;
           padding-right: 40px;
         }
@@ -218,7 +219,7 @@ section.product {
           vertical-align: center;
 
           @include breakpoint(xs) {
-            font-size: .875rem;
+            font-size: 0.875rem;
           }
         }
       }
@@ -334,7 +335,7 @@ section.product {
           display: block;
           margin-bottom: 10px;
 
-          @include breakpoint (xs) {
+          @include breakpoint(xs) {
             margin-bottom: 0;
           }
         }
