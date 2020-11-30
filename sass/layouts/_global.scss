@@ -77,12 +77,9 @@ body {
         margin-right: 30px;
       }
 
-      @include breakpoint(sm) {
-        display: block;
-      }
-
       @include breakpoint(xs) {
         margin-right: 0;
+        display: block;
       }
     }
 
@@ -107,12 +104,12 @@ body {
       align-items: flex-end;
       justify-content: flex-end;
 
-      @include breakpoint(sm) {
+      @include breakpoint(xs) {
         margin: 0;
       }
 
       &--main {
-          @include breakpoint(sm) {
+          @include breakpoint(xs) {
               order: 0;
           }
       }
@@ -126,7 +123,7 @@ body {
         background-color: $darkblue;
         flex: 0;
 
-        @include breakpoint(sm) {
+        @include breakpoint(xs) {
           margin: 0;
           padding: 20px 0 10px;
           align-items: center;
@@ -174,12 +171,12 @@ body {
             display: block;
           }
 
-          @include breakpoint(sm) {
+          @include breakpoint(xs) {
             margin: 0;
           }
         }
 
-        @include breakpoint(sm) {
+        @include breakpoint(xs) {
           margin: 0;
         }
       }
@@ -236,7 +233,7 @@ body {
         width: 300px;    
         background-color: $white;
 
-        @include breakpoint(sm) {
+        @include breakpoint(xs) {
             width: 75%;
           }
 
@@ -354,7 +351,7 @@ body {
           margin: 60px 30px 0 30px;
         }
 
-        @include breakpoint(sm) {
+        @include breakpoint(xs) {
           padding-left: 20px;
           padding-right: 20px;
           width: 100%;
@@ -367,7 +364,7 @@ body {
         margin:0;
       }
 
-      @include breakpoint(sm) {
+      @include breakpoint(xs) {
         margin-left: 0;
         margin-right: 0;
         margin-top: 39px;
@@ -385,15 +382,9 @@ body {
     .site-footer {
       width: 850px;
 
-      @include breakpoint(sm) {
+      @include breakpoint(xs) {
         width: 100%;
         flex-wrap: wrap;
-      }
-
-      .site-footer {
-        // &__menu {
-        //   margin: 0;
-        // }
       }
     }
   }
@@ -405,7 +396,7 @@ body {
   padding: 40px 0;
   border-top: 1px solid $lightgray;
 
-  @include breakpoint(sm) {
+  @include breakpoint(xs) {
     flex-direction: column;
     align-items: center;
     justify-items: center;
@@ -423,7 +414,7 @@ body {
       margin-right: 30px;
       // margin: 20px 0;
 
-      @include breakpoint(sm) {
+      @include breakpoint(xs) {
         margin: 0 0 20px;
       }
 
@@ -457,7 +448,7 @@ body {
           background: $darkblue;
           display: inline-block;
 
-          @include breakpoint(sm) {
+          @include breakpoint(xs) {
             display: none;
           }
         }
@@ -516,7 +507,7 @@ body {
     //   display: flex;
     //   flex-direction: column;
 
-    @include breakpoint(sm) {
+    @include breakpoint(xs) {
       margin: 20px 0 10px;
     }
 

@@ -374,12 +374,6 @@ h1.title {
 
 @media (max-width: 480px) {
   h1 {
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  h1 {
     font-size: 1.875rem;
   }
 }
@@ -5608,13 +5602,8 @@ body {
 
 @media (max-width: 480px) {
   .site-header .site-header__hamburger {
-    display: block;
-  }
-}
-
-@media (max-width: 480px) {
-  .site-header .site-header__hamburger {
     margin-right: 0;
+    display: block;
   }
 }
 

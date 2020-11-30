@@ -5,19 +5,14 @@ table.calendar {
     border-spacing: 0;
     border-collapse: collapse;
 
-    thead {}
-
     th {
         text-align: left;
         font-weight: 600;
-        //padding-bottom: 5px;
         border-bottom: 2px solid #f7f7f8;
         position: relative;
 
         &.active {
-            //border-bottom-color: #e9636c;
-
-            &:after {
+                &:after {
                 display:block;
                 clear:both;
                 content : "";
@@ -33,7 +28,7 @@ table.calendar {
             }
         }
 
-        @include breakpoint(sm) {
+        @include breakpoint(xs) {
             display: none;
         }
     }
@@ -54,7 +49,7 @@ table.calendar {
     //     }
     // }
 
-    @include breakpoint(sm) {
+    @include breakpoint(xs) {
         display: flex;
         flex-direction: row;
         overflow-x: scroll;
@@ -76,7 +71,7 @@ table.calendar {
             color: $orange;
         }
 
-        @include breakpoint(sm) {
+        @include breakpoint(xs) {
             display: block;
             padding-top: 0;
 
@@ -125,7 +120,7 @@ table.calendar {
     .calendar__more-times--hidden {
         display: none;
 
-        @include breakpoint(sm) {
+        @include breakpoint(xs) {
             display: block;
         }
     }

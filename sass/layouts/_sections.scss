@@ -11,7 +11,7 @@ section {
         position: relative;
         z-index: 1;
 
-        @include breakpoint(sm) {
+        @include breakpoint(xs) {
             //top: 9px;
             padding: 15px 20px;
             height: auto;
@@ -478,7 +478,7 @@ section {
                 transition: background-color .2s ease-in-out;
                 padding: 0;
 
-                @include breakpoint(sm) {
+                @include breakpoint(xs) {
                     max-width: 53px;
                     max-height: 53px;
                 }
@@ -503,7 +503,7 @@ section {
         display: block;
         opacity: 1;
 
-        @include breakpoint(sm) {
+        @include breakpoint(xs) {
             //padding: 20px 20px;
             //margin-top: 9px;
         }

@@ -9,7 +9,7 @@
   flex-wrap: wrap;
 
   &__info {
-    @include breakpoint(sm) {
+    @include breakpoint(xs) {
       display: flex;
       justify-content: space-between;
       align-content: center;
@@ -22,7 +22,7 @@
       width: 100%;
       font-family: 'Roboto', sans-serif;
 
-      @include breakpoint(sm) {
+      @include breakpoint(xs) {
           margin-bottom: 10px;
       }
     }
@@ -64,7 +64,7 @@
       background-image: url("img/icons/clock.svg");
     }
 
-    @include breakpoint(sm) {
+    @include breakpoint(xs) {
         margin: 0;
     }
   }
@@ -85,7 +85,7 @@
       background-image: url("img/icons/price.svg");
     }
 
-    @include breakpoint(sm) {
+    @include breakpoint(xs) {
         margin: 0;
     }
   }
@@ -95,7 +95,7 @@
   }
 
   button.product-action__order {
-    @include breakpoint(sm) {
+    @include breakpoint(xs) {
       padding: 4px 10px;
     }
   }

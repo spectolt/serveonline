@@ -2,7 +2,7 @@ section.product {
   margin: 0 0 30px 0;
   width: 850px;
 
-  @include breakpoint(sm) {
+  @include breakpoint(xs) {
     width: 100%;
   }
 
@@ -13,7 +13,7 @@ section.product {
       justify-content: space-between;
       margin-bottom: 40px;
 
-      @include breakpoint(sm) {
+      @include breakpoint(xs) {
         flex-direction: column;
         margin-bottom: 20px;
       }
@@ -22,7 +22,7 @@ section.product {
         margin: 0;
         line-height: 1;
 
-        @include breakpoint(sm) {
+        @include breakpoint(xs) {
           margin-bottom: 20px;
         }
       }
@@ -35,7 +35,7 @@ section.product {
       justify-content: space-between;
       width: 370px;
 
-      @include breakpoint(sm) {
+      @include breakpoint(xs) {
         width: 90%;
       }
 
@@ -105,12 +105,12 @@ section.product {
           background-size: contain;
           cursor: pointer;
 
-          @include breakpoint(sm) {
+          @include breakpoint(xs) {
             margin-right: 10px;
             height: 28px;
           }
 
-          @include breakpoint(sm) {
+          @include breakpoint(xs) {
             margin-right: 4px;
             height: 18px;
           }
@@ -142,7 +142,7 @@ section.product {
         margin-bottom: 10px;
         justify-content: space-between;
 
-        @include breakpoint(sm) {
+        @include breakpoint(xs) {
           display: none;
         }
 
@@ -248,7 +248,7 @@ section.product {
         // width: 47%;
         width: 55%;
 
-        @include breakpoint(sm) {
+        @include breakpoint(xs) {
           width: 100%;
         }
       }
@@ -297,7 +297,7 @@ section.product {
         box-shadow: 0px 12px 29px 0px rgba(0, 0, 0, 0.35);
         margin-right: 20px;
 
-        @include breakpoint(sm) {
+        @include breakpoint(xs) {
           //max-width: 100%;
           //height: auto;
           // max-height: 160px;
@@ -352,7 +352,7 @@ section.product {
         &-actions {
           margin-top: 10px;
 
-          @include breakpoint(sm) {
+          @include breakpoint(xs) {
             margin: 20px auto;
           }
 
@@ -424,7 +424,7 @@ section.product {
         margin-left: 20px;
         padding-left: 40px;
 
-        @include breakpoint(sm) {
+        @include breakpoint(xs) {
           //margin-left: 0px;
         }
 
@@ -484,7 +484,7 @@ section.product {
         width: 100%;
         margin: 20px 0 10px 0;
 
-        @include breakpoint(sm) {
+        @include breakpoint(xs) {
           text-align: center;
           width: 70%;
           margin: 20px auto 10px auto;

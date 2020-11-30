@@ -10,13 +10,6 @@ $(document).ready(function () {
       $(".search-panel").toggleClass("search-panel--toggled");
     }
   );
-  // $('.site-aside input[type="radio"]').on('click', function () {
-  //     if ($(this).prop('checked') === true) {
-  //         console.log('asd');
-  //         $(this).prop('checked', false);
-  //         $(this).trigger('change');
-  //     }
-  // })
 
   function getTextWidth(el) {
     // uses a cached canvas if available
@@ -54,6 +47,7 @@ $(document).ready(function () {
     return textMeasurement.width;
   }
 
+  //today button sets the date
   $.datepicker._gotoToday = function (id) {
     var inst = this._getInst($(id)[0]);
 
@@ -67,6 +61,7 @@ $(document).ready(function () {
     changeTextWidth();
   };
 
+  //highlighted dates
   var eventDates = {};
   eventDates[new Date("12/12/2020")] = new Date("12/12/2020");
   eventDates[new Date("01/01/2021")] = new Date("01/01/2021");
@@ -98,12 +93,14 @@ $(document).ready(function () {
       onSelect: function () {
         changeTextWidth();
 
+        //main input sets date of all inputs, persons' inputs don't change main input
         var getDate = $(".product__nav-input:first").val();
         var getDate2 = $(this).val();
         $(".product__nav-input").datepicker("setDate", getDate);
         $(this).datepicker("setDate", getDate2);
         $(this).blur();
       },
+      
       beforeShowDay: function (date) {
         var highlight = eventDates[date];
         if (highlight) {
@@ -154,13 +151,11 @@ $(document).ready(function () {
     changeTextWidth();
   });
 
-  $("body").customCalendar();
-
   function changeTextWidth() {
     var inputs = document.getElementsByClassName("product__nav-input");
     for (var i = 0; i < inputs.length; i++) {
       var width = Math.floor(getTextWidth(inputs[i]));
-      var widthInPx = width + 5 + "px";
+      var widthInPx = width + 3 + "px";
       inputs[i].style.width = widthInPx;
     }
   }
@@ -226,7 +221,7 @@ $(document).ready(function () {
         );
         currentCategory = item.category;
       }
-      //li = that._renderItemData(ul, item);
+      
       if (item.category) {
         return $("<li>")
           .append(
@@ -272,20 +267,15 @@ $(document).ready(function () {
       .addClass("venue__description--visible");
   });
 
-  var moreTimesBtn = $(".calendar__more-button");
-
-  $(moreTimesBtn).click(function () {
+  $(".calendar__more-button").click(function () {
     var times = $(this).closest(".calendar").children(".calendar__more-times");
     times.removeClass("calendar__more-times--hidden");
     $(this).removeClass("calendar__more-button");
     $(this).html("09:15");
   });
 
-  var moreAreasBtn = $(".breadcrumbs__change");
-  var moreAreas = $(".breadcrumbs__more");
-
-  moreAreasBtn.click(function () {
-    moreAreas.toggleClass("breadcrumbs__more--toggled");
+  $(".breadcrumbs__change").click(function () {
+    $(".breadcrumbs__more").toggleClass("breadcrumbs__more--toggled");
   });
 
   var likeBtn = $(".product__block-like");
@@ -345,8 +335,11 @@ $(document).ready(function () {
 
   moveAction();
   moveOrder();
-  changeTextWidth();
   changePadding();
+
+  setTimeout(function () {
+  changeTextWidth();
+  }, 100);
 });
 
 function changePadding() {
@@ -356,7 +349,6 @@ function changePadding() {
     ($("div.page-content__wrapper").innerWidth() -
       $("div.page-content__wrapper").width()) /
     2;
-  //var timePadding = $('td').css('padding-right');
 
   if (window.matchMedia("(max-width: 480px)").matches) {
     var timePadding = (windowWidth - 4.5 * timeWidth - margin) / 4;
@@ -437,80 +429,6 @@ $(window).scroll(function () {
   }
 });
 
-$.fn.customCalendar = function () {
-  var date = moment("2020-01-06"),
-    data = [
-      "2020-01-06 10:00",
-      "2020-01-06 11:00",
-      "2020-01-06 12:00",
-      "2020-01-06 13:00",
-      "2020-01-06 16:00",
-      "2020-01-07 10:00",
-      "2020-01-08 10:00",
-      "2020-01-09 12:35",
-      "2020-01-09 11:35",
-      "2020-01-10 08:00",
-      "2020-01-10 09:00",
-    ],
-    week = [],
-    rows = 0;
-
-  for (var $i = 0; $i < 7; $i++) {
-    var weekDate = date.clone().add($i, "days");
-    week[weekDate.format("YYYY-MM-DD")] = [];
-  }
-  $.each(data, function (i, v) {
-    week[moment(v).format("YYYY-MM-DD")].push(moment(v).format("HH:mm"));
-    if (week[moment(v).format("YYYY-MM-DD")].length > rows)
-      rows = week[moment(v).format("YYYY-MM-DD")].length;
-  });
-
-  // sort times
-  Object.keys(week).forEach(function (v, i) {
-    week[v] = week[v].sort(function (a, b) {
-      return moment(v + " " + a).unix() - moment(v + " " + b).unix();
-    });
-  });
-
-  var obj = $("#test"),
-    str = "",
-    thead = "",
-    tbody = $("<tbody/>", {
-      html: function () {
-        var x = "";
-        for (var i = 0; i < rows; i++) {
-          x +=
-            "<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
-        }
-        return x;
-      },
-    });
-
-  Object.keys(week).forEach(function (v, i) {
-    thead +=
-      "<td>" +
-      moment(v).format("ddd") +
-      "<small>" +
-      moment(v).format("MMMD") +
-      "</small></td>";
-
-    $.each(week[v], function (vv, ii) {
-      var col = tbody.find("tr:eq(" + vv + ") td:eq(" + i + ")");
-      col.append("<p>" + ii + "</p>");
-    });
-  });
-
-  str = $(
-    '<table class="calendar"><thead><tr>' +
-      thead +
-      "</tr></thead>" +
-      tbody.html() +
-      "</table>"
-  );
-
-  obj.append(str);
-};
-
 function hasScrolled() {
   var st = $(this).scrollTop();
 
@@ -548,10 +466,3 @@ setInterval(function () {
     didScroll = false;
   }
 }, 250);
-
-// if(window.matchMedia('(max-width: 600px)').matches) {
-//   $(".product__block-info-actions").each(function () {
-//     var calendar = $(this).closest(".product__block-person").next(".calendar-container");
-//     $(this).insertAfter(calendar);
-//   });
-// };
