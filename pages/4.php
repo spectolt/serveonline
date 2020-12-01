@@ -58,8 +58,8 @@
                                         <h2>Ramunė Varnaliauskienė</h2>
                                         <span>Dermatologė</span>
                                         <p>Klinika “Lazerinė praktika”<br/>
-                                        <a href="#">M. Valančiaus g. 23</a><br/></p>
-                                        <div class="product__block-distance"><b>15 min</b> (5,6 km) Kaunas</div>
+                                        <a href="#">M. Valančiaus g. 23, Kaunas</a><br/></p>
+                                        <div class="product__block-distance"><b>15 min</b> (5,6 km)</div>
                                         
                                         <div class="product__block-info-actions">
                                             <button class="button small orange product__block-more">Plačiau</button>
@@ -79,13 +79,13 @@
                                 <table class="calendar disable-scrollbars disable-scrollbars::-webkit-scrollbar">
                                     <thead>
                                         <tr>
-                                            <th>Pr<small>Sau10</small></th>
-                                            <th>An<small>Sau11</small></th>
-                                            <th class="active">Tr<small>Sau12</small></th>
-                                            <th>Kt<small>Sau13</small></th>
-                                            <th>Pn<small>Sau14</small></th>
-                                            <th>Še<small>Sau15</small></th>
-                                            <th>Se<small>Sau16</small></th>
+                                            <th class="today">Pr<small>Lap30</small></th>
+                                            <th>An<small>Gru01</small></th>
+                                            <th class="active">Tr<small>Gru02</small></th>
+                                            <th>Kt<small>Gru03</small></th>
+                                            <th>Pn<small>Gru04</small></th>
+                                            <th>Še<small>Gru05</small></th>
+                                            <th>Se<small>Gru06</small></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -93,7 +93,7 @@
                                         <tr>
                                         <td><?php if($i===3) { ?><p class="calendar__more-button">DAR</p><?php } else { ?> <p>09:15</p> <?php } ?></td>
                                             <td><p></p></td>
-                                            <td><p>09:15</p></td>
+                                            <td class="calendar__selected-day"><p>09:15</p></td>
                                             <td><p>09:15</p></td>
                                             <td><p>09:15</p></td>
                                             <td><p>09:15</p></td>
@@ -107,7 +107,7 @@
                                         <tr>
                                         <td><p>09:15</p></td>
                                             <td><p></p></td>
-                                            <td><p>10:15</p></td>
+                                            <td class="calendar__selected-day"><p>10:15</p></td>
                                             <td><p>08:15</p></td>
                                             <td><p>11:15</p></td>
                                             <td><p>12:15</p></td>

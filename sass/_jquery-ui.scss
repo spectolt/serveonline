@@ -346,7 +346,6 @@ button.ui-button::-moz-focus-inner {
   padding: 25px 30px;
   display: none;
   line-height: 1em;
-//   margin-left: -4.875rem;
 
   @include breakpoint(xs) {
     width: calc(100% - 80px);
@@ -447,6 +446,14 @@ button.ui-button::-moz-focus-inner {
   margin: 5px auto;
   line-height: 1em;
   border-radius: 50%;
+  transition: background-color .2s ease-in-out;
+
+  &:hover {
+	border: 0;
+	background: $darkblue;
+	color: $white !important;
+	font-weight: 600;
+  }
 }
 
 .ui-datepicker .ui-datepicker-buttonpane {
@@ -510,8 +517,8 @@ td.ui-datepicker-highlight a {
 
   &:after {
     content: "";
-    width: 11px;
-    height: 14px;
+    width: 12px;
+    height: 15px;
     background-image: url("img/icons/veliava-raudona-2.svg");
     background-size: contain;
     background-position: center;

@@ -15,11 +15,6 @@ body {
   margin-top: 70px;
 }
 
-// .container {
-//   //width: 1440px;
-//   margin: 0 auto;
-// }
-
 .site-header {
   position: fixed;
   top: 0;
@@ -77,7 +72,7 @@ body {
         margin-right: 30px;
       }
 
-      @include breakpoint(xs) {
+      @include breakpoint(sm) {
         margin-right: 0;
         display: block;
       }
@@ -90,7 +85,7 @@ body {
       //flex: 1;
       margin-right: auto;
 
-      @include breakpoint(xs) {
+      @include breakpoint(sm) {
         margin: 20px auto;
         height: 23px;
       }
@@ -104,12 +99,12 @@ body {
       align-items: flex-end;
       justify-content: flex-end;
 
-      @include breakpoint(xs) {
+      @include breakpoint(sm) {
         margin: 0;
       }
 
       &--main {
-          @include breakpoint(xs) {
+          @include breakpoint(sm) {
               order: 0;
           }
       }
@@ -123,7 +118,7 @@ body {
         background-color: $darkblue;
         flex: 0;
 
-        @include breakpoint(xs) {
+        @include breakpoint(sm) {
           margin: 0;
           padding: 20px 0 10px;
           align-items: center;
@@ -171,12 +166,12 @@ body {
             display: block;
           }
 
-          @include breakpoint(xs) {
+          @include breakpoint(sm) {
             margin: 0;
           }
         }
 
-        @include breakpoint(xs) {
+        @include breakpoint(sm) {
           margin: 0;
         }
       }
@@ -364,15 +359,15 @@ body {
         margin:0;
       }
 
-      @include breakpoint(xs) {
-        margin-left: 0;
-        margin-right: 0;
+      @include breakpoint(sm) {
         margin-top: 39px;
-        width: 100%;
       }
 
       @include breakpoint(xs) {
         margin-top: 37px;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
       }
 
       // height: 100%;
@@ -598,3 +593,7 @@ body {
       background: transparent; /* Chrome/Safari/Webkit */
     }
   }
+
+.rotate {
+  transform: rotate(180deg);
+}

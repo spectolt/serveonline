@@ -1,127 +1,132 @@
 table.calendar {
-    width: 355px;
-    margin: 0;
+  width: 355px;
+  margin: 0;
 
-    border-spacing: 0;
-    border-collapse: collapse;
+  border-spacing: 0;
+  border-collapse: collapse;
 
-    th {
-        text-align: left;
-        font-weight: 600;
-        border-bottom: 2px solid #f7f7f8;
-        position: relative;
+  th {
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid #f7f7f8;
+    position: relative;
 
-        &.active {
-                &:after {
-                display:block;
-                clear:both;
-                content : "";
-                position: absolute;
-                left    : 0;
-                bottom  : -2px;
-                max-width:250px;
-                //height  : 1px;
-                width   : 44px;  /* or 100px */
-                border-bottom:2px solid #e9636c;
-                margin:0 auto;
-                padding:4px 0px;
-            }
-        }
-
-        @include breakpoint(xs) {
-            display: none;
-        }
-    }
-
-    small {
-        font-weight: 300;
+    &.active {
+      &:after {
         display: block;
-        font-size: 12px;
+        clear: both;
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        max-width: 250px;
+        //height  : 1px;
+        width: 44px; /* or 100px */
+        border-bottom: 2px solid #e9636c;
+        margin: 0 auto;
+        padding: 4px 0px;
+      }
     }
 
-    // tbody {
-    //     tr {
-    //         &:last-child {
-    //             td {
-    //                 padding-bottom: 0;
-    //             }
-    //         }
-    //     }
-    // }
+    &.today {
+        color: $red;
+    }
 
     @include breakpoint(xs) {
-        display: flex;
-        flex-direction: row;
-        overflow-x: scroll;
-        width: calc(100vw - 20px);
-        position: relative;
-        margin-right: -20px;
-        margin-top: 30px;
+      display: none;
+    }
+  }
+
+  small {
+    font-weight: 300;
+    display: block;
+    font-size: 12px;
+  }
+
+  // tbody {
+  //     tr {
+  //         &:last-child {
+  //             td {
+  //                 padding-bottom: 0;
+  //             }
+  //         }
+  //     }
+  // }
+
+  @include breakpoint(xs) {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    width: calc(100vw - 20px);
+    position: relative;
+    margin-right: -20px;
+    margin-top: 30px;
+  }
+
+  td {
+    padding: 10px 10px 0 0;
+    border-spacing: 0;
+
+    &:nth-child(7n) {
+      padding-right: 0;
     }
 
-    td {
-        padding: 10px 10px 0 0;
-        border-spacing: 0;
-
-        &:nth-child(7n) {
-            padding-right: 0;
-        }
-
-        .calendar__more-button {
-            color: $orange;
-        }
-
-        @include breakpoint(xs) {
-            display: block;
-            padding-top: 0;
-
-            &:not(:nth-child(3)) {
-                display: none;
-            } //wednesday taken as example
-        }
+    .calendar__more-button {
+      color: $orange;
     }
 
+    @include breakpoint(xs) {
+      padding-top: 0;
+      display: none;
+    }
+  }
 
-    p {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        background: $darkblue;
-        color: $white;
-        font-size: 12px;
-        margin: 0;
-        border-radius: 2px;
-        width: 44px;
-        height: 28px;
-        transition: color .1s ease;
-        cursor: pointer;
+  .calendar__selected-day {
+    @include breakpoint(xs) {
+      display: block;
+    }
+  }
 
-        &:empty {
-            background: #ecedef;
+  p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: $darkblue;
+    color: $white;
+    font-size: 12px;
+    margin: 0;
+    border-radius: 2px;
+    width: 44px;
+    height: 28px;
+    transition: color 0.1s ease;
+    cursor: pointer;
 
-            &:hover {
-                background: #ecedef;
-                cursor: inherit;
-            }
-        }
+    &:empty {
+      background: #ecedef;
 
-        &:hover {
-            color: $darkblue;
-            background: $orange;
-        }
-
-        @include breakpoint(xs) {
-            width: 64px;
-            font-weight: 600;
-        }
+      &:hover {
+        background: #ecedef;
+        cursor: inherit;
+      }
     }
 
-    .calendar__more-times--hidden {
-        display: none;
-
-        @include breakpoint(xs) {
-            display: block;
-        }
+    &:hover {
+      color: $darkblue;
+      background: $orange;
     }
+
+    @include breakpoint(xs) {
+      width: 64px;
+      font-weight: 600;
+    }
+  }
+
+  .calendar__more-times--hidden {
+    display: none;
+
+    @include breakpoint(xs) {
+      display: block;
+    }
+  }
 }

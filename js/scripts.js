@@ -100,7 +100,7 @@ $(document).ready(function () {
         $(this).datepicker("setDate", getDate2);
         $(this).blur();
       },
-      
+
       beforeShowDay: function (date) {
         var highlight = eventDates[date];
         if (highlight) {
@@ -122,6 +122,17 @@ $(document).ready(function () {
       },
     })
     .datepicker("setDate", "+0");
+
+  // Don't hide the date picker when clicking a date
+  $.datepicker._selectDateOverload = $.datepicker._selectDate;
+  $.datepicker._selectDate = function (id, dateStr) {
+    var target = $(id);
+    var inst = this._getInst(target[0]);
+    inst.inline = true;
+    $.datepicker._selectDateOverload(id, dateStr);
+    inst.inline = false;
+    this._updateDatepicker(inst);
+  };
 
   $(".product__nav-icon").click(function () {
     $(this).next(".product__nav-input").datepicker("show");
@@ -171,7 +182,6 @@ $(document).ready(function () {
           //     term: request.term
           // },
           success: function (data) {
-            console.log(data);
             response(data);
           },
         });
@@ -182,17 +192,24 @@ $(document).ready(function () {
       open: function () {
         $("input#search").attr("rel", 0);
         $(".product__search-arrow").addClass("rotate");
+
+        //overriding default classes after putting in wrapper
+        $(".ui-autocomplete-wrapper").removeClass("ui-menu-item");
+        $("h2.ui-menu-item-wrapper, h3.ui-menu-item-wrapper").removeClass(
+          "ui-menu-item-wrapper"
+        );
+        $("li.ui-menu-item-wrapper")
+          .removeClass("ui-menu-item-wrapper")
+          .addClass("ui-menu-item");
+        $("div.autocomplete-product").addClass("ui-menu-item-wrapper");
+        $(".ui-autocomplete-choose").removeClass("ui-menu-item");
       },
       close: function () {
         if ($("input#search").attr("rel") == "0") $("input#search").val("");
         $(".product__search-arrow").removeClass("rotate");
       },
-      // focus: function (event, ui) {
-      //     // $("#project").val(ui.item.label);
-      //     // return false;
-      // },
       select: function (event, ui) {
-        console.log(ui);
+        event.preventDefault();
         $("#project").val(ui.item.label);
         $("#project-id").val(ui.item.value);
         $("#project-description").html(ui.item.desc);
@@ -210,50 +227,135 @@ $(document).ready(function () {
       $(this).data("uiAutocomplete").search($(this).val());
     })
     .autocomplete("instance")._renderMenu = function (ul, items) {
-    var that = this;
     var currentCategory = "";
+    var currentSubcategory = "";
 
     $.each(items, function (index, item) {
-      var li;
       if (item.category != currentCategory) {
         ul.append(
           "<h2 class='autocomplete-category'>" + item.category + "</h2>"
         );
         currentCategory = item.category;
       }
-      
-      if (item.category) {
+
+      if (
+        item.category == currentCategory &&
+        item.subcategory != currentSubcategory
+      ) {
+        ul.append(
+          "<h3 class='autocomplete-subcategory'>" + item.subcategory + "</h3>"
+        );
+        currentSubcategory = item.subcategory;
+      }
+
+      if (item.category && item.subcategory && item.checkbox) {
         return $("<li>")
           .append(
-            "<div class='autocomplete-product'><span class='autocomplete-product-title'>" +
+            "<div class='autocomplete-product'><div class='checkbox'><input type='checkbox' class='autocomplete-product-input' id='item-" +
+              item.index +
+              "'><label class='autocomplete-product-checkbox' for='item-" +
+              item.index +
+              "'><span class='autocomplete-product-title'>" +
               item.title +
-              "<a class='autocomplete-product-link' href='" +
-              item.link +
-              "'> Plačiau" +
-              "</a></span><span class='autocomplete-product-desc paragraph'>" +
+              "<button class='autocomplete-product-button'>Plačiau</button></span><span class='autocomplete-product-desc paragraph hidden'>" +
               item.about +
               "</span><span class='autocomplete-product-duration'>" +
               item.duration +
-              "</span><a class='button cyan white small autocomplete-product-order' href='" +
-              item.choose +
-              "'>" +
-              "Pasirinkti</a>" +
-              "</div>"
+              "</span>" +
+              "</label></div></div>"
+          )
+          .appendTo(ul);
+      } else if (item.category && item.subcategory) {
+        return $("<li>")
+          .append(
+            "<div class='autocomplete-product autocomplete-product--choices'>" + 
+          "<span class='autocomplete-product-expand'></span>" +
+            "<span class='autocomplete-product-title'>" +
+              item.title +
+              "<button class='autocomplete-product-button'>Plačiau</button></span><span class='autocomplete-product-desc paragraph hidden'>" +
+              item.about +
+              "</span><span class='autocomplete-product-duration'>" +
+              item.duration +
+              "</span><div class='autocomplete-product autocomplete-product--choice hidden'><div class='checkbox'><input type='checkbox' class='autocomplete-product-input' id='item-" +
+              item.index +
+              "'><label class='autocomplete-product-checkbox' for='item-" +
+              item.index +
+              "'><span class='autocomplete-product-title'>" +
+              item.choice1title +
+              "</span><span class='autocomplete-product-duration'>" +
+              item.choice1duration +
+              "</span></label></div></div><div class='autocomplete-product autocomplete-product--choice hidden'><div class='checkbox'><input type='checkbox' class='autocomplete-product-input' id='item-" +
+              item.index +
+              "'><label class='autocomplete-product-checkbox' for='item-" +
+              item.index +
+              "'><span class='autocomplete-product-title'>" +
+              item.choice2title +
+              "</span><span class='autocomplete-product-duration'>" +
+              item.choice2duration +
+              "</span></label></div></div><div class='autocomplete-product autocomplete-product--choice hidden'><div class='checkbox'><input type='checkbox' class='autocomplete-product-input' id='item-" +
+              item.index +
+              "'><label class='autocomplete-product-checkbox' for='item-" +
+              item.index +
+              "'><span class='autocomplete-product-title'>" +
+              item.choice3title +
+              "</span><span class='autocomplete-product-duration'>" +
+              item.choice3duration +
+              "</span></label>"+
+              "</div></div>"
           )
           .appendTo(ul);
       }
     });
+    $(".ui-autocomplete")
+      .children()
+      .wrapAll("<div class='ui-autocomplete-wrapper'></div>");
+    var chooseBtn = $(
+      "<button class='ui-autocomplete-choose'>Rinktis pažymėtas paslaugas</button>"
+    );
+    $(".ui-autocomplete").append(chooseBtn);
   };
+
+  $(document).on("click", ".autocomplete-product-button", function () {
+    var description = $(this)
+      .closest(".autocomplete-product")
+      .find(".autocomplete-product-desc");
+    description.toggleClass("hidden");
+    $(this).html($(this).html() == "Uždaryti" ? "Plačiau" : "Uždaryti");
+  });
+
+  $(document).on("click", ".autocomplete-product-expand", function () {
+    $(this).siblings(".autocomplete-product--choice, .autocomplete-product-duration").toggleClass("hidden");
+    $(this).toggleClass("rotate");
+  });
+
+  //hacky way to make product search checkboxes work
+  $(document)
+    .on("click", ".autocomplete-product-checkbox", function (e) {
+      // if (e.target !== e.currentTarget) return;
+      var checkBoxes = $(this).closest(".checkbox").find("input");
+      checkBoxes.prop("checked", !checkBoxes.prop("checked"));
+    })
+    .on("click", ".autocomplete-product-button", function (e) {
+      return false;
+    });
+
+  var isVisible = false;
+  var input = $("#search");
+  $(".product__search-arrow").click(function () {
+    if (isVisible == true) {
+      input.autocomplete("close");
+      input.blur();
+      isVisible = false;
+    } else {
+      input.focus();
+      isVisible = true;
+    }
+  });
 
   // autocomplete results width fix
   jQuery.ui.autocomplete.prototype._resizeMenu = function () {
-    //console.log(this.element.outerWidth());
     this.menu.element.css("width", this.element.outerWidth());
   };
-
-  $(".product__search-arrow").click(function () {
-    $("#search").trigger("focus");
-  });
 
   $(".venue__slider").slick({
     arrows: true,
@@ -338,7 +440,7 @@ $(document).ready(function () {
   changePadding();
 
   setTimeout(function () {
-  changeTextWidth();
+    changeTextWidth();
   }, 100);
 });
 
@@ -426,6 +528,13 @@ $(window).scroll(function () {
       .closest(".page-content")
       .find(".breadcrumbs__change")
       .removeClass("rotate");
+  }
+
+  if (
+    $(this).scrollTop() >
+    $("#ui-datepicker-div").offset().top + $("#ui-datepicker-div").height()
+  ) {
+    $(".product__nav-input").datepicker("hide");
   }
 });
 

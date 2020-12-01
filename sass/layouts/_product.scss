@@ -206,6 +206,9 @@ section.product {
         padding-right: 80px;
         border-width: 2px;
         font-size: 1.5rem;
+        line-height: normal;
+        color: $darkblue;
+        line-height: 1.2em;
 
         @include breakpoint(xs) {
           border-width: 1px;
@@ -214,9 +217,10 @@ section.product {
           padding-right: 40px;
         }
 
-        &::-webkit-input-placeholder {
+        &::placeholder {
           font-size: 1.125rem;
           vertical-align: center;
+          
 
           @include breakpoint(xs) {
             font-size: 0.875rem;
