@@ -46,6 +46,26 @@
                     <input type="text" name="search" id="search" placeholder="Įveskite paslaugos pavadinimą" />
                     <span class="product__search-arrow"></span>
                 </div>
+                <div class="product__chosen ui-autocomplete-wrapper">
+                <button class="product__chosen-add"></button>
+                    <li class="autocomplete-product">
+                        <span class="autocomplete-product-title autocomplete-product-title--main">Moterų kirpimas<button class="autocomplete-product-button">Plačiau</button></span>
+                        <span class="autocomplete-product-desc paragraph hidden">Description</span>
+                        <span class="autocomplete-product-title autocomplete-product-title--sub">Modelinis kirpimas</span>
+                        <span class="autocomplete-product-duration">00:30</span>
+                        <button class="autocomplete-product-trash"></button>
+                    </li>
+                    
+                    <li class="autocomplete-product">
+                        <span class="autocomplete-product-title autocomplete-product-title--main">Plaukų atstatymo procedūra<button class="autocomplete-product-button">Plačiau</button></span>
+                        <span class="autocomplete-product-desc paragraph hidden">Description</span>
+                        <span class="autocomplete-product-title autocomplete-product-title--sub">Trumpi plaukai</span>
+                        <span class="autocomplete-product-duration">01:00</span>
+                        <button class="autocomplete-product-trash"></button>
+                    </li>
+                    
+                    <h3>Bendra reikiama paslaugų trukmė</h3> <span class="autocomplete-product-duration autocomplete-product-duration--final">01:30</span>
+                </div>
                 <div class="product__list">
                     <?php for($y=0;$y<5;$y++) { ?>
                         <div class="product__block">

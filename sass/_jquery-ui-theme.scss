@@ -1010,14 +1010,9 @@ a.ui-button:active,
 
 // custom
 .ui-autocomplete {
-  //   position: relative;
-  //   display: flex;
-  //   align-items: center;
-  //   flex-direction: column;
 
   .ui-autocomplete-wrapper {
     max-height: 500px;
-    // flex: 1;
     width: 100%;
 	overflow-y: auto;
 	overflow-x: hidden;
@@ -1059,7 +1054,11 @@ a.ui-button:active,
     padding: 10px 20px;
     background: $darkgray;
     border-radius: 5px;
-    transition: background-color 0.2s ease-in-out;
+	transition: background-color 0.2s ease-in-out;
+	
+	@include breakpoint(xs) {
+		padding-right: 30px;
+	}
 
     &:hover {
       background-color: $orange;
@@ -1107,7 +1106,7 @@ a.ui-button:active,
     &-desc,
     &-duration {
       display: block;
-      width: 100%;
+      //width: 100%;
       font-weight: 600;
       color: $color__text-main;
       margin-left: 30px;
@@ -1181,18 +1180,6 @@ a.ui-button:active,
         }
       }
     }
-
-    // &-order {
-    //   background-color: $white;
-    //   position: absolute;
-    //   bottom: 10px;
-    //   right: 25px;
-    //   padding: 5px 12px;
-
-    //   @include breakpoint(xs) {
-    //     font-size: 0.75rem;
-    //   }
-	// }
 	
 	&-expand {
 		position: absolute;
@@ -1228,11 +1215,11 @@ a.ui-button:active,
   }
 
   &-choose {
-    width: calc(100% - 75px);
+    width: 100%;
     // position: relative;
     // bottom: 20px;
     // left: 30px;
-    margin: 20px 30px;
+    //margin: 30px 0 0;
     // bottom: 20px;
   }
 }

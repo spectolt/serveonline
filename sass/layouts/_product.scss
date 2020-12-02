@@ -115,26 +115,6 @@ section.product {
             height: 18px;
           }
         }
-
-        // &-current {
-        //   cursor: pointer;
-        //   font-family: "Sen", sans-serif;
-        //   font-size: 1.875em;
-        //   font-weight: 600;
-        //   margin: 0 40px;
-
-        //   &:before {
-        //     content: "";
-        //     width: 24px;
-        //     height: 20px;
-        //     background-size: 100%;
-        //     background-position: center bottom;
-        //     background-repeat: no-repeat;
-        //     display: inline-block;
-        //     background-image: url("img/icons/calendar.svg");
-        //     margin-right: 20px;
-        //     background-size: contain;
-        //   }
       }
 
       &--person {
@@ -220,11 +200,153 @@ section.product {
         &::placeholder {
           font-size: 1.125rem;
           vertical-align: center;
-          
 
           @include breakpoint(xs) {
             font-size: 0.875rem;
           }
+        }
+      }
+    }
+
+    &__chosen {
+      border: 2px solid $darkblue;
+      border-radius: 5px;
+      padding: 20px 65px 20px 20px;
+      position: relative;
+      display: none;
+
+      &-add {
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: transparent;
+        position: absolute;
+        top: 20px;
+        right: 31px;
+        transform: translateX(50%);
+        background-image: url("img/icons/angle-down-bold.svg");
+        width: 19px;
+        height: 22px;
+        padding: 0;
+      }
+
+      h3 {
+        font-size: 1rem;
+        margin: 10px 0 0 30px;
+        display: inline-block;
+      }
+
+      .ui-autocomplete-wrapper {
+        max-height: 500px;
+        width: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
+
+      li {
+        list-style: none;
+      }
+
+      .autocomplete-product {
+        position: relative;
+        cursor: default;
+        background-color: $darkgray;
+        border-radius: 5px;
+        padding: 10px 30px;
+        margin-bottom: 10px;
+
+        &-trash {
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-color: transparent;
+          position: absolute;
+          bottom: 0;
+          right: -24px;
+          transform: translateX(100%);
+          background-image: url("img/icons/trash.svg");
+          width: 19px;
+          height: 22px;
+          padding: 0;
+        }
+
+        &-title,
+        &-desc,
+        &-duration {
+          display: block;
+          //width: 100%;
+          font-weight: 600;
+          color: $color__text-main;
+          //margin-left: 30px;
+        }
+
+        &-title {
+          font-size: 1.125rem;
+          margin-bottom: 5px;
+
+          @include breakpoint(xs) {
+            font-size: 0.875rem;
+          }
+        }
+
+        &-title--main {
+          font-size: 1rem;
+        }
+
+        &-title--sub {
+          font-weight: 400;
+          font-size: 0.875rem;
+        }
+
+        &-button {
+          color: $cyan !important;
+          margin-left: 25px;
+          font-weight: 600;
+          background-color: transparent;
+          padding: 0;
+        }
+
+        &-desc {
+          margin-bottom: 10px;
+          font-weight: 400;
+          font-size: 0.875rem;
+          margin-top: 10px;
+        }
+
+        &-duration {
+          font-weight: 400;
+
+          @include breakpoint(xs) {
+            font-size: 0.875rem;
+          }
+
+          &:before {
+            content: "";
+            width: 15px;
+            height: 15px;
+            background-image: url("img/icons/clock.svg");
+            background-size: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: inline-block;
+            margin-right: 10px;
+            position: relative;
+            top: 2px;
+
+            @include breakpoint(xs) {
+              margin-right: 20px;
+            }
+          }
+
+          &--final {
+            display: inline-block;
+            margin-left: 20px;
+            color: $red;
+          }
+        }
+
+        &--choice {
+          margin: 0;
         }
       }
     }

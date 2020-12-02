@@ -5145,6 +5145,12 @@ a.ui-button:active,
   transition: background-color 0.2s ease-in-out;
 }
 
+@media (max-width: 480px) {
+  .ui-autocomplete .ui-menu-item-wrapper {
+    padding-right: 30px;
+  }
+}
+
 .ui-autocomplete .ui-menu-item-wrapper:hover {
   background-color: #ff9954;
 }
@@ -5193,7 +5199,6 @@ a.ui-button:active,
 
 .ui-autocomplete .autocomplete-product-title, .ui-autocomplete .autocomplete-product-desc, .ui-autocomplete .autocomplete-product-duration {
   display: block;
-  width: 100%;
   font-weight: 600;
   color: #101b51;
   margin-left: 30px;
@@ -5296,8 +5301,7 @@ a.ui-button:active,
 }
 
 .ui-autocomplete-choose {
-  width: calc(100% - 75px);
-  margin: 20px 30px;
+  width: 100%;
 }
 
 .ui-datepicker {
@@ -6281,7 +6285,7 @@ body {
   /* Chrome/Safari/Webkit */
 }
 
-.rotate {
+.rotate-arrow {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
@@ -7226,6 +7230,153 @@ section.product .product__search input::placeholder {
   section.product .product__search input::placeholder {
     font-size: 0.875rem;
   }
+}
+
+section.product .product__chosen {
+  border: 2px solid #101b51;
+  border-radius: 5px;
+  padding: 20px 65px 20px 20px;
+  position: relative;
+  display: none;
+}
+
+section.product .product__chosen-add {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  position: absolute;
+  top: 20px;
+  right: 31px;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+  background-image: url("img/icons/angle-down-bold.svg");
+  width: 19px;
+  height: 22px;
+  padding: 0;
+}
+
+section.product .product__chosen h3 {
+  font-size: 1rem;
+  margin: 10px 0 0 30px;
+  display: inline-block;
+}
+
+section.product .product__chosen .ui-autocomplete-wrapper {
+  max-height: 500px;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+section.product .product__chosen li {
+  list-style: none;
+}
+
+section.product .product__chosen .autocomplete-product {
+  position: relative;
+  cursor: default;
+  background-color: #f4f4f6;
+  border-radius: 5px;
+  padding: 10px 30px;
+  margin-bottom: 10px;
+}
+
+section.product .product__chosen .autocomplete-product-trash {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  position: absolute;
+  bottom: 0;
+  right: -24px;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  background-image: url("img/icons/trash.svg");
+  width: 19px;
+  height: 22px;
+  padding: 0;
+}
+
+section.product .product__chosen .autocomplete-product-title, section.product .product__chosen .autocomplete-product-desc, section.product .product__chosen .autocomplete-product-duration {
+  display: block;
+  font-weight: 600;
+  color: #101b51;
+}
+
+section.product .product__chosen .autocomplete-product-title {
+  font-size: 1.125rem;
+  margin-bottom: 5px;
+}
+
+@media (max-width: 480px) {
+  section.product .product__chosen .autocomplete-product-title {
+    font-size: 0.875rem;
+  }
+}
+
+section.product .product__chosen .autocomplete-product-title--main {
+  font-size: 1rem;
+}
+
+section.product .product__chosen .autocomplete-product-title--sub {
+  font-weight: 400;
+  font-size: 0.875rem;
+}
+
+section.product .product__chosen .autocomplete-product-button {
+  color: #5999b4 !important;
+  margin-left: 25px;
+  font-weight: 600;
+  background-color: transparent;
+  padding: 0;
+}
+
+section.product .product__chosen .autocomplete-product-desc {
+  margin-bottom: 10px;
+  font-weight: 400;
+  font-size: 0.875rem;
+  margin-top: 10px;
+}
+
+section.product .product__chosen .autocomplete-product-duration {
+  font-weight: 400;
+}
+
+@media (max-width: 480px) {
+  section.product .product__chosen .autocomplete-product-duration {
+    font-size: 0.875rem;
+  }
+}
+
+section.product .product__chosen .autocomplete-product-duration:before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  background-image: url("img/icons/clock.svg");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: inline-block;
+  margin-right: 10px;
+  position: relative;
+  top: 2px;
+}
+
+@media (max-width: 480px) {
+  section.product .product__chosen .autocomplete-product-duration:before {
+    margin-right: 20px;
+  }
+}
+
+section.product .product__chosen .autocomplete-product-duration--final {
+  display: inline-block;
+  margin-left: 20px;
+  color: #e54651;
+}
+
+section.product .product__chosen .autocomplete-product--choice {
+  margin: 0;
 }
 
 section.product .product__block {

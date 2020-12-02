@@ -313,7 +313,17 @@ $(document).ready(function () {
       "<button class='ui-autocomplete-choose'>Rinktis pažymėtas paslaugas</button>"
     );
     $(".ui-autocomplete").append(chooseBtn);
+    
+    chooseBtn.on("click", function() {
+      input.autocomplete("close");
+      input.blur();
+      isVisible = false;
+    })
   };
+
+  $(document).on("click", ".autocomplete-product-checkbox", function() {
+    var attrOpacity = getComputedStyle(this,':after').opacity;
+  });
 
   $(document).on("click", ".autocomplete-product-button", function () {
     var description = $(this)
@@ -325,13 +335,12 @@ $(document).ready(function () {
 
   $(document).on("click", ".autocomplete-product-expand", function () {
     $(this).siblings(".autocomplete-product--choice, .autocomplete-product-duration").toggleClass("hidden");
-    $(this).toggleClass("rotate");
+    $(this).toggleClass("rotate-arrow");
   });
 
-  //hacky way to make product search checkboxes work
+  //to make product search checkboxes work
   $(document)
     .on("click", ".autocomplete-product-checkbox", function (e) {
-      // if (e.target !== e.currentTarget) return;
       var checkBoxes = $(this).closest(".checkbox").find("input");
       checkBoxes.prop("checked", !checkBoxes.prop("checked"));
     })
@@ -339,6 +348,27 @@ $(document).ready(function () {
       return false;
     });
 
+    $(document).on("click", ".ui-autocomplete-choose", function (e) {
+    //   var checkBoxes = $(".checkbox").find("input");
+    //   checkBoxes.each(function () {
+    //   if ($(this).is(":checked")) {
+    //     var li = $(this).siblings(".autocomplete-product-checkbox");
+    //     li.children().clone().appendTo(".product__chosen").wrapAll("<li class='autocomplete-product'></li>");
+    //   }
+    // });
+    input.parent().hide();
+    $(".product__chosen").show();
+  });
+
+  $(".product__chosen-add").on("click", function() {
+    input.parent().show();
+  });
+
+  $(".autocomplete-product-trash").on("click", function() {
+    $(this).parent(".autocomplete-product").remove();
+  });
+
+    //making product search arrow work
   var isVisible = false;
   var input = $("#search");
   $(".product__search-arrow").click(function () {
