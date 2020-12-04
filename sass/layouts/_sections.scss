@@ -417,7 +417,7 @@ section {
     border-top: 1px solid $washedblue;
     padding: 20px 0;
     transition: margin-top .3s ease-in-out, opacity .3s ease-in-out;
-    display: none;
+    display: block;
 
     @include breakpoint(xs) {
         padding: 25px 20px 20px;
@@ -500,7 +500,7 @@ section {
 
     &--toggled {
         margin-top: 0;
-        display: block;
+        //display: block;
         opacity: 1;
 
         @include breakpoint(xs) {

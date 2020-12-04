@@ -206,6 +206,7 @@ $(document).ready(function () {
       open: function () {
         $("input#search").attr("rel", 0);
         $(".product__search-arrow").addClass("rotate");
+        $('ul.ui-autocomplete').hide().fadeIn(300);
 
         //overriding default classes after putting in wrapper
         $(".ui-autocomplete-wrapper").removeClass("ui-menu-item");
@@ -221,6 +222,7 @@ $(document).ready(function () {
       close: function () {
         if ($("input#search").attr("rel") == "0") $("input#search").val("");
         $(".product__search-arrow").removeClass("rotate");
+        $('ul.ui-autocomplete').show().fadeOut(300);
       //   if (!$("ul.ui-autocomplete").is(":visible")) {
       //     $("ul.ui-autocomplete").show();
       // } //make always visible for debugging
