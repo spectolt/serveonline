@@ -1010,12 +1010,13 @@ a.ui-button:active,
 
 // custom
 .ui-autocomplete {
+  top: auto !important;
 
   .ui-autocomplete-wrapper {
     max-height: 500px;
     width: 100%;
-	overflow-y: auto;
-	overflow-x: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 
   li.ui-menu-item {
@@ -1023,7 +1024,8 @@ a.ui-button:active,
 
     &:hover,
     &:focus {
-      // font-weight: 600 !important;
+    //   font-weight: 600 !important;
+    //   width: inherit !important;
 
       .ui-menu-item-wrapper {
         // font-weight: 600 !important;
@@ -1054,17 +1056,17 @@ a.ui-button:active,
     padding: 10px 20px;
     background: $darkgray;
     border-radius: 5px;
-	transition: background-color 0.2s ease-in-out;
-	
-	@include breakpoint(xs) {
-		padding-right: 30px;
-	}
+    transition: background-color 0.2s ease-in-out;
+
+    @include breakpoint(xs) {
+      padding-right: 30px;
+    }
 
     &:hover {
-      background-color: $orange;
+      background-color: $midgray;
 
       & > .autocomplete-product {
-        background-color: $orange;
+        background-color: $midgray;
       }
     }
   }
@@ -1113,12 +1115,26 @@ a.ui-button:active,
     }
 
     .checkbox {
+      input[type="checkbox"] {
+		right: 0;
+		left: auto;
+      }
+
       label {
+		padding: 0;
+		
         &:before,
         &:after {
           top: 50%;
-          transform: translateY(-50%);
-        }
+		  transform: translateY(-50%);
+		  right: 0;
+		  left: auto;
+		  margin: 0;
+		}
+		
+		&:after {
+			right: 3px;
+		}
 
         .autocomplete-product {
           &-title,
@@ -1180,37 +1196,38 @@ a.ui-button:active,
         }
       }
     }
-	
-	&-expand {
-		position: absolute;
-		right: 20px;
-		top: 15px;
-		display: block;
-        width: 15px;
-        height: 9px;
-        background-size: 100%;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-image: url("img/icons/angle-down-bold.svg");
-        transition: transform 0.2s ease-in-out;
-        cursor: pointer;
-	}
+
+    &-expand {
+      position: absolute;
+      right: 20px;
+      top: 15px;
+      display: block;
+      width: 15px;
+      height: 9px;
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url("img/icons/angle-down-bold.svg");
+      transition: transform 0.2s ease-in-out;
+      cursor: pointer;
+    }
 
     &--choices {
-      padding-left: 0;
+      //padding-left: 0;
 
-	  .autocomplete-product {
-      &-title,
-      &-desc,
-      &-duration {
-        margin-left: 50px;
-	  }
-	}
+      .autocomplete-product {
+        &-title,
+        &-desc,
+        &-duration {
+          margin-left: 0;
+        }
+      }
     }
 
     &--choice {
 	  margin: 0;
-	//   display: none;
+	  padding: 10px 0;
+      //   display: none;
     }
   }
 
@@ -1221,6 +1238,17 @@ a.ui-button:active,
     // left: 30px;
     //margin: 30px 0 0;
     // bottom: 20px;
+  }
+
+  &-choose-text {
+	  position: absolute;
+	  top: 30px;
+	  right: 52px;
+	  color: $red;
+
+	  @include breakpoint(xs) {
+		  display: none;
+	  }
   }
 }
 

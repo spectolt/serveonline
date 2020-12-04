@@ -62,10 +62,17 @@ $(document).ready(function () {
   };
 
   //highlighted dates
-  var eventDates = {};
-  eventDates[new Date("12/12/2020")] = new Date("12/12/2020");
-  eventDates[new Date("01/01/2021")] = new Date("01/01/2021");
-  eventDates[new Date("01/13/2021")] = new Date("01/13/2021");
+  // var eventDates = {};
+  // eventDates[new Date("12/12/2020")] = new Date("12/12/2020");
+  // eventDates[new Date("01/01/2021")] = new Date("01/01/2021");
+  // eventDates[new Date("01/13/2021")] = new Date("01/13/2021");
+
+  var Event = function(text, className) {
+    this.text = text; };
+    var eventDates = {};
+    eventDates[new Date("12/07/2020")] = new Event("Event01");
+    eventDates[new Date("01/12/2021")] = new Event("Event02");
+    eventDates[new Date("01/28/2021")] = new Event("Event02");
 
   $(".product__nav-input")
     .datepicker({
@@ -90,7 +97,13 @@ $(document).ready(function () {
         "Gruodžio",
       ],
 
-      onSelect: function () {
+      onSelect: function (date, inst) {
+        var event = eventDates[new Date(inst.selectedYear, inst.selectedMonth, inst.selectedDay)];
+        console.log(event);
+        console.log(date);
+        if (event) {
+          alert("hello");
+        }
         changeTextWidth();
 
         //main input sets date of all inputs, persons' inputs don't change main input
@@ -174,6 +187,7 @@ $(document).ready(function () {
   $("#search")
     .autocomplete({
       minLength: 0,
+      appendTo: '.product__search',
       source: function (request, response) {
         $.ajax({
           url: "https://5fc0bc01cb4d020016fe5d12.mockapi.io/products",
@@ -207,6 +221,9 @@ $(document).ready(function () {
       close: function () {
         if ($("input#search").attr("rel") == "0") $("input#search").val("");
         $(".product__search-arrow").removeClass("rotate");
+      //   if (!$("ul.ui-autocomplete").is(":visible")) {
+      //     $("ul.ui-autocomplete").show();
+      // } //make always visible for debugging
       },
       select: function (event, ui) {
         event.preventDefault();
@@ -274,8 +291,8 @@ $(document).ready(function () {
               item.title +
               "<button class='autocomplete-product-button'>Plačiau</button></span><span class='autocomplete-product-desc paragraph hidden'>" +
               item.about +
-              "</span><span class='autocomplete-product-duration'>" +
-              item.duration +
+              // "</span><span class='autocomplete-product-duration'>" +
+              // item.duration +
               "</span><div class='autocomplete-product autocomplete-product--choice hidden'><div class='checkbox'><input type='checkbox' class='autocomplete-product-input' id='item-" +
               item.index +
               "'><label class='autocomplete-product-checkbox' for='item-" +
@@ -312,7 +329,9 @@ $(document).ready(function () {
     var chooseBtn = $(
       "<button class='ui-autocomplete-choose'>Rinktis pažymėtas paslaugas</button>"
     );
+    var chooseText = $("<p class='ui-autocomplete-choose-text paragraph'>Pažymėkite vieną ar kelias paslaugas</p>")
     $(".ui-autocomplete").append(chooseBtn);
+    $(chooseText).prependTo(".ui-autocomplete");
     
     chooseBtn.on("click", function() {
       input.autocomplete("close");
@@ -321,9 +340,9 @@ $(document).ready(function () {
     })
   };
 
-  $(document).on("click", ".autocomplete-product-checkbox", function() {
-    var attrOpacity = getComputedStyle(this,':after').opacity;
-  });
+  // $(document).on("click", ".autocomplete-product-checkbox", function() {
+  //   var attrOpacity = getComputedStyle(this,':after').opacity;
+  // });
 
   $(document).on("click", ".autocomplete-product-button", function () {
     var description = $(this)
@@ -458,6 +477,8 @@ $(document).ready(function () {
       moveOrder();
       changeTextWidth();
       changePadding();
+
+      $('.ui-autocomplete').css('width', $('.product__search').width());
     }, 100);
   });
 

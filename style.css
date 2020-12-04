@@ -2276,11 +2276,6 @@ table.calendar .calendar__more-times--hidden {
   border-width: 1px 0 0 0;
 }
 
-.ui-menu .ui-state-focus,
-.ui-menu .ui-state-active {
-  margin: -1px;
-}
-
 /* icon support */
 .ui-menu-icons {
   position: relative;
@@ -5109,6 +5104,10 @@ a.ui-button:active,
   box-shadow: 0px 0px 5px #666666;
 }
 
+.ui-autocomplete {
+  top: auto !important;
+}
+
 .ui-autocomplete .ui-autocomplete-wrapper {
   max-height: 500px;
   width: 100%;
@@ -5152,11 +5151,11 @@ a.ui-button:active,
 }
 
 .ui-autocomplete .ui-menu-item-wrapper:hover {
-  background-color: #ff9954;
+  background-color: #e1e2e5;
 }
 
 .ui-autocomplete .ui-menu-item-wrapper:hover > .autocomplete-product {
-  background-color: #ff9954;
+  background-color: #e1e2e5;
 }
 
 .ui-autocomplete .autocomplete-category {
@@ -5204,10 +5203,26 @@ a.ui-button:active,
   margin-left: 30px;
 }
 
+.ui-autocomplete .autocomplete-product .checkbox input[type="checkbox"] {
+  right: 0;
+  left: auto;
+}
+
+.ui-autocomplete .autocomplete-product .checkbox label {
+  padding: 0;
+}
+
 .ui-autocomplete .autocomplete-product .checkbox label:before, .ui-autocomplete .autocomplete-product .checkbox label:after {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+  right: 0;
+  left: auto;
+  margin: 0;
+}
+
+.ui-autocomplete .autocomplete-product .checkbox label:after {
+  right: 3px;
 }
 
 .ui-autocomplete .autocomplete-product .checkbox label .autocomplete-product-title, .ui-autocomplete .autocomplete-product .checkbox label .autocomplete-product-desc, .ui-autocomplete .autocomplete-product .checkbox label .autocomplete-product-duration {
@@ -5288,20 +5303,30 @@ a.ui-button:active,
   cursor: pointer;
 }
 
-.ui-autocomplete .autocomplete-product--choices {
-  padding-left: 0;
-}
-
 .ui-autocomplete .autocomplete-product--choices .autocomplete-product-title, .ui-autocomplete .autocomplete-product--choices .autocomplete-product-desc, .ui-autocomplete .autocomplete-product--choices .autocomplete-product-duration {
-  margin-left: 50px;
+  margin-left: 0;
 }
 
 .ui-autocomplete .autocomplete-product--choice {
   margin: 0;
+  padding: 10px 0;
 }
 
 .ui-autocomplete-choose {
   width: 100%;
+}
+
+.ui-autocomplete-choose-text {
+  position: absolute;
+  top: 30px;
+  right: 52px;
+  color: #e54651;
+}
+
+@media (max-width: 480px) {
+  .ui-autocomplete-choose-text {
+    display: none;
+  }
 }
 
 .ui-datepicker {
