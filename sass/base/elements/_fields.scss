@@ -149,7 +149,7 @@ textarea {
 		position: relative;
 		display: block;
 		font-size: 1rem;
-		transition: color 0.2s ease-in-out;
+		transition: color 0.3s ease-in-out;
 		cursor: pointer;
 		color: $darkblue;
 		padding-left: 30px;
@@ -163,7 +163,7 @@ textarea {
 			width: 16px;
 			height: 16px;
 			margin-right: 10px;
-			transition: border-color 0.2s ease-in-out, background 0.2s ease-in-out;
+			transition: border-color 0.3s ease-in-out, background 0.3s ease-in-out;
 			border-radius: 50%;
 			z-index: 1;
 		}
@@ -182,7 +182,7 @@ textarea {
 			background-position: center;
 			background-repeat: no-repeat;
 			opacity: 0;
-			transition: opacity 0.2s ease-in-out;
+			transition: opacity 0.3s ease-in-out;
 			z-index: 2;
 		}
 
@@ -247,7 +247,7 @@ textarea {
 		position: relative;
 		display: block;
 		font-size: 1rem;
-		transition: color 0.2s ease-in-out;
+		transition: color 0.3s ease-in-out;
 		cursor: pointer;
 		color: $darkblue;
 		padding-left: 30px;
@@ -261,7 +261,7 @@ textarea {
 			width: 16px;
 			height: 16px;
 			margin-right: 10px;
-			transition: border-color 0.2s ease-in-out, background 0.2s ease-in-out;
+			transition: border-color 0.3s ease-in-out, background 0.3s ease-in-out;
 			border-radius: 50%;
 			z-index: 1;
 		}
@@ -278,7 +278,7 @@ textarea {
 			background: $white;
 			border-radius: 50%;
 			opacity: 0;
-			transition: opacity 0.2s ease-in-out;
+			transition: opacity 0.3s ease-in-out;
 			z-index: 2;
 		}
 
@@ -370,7 +370,7 @@ textarea {
 		height: 0;
 		max-height: 0px;
 		overflow: hidden;
-		transition: max-height 0.2s ease-in-out, height 0.2s ease-in-out, margin 0.2s ease-in-out;
+		transition: max-height 0.3s ease-in-out, height 0.3s ease-in-out, margin 0.3s ease-in-out;
 	}
 }
 

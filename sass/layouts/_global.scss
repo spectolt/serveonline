@@ -303,7 +303,7 @@ body {
         .radio,
         .checkbox {
           padding: 10px 15px;
-          transition: background 0.2s ease-in-out;
+          transition: background 0.3s ease-in-out;
 
           &:hover,
           &:focus {
@@ -558,7 +558,7 @@ body {
             //margin: 0 auto;
             text-align: right;
             margin-bottom: 10px;
-            transition: font-weight .2s ease-in-out;
+            transition: font-weight .3s ease-in-out;
 
             @include breakpoint(xs) {
               text-align: center;

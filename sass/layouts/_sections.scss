@@ -61,7 +61,7 @@ section {
                     background-position: center;
                     background-repeat: no-repeat;
                     display: block;
-                    transition: transform .1s ease-in-out;
+                    transition: transform .3s ease-in-out;
 
                     @include breakpoint(xs) {
                         margin-left: 20px;
@@ -180,7 +180,7 @@ section {
 
                 &.venue__description--visible {
                     p {
-                        transition: height 0.2s ease-in, max-height 0.2s ease-in;
+                        transition: height 0.3s ease-in, max-height 0.3s ease-in;
                         height: auto;
                         max-height: 999px;
                     }
@@ -191,7 +191,7 @@ section {
                 }
 
                 p {
-                    transition: height 0.2s ease-out, max-height 0.2s ease-out;
+                    transition: height 0.3s ease-out, max-height 0.3s ease-out;
                     height: 85px;
                     max-height: 85px;
                     overflow: hidden;
@@ -411,12 +411,12 @@ section {
     position: relative;
     color: $white;
     width: 100%;
-    transition: top .2s ease-in-out;
+    transition: top .3s ease-in-out;
     z-index: 0;
     opacity: 0;
     border-top: 1px solid $washedblue;
     padding: 20px 0;
-    transition: margin-top .2s ease-in-out, opacity .2s ease-in-out;
+    transition: margin-top .3s ease-in-out, opacity .3s ease-in-out;
     display: none;
 
     @include breakpoint(xs) {
@@ -475,7 +475,7 @@ section {
                 margin: 0 auto;
                 position: relative;
                 margin-bottom: 10px;
-                transition: background-color .2s ease-in-out;
+                transition: background-color .3s ease-in-out;
                 padding: 0;
 
                 @include breakpoint(xs) {

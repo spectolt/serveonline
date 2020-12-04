@@ -169,7 +169,7 @@ section.product {
         background-position: center;
         background-repeat: no-repeat;
         background-image: url("img/icons/angle-down-bold.svg");
-        transition: transform 0.2s ease-in-out;
+        transition: transform 0.3s ease-in-out;
         cursor: pointer;
 
         @include breakpoint(xs) {

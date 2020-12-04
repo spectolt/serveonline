@@ -50,7 +50,7 @@ $darkblue: #101b51;
       background-position: center;
       background-repeat: no-repeat;
       display: block;
-      transition: transform 0.1s ease-in-out;
+      transition: transform 0.3s ease-in-out;
 
       &.rotate {
         transform: translateY(-50%) rotate(180deg);
