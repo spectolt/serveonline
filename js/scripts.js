@@ -61,13 +61,7 @@ $(document).ready(function () {
     changeTextWidth();
   };
 
-  //highlighted dates
-  // var eventDates = {};
-  // eventDates[new Date("12/12/2020")] = new Date("12/12/2020");
-  // eventDates[new Date("01/01/2021")] = new Date("01/01/2021");
-  // eventDates[new Date("01/13/2021")] = new Date("01/13/2021");
-
-  var Event = function(text, className) {
+  var Event = function(text) {
     this.text = text; };
     var eventDates = {};
     eventDates[new Date("12/07/2020")] = new Event("Event01");
@@ -102,7 +96,7 @@ $(document).ready(function () {
         console.log(event);
         console.log(date);
         if (event) {
-          alert("hello");
+          
         }
         changeTextWidth();
 
@@ -218,11 +212,13 @@ $(document).ready(function () {
           .addClass("ui-menu-item");
         $("div.autocomplete-product").addClass("ui-menu-item-wrapper");
         $(".ui-autocomplete-choose").removeClass("ui-menu-item");
+        $(".ui-autocomplete-choose-text").removeClass("ui-menu-item-wrapper");
       },
       close: function () {
         if ($("input#search").attr("rel") == "0") $("input#search").val("");
         $(".product__search-arrow").removeClass("rotate");
         $('ul.ui-autocomplete').show().fadeOut(300);
+
       //   if (!$("ul.ui-autocomplete").is(":visible")) {
       //     $("ul.ui-autocomplete").show();
       // } //make always visible for debugging
@@ -333,7 +329,7 @@ $(document).ready(function () {
     );
     var chooseText = $("<p class='ui-autocomplete-choose-text paragraph'>Pažymėkite vieną ar kelias paslaugas</p>")
     $(".ui-autocomplete").append(chooseBtn);
-    $(chooseText).prependTo(".ui-autocomplete");
+    $(chooseText).prependTo(".ui-autocomplete-wrapper");
     
     chooseBtn.on("click", function() {
       input.autocomplete("close");
@@ -341,10 +337,6 @@ $(document).ready(function () {
       isVisible = false;
     })
   };
-
-  // $(document).on("click", ".autocomplete-product-checkbox", function() {
-  //   var attrOpacity = getComputedStyle(this,':after').opacity;
-  // });
 
   $(document).on("click", ".autocomplete-product-button", function () {
     var description = $(this)

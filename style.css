@@ -5113,6 +5113,7 @@ a.ui-button:active,
   width: 100%;
   overflow-y: auto;
   overflow-x: hidden;
+  position: relative;
 }
 
 .ui-autocomplete li.ui-menu-item {
@@ -5318,8 +5319,8 @@ a.ui-button:active,
 
 .ui-autocomplete-choose-text {
   position: absolute;
-  top: 30px;
-  right: 52px;
+  top: 20px;
+  right: 30px;
   color: #e54651;
 }
 

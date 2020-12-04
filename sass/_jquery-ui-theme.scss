@@ -1016,7 +1016,8 @@ a.ui-button:active,
     max-height: 500px;
     width: 100%;
     overflow-y: auto;
-    overflow-x: hidden;
+	overflow-x: hidden;
+	position: relative;
   }
 
   li.ui-menu-item {
@@ -1242,8 +1243,8 @@ a.ui-button:active,
 
   &-choose-text {
 	  position: absolute;
-	  top: 30px;
-	  right: 52px;
+	  top: 20px;
+	  right: 30px;
 	  color: $red;
 
 	  @include breakpoint(xs) {
