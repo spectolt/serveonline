@@ -96,7 +96,7 @@ $(document).ready(function () {
         if (event) {
           var selectedDate = $('.ui-datepicker-current-day');
           console.log(selectedDate);
-          popup.fadeIn(300);
+          popup.show(300);
         };
         changeTextWidth();
 
