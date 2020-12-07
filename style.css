@@ -1082,7 +1082,7 @@ select {
 
 @media (max-width: 600px) {
   .search-panel.search-panel--toggled input[name="search"] {
-    padding: 18px 20px 44px;
+    padding: 18px 50px 70px 20px;
   }
 }
 
@@ -1099,14 +1099,14 @@ select {
 @media (max-width: 600px) {
   .search-panel input[name="search"] {
     font-size: 1.125rem;
-    padding: 44px 20px 0;
+    padding: 44px 50px 0 20px;
   }
 }
 
 .search-panel .search-panel__close {
   position: absolute;
   top: 50%;
-  right: 30px;
+  right: 20px;
   -webkit-transform: translateY(-50%) rotate(-90deg);
           transform: translateY(-50%) rotate(-90deg);
   padding: 0;
@@ -5341,12 +5341,6 @@ a.ui-button:active,
   transition: background-color 0.3s ease-in-out;
 }
 
-@media (max-width: 600px) {
-  .ui-autocomplete .ui-menu-item-wrapper {
-    padding-right: 30px;
-  }
-}
-
 .ui-autocomplete .ui-menu-item-wrapper:hover {
   background-color: #e1e2e5;
 }
@@ -5365,8 +5359,6 @@ a.ui-button:active,
 
 @media (max-width: 600px) {
   .ui-autocomplete .autocomplete-category {
-    text-align: center;
-    margin: 30px 0 10px 0;
     font-size: 1.125rem;
   }
 }
@@ -5382,17 +5374,23 @@ a.ui-button:active,
 
 @media (max-width: 600px) {
   .ui-autocomplete .autocomplete-subcategory {
-    text-align: center;
-    margin: 0 0 10px 0;
+    margin-bottom: 10px;
+    margin-top: 20px;
     font-size: 1rem;
   }
 }
 
-.ui-autocomplete-choose {
+.ui-autocomplete .ui-autocomplete-choose {
   width: 100%;
-  font-size: 1.5rem !important;
+  font-size: 1.5rem;
   border-radius: 0 0 5px 5px;
-  font-family: 'Sen', sans-serif !important;
+  font-family: 'Sen', sans-serif;
+}
+
+@media (max-width: 600px) {
+  .ui-autocomplete .ui-autocomplete-choose {
+    font-size: 1rem;
+  }
 }
 
 .ui-autocomplete-choose-text {
@@ -5417,6 +5415,7 @@ a.ui-button:active,
   display: block;
   font-weight: 600;
   color: #101b51;
+  padding-right: 30px;
 }
 
 .autocomplete-product .checkbox input[type="checkbox"] {
@@ -5527,7 +5526,7 @@ a.ui-button:active,
   margin-left: 0;
 }
 
-.autocomplete-product--choice {
+.autocomplete-product.autocomplete-product--choice {
   margin: 0;
   padding: 10px 0;
 }
@@ -6513,9 +6512,20 @@ body {
 }
 
 .disable-scrollbars::-webkit-scrollbar {
+  display: none;
   width: 0;
   background: transparent;
   /* Chrome/Safari/Webkit */
+}
+
+.disable-scrollbars::-webkit-scrollbar-track {
+  width: 0;
+  background: transparent;
+}
+
+.disable-scrollbars::-webkit-scrollbar-thumb {
+  width: 0;
+  background: transparent;
 }
 
 .rotate-arrow {
@@ -7109,7 +7119,7 @@ section.venue-info .product-action:last-child {
 
 .breadcrumbs__more {
   background-color: #101b51;
-  margin-top: -50%;
+  margin-top: -100%;
   position: relative;
   color: #fff;
   width: 100%;
@@ -7462,7 +7472,7 @@ section.product .product__search input {
 @media (max-width: 600px) {
   section.product .product__search input {
     border-width: 1px;
-    font-size: 0.875rem;
+    font-size: 1rem;
     padding-left: 60px;
     padding-right: 40px;
   }
@@ -7533,6 +7543,15 @@ section.product .product__chosen h3 {
   display: inline-block;
 }
 
+@media (max-width: 600px) {
+  section.product .product__chosen h3 {
+    margin: 10px auto 0;
+    text-align: center;
+    width: calc(100% + 45px);
+    margin-right: -45px;
+  }
+}
+
 section.product .product__chosen .ui-autocomplete-wrapper {
   max-height: 500px;
   width: 100%;
@@ -7549,7 +7568,7 @@ section.product .product__chosen .autocomplete-product {
   cursor: default;
   background-color: #f4f4f6;
   border-radius: 5px;
-  padding: 10px 30px;
+  padding: 10px 20px;
   margin-bottom: 10px;
 }
 
@@ -7634,16 +7653,18 @@ section.product .product__chosen .autocomplete-product-duration:before {
   top: 2px;
 }
 
-@media (max-width: 600px) {
-  section.product .product__chosen .autocomplete-product-duration:before {
-    margin-right: 20px;
-  }
-}
-
 section.product .product__chosen .autocomplete-product-duration--final {
   display: inline-block;
   margin-left: 20px;
   color: #e54651;
+}
+
+@media (max-width: 600px) {
+  section.product .product__chosen .autocomplete-product-duration--final {
+    margin-left: 10px;
+    padding-right: 0;
+    font-family: 'Roboto', sans-serif;
+  }
 }
 
 section.product .product__chosen .autocomplete-product--choice {

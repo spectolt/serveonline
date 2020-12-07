@@ -48,7 +48,7 @@
                 </div>
                 <div class="product__chosen">
                 <button class="product__chosen-add"></button>
-                    <li class="autocomplete-product">
+                    <li class="autocomplete-product autocomplete-product--chosen">
                         <span class="autocomplete-product-title autocomplete-product-title--main">Moterų kirpimas<button class="autocomplete-product-button">Plačiau</button></span>
                         <span class="autocomplete-product-desc paragraph hidden">Description</span>
                         <span class="autocomplete-product-title autocomplete-product-title--sub">Modelinis kirpimas</span>
@@ -56,7 +56,7 @@
                         <button class="autocomplete-product-trash"></button>
                     </li>
                     
-                    <li class="autocomplete-product">
+                    <li class="autocomplete-product autocomplete-product--chosen">
                         <span class="autocomplete-product-title autocomplete-product-title--main">Plaukų atstatymo procedūra<button class="autocomplete-product-button">Plačiau</button></span>
                         <span class="autocomplete-product-desc paragraph hidden">Description</span>
                         <span class="autocomplete-product-title autocomplete-product-title--sub">Trumpi plaukai</span>
@@ -64,7 +64,7 @@
                         <button class="autocomplete-product-trash"></button>
                     </li>
                     
-                    <h3>Bendra reikiama paslaugų trukmė</h3> <span class="autocomplete-product-duration autocomplete-product-duration--final">01:30</span>
+                    <h3>Bendra reikiama paslaugų trukmė <span class="autocomplete-product-duration autocomplete-product-duration--final">01:30</span></h3>
                 </div>
                 <div class="product__list">
                     <?php for($y=0;$y<5;$y++) { ?>

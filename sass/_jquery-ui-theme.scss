@@ -1060,7 +1060,7 @@ a.ui-button:active,
     transition: background-color 0.3s ease-in-out;
 
     @include breakpoint(xs) {
-      padding-right: 30px;
+      //padding-right: 30px;
     }
 
     &:hover {
@@ -1080,8 +1080,7 @@ a.ui-button:active,
     margin: 30px 0 20px 50px;
 
     @include breakpoint(xs) {
-      text-align: center;
-      margin: 30px 0 10px 0;
+     // margin: 30px 0 10px 0;
       font-size: 1.125rem;
     }
   }
@@ -1095,22 +1094,21 @@ a.ui-button:active,
     margin: 30px 0 20px 50px;
 
     @include breakpoint(xs) {
-      text-align: center;
-      margin: 0 0 10px 0;
+	  margin-bottom: 10px;
+	  margin-top: 20px;
       font-size: 1rem;
     }
   }
 
-  &-choose {
+  .ui-autocomplete &-choose {
 	width: 100%;
-	font-size: 1.5rem !important;
+	font-size: 1.5rem;
 	border-radius: 0 0 5px 5px;
-	font-family: 'Sen', sans-serif !important;
-    // position: relative;
-    // bottom: 20px;
-    // left: 30px;
-    //margin: 30px 0 0;
-    // bottom: 20px;
+	font-family: 'Sen', sans-serif;
+	
+	@include breakpoint(xs) {
+		font-size: 1rem;
+	}
   }
 
   &-choose-text {
@@ -1136,7 +1134,7 @@ a.ui-button:active,
     //width: 100%;
     font-weight: 600;
     color: $color__text-main;
-    //margin-left: 30px;
+    padding-right: 30px;
   }
 
   .checkbox {
@@ -1253,7 +1251,7 @@ a.ui-button:active,
     }
   }
 
-  &--choice {
+  &.autocomplete-product--choice {
     margin: 0;
     padding: 10px 0;
     //   display: none;

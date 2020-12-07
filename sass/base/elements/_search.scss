@@ -23,7 +23,7 @@
             padding: 22px 67px;
 
             @include breakpoint(xs) {
-                padding: 18px 20px 44px;
+                padding: 18px 50px 70px 20px;
             }
         }
     }
@@ -38,7 +38,7 @@
 
         @include breakpoint(xs) {
             font-size: 1.125rem;
-            padding: 44px 20px 0;
+            padding: 44px 50px 0 20px;
         }
     }
 
@@ -46,7 +46,7 @@
         &__close {
             position: absolute;
             top: 50%;
-            right: 30px;
+            right: 20px;
             transform: translateY(-50%) rotate(-90deg);
             padding: 0;
             border: 0;

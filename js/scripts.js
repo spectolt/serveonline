@@ -383,6 +383,8 @@ $(document).ready(function () {
     })
   };
 
+  
+
   $(document).on("click", ".autocomplete-product-button", function () {
     var description = $(this)
       .closest(".autocomplete-product")
@@ -420,10 +422,16 @@ $(document).ready(function () {
 
   $(".product__chosen-add").on("click", function() {
     input.parent().show();
+    $(this).parent().hide();
   });
 
   $(".autocomplete-product-trash").on("click", function() {
     $(this).parent(".autocomplete-product").remove();
+
+    if ($(".product__chosen .autocomplete-product").length == 0) {
+      $(".product__chosen").hide();
+      input.parent().show();
+    }
   });
 
     //making product search arrow work

@@ -192,7 +192,7 @@ section.product {
 
         @include breakpoint(xs) {
           border-width: 1px;
-          font-size: 0.875rem;
+          font-size: 1rem;
           padding-left: 60px;
           padding-right: 40px;
         }
@@ -234,6 +234,13 @@ section.product {
         font-size: 1rem;
         margin: 10px 0 0 30px;
         display: inline-block;
+
+        @include breakpoint(xs) {
+          margin: 10px auto 0;
+          text-align: center;
+          width: calc(100% + 45px);
+          margin-right: -45px;
+        }
       }
 
       .ui-autocomplete-wrapper {
@@ -252,7 +259,7 @@ section.product {
         cursor: default;
         background-color: $darkgray;
         border-radius: 5px;
-        padding: 10px 30px;
+        padding: 10px 20px;
         margin-bottom: 10px;
 
         &-trash {
@@ -334,7 +341,7 @@ section.product {
             top: 2px;
 
             @include breakpoint(xs) {
-              margin-right: 20px;
+              //margin-right: 20px;
             }
           }
 
@@ -342,6 +349,12 @@ section.product {
             display: inline-block;
             margin-left: 20px;
             color: $red;
+
+            @include breakpoint (xs) {
+              margin-left: 10px;
+              padding-right: 0;
+              font-family: 'Roboto', sans-serif;
+            }
           }
         }
 
