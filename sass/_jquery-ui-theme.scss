@@ -1016,8 +1016,8 @@ a.ui-button:active,
     max-height: 500px;
     width: 100%;
     overflow-y: auto;
-	overflow-x: hidden;
-	position: relative;
+    overflow-x: hidden;
+    position: relative;
   }
 
   li.ui-menu-item {
@@ -1025,8 +1025,8 @@ a.ui-button:active,
 
     &:hover,
     &:focus {
-    //   font-weight: 600 !important;
-    //   width: inherit !important;
+      //   font-weight: 600 !important;
+      //   width: inherit !important;
 
       .ui-menu-item-wrapper {
         // font-weight: 600 !important;
@@ -1092,7 +1092,7 @@ a.ui-button:active,
     font-weight: 400;
     cursor: inherit;
     color: $color__text-main;
-    margin: 0 0 20px 50px;
+    margin: 30px 0 20px 50px;
 
     @include breakpoint(xs) {
       text-align: center;
@@ -1101,120 +1101,65 @@ a.ui-button:active,
     }
   }
 
-  .autocomplete-product {
-    position: relative;
-    cursor: default;
+  &-choose {
+	width: 100%;
+	font-size: 1.5rem !important;
+	border-radius: 0 0 5px 5px;
+	font-family: 'Sen', sans-serif !important;
+    // position: relative;
+    // bottom: 20px;
+    // left: 30px;
+    //margin: 30px 0 0;
+    // bottom: 20px;
+  }
 
-    &-title,
-    &-desc,
-    &-duration {
-      display: block;
-      //width: 100%;
-      font-weight: 600;
-      color: $color__text-main;
-      margin-left: 30px;
+  &-choose-text {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: $red;
+
+    @include breakpoint(xs) {
+      display: none;
+    }
+  }
+}
+
+.autocomplete-product {
+  position: relative;
+  cursor: default;
+
+  &-title,
+  &-desc,
+  &-duration {
+    display: block;
+    //width: 100%;
+    font-weight: 600;
+    color: $color__text-main;
+    //margin-left: 30px;
+  }
+
+  .checkbox {
+    input[type="checkbox"] {
+      right: 0;
+      left: auto;
     }
 
-    .checkbox {
-      input[type="checkbox"] {
-		right: 0;
-		left: auto;
-      }
-
-      label {
-		padding: 0;
-		
-        &:before,
-        &:after {
-          top: 50%;
-		  transform: translateY(-50%);
-		  right: 0;
-		  left: auto;
-		  margin: 0;
-		}
-		
-		&:after {
-			right: 3px;
-		}
-
-        .autocomplete-product {
-          &-title,
-          &-desc,
-          &-duration {
-            margin-left: 0;
-          }
-        }
-      }
-    }
-
-    &-title,
-    &-button {
-      font-size: 1.125rem;
-      margin-bottom: 5px;
-
-      @include breakpoint(xs) {
-        font-size: 0.875rem;
-      }
-    }
-
-    &-button {
-      color: $cyan !important;
-      margin-left: 25px;
-      font-weight: 600;
-      background-color: transparent;
+    label {
       padding: 0;
-    }
 
-    &-desc {
-      margin-bottom: 10px;
-      font-weight: 400;
-      font-size: 0.875rem;
-      margin-top: 10px;
-    }
-
-    &-duration {
-      font-weight: 400;
-
-      @include breakpoint(xs) {
-        font-size: 0.875rem;
+      &:before,
+      &:after {
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        left: auto;
+        margin: 0;
       }
 
-      &:before {
-        content: "";
-        width: 15px;
-        height: 15px;
-        background-image: url("img/icons/clock.svg");
-        background-size: 100%;
-        background-position: center;
-        background-repeat: no-repeat;
-        display: inline-block;
-        margin-right: 10px;
-        position: relative;
-        top: 2px;
-
-        @include breakpoint(xs) {
-          margin-right: 20px;
-        }
+      &:after {
+        right: 3px;
       }
-    }
-
-    &-expand {
-      position: absolute;
-      right: 20px;
-      top: 15px;
-      display: block;
-      width: 15px;
-      height: 9px;
-      background-size: 100%;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-image: url("img/icons/angle-down-bold.svg");
-      transition: transform 0.3s ease-in-out;
-      cursor: pointer;
-    }
-
-    &--choices {
-      //padding-left: 0;
 
       .autocomplete-product {
         &-title,
@@ -1224,32 +1169,90 @@ a.ui-button:active,
         }
       }
     }
+  }
 
-    &--choice {
-	  margin: 0;
-	  padding: 10px 0;
-      //   display: none;
+  &-title,
+  &-button {
+    font-size: 1.125rem;
+    margin-bottom: 5px;
+
+    @include breakpoint(xs) {
+      font-size: 0.875rem;
     }
   }
 
-  &-choose {
-    width: 100%;
-    // position: relative;
-    // bottom: 20px;
-    // left: 30px;
-    //margin: 30px 0 0;
-    // bottom: 20px;
+  &-button {
+    color: $cyan !important;
+    margin-left: 25px;
+    font-weight: 600;
+    background-color: transparent;
+    padding: 0;
   }
 
-  &-choose-text {
-	  position: absolute;
-	  top: 20px;
-	  right: 30px;
-	  color: $red;
+  &-desc {
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: 0.875rem;
+    margin-top: 10px;
+  }
 
-	  @include breakpoint(xs) {
-		  display: none;
-	  }
+  &-duration {
+    font-weight: 400;
+
+    @include breakpoint(xs) {
+      font-size: 0.875rem;
+    }
+
+    &:before {
+      content: "";
+      width: 15px;
+      height: 15px;
+      background-image: url("img/icons/clock.svg");
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: inline-block;
+      margin-right: 10px;
+      position: relative;
+      top: 2px;
+
+      @include breakpoint(xs) {
+        margin-right: 20px;
+      }
+    }
+  }
+
+  &-expand {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    display: block;
+    width: 15px;
+    height: 9px;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("img/icons/angle-down-bold.svg");
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+  }
+
+  &--choices {
+    //padding-left: 0;
+
+    .autocomplete-product {
+      &-title,
+      &-desc,
+      &-duration {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &--choice {
+    margin: 0;
+    padding: 10px 0;
+    //   display: none;
   }
 }
 

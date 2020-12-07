@@ -46,7 +46,7 @@
                     <input type="text" name="search" id="search" placeholder="Įveskite paslaugos pavadinimą" />
                     <span class="product__search-arrow"></span>
                 </div>
-                <div class="product__chosen ui-autocomplete-wrapper">
+                <div class="product__chosen">
                 <button class="product__chosen-add"></button>
                     <li class="autocomplete-product">
                         <span class="autocomplete-product-title autocomplete-product-title--main">Moterų kirpimas<button class="autocomplete-product-button">Plačiau</button></span>

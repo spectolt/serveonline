@@ -372,7 +372,7 @@ h1.title {
   margin: 0 0 40px 0;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   h1 {
     font-size: 1.875rem;
   }
@@ -387,7 +387,7 @@ h2.title {
   margin: 0 0 20px 0;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   h2 {
     font-size: 1.25rem;
   }
@@ -397,7 +397,7 @@ h3.title {
   margin: 0 0 20px 0;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   h3 {
     font-size: .875rem;
   }
@@ -407,7 +407,7 @@ h3.title {
   font-size: 1rem;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .paragraph, p {
     font-size: .75rem;
   }
@@ -1080,7 +1080,7 @@ select {
   padding: 22px 67px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .search-panel.search-panel--toggled input[name="search"] {
     padding: 18px 20px 44px;
   }
@@ -1096,7 +1096,7 @@ select {
   transition: padding .3s ease-in-out;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .search-panel input[name="search"] {
     font-size: 1.125rem;
     padding: 44px 20px 0;
@@ -1129,7 +1129,7 @@ select {
   display: block;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .search-panel .search-panel__close {
     top: 30%;
   }
@@ -1168,7 +1168,7 @@ table.calendar th.today {
   color: #e54651;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   table.calendar th {
     display: none;
   }
@@ -1180,7 +1180,7 @@ table.calendar small {
   font-size: 12px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   table.calendar {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1210,14 +1210,14 @@ table.calendar td .calendar__more-button {
   color: #ff9954;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   table.calendar td {
     padding-top: 0;
     display: none;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   table.calendar .calendar__selected-day {
     display: block;
   }
@@ -1260,7 +1260,7 @@ table.calendar p:hover {
   background: #ff9954;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   table.calendar p {
     width: 64px;
     font-weight: 600;
@@ -1271,7 +1271,7 @@ table.calendar .calendar__more-times--hidden {
   display: none;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   table.calendar .calendar__more-times--hidden {
     display: block;
   }
@@ -1356,7 +1356,7 @@ table.calendar .calendar__more-times--hidden {
   margin: 0 auto 0 -15px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .pagination .pagination__list {
     margin: 0 auto;
     width: 100%;
@@ -1367,7 +1367,7 @@ table.calendar .calendar__more-times--hidden {
   margin: 0 15px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .pagination .pagination__button {
     margin: 0 auto;
   }
@@ -1394,7 +1394,7 @@ table.calendar .calendar__more-times--hidden {
           transform: scale(-1, 1);
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .pagination .pagination__button--first {
     margin-left: 0;
   }
@@ -1420,7 +1420,7 @@ table.calendar .calendar__more-times--hidden {
   height: 12px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .pagination .pagination__button--last {
     margin-right: 0;
   }
@@ -1431,7 +1431,7 @@ table.calendar .calendar__more-times--hidden {
   position: relative;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .pagination .pagination__info {
     font-size: .875rem;
   }
@@ -1453,7 +1453,7 @@ table.calendar .calendar__more-times--hidden {
   display: none;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .pagination .pagination__info:last-of-type {
     width: 100%;
     text-align: center;
@@ -1461,7 +1461,7 @@ table.calendar .calendar__more-times--hidden {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .pagination .pagination__info {
     margin: 20px auto;
   }
@@ -1488,7 +1488,7 @@ table.calendar .calendar__more-times--hidden {
       flex-wrap: wrap;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .product-action__info {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1510,7 +1510,7 @@ table.calendar .calendar__more-times--hidden {
   font-family: 'Roboto', sans-serif;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .product-action__info h4 {
     margin-bottom: 10px;
   }
@@ -1532,7 +1532,7 @@ table.calendar .calendar__more-times--hidden {
   font-weight: 500;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .product-action__duration, .product-action__price {
     font-size: 0.875rem;
   }
@@ -1558,7 +1558,7 @@ table.calendar .calendar__more-times--hidden {
   background-image: url("img/icons/clock.svg");
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .product-action__duration {
     margin: 0;
   }
@@ -1581,7 +1581,7 @@ table.calendar .calendar__more-times--hidden {
   background-image: url("img/icons/price.svg");
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .product-action__price {
     margin: 0;
   }
@@ -1594,7 +1594,7 @@ table.calendar .calendar__more-times--hidden {
       align-self: flex-end;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .product-action button.product-action__order {
     padding: 4px 10px;
   }
@@ -2464,17 +2464,213 @@ button.ui-button::-moz-focus-inner {
   line-height: 1em;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .ui-datepicker {
     width: calc(100% - 80px);
     margin-left: -40px;
   }
 }
 
+.ui-datepicker-popup {
+  position: fixed;
+  top: 50vh;
+  left: 50vw;
+  background-color: #fff;
+  z-index: 1000;
+  display: none;
+  padding: 20px 30px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 12px 29px 0px rgba(0, 0, 0, 0.35);
+          box-shadow: 0px 12px 29px 0px rgba(0, 0, 0, 0.35);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 515px;
+}
+
+@media (max-width: 600px) {
+  .ui-datepicker-popup {
+    width: 90%;
+  }
+}
+
+.ui-datepicker-popup__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (max-width: 600px) {
+  .ui-datepicker-popup__header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.ui-datepicker-popup__time {
+  font-family: "Sen", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin: 0;
+}
+
+.ui-datepicker-popup__place {
+  margin-left: 30px;
+}
+
+@media (max-width: 600px) {
+  .ui-datepicker-popup__place {
+    margin-left: 0;
+  }
+}
+
+.ui-datepicker-popup__place h4 {
+  font-size: 1.125rem;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.ui-datepicker-popup__place p {
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.ui-datepicker-popup__close {
+  background: transparent;
+  padding: 0;
+  margin-left: 60px;
+  width: 22px;
+  height: 22px;
+  background-image: url("img/icons/search-close.svg");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .ui-datepicker-popup__close {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+  }
+}
+
+.ui-datepicker-popup ul {
+  margin: 0;
+  padding: 0;
+}
+
+.ui-datepicker-popup .autocomplete-product {
+  list-style: none;
+  background-color: #f4f4f6;
+  margin-top: 20px;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+
+.ui-datepicker-popup .autocomplete-product-title {
+  margin: 0 0 10px;
+  font-size: 1rem;
+}
+
+.ui-datepicker-popup .autocomplete-product-title--sub {
+  font-size: .875rem;
+  font-weight: 600;
+}
+
+.ui-datepicker-popup .autocomplete-product-duration {
+  margin: 0;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+.ui-datepicker-popup .autocomplete-product-price {
+  color: #5999b4;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-weight: 500;
+  margin-left: 20px;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+@media (max-width: 600px) {
+  .ui-datepicker-popup .autocomplete-product-price {
+    font-size: .875rem;
+  }
+}
+
+.ui-datepicker-popup .autocomplete-product-price strike {
+  display: inline-block;
+  color: #ff9954;
+  margin-left: 10px;
+}
+
+.ui-datepicker-popup .autocomplete-product-price:before {
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  width: 13px;
+  height: 15px;
+  background-image: url("img/icons/price.svg");
+  content: "";
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  margin-right: 10px;
+  display: block;
+  top: 2px;
+  position: relative;
+}
+
+.ui-datepicker-popup .autocomplete-product-weeks {
+  margin-left: 60px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+@media (max-width: 600px) {
+  .ui-datepicker-popup .autocomplete-product-weeks {
+    margin-left: 0;
+    margin-top: 5px;
+    font-size: .875rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.ui-datepicker-popup .autocomplete-product-weeks:before {
+  width: 13px;
+  height: 13px;
+  background-image: url("img/icons/calendar.svg");
+  content: "";
+  background-size: contain;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  margin-right: 10px;
+  display: block;
+  top: 5px;
+}
+
 .ui-datepicker .ui-datepicker-header {
   position: relative;
   padding: 0;
-  font-family: 'Sen', sans-serif;
+  font-family: "Sen", sans-serif;
 }
 
 .ui-datepicker .ui-datepicker-prev,
@@ -2563,8 +2759,8 @@ button.ui-button::-moz-focus-inner {
   margin: 5px auto;
   line-height: 1em;
   border-radius: 50%;
-  -webkit-transition: background-color .3s ease-in-out;
-  transition: background-color .3s ease-in-out;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .ui-datepicker td span:hover,
@@ -2584,7 +2780,7 @@ button.ui-button::-moz-focus-inner {
   border-bottom: 0;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .ui-datepicker .ui-datepicker-buttonpane {
     padding: 0;
     display: -webkit-box;
@@ -2617,7 +2813,7 @@ button.ui-button::-moz-focus-inner {
   color: #fff;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .ui-datepicker .ui-datepicker-buttonpane button {
     margin-bottom: 20px;
   }
@@ -2631,7 +2827,7 @@ button.ui-button::-moz-focus-inner {
   background: transparent;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current {
     margin-right: 0;
     margin-bottom: 20px;
@@ -5145,7 +5341,7 @@ a.ui-button:active,
   transition: background-color 0.3s ease-in-out;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .ui-autocomplete .ui-menu-item-wrapper {
     padding-right: 30px;
   }
@@ -5167,7 +5363,7 @@ a.ui-button:active,
   margin: 30px 0 20px 50px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .ui-autocomplete .autocomplete-category {
     text-align: center;
     margin: 30px 0 10px 0;
@@ -5181,10 +5377,10 @@ a.ui-button:active,
   font-weight: 400;
   cursor: inherit;
   color: #101b51;
-  margin: 0 0 20px 50px;
+  margin: 30px 0 20px 50px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .ui-autocomplete .autocomplete-subcategory {
     text-align: center;
     margin: 0 0 10px 0;
@@ -5192,28 +5388,47 @@ a.ui-button:active,
   }
 }
 
-.ui-autocomplete .autocomplete-product {
+.ui-autocomplete-choose {
+  width: 100%;
+  font-size: 1.5rem !important;
+  border-radius: 0 0 5px 5px;
+  font-family: 'Sen', sans-serif !important;
+}
+
+.ui-autocomplete-choose-text {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #e54651;
+}
+
+@media (max-width: 600px) {
+  .ui-autocomplete-choose-text {
+    display: none;
+  }
+}
+
+.autocomplete-product {
   position: relative;
   cursor: default;
 }
 
-.ui-autocomplete .autocomplete-product-title, .ui-autocomplete .autocomplete-product-desc, .ui-autocomplete .autocomplete-product-duration {
+.autocomplete-product-title, .autocomplete-product-desc, .autocomplete-product-duration {
   display: block;
   font-weight: 600;
   color: #101b51;
-  margin-left: 30px;
 }
 
-.ui-autocomplete .autocomplete-product .checkbox input[type="checkbox"] {
+.autocomplete-product .checkbox input[type="checkbox"] {
   right: 0;
   left: auto;
 }
 
-.ui-autocomplete .autocomplete-product .checkbox label {
+.autocomplete-product .checkbox label {
   padding: 0;
 }
 
-.ui-autocomplete .autocomplete-product .checkbox label:before, .ui-autocomplete .autocomplete-product .checkbox label:after {
+.autocomplete-product .checkbox label:before, .autocomplete-product .checkbox label:after {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -5222,26 +5437,26 @@ a.ui-button:active,
   margin: 0;
 }
 
-.ui-autocomplete .autocomplete-product .checkbox label:after {
+.autocomplete-product .checkbox label:after {
   right: 3px;
 }
 
-.ui-autocomplete .autocomplete-product .checkbox label .autocomplete-product-title, .ui-autocomplete .autocomplete-product .checkbox label .autocomplete-product-desc, .ui-autocomplete .autocomplete-product .checkbox label .autocomplete-product-duration {
+.autocomplete-product .checkbox label .autocomplete-product-title, .autocomplete-product .checkbox label .autocomplete-product-desc, .autocomplete-product .checkbox label .autocomplete-product-duration {
   margin-left: 0;
 }
 
-.ui-autocomplete .autocomplete-product-title, .ui-autocomplete .autocomplete-product-button {
+.autocomplete-product-title, .autocomplete-product-button {
   font-size: 1.125rem;
   margin-bottom: 5px;
 }
 
-@media (max-width: 480px) {
-  .ui-autocomplete .autocomplete-product-title, .ui-autocomplete .autocomplete-product-button {
+@media (max-width: 600px) {
+  .autocomplete-product-title, .autocomplete-product-button {
     font-size: 0.875rem;
   }
 }
 
-.ui-autocomplete .autocomplete-product-button {
+.autocomplete-product-button {
   color: #5999b4 !important;
   margin-left: 25px;
   font-weight: 600;
@@ -5249,24 +5464,24 @@ a.ui-button:active,
   padding: 0;
 }
 
-.ui-autocomplete .autocomplete-product-desc {
+.autocomplete-product-desc {
   margin-bottom: 10px;
   font-weight: 400;
   font-size: 0.875rem;
   margin-top: 10px;
 }
 
-.ui-autocomplete .autocomplete-product-duration {
+.autocomplete-product-duration {
   font-weight: 400;
 }
 
-@media (max-width: 480px) {
-  .ui-autocomplete .autocomplete-product-duration {
+@media (max-width: 600px) {
+  .autocomplete-product-duration {
     font-size: 0.875rem;
   }
 }
 
-.ui-autocomplete .autocomplete-product-duration:before {
+.autocomplete-product-duration:before {
   content: "";
   width: 15px;
   height: 15px;
@@ -5280,13 +5495,13 @@ a.ui-button:active,
   top: 2px;
 }
 
-@media (max-width: 480px) {
-  .ui-autocomplete .autocomplete-product-duration:before {
+@media (max-width: 600px) {
+  .autocomplete-product-duration:before {
     margin-right: 20px;
   }
 }
 
-.ui-autocomplete .autocomplete-product-expand {
+.autocomplete-product-expand {
   position: absolute;
   right: 20px;
   top: 15px;
@@ -5304,30 +5519,13 @@ a.ui-button:active,
   cursor: pointer;
 }
 
-.ui-autocomplete .autocomplete-product--choices .autocomplete-product-title, .ui-autocomplete .autocomplete-product--choices .autocomplete-product-desc, .ui-autocomplete .autocomplete-product--choices .autocomplete-product-duration {
+.autocomplete-product--choices .autocomplete-product-title, .autocomplete-product--choices .autocomplete-product-desc, .autocomplete-product--choices .autocomplete-product-duration {
   margin-left: 0;
 }
 
-.ui-autocomplete .autocomplete-product--choice {
+.autocomplete-product--choice {
   margin: 0;
   padding: 10px 0;
-}
-
-.ui-autocomplete-choose {
-  width: 100%;
-}
-
-.ui-autocomplete-choose-text {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  color: #e54651;
-}
-
-@media (max-width: 480px) {
-  .ui-autocomplete-choose-text {
-    display: none;
-  }
 }
 
 .ui-datepicker {
@@ -5622,6 +5820,10 @@ a.ui-button:active,
   opacity: 0.75;
 }
 
+html {
+  overflow-y: scroll;
+}
+
 html,
 body {
   margin: 0;
@@ -5668,7 +5870,7 @@ body {
   z-index: 3;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .site-header {
     padding: 0 20px;
   }
@@ -5702,7 +5904,7 @@ body {
   background-size: contain;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .site-header .site-header__hamburger:before {
     width: 20px;
     height: 20px;
@@ -5902,7 +6104,7 @@ body {
   background-color: #fff;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .site-main--aside .site-aside-container .site-aside {
     width: 75%;
   }
@@ -6043,7 +6245,7 @@ body {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .site-main--aside .page-content__wrapper {
     padding-left: 20px;
     padding-right: 20px;
@@ -6065,7 +6267,7 @@ body {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .site-main--aside .page-content {
     margin-top: 37px;
     width: 100%;
@@ -6078,7 +6280,7 @@ body {
   width: 850px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .site-main--aside .site-footer {
     width: 100%;
     -ms-flex-wrap: wrap;
@@ -6097,7 +6299,7 @@ body {
   border-top: 1px solid #e8e8e8;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .site-footer {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -6110,7 +6312,7 @@ body {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .site-footer {
     padding-top: 30px;
     padding-bottom: 50px;
@@ -6123,13 +6325,13 @@ body {
   margin-right: 30px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .site-footer .site-footer__logo {
     margin: 0 0 20px;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .site-footer .site-footer__logo {
     height: 35px;
   }
@@ -6139,7 +6341,7 @@ body {
   margin: 0;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .site-footer .site-footer__menu {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -6171,7 +6373,7 @@ body {
   display: inline-block;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .site-footer .site-footer__menu a:after {
     display: none;
   }
@@ -6199,7 +6401,7 @@ body {
   display: none;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .site-footer .site-footer__item {
     display: block;
     margin: 0 5px;
@@ -6222,7 +6424,7 @@ body {
   position: relative;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .site-footer .site-footer__langs {
     margin: 20px 0 10px;
   }
@@ -6276,7 +6478,7 @@ body {
   transition: font-weight .3s ease-in-out;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .site-footer .site-footer__langs-items a {
     text-align: center;
   }
@@ -6438,7 +6640,7 @@ section.breadcrumbs {
   z-index: 1;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   section.breadcrumbs {
     padding: 15px 20px;
     height: auto;
@@ -6473,7 +6675,7 @@ section.breadcrumbs .breadcrumbs__change:before {
   display: block;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   section.breadcrumbs .breadcrumbs__change:before {
     height: 30px;
     width: 30px;
@@ -6502,7 +6704,7 @@ section.breadcrumbs .breadcrumbs__change:after {
   transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   section.breadcrumbs .breadcrumbs__change:after {
     margin-left: 20px;
   }
@@ -6535,7 +6737,7 @@ section.breadcrumbs .breadcrumbs__cart:before {
   display: block;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   section.breadcrumbs .breadcrumbs__cart:before {
     width: 18px;
     height: 18px;
@@ -6878,7 +7080,7 @@ section.venue-info .product-action:last-child {
   display: block;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .breadcrumbs__more {
     padding: 25px 20px 20px;
   }
@@ -6902,7 +7104,7 @@ section.venue-info .product-action:last-child {
           padding-inline-start: 0;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .breadcrumbs__more ul {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
@@ -6919,7 +7121,7 @@ section.venue-info .product-action:last-child {
   position: relative;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .breadcrumbs__more ul li {
     font-size: 0.75rem;
     margin: 0 6px 60px 6px;
@@ -6931,7 +7133,7 @@ section.venue-info .product-action:last-child {
   margin: 0;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .breadcrumbs__more ul li p {
     width: 11ch;
     position: absolute;
@@ -6954,7 +7156,7 @@ section.venue-info .product-action:last-child {
   padding: 0;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .breadcrumbs__more ul li .breadcrumbs__area-img {
     max-width: 53px;
     max-height: 53px;
@@ -6984,7 +7186,7 @@ section.product {
   width: 850px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   section.product {
     width: 100%;
   }
@@ -7003,7 +7205,7 @@ section.product .product__header {
   margin-bottom: 40px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   section.product .product__header {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -7018,7 +7220,7 @@ section.product .product__header h1 {
   line-height: 1;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   section.product .product__header h1 {
     margin-bottom: 20px;
   }
@@ -7038,7 +7240,7 @@ section.product .product__nav {
   width: 370px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   section.product .product__nav {
     width: 90%;
   }
@@ -7081,7 +7283,7 @@ section.product .product__nav-input {
   max-width: 20ch;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   section.product .product__nav-input {
     font-size: 1.125rem;
   }
@@ -7112,14 +7314,14 @@ section.product .product__nav-icon:before {
   cursor: pointer;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   section.product .product__nav-icon:before {
     margin-right: 10px;
     height: 28px;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   section.product .product__nav-icon:before {
     margin-right: 4px;
     height: 18px;
@@ -7134,7 +7336,7 @@ section.product .product__nav--person {
           justify-content: space-between;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   section.product .product__nav--person {
     display: none;
   }
@@ -7156,7 +7358,7 @@ section.product .product__search {
   margin-bottom: 40px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   section.product .product__search {
     margin-bottom: 15px;
   }
@@ -7166,7 +7368,7 @@ section.product .product__search:before {
   left: 30px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   section.product .product__search:before {
     left: 20px;
   }
@@ -7192,7 +7394,7 @@ section.product .product__search-arrow {
   cursor: pointer;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   section.product .product__search-arrow {
     right: 20px;
   }
@@ -7213,7 +7415,7 @@ section.product .product__search input {
   line-height: 1.2em;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   section.product .product__search input {
     border-width: 1px;
     font-size: 0.875rem;
@@ -7242,7 +7444,7 @@ section.product .product__search input::placeholder {
   vertical-align: center;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   section.product .product__search input::-webkit-input-placeholder {
     font-size: 0.875rem;
   }
@@ -7334,7 +7536,7 @@ section.product .product__chosen .autocomplete-product-title {
   margin-bottom: 5px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   section.product .product__chosen .autocomplete-product-title {
     font-size: 0.875rem;
   }
@@ -7368,7 +7570,7 @@ section.product .product__chosen .autocomplete-product-duration {
   font-weight: 400;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   section.product .product__chosen .autocomplete-product-duration {
     font-size: 0.875rem;
   }
@@ -7388,7 +7590,7 @@ section.product .product__chosen .autocomplete-product-duration:before {
   top: 2px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   section.product .product__chosen .autocomplete-product-duration:before {
     margin-right: 20px;
   }
@@ -7442,7 +7644,7 @@ section.product .product__block-person {
   width: 55%;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   section.product .product__block-person {
     width: 100%;
   }
@@ -7486,7 +7688,7 @@ section.product .product__block-photo {
   margin-right: 20px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   section.product .product__block-photo {
     width: 35%;
     height: 0;
@@ -7505,7 +7707,7 @@ section.product .product__block-info {
   line-height: 28px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   section.product .product__block-info {
     font-size: 0.875rem;
     line-height: 1.5;
@@ -7524,7 +7726,7 @@ section.product .product__block-info span {
   margin-bottom: 10px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   section.product .product__block-info span {
     margin-bottom: 0;
   }
@@ -7543,13 +7745,13 @@ section.product .product__block-info-actions {
   margin-top: 10px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   section.product .product__block-info-actions {
     margin: 20px auto;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   section.product .product__block-info-actions {
     margin: 20px auto 0;
   }
@@ -7680,7 +7882,7 @@ section.product .product__block-recommend {
   margin: 20px 0 10px 0;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   section.product .product__block-recommend {
     text-align: center;
     width: 70%;

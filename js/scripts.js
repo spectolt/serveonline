@@ -93,11 +93,11 @@ $(document).ready(function () {
 
       onSelect: function (date, inst) {
         var event = eventDates[new Date(inst.selectedYear, inst.selectedMonth, inst.selectedDay)];
-        console.log(event);
-        console.log(date);
         if (event) {
-          
-        }
+          var selectedDate = $('.ui-datepicker-current-day');
+          console.log(selectedDate);
+          popup.fadeIn(300);
+        };
         changeTextWidth();
 
         //main input sets date of all inputs, persons' inputs don't change main input
@@ -130,6 +130,51 @@ $(document).ready(function () {
     })
     .datepicker("setDate", "+0");
 
+    var popup = $("<div class='ui-datepicker-popup'><div class='ui-datepicker-popup__header'>"+
+    "<h3 class='ui-datepicker-popup__time'>" +
+    "17:30 - 20:00" +
+    "</h3>"+
+    "<div class='ui-datepicker-popup__place'><h4>" +
+    "East Islan SPA centras" +
+    "</h4>" +
+    "<p>" +
+    "M. Valančiaus g. 23, Kaunas" +
+    "</p></div>" +
+    "<button class='ui-datepicker-popup__close'></button>" + 
+    "</div><ul>"+
+    "<li class='autocomplete-product'><span class='autocomplete-product-title autocomplete-product-title--main'>" +
+    "Moterų kirpimas" +
+    "</span><span class='autocomplete-product-duration'>"+
+    "01:00" + 
+    "</span><span class='autocomplete-product-price'>"+ 
+    "45€" +
+    "<strike>"+
+    "60€"+
+    "</strike></span><span class='autocomplete-product-weeks'>" +
+    "6 sav." +
+    "</span></li>" +
+    "<li class='autocomplete-product'><span class='autocomplete-product-title autocomplete-product-title--main'>" +
+    `Plaukų atstatymo procedūra su "Nashi argan deep infusion" 
+    su kauke` +
+    "</span><span class='autocomplete-product-title autocomplete-product-title--sub'>" +
+    "Trumpi plaukai" +
+    "</span>" +
+    "<span class='autocomplete-product-duration'>"+
+    "01:00" + 
+    "</span><span class='autocomplete-product-price'>"+ 
+    "45€" +
+    "<strike>"+
+    "60€"+
+    "</strike></span><span class='autocomplete-product-weeks'>" +
+    "6 sav." +
+    "</span></li>" +
+    "</ul>" +
+    "</div>");
+    $(popup).appendTo('body');
+    $(".ui-datepicker-popup__close").on("click", function() {
+      $(popup).fadeOut(300);
+    });
+
   // Don't hide the date picker when clicking a date
   $.datepicker._selectDateOverload = $.datepicker._selectDate;
   $.datepicker._selectDate = function (id, dateStr) {
@@ -147,7 +192,7 @@ $(document).ready(function () {
 
   $(".product__nav-button--next").on("click", function () {
     var date = $(".product__nav-input").datepicker("getDate");
-    if (window.matchMedia("(max-width: 480px)").matches) {
+    if (window.matchMedia("(max-width: 600px)").matches) {
       date.setDate(date.getDate() + 1);
     } else {
       date.setDate(date.getDate() + 7);
@@ -159,7 +204,7 @@ $(document).ready(function () {
 
   $(".product__nav-button--prev").on("click", function () {
     var date = $(".product__nav-input").datepicker("getDate");
-    if (window.matchMedia("(max-width: 480px)").matches) {
+    if (window.matchMedia("(max-width: 600px)").matches) {
       date.setDate(date.getDate() - 1);
     } else {
       date.setDate(date.getDate() - 7);
@@ -497,7 +542,7 @@ function changePadding() {
       $("div.page-content__wrapper").width()) /
     2;
 
-  if (window.matchMedia("(max-width: 480px)").matches) {
+  if (window.matchMedia("(max-width: 600px)").matches) {
     var timePadding = (windowWidth - 4.5 * timeWidth - margin) / 4;
     $(".calendar td").css("padding-right", timePadding);
   } else {
@@ -508,7 +553,7 @@ function changePadding() {
 
 function moveAction() {
   $(".product__block-info-actions").each(function () {
-    if (window.matchMedia("(max-width: 480px)").matches) {
+    if (window.matchMedia("(max-width: 600px)").matches) {
       var calendar = $(this)
         .closest(".product__block-person")
         .next(".calendar-container");
@@ -524,7 +569,7 @@ function moveAction() {
 
 function moveOrder() {
   $(".product-action__order").each(function () {
-    if (window.matchMedia("(max-width: 480px)").matches) {
+    if (window.matchMedia("(max-width: 600px)").matches) {
       var actionInfo = $(this).prev(".product-action__info");
       $(actionInfo).append($(this));
     } else {

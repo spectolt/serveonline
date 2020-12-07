@@ -354,10 +354,167 @@ button.ui-button::-moz-focus-inner {
   }
 }
 
+.ui-datepicker-popup {
+  position: fixed;
+  top: 50vh;
+  left: 50vw;
+  background-color: $white;
+  z-index: 1000;
+  display: none;
+  padding: 20px 30px;
+  border-radius: 5px;
+  box-shadow: 0px 12px 29px 0px rgba(0, 0, 0, 0.35);
+  transform: translate(-50%, -50%);
+  width: 515px;
+
+  @include breakpoint(xs) {
+    width: 90%;
+  }
+
+  &__header {
+    display: flex;
+
+    @include breakpoint(xs) {
+    flex-direction: column;
+    }
+  }
+
+  &__time {
+    font-family: "Sen", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin: 0;
+  }
+
+  &__place {
+    margin-left: 30px;
+
+    @include breakpoint(xs) {
+      margin-left: 0;
+    }
+
+    h4 {
+      font-size: 1.125rem;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 0.875rem;
+      margin: 0;
+    }
+  }
+
+  &__close {
+    background: transparent;
+    padding: 0;
+    margin-left: 60px;
+    width: 22px;
+    height: 22px;
+    background-image: url("img/icons/search-close.svg");
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: block;
+
+    @include breakpoint(xs) {
+      align-self: flex-end;
+      order: -1;
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  .autocomplete-product {
+    list-style: none;
+    background-color: $darkgray;
+    margin-top: 20px;
+    border-radius: 5px;
+    padding: 10px 15px;
+
+    &-title {
+      margin: 0 0 10px;
+      font-size: 1rem;
+
+      &--sub {
+        font-size: .875rem;
+        font-weight: 600;
+      }
+    }
+
+    &-duration {
+      margin: 0;
+      display: inline-flex;
+      align-items: baseline;
+    }
+
+    &-price {
+      color: $cyan;
+      display: inline-flex;
+      font-weight: 500;
+      margin-left: 20px;
+      align-items: baseline;
+
+      @include breakpoint(xs) {
+        font-size: .875rem;
+      }
+
+      strike {
+        display: inline-block;
+        color: $orange;
+        margin-left: 10px;
+      }
+
+      &:before {
+        align-items: baseline;
+        width: 13px;
+        height: 15px;
+        background-image: url("img/icons/price.svg");
+        content: "";
+        background-size: cover;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        margin-right: 10px;
+        display: block;
+        top: 2px;
+        position: relative;
+      }
+    }
+
+    &-weeks {
+      margin-left: 60px;
+      display: inline-flex;
+      align-items: baseline;
+
+      @include breakpoint(xs) {
+       margin-left: 0;
+       margin-top: 5px;
+       font-size: .875rem;
+       display: flex;
+      }
+
+      &:before {
+        width: 13px;
+        height: 13px;
+        background-image: url("img/icons/calendar.svg");
+        content: "";
+        background-size: contain;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        margin-right: 10px;
+        display: block;
+        top: 5px;
+      }
+    }
+  }
+}
+
 .ui-datepicker .ui-datepicker-header {
   position: relative;
   padding: 0;
-  font-family: 'Sen', sans-serif;
+  font-family: "Sen", sans-serif;
 }
 
 .ui-datepicker .ui-datepicker-prev,
@@ -446,13 +603,13 @@ button.ui-button::-moz-focus-inner {
   margin: 5px auto;
   line-height: 1em;
   border-radius: 50%;
-  transition: background-color .3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
 
   &:hover {
-	border: 0;
-	background: $darkblue;
-	color: $white !important;
-	font-weight: 600;
+    border: 0;
+    background: $darkblue;
+    color: $white !important;
+    font-weight: 600;
   }
 }
 
@@ -513,7 +670,7 @@ td.ui-datepicker-today a {
 }
 
 td.ui-datepicker-highlight a {
-	position: relative;
+  position: relative;
 
   &:after {
     content: "";
