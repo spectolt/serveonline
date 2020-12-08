@@ -7589,9 +7589,9 @@ section.product .product__chosen-add {
   right: 31px;
   -webkit-transform: translateX(50%);
           transform: translateX(50%);
-  background-image: url("img/icons/angle-down-bold.svg");
-  width: 19px;
-  height: 22px;
+  background-image: url("img/icons/plus-06.svg");
+  width: 18px;
+  height: 18px;
   padding: 0;
 }
 

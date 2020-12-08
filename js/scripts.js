@@ -457,15 +457,18 @@ $(document).ready(function () {
     if (e.relatedTarget == null){
       container.css("display", "block");
       isVisible = true;
+      $(".product__search-arrow").addClass("rotate");
     }
   });
-  $(document).on("mousedown touchstart",function(e){
+  $(document).on("click",function(e){
     if (!container.is(e.target) && container.has(e.target).length === 0) {
       container.hide();
       isVisible = false;
+      $(".product__search-arrow").removeClass("rotate");
     }
   });
 }
+
 
   if (!navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
     $('#search').focus(function () {
