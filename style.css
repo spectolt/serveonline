@@ -5499,6 +5499,7 @@ a.ui-button:active,
 @media (max-width: 600px) {
   .autocomplete-product .autocomplete-product-button {
     margin-left: 10px;
+    font-size: .75rem;
   }
 }
 
