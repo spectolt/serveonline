@@ -1013,15 +1013,26 @@ a.ui-button:active,
   top: auto !important;
 
   .ui-autocomplete-wrapper {
-    max-height: 500px;
+    max-height: 75vh;
     width: 100%;
     overflow-y: auto;
     overflow-x: hidden;
-    position: relative;
+	position: relative;
+	
+	@include breakpoint(xs) {
+	@supports (-webkit-touch-callout: none) {
+		/* CSS specific to iOS devices */ 
+		max-height: 40vh;
+	 }
+	}
   }
 
   li.ui-menu-item {
-    padding: 0 30px;
+	padding: 0 30px;
+	
+	@include breakpoint(xs) {
+		padding: 0;
+	}
 
     &:hover,
     &:focus {
@@ -1060,7 +1071,8 @@ a.ui-button:active,
     transition: background-color 0.3s ease-in-out;
 
     @include breakpoint(xs) {
-      //padding-right: 30px;
+	  padding: 10px;
+	  border-radius: 0;
     }
 
     &:hover {
@@ -1096,6 +1108,7 @@ a.ui-button:active,
     @include breakpoint(xs) {
 	  margin-bottom: 10px;
 	  margin-top: 20px;
+	  margin-left: 10px;
       font-size: 1rem;
     }
   }
@@ -1118,7 +1131,12 @@ a.ui-button:active,
     color: $red;
 
     @include breakpoint(xs) {
-      display: none;
+	  position: relative;
+	  display: inline-block;
+	  right: 0;
+	  left: 10px;
+	  font-size: 1rem;
+	  margin-bottom: 10px;
     }
   }
 }
@@ -1183,12 +1201,17 @@ a.ui-button:active,
     }
   }
 
-  &-button {
+  & .autocomplete-product-button {
     color: $cyan !important;
     margin-left: 25px;
     font-weight: 600;
     background-color: transparent;
-    padding: 0;
+	padding: 0;
+	font-size: 1rem;
+	
+	@include breakpoint(xs) {
+		margin-left: 10px;
+	}
   }
 
   &-desc {
@@ -1219,7 +1242,7 @@ a.ui-button:active,
       top: 2px;
 
       @include breakpoint(xs) {
-        margin-right: 20px;
+        margin-right: 5px;
       }
     }
   }
@@ -1236,7 +1259,11 @@ a.ui-button:active,
     background-repeat: no-repeat;
     background-image: url("img/icons/angle-down-bold.svg");
     transition: transform 0.3s ease-in-out;
-    cursor: pointer;
+	cursor: pointer;
+	
+	@include breakpoint(xs) {
+		right: 10px;
+	}
   }
 
   &--choices {

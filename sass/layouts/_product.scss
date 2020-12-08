@@ -69,7 +69,7 @@ section.product {
       &-input {
         cursor: pointer;
         font-family: "Sen", sans-serif;
-        font-size: 1.875em;
+        font-size: 1.5rem;
         font-weight: 600;
         //margin: 0 40px;
         padding: 0;
@@ -94,8 +94,8 @@ section.product {
 
         &:before {
           content: "";
-          width: 28px;
-          height: 30px;
+          width: 22px;
+          height: 20px;
           background-size: 100%;
           background-position: center bottom;
           background-repeat: no-repeat;
@@ -165,15 +165,24 @@ section.product {
         display: block;
         width: 15px;
         height: 9px;
-        background-size: 100%;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-image: url("img/icons/angle-down-bold.svg");
         transition: transform 0.3s ease-in-out;
         cursor: pointer;
+        padding: 20px 10px;
 
         @include breakpoint(xs) {
           right: 20px;
+        }
+
+        &:before {
+          content: '';
+          display: block;
+          background-size: 100%;
+          transform: translate(-50%, -50%);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-image: url("img/icons/angle-down-bold.svg");
+          width: 15px;
+        height: 9px;
         }
 
         &.rotate {
@@ -215,6 +224,10 @@ section.product {
       position: relative;
       display: none;
 
+      @include breakpoint(xs) {
+        padding: 20px 40px 20px 5px;
+      }
+
       &-add {
         background-size: contain;
         background-position: center;
@@ -228,6 +241,10 @@ section.product {
         width: 19px;
         height: 22px;
         padding: 0;
+
+        @include breakpoint(xs) {
+          right: 20px;
+        }
       }
 
       h3 {
@@ -238,8 +255,9 @@ section.product {
         @include breakpoint(xs) {
           margin: 10px auto 0;
           text-align: center;
-          width: calc(100% + 45px);
-          margin-right: -45px;
+          width: calc(100% + 30px);
+          margin-right: -30px;
+          font-size: .875rem;
         }
       }
 
@@ -262,6 +280,10 @@ section.product {
         padding: 10px 20px;
         margin-bottom: 10px;
 
+        @include breakpoint(xs) {
+          padding: 10px 10px;
+        }
+
         &-trash {
           background-size: contain;
           background-position: center;
@@ -275,6 +297,10 @@ section.product {
           width: 19px;
           height: 22px;
           padding: 0;
+
+          @include breakpoint(xs) {
+            right: -11px;
+          }
         }
 
         &-title,
@@ -301,7 +327,7 @@ section.product {
         }
 
         &-title--sub {
-          font-weight: 400;
+          font-weight: 500;
           font-size: 0.875rem;
         }
 
@@ -311,6 +337,11 @@ section.product {
           font-weight: 600;
           background-color: transparent;
           padding: 0;
+          font-size: .875rem;
+
+          @include breakpoint(xs) {
+            margin-left: 10px;
+          }
         }
 
         &-desc {
@@ -341,7 +372,7 @@ section.product {
             top: 2px;
 
             @include breakpoint(xs) {
-              //margin-right: 20px;
+              margin-right: 5px;
             }
           }
 
@@ -351,9 +382,15 @@ section.product {
             color: $red;
 
             @include breakpoint (xs) {
-              margin-left: 10px;
+              margin-left: 5px;
               padding-right: 0;
               font-family: 'Roboto', sans-serif;
+
+              &:before {
+                width: 12px;
+                height: 12px;
+                top: 1px;
+              }
             }
           }
         }

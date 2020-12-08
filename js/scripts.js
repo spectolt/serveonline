@@ -223,6 +223,14 @@ $(document).ready(function () {
     }
   }
 
+  // $("#search").on("click", function() {
+  //   $('html,body').animate({
+  //     scrollTop: $("#search").offset().top}, 0);
+  //     // $(this).focus();
+  //     return true;
+  // })
+
+  var isVisible = false;
   $("#search")
     .autocomplete({
       minLength: 0,
@@ -243,9 +251,13 @@ $(document).ready(function () {
         $("input#search").attr("rel", ui.item.label);
       },
       open: function () {
+        if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+          $('.ui-autocomplete').off('menufocus hover mouseover mouseenter');
+      }
+
         $("input#search").attr("rel", 0);
         $(".product__search-arrow").addClass("rotate");
-        $('ul.ui-autocomplete').hide().fadeIn(300);
+        // $('ul.ui-autocomplete').hide().fadeIn(300);
 
         //overriding default classes after putting in wrapper
         $(".ui-autocomplete-wrapper").removeClass("ui-menu-item");
@@ -262,7 +274,7 @@ $(document).ready(function () {
       close: function () {
         if ($("input#search").attr("rel") == "0") $("input#search").val("");
         $(".product__search-arrow").removeClass("rotate");
-        $('ul.ui-autocomplete').show().fadeOut(300);
+        // $('ul.ui-autocomplete').show().fadeOut(300);
 
       //   if (!$("ul.ui-autocomplete").is(":visible")) {
       //     $("ul.ui-autocomplete").show();
@@ -285,6 +297,7 @@ $(document).ready(function () {
       // $(this).data("autocomplete").search($(this).val());
       // As noted by Jonny in his answer, with newer versions use uiAutocomplete
       $(this).data("uiAutocomplete").search($(this).val());
+      isVisible = true;
     })
     .autocomplete("instance")._renderMenu = function (ul, items) {
     var currentCategory = "";
@@ -292,9 +305,6 @@ $(document).ready(function () {
 
     $.each(items, function (index, item) {
       if (item.category != currentCategory) {
-        ul.append(
-          "<h2 class='autocomplete-category'>" + item.category + "</h2>"
-        );
         currentCategory = item.category;
       }
 
@@ -409,13 +419,6 @@ $(document).ready(function () {
     });
 
     $(document).on("click", ".ui-autocomplete-choose", function (e) {
-    //   var checkBoxes = $(".checkbox").find("input");
-    //   checkBoxes.each(function () {
-    //   if ($(this).is(":checked")) {
-    //     var li = $(this).siblings(".autocomplete-product-checkbox");
-    //     li.children().clone().appendTo(".product__chosen").wrapAll("<li class='autocomplete-product'></li>");
-    //   }
-    // });
     input.parent().hide();
     $(".product__chosen").show();
   });
@@ -428,14 +431,14 @@ $(document).ready(function () {
   $(".autocomplete-product-trash").on("click", function() {
     $(this).parent(".autocomplete-product").remove();
 
-    if ($(".product__chosen .autocomplete-product").length == 0) {
+    if (!$(".product__chosen .autocomplete-product").length) {
       $(".product__chosen").hide();
       input.parent().show();
+      input.blur();
     }
   });
 
     //making product search arrow work
-  var isVisible = false;
   var input = $("#search");
   $(".product__search-arrow").click(function () {
     if (isVisible == true) {
@@ -443,10 +446,39 @@ $(document).ready(function () {
       input.blur();
       isVisible = false;
     } else {
-      input.focus();
+      input.autocomplete( "search", "" );
       isVisible = true;
     }
   });
+
+  if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+    var container = $(".ui-autocomplete"); 
+  document.addEventListener('focusout', function(e) {
+    if (e.relatedTarget == null){
+      container.css("display", "block");
+      isVisible = true;
+    }
+  });
+  $(document).on("mousedown touchstart",function(e){
+    if (!container.is(e.target) && container.has(e.target).length === 0) {
+      container.hide();
+      isVisible = false;
+    }
+  });
+}
+
+  if (!navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+    $('#search').focus(function () {
+      $('html, body').animate({ scrollTop: ($('#search').offset().top - 10) }, 300);
+  });
+
+  $(document).on("click", ".ui-autocomplete-wrapper", function (e) {
+    input.prop('readonly', true);
+  });
+  $(document).on("click", "#search", function () {
+    input.prop('readonly', false);
+  })
+}
 
   // autocomplete results width fix
   jQuery.ui.autocomplete.prototype._resizeMenu = function () {
