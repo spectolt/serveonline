@@ -61,12 +61,13 @@ $(document).ready(function () {
     changeTextWidth();
   };
 
-  var Event = function(text) {
-    this.text = text; };
-    var eventDates = {};
-    eventDates[new Date("12/07/2020")] = new Event("Event01");
-    eventDates[new Date("01/12/2021")] = new Event("Event02");
-    eventDates[new Date("01/28/2021")] = new Event("Event02");
+  var Event = function (text) {
+    this.text = text;
+  };
+  var eventDates = {};
+  eventDates[new Date("12/12/2020")] = new Event("Event01");
+  eventDates[new Date("01/12/2021")] = new Event("Event02");
+  eventDates[new Date("01/28/2021")] = new Event("Event02");
 
   $(".product__nav-input")
     .datepicker({
@@ -92,12 +93,15 @@ $(document).ready(function () {
       ],
 
       onSelect: function (date, inst) {
-        var event = eventDates[new Date(inst.selectedYear, inst.selectedMonth, inst.selectedDay)];
+        var event =
+          eventDates[
+            new Date(inst.selectedYear, inst.selectedMonth, inst.selectedDay)
+          ];
         if (event) {
-          var selectedDate = $('.ui-datepicker-current-day');
+          var selectedDate = $(".ui-datepicker-current-day");
           console.log(selectedDate);
           popup.show(300);
-        };
+        }
         changeTextWidth();
 
         //main input sets date of all inputs, persons' inputs don't change main input
@@ -130,50 +134,52 @@ $(document).ready(function () {
     })
     .datepicker("setDate", "+0");
 
-    var popup = $("<div class='ui-datepicker-popup'><div class='ui-datepicker-popup__header'>"+
-    "<h3 class='ui-datepicker-popup__time'>" +
-    "17:30 - 20:00" +
-    "</h3>"+
-    "<div class='ui-datepicker-popup__place'><h4>" +
-    "East Islan SPA centras" +
-    "</h4>" +
-    "<p>" +
-    "M. Valančiaus g. 23, Kaunas" +
-    "</p></div>" +
-    "<button class='ui-datepicker-popup__close'></button>" + 
-    "</div><ul>"+
-    "<li class='autocomplete-product'><span class='autocomplete-product-title autocomplete-product-title--main'>" +
-    "Moterų kirpimas" +
-    "</span><span class='autocomplete-product-duration'>"+
-    "01:00" + 
-    "</span><span class='autocomplete-product-price'>"+ 
-    "45€" +
-    "<strike>"+
-    "60€"+
-    "</strike></span><span class='autocomplete-product-weeks'>" +
-    "6 sav." +
-    "</span></li>" +
-    "<li class='autocomplete-product'><span class='autocomplete-product-title autocomplete-product-title--main'>" +
-    `Plaukų atstatymo procedūra su "Nashi argan deep infusion" 
+  var popup = $(
+    "<div class='ui-datepicker-popup'><div class='ui-datepicker-popup__header'>" +
+      "<h3 class='ui-datepicker-popup__time'>" +
+      "17:30 - 20:00" +
+      "</h3>" +
+      "<div class='ui-datepicker-popup__place'><h4>" +
+      "East Islan SPA centras" +
+      "</h4>" +
+      "<p>" +
+      "M. Valančiaus g. 23, Kaunas" +
+      "</p></div>" +
+      "<button class='ui-datepicker-popup__close'></button>" +
+      "</div><ul>" +
+      "<li class='autocomplete-product'><span class='autocomplete-product-title autocomplete-product-title--main'>" +
+      "Moterų kirpimas" +
+      "</span><span class='autocomplete-product-duration'>" +
+      "01:00" +
+      "</span><span class='autocomplete-product-price'>" +
+      "45€" +
+      "<strike>" +
+      "60€" +
+      "</strike></span><span class='autocomplete-product-weeks'>" +
+      "6 sav." +
+      "</span></li>" +
+      "<li class='autocomplete-product'><span class='autocomplete-product-title autocomplete-product-title--main'>" +
+      `Plaukų atstatymo procedūra su "Nashi argan deep infusion" 
     su kauke` +
-    "</span><span class='autocomplete-product-title autocomplete-product-title--sub'>" +
-    "Trumpi plaukai" +
-    "</span>" +
-    "<span class='autocomplete-product-duration'>"+
-    "01:00" + 
-    "</span><span class='autocomplete-product-price'>"+ 
-    "45€" +
-    "<strike>"+
-    "60€"+
-    "</strike></span><span class='autocomplete-product-weeks'>" +
-    "6 sav." +
-    "</span></li>" +
-    "</ul>" +
-    "</div>");
-    $(popup).appendTo('body');
-    $(".ui-datepicker-popup__close").on("click", function() {
-      $(popup).fadeOut(300);
-    });
+      "</span><span class='autocomplete-product-title autocomplete-product-title--sub'>" +
+      "Trumpi plaukai" +
+      "</span>" +
+      "<span class='autocomplete-product-duration'>" +
+      "01:00" +
+      "</span><span class='autocomplete-product-price'>" +
+      "45€" +
+      "<strike>" +
+      "60€" +
+      "</strike></span><span class='autocomplete-product-weeks'>" +
+      "6 sav." +
+      "</span></li>" +
+      "</ul>" +
+      "</div>"
+  );
+  $(popup).appendTo("body");
+  $(".ui-datepicker-popup__close").on("click", function () {
+    $(popup).fadeOut(300);
+  });
 
   // Don't hide the date picker when clicking a date
   $.datepicker._selectDateOverload = $.datepicker._selectDate;
@@ -223,18 +229,11 @@ $(document).ready(function () {
     }
   }
 
-  // $("#search").on("click", function() {
-  //   $('html,body').animate({
-  //     scrollTop: $("#search").offset().top}, 0);
-  //     // $(this).focus();
-  //     return true;
-  // })
-
   var isVisible = false;
   $("#search")
     .autocomplete({
       minLength: 0,
-      appendTo: '.product__search',
+      appendTo: ".product__search",
       source: function (request, response) {
         $.ajax({
           url: "https://5fc0bc01cb4d020016fe5d12.mockapi.io/products",
@@ -252,12 +251,11 @@ $(document).ready(function () {
       },
       open: function () {
         if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
-          $('.ui-autocomplete').off('menufocus hover mouseover mouseenter');
-      }
+          $(".ui-autocomplete").off("menufocus hover mouseover mouseenter");
+        }
 
         $("input#search").attr("rel", 0);
         $(".product__search-arrow").addClass("rotate");
-        // $('ul.ui-autocomplete').hide().fadeIn(300);
 
         //overriding default classes after putting in wrapper
         $(".ui-autocomplete-wrapper").removeClass("ui-menu-item");
@@ -274,11 +272,6 @@ $(document).ready(function () {
       close: function () {
         if ($("input#search").attr("rel") == "0") $("input#search").val("");
         $(".product__search-arrow").removeClass("rotate");
-        // $('ul.ui-autocomplete').show().fadeOut(300);
-
-      //   if (!$("ul.ui-autocomplete").is(":visible")) {
-      //     $("ul.ui-autocomplete").show();
-      // } //make always visible for debugging
       },
       select: function (event, ui) {
         event.preventDefault();
@@ -338,9 +331,9 @@ $(document).ready(function () {
       } else if (item.category && item.subcategory) {
         return $("<li>")
           .append(
-            "<div class='autocomplete-product autocomplete-product--choices'>" + 
-          "<span class='autocomplete-product-expand'></span>" +
-            "<span class='autocomplete-product-title'>" +
+            "<div class='autocomplete-product autocomplete-product--choices'>" +
+              "<span class='autocomplete-product-expand'></span>" +
+              "<span class='autocomplete-product-title'>" +
               item.title +
               "<button class='autocomplete-product-button'>Plačiau</button></span><span class='autocomplete-product-desc paragraph hidden'>" +
               item.about +
@@ -370,7 +363,7 @@ $(document).ready(function () {
               item.choice3title +
               "</span><span class='autocomplete-product-duration'>" +
               item.choice3duration +
-              "</span></label>"+
+              "</span></label>" +
               "</div></div>"
           )
           .appendTo(ul);
@@ -382,18 +375,18 @@ $(document).ready(function () {
     var chooseBtn = $(
       "<button class='ui-autocomplete-choose'>Rinktis pažymėtas paslaugas</button>"
     );
-    var chooseText = $("<p class='ui-autocomplete-choose-text paragraph'>Pažymėkite vieną ar kelias paslaugas</p>")
+    var chooseText = $(
+      "<p class='ui-autocomplete-choose-text paragraph'>Pažymėkite vieną ar kelias paslaugas</p>"
+    );
     $(".ui-autocomplete").append(chooseBtn);
     $(chooseText).prependTo(".ui-autocomplete-wrapper");
-    
-    chooseBtn.on("click", function() {
+
+    chooseBtn.on("click", function () {
       input.autocomplete("close");
       input.blur();
       isVisible = false;
-    })
+    });
   };
-
-  
 
   $(document).on("click", ".autocomplete-product-button", function () {
     var description = $(this)
@@ -404,7 +397,9 @@ $(document).ready(function () {
   });
 
   $(document).on("click", ".autocomplete-product-expand", function () {
-    $(this).siblings(".autocomplete-product--choice, .autocomplete-product-duration").toggleClass("hidden");
+    $(this)
+      .siblings(".autocomplete-product--choice, .autocomplete-product-duration")
+      .toggleClass("hidden");
     $(this).toggleClass("rotate-arrow");
   });
 
@@ -418,17 +413,17 @@ $(document).ready(function () {
       return false;
     });
 
-    $(document).on("click", ".ui-autocomplete-choose", function (e) {
+  $(document).on("click", ".ui-autocomplete-choose", function (e) {
     input.parent().hide();
     $(".product__chosen").show();
   });
 
-  $(".product__chosen-add").on("click", function() {
+  $(".product__chosen-add").on("click", function () {
     input.parent().show();
     $(this).parent().hide();
   });
 
-  $(".autocomplete-product-trash").on("click", function() {
+  $(".autocomplete-product-trash").on("click", function () {
     $(this).parent(".autocomplete-product").remove();
 
     if (!$(".product__chosen .autocomplete-product").length) {
@@ -438,7 +433,7 @@ $(document).ready(function () {
     }
   });
 
-    //making product search arrow work
+  //making product search arrow work
   var input = $("#search");
   $(".product__search-arrow").click(function () {
     if (isVisible == true) {
@@ -446,42 +441,47 @@ $(document).ready(function () {
       input.blur();
       isVisible = false;
     } else {
-      input.autocomplete( "search", "" );
+      input.autocomplete("search", "");
       isVisible = true;
     }
   });
 
+  //on iphone, after pressing "done", keep results open
+  //bug - after selecting product, input regains focus, losing selection and opening up keyboard
   if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
-    var container = $(".ui-autocomplete"); 
-  document.addEventListener('focusout', function(e) {
-    if (e.relatedTarget == null){
-      container.css("display", "block");
-      isVisible = true;
-      $(".product__search-arrow").addClass("rotate");
-    }
-  });
-  $(document).on("click",function(e){
-    if (!container.is(e.target) && container.has(e.target).length === 0) {
-      container.hide();
-      isVisible = false;
-      $(".product__search-arrow").removeClass("rotate");
-    }
-  });
-}
-
+    var container = $(".ui-autocomplete");
+    document.addEventListener("focusout", function (e) {
+      if (e.relatedTarget == null) {
+        container.css("display", "block");
+        isVisible = true;
+        $(".product__search-arrow").addClass("rotate");
+      }
+    });
+    $(document).on("click", function (e) {
+      if (!container.is(e.target) && container.has(e.target).length === 0) {
+        container.hide();
+        isVisible = false;
+        $(".product__search-arrow").removeClass("rotate");
+      }
+    });
+  }
 
   if (!navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
-    $('#search').focus(function () {
-      $('html, body').animate({ scrollTop: ($('#search').offset().top - 10) }, 300);
-  });
+    //scroll to input after click
+    $("#search").focus(function () {
+      $("html, body").animate(
+        { scrollTop: $("#search").offset().top - 10 },
+        300
+      );
+    });
 
-  $(document).on("click", ".ui-autocomplete-wrapper", function (e) {
-    input.prop('readonly', true);
-  });
-  $(document).on("click", "#search", function () {
-    input.prop('readonly', false);
-  })
-}
+    $(document).on("click", ".ui-autocomplete-wrapper", function (e) {
+      input.prop("readonly", true);
+    });
+    $(document).on("click", "#search", function () {
+      input.prop("readonly", false);
+    });
+  }
 
   // autocomplete results width fix
   jQuery.ui.autocomplete.prototype._resizeMenu = function () {
@@ -560,7 +560,7 @@ $(document).ready(function () {
       changeTextWidth();
       changePadding();
 
-      $('.ui-autocomplete').css('width', $('.product__search').width());
+      $(".ui-autocomplete").css("width", $(".product__search").width());
     }, 100);
   });
 

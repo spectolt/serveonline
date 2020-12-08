@@ -1,4 +1,4 @@
-<?php require_once('header-without-about.php'); ?>
+<?php require_once('header.php'); ?>
 
 <?php 
     $pfp = array('../img/1.jpg', '../img/2.jpg', '../img/3.jpg', '../img/4.jpg', '../img/5.jpg');
