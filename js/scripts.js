@@ -441,7 +441,10 @@ $(document).ready(function () {
       input.blur();
       isVisible = false;
     } else {
-      $(window).scrollTop($("#search").offset().top);
+      $("html, body").animate(
+        { scrollTop: $("#search").offset().top - 10 },
+        300
+      );
       input.autocomplete("search", "");
       isVisible = true;
     }
@@ -459,9 +462,8 @@ $(document).ready(function () {
       }
     });
     $(document).on("click", function (e) {
-      if (!container.is(e.target) && container.has(e.target).length === 0) {
+      if (!container.is(e.target) && container.has(e.target).length === 0 && !input.is(e.target) && input.has(e.target).length === 0 ) {
         container.hide();
-        isVisible = false;
         $(".product__search-arrow").removeClass("rotate");
       }
     });
