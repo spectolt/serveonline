@@ -7489,7 +7489,8 @@ section.product .product__search-arrow {
 
 @media (max-width: 600px) {
   section.product .product__search-arrow {
-    right: 20px;
+    right: 10px;
+    padding: 20px;
   }
 }
 

@@ -170,7 +170,8 @@ section.product {
         padding: 20px 10px;
 
         @include breakpoint(xs) {
-          right: 20px;
+          right: 10px;
+          padding: 20px;
         }
 
         &:before {

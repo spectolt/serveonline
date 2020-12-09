@@ -441,6 +441,7 @@ $(document).ready(function () {
       input.blur();
       isVisible = false;
     } else {
+      $(window).scrollTop($("#search").offset().top);
       input.autocomplete("search", "");
       isVisible = true;
     }
@@ -466,15 +467,15 @@ $(document).ready(function () {
     });
   }
 
-  if (!navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
-    //scroll to input after click
-    $("#search").focus(function () {
-      $("html, body").animate(
-        { scrollTop: $("#search").offset().top - 10 },
-        300
-      );
-    });
+  //scroll to input after click
+  $("#search").focus(function () {
+    $("html, body").animate(
+      { scrollTop: $("#search").offset().top - 10 },
+      300
+    );
+  });
 
+  if (!navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {  
     $(document).on("click", ".ui-autocomplete-wrapper", function (e) {
       input.prop("readonly", true);
     });
@@ -650,10 +651,12 @@ $(window).scroll(function () {
   var autocompleteHeight = $(".ui-autocomplete").height();
   var autocompleteOffsetTop = $(".ui-autocomplete").offset().top;
 
+  if($('.ui-autocomplete').is(':visible')) {
   if ($(this).scrollTop() > autocompleteHeight + autocompleteOffsetTop) {
     $("input#search").blur();
     $(".ui-autocomplete").hide();
   }
+}
 
   if ($(this).scrollTop() > 300) {
     $(".breadcrumbs__more").removeClass("breadcrumbs__more--toggled");
