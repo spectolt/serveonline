@@ -42,10 +42,10 @@
                         <button class="product__nav-button product__nav-button--next"></button>
                     </div>
                 </div>
-                <div class="product__search input-wrapper input-wrapper--briefcase">
+                <!-- <div class="product__search input-wrapper input-wrapper--briefcase">
                     <input type="text" name="search" id="search" placeholder="Įveskite paslaugos pavadinimą" />
                     <span class="product__search-arrow"></span>
-                </div>
+                </div> -->
                 <div class="product__chosen">
                 <button class="product__chosen-add"></button>
                     <li class="autocomplete-product autocomplete-product--chosen">

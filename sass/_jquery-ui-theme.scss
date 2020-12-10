@@ -1126,17 +1126,21 @@ a.ui-button:active,
 
   &-choose-text {
     position: absolute;
-    top: 20px;
+    top: 30px;
     right: 30px;
-    color: $red;
+	color: $red;
+	font-family: 'Sen', sans-serif;
+	margin: 0;
 
     @include breakpoint(xs) {
 	  position: relative;
 	  display: inline-block;
 	  right: 0;
 	  left: 10px;
+	  top: 20px;
 	  font-size: 1rem;
-	  margin-bottom: 10px;
+	  margin-top: 0;
+	  margin-bottom: 20px;
     }
   }
 }

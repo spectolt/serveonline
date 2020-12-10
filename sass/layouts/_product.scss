@@ -159,7 +159,7 @@ section.product {
 
       &-arrow {
         position: absolute;
-        right: 30px;
+        right: 0;
         top: 50%;
         transform: translateY(-50%);
         display: block;
@@ -167,11 +167,10 @@ section.product {
         height: 9px;
         transition: transform 0.3s ease-in-out;
         cursor: pointer;
-        padding: 20px 10px;
+        padding: 20px 40px;
 
         @include breakpoint(xs) {
-          right: 10px;
-          padding: 20px;
+          padding: 20px 30px;
         }
 
         &:before {
@@ -408,10 +407,6 @@ section.product {
       justify-content: space-between;
       padding: 40px 0;
       border-top: 1px solid $lightgray;
-
-      &:first-of-type {
-        border-top: none;
-      }
 
       &-top {
         display: flex;

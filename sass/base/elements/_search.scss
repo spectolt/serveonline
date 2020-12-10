@@ -46,7 +46,7 @@
         &__close {
             position: absolute;
             top: 50%;
-            right: 20px;
+            right: 30px;
             transform: translateY(-50%) rotate(-90deg);
             padding: 0;
             border: 0;
@@ -66,6 +66,7 @@
 
             @include breakpoint(xs) {
                 top: 30%;
+                right: 20px;
             }
         }
     }
