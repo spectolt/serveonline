@@ -261,3 +261,14 @@ if (!navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
     input.prop("readonly", false);
   });
 }
+
+$(window).scroll(function () {
+    var autocompleteHeight = $(".ui-autocomplete").height();
+    var autocompleteOffsetTop = $(".ui-autocomplete").offset().top;
+  
+    if($('.ui-autocomplete').is(':visible')) {
+    if ($(this).scrollTop() > autocompleteHeight + autocompleteOffsetTop) {
+      $("input#search").blur();
+      $(".ui-autocomplete").hide();
+    }
+  }

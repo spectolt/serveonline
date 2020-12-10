@@ -288,9 +288,7 @@ $(document).ready(function () {
 
   $(document).click(function (event) {
     //if you click on anything except the modal itself or the hamburger menu, close the modal
-    if (
-      !$(event.target).closest(".site-aside,.site-header__hamburger").length
-    ) {
+    if (!$(event.target).closest(".site-aside,.site-header__hamburger").length && $(event.target).length != $(".select2-search").length ) {
       $("body")
         .find(".site-aside-container")
         .removeClass("site-aside-container--toggled");
@@ -393,16 +391,6 @@ $(window)
   .scroll();
 
 $(window).scroll(function () {
-  var autocompleteHeight = $(".ui-autocomplete").height();
-  var autocompleteOffsetTop = $(".ui-autocomplete").offset().top;
-
-  if($('.ui-autocomplete').is(':visible')) {
-  if ($(this).scrollTop() > autocompleteHeight + autocompleteOffsetTop) {
-    $("input#search").blur();
-    $(".ui-autocomplete").hide();
-  }
-}
-
   if ($(this).scrollTop() > 300) {
     $(".breadcrumbs__more").removeClass("breadcrumbs__more--toggled");
     $(".breadcrumbs__more")
