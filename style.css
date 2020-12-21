@@ -8583,4 +8583,97 @@ section.product .product__block-recommend {
 .sliding-menu li.active {
   border-left: 3px solid #101b51;
 }
+
+.areas ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.areas ul li {
+  position: relative;
+  margin: 0 20px;
+}
+
+.areas ul li:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -20px;
+  width: 1px;
+  height: 100%;
+  background: #101b51;
+  display: inline-block;
+}
+
+.areas ul li:last-child:after {
+  display: none;
+}
+
+.areas__table {
+  margin-top: 20px;
+  border-collapse: collapse;
+  max-height: 500px;
+  overflow-y: scroll;
+}
+
+.areas__table tr:first-child th:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.areas__table tr:first-child th:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.areas__table th {
+  border: 1px solid #fff;
+  background-color: #101b51;
+  color: #fff;
+  height: 60px;
+}
+
+.areas__table th:first-child {
+  width: 45%;
+}
+
+.areas__table th:nth-child(2) {
+  width: 15%;
+}
+
+.areas__table th:nth-child(3) {
+  width: 16%;
+}
+
+.areas__table td input {
+  width: 100%;
+}
+
+.areas__image {
+  width: 20px;
+}
+
+.areas .custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.areas .custom-file-input::before {
+  content: 'Pasirinkite spalvą';
+  display: inline-block;
+  background: #fff;
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+}
 /*# sourceMappingURL=style.css.map */
