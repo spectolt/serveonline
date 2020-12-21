@@ -1265,10 +1265,6 @@ a.ui-button:active,
     background-image: url("img/icons/angle-down-bold.svg");
     transition: transform 0.3s ease-in-out;
 	cursor: pointer;
-	
-	@include breakpoint(xs) {
-		right: 10px;
-	}
   }
 
   &--choices {

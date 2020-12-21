@@ -5,6 +5,7 @@
 <script src="../js/select2.min.js"></script>
 <script src="../js/moment-with-locales.min.js"></script>
 <script src="../js/slick.min.js"></script>
+<script src="../js/autocomplete-header.js"></script>
 <script src="../js/scripts.js"></script>
 </body>
 </html>

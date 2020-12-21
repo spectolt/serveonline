@@ -46,7 +46,7 @@
                     <input type="text" name="search" id="search" placeholder="Įveskite paslaugos pavadinimą" />
                     <span class="product__search-arrow"></span>
                 </div> -->
-                <div class="product__chosen">
+                <!-- <div class="product__chosen">
                 <button class="product__chosen-add"></button>
                     <li class="autocomplete-product autocomplete-product--chosen">
                         <span class="autocomplete-product-title autocomplete-product-title--main">Moterų kirpimas</span>
@@ -63,7 +63,7 @@
                     </li>
                     
                     <h3>Bendra reikiama paslaugų trukmė <span class="autocomplete-product-duration autocomplete-product-duration--final">01:30</span></h3>
-                </div>
+                </div> -->
                 <div class="product__list">
                     <?php for($y=0;$y<5;$y++) { ?>
                         <div class="product__block">
@@ -180,5 +180,5 @@
         </div>
     </div>
 </main>
-<div id="test"></div>
+<button class="search-clean">Valyti</button>
 <?php require_once('footer.php'); ?>

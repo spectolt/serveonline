@@ -1,15 +1,87 @@
 $(document).ready(function () {
   $("select").select2();
 
+  // $(".js-search-product").select2({
+  //   // ajax: {
+  //   //   url: "https://5fc0bc01cb4d020016fe5d12.mockapi.io/products2",
+  //   //   dataType: "json",
+  //   //   delay: 250,
+  //   //   data: function (params) {
+  //   //     return {
+  //   //       q: params.term, // search term
+  //   //       page: params.page,
+  //   //     };
+  //   //   },
+  //   //   processResults: function (response) {
+  //   //     return {
+  //   //        results: response
+  //   //     };
+  //   //   },
+  //   //   cache: true
+  //   // },
+  //   placeholder: "Paieška",
+  //   allowClear: true,
+  //   maximumSelectionLength: 1,
+  //   minimumInputLength: 1,
+  //   dropdownParent: $('.search-product'),
+  //   language: {
+  //     inputTooShort: function(args) {
+  //         return "";
+  //     },
+  //     noResults: function(){
+  //       return "";
+  //   },
+  //   searching: function() {
+  //     return "";
+  //   }
+  // }
+  // });
+
   $(".checkbox-wrapper>.checkbox input").on("change", function () {
     $(this).closest(".checkbox-wrapper").toggleClass("toggled");
   });
 
-  $(".site-header .site-header__item--search, .search-panel__close").click(
+  $(".site-header .site-header__item--search, .search-container__close").click(
     function () {
-      $(".search-panel").toggleClass("search-panel--toggled");
+      $(".search-container").toggleClass("search-container--toggled");
+      $(".site-header").toggleClass("hidden-visibility");
+      window.setTimeout(function () {
+        $("#search-product").focus();
+      }, 100);
+      $("html").toggleClass("toggle-scroll");
+      $("main").toggleClass("toggle-scroll-page");
     }
   );
+
+  $(".search-container__close").click(function () {
+    $("input#search-product").val("");
+    $(".search-panel input").val("");
+    $(".ui-autocomplete").css("display", "none");
+  });
+
+  $(".search-container__submit").click(function () {
+    $(".ui-autocomplete").fadeOut(300);
+    if (
+      $("input#search-product").val().length ||
+      $(".search-panel input").val().length
+    ) {
+      if ($(this).find("span").html() == "Ieškoti") {
+        $(this).find("span").html("Valyti");
+        $(this).addClass("change-search-icon");
+        $(".search-clean").css("display", "flex");
+      } else {
+        $(this).find("span").html("Ieškoti");
+        $(".search-clean").css("display", "none");
+        $(".product-header-chosen").fadeOut(300);
+        $("input#search-product").fadeIn(300);
+      }
+    }
+    if ($(this).find("span").html() == "Ieškoti") {
+      $("input#search-product").val("");
+      $(".search-panel input").val("");
+      $(this).removeClass("change-search-icon");
+    }
+  });
 
   function getTextWidth(el) {
     // uses a cached canvas if available
@@ -287,13 +359,20 @@ $(document).ready(function () {
   });
 
   $(document).click(function (event) {
-    //if you click on anything except the modal itself or the hamburger menu, close the modal
-    if (!$(event.target).closest(".site-aside,.site-header__hamburger").length && $(event.target).length != $(".select2-search").length ) {
+    //if you click on anything except the menu or the hamburger menu, close the menu
+    if (
+      !$(event.target).closest(".site-aside,.site-header__hamburger").length &&
+      $(event.target).length != $(".select2-search").length
+    ) {
       $("body")
         .find(".site-aside-container")
         .removeClass("site-aside-container--toggled");
     }
   });
+
+  if (!areScrollbarsVisible()) {
+    $(".site-aside").addClass("force-show-scrollbars");
+  }
 
   var timer_id;
   $(window).resize(function () {
@@ -303,8 +382,6 @@ $(document).ready(function () {
       moveOrder();
       changeTextWidth();
       changePadding();
-
-      $(".ui-autocomplete").css("width", $(".product__search").width());
     }, 100);
   });
 
@@ -390,7 +467,20 @@ $(window)
   })
   .scroll();
 
+$("main").scroll(function () {
+  if ($(this).scrollTop() > 100) {
+    $(".goto-top").fadeIn(300);
+  } else {
+    $(".goto-top").fadeOut(300);
+  }
+});
+
 $(window).scroll(function () {
+  if ($(this).scrollTop() > 100) {
+    $(".goto-top").fadeIn(300);
+  } else {
+    $(".goto-top").fadeOut(300);
+  }
   if ($(this).scrollTop() > 300) {
     $(".breadcrumbs__more").removeClass("breadcrumbs__more--toggled");
     $(".breadcrumbs__more")
@@ -445,4 +535,18 @@ setInterval(function () {
   }
 }, 250);
 
-
+function areScrollbarsVisible() {
+  var scrollableElem = document.createElement("div"),
+    innerElem = document.createElement("div");
+  scrollableElem.style.width = "30px";
+  scrollableElem.style.height = "30px";
+  scrollableElem.style.overflow = "scroll";
+  scrollableElem.style.borderWidth = "0";
+  innerElem.style.width = "30px";
+  innerElem.style.height = "60px";
+  scrollableElem.appendChild(innerElem);
+  document.body.appendChild(scrollableElem); // Elements only have width if they're in the layout
+  var diff = scrollableElem.offsetWidth - scrollableElem.clientWidth;
+  document.body.removeChild(scrollableElem);
+  return diff > 0;
+}
