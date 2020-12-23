@@ -1,7 +1,7 @@
 var isVisible = false;
 $("#search-product")
   .autocomplete({
-    minLength: 0,
+    minLength: 3,
     appendTo: ".search-container",
     source: function (request, response) {
       $.ajax({
@@ -17,6 +17,7 @@ $("#search-product")
     },
     select: function (event, ui) {
       $("input#search-product").attr("rel", ui.item.label);
+      $("#ui-id-2").css("display", "none");
     },
     open: function () {
       if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
@@ -40,7 +41,8 @@ $("#search-product")
     close: function (event, ui) {
       // if ($("input#search-product").attr("rel") == "0")
       //   $("input#search-product").val("");
-      $(".ui-autocomplete").show();
+      // $(".ui-autocomplete").show();
+      $("#ui-id-1").show();
       // $(".search-panel").click(function () {
       //   if ($("ul.ui-autocomplete").is(":visible")) {
 
@@ -57,15 +59,6 @@ $("#search-product")
 
       return false;
     },
-  })
-  .focus(function () {
-    // The following works only once.
-    // $(this).trigger('keydown.autocomplete');
-    // As suggested by digitalPBK, works multiple times
-    // $(this).data("autocomplete").search($(this).val());
-    // As noted by Jonny in his answer, with newer versions use uiAutocomplete
-    // $(this).data("uiAutocomplete").search($(this).val());
-    // isVisible = true;
   })
   .autocomplete("instance")._renderMenu = function (ul, items) {
   var currentCategory = "";
@@ -106,7 +99,7 @@ $("#search-product")
         .append(
           "<div class='autocomplete-product autocomplete-product--choices'>" +
             "<span class='autocomplete-product-expand'></span>" +
-            "<span class='autocomplete-product-title'>" +
+            "<span class='autocomplete-product-title autocomplete-product-title--main'>" +
             item.title +
             "<button class='autocomplete-product-button'>Plačiau</button></span><span class='autocomplete-product-desc paragraph hidden'>" +
             item.about +
@@ -134,7 +127,7 @@ $("#search-product")
         .appendTo(ul);
     }
   });
-  $(".ui-autocomplete")
+  $("#ui-id-1")
     .children()
     .wrapAll("<div class='ui-autocomplete-wrapper'></div>");
 };
@@ -159,6 +152,7 @@ $(document).click(function (event) {
   if (!$(event.target).closest(".search-container,.ui-autocomplete").length) {
     $(".ui-autocomplete").css("display", "none");
     $("input#search-product").val("");
+    $(".search-panel input").val("");
   }
 });
 
@@ -167,10 +161,13 @@ $(document)
   .on("click", ".autocomplete-product-checkbox", function (e) {
     var checkBoxes = $(this).closest(".checkbox").find("input");
     checkBoxes.prop("checked", !checkBoxes.prop("checked"));
+    document.activeElement.blur();
 
     var title, subtitle;
     if (checkBoxes.is(":checked")) {
-      $(".ui-autocomplete, #search-product").fadeOut(300);
+      $(".ui-autocomplete, #search-product").css("display", "none");
+      $(".search-container__submit span").html("Valyti");
+      $(".search-container__submit").addClass("change-search-icon");
       if (checkBoxes.parents(".autocomplete-product--choice").length) {
         title = $(this)
           .closest(".autocomplete-product--choices")
@@ -210,6 +207,8 @@ $(document).on("click", ".product-header-chosen__trash", function () {
   $("#search-product").fadeIn(300);
   $("input#search-product").val("");
   $("input#search-product").focus();
+  $(".search-container__submit span").html("Ieškoti");
+  $(".search-container__submit").removeClass("change-search-icon");
 });
 
 $(document).on("click", ".ui-autocomplete-choose", function (e) {
@@ -219,64 +218,36 @@ $(document).on("click", ".ui-autocomplete-choose", function (e) {
   }
 });
 
-$(".product__chosen-add").on("click", function () {
-  var container = $(".ui-autocomplete");
-  input.parent().show();
-  input.parent().css({ height: "0", visibility: "hidden", marginBottom: "0" });
-  input.autocomplete("search", "");
-  container.insertAfter(".product__chosen");
-  container.css({ display: "block", position: "static" });
-});
-
-$(".autocomplete-product-trash").on("click", function () {
-  $(this).parent(".autocomplete-product").remove();
-
-  if (!$(".product__chosen .autocomplete-product").length) {
-    $(".product__chosen").hide();
-    input.parent().show();
-    input.parent().removeAttr("style");
-    input.blur();
-  }
-});
-
-//making product search arrow work
-// var input = $("#search-product");
-// $(".product__search-arrow").click(function () {
-//   if (isVisible == true) {
-//     input.autocomplete("close");
-//     input.blur();
-//     isVisible = false;
-//   } else {
-//     $("html, body").animate(
-//       { scrollTop: $("#search-product").offset().top - 10 },
-//       300
-//     );
-//     input.autocomplete("search", "");
-//     isVisible = true;
-//   }
+// $(".product__chosen-add").on("click", function () {
+//   var container = $(".ui-autocomplete");
+//   input.parent().show();
+//   input.parent().css({ height: "0", visibility: "hidden", marginBottom: "0" });
+//   input.autocomplete("search", "");
+//   container.insertAfter(".product__chosen");
+//   container.css({ display: "block", position: "static" });
 // });
 
 //on iphone, after pressing "done", keep results open
 //bug - after selecting product, input regains focus, losing selection and opening up keyboard
-if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
-  var container = $(".ui-autocomplete");
-  document.addEventListener("focusout", function (e) {
-    if (e.relatedTarget == null) {
-      container.css("display", "block");
-      isVisible = true;
-    }
-  });
-  $(document).on("click", function (e) {
-    if (
-      !container.is(e.target) &&
-      container.has(e.target).length === 0 &&
-      !input.is(e.target) &&
-      input.has(e.target).length === 0
-    ) {
-      container.hide();
-    }
-  });
-}
+// if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+//   var container = $(".ui-autocomplete");
+//   document.addEventListener("focusout", function (e) {
+//     if (e.relatedTarget == null) {
+//       container.css("display", "block");
+//       isVisible = true;
+//     }
+//   });
+//   $(document).on("click", function (e) {
+//     if (
+//       !container.is(e.target) &&
+//       container.has(e.target).length === 0 &&
+//       !input.is(e.target) &&
+//       input.has(e.target).length === 0
+//     ) {
+//       container.hide();
+//     }
+//   });
+// }
 
 var input = $("#search");
 if (!navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
@@ -289,13 +260,44 @@ if (!navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
 }
 
 $("main").scroll(function () {
-  var autocompleteHeight = $(".ui-autocomplete").height();
-  var autocompleteOffsetTop = $(".ui-autocomplete").offset().top;
-
   if ($(".ui-autocomplete").is(":visible")) {
     if ($(this).scrollTop() > 100) {
       $("input#search-product").blur();
-      $(".ui-autocomplete").fadeOut(300);
+      $(".ui-autocomplete").css("display", "none");
     }
   }
 });
+
+var searchTerms = [
+  "Romas Dimša",
+  "Romanas Kareivis",
+  "Saulė Romikienė",
+  "Saulė Romikienė",
+  "Saulė Romikienė",
+  "Saulė Romikienė",
+  "Saulė Romikienė",
+  "Saulė Romikienė",
+  "Saulė Romikienė",
+  "Saulė Romikienė"
+];
+
+$(".search-panel input").autocomplete({
+  minLength: 0,
+  appendTo: ".search-container",
+  source: searchTerms,
+  close: function (event, ui) {
+    if (window.matchMedia("(min-width: 700px)").matches) {
+    // $(".ui-autocomplete").show();
+    $("#ui-id-2").show();
+    }
+  },
+  open: function(event, ui) {
+    if (window.matchMedia("(min-width: 700px)").matches) {
+    $("#ui-id-1").css("display", "block");
+    }
+  },
+  select: function(event, ui) {
+    $("#ui-id-1").css("display", "none");
+    $("#ui-id-2").css("display", "none");
+  }
+})

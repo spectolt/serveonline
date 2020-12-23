@@ -212,7 +212,7 @@ body {
       top: 0;
       width: 300px;
       height: 100%;
-      overflow: auto;
+      //overflow: auto;
       z-index: 2;
 
       @include breakpoint(xl) {
@@ -227,6 +227,10 @@ body {
         // background-color: $white;
         z-index: 4;
 
+        @include breakpoint(xxl) {
+          z-index: 1;
+        }
+
         .site-aside {
           background-color: $white;
         }
@@ -240,10 +244,6 @@ body {
         color: $darkwashedblue;
         width: 300px;
         background-color: $white;
-
-        @include breakpoint(xs) {
-          width: 75%;
-        }
 
         &__blocks {
           height: calc(100% - 70px);
@@ -661,13 +661,13 @@ body {
 .goto-top {
   position: fixed;
   bottom: 40px;
-  right: 30px;
+  right: 40px;
   //transform: translateY(-50%);
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  background-image: url("img/icons/angle-down-white.svg");
-  background-size: 70%;
+  background-image: url("img/icons/arrow-up-white.svg");
+  background-size: 30%;
   background-position: center;
   background-repeat: no-repeat;
   display: none;

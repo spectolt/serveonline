@@ -42,28 +42,6 @@
                         <button class="product__nav-button product__nav-button--next"></button>
                     </div>
                 </div>
-                <!-- <div class="product__search input-wrapper input-wrapper--briefcase">
-                    <input type="text" name="search" id="search" placeholder="Įveskite paslaugos pavadinimą" />
-                    <span class="product__search-arrow"></span>
-                </div> -->
-                <!-- <div class="product__chosen">
-                <button class="product__chosen-add"></button>
-                    <li class="autocomplete-product autocomplete-product--chosen">
-                        <span class="autocomplete-product-title autocomplete-product-title--main">Moterų kirpimas</span>
-                        <span class="autocomplete-product-title autocomplete-product-title--sub">Modelinis kirpimas</span>
-                        <span class="autocomplete-product-duration">00:30</span>
-                        <button class="autocomplete-product-trash"></button>
-                    </li>
-                    
-                    <li class="autocomplete-product autocomplete-product--chosen">
-                        <span class="autocomplete-product-title autocomplete-product-title--main">Plaukų atstatymo procedūra</span>
-                        <span class="autocomplete-product-title autocomplete-product-title--sub">Trumpi plaukai</span>
-                        <span class="autocomplete-product-duration">01:00</span>
-                        <button class="autocomplete-product-trash"></button>
-                    </li>
-                    
-                    <h3>Bendra reikiama paslaugų trukmė <span class="autocomplete-product-duration autocomplete-product-duration--final">01:30</span></h3>
-                </div> -->
                 <div class="product__list">
                     <?php for($y=0;$y<5;$y++) { ?>
                         <div class="product__block">
@@ -180,5 +158,4 @@
         </div>
     </div>
 </main>
-<button class="search-clean">Valyti</button>
 <?php require_once('footer.php'); ?>

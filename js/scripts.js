@@ -1,42 +1,6 @@
 $(document).ready(function () {
   $("select").select2();
 
-  // $(".js-search-product").select2({
-  //   // ajax: {
-  //   //   url: "https://5fc0bc01cb4d020016fe5d12.mockapi.io/products2",
-  //   //   dataType: "json",
-  //   //   delay: 250,
-  //   //   data: function (params) {
-  //   //     return {
-  //   //       q: params.term, // search term
-  //   //       page: params.page,
-  //   //     };
-  //   //   },
-  //   //   processResults: function (response) {
-  //   //     return {
-  //   //        results: response
-  //   //     };
-  //   //   },
-  //   //   cache: true
-  //   // },
-  //   placeholder: "Paieška",
-  //   allowClear: true,
-  //   maximumSelectionLength: 1,
-  //   minimumInputLength: 1,
-  //   dropdownParent: $('.search-product'),
-  //   language: {
-  //     inputTooShort: function(args) {
-  //         return "";
-  //     },
-  //     noResults: function(){
-  //       return "";
-  //   },
-  //   searching: function() {
-  //     return "";
-  //   }
-  // }
-  // });
-
   $(".checkbox-wrapper>.checkbox input").on("change", function () {
     $(this).closest(".checkbox-wrapper").toggleClass("toggled");
   });
@@ -50,13 +14,22 @@ $(document).ready(function () {
       }, 100);
       $("html").toggleClass("toggle-scroll");
       $("main").toggleClass("toggle-scroll-page");
+
+      if($(".search-container").css("visibility") === "visible") {
+      $(".goto-top").css("right", "40px");
+      } else {
+        var right = 1 + areScrollbarsVisible();
+        $(".goto-top").css("right", "+=" + right);
+      }
     }
   );
 
   $(".search-container__close").click(function () {
+    $("input#search-product").css("display","block");
     $("input#search-product").val("");
     $(".search-panel input").val("");
     $(".ui-autocomplete").css("display", "none");
+    $(".product-header-chosen").remove();
   });
 
   $(".search-container__submit").click(function () {
@@ -71,7 +44,7 @@ $(document).ready(function () {
         $(".search-clean").css("display", "flex");
       } else {
         $(this).find("span").html("Ieškoti");
-        $(".search-clean").css("display", "none");
+        //$(".search-clean").css("display", "none");
         $(".product-header-chosen").fadeOut(300);
         $("input#search-product").fadeIn(300);
       }
@@ -81,7 +54,7 @@ $(document).ready(function () {
       $(".search-panel input").val("");
       $(this).removeClass("change-search-icon");
     }
-  });
+  });  
 
   function getTextWidth(el) {
     // uses a cached canvas if available
@@ -325,6 +298,27 @@ $(document).ready(function () {
     $(this).html("09:15");
   });
 
+  $(".site-aside__block input").on("click", function() {
+    $(".search-clean").css("display", "flex");
+  }) 
+    
+  $('select').on('select2:select', function (e) {
+    $(".search-clean").css("display", "flex");
+    $(this).next(".select2").find("b").removeClass("rotate");
+  })
+
+  $(".search-clean").on('click', function() {
+    $('#city').val($('#city option:first-child').val()).trigger('change');
+    $('#time').val($('#time option:first-child').val()).trigger('change');
+    $(".search-container__submit span").html("Ieškoti");
+    $(".search-container__submit").removeClass("change-search-icon");
+    $(".product-header-chosen").remove();
+    $("#search-product").css("display", "block");
+    $(".site-aside__block input").prop( "checked", false );
+    $("#distance_asc").prop( "checked", true );
+    $(this).fadeOut(300);
+  })
+
   $(".breadcrumbs__change").click(function () {
     $(".breadcrumbs__more").toggleClass("breadcrumbs__more--toggled");
   });
@@ -370,7 +364,11 @@ $(document).ready(function () {
     }
   });
 
-  if (!areScrollbarsVisible()) {
+  // if (!areScrollbarsVisible() > 0) {
+  //   $(".site-aside").addClass("force-show-scrollbars");
+  // }
+
+  if (navigator.appVersion.indexOf("Mac")!=-1) {
     $(".site-aside").addClass("force-show-scrollbars");
   }
 
@@ -548,5 +546,5 @@ function areScrollbarsVisible() {
   document.body.appendChild(scrollableElem); // Elements only have width if they're in the layout
   var diff = scrollableElem.offsetWidth - scrollableElem.clientWidth;
   document.body.removeChild(scrollableElem);
-  return diff > 0;
+  return diff;
 }

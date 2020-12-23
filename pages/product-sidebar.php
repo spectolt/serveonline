@@ -5,9 +5,9 @@
         </div>
         <div class="site-aside__blocks">
             <div class="site-aside__block site-aside__block--city site-aside__block--padding">
-                <select>
-                    <option>Vilnius</option>
-                    <option>Vilnius</option>
+                <select id="city">
+                    <option selected>Vilnius</option>
+                    <option>Kaunas</option>
                 </select>
             </div>
 
@@ -86,8 +86,8 @@
             
             <div class="site-aside__block site-aside__block--hour site-aside__block--padding">
                 <h3 class="title">Aktuali valanda</h3>
-                <select name="time">
-                    <option value="18">18:00</option>
+                <select name="time" id="time">
+                    <option value="18" selected>18:00</option>
                     <option value="19">19:00</option>
                     <option value="20">20:00</option>
                 </select>
@@ -140,5 +140,6 @@
             </div>
 
         </div>
+        <button class="search-clean">Valyti</button>
     </aside>
 </div>

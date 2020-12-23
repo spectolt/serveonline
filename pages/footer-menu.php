@@ -1,4 +1,4 @@
-<button class="goto-top"></button>
+
 <footer class="site-footer container">
     <img src="../img/logo-sidebar.svg" class="site-footer__logo" />
     <ul class="site-footer__menu">
@@ -16,3 +16,4 @@
 </footer>
 
 </div>
+<button class="goto-top"></button>
