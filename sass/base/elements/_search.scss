@@ -271,9 +271,14 @@
           padding-right: 20px;
           margin: 0;
           background-color: $search-background-light;
+          border-radius: 0;
 
           .autocomplete-product-title {
             font-weight: 400;
+          }
+
+          &:nth-of-type(2n) {
+            background-color: $search-background-dark;
           }
         }
       }

@@ -13,7 +13,7 @@ $(document).ready(function () {
         $("#search-product").focus();
       }, 100);
       $("html").toggleClass("toggle-scroll");
-      $("main").toggleClass("toggle-scroll-page");
+      $("main").toggleClass("toggle-scroll-page force-show-scrollbars");
 
       if($(".search-container").css("visibility") === "visible") {
       $(".goto-top").css("right", "40px");
@@ -369,7 +369,7 @@ $(document).ready(function () {
   // }
 
   if (navigator.appVersion.indexOf("Mac")!=-1) {
-    $(".site-aside").addClass("force-show-scrollbars");
+    $(".site-aside").css("padding", "+=15");
   }
 
   var timer_id;

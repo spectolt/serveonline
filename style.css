@@ -1393,10 +1393,15 @@ select {
   padding-right: 20px;
   margin: 0;
   background-color: #f6f7f7;
+  border-radius: 0;
 }
 
 .search-container .ui-autocomplete .ui-autocomplete-wrapper .autocomplete-product--choice .autocomplete-product-title {
   font-weight: 400;
+}
+
+.search-container .ui-autocomplete .ui-autocomplete-wrapper .autocomplete-product--choice:nth-of-type(2n) {
+  background-color: #e9eaec;
 }
 
 #ui-id-2 {
@@ -1416,7 +1421,7 @@ select {
 }
 
 #ui-id-2 .ui-menu-item-wrapper:hover {
-  background-color: #e9eaec;
+  background-color: #d7d7d9;
 }
 
 @media (max-width: 700px) {
@@ -1717,7 +1722,7 @@ select {
 
 .product__search--header .product-header-chosen {
   padding: 10px 60px 10px 10px;
-  margin-right: 200px;
+  margin-right: 173px;
   background-color: #f4f4f6;
   border-radius: 5px;
   overflow: auto;
@@ -6026,7 +6031,7 @@ a.ui-button:active,
 }
 
 .ui-autocomplete .ui-menu-item-wrapper:hover {
-  background-color: #e9eaec;
+  background-color: #d7d7d9;
 }
 
 .ui-autocomplete .ui-menu-item-wrapper:hover > .autocomplete-product {
@@ -6034,7 +6039,7 @@ a.ui-button:active,
 }
 
 .ui-autocomplete .ui-menu-item-wrapper:hover > .autocomplete-product:hover {
-  background-color: #e9eaec;
+  background-color: #d7d7d9;
 }
 
 .ui-autocomplete .autocomplete-category {
@@ -6835,6 +6840,7 @@ body {
 .site-main--aside .site-aside-container .site-aside__blocks {
   height: calc(100% - 70px);
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .site-main--aside .site-aside-container .site-aside__block {
@@ -7277,7 +7283,7 @@ body {
 
 .force-show-scrollbars ::-webkit-scrollbar-thumb {
   background-clip: padding-box;
-  background-color: #c1c1c1;
+  background-color: #101b51;
   border-color: transparent;
   border-radius: 9px 8px 8px 9px;
   border-style: solid;
@@ -7293,7 +7299,7 @@ body {
  also have to check whether the element has a scrollbar and if so how wide
  it is. */
 .force-show-scrollbars ::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(16, 27, 81, 0.5);
 }
 
 .goto-top {
