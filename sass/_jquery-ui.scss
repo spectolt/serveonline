@@ -346,6 +346,7 @@ button.ui-button::-moz-focus-inner {
   padding: 25px 30px;
   display: none;
   line-height: 1em;
+  position: absolute;
 
   @include breakpoint(xs) {
     width: calc(100% - 80px);

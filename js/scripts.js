@@ -163,24 +163,25 @@ $(document).ready(function () {
           return [true, "", ""];
         }
       },
-      beforeShow: function () {
-        var position = $(this).closest(".product__nav");
+      // beforeShow: function () {
+      //   var position = $(this).closest(".product__nav");
 
-        window.setTimeout(function () {
-          $("#ui-datepicker-div").position({
-            my: "left top",
-            at: "left bottom",
-            of: position,
-          });
-        }, 1);
-      },
+      //   window.setTimeout(function () {
+      //     $("#ui-datepicker-div").position({
+      //       my: "left top",
+      //       at: "left bottom",
+      //       of: position,
+      //     });
+      //   }, 1);
+      // },
     beforeShow: function (input, inst) {
       var offsetHeight = $(".product__list").offset();
-      var offsetLeft = $(".product__nav").offset();
+      var offsetLeft = $(this).closest(".product__nav").offset();
       window.setTimeout(function () {
         $(inst.dpDiv).css({
           top: offsetHeight.top + "px",
-          left: offsetLeft.left + "px",
+          left: 0,
+          marginLeft: offsetLeft.left + "px",
         });
       }, 1);
     },
@@ -459,6 +460,12 @@ $(document).ready(function () {
     $(this).find(".select2-selection__arrow b").toggleClass("rotate");
   });
 
+  $(".goto-top").on("click", function () {
+    document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  document.querySelector("main").scrollTop = 0;
+  });
+
   moveAction();
   moveOrder();
   changePadding();
@@ -477,8 +484,11 @@ function changePadding() {
       $("div.page-content__wrapper").width()) /
     2;
 
-  if (window.matchMedia("(max-width: 500px)").matches) {
+  if (window.matchMedia("(max-width: 420px)").matches) {
     timePadding = (windowWidth - 4.5 * timeWidth - margin) / 4;
+    $(".calendar td").css("padding-right", timePadding);
+  } else if (window.matchMedia("(max-width: 500px)").matches) {
+    timePadding = (windowWidth - 5.5 * timeWidth - margin) / 5;
     $(".calendar td").css("padding-right", timePadding);
   } else if (window.matchMedia("(max-width: 600px)").matches) {
     timePadding = (windowWidth - 6.5 * timeWidth - margin) / 6;

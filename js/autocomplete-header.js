@@ -3,6 +3,11 @@ $("#search-product")
   .autocomplete({
     minLength: 3,
     appendTo: ".search-container",
+    menudocking: {
+      menucorner: "right bottom",
+      inputcorner: "right bottom",
+      collision: "none"
+  },
     source: function (request, response) {
       $.ajax({
         url: "https://5fc0bc01cb4d020016fe5d12.mockapi.io/products",
@@ -249,7 +254,7 @@ $(document).on("click", ".ui-autocomplete-choose", function (e) {
 //   });
 // }
 
-var input = $("#search");
+var input = $("#search-product");
 if (!navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
   $(document).on("click", ".ui-autocomplete-wrapper", function (e) {
     input.prop("readonly", true);
@@ -264,6 +269,7 @@ $("main").scroll(function () {
     if ($(this).scrollTop() > 100) {
       $("input#search-product").blur();
       $(".ui-autocomplete").css("display", "none");
+      $("input#search-product").val("");
     }
   }
 });
@@ -285,6 +291,7 @@ $(".search-panel input").autocomplete({
   minLength: 0,
   appendTo: ".search-container",
   source: searchTerms,
+  position: { my: "left top", at: "left bottom"},
   close: function (event, ui) {
     if (window.matchMedia("(min-width: 700px)").matches) {
     // $(".ui-autocomplete").show();

@@ -199,6 +199,7 @@ body {
 .site-main {
   //min-height: 500px;
   margin: 70px auto;
+  scroll-behavior: smooth;
 
   &--aside {
     height: calc(100vh - 70px);
