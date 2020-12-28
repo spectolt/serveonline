@@ -15,8 +15,8 @@ $(document).ready(function () {
       $("html").toggleClass("toggle-scroll");
       $("main").toggleClass("toggle-scroll-page force-show-scrollbars");
 
-      if($(".search-container").css("visibility") === "visible") {
-      $(".goto-top").css("right", "40px");
+      if ($(".search-container").css("visibility") === "visible") {
+        $(".goto-top").css("right", "40px");
       } else {
         var right = 1 + areScrollbarsVisible();
         $(".goto-top").css("right", "+=" + right);
@@ -25,7 +25,7 @@ $(document).ready(function () {
   );
 
   $(".search-container__close").click(function () {
-    $("input#search-product").css("display","block");
+    $("input#search-product").css("display", "block");
     $("input#search-product").val("");
     $(".search-panel input").val("");
     $(".ui-autocomplete").css("display", "none");
@@ -54,7 +54,7 @@ $(document).ready(function () {
       $(".search-panel input").val("");
       $(this).removeClass("change-search-icon");
     }
-  });  
+  });
 
   function getTextWidth(el) {
     // uses a cached canvas if available
@@ -114,6 +114,78 @@ $(document).ready(function () {
   eventDates[new Date("01/12/2021")] = new Event("Event02");
   eventDates[new Date("01/28/2021")] = new Event("Event02");
 
+  $(".js-datepicker").datepicker({
+    showButtonPanel: true,
+      orientation: "bottom",
+      buttonText: "Pasirinkti",
+      minDate: "+0",
+      defaultDate: "+1",
+      dateFormat: "yy M dd",
+      monthNamesShort: [
+        "Sausio",
+        "Vasario",
+        "Kovo",
+        "Balandžio",
+        "Gegužės",
+        "Birželio",
+        "Liepos",
+        "Rugpjūčio",
+        "Rugsėjo",
+        "Spalio",
+        "Lapkričio",
+        "Gruodžio",
+      ],
+      onSelect: function (date, inst) {
+        var event =
+          eventDates[
+            new Date(inst.selectedYear, inst.selectedMonth, inst.selectedDay)
+          ];
+        if (event) {
+          var selectedDate = $(".ui-datepicker-current-day");
+          console.log(selectedDate);
+          popup.show(300);
+        }
+        changeTextWidth();
+
+        //main input sets date of all inputs, persons' inputs don't change main input
+        var getDate = $(".product__nav-input:first").val();
+        var getDate2 = $(this).val();
+        $(".product__nav-input").datepicker("setDate", getDate);
+        $(this).datepicker("setDate", getDate2);
+        $(this).blur();
+      },
+
+      beforeShowDay: function (date) {
+        var highlight = eventDates[date];
+        if (highlight) {
+          return [true, "ui-datepicker-highlight", ""];
+        } else {
+          return [true, "", ""];
+        }
+      },
+      beforeShow: function () {
+        var position = $(this).closest(".product__nav");
+
+        window.setTimeout(function () {
+          $("#ui-datepicker-div").position({
+            my: "left top",
+            at: "left bottom",
+            of: position,
+          });
+        }, 1);
+      },
+    beforeShow: function (input, inst) {
+      var offsetHeight = $(".product__list").offset();
+      var offsetLeft = $(".product__nav").offset();
+      window.setTimeout(function () {
+        $(inst.dpDiv).css({
+          top: offsetHeight.top + "px",
+          left: offsetLeft.left + "px",
+        });
+      }, 1);
+    },
+  });
+  
   $(".product__nav-input")
     .datepicker({
       showButtonPanel: true,
@@ -298,26 +370,26 @@ $(document).ready(function () {
     $(this).html("09:15");
   });
 
-  $(".site-aside__block input").on("click", function() {
+  $(".site-aside__block input").on("click", function () {
     $(".search-clean").css("display", "flex");
-  }) 
-    
-  $('select').on('select2:select', function (e) {
+  });
+
+  $("select").on("select2:select", function (e) {
     $(".search-clean").css("display", "flex");
     $(this).next(".select2").find("b").removeClass("rotate");
-  })
+  });
 
-  $(".search-clean").on('click', function() {
-    $('#city').val($('#city option:first-child').val()).trigger('change');
-    $('#time').val($('#time option:first-child').val()).trigger('change');
+  $(".search-clean").on("click", function () {
+    $("#city").val($("#city option:first-child").val()).trigger("change");
+    $("#time").val($("#time option:first-child").val()).trigger("change");
     $(".search-container__submit span").html("Ieškoti");
     $(".search-container__submit").removeClass("change-search-icon");
     $(".product-header-chosen").remove();
     $("#search-product").css("display", "block");
-    $(".site-aside__block input").prop( "checked", false );
-    $("#distance_asc").prop( "checked", true );
+    $(".site-aside__block input").prop("checked", false);
+    $("#distance_asc").prop("checked", true);
     $(this).fadeOut(300);
-  })
+  });
 
   $(".breadcrumbs__change").click(function () {
     $(".breadcrumbs__more").toggleClass("breadcrumbs__more--toggled");
@@ -368,9 +440,9 @@ $(document).ready(function () {
   //   $(".site-aside").addClass("force-show-scrollbars");
   // }
 
-  if (navigator.appVersion.indexOf("Mac")!=-1 && !navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
-    $(".site-aside__block").css("padding-right", "+=15");
-  }
+  // if (navigator.appVersion.indexOf("Mac")!=-1 && !navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+  //   $(".site-aside__block").css("padding-right", "+=15");
+  // }
 
   var timer_id;
   $(window).resize(function () {
@@ -405,11 +477,11 @@ function changePadding() {
       $("div.page-content__wrapper").width()) /
     2;
 
-  if (window.matchMedia("(max-width: 480px)").matches) {
+  if (window.matchMedia("(max-width: 500px)").matches) {
     timePadding = (windowWidth - 4.5 * timeWidth - margin) / 4;
     $(".calendar td").css("padding-right", timePadding);
   } else if (window.matchMedia("(max-width: 600px)").matches) {
-    timePadding = (windowWidth - 5.5 * timeWidth - margin) / 5;
+    timePadding = (windowWidth - 6.5 * timeWidth - margin) / 6;
     $(".calendar td").css("padding-right", timePadding);
   } else {
     $(".calendar td").css("padding-right", 10);

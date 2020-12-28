@@ -3201,6 +3201,7 @@ button.ui-button::-moz-focus-inner {
   font-size: 1.125rem;
   margin-top: 0;
   margin-bottom: 10px;
+  margin-top: 5px;
 }
 
 .ui-datepicker-popup__place p {
@@ -3251,7 +3252,7 @@ button.ui-button::-moz-focus-inner {
 
 .ui-datepicker-popup .autocomplete-product-title--sub {
   font-size: .875rem;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .ui-datepicker-popup .autocomplete-product-duration {
