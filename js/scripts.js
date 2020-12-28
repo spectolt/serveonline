@@ -44,7 +44,6 @@ $(document).ready(function () {
         $(".search-clean").css("display", "flex");
       } else {
         $(this).find("span").html("Ieškoti");
-        //$(".search-clean").css("display", "none");
         $(".product-header-chosen").fadeOut(300);
         $("input#search-product").fadeIn(300);
       }
@@ -163,17 +162,6 @@ $(document).ready(function () {
           return [true, "", ""];
         }
       },
-      // beforeShow: function () {
-      //   var position = $(this).closest(".product__nav");
-
-      //   window.setTimeout(function () {
-      //     $("#ui-datepicker-div").position({
-      //       my: "left top",
-      //       at: "left bottom",
-      //       of: position,
-      //     });
-      //   }, 1);
-      // },
     beforeShow: function (input, inst) {
       var offsetHeight = $(".product__list").offset();
       var offsetLeft = $(this).closest(".product__nav").offset();
@@ -437,14 +425,6 @@ $(document).ready(function () {
     }
   });
 
-  // if (!areScrollbarsVisible() > 0) {
-  //   $(".site-aside").addClass("force-show-scrollbars");
-  // }
-
-  // if (navigator.appVersion.indexOf("Mac")!=-1 && !navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
-  //   $(".site-aside__block").css("padding-right", "+=15");
-  // }
-
   var timer_id;
   $(window).resize(function () {
     clearTimeout(timer_id);
@@ -464,6 +444,11 @@ $(document).ready(function () {
     document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   document.querySelector("main").scrollTop = 0;
+
+  if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+    $('html,body,main').animate({ scrollTop: 0 }, 300);
+        return false;
+  }
   });
 
   moveAction();

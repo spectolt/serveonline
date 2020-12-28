@@ -11,10 +11,6 @@ $("#search-product")
     source: function (request, response) {
       $.ajax({
         url: "https://5fc0bc01cb4d020016fe5d12.mockapi.io/products",
-        // dataType: "jsonp",
-        // data: {
-        //     term: request.term
-        // },
         success: function (data) {
           response(data);
         },
@@ -44,15 +40,7 @@ $("#search-product")
       $(".ui-autocomplete-choose-text").removeClass("ui-menu-item-wrapper");
     },
     close: function (event, ui) {
-      // if ($("input#search-product").attr("rel") == "0")
-      //   $("input#search-product").val("");
-      // $(".ui-autocomplete").show();
       $("#ui-id-1").show();
-      // $(".search-panel").click(function () {
-      //   if ($("ul.ui-autocomplete").is(":visible")) {
-
-      // }
-      // })
     },
     select: function (event, ui) {
       event.preventDefault();
@@ -222,37 +210,6 @@ $(document).on("click", ".ui-autocomplete-choose", function (e) {
     $(".product__chosen").show();
   }
 });
-
-// $(".product__chosen-add").on("click", function () {
-//   var container = $(".ui-autocomplete");
-//   input.parent().show();
-//   input.parent().css({ height: "0", visibility: "hidden", marginBottom: "0" });
-//   input.autocomplete("search", "");
-//   container.insertAfter(".product__chosen");
-//   container.css({ display: "block", position: "static" });
-// });
-
-//on iphone, after pressing "done", keep results open
-//bug - after selecting product, input regains focus, losing selection and opening up keyboard
-// if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
-//   var container = $(".ui-autocomplete");
-//   document.addEventListener("focusout", function (e) {
-//     if (e.relatedTarget == null) {
-//       container.css("display", "block");
-//       isVisible = true;
-//     }
-//   });
-//   $(document).on("click", function (e) {
-//     if (
-//       !container.is(e.target) &&
-//       container.has(e.target).length === 0 &&
-//       !input.is(e.target) &&
-//       input.has(e.target).length === 0
-//     ) {
-//       container.hide();
-//     }
-//   });
-// }
 
 var input = $("#search-product");
 if (!navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
