@@ -165,7 +165,7 @@ $(document)
 
     var title, subtitle;
     if (checkBoxes.is(":checked")) {
-      $(".ui-autocomplete, #search-product").css("display", "none");
+      $(".ui-autocomplete, #search-product, .ui-autocomplete-wrapper").css("display", "none");
       $(".search-container__submit span").html("Valyti");
       $(".search-container__submit").addClass("change-search-icon");
       if (checkBoxes.parents(".autocomplete-product--choice").length) {

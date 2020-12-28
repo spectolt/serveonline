@@ -368,8 +368,8 @@ $(document).ready(function () {
   //   $(".site-aside").addClass("force-show-scrollbars");
   // }
 
-  if (navigator.appVersion.indexOf("Mac")!=-1) {
-    $(".site-aside").css("padding", "+=15");
+  if (navigator.appVersion.indexOf("Mac")!=-1 && !navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+    $(".site-aside__block").css("padding-right", "+=15");
   }
 
   var timer_id;
@@ -399,13 +399,17 @@ $(document).ready(function () {
 function changePadding() {
   var windowWidth = $(window).width();
   var timeWidth = $(".calendar td").width();
+  var timePadding;
   var margin =
     ($("div.page-content__wrapper").innerWidth() -
       $("div.page-content__wrapper").width()) /
     2;
 
-  if (window.matchMedia("(max-width: 600px)").matches) {
-    var timePadding = (windowWidth - 4.5 * timeWidth - margin) / 4;
+  if (window.matchMedia("(max-width: 480px)").matches) {
+    timePadding = (windowWidth - 4.5 * timeWidth - margin) / 4;
+    $(".calendar td").css("padding-right", timePadding);
+  } else if (window.matchMedia("(max-width: 600px)").matches) {
+    timePadding = (windowWidth - 5.5 * timeWidth - margin) / 5;
     $(".calendar td").css("padding-right", timePadding);
   } else {
     $(".calendar td").css("padding-right", 10);
