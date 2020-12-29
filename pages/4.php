@@ -120,7 +120,7 @@
                             <div class="product-action product__block-action">                        
                                 <div class="product-action__info">
                                     <h4>Greitasis odos atjauninimas lazeriu</h4>    
-                                    <div class="product-action__duration">1 val</div>
+                                    <div class="product-action__duration">01:00</div>
                                     <div class="product-action__price">45€<strike>60€</strike></div>
                                 </div>
                                 <button class="button cyan transparent small product-action__order">Užsakyti</button>

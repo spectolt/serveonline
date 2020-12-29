@@ -1,7 +1,7 @@
 <div class="site-aside-container">
     <aside class="site-aside force-show-scrollbars">
         <div class="site-aside__block site-aside__block--logo site-aside__block--padding">
-            <img src="../img/logo-sidebar.svg" />
+            <img src="../img/logo-sidebar.svg" alt=""/>
         </div>
         <div class="site-aside__blocks">
             <div class="site-aside__block site-aside__block--city site-aside__block--padding">
@@ -138,8 +138,7 @@
                 </div>
                 <?php } ?>
             </div>
-
+            <button class="search-clean">Valyti</button>
         </div>
-        <button class="search-clean">Valyti</button>
     </aside>
 </div>

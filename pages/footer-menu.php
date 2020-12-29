@@ -7,7 +7,7 @@
         <li class="site-footer__item paragraph"><a href="#">Pagalba ir kontaktai</a></li>
     </ul>
     <div class="site-footer__langs">
-        <button href="#">Lietuvių</button>
+        <button>Lietuvių</button>
         <div class="site-footer__langs-items">
             <a href="#">Anglų</a>
             <a href="#">Rusų</a>

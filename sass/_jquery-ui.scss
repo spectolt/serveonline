@@ -349,9 +349,9 @@ button.ui-button::-moz-focus-inner {
   position: absolute;
 
   @include breakpoint(xs) {
-    width: calc(100% - 80px);
+    width: calc(100vw - 50px);
     //margin: 0 40px 0 40px;
-    margin-left: -40px;
+    //margin-left: -40px;
   }
 }
 
@@ -370,6 +370,7 @@ button.ui-button::-moz-focus-inner {
 
   @include breakpoint(xs) {
     width: 90%;
+    padding: 20px 10px;
   }
 
   &__header {
@@ -421,7 +422,7 @@ button.ui-button::-moz-focus-inner {
 
     @include breakpoint(xs) {
       align-self: flex-end;
-      order: -1;
+      position: absolute;
     }
   }
 
@@ -435,6 +436,10 @@ button.ui-button::-moz-focus-inner {
     margin-top: 20px;
     border-radius: 5px;
     padding: 10px 15px;
+
+    @include breakpoint(xs) {
+      margin-top: 10px;
+    }
 
     &-title {
       margin: 0 0 10px;
@@ -450,13 +455,13 @@ button.ui-button::-moz-focus-inner {
       margin: 0;
       display: inline-flex;
       align-items: baseline;
+      margin-right: 20px;
     }
 
     &-price {
       color: $cyan;
       display: inline-flex;
       font-weight: 500;
-      margin-left: 20px;
       align-items: baseline;
 
       @include breakpoint(xs) {
@@ -646,10 +651,6 @@ button.ui-button::-moz-focus-inner {
   background: $darkblue;
   font-family: "Sen", sans-serif;
   color: $white;
-
-  @include breakpoint(xs) {
-    margin-bottom: 20px;
-  }
 }
 
 .ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current {
@@ -662,7 +663,6 @@ button.ui-button::-moz-focus-inner {
 
   @include breakpoint(xs) {
     margin-right: 0;
-    margin-bottom: 20px;
   }
 }
 

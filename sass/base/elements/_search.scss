@@ -319,7 +319,7 @@
 .search-clean {
   position: absolute;
   z-index: 1000;
-  left: 50%;
+  left: calc(50% - 8px);
   transform: translateX(-50%);
   bottom: 40px;
   margin: 0 auto;

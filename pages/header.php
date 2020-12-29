@@ -1,6 +1,6 @@
 <!doctype html>
 
-<html lang="en" class="force-show-scrollbars">
+<html lang="lt" class="force-show-scrollbars">
 
 <head>
     <meta charset="utf-8">
@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Sen:wght@400;600;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../style.css?v=1.0">
 
 </head>
 
@@ -30,7 +30,7 @@
         </div>
         <header class="site-header site-header--show">
             <button class="site-header__hamburger"></button>
-            <img src="../img/logo.svg" class="site-header__logo" />
+            <img src="../img/logo.svg" class="site-header__logo" alt="" />
             <ul class="site-header__menu site-header__menu--items">
                 <li class="site-header__item site-header__item--active paragraph"><a href="#">Specialistai</a></li>
                 <li class="site-header__item paragraph"><a href="#">Įstaigos</a></li>

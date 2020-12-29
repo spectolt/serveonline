@@ -115,66 +115,71 @@ $(document).ready(function () {
 
   $(".js-datepicker").datepicker({
     showButtonPanel: true,
-      orientation: "bottom",
-      buttonText: "Pasirinkti",
-      minDate: "+0",
-      defaultDate: "+1",
-      dateFormat: "yy M dd",
-      monthNamesShort: [
-        "Sausio",
-        "Vasario",
-        "Kovo",
-        "Balandžio",
-        "Gegužės",
-        "Birželio",
-        "Liepos",
-        "Rugpjūčio",
-        "Rugsėjo",
-        "Spalio",
-        "Lapkričio",
-        "Gruodžio",
-      ],
-      onSelect: function (date, inst) {
-        var event =
-          eventDates[
-            new Date(inst.selectedYear, inst.selectedMonth, inst.selectedDay)
-          ];
-        if (event) {
-          var selectedDate = $(".ui-datepicker-current-day");
-          console.log(selectedDate);
-          popup.show(300);
-        }
-        changeTextWidth();
+    orientation: "bottom",
+    buttonText: "Pasirinkti",
+    minDate: "+0",
+    defaultDate: "+1",
+    dateFormat: "yy M dd",
+    monthNamesShort: [
+      "Sausio",
+      "Vasario",
+      "Kovo",
+      "Balandžio",
+      "Gegužės",
+      "Birželio",
+      "Liepos",
+      "Rugpjūčio",
+      "Rugsėjo",
+      "Spalio",
+      "Lapkričio",
+      "Gruodžio",
+    ],
+    onSelect: function (date, inst) {
+      var event =
+        eventDates[
+          new Date(inst.selectedYear, inst.selectedMonth, inst.selectedDay)
+        ];
+      if (event) {
+        var selectedDate = $(".ui-datepicker-current-day");
+        console.log(selectedDate);
+        popup.show(300);
+      }
+      changeTextWidth();
 
-        //main input sets date of all inputs, persons' inputs don't change main input
-        var getDate = $(".product__nav-input:first").val();
-        var getDate2 = $(this).val();
-        $(".product__nav-input").datepicker("setDate", getDate);
-        $(this).datepicker("setDate", getDate2);
-        $(this).blur();
-      },
+      //main input sets date of all inputs, persons' inputs don't change main input
+      var getDate = $(".product__nav-input:first").val();
+      var getDate2 = $(this).val();
+      $(".product__nav-input").datepicker("setDate", getDate);
+      $(this).datepicker("setDate", getDate2);
+      $(this).blur();
+    },
 
-      beforeShowDay: function (date) {
-        var highlight = eventDates[date];
-        if (highlight) {
-          return [true, "ui-datepicker-highlight", ""];
-        } else {
-          return [true, "", ""];
-        }
-      },
+    beforeShowDay: function (date) {
+      var highlight = eventDates[date];
+      if (highlight) {
+        return [true, "ui-datepicker-highlight", ""];
+      } else {
+        return [true, "", ""];
+      }
+    },
     beforeShow: function (input, inst) {
       var offsetHeight = $(".product__list").offset();
       var offsetLeft = $(this).closest(".product__nav").offset();
       window.setTimeout(function () {
         $(inst.dpDiv).css({
           top: offsetHeight.top + "px",
-          left: 0,
-          marginLeft: offsetLeft.left + "px",
+          left: offsetLeft.left + "px",
         });
+        if (window.matchMedia("(max-width: 600px)").matches) {
+          $(inst.dpDiv).css({
+            left: "50%",
+            transform: "translateX(-50%)",
+          });
+        }
       }, 1);
     },
   });
-  
+
   $(".product__nav-input")
     .datepicker({
       showButtonPanel: true,
@@ -261,9 +266,7 @@ $(document).ready(function () {
       "45€" +
       "<strike>" +
       "60€" +
-      "</strike></span><span class='autocomplete-product-weeks'>" +
-      "6 sav." +
-      "</span></li>" +
+      "</strike></span></li>" +
       "<li class='autocomplete-product'><span class='autocomplete-product-title autocomplete-product-title--main'>" +
       `Plaukų atstatymo procedūra su "Nashi argan deep infusion" 
     su kauke` +
@@ -276,9 +279,7 @@ $(document).ready(function () {
       "45€" +
       "<strike>" +
       "60€" +
-      "</strike></span><span class='autocomplete-product-weeks'>" +
-      "6 sav." +
-      "</span></li>" +
+      "</strike></span></li>" +
       "</ul>" +
       "</div>"
   );
@@ -300,6 +301,14 @@ $(document).ready(function () {
 
   $(".product__nav-icon").click(function () {
     $(this).next(".product__nav-input").datepicker("show");
+  });
+
+  //prevent ios from scrolling to input
+  document.querySelector(".js-datepicker").addEventListener("focus", (e) => {
+    e.preventDefault();
+    setTimeout(() => {
+      window.scroll(0, 100);
+    }, 0);
   });
 
   $(".product__nav-button--next").on("click", function () {
@@ -380,6 +389,14 @@ $(document).ready(function () {
     $(this).fadeOut(300);
   });
 
+  if (
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    )
+  ) {
+    $(".search-clean").css("left", "50%");
+  }
+
   $(".breadcrumbs__change").click(function () {
     $(".breadcrumbs__more").toggleClass("breadcrumbs__more--toggled");
   });
@@ -442,13 +459,13 @@ $(document).ready(function () {
 
   $(".goto-top").on("click", function () {
     document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-  document.querySelector("main").scrollTop = 0;
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    document.querySelector("main").scrollTop = 0;
 
-  if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
-    $('html,body,main').animate({ scrollTop: 0 }, 300);
-        return false;
-  }
+    if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+      $("html,body,main").animate({ scrollTop: 0 }, 300);
+      return false;
+    }
   });
 
   moveAction();
