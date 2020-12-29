@@ -109,9 +109,14 @@ $(document).ready(function () {
     this.text = text;
   };
   var eventDates = {};
-  eventDates[new Date("12/12/2020")] = new Event("Event01");
+  eventDates[new Date("12/31/2020")] = new Event("Event01");
   eventDates[new Date("01/12/2021")] = new Event("Event02");
   eventDates[new Date("01/28/2021")] = new Event("Event02");
+
+  var availableDates = {};
+  availableDates[new Date("01/05/2021")] = new Date("01/05/2021");
+  availableDates[new Date("01/12/2021")] = new Date("01/12/2021");
+  availableDates[new Date("01/13/2021")] = new Date("01/13/2021");
 
   $(".js-datepicker").datepicker({
     showButtonPanel: true,
@@ -155,9 +160,14 @@ $(document).ready(function () {
     },
 
     beforeShowDay: function (date) {
+      var available = availableDates[date];
       var highlight = eventDates[date];
-      if (highlight) {
+      if (available && highlight) {
+        return [true, "ui-datepicker-available ui-datepicker-highlight", ""];
+      } else if (highlight) {
         return [true, "ui-datepicker-highlight", ""];
+      } else if (available) {
+        return [true, "ui-datepicker-available", ""];
       } else {
         return [true, "", ""];
       }
@@ -166,14 +176,16 @@ $(document).ready(function () {
       var offsetHeight = $(".product__list").offset();
       var offsetLeft = $(this).closest(".product__nav").offset();
       window.setTimeout(function () {
-        $(inst.dpDiv).css({
-          top: offsetHeight.top + "px",
-          left: offsetLeft.left + "px",
-        });
         if (window.matchMedia("(max-width: 600px)").matches) {
           $(inst.dpDiv).css({
             left: "50%",
             transform: "translateX(-50%)",
+          });
+        } else {
+          $(inst.dpDiv).css({
+            top: offsetHeight.top + "px",
+            left: offsetLeft.left + "px",
+            transform: "translateX(0)",
           });
         }
       }, 1);
@@ -450,6 +462,10 @@ $(document).ready(function () {
       moveOrder();
       changeTextWidth();
       changePadding();
+      var field = $(document.activeElement);
+      if (field.is('.hasDatepicker')) {
+            field.datepicker('hide').datepicker('show');
+      }
     }, 100);
   });
 

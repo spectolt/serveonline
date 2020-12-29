@@ -349,7 +349,7 @@ button.ui-button::-moz-focus-inner {
   position: absolute;
 
   @include breakpoint(xs) {
-    width: calc(100vw - 50px);
+    width: calc(100vw - 30px);
     //margin: 0 40px 0 40px;
     //margin-left: -40px;
   }
@@ -423,6 +423,8 @@ button.ui-button::-moz-focus-inner {
     @include breakpoint(xs) {
       align-self: flex-end;
       position: absolute;
+      right: 10px;
+      top: 20px;
     }
   }
 
@@ -605,6 +607,7 @@ button.ui-button::-moz-focus-inner {
   width: 30px;
   height: 30px;
   padding: 7px 0;
+  font-size: 1rem;
   text-align: center;
   text-decoration: none;
   margin: 5px auto;
@@ -627,13 +630,14 @@ button.ui-button::-moz-focus-inner {
   border-left: 0;
   border-right: 0;
   border-bottom: 0;
+  margin-right: -20px;
 
   @include breakpoint(xs) {
     padding: 0;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
   }
 }
@@ -651,6 +655,7 @@ button.ui-button::-moz-focus-inner {
   background: $darkblue;
   font-family: "Sen", sans-serif;
   color: $white;
+  margin-right: 20px;
 }
 
 .ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current {
@@ -662,7 +667,7 @@ button.ui-button::-moz-focus-inner {
   background: transparent;
 
   @include breakpoint(xs) {
-    margin-right: 0;
+    margin-right: 20px;
   }
 }
 
@@ -687,6 +692,11 @@ td.ui-datepicker-highlight a {
     position: absolute;
     top: 2px;
   }
+}
+
+td.ui-datepicker-available a {
+  font-weight: 900;
+  color: $darkblue !important;
 }
 
 /* with multiple calendars */
