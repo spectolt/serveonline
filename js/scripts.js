@@ -1,199 +1,63 @@
 $(document).ready(function () {
-  $("select").select2();
-
-  $(".checkbox-wrapper>.checkbox input").on("change", function () {
-    $(this).closest(".checkbox-wrapper").toggleClass("toggled");
-  });
-
-  $(".site-header .site-header__item--search, .search-container__close").click(
-    function () {
-      $(".search-container").toggleClass("search-container--toggled");
-      $(".site-header").toggleClass("hidden-visibility");
-      window.setTimeout(function () {
-        $("#search-product").focus();
-      }, 100);
-      $("html").toggleClass("toggle-scroll");
-      $("main").toggleClass("toggle-scroll-page force-show-scrollbars");
-
-      if ($(".search-container").css("visibility") === "visible") {
-        $(".goto-top").css("right", "40px");
-      } else {
-        var right = 1 + areScrollbarsVisible();
-        $(".goto-top").css("right", "+=" + right);
+  if ($("main.hasUiAutocomplete").length > 0) {
+    $(".search-container__submit").click(function () {
+      $(".ui-autocomplete").fadeOut(300);
+      if (
+        $("input#search-product").val().length ||
+        $(".search-panel input").val().length
+      ) {
+        if ($(this).find("span").html() == "Ieškoti") {
+          $(this).find("span").html("Valyti");
+          $(this).addClass("change-search-icon");
+          $(".search-clean").css("display", "flex");
+        } else {
+          $(this).find("span").html("Ieškoti");
+          $(".product-header-chosen").fadeOut(300);
+          $("input#search-product").fadeIn(300);
+        }
       }
-    }
-  );
-
-  $(".search-container__close").click(function () {
-    $("input#search-product").css("display", "block");
-    $("input#search-product").val("");
-    $(".search-panel input").val("");
-    $(".ui-autocomplete").css("display", "none");
-    $(".product-header-chosen").remove();
-  });
-
-  $(".search-container__submit").click(function () {
-    $(".ui-autocomplete").fadeOut(300);
-    if (
-      $("input#search-product").val().length ||
-      $(".search-panel input").val().length
-    ) {
       if ($(this).find("span").html() == "Ieškoti") {
-        $(this).find("span").html("Valyti");
-        $(this).addClass("change-search-icon");
-        $(".search-clean").css("display", "flex");
-      } else {
-        $(this).find("span").html("Ieškoti");
-        $(".product-header-chosen").fadeOut(300);
-        $("input#search-product").fadeIn(300);
+        $("input#search-product").val("");
+        $(".search-panel input").val("");
+        $(this).removeClass("change-search-icon");
       }
-    }
-    if ($(this).find("span").html() == "Ieškoti") {
-      $("input#search-product").val("");
-      $(".search-panel input").val("");
-      $(this).removeClass("change-search-icon");
-    }
-  });
+    });
 
-  function getTextWidth(el) {
-    // uses a cached canvas if available
-    var canvas =
-      getTextWidth.canvas ||
-      (getTextWidth.canvas = document.createElement("canvas"));
-    var context = canvas.getContext("2d");
-    // get the full font style property
-    let style = window.getComputedStyle(el, null);
-    let font = style.getPropertyValue("font");
-    // var font = window.getComputedStyle(el, null).getPropertyValue("font");
-    const fontStyle = style.getPropertyValue("font-style");
-    const fontVariant = style.getPropertyValue("font-variant");
-    const fontWeight = style.getPropertyValue("font-weight");
-    const fontSize = style.getPropertyValue("font-size");
-    const fontFamily = style.getPropertyValue("font-family");
-
-    font = (
-      fontStyle +
-      " " +
-      fontVariant +
-      " " +
-      fontWeight +
-      " " +
-      fontSize +
-      " " +
-      fontFamily
-    )
-      .replace(/ +/g, " ")
-      .trim();
-    var text = el.value;
-    // set the font attr for the canvas text
-    context.font = font;
-    var textMeasurement = context.measureText(text);
-    return textMeasurement.width;
+    // autocomplete results width fix
+    jQuery.ui.autocomplete.prototype._resizeMenu = function () {
+      this.menu.element.css("width", this.element.outerWidth());
+    };
   }
 
-  //today button sets the date
-  $.datepicker._gotoToday = function (id) {
-    var inst = this._getInst($(id)[0]);
+  if ($("main.hasUiDatepicker").length > 0) {
+    //today button sets the date
+    $.datepicker._gotoToday = function (id) {
+      var inst = this._getInst($(id)[0]);
 
-    var date = new Date();
-    this._selectDay(
-      id,
-      date.getMonth(),
-      date.getFullYear(),
-      inst.dpDiv.find("td.ui-datepicker-today")
-    );
-    changeTextWidth();
-  };
-
-  var Event = function (text) {
-    this.text = text;
-  };
-  var eventDates = {};
-  eventDates[new Date("12/31/2020")] = new Event("Event01");
-  eventDates[new Date("01/12/2021")] = new Event("Event02");
-  eventDates[new Date("01/28/2021")] = new Event("Event02");
-
-  var availableDates = {};
-  availableDates[new Date("01/05/2021")] = new Date("01/05/2021");
-  availableDates[new Date("01/12/2021")] = new Date("01/12/2021");
-  availableDates[new Date("01/13/2021")] = new Date("01/13/2021");
-
-  $(".js-datepicker").datepicker({
-    showButtonPanel: true,
-    orientation: "bottom",
-    buttonText: "Pasirinkti",
-    minDate: "+0",
-    defaultDate: "+1",
-    dateFormat: "yy M dd",
-    monthNamesShort: [
-      "Sausio",
-      "Vasario",
-      "Kovo",
-      "Balandžio",
-      "Gegužės",
-      "Birželio",
-      "Liepos",
-      "Rugpjūčio",
-      "Rugsėjo",
-      "Spalio",
-      "Lapkričio",
-      "Gruodžio",
-    ],
-    onSelect: function (date, inst) {
-      var event =
-        eventDates[
-          new Date(inst.selectedYear, inst.selectedMonth, inst.selectedDay)
-        ];
-      if (event) {
-        var selectedDate = $(".ui-datepicker-current-day");
-        console.log(selectedDate);
-        popup.show(300);
-      }
+      var date = new Date();
+      this._selectDay(
+        id,
+        date.getMonth(),
+        date.getFullYear(),
+        inst.dpDiv.find("td.ui-datepicker-today")
+      );
       changeTextWidth();
+    };
 
-      //main input sets date of all inputs, persons' inputs don't change main input
-      var getDate = $(".product__nav-input:first").val();
-      var getDate2 = $(this).val();
-      $(".product__nav-input").datepicker("setDate", getDate);
-      $(this).datepicker("setDate", getDate2);
-      $(this).blur();
-    },
+    var Event = function (text) {
+      this.text = text;
+    };
+    var eventDates = {};
+    eventDates[new Date("12/31/2020")] = new Event("Event01");
+    eventDates[new Date("01/12/2021")] = new Event("Event02");
+    eventDates[new Date("01/28/2021")] = new Event("Event02");
 
-    beforeShowDay: function (date) {
-      var available = availableDates[date];
-      var highlight = eventDates[date];
-      if (available && highlight) {
-        return [true, "ui-datepicker-available ui-datepicker-highlight", ""];
-      } else if (highlight) {
-        return [true, "ui-datepicker-highlight", ""];
-      } else if (available) {
-        return [true, "ui-datepicker-available", ""];
-      } else {
-        return [true, "", ""];
-      }
-    },
-    beforeShow: function (input, inst) {
-      var offsetHeight = $(".product__list").offset();
-      var offsetLeft = $(this).closest(".product__nav").offset();
-      window.setTimeout(function () {
-        if (window.matchMedia("(max-width: 600px)").matches) {
-          $(inst.dpDiv).css({
-            left: "50%",
-            transform: "translateX(-50%)",
-          });
-        } else {
-          $(inst.dpDiv).css({
-            top: offsetHeight.top + "px",
-            left: offsetLeft.left + "px",
-            transform: "translateX(0)",
-          });
-        }
-      }, 1);
-    },
-  });
+    var availableDates = {};
+    availableDates[new Date("01/05/2021")] = new Date("01/05/2021");
+    availableDates[new Date("01/12/2021")] = new Date("01/12/2021");
+    availableDates[new Date("01/13/2021")] = new Date("01/13/2021");
 
-  $(".product__nav-input")
-    .datepicker({
+    $(".js-datepicker").datepicker({
       showButtonPanel: true,
       orientation: "bottom",
       buttonText: "Pasirinkti",
@@ -214,7 +78,6 @@ $(document).ready(function () {
         "Lapkričio",
         "Gruodžio",
       ],
-
       onSelect: function (date, inst) {
         var event =
           eventDates[
@@ -236,130 +99,246 @@ $(document).ready(function () {
       },
 
       beforeShowDay: function (date) {
+        var available = availableDates[date];
         var highlight = eventDates[date];
-        if (highlight) {
+        if (available && highlight) {
+          return [true, "ui-datepicker-available ui-datepicker-highlight", ""];
+        } else if (highlight) {
           return [true, "ui-datepicker-highlight", ""];
+        } else if (available) {
+          return [true, "ui-datepicker-available", ""];
         } else {
           return [true, "", ""];
         }
       },
-      beforeShow: function () {
-        var position = $(this).closest(".product__nav");
-
+      beforeShow: function (input, inst) {
+        var offsetHeight = $(".product__list").offset();
+        var offsetLeft = $(this).closest(".product__nav").offset();
         window.setTimeout(function () {
-          $("#ui-datepicker-div").position({
-            my: "left top",
-            at: "left bottom",
-            of: position,
-          });
+          if (window.matchMedia("(max-width: 600px)").matches) {
+            $(inst.dpDiv).css({
+              left: "50%",
+              transform: "translateX(-50%)",
+            });
+          } else {
+            $(inst.dpDiv).css({
+              top: offsetHeight.top + "px",
+              left: offsetLeft.left + "px",
+              transform: "translateX(0)",
+            });
+          }
         }, 1);
       },
-    })
-    .datepicker("setDate", "+0");
+    });
 
-  var popup = $(
-    "<div class='ui-datepicker-popup'><div class='ui-datepicker-popup__header'>" +
-      "<h3 class='ui-datepicker-popup__time'>" +
-      "17:30 - 20:00" +
-      "</h3>" +
-      "<div class='ui-datepicker-popup__place'><h4>" +
-      "East Islan SPA centras" +
-      "</h4>" +
-      "<p>" +
-      "M. Valančiaus g. 23, Kaunas" +
-      "</p></div>" +
-      "<button class='ui-datepicker-popup__close'></button>" +
-      "</div><ul>" +
-      "<li class='autocomplete-product'><span class='autocomplete-product-title autocomplete-product-title--main'>" +
-      "Moterų kirpimas" +
-      "</span><span class='autocomplete-product-duration'>" +
-      "01:00" +
-      "</span><span class='autocomplete-product-price'>" +
-      "45€" +
-      "<strike>" +
-      "60€" +
-      "</strike></span></li>" +
-      "<li class='autocomplete-product'><span class='autocomplete-product-title autocomplete-product-title--main'>" +
-      `Plaukų atstatymo procedūra su "Nashi argan deep infusion" 
+    $(".product__nav-input")
+      .datepicker({
+        showButtonPanel: true,
+        orientation: "bottom",
+        buttonText: "Pasirinkti",
+        minDate: "+0",
+        defaultDate: "+1",
+        dateFormat: "yy M dd",
+        monthNamesShort: [
+          "Sausio",
+          "Vasario",
+          "Kovo",
+          "Balandžio",
+          "Gegužės",
+          "Birželio",
+          "Liepos",
+          "Rugpjūčio",
+          "Rugsėjo",
+          "Spalio",
+          "Lapkričio",
+          "Gruodžio",
+        ],
+
+        onSelect: function (date, inst) {
+          var event =
+            eventDates[
+              new Date(inst.selectedYear, inst.selectedMonth, inst.selectedDay)
+            ];
+          if (event) {
+            var selectedDate = $(".ui-datepicker-current-day");
+            console.log(selectedDate);
+            popup.show(300);
+          }
+          changeTextWidth();
+
+          //main input sets date of all inputs, persons' inputs don't change main input
+          var getDate = $(".product__nav-input:first").val();
+          var getDate2 = $(this).val();
+          $(".product__nav-input").datepicker("setDate", getDate);
+          $(this).datepicker("setDate", getDate2);
+          $(this).blur();
+        },
+
+        beforeShowDay: function (date) {
+          var highlight = eventDates[date];
+          if (highlight) {
+            return [true, "ui-datepicker-highlight", ""];
+          } else {
+            return [true, "", ""];
+          }
+        },
+        beforeShow: function () {
+          var position = $(this).closest(".product__nav");
+
+          window.setTimeout(function () {
+            $("#ui-datepicker-div").position({
+              my: "left top",
+              at: "left bottom",
+              of: position,
+            });
+          }, 1);
+        },
+      })
+      .datepicker("setDate", "+0");
+
+    var popup = $(
+      "<div class='ui-datepicker-popup'><div class='ui-datepicker-popup__header'>" +
+        "<h3 class='ui-datepicker-popup__time'>" +
+        "17:30 - 20:00" +
+        "</h3>" +
+        "<div class='ui-datepicker-popup__place'><h4>" +
+        "East Islan SPA centras" +
+        "</h4>" +
+        "<p>" +
+        "M. Valančiaus g. 23, Kaunas" +
+        "</p></div>" +
+        "<button class='ui-datepicker-popup__close'></button>" +
+        "</div><ul>" +
+        "<li class='autocomplete-product'><span class='autocomplete-product-title autocomplete-product-title--main'>" +
+        "Moterų kirpimas" +
+        "</span><span class='autocomplete-product-duration'>" +
+        "01:00" +
+        "</span><span class='autocomplete-product-price'>" +
+        "45€" +
+        "<strike>" +
+        "60€" +
+        "</strike></span></li>" +
+        "<li class='autocomplete-product'><span class='autocomplete-product-title autocomplete-product-title--main'>" +
+        `Plaukų atstatymo procedūra su "Nashi argan deep infusion" 
     su kauke` +
-      "</span><span class='autocomplete-product-title autocomplete-product-title--sub'>" +
-      "Trumpi plaukai" +
-      "</span>" +
-      "<span class='autocomplete-product-duration'>" +
-      "01:00" +
-      "</span><span class='autocomplete-product-price'>" +
-      "45€" +
-      "<strike>" +
-      "60€" +
-      "</strike></span></li>" +
-      "</ul>" +
-      "</div>"
-  );
-  $(popup).appendTo("body");
-  $(".ui-datepicker-popup__close").on("click", function () {
-    $(popup).fadeOut(300);
-  });
+        "</span><span class='autocomplete-product-title autocomplete-product-title--sub'>" +
+        "Trumpi plaukai" +
+        "</span>" +
+        "<span class='autocomplete-product-duration'>" +
+        "01:00" +
+        "</span><span class='autocomplete-product-price'>" +
+        "45€" +
+        "<strike>" +
+        "60€" +
+        "</strike></span></li>" +
+        "</ul>" +
+        "</div>"
+    );
+    $(popup).appendTo("body");
+    $(".ui-datepicker-popup__close").on("click", function () {
+      $(popup).fadeOut(300);
+    });
 
-  // Don't hide the date picker when clicking a date
-  $.datepicker._selectDateOverload = $.datepicker._selectDate;
-  $.datepicker._selectDate = function (id, dateStr) {
-    var target = $(id);
-    var inst = this._getInst(target[0]);
-    inst.inline = true;
-    $.datepicker._selectDateOverload(id, dateStr);
-    inst.inline = false;
-    this._updateDatepicker(inst);
-  };
+    // Don't hide the date picker when clicking a date
+    $.datepicker._selectDateOverload = $.datepicker._selectDate;
+    $.datepicker._selectDate = function (id, dateStr) {
+      var target = $(id);
+      var inst = this._getInst(target[0]);
+      inst.inline = true;
+      $.datepicker._selectDateOverload(id, dateStr);
+      inst.inline = false;
+      this._updateDatepicker(inst);
+    };
 
-  $(".product__nav-icon").click(function () {
-    $(this).next(".product__nav-input").datepicker("show");
-  });
+    $(".product__nav-icon").click(function () {
+      $(this).next(".product__nav-input").datepicker("show");
+    });
 
-  //prevent ios from scrolling to input
-  document.querySelector(".js-datepicker").addEventListener("focus", (e) => {
-    e.preventDefault();
-    setTimeout(() => {
-      window.scroll(0, 100);
-    }, 0);
-  });
+    //prevent ios from scrolling to input
+    document.querySelector(".js-datepicker").addEventListener("focus", (e) => {
+      e.preventDefault();
+      setTimeout(() => {
+        window.scroll(0, 100);
+      }, 0);
+    });
 
-  $(".product__nav-button--next").on("click", function () {
-    var date = $(".product__nav-input").datepicker("getDate");
-    if (window.matchMedia("(max-width: 600px)").matches) {
-      date.setDate(date.getDate() + 1);
-    } else {
-      date.setDate(date.getDate() + 7);
+    $(".product__nav-button--next").on("click", function () {
+      var date = $(".product__nav-input").datepicker("getDate");
+      if (window.matchMedia("(max-width: 600px)").matches) {
+        date.setDate(date.getDate() + 1);
+      } else {
+        date.setDate(date.getDate() + 7);
+      }
+      $(".product__nav-input").datepicker("setDate", date);
+
+      changeTextWidth();
+    });
+
+    $(".product__nav-button--prev").on("click", function () {
+      var date = $(".product__nav-input").datepicker("getDate");
+      if (window.matchMedia("(max-width: 600px)").matches) {
+        date.setDate(date.getDate() - 1);
+      } else {
+        date.setDate(date.getDate() - 7);
+      }
+      $(".product__nav-input").datepicker("setDate", date);
+
+      changeTextWidth();
+    });
+
+    function changeTextWidth() {
+      var inputs = document.getElementsByClassName("product__nav-input");
+      for (var i = 0; i < inputs.length; i++) {
+        var width = Math.floor(getTextWidth(inputs[i]));
+        var widthInPx = width + 3 + "px";
+        inputs[i].style.width = widthInPx;
+      }
     }
-    $(".product__nav-input").datepicker("setDate", date);
 
-    changeTextWidth();
-  });
-
-  $(".product__nav-button--prev").on("click", function () {
-    var date = $(".product__nav-input").datepicker("getDate");
-    if (window.matchMedia("(max-width: 600px)").matches) {
-      date.setDate(date.getDate() - 1);
-    } else {
-      date.setDate(date.getDate() - 7);
-    }
-    $(".product__nav-input").datepicker("setDate", date);
-
-    changeTextWidth();
-  });
-
-  function changeTextWidth() {
-    var inputs = document.getElementsByClassName("product__nav-input");
-    for (var i = 0; i < inputs.length; i++) {
-      var width = Math.floor(getTextWidth(inputs[i]));
-      var widthInPx = width + 3 + "px";
-      inputs[i].style.width = widthInPx;
-    }
+    $(window).scroll(function () {
+      if (
+        $(this).scrollTop() >
+        $("#ui-datepicker-div").offset().top + $("#ui-datepicker-div").height()
+      ) {
+        $(".product__nav-input").datepicker("hide");
+      }
+    });
   }
 
-  // autocomplete results width fix
-  jQuery.ui.autocomplete.prototype._resizeMenu = function () {
-    this.menu.element.css("width", this.element.outerWidth());
-  };
+  $("select").select2();
+
+  $(".checkbox-wrapper>.checkbox input").on("change", function () {
+    $(this).closest(".checkbox-wrapper").toggleClass("toggled");
+  });
+
+  $(".site-header .site-header__item--search, .search-container__close").click(
+    function () {
+      $(".search-container").toggleClass("search-container--toggled");
+      $(".site-header").toggleClass("hidden-visibility");
+      window.setTimeout(function () {
+        $("#search-product").focus();
+      }, 100);
+      if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test( navigator.userAgent)) {
+      $("html").toggleClass("toggle-scroll");
+      $("main").toggleClass("toggle-scroll-page force-show-scrollbars");
+      }
+
+      if ($(".search-container").css("visibility") === "visible") {
+        $(".goto-top").css("right", "40px");
+      } else {
+        var right = 1 + areScrollbarsVisible();
+        $(".goto-top").css("right", "+=" + right);
+      }
+    }
+  );
+
+  $(".search-container__close").click(function () {
+    $("input#search-product").css("display", "block");
+    $("input#search-product").val("");
+    $(".search-panel input").val("");
+    $(".ui-autocomplete").css("display", "none");
+    $(".product-header-chosen").remove();
+  });
 
   $(".venue__slider").slick({
     arrows: true,
@@ -463,8 +442,8 @@ $(document).ready(function () {
       changeTextWidth();
       changePadding();
       var field = $(document.activeElement);
-      if (field.is('.hasDatepicker')) {
-            field.datepicker('hide').datepicker('show');
+      if (field.is(".hasDatepicker")) {
+        field.datepicker("hide").datepicker("show");
       }
     }, 100);
   });
@@ -484,6 +463,15 @@ $(document).ready(function () {
     }
   });
 
+  $(".feature-screen__slides-container").slick({
+    arrows: true,
+    dots: true,
+    slidesToShow: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    appendDots: $(".feature-screen"),
+  });
+
   moveAction();
   moveOrder();
   changePadding();
@@ -492,6 +480,42 @@ $(document).ready(function () {
     changeTextWidth();
   }, 100);
 });
+
+function getTextWidth(el) {
+  // uses a cached canvas if available
+  var canvas =
+    getTextWidth.canvas ||
+    (getTextWidth.canvas = document.createElement("canvas"));
+  var context = canvas.getContext("2d");
+  // get the full font style property
+  let style = window.getComputedStyle(el, null);
+  let font = style.getPropertyValue("font");
+  // var font = window.getComputedStyle(el, null).getPropertyValue("font");
+  const fontStyle = style.getPropertyValue("font-style");
+  const fontVariant = style.getPropertyValue("font-variant");
+  const fontWeight = style.getPropertyValue("font-weight");
+  const fontSize = style.getPropertyValue("font-size");
+  const fontFamily = style.getPropertyValue("font-family");
+
+  font = (
+    fontStyle +
+    " " +
+    fontVariant +
+    " " +
+    fontWeight +
+    " " +
+    fontSize +
+    " " +
+    fontFamily
+  )
+    .replace(/ +/g, " ")
+    .trim();
+  var text = el.value;
+  // set the font attr for the canvas text
+  context.font = font;
+  var textMeasurement = context.measureText(text);
+  return textMeasurement.width;
+}
 
 function changePadding() {
   var windowWidth = $(window).width();
@@ -570,11 +594,18 @@ $(window)
   .scroll();
 
 $("main").scroll(function () {
+  
   if ($(this).scrollTop() > 100) {
     $(".goto-top").fadeIn(300);
   } else {
     $(".goto-top").fadeOut(300);
   }
+
+  $(".breadcrumbs__more").removeClass("breadcrumbs__more--toggled");
+    $(".breadcrumbs__more")
+      .closest(".page-content")
+      .find(".breadcrumbs__change")
+      .removeClass("rotate");
 });
 
 $(window).scroll(function () {
@@ -589,13 +620,6 @@ $(window).scroll(function () {
       .closest(".page-content")
       .find(".breadcrumbs__change")
       .removeClass("rotate");
-  }
-
-  if (
-    $(this).scrollTop() >
-    $("#ui-datepicker-div").offset().top + $("#ui-datepicker-div").height()
-  ) {
-    $(".product__nav-input").datepicker("hide");
   }
 });
 

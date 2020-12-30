@@ -10,7 +10,7 @@ $icons = array('../img/icons/clinic.svg', '../img/icons/odontology.svg', '../img
 $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2')
 ?>
 
-<main class="site-main site-main--aside">
+<main class="site-main site-main--aside hasUiDatepicker hasUiAutocomplete hasSelect2">
     <?php require_once('product-sidebar.php'); ?>
     <div class="page-content">
         <section class="breadcrumbs">
