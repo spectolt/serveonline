@@ -140,7 +140,7 @@ section.product {
           }
         }
 
-        .product__nav-button:active {
+        .product__nav-button:hover {
           &:after {
             content: "";
             position: absolute;

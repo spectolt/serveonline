@@ -375,25 +375,18 @@ button.ui-button::-moz-focus-inner {
 
   &__header {
     display: flex;
-
-    @include breakpoint(xs) {
     flex-direction: column;
-    }
   }
 
   &__time {
     font-family: "Sen", sans-serif;
     font-size: 1.5rem;
-    font-weight: 900;
+    font-weight: 800;
     margin: 0;
   }
 
   &__place {
-    margin-left: 30px;
-
-    @include breakpoint(xs) {
-      margin-left: 0;
-    }
+    margin-left: 0;
 
     h4 {
       font-size: 1.125rem;
@@ -410,6 +403,9 @@ button.ui-button::-moz-focus-inner {
 
   &__close {
     background: transparent;
+    right: 30px;
+    top: 20px;
+    position: absolute;
     padding: 0;
     margin-left: 60px;
     width: 22px;
@@ -421,8 +417,6 @@ button.ui-button::-moz-focus-inner {
     display: block;
 
     @include breakpoint(xs) {
-      align-self: flex-end;
-      position: absolute;
       right: 10px;
       top: 20px;
     }
