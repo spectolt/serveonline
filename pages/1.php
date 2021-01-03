@@ -5,7 +5,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
 $class = array('clinic', 'odontology', 'beauty', 'spa', 'sport', 'vet');
 ?>
 
-<?php require_once('header.php'); ?>
+<?php require_once('header-home.php'); ?>
 
 <main class="site-main container">
     <section class="main-screen">

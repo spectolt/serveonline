@@ -410,9 +410,6 @@ body {
     flex-direction: column;
     align-items: center;
     justify-items: center;
-  }
-
-  @include breakpoint(xs) {
     padding-top: 30px;
     padding-bottom: 50px;
   }
@@ -426,9 +423,6 @@ body {
 
       @include breakpoint(xs) {
         margin: 0 0 20px;
-      }
-
-      @include breakpoint(xs) {
         height: 35px;
       }
     }
@@ -546,18 +540,6 @@ body {
           fill: $darkblue;
           margin-right: 10px;
         }
-
-        // &:after {
-        //   content: "";
-        //   width: 14px;
-        //   height: 16px;
-        //   background-size: 100%;
-        //   background-position: center;
-        //   background-repeat: no-repeat;
-        //   display: block;
-        //   background-image: url("img/icons/angle-down-thin.svg");
-        //   margin-left: 5px;
-        // }
       }
 
       &-items {
