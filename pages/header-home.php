@@ -16,7 +16,7 @@
 
 <body>
     <div id="page">
-        <div class="search-container">
+        <div class="search-container search-container--home">
             <form class="search-panel">
                 <input type="text" name="search" placeholder="Specialistas, įstaiga, įmonių grupė..." />
             </form>

@@ -6714,9 +6714,9 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
@@ -6724,12 +6724,12 @@ body {
     -webkit-box-flex: 1;
         -ms-flex: 1 0 100%;
             flex: 1 0 100%;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
   }
-  .site-header .site-header__menu--items li {
-    margin: 0;
+  .site-header .site-header__menu--items li:first-child {
+    margin-left: 0;
+  }
+  .site-header .site-header__menu--items li:last-child {
+    margin-right: 0;
   }
   .site-header .site-header__menu--items li a {
     padding: 7px 0;
@@ -6739,6 +6739,19 @@ body {
 .site-header .site-header__item {
   display: inline-block;
   margin: 0 15px;
+}
+
+@media (max-width: 600px) {
+  .site-header .site-header__item {
+    font-size: .875rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-header .site-header__item:nth-last-child(n+5),
+  .site-header .site-header__item:nth-last-child(n+5) ~ li {
+    font-size: .75rem;
+  }
 }
 
 .site-header .site-header__item--active a {
@@ -6777,12 +6790,12 @@ body {
 }
 
 .site-main {
+  height: calc(100vh - 70px);
   margin: 0 auto;
   scroll-behavior: smooth;
 }
 
 .site-main--aside {
-  height: calc(100vh - 70px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8721,10 +8734,29 @@ section.product .product__block-recommend {
   border-left: 3px solid #101b51;
 }
 
-.site-header--home .site-header__menu {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+.search-container--home {
+  height: 70px;
+}
+
+@media (max-width: 700px) {
+  .site-header--home .site-header__logo {
+    margin: 20px auto 20px 0;
+  }
+  .site-header--home .site-header__menu {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .site-header--home .site-header__menu--items {
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+    -webkit-box-flex: 0;
+        -ms-flex: 0;
+            flex: 0;
+    margin-right: 30px;
+    padding: 0;
+  }
 }
 
 .main-screen {

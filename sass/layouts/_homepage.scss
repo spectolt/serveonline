@@ -1,6 +1,24 @@
+.search-container--home {
+  height: 70px;
+}
+
 .site-header--home {
-  .site-header__menu {
-    justify-content: center;
+  .site-header {
+    @include breakpoint(sm) {
+      &__logo {
+        margin: 20px auto 20px 0;
+      }
+      &__menu {
+        justify-content: center;
+
+        &--items {
+          order: 0;
+          flex: 0;
+          margin-right: 30px;
+          padding: 0;
+        }
+      }
+    }
   }
 }
 

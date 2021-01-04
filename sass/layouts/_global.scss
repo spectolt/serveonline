@@ -135,14 +135,19 @@ body {
           margin: 0;
           padding: 20px 0 10px;
           align-items: center;
-          justify-content: center;
+          justify-content: flex-end;
           order: 1;
           width: 100%;
           flex: 1 0 100%;
-          justify-content: space-between;
 
           li {
-            margin: 0;
+            &:first-child {
+              margin-left: 0;
+            }
+
+            &:last-child {
+              margin-right: 0;
+            }
           }
 
           li a {
@@ -155,6 +160,17 @@ body {
     &__item {
       display: inline-block;
       margin: 0 15px;
+
+      @include breakpoint(xs) {
+        font-size: .875rem;
+      }
+
+      &:nth-last-child(n+5),
+      &:nth-last-child(n+5) ~ li {
+        @include breakpoint(xs) {
+          font-size: .75rem;
+        }
+      }
 
       &--active {
         a {
@@ -198,11 +214,12 @@ body {
 
 .site-main {
   //min-height: 500px;
+  height: calc(100vh - 70px);
   margin: 0 auto;
   scroll-behavior: smooth;
 
   &--aside {
-    height: calc(100vh - 70px);
+    // height: calc(100vh - 70px);
     display: flex;
     margin: 0;
 
