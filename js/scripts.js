@@ -392,18 +392,31 @@ $(document).ready(function () {
   $("#upload-icon").change(function(e) {
 
     for (var i = 0; i < e.originalEvent.srcElement.files.length; i++) {
-
         var file = e.originalEvent.srcElement.files[i];
-
         var img = document.createElement("img");
         var reader = new FileReader();
         reader.onloadend = function() {
              img.src = reader.result;
         }
         reader.readAsDataURL(file);
-        $("#upload-icon").after(img);
+        $("#upload-icon").siblings("label").html(img);
+        //$(img).addClass("areas__item areas__item--image");
+        //$('#upload-icon').siblings("label").hide();
     }
 });
+
+var color;
+$(".areas__color").each(function(index) {
+  color = "#" + $(this).contents().get(0).nodeValue;
+  $(this).closest("tr").find("td p, td img").css("background-color", color);
+});
+
+$(".color-input").change(function(){
+  color = "#" + $(this).val();
+  var inputs = $(this).closest("tr").find("td input, td label");
+  inputs.css("background-color", color);
+  inputs.css("color", isDark($(this).css("background-color")) ? 'white' : '#101b51');
+})
 
   moveAction();
   moveOrder();
@@ -413,6 +426,14 @@ $(document).ready(function () {
     changeTextWidth();
   }, 100);
 });
+
+function isDark( color ) {
+  var match = /rgb\((\d+).*?(\d+).*?(\d+)\)/.exec(color);
+  return parseFloat(match[1])
+       + parseFloat(match[2])
+       + parseFloat(match[3])
+         < 3 * 256 / 2; // r+g+b should be less than half of max (3 * 256)
+}
 
 function changePadding() {
   var windowWidth = $(window).width();

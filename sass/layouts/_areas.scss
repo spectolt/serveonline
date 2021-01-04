@@ -1,4 +1,6 @@
 .areas {
+
+  width: 100%;
   ul {
     list-style: none;
     margin: 0;
@@ -29,6 +31,7 @@
   }
 
   &__table {
+    border-spacing:0;
     margin-top: 20px;
     border-collapse: collapse;
     max-height: 500px;
@@ -48,6 +51,7 @@
       background-color: $darkblue;
       color: $white;
       height: 60px;
+      font-family: "Sen", sans-serif;
 
       &:first-child {
         width: 45%;
@@ -63,21 +67,65 @@
     }
 
     td {
-        input {
-            width: 100%;
-        }
-    }
-  }
+      padding: 0 5px 0 5px;
+      vertical-align: top;
+      height: 45px;
 
-  &__image {
-      width: 20px;
+      &:first-of-type {
+        padding-left: 20px;
+      }
+
+      button {
+        width: 35px;
+        height: 35px;
+        margin: 10px 10px 10px 0;
+      }
+
+      .areas__item {
+        background-color: transparent;
+        margin: 0;
+        height: 35px;
+        padding: 7.5px 20px;
+        border-radius: 5px;
+        width: 100%;
+        border: 1px solid $darkblue;
+        display: inline-block;
+        overflow: hidden;
+      }
+
+      label {
+        cursor: pointer;
+        color: $gray;
+
+        img {
+          height: 20px;
+        }
+      }
+
+      .areas__color {
+        text-align: center;
+      }
+
+      input {
+        width: 100%;
+
+        &::placeholder {
+          color: $gray;
+        }
+      }
+
+      .color-input,
+      .icon-label {
+        text-align: center;
+      }
+    }
   }
 
   .custom-file-input::-webkit-file-upload-button {
     visibility: hidden;
   }
   .custom-file-input::before {
-    content: 'Pasirinkite spalvą';
+    content: "Pasirinkite paveikslėlį";
     display: inline-block;
     background: $white;
     border: 1px solid #999;

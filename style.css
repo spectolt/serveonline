@@ -6891,10 +6891,6 @@ body {
 
 .site-main--aside .page-content--flexible {
   padding: 60px 54px 0 100px;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
 }
 
 .site-main--aside .site-footer {
@@ -8584,6 +8580,10 @@ section.product .product__block-recommend {
   border-left: 3px solid #101b51;
 }
 
+.areas {
+  width: 100%;
+}
+
 .areas ul {
   list-style: none;
   margin: 0;
@@ -8614,6 +8614,7 @@ section.product .product__block-recommend {
 }
 
 .areas__table {
+  border-spacing: 0;
   margin-top: 20px;
   border-collapse: collapse;
   max-height: 500px;
@@ -8635,6 +8636,7 @@ section.product .product__block-recommend {
   background-color: #101b51;
   color: #fff;
   height: 60px;
+  font-family: "Sen", sans-serif;
 }
 
 .areas__table th:first-child {
@@ -8649,12 +8651,70 @@ section.product .product__block-recommend {
   width: 16%;
 }
 
+.areas__table td {
+  padding: 0 5px 0 5px;
+  vertical-align: top;
+  height: 45px;
+}
+
+.areas__table td:first-of-type {
+  padding-left: 20px;
+}
+
+.areas__table td button {
+  width: 35px;
+  height: 35px;
+  margin: 10px 10px 10px 0;
+}
+
+.areas__table td .areas__item {
+  background-color: transparent;
+  margin: 0;
+  height: 35px;
+  padding: 7.5px 20px;
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid #101b51;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.areas__table td label {
+  cursor: pointer;
+  color: #8d92a3;
+}
+
+.areas__table td label img {
+  height: 20px;
+}
+
+.areas__table td .areas__color {
+  text-align: center;
+}
+
 .areas__table td input {
   width: 100%;
 }
 
-.areas__image {
-  width: 20px;
+.areas__table td input::-webkit-input-placeholder {
+  color: #8d92a3;
+}
+
+.areas__table td input:-ms-input-placeholder {
+  color: #8d92a3;
+}
+
+.areas__table td input::-ms-input-placeholder {
+  color: #8d92a3;
+}
+
+.areas__table td input::placeholder {
+  color: #8d92a3;
+}
+
+.areas__table td .color-input,
+.areas__table td .icon-label {
+  text-align: center;
 }
 
 .areas .custom-file-input::-webkit-file-upload-button {
@@ -8662,7 +8722,7 @@ section.product .product__block-recommend {
 }
 
 .areas .custom-file-input::before {
-  content: 'Pasirinkite spalvą';
+  content: "Pasirinkite paveikslėlį";
   display: inline-block;
   background: #fff;
   border: 1px solid #999;

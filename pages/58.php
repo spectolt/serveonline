@@ -1,3 +1,9 @@
+<?php
+    $areas = array('Klinikos ir estetinė medicina', 'Odontologijos klinikos', 'Grožio salonai', 'SPA ir masažo kabinetai', 'Sportas ir reabilitacija', 'Veterinarija');
+    $icons = array('../img/icons/clinic.svg', '../img/icons/odontology.svg', '../img/icons/beauty.svg', '../img/icons/spa.svg', '../img/icons/sport.svg', '../img/icons/vet.svg');
+    $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
+?>
+
 <?php require_once('header.php'); ?>
 <main class="site-main site-main--aside">
 <div class="page-content page-content--flexible">
@@ -12,7 +18,7 @@
         <thead>
             <tr>
                 <th>Paslaugų sritis</th>
-                <th>Spalva</th>
+                <th>Spalva #</th>
                 <th>Paveikslėlis .svg</th>
                 <th>Meniu pavadinimai</th>
             </tr>
@@ -24,48 +30,29 @@
                 <button>3</button>
             </td>
         </tr>
+        <?php for($y=0;$y<6;$y++) { ?>
         <tr>
             <td>
-                Klinikos ir estetinė medicina
+            <p class="areas__item"><?php echo $areas[$y] ?></p>
             </td>
             <td>
-                fec994
+            <p class="areas__item areas__color"><?php echo $colors[$y] ?></p>
             </td>
             <td>
-                <img class="areas__image" src="../img/icons/clinic.svg">
+                <img class="areas__item areas__item--image" src="<?php echo $icons[$y] ?>">
             </td>
         </tr>
+        <?php } ?>
         <tr>
             <td>
-                Klinikos ir estetinė medicina
+                <input placeholder="Pavadinimas" class="areas__item">
             </td>
             <td>
-                fec994
+                <input placeholder="Spalva" class="areas__item color-input">
             </td>
             <td>
-                <img class="areas__image" src="../img/icons/clinic.svg">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Klinikos ir estetinė medicina
-            </td>
-            <td>
-                fec994
-            </td>
-            <td>
-                <img class="areas__image" src="../img/icons/clinic.svg">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input placeholder="Pavadinimas">
-            </td>
-            <td>
-                <input placeholder="Pasirinkite spalvą">
-            </td>
-            <td>
-            <input id="upload-icon" class="custom-file-input" type="file" id="img" name="img" accept=".svg" onchange="readURL(this);">
+                <label for="upload-icon" class="areas__item icon-label">Paveikslėlis</label>
+                <input id="upload-icon" class="custom-file-input areas-item" type="file" id="img" name="img" accept=".svg" onchange="readURL(this);" hidden>
             </td>
         </tr>
     </table>
