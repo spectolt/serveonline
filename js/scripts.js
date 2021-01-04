@@ -1,4 +1,6 @@
-$(document).ready(function () {
+$(document).ready(onDocumentReady);
+  
+function onDocumentReady() {
   if ($("main.hasUiAutocomplete").length > 0) {
     $(".search-container__submit").click(function () {
       $(".ui-autocomplete").fadeOut(300);
@@ -286,15 +288,6 @@ $(document).ready(function () {
       changeTextWidth();
     });
 
-    function changeTextWidth() {
-      var inputs = document.getElementsByClassName("product__nav-input");
-      for (var i = 0; i < inputs.length; i++) {
-        var width = Math.floor(getTextWidth(inputs[i]));
-        var widthInPx = width + 3 + "px";
-        inputs[i].style.width = widthInPx;
-      }
-    }
-
     $(window).scroll(function () {
       if (
         $(this).scrollTop() >
@@ -479,7 +472,52 @@ $(document).ready(function () {
   setTimeout(function () {
     changeTextWidth();
   }, 100);
-});
+};
+
+function changeTextWidth() {
+  var inputs = document.getElementsByClassName("product__nav-input");
+  for (var i = 0; i < inputs.length; i++) {
+    var width = Math.floor(getTextWidth(inputs[i]));
+    var widthInPx = width + 3 + "px";
+    inputs[i].style.width = widthInPx;
+  }
+}
+
+function getTextWidth(el) {
+  // uses a cached canvas if available
+  var canvas =
+    getTextWidth.canvas ||
+    (getTextWidth.canvas = document.createElement("canvas"));
+  var context = canvas.getContext("2d");
+  // get the full font style property
+  let style = window.getComputedStyle(el, null);
+  let font = style.getPropertyValue("font");
+  // var font = window.getComputedStyle(el, null).getPropertyValue("font");
+  const fontStyle = style.getPropertyValue("font-style");
+  const fontVariant = style.getPropertyValue("font-variant");
+  const fontWeight = style.getPropertyValue("font-weight");
+  const fontSize = style.getPropertyValue("font-size");
+  const fontFamily = style.getPropertyValue("font-family");
+
+  font = (
+    fontStyle +
+    " " +
+    fontVariant +
+    " " +
+    fontWeight +
+    " " +
+    fontSize +
+    " " +
+    fontFamily
+  )
+    .replace(/ +/g, " ")
+    .trim();
+  var text = el.value;
+  // set the font attr for the canvas text
+  context.font = font;
+  var textMeasurement = context.measureText(text);
+  return textMeasurement.width;
+}
 
 function getTextWidth(el) {
   // uses a cached canvas if available
