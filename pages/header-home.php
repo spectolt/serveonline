@@ -28,12 +28,9 @@
             </div>
             <button type="button" class="search-container__close"></button>
         </div>
-        <header class="site-header site-header--show">
-            <button class="site-header__hamburger"></button>
+        <header class="site-header site-header--home site-header--show">
             <img src="../img/logo.svg" class="site-header__logo" alt="" />
             <ul class="site-header__menu site-header__menu--items">
-                <li class="site-header__item site-header__item--active paragraph"><a href="#">Specialistai</a></li>
-                <li class="site-header__item paragraph"><a href="#">Įstaigos</a></li>
                 <li class="site-header__item paragraph"><a href="#">Prisijungti</a></li>
             </ul>
             <ul class="site-header__menu site-header__menu--main">

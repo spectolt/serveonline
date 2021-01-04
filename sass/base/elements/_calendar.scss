@@ -109,6 +109,10 @@ table.calendar {
         background: #ecedef;
         cursor: inherit;
       }
+
+      @include breakpoint(xs) {
+        display: none;
+      }
     }
 
     &:hover {
@@ -128,5 +132,21 @@ table.calendar {
     @include breakpoint(xs) {
       display: block;
     }
+  }
+}
+
+.calendar__next-time {
+  text-align: center;
+  background-color: $darkgray;
+  padding: 10px 0;
+  border-radius: 5px;
+  font-family: 'Sen', sans-serif;
+  font-weight: 600;
+  margin-right: 20px;
+  margin-left: 10px;
+  display: none;
+
+  @include breakpoint(xs) {
+    display: block;
   }
 }

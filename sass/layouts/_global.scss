@@ -192,13 +192,14 @@ body {
   }
 }
 
-.default-content {
-  padding-top: 70px;
-}
+// .default-content {
+//   padding-top: 70px;
+// }
 
 .site-main {
   //min-height: 500px;
-  margin: 70px auto;
+  margin: 0 auto;
+  scroll-behavior: smooth;
 
   &--aside {
     height: calc(100vh - 70px);
@@ -212,7 +213,7 @@ body {
       top: 0;
       width: 300px;
       height: 100%;
-      overflow: auto;
+      //overflow: auto;
       z-index: 2;
 
       @include breakpoint(xl) {
@@ -227,13 +228,17 @@ body {
         // background-color: $white;
         z-index: 4;
 
+        @include breakpoint(xxl) {
+          z-index: 1;
+        }
+
         .site-aside {
           background-color: $white;
         }
       }
 
       .site-aside {
-        position: fixed;
+        position: relative;
         top: 0;
         left: 0;
         height: 100%;
@@ -241,13 +246,14 @@ body {
         width: 300px;
         background-color: $white;
 
-        @include breakpoint(xs) {
-          width: 75%;
+        @media screen and (max-width: 400px) {
+          width: 80%;
         }
 
         &__blocks {
           height: calc(100% - 70px);
           overflow-y: scroll;
+          overflow-x: hidden;
         }
 
         &__block {
@@ -379,7 +385,7 @@ body {
       }
 
       &--flexible {
-        padding: 60px 54px 0 100px;
+        padding: 60px #{"min(54px, 5.1%)"} 0 #{"min(100px, 6.9%)"};
         //flex-direction: column;
       }
     }
@@ -404,9 +410,6 @@ body {
     flex-direction: column;
     align-items: center;
     justify-items: center;
-  }
-
-  @include breakpoint(xs) {
     padding-top: 30px;
     padding-bottom: 50px;
   }
@@ -420,9 +423,6 @@ body {
 
       @include breakpoint(xs) {
         margin: 0 0 20px;
-      }
-
-      @include breakpoint(xs) {
         height: 35px;
       }
     }
@@ -540,18 +540,6 @@ body {
           fill: $darkblue;
           margin-right: 10px;
         }
-
-        // &:after {
-        //   content: "";
-        //   width: 14px;
-        //   height: 16px;
-        //   background-size: 100%;
-        //   background-position: center;
-        //   background-repeat: no-repeat;
-        //   display: block;
-        //   background-image: url("img/icons/angle-down-thin.svg");
-        //   margin-left: 5px;
-        // }
       }
 
       &-items {
@@ -641,7 +629,8 @@ body {
 
 .force-show-scrollbars ::-webkit-scrollbar-thumb {
   background-clip: padding-box;
-  background-color: #c1c1c1;
+  // background-color: #c1c1c1;
+  background-color: $darkblue;
   border-color: transparent;
   border-radius: 9px 8px 8px 9px;
   border-style: solid;
@@ -655,19 +644,19 @@ body {
  also have to check whether the element has a scrollbar and if so how wide
  it is. */
 .force-show-scrollbars ::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(16, 27, 81, 0.5);
 }
 
 .goto-top {
   position: fixed;
   bottom: 40px;
-  right: 30px;
+  right: 40px;
   //transform: translateY(-50%);
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  background-image: url("img/icons/angle-down-white.svg");
-  background-size: 70%;
+  background-image: url("img/icons/arrow-up-white.svg");
+  background-size: 30%;
   background-position: center;
   background-repeat: no-repeat;
   display: none;

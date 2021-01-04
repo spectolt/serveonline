@@ -346,11 +346,12 @@ button.ui-button::-moz-focus-inner {
   padding: 25px 30px;
   display: none;
   line-height: 1em;
+  position: absolute;
 
   @include breakpoint(xs) {
-    width: calc(100% - 80px);
+    width: calc(100vw - 30px);
     //margin: 0 40px 0 40px;
-    margin-left: -40px;
+    //margin-left: -40px;
   }
 }
 
@@ -369,34 +370,29 @@ button.ui-button::-moz-focus-inner {
 
   @include breakpoint(xs) {
     width: 90%;
+    padding: 20px 10px;
   }
 
   &__header {
     display: flex;
-
-    @include breakpoint(xs) {
     flex-direction: column;
-    }
   }
 
   &__time {
     font-family: "Sen", sans-serif;
     font-size: 1.5rem;
-    font-weight: 900;
+    font-weight: 800;
     margin: 0;
   }
 
   &__place {
-    margin-left: 30px;
-
-    @include breakpoint(xs) {
-      margin-left: 0;
-    }
+    margin-left: 0;
 
     h4 {
       font-size: 1.125rem;
       margin-top: 0;
       margin-bottom: 10px;
+      margin-top: 5px;
     }
 
     p {
@@ -407,6 +403,9 @@ button.ui-button::-moz-focus-inner {
 
   &__close {
     background: transparent;
+    right: 30px;
+    top: 20px;
+    position: absolute;
     padding: 0;
     margin-left: 60px;
     width: 22px;
@@ -418,8 +417,8 @@ button.ui-button::-moz-focus-inner {
     display: block;
 
     @include breakpoint(xs) {
-      align-self: flex-end;
-      order: -1;
+      right: 10px;
+      top: 20px;
     }
   }
 
@@ -434,13 +433,17 @@ button.ui-button::-moz-focus-inner {
     border-radius: 5px;
     padding: 10px 15px;
 
+    @include breakpoint(xs) {
+      margin-top: 10px;
+    }
+
     &-title {
       margin: 0 0 10px;
       font-size: 1rem;
 
       &--sub {
         font-size: .875rem;
-        font-weight: 600;
+        font-weight: 400;
       }
     }
 
@@ -448,13 +451,13 @@ button.ui-button::-moz-focus-inner {
       margin: 0;
       display: inline-flex;
       align-items: baseline;
+      margin-right: 20px;
     }
 
     &-price {
       color: $cyan;
       display: inline-flex;
       font-weight: 500;
-      margin-left: 20px;
       align-items: baseline;
 
       @include breakpoint(xs) {
@@ -598,6 +601,7 @@ button.ui-button::-moz-focus-inner {
   width: 30px;
   height: 30px;
   padding: 7px 0;
+  font-size: 1rem;
   text-align: center;
   text-decoration: none;
   margin: 5px auto;
@@ -620,13 +624,14 @@ button.ui-button::-moz-focus-inner {
   border-left: 0;
   border-right: 0;
   border-bottom: 0;
+  margin-right: -20px;
 
   @include breakpoint(xs) {
     padding: 0;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
   }
 }
@@ -644,10 +649,7 @@ button.ui-button::-moz-focus-inner {
   background: $darkblue;
   font-family: "Sen", sans-serif;
   color: $white;
-
-  @include breakpoint(xs) {
-    margin-bottom: 20px;
-  }
+  margin-right: 20px;
 }
 
 .ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current {
@@ -659,8 +661,7 @@ button.ui-button::-moz-focus-inner {
   background: transparent;
 
   @include breakpoint(xs) {
-    margin-right: 0;
-    margin-bottom: 20px;
+    margin-right: 20px;
   }
 }
 
@@ -685,6 +686,11 @@ td.ui-datepicker-highlight a {
     position: absolute;
     top: 2px;
   }
+}
+
+td.ui-datepicker-available a {
+  font-weight: 900;
+  color: $darkblue !important;
 }
 
 /* with multiple calendars */

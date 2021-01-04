@@ -11,7 +11,7 @@
   &__info {
     @include breakpoint(xs) {
       display: flex;
-      justify-content: space-between;
+      // justify-content: space-between;
       align-content: center;
       flex-wrap: wrap;
     }
@@ -42,6 +42,7 @@
 
     @include breakpoint(xs) {
       font-size: 0.875rem;
+      margin: 0 20px 0 0;
     }
 
     &:before {
@@ -63,10 +64,6 @@
       height: 15px;
       background-image: url("img/icons/clock.svg");
     }
-
-    @include breakpoint(xs) {
-        margin: 0;
-    }
   }
 
   &__price {
@@ -84,10 +81,6 @@
       height: 15px;
       background-image: url("img/icons/price.svg");
     }
-
-    @include breakpoint(xs) {
-        margin: 0;
-    }
   }
 
   button.cyan.transparent {
@@ -99,6 +92,7 @@
   button.product-action__order {
     @include breakpoint(xs) {
       padding: 4px 10px;
+      margin-left: auto;
     }
   }
 }

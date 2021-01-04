@@ -1010,7 +1010,7 @@ a.ui-button:active,
 
 // custom
 .ui-autocomplete {
-  top: auto !important;
+  // top: auto !important;
 
   .ui-autocomplete-wrapper {
     max-height: 75vh;
@@ -1066,7 +1066,7 @@ a.ui-button:active,
   .ui-menu-item-wrapper {
     margin-bottom: 20px;
     padding: 10px 20px;
-    background: $darkgray;
+    background: $search-background;
     border-radius: 5px;
     transition: background-color 0.3s ease-in-out;
 
@@ -1076,10 +1076,14 @@ a.ui-button:active,
     }
 
     &:hover {
-      background-color: $midgray;
+      background-color: $search-hover;
 
       & > .autocomplete-product {
-        background-color: $midgray;
+        background-color: $search-background-light;
+      }
+
+      & > .autocomplete-product:hover {
+        background-color: $search-hover;
       }
     }
   }
@@ -1156,7 +1160,6 @@ a.ui-button:active,
     //width: 100%;
     font-weight: 600;
     color: $color__text-main;
-    padding-right: 30px;
   }
 
   .checkbox {
@@ -1268,7 +1271,7 @@ a.ui-button:active,
   }
 
   &--choices {
-    //padding-left: 0;
+    padding: 10px 0 0;
 
     .autocomplete-product {
       &-title,
@@ -1281,7 +1284,7 @@ a.ui-button:active,
 
   &.autocomplete-product--choice {
     margin: 0;
-    padding: 10px 0;
+    padding: 10px 20px;
     //   display: none;
   }
 }

@@ -47,18 +47,18 @@ section.product {
           content: "";
           width: 8px;
           height: 15px;
+          position: relative;
           background-size: 100%;
           background-position: center;
           background-repeat: no-repeat;
           display: block;
           background-image: url("img/icons/angle-left-bold.svg");
+          z-index: 2;
         }
 
         &--next {
-          &:before {
-            transform: scale(-1, 1);
+            transform: rotate(180deg);
           }
-        }
       }
 
       &-hide {
@@ -137,6 +137,27 @@ section.product {
             width: 18px;
             margin-right: 7px;
             top: 0;
+          }
+        }
+
+        .product__nav-button:hover {
+          &:after {
+            content: "";
+            position: absolute;
+            background-color: $darkgray;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            top: 0;
+            left: 0;
+            background-size: 100%;
+          background-position: center;
+          background-repeat: no-repeat;
+          display: block;
+          transform: translate(-50%, -50%);
+          top: 50%;
+          left: 5px;
+          transition: background-color .3s ease-in-out;
           }
         }
       }
@@ -583,7 +604,6 @@ section.product {
 
         @include breakpoint(xs) {
           text-align: center;
-          width: 70%;
           margin: 20px auto 10px auto;
         }
       }

@@ -1,6 +1,6 @@
 
-<footer class="site-footer container">
-    <img src="../img/logo-sidebar.svg" class="site-footer__logo" />
+<footer class="site-footer container site-footer--homepage">
+    <img src="../img/serve-online-horizontal-white-logo.svg" class="site-footer__logo" />
     <ul class="site-footer__menu">
         <li class="site-footer__item paragraph"><a href="#">Privatumo politika</a></li>
         <li class="site-footer__item paragraph"><a href="#">Teisinės nuostatos</a></li>
@@ -16,4 +16,3 @@
 </footer>
 
 </div>
-<button class="goto-top"></button>
