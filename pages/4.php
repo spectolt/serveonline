@@ -14,6 +14,9 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
     <?php require_once('product-sidebar.php'); ?>
     <div class="page-content">
         <section class="breadcrumbs">
+            <div class="breadcrumbs__selected">
+                <img src="../img/icons/beauty.svg">
+            </div>
             <button class="breadcrumbs__change paragraph">Grožio salonai</button>
             <button class="breadcrumbs__cart"><span>2</span></button>
         </section>

@@ -1,4 +1,6 @@
-$(document).ready(function () {
+$(document).ready(onDocumentReady);
+  
+function onDocumentReady() {
   if ($("main.hasUiAutocomplete").length > 0) {
     $(".search-container__submit").click(function () {
       $(".ui-autocomplete").fadeOut(300);
@@ -286,14 +288,7 @@ $(document).ready(function () {
       changeTextWidth();
     });
 
-    function changeTextWidth() {
-      var inputs = document.getElementsByClassName("product__nav-input");
-      for (var i = 0; i < inputs.length; i++) {
-        var width = Math.floor(getTextWidth(inputs[i]));
-        var widthInPx = width + 3 + "px";
-        inputs[i].style.width = widthInPx;
-      }
-    }
+
 
     $(window).scroll(function () {
       if (
@@ -479,7 +474,16 @@ $(document).ready(function () {
   setTimeout(function () {
     changeTextWidth();
   }, 100);
-});
+};
+
+function changeTextWidth() {
+  var inputs = document.getElementsByClassName("product__nav-input");
+  for (var i = 0; i < inputs.length; i++) {
+    var width = Math.floor(getTextWidth(inputs[i]));
+    var widthInPx = width + 3 + "px";
+    inputs[i].style.width = widthInPx;
+  }
+}
 
 function getTextWidth(el) {
   // uses a cached canvas if available
