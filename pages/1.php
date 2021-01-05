@@ -135,7 +135,7 @@ $class = array('clinic', 'odontology', 'beauty', 'spa', 'sport', 'vet');
     </section>
     <section class="business-screen">
         <div class="business-screen__image">
-            <img src="http://1.specto.lt/serve-online/wp-content/uploads/2020/12/business-1.svg" alt="">
+            <img src="../img/illustrations/business.svg" alt="">
         </div>
         <div class="business-screen__text">
             <h2 class="business-screen__title">Internetinė rezervacijos sistema verslui</h2>

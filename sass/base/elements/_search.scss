@@ -326,7 +326,7 @@
   background-color: $darkblue;
   color: $white;
   display: none;
-  padding: 8px;
+  padding: 8px 10px 8px 8px;
   border-radius: 15px;
 
   &:before {
@@ -336,19 +336,6 @@
       height: 20px;
       margin-right: 10px;
       background-image: url("img/icons/filter-crossed-white.svg");
-      background-size: 100%;
-      background-position: center;
-      background-repeat: no-repeat;
-      display: block;
-  }
-
-  &:after {
-    content: "";
-      position: relative;
-      width: 20px;
-      height: 20px;
-      margin-left: 10px;
-      background-image: url("img/icons/up-down-crossed-white.svg");
       background-size: 100%;
       background-position: center;
       background-repeat: no-repeat;

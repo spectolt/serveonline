@@ -16,6 +16,11 @@
           flex: 0;
           margin-right: 30px;
           padding: 0;
+
+          @include breakpoint(sm) {
+            align-self: flex-end;
+            margin-bottom: 20px;
+          }
         }
       }
     }
@@ -29,9 +34,11 @@
   padding: 100px 20px 0;
   display: flex;
   justify-content: space-between;
+  position: relative;
 
   @include breakpoint(l) {
     padding: 15px 5px 0;
+    flex-direction: column;
   }
 
   &__info {
@@ -45,6 +52,7 @@
     @include breakpoint(l) {
       width: 100%;
       padding-right: 0;
+      padding-bottom: 30px;
     }
 
     .title--home {
@@ -94,6 +102,11 @@
     @include breakpoint(l) {
       grid-template-columns: repeat(3, 1fr);
       margin-top: 0;
+    }
+
+    @include breakpoint(400px) {
+      row-gap: 30px;
+      column-gap: 0;
     }
 
     .main-screen__area {
@@ -194,13 +207,34 @@
     margin-right: -20px;
     align-self: flex-end;
     z-index: 2;
+    position: relative;
 
     @include breakpoint(l) {
+      margin-right: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      bottom: 0;
+    }
+
+    @include breakpoint(400px) {
       display: none;
     }
 
     img {
       vertical-align: bottom;
+
+      @include breakpoint(l) {
+        max-width:100%;
+        max-height:100%;
+        min-height: 0;
+        height: 100%;
+        margin: 0 auto;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
     }
   }
 }
@@ -326,8 +360,8 @@
 
     li {
       color: white;
-      font-size: 1.25rem;
-      font-weight: 600;
+      font-size: 1.125rem;
+      font-weight: 400;
       line-height: 1.4;
       list-style: none;
       padding-left: 40px;
