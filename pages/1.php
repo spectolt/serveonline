@@ -1,10 +1,11 @@
 <?php
 $areas = array('Klinikos ir estetinė medicina', 'Odontologijos klinikos', 'Grožio salonai ir kirpyklos', 'SPA ir masažo salonai', 'Sportas ir reabilitacija', 'Veterinarijos klinikos');
 $icons = array('../img/icons/clinic.svg', '../img/icons/odontology.svg', '../img/icons/beauty.svg', '../img/icons/spa.svg', '../img/icons/sport.svg', '../img/icons/vet.svg');
-$colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2')
+$colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2');
+$class = array('clinic', 'odontology', 'beauty', 'spa', 'sport', 'vet');
 ?>
 
-<?php require_once('header.php'); ?>
+<?php require_once('header-home.php'); ?>
 
 <main class="site-main container">
     <section class="main-screen">
@@ -14,7 +15,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
             <div class="main-screen__areas">
                 <?php for ($y = 0; $y < 6; $y++) { ?>
                     <div class="main-screen__area">
-                        <div class="main-screen__area-img" style="background-color: <?php echo "$colors[$y]" ?>">
+                        <div class="main-screen__area-img main-screen__area-img--<?php echo "$class[$y]" ?>" style="background-color: <?php echo "$colors[$y]" ?>">
                             <img src=<?php echo "$icons[$y]" ?>>
                         </div>
                         <h3 class="main-screen__area-title"><?php echo $areas[$y] ?></h3>
@@ -121,10 +122,12 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
         </div>
     </section>
     <section class="information-screen">
-        <div class="information-screen__text">
-            <h2 class="information-screen__title">Lengva išsirinkti, patogu užsisakyti</h2>
-            <h3 class="information-screen__subtitle">Daugiau jokių ilgų paieškų, pokalbių telefonu ar susirašinėjimų žinutėmis</h3>
-            <p>Rezervuok vizito laiką mėgstamoje estetinės medicinos ar odontologijos klinikoje, arčiau namų veikiančiame grožio, SPA ar masažo salone, populiariausiame sporto ir reabilitacijos centre.</p>
+        <div class="information-screen__left">
+            <div class="information-screen__text">
+                <h2 class="information-screen__title">Lengva išsirinkti, patogu užsisakyti</h2>
+                <h3 class="information-screen__subtitle">Daugiau jokių ilgų paieškų, pokalbių telefonu ar susirašinėjimų žinutėmis</h3>
+                <p>Rezervuok vizito laiką mėgstamoje estetinės medicinos ar odontologijos klinikoje, arčiau namų veikiančiame grožio, SPA ar masažo salone, populiariausiame sporto ir reabilitacijos centre.</p>
+            </div>
         </div>
         <div class="information-screen__image">
             <img src="http://1.specto.lt/serve-online/wp-content/uploads/2020/12/2020-12-16.-2.svg" alt="">
@@ -132,18 +135,16 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
     </section>
     <section class="business-screen">
         <div class="business-screen__image">
-            <img src="http://1.specto.lt/serve-online/wp-content/uploads/2020/12/business-1.svg" alt="">
+            <img src="../img/illustrations/business.svg" alt="">
         </div>
         <div class="business-screen__text">
             <h2 class="business-screen__title">Internetinė rezervacijos sistema verslui</h2>
             <h3 class="business-screen__subtitle">Didesni paslaugų pardavimai ir augantis klientų skaičius</h3>
-            <p><b>Serve Online</b> internetinių rezervacijų įrankis - tik vienas iš sprendimų verslui. Papildomai siūlome optimizuoti visus vidinius darbo procesus su unikalia verslo valdymo sistema <b>Serve Professionals</b>.</p>
+            <p><b>Serve Online</b> internetinių rezervacijų įrankis - tik vienas iš sprendimų verslui. <br> Papildomai siūlome optimizuoti visus vidinius darbo procesus su unikalia verslo valdymo sistema <b>Serve Professionals</b>.</p>
             <button>Sprendimai</button>
         </div>
     </section>
-    <div class="home-footer">
-    <?php require_once('footer-menu.php'); ?>
-    </div>
+        <?php require_once('footer-menu-homepage.php'); ?>
 
 </main>
 

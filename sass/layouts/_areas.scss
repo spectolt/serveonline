@@ -1,0 +1,218 @@
+.areas {
+  width: 100%;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    margin-bottom: 20px;
+
+    li {
+      position: relative;
+      margin: 0 20px 0 0;
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: -10px;
+        width: 1px;
+        height: 100%;
+        background: $darkblue;
+        display: inline-block;
+      }
+
+      &:last-child {
+        &:after {
+          display: none;
+        }
+      }
+    }
+    .active {
+      font-weight: 600;
+    }
+  }
+
+  &__table-container {
+    display: flex;
+    border: 1px solid #eee;
+    border-top: none;
+  }
+
+  &__table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    max-height: 500px;
+    overflow-y: scroll;
+
+    tr:first-child th:first-child {
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      border-left: none;
+    }
+
+    tr:first-child th:last-child {
+      border-right: none;
+    }
+
+    th {
+      border: 1px solid $white;
+      background-color: $darkblue;
+      color: $white;
+      height: 60px;
+      font-family: "Sen", sans-serif;
+
+      &:first-child {
+        width: 45%;
+      }
+
+      &:nth-child(2) {
+        width: 15%;
+      }
+
+      &:nth-child(3) {
+        width: 16%;
+      }
+    }
+
+    td {
+      padding: 0 5px 0 5px;
+      vertical-align: top;
+      height: 45px;
+
+      &:first-of-type {
+        padding-left: 20px;
+      }
+
+      &:last-of-type {
+        padding-right: 20px;
+      }
+
+      button {
+        width: 35px;
+        height: 35px;
+        margin: 10px 10px 10px 0;
+      }
+
+      .areas__item {
+        background-color: transparent;
+        margin: 0;
+        height: 35px;
+        padding: 7.5px 20px;
+        border-radius: 5px;
+        width: 100%;
+        border: 1px solid $darkblue;
+        display: inline-block;
+        overflow: hidden;
+        
+        &--title {
+          font-weight: 600;
+        }
+      }
+
+      label {
+        cursor: pointer;
+        color: $gray;
+
+        img {
+          height: 20px;
+        }
+      }
+
+      .areas__color {
+        text-align: center;
+      }
+
+      input {
+        width: 100%;
+
+        &::placeholder {
+          color: $gray;
+        }
+      }
+      .white-text::placeholder {
+        color: $white;
+      }
+
+      .color-input,
+      .icon-label {
+        text-align: center;
+      }
+    }
+
+    &--menu {
+      width: 34%;
+
+      tr:first-child th:last-child {
+        border-top-left-radius: 0px;
+      border-bottom-left-radius: 0px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border-left: 1px solid $white;
+      }
+
+      tbody:before {
+        line-height: 55px;
+        content: "\200C";
+        display: block;
+      }
+
+      td .areas__item {
+        background-color: $darkblue;
+        color: $white;
+      }
+    }
+
+    
+  }
+
+  &__add,
+  &__trash,
+  &__edit {
+    &:before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      background-size: contain;
+      background-position: center center;
+      background-repeat: no-repeat;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: block;
+      position: relative;
+    }
+  }
+
+  &__add:before {
+    background-image: url("img/icons/plus-white.svg");
+  }
+
+  &__trash:before {
+    background-image: url("img/icons/trash-white.svg");
+  }
+
+  &__edit:before {
+    background-image: url("img/icons/trash-white.svg");
+  }
+
+  .custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+  }
+  .custom-file-input::before {
+    content: "Pasirinkite paveikslėlį";
+    display: inline-block;
+    background: $white;
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+    font-size: 10pt;
+  }
+}
