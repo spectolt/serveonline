@@ -9445,8 +9445,8 @@ section.product .product__block-recommend {
 }
 
 .feature-screen .slick-dots li button:before {
-  background-color: transparent;
-  border: 2px solid #fff;
+  background-color: #ffffff33;
+  border: none;
   border-radius: 50%;
   display: inline-block;
   height: 10px;
