@@ -1,7 +1,7 @@
 .areas {
   width: 100%;
 
-  ul {
+  &__languages {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -48,7 +48,6 @@
 
     tr:first-child th:first-child {
       border-top-left-radius: 5px;
-      border-bottom-left-radius: 5px;
       border-left: none;
     }
 
@@ -139,6 +138,10 @@
       .icon-label {
         text-align: center;
       }
+
+      .icon-label {
+        padding: 7.5px 0;
+      }
     }
 
     &--menu {
@@ -148,7 +151,6 @@
         border-top-left-radius: 0px;
       border-bottom-left-radius: 0px;
         border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
         border-left: 1px solid $white;
       }
 
@@ -163,7 +165,14 @@
         color: $white;
       }
     }
+    .changed-bg {
+      background-color: $darkblue !important;
+      color: $white;
 
+      path{
+      fill: $white !important;
+      }
+    }
     
   }
 

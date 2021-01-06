@@ -9,7 +9,7 @@ $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
     <div class="page-content page-content--flexible">
         <section class="areas">
             <h1 class="title">Sritys</h1>
-            <ul>
+            <ul class="areas__languages">
                 <li class="paragraph active"><a href="#">LT</a></li>
                 <li class="paragraph"><a href="#">EN</a></li>
                 <li class="paragraph"><a href="#">RU</a></li>
@@ -32,7 +32,7 @@ $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
                         </td>
                     </tr>
                     <?php for ($y = 0; $y < 6; $y++) { ?>
-                        <tr>
+                        <tr class="areas__area">
                             <td>
                                 <p class="areas__item areas__item--title"><?php echo $areas[$y] ?></p>
                             </td>
@@ -44,7 +44,7 @@ $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
                             </td>
                         </tr>
                     <?php } ?>
-                    <tr>
+                    <tr class="areas__inputs">
                         <td>
                             <input placeholder="Pavadinimas" class="areas__item">
                         </td>

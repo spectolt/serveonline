@@ -1,5 +1,5 @@
 $(document).ready(onDocumentReady);
-  
+
 function onDocumentReady() {
   if ($("main.hasUiAutocomplete").length > 0) {
     $(".search-container__submit").click(function () {
@@ -449,6 +449,26 @@ function onDocumentReady() {
     $(this).find(".select2-selection__arrow b").toggleClass("rotate");
   });
 
+  $(".goto-top").on("click", function () {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    document.querySelector("main").scrollTop = 0;
+
+    if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+      $("html,body,main").animate({ scrollTop: 0 }, 300);
+      return false;
+    }
+  });
+
+  $(".feature-screen__slides-container").slick({
+    arrows: true,
+    dots: true,
+    slidesToShow: 1,
+    autoplay: true,
+    autoplaySpeed: 8000,
+    appendDots: $(".feature-screen"),
+  });
+
   $("#upload-icon").change(function (e) {
     for (var i = 0; i < e.originalEvent.srcElement.files.length; i++) {
       var file = e.originalEvent.srcElement.files[i];
@@ -459,8 +479,11 @@ function onDocumentReady() {
       };
       reader.readAsDataURL(file);
       $("#upload-icon").siblings("label").html(img);
-      //$(img).addClass("areas__item areas__item--image");
-      //$('#upload-icon').siblings("label").hide();
+      $(img).css("display", "none");
+      setTimeout(function () {
+        $(".areas__inputs img").css({"display": "unset", "height": "20px"});
+        $(".areas__inputs img").each(imgToSvg);
+      }, 10);
     }
   });
 
@@ -493,28 +516,33 @@ function onDocumentReady() {
     if (isDark($(this).css("background-color"))) {
       $(this).closest("tr").find("td input").addClass("white-text");
     }
-    console.log($(this).val());
-    console.log(color);
   });
-  $(".goto-top").on("click", function () {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-    document.querySelector("main").scrollTop = 0;
 
-    if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
-      $("html,body,main").animate({ scrollTop: 0 }, 300);
-      return false;
+  $(".areas__languages li").click(function () {
+    $(this).addClass("active");
+    $(this).siblings().removeClass("active");
+  });
+
+  $(".areas__item").click(function () {
+    $(this).addClass("changed-bg");
+    $(this).parent().siblings().find(".areas__item").addClass("changed-bg");
+    $(this).parent().siblings().find("svg path").addClass("changed-bg");
+    $(this)
+      .closest(".areas__area")
+      .siblings()
+      .find(".areas__item")
+      .removeClass("changed-bg");
+
+    if ($(this).closest(".areas__inputs")) {
+      $(this)
+        .closest(".areas__inputs")
+        .children()
+        .children()
+        .removeClass("changed-bg");
     }
   });
 
-  $(".feature-screen__slides-container").slick({
-    arrows: true,
-    dots: true,
-    slidesToShow: 1,
-    autoplay: true,
-    autoplaySpeed: 8000,
-    appendDots: $(".feature-screen"),
-  });
+  $('.areas__area img[src$=".svg"]').each(imgToSvg);
 
   moveAction();
   moveOrder();
@@ -523,7 +551,7 @@ function onDocumentReady() {
   setTimeout(function () {
     changeTextWidth();
   }, 100);
-};
+}
 
 function changeTextWidth() {
   var inputs = document.getElementsByClassName("product__nav-input");
@@ -770,4 +798,30 @@ function areScrollbarsVisible() {
   var diff = scrollableElem.offsetWidth - scrollableElem.clientWidth;
   document.body.removeChild(scrollableElem);
   return diff;
+}
+
+function imgToSvg() {
+  var $img = jQuery(this);
+  var imgURL = $img.attr("src");
+  var attributes = $img.prop("attributes");
+
+  $.get(
+    imgURL,
+    function (data) {
+      // Get the SVG tag, ignore the rest
+      var $svg = jQuery(data).find("svg");
+
+      // Remove any invalid XML tags
+      $svg = $svg.removeAttr("xmlns:a");
+
+      // Loop through IMG attributes and apply on SVG
+      $.each(attributes, function () {
+        $svg.attr(this.name, this.value);
+      });
+
+      // Replace IMG with SVG
+      $img.replaceWith($svg);
+    },
+    "xml"
+  );
 }
