@@ -213,13 +213,12 @@ body {
 // }
 
 .site-main {
-  //min-height: 500px;
   height: calc(100vh - 70px);
+  align-items: flex-start;
   margin: 0 auto;
   scroll-behavior: smooth;
 
   &--aside {
-    // height: calc(100vh - 70px);
     display: flex;
     margin: 0;
 

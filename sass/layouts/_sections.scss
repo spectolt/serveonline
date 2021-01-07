@@ -424,7 +424,7 @@ section {
     z-index: 0;
     opacity: 0;
     border-top: 1px solid $washedblue;
-    padding: 20px 0;
+    padding: 20px 20px;
     transition: margin-top .3s ease-in-out, opacity .3s ease-in-out;
     display: block;
 
@@ -453,6 +453,7 @@ section {
             margin: 0 15px;
             position: relative;
             // flex: 1;
+            flex: 1 1 0px;
 
             @include breakpoint(xs) {
                 font-size: 0.75rem;
@@ -464,7 +465,6 @@ section {
             // }
 
             p {
-                width: 15ch;
                 margin: 0;
 
                 @include breakpoint(xs) {
@@ -486,6 +486,7 @@ section {
                 margin-bottom: 10px;
                 transition: background-color .3s ease-in-out;
                 padding: 0;
+                box-shadow: 3px 3px 4px #11111180, -3px -3px 4px #e8e8e850;
 
                 @include breakpoint(xs) {
                     max-width: 53px;

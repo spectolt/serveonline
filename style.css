@@ -6778,6 +6778,9 @@ body {
 
 .site-main {
   height: calc(100vh - 70px);
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   margin: 0 auto;
   scroll-behavior: smooth;
 }
@@ -7879,7 +7882,7 @@ section.venue-info .product-action:last-child {
   z-index: 0;
   opacity: 0;
   border-top: 1px solid #454e78;
-  padding: 20px 0;
+  padding: 20px 20px;
   -webkit-transition: margin-top .3s ease-in-out, opacity .3s ease-in-out;
   transition: margin-top .3s ease-in-out, opacity .3s ease-in-out;
   display: block;
@@ -7924,6 +7927,9 @@ section.venue-info .product-action:last-child {
   word-wrap: wrap;
   margin: 0 15px;
   position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 0px;
+          flex: 1 1 0px;
 }
 
 @media (max-width: 600px) {
@@ -7934,7 +7940,6 @@ section.venue-info .product-action:last-child {
 }
 
 .breadcrumbs__more ul li p {
-  width: 15ch;
   margin: 0;
 }
 
@@ -7959,6 +7964,8 @@ section.venue-info .product-action:last-child {
   -webkit-transition: background-color .3s ease-in-out;
   transition: background-color .3s ease-in-out;
   padding: 0;
+  -webkit-box-shadow: 3px 3px 4px #11111180, -3px -3px 4px #e8e8e850;
+          box-shadow: 3px 3px 4px #11111180, -3px -3px 4px #e8e8e850;
 }
 
 @media (max-width: 600px) {
