@@ -514,6 +514,7 @@ function onDocumentReady() {
     autoplay: true,
     autoplaySpeed: 8000,
     appendDots: $(".feature-screen"),
+    adaptiveHeight: true,
   });
 
   moveAction();
@@ -695,6 +696,8 @@ $("main").scroll(function () {
   } else {
     $(".goto-top").fadeOut(300);
   }
+  
+  gotoTopPosition(this, this);
 
   $(".breadcrumbs__more").removeClass("breadcrumbs__more--toggled");
   $(".breadcrumbs__more")
@@ -709,6 +712,9 @@ $(window).scroll(function () {
   } else {
     $(".goto-top").fadeOut(300);
   }
+
+  gotoTopPosition(document, window);
+
   if ($(this).scrollTop() > 300) {
     $(".breadcrumbs__more").removeClass("breadcrumbs__more--toggled");
     $(".breadcrumbs__more")
@@ -755,6 +761,28 @@ setInterval(function () {
     didScroll = false;
   }
 }, 250);
+
+
+function gotoTopPosition(el, element) {
+  const footer = $("footer");
+  const scrollBtn = $(".goto-top");
+  var distanceFromBottom; 
+  if (el == document) {
+  distanceFromBottom = Math.floor($(el).height() - $(el).scrollTop() - $(window).height());
+		if ( distanceFromBottom <= footer.outerHeight() ) {
+				scrollBtn.css("bottom", (footer.outerHeight() - distanceFromBottom) + 40);
+			} else {
+				scrollBtn.css("bottom", 40);
+      }
+    } else {
+  distanceFromBottom = Math.floor($(el).prop('scrollHeight') - $(el).scrollTop() - $(window).height());
+		if ( distanceFromBottom <= footer.outerHeight() ) {
+				scrollBtn.css("bottom", (footer.outerHeight() - distanceFromBottom));
+			} else {
+				scrollBtn.css("bottom", 40);
+      }
+    }
+}
 
 function areScrollbarsVisible() {
   var scrollableElem = document.createElement("div"),
