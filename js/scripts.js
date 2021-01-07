@@ -542,7 +542,7 @@ function onDocumentReady() {
     }
   });
 
-  $('.areas__area img[src$=".svg"]').each(imgToSvg);
+  $('.areas__area img[src$=".svg"]').each(imgToSvg).css("fill", "#101b51");
 
   moveAction();
   moveOrder();
