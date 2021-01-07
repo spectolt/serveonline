@@ -63,15 +63,15 @@
       font-family: "Sen", sans-serif;
 
       &:first-child {
-        width: 45%;
+        width: 35.5%;
       }
 
       &:nth-child(2) {
-        width: 15%;
+        width: 14%;
       }
 
       &:nth-child(3) {
-        width: 16%;
+        width: 8.14%;
       }
     }
 
@@ -97,7 +97,7 @@
       .areas__item {
         background-color: transparent;
         margin: 0;
-        height: 35px;
+        min-height: 35px;
         padding: 7.5px 20px;
         border-radius: 5px;
         width: 100%;
@@ -107,6 +107,11 @@
         
         &--title {
           font-weight: 600;
+        }
+
+        &--image {
+          padding: 7.5px 0;
+          height: 35px;
         }
       }
 
@@ -145,13 +150,17 @@
     }
 
     &--menu {
-      width: 34%;
+      width: 40%;
 
       tr:first-child th:last-child {
         border-top-left-radius: 0px;
       border-bottom-left-radius: 0px;
         border-top-right-radius: 5px;
         border-left: 1px solid $white;
+      }
+
+      th:first-child {
+        width: 36%;
       }
 
       tbody:before {
@@ -163,9 +172,19 @@
       td .areas__item {
         background-color: $darkblue;
         color: $white;
+
+        &--profession {
+          background-color: $lightorange;
+          color: $darkblue;
+        }
+      }
+      
+      td p:empty {
+        background-color: transparent;
+        border: none;
       }
     }
-    .changed-bg {
+    td .changed-bg {
       background-color: $darkblue !important;
       color: $white;
 

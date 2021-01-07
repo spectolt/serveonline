@@ -15,17 +15,18 @@ $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
                 <li class="paragraph"><a href="#">RU</a></li>
             </ul>
             <div class="areas__table-container">
-                <table class="areas__table">
+                <table class="areas__table areas__table--main">
                     <thead>
                         <tr>
                             <th>Paslaugų sritis</th>
                             <th>Spalva #</th>
-                            <th>Paveikslėlis .svg</th>
+                            <th>svg</th>
+                            <th>URL</th>
                         </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td colspan="3">
+                        <td colspan="4">
                             <button class="areas__add"></button>
                             <button class="areas__trash"></button>
                             <button class="areas__edit"></button>
@@ -42,18 +43,24 @@ $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
                             <td>
                                 <img class="areas__item areas__item--image" src="<?php echo $icons[$y] ?>">
                             </td>
+                            <td>
+                                <p class="areas__item areas__item--title"><?php echo $areas[$y] ?></p>
+                            </td>
                         </tr>
                     <?php } ?>
                     <tr class="areas__inputs">
                         <td>
-                            <input placeholder="Pavadinimas" class="areas__item">
+                            <input class="areas__item">
                         </td>
                         <td>
-                            <input placeholder="Spalva" class="areas__item color-input">
+                            <input class="areas__item color-input">
                         </td>
                         <td>
-                            <label for="upload-icon" class="areas__item icon-label">Paveikslėlis</label>
+                            <label for="upload-icon" class="areas__item icon-label"></label>
                             <input id="upload-icon" class="custom-file-input areas-item" type="file" id="img" name="img" accept=".svg" onchange="readURL(this);" hidden>
+                        </td>
+                        <td>
+                            <input class="areas__item">
                         </td>
                     </tr>
                     </tbody>
@@ -62,14 +69,33 @@ $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
                     <thead>
                         <tr>
                             <th>Meniu pavadinimai</th>
+                            <th>Profesijos</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr class="areas__area">
                             <td><p class="areas__item">Gydytojai</p></td>
+                            <td><p class="areas__item areas__item--profession">Ginekologas</p></td>
                         </tr>
-                        <tr>
+                        <tr class="areas__area">
                             <td><p class="areas__item">Klinikos</p></td>
+                            <td><p class="areas__item areas__item--profession">Urologas</p></td>
+                        </tr>
+                        <tr class="areas__area">
+                            <td><p class="areas__item"></p></td>
+                            <td><p class="areas__item areas__item--profession">Dermatologas</p></td>
+                        </tr>
+                        <tr class="areas__area">
+                            <td><p class="areas__item"></p></td>
+                            <td><p class="areas__item areas__item--profession">Venerologas</p></td>
+                        </tr>
+                        <tr class="areas__area">
+                            <td><p class="areas__item"></p></td>
+                            <td><p class="areas__item areas__item--profession">Chirurgas</p></td>
+                        </tr>
+                        <tr class="areas__area">
+                            <td><p class="areas__item"></p></td>
+                            <td><p class="areas__item areas__item--profession">Terapeutas</p></td>
                         </tr>
                     </tbody>
                 </table>
