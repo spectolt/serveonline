@@ -7963,8 +7963,8 @@ section.venue-info .product-action:last-child {
   -webkit-transition: background-color .3s ease-in-out;
   transition: background-color .3s ease-in-out;
   padding: 0;
-  -webkit-box-shadow: 3px 3px 4px #11111180, -3px -3px 4px #e8e8e850;
-          box-shadow: 3px 3px 4px #11111180, -3px -3px 4px #e8e8e850;
+  -webkit-box-shadow: 3px 3px 4px #11111180;
+          box-shadow: 3px 3px 4px #11111180;
 }
 
 @media (max-width: 600px) {
