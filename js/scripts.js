@@ -490,7 +490,7 @@ function onDocumentReady() {
   var color;
   $(".areas__color").each(function (index) {
     color = "#" + $(this).contents().get(0).nodeValue;
-    $(this).closest("tr").find("td p, td img").css("background-color", color);
+    $(this).closest("tr").find(".areas__item").css("background-color", color);
   });
 
   $(".color-input").on("input", function () {
@@ -532,7 +532,6 @@ function onDocumentReady() {
         .removeClass("changed-bg");
     if ($(this).closest(".areas__table").hasClass("areas__table--main")) {
       $(this).parent().siblings().find(".areas__item").addClass("changed-bg");
-
       if ($(this).closest(".areas__inputs")) {
         $(this)
           .closest(".areas__inputs")
@@ -541,6 +540,10 @@ function onDocumentReady() {
           .removeClass("changed-bg");
       }
     }
+  });
+
+  $(".areas__table .areas__area .areas__item").click(function () {
+    $(".areas__table--menu tbody").removeClass("hidden");
   });
 
   $(".feature-screen__slides-container").slick({
@@ -554,6 +557,10 @@ function onDocumentReady() {
   });
 
   $('.areas__area img[src$=".svg"]').each(imgToSvg).css("fill", "#101b51");
+
+  $(".site-aside__filters select").select2({
+    minimumResultsForSearch: Infinity,
+  })
 
   moveAction();
   moveOrder();

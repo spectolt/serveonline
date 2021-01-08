@@ -162,13 +162,13 @@ body {
       margin: 0 15px;
 
       @include breakpoint(xs) {
-        font-size: .875rem;
+        font-size: 0.875rem;
       }
 
-      &:nth-last-child(n+5),
-      &:nth-last-child(n+5) ~ li {
+      &:nth-last-child(n + 5),
+      &:nth-last-child(n + 5) ~ li {
         @include breakpoint(xs) {
-          font-size: .75rem;
+          font-size: 0.75rem;
         }
       }
 
@@ -351,6 +351,53 @@ body {
             // padding-bottom: 0;
           }
         }
+
+        &--controls {
+          h3 {
+            font-family: "Roboto", sans-serif;
+            margin: 0 20px 10px;
+          }
+
+          ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+              padding: 10px 20px;
+            }
+          }
+
+          a {
+            font-size: 0.875rem;
+            margin: 0;
+          }
+
+          .site-aside__item {
+            padding: 10px 20px;
+            &--active {
+              background-color: $darkgray;
+
+              a{
+              font-weight: bold;
+              color: $darkdarkblue;
+              }
+
+              p{
+                margin: 20px 0 7px 15px;
+                font-size: 0.875rem;
+              }
+            }
+
+            .select2-selection__rendered {
+              font-size: .875rem;
+            }
+
+            .site-aside__filters {
+              margin-left: 20px;
+            }
+          }
+        }
       }
     }
 
@@ -400,10 +447,18 @@ body {
         margin-right: 0;
       }
 
-      &--flexible {
-        padding: 60px #{"min(54px, 5.1%)"} 0 #{"min(100px, 6.9%)"};
-        //flex-direction: column;
-        max-width: 1380px;
+      &--controls {
+        overflow-x: auto;
+
+        .page-content__wrapper {
+          width: 100%;
+          margin: 60px #{"min(54px, 5.1%)"} 0 #{"min(100px, 6.9%)"};
+          overflow-x: visible;
+
+          @include breakpoint(xs) {
+            overflow-x: visible;
+          }
+        }
       }
     }
 
@@ -592,6 +647,10 @@ body {
         display: block;
       }
     }
+  }
+
+  &--controls {
+    border-top: none;
   }
 }
 

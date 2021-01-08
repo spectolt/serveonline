@@ -1,4 +1,4 @@
-<?php $thisCat="controls"; $thisPage="areas"; ?>
+<?php $thisPage="services"; ?>
 
 <?php
 $areas = array('Klinikos ir estetinė medicina', 'Odontologijos klinikos', 'Grožio salonai', 'SPA ir masažo kabinetai', 'Sportas ir reabilitacija', 'Veterinarija');
@@ -8,11 +8,11 @@ $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
 
 <?php require_once('header.php'); ?>
 <main class="site-main site-main--aside">
-    <section class="page-content page-content--controls">
-        <div class="page-content__wrapper">
+    <section class="page-content">
+        <div class="page-content__wrapper page-content__wrapper--controls">
             <section class="areas">
-                <h1 class="title">Sritys</h1>
-                <div class="areas__top">
+                <h1 class="title">Paslaugos</h1>
+                <!-- <div class="areas__top">
                     <ul class="areas__languages">
                         <li class="paragraph active"><a href="#">LT</a></li>
                         <li class="paragraph"><a href="#">EN</a></li>
@@ -140,7 +140,7 @@ $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
                             </tr>
                         </tbody>
                     </table>
-                </div>
+                </div> -->
             </section>
             <?php require_once('controls-sidebar.php'); ?>
             <?php require_once('footer-menu.php'); ?>
