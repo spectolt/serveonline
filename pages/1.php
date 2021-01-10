@@ -24,7 +24,7 @@ $class = array('clinic', 'odontology', 'vet', 'beauty', 'spa', 'sport');
             </div>
         </div>
         <div class="main-screen__image">
-            <img src="http://1.specto.lt/serve-online/wp-content/uploads/2020/12/services-2.svg" alt="">
+            <img src="../img/illustrations/home-main.svg" alt="">
         </div>
     </section>
     <section class="feature-screen">
@@ -32,7 +32,7 @@ $class = array('clinic', 'odontology', 'vet', 'beauty', 'spa', 'sport');
             <div class="feature-screen__slide">
                 <div class="feature-screen__slide-content">
                     <div class="feature-screen__slide-image">
-                        <img src="http://1.specto.lt/serve-online/wp-content/uploads/2020/12/slider-image-1.png">
+                        <img src="../img/illustrations/mob-1.png">
                     </div>
                     <div class="feature-screen__info">
                         <h3 class="feature-screen__title">Specialistų užimtumas realiu laiku</h3>
@@ -47,7 +47,7 @@ $class = array('clinic', 'odontology', 'vet', 'beauty', 'spa', 'sport');
             <div class="feature-screen__slide">
                 <div class="feature-screen__slide-content">
                     <div class="feature-screen__slide-image">
-                        <img src="http://1.specto.lt/serve-online/wp-content/uploads/2020/12/slider-image-2.png">
+                        <img src="../img/illustrations/mob-2.png">
                     </div>
                     <div class="feature-screen__info">
                         <h3 class="feature-screen__title">Arčiausiai teikiamos paslaugos</h3>
@@ -62,7 +62,7 @@ $class = array('clinic', 'odontology', 'vet', 'beauty', 'spa', 'sport');
             <div class="feature-screen__slide">
                 <div class="feature-screen__slide-content">
                     <div class="feature-screen__slide-image">
-                        <img src="http://1.specto.lt/serve-online/wp-content/uploads/2020/12/slider-image-3.png">
+                        <img src="../img/illustrations/mob-3.png">
                     </div>
                     <div class="feature-screen__info">
                         <h3 class="feature-screen__title">Išsami informacija apie specialistą</h3>
@@ -77,7 +77,7 @@ $class = array('clinic', 'odontology', 'vet', 'beauty', 'spa', 'sport');
             <div class="feature-screen__slide">
                 <div class="feature-screen__slide-content">
                     <div class="feature-screen__slide-image">
-                        <img src="http://1.specto.lt/serve-online/wp-content/uploads/2020/12/slider-image-4.png">
+                        <img src="../img/illustrations/mob-4.png">
                     </div>
                     <div class="feature-screen__info">
                         <h3 class="feature-screen__title">Viskas, ką reikia žinoti apie įstaigą</h3>
@@ -92,7 +92,7 @@ $class = array('clinic', 'odontology', 'vet', 'beauty', 'spa', 'sport');
             <div class="feature-screen__slide">
                 <div class="feature-screen__slide-content">
                     <div class="feature-screen__slide-image">
-                        <img src="http://1.specto.lt/serve-online/wp-content/uploads/2020/12/slider-image-5.png">
+                        <img src="../img/illustrations/mob-5.png">
                     </div>
                     <div class="feature-screen__info">
                         <h3 class="feature-screen__title">Stebėk savo užsakymų istoriją</h3>
@@ -107,7 +107,7 @@ $class = array('clinic', 'odontology', 'vet', 'beauty', 'spa', 'sport');
             <div class="feature-screen__slide">
                 <div class="feature-screen__slide-content">
                     <div class="feature-screen__slide-image">
-                        <img src="http://1.specto.lt/serve-online/wp-content/uploads/2020/12/slider-image-6.png">
+                        <img src="../img/illustrations/mob-6.png">
                     </div>
                     <div class="feature-screen__info">
                         <h3 class="feature-screen__title">Rinkis tada, kai Tau patogu</h3>
@@ -130,12 +130,12 @@ $class = array('clinic', 'odontology', 'vet', 'beauty', 'spa', 'sport');
             </div>
         </div>
         <div class="information-screen__image">
-            <img src="http://1.specto.lt/serve-online/wp-content/uploads/2020/12/2020-12-16.-2.svg" alt="">
+            <img src="../img/illustrations/home-services.svg" alt="">
         </div>
     </section>
     <section class="business-screen">
         <div class="business-screen__image">
-            <img src="../img/illustrations/business.svg" alt="">
+            <img src="../img/illustrations/home-business.svg" alt="">
         </div>
         <div class="business-screen__text">
             <h2 class="business-screen__title">Internetinė rezervacijos sistema verslui</h2>
