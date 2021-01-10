@@ -10,19 +10,19 @@ $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
 <main class="site-main site-main--aside">
     <section class="page-content page-content--controls">
         <div class="page-content__wrapper">
-            <section class="areas">
+            <section class="controls areas">
                 <h1 class="title">Sritys</h1>
-                <div class="areas__top">
-                    <ul class="areas__languages">
+                <div class="controls__top">
+                    <ul class="controls__languages">
                         <li class="paragraph active"><a href="#">LT</a></li>
                         <li class="paragraph"><a href="#">EN</a></li>
                         <li class="paragraph"><a href="#">RU</a></li>
                     </ul>
-                    <button class="areas__restore orange transparent small">Atstatyti pakeitimus</button>
-                    <button class="areas__save orange small">Saugoti pakeitimus</button>
+                    <button class="controls__restore orange transparent small paragraph">Atstatyti pakeitimus</button>
+                    <button class="controls__save orange small paragraph">Saugoti pakeitimus</button>
                 </div>
-                <div class="areas__table-container">
-                    <table class="areas__table areas__table--main">
+                <div class="controls__table-container">
+                    <table class="controls__table areas__table areas__table--main">
                         <thead>
                             <tr>
                                 <th>Paslaugų sritis</th>
@@ -34,47 +34,47 @@ $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
                         <tbody>
                             <tr>
                                 <td colspan="4">
-                                    <button class="areas__add"></button>
-                                    <button class="areas__trash"></button>
-                                    <button class="areas__edit"></button>
+                                    <button class="controls__add"></button>
+                                    <button class="controls__trash"></button>
+                                    <button class="controls__edit"></button>
                                 </td>
                             </tr>
                             <?php for ($y = 0; $y < 6; $y++) { ?>
-                                <tr class="areas__area">
+                                <tr class="controls__area areas__area">
                                     <td>
-                                        <p class="areas__item areas__item--title"><?php echo $areas[$y] ?></p>
+                                        <p class="controls__item controls__item--title"><?php echo $areas[$y] ?></p>
                                     </td>
                                     <td>
-                                        <p class="areas__item areas__color"><?php echo $colors[$y] ?></p>
+                                        <p class="controls__item areas__color"><?php echo $colors[$y] ?></p>
                                     </td>
                                     <td>
-                                        <div class="areas__item areas__item--image">
+                                        <div class="controls__item controls__item--image">
                                             <img src="<?php echo $icons[$y] ?>">
                                         </div>
                                     </td>
                                     <td>
-                                        <p class="areas__item areas__item--title"><?php echo $areas[$y] ?></p>
+                                        <p class="controls__item controls__item--title"><?php echo $areas[$y] ?></p>
                                     </td>
                                 </tr>
                             <?php } ?>
                             <tr class="areas__inputs">
                                 <td>
-                                    <input class="areas__item">
+                                    <input class="controls__item">
                                 </td>
                                 <td>
-                                    <input class="areas__item color-input">
+                                    <input class="controls__item color-input">
                                 </td>
                                 <td>
-                                    <label for="upload-icon" class="areas__item icon-label"></label>
+                                    <label for="upload-icon" class="controls__item icon-label"></label>
                                     <input id="upload-icon" class="custom-file-input areas-item" type="file" id="img" name="img" accept=".svg" hidden>
                                 </td>
                                 <td>
-                                    <input class="areas__item">
+                                    <input class="controls__item">
                                 </td>
                             </tr>
                         </tbody>
                     </table>
-                    <table class="areas__table areas__table--menu">
+                    <table class="controls__table areas__table areas__table--menu">
                         <thead>
                             <tr>
                                 <th>Meniu pavadinimai</th>
@@ -85,33 +85,25 @@ $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
                             <tr>
                                 <td></td>
                                 <td colspan="1">
-                                    <button class="areas__add"></button>
-                                    <button class="areas__trash"></button>
-                                    <button class="areas__edit"></button>
+                                    <button class="controls__add"></button>
+                                    <button class="controls__trash"></button>
+                                    <button class="controls__edit"></button>
                                 </td>
                             </tr>
                             <tr class="areas__area">
                                 <td>
-                                    <p class="areas__item">Gydytojai</p>
+                                    <p class="controls__item">Gydytojai</p>
                                 </td>
                                 <td>
-                                    <p class="areas__item areas__item--profession">Ginekologas</p>
-                                </td>
-                            </tr>
-                            <tr class="areas__area">
-                                <td>
-                                    <p class="areas__item">Klinikos</p>
-                                </td>
-                                <td>
-                                    <p class="areas__item areas__item--profession">Urologas</p>
+                                    <p class="controls__item controls__item--profession">Ginekologas</p>
                                 </td>
                             </tr>
                             <tr class="areas__area">
                                 <td>
-                                    <p></p>
+                                    <p class="controls__item">Klinikos</p>
                                 </td>
                                 <td>
-                                    <p class="areas__item areas__item--profession">Dermatologas</p>
+                                    <p class="controls__item controls__item--profession">Urologas</p>
                                 </td>
                             </tr>
                             <tr class="areas__area">
@@ -119,7 +111,7 @@ $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
                                     <p></p>
                                 </td>
                                 <td>
-                                    <p class="areas__item areas__item--profession">Venerologas</p>
+                                    <p class="controls__item controls__item--profession">Dermatologas</p>
                                 </td>
                             </tr>
                             <tr class="areas__area">
@@ -127,7 +119,7 @@ $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
                                     <p></p>
                                 </td>
                                 <td>
-                                    <p class="areas__item areas__item--profession">Chirurgas</p>
+                                    <p class="controls__item controls__item--profession">Venerologas</p>
                                 </td>
                             </tr>
                             <tr class="areas__area">
@@ -135,7 +127,15 @@ $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
                                     <p></p>
                                 </td>
                                 <td>
-                                    <p class="areas__item areas__item--profession">Terapeutas</p>
+                                    <p class="controls__item controls__item--profession">Chirurgas</p>
+                                </td>
+                            </tr>
+                            <tr class="areas__area">
+                                <td>
+                                    <p></p>
+                                </td>
+                                <td>
+                                    <p class="controls__item controls__item--profession">Terapeutas</p>
                                 </td>
                             </tr>
                         </tbody>

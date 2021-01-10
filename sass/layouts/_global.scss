@@ -448,15 +448,14 @@ body {
       }
 
       &--controls {
-        overflow-x: auto;
+        // overflow-x: auto;
 
         .page-content__wrapper {
           width: 100%;
           margin: 60px #{"min(54px, 5.1%)"} 0 #{"min(100px, 6.9%)"};
-          overflow-x: visible;
-
-          @include breakpoint(xs) {
-            overflow-x: visible;
+          
+          @include breakpoint(880px) {
+            padding: 0 20px;
           }
         }
       }

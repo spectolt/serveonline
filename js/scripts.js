@@ -490,7 +490,7 @@ function onDocumentReady() {
   var color;
   $(".areas__color").each(function (index) {
     color = "#" + $(this).contents().get(0).nodeValue;
-    $(this).closest("tr").find(".areas__item").css("background-color", color);
+    $(this).closest("tr").find(".controls__item").css("background-color", color);
   });
 
   $(".color-input").on("input", function () {
@@ -518,20 +518,20 @@ function onDocumentReady() {
     }
   });
 
-  $(".areas__languages li").click(function () {
+  $(".controls__languages li").click(function () {
     $(this).addClass("active");
     $(this).siblings().removeClass("active");
   });
 
-  $(".areas__table .areas__item").click(function () {
+  $(".controls__table .controls__item").click(function () {
     $(this).addClass("changed-bg");
     $(this)
-        .closest(".areas__area")
+        .closest(".controls__area")
         .siblings()
-        .find(".areas__item")
+        .find(".controls__item")
         .removeClass("changed-bg");
     if ($(this).closest(".areas__table").hasClass("areas__table--main")) {
-      $(this).parent().siblings().find(".areas__item").addClass("changed-bg");
+      $(this).parent().siblings().find(".controls__item").addClass("changed-bg");
       if ($(this).closest(".areas__inputs")) {
         $(this)
           .closest(".areas__inputs")
@@ -542,7 +542,7 @@ function onDocumentReady() {
     }
   });
 
-  $(".areas__table .areas__area .areas__item").click(function () {
+  $(".areas__table .areas__area .controls__item").click(function () {
     $(".areas__table--menu tbody").removeClass("hidden");
   });
 

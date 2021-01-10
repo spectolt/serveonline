@@ -1,9 +1,17 @@
-.areas {
+.controls {
   width: 100%;
+  display: flex;
+  flex-direction: column;
 
   &__top {
     display: flex;
     margin-bottom: 20px;
+    flex-wrap: wrap;
+
+    @include breakpoint(sm) {
+      flex-direction: column;
+      //align-items: center;
+    }
   }
 
   &__restore,
@@ -21,14 +29,23 @@
       display: block;
       margin-right: 10px;
     }
+
+    @include breakpoint(sm) {
+      max-width: 174px;
+    }
   }
 
   &__restore {
-    margin-left: auto;
+    //margin-left: auto;
     margin-right: 10px;
 
     &:before {
       background-image: url("img/icons/restore-orange.svg");
+    }
+
+    @include breakpoint(sm) {
+      margin-right: 0;
+      margin-bottom: 10px;
     }
   }
 
@@ -44,6 +61,12 @@
     padding: 0;
     display: flex;
     align-self: flex-end;
+    margin-right: auto;
+
+    @include breakpoint(sm) {
+      flex: 1 0 100%;
+      margin-bottom: 10px;
+    }
 
     li {
       position: relative;
@@ -75,16 +98,21 @@
     display: flex;
     border: 1px solid #eee;
     border-top: none;
-    width: 100%;
+    //width: calc(100vw - #{"min(54px, 5.1vw)"} - #{"min(100px, 6.9vw)"} - 300px);
     overflow-x: auto;
+
+    @include breakpoint(xl) {
+      width: calc(100vw - #{"min(54px, 5.1vw)"} - #{"min(100px, 6.9vw)"});
+    }
+
+    @include breakpoint(xs) {
+      width: auto;
+    }
   }
 
   &__table {
     border-spacing: 0;
     border-collapse: collapse;
-    overflow-y: scroll;
-    width: 60%;
-    min-width: 480px;
 
     tr:first-child th:first-child {
       border-top-left-radius: 5px;
@@ -92,7 +120,7 @@
     }
 
     tr:first-child th:last-child {
-      border-right: none;
+      border-top-right-radius: 5px;
     }
 
     th {
@@ -101,22 +129,6 @@
       color: $white;
       height: 60px;
       font-family: "Sen", sans-serif;
-
-      &:first-child {
-        width: 42%;
-      }
-
-      &:nth-child(2) {
-        width: 10%;
-      }
-
-      &:nth-child(3) {
-        width: 8.14%;
-      }
-    }
-
-    tr {
-      height: auto;
     }
 
     td {
@@ -137,115 +149,44 @@
         height: 35px;
         margin: 10px 10px 10px 0;
       }
-
-      .areas__item {
-        background-color: transparent;
-        margin: 0;
-        min-height: 35px;
-        height: 100%;
-        padding: 7.5px 15px;
-        border-radius: 5px;
-        width: 100%;
-        border: 1px solid $darkblue;
-        display: flex;
-        align-items: center;
-        margin: auto 0;
-        
-        &--title {
-          font-weight: 600;
-        }
-
-        &--image {
-          padding: 7.5px 5px;
-        }
-
-        img, svg {
-          height: 20px;
-          margin: 0 auto;
-        }
-      }
-
-      label {
-        cursor: pointer;
-        color: $gray;
-
-        img {
-          height: 20px;
-        }
-      }
-
-      .areas__color {
-        text-align: center;
-      }
-
-      input {
-        width: 100%;
-
-        &::placeholder {
-          color: $gray;
-        }
-      }
-      .white-text::placeholder {
-        color: $white;
-      }
-
-      .color-input,
-      .icon-label {
-        text-align: center;
-      }
-
-      .icon-label {
-        padding: 7.5px 0;
-      }
     }
 
-    &--menu {
-      width: 40%;
-      table-layout: fixed;
-      min-width: 320px;
-
-      tr:first-child th:last-child {
-        border-top-left-radius: 0px;
-      border-bottom-left-radius: 0px;
-        border-top-right-radius: 5px;
-        border-left: 1px solid $white;
-      }
-
-      tr:first-child th:first-child {
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-        border-left: 1px solid $white;
-        width: 40%;
-      }
-
-      tr:first-child th:nth-child(2) {
-        width: 60%;
-      }
-
-      td .areas__item {
-        background-color: $darkblue;
-        color: $white;
-
-        &--profession {
-          background-color: $lightorange;
-          color: $darkblue;
-        }
-      }
-      
-      td p:empty {
-        background-color: transparent;
-        border: none;
-      }
-    }
     td .changed-bg {
       background-color: $darkblue !important;
       color: $white;
 
-      path{
-      fill: $white !important;
+      path {
+        fill: $white !important;
       }
     }
-    
+  }
+
+  &__item {
+    background-color: transparent;
+    margin: 0;
+    min-height: 35px;
+    height: 100%;
+    padding: 7.5px 15px;
+    border-radius: 5px;
+    width: 100%;
+    border: 1px solid $darkblue;
+    display: flex;
+    align-items: center;
+    margin: auto 0;
+
+    &--title {
+      font-weight: 600;
+    }
+
+    &--image {
+      padding: 7.5px 5px;
+    }
+
+    img,
+    svg {
+      height: 20px;
+      margin: 0 auto;
+    }
   }
 
   &__add,
@@ -278,6 +219,108 @@
 
   &__edit:before {
     background-image: url("img/icons/edit-white.svg");
+  }
+}
+
+.areas {
+  &__table {
+    width: 60%;
+    min-width: 420px;
+
+    tr:first-child th:last-child {
+      border-right: none;
+      border-top-right-radius: 0;
+    }
+
+    th {
+      &:first-child {
+        width: 42%;
+      }
+
+      &:nth-child(2) {
+        width: 10%;
+      }
+
+      &:nth-child(3) {
+        width: 8.14%;
+      }
+    }
+
+    tr {
+      height: auto;
+    }
+
+    label {
+      cursor: pointer;
+      color: $gray;
+
+      img {
+        height: 20px;
+      }
+    }
+
+    .areas__color {
+      text-align: center;
+    }
+
+    input {
+      width: 100%;
+
+      &::placeholder {
+        color: $gray;
+      }
+    }
+    .white-text::placeholder {
+      color: $white;
+    }
+
+    .color-input,
+    .icon-label {
+      text-align: center;
+    }
+
+    .icon-label {
+      padding: 7.5px 0;
+    }
+
+    &--menu {
+      width: 40%;
+      table-layout: fixed;
+      min-width: 380px;
+
+      tr:first-child th:last-child {
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+        border-top-right-radius: 5px;
+        border-left: 1px solid $white;
+      }
+
+      tr:first-child th:first-child {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-left: 1px solid $white;
+        width: 40%;
+      }
+
+      tr:first-child th:nth-child(2) {
+        width: 60%;
+      }
+
+      td .controls__item {
+        background-color: $darkblue;
+        color: $white;
+
+        &--profession {
+          background-color: $lightorange;
+          color: $darkblue;
+        }
+      }
+
+      td p:empty {
+        background-color: transparent;
+        border: none;
+      }
+    }
   }
 
   .custom-file-input::-webkit-file-upload-button {
