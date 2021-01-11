@@ -100,6 +100,7 @@
     border-top: none;
     //width: calc(100vw - #{"min(54px, 5.1vw)"} - #{"min(100px, 6.9vw)"} - 300px);
     overflow-x: auto;
+    width: 100%;
 
     @include breakpoint(xl) {
       width: calc(100vw - #{"min(54px, 5.1vw)"} - #{"min(100px, 6.9vw)"});
@@ -153,7 +154,7 @@
 
     td .changed-bg {
       background-color: $darkblue !important;
-      color: $white;
+      color: $white !important;
 
       path {
         fill: $white !important;
@@ -189,6 +190,11 @@
     }
   }
 
+  &__buttons {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
   &__add,
   &__trash,
   &__edit {
@@ -217,8 +223,12 @@
     background-image: url("img/icons/trash-white.svg");
   }
 
-  &__edit:before {
-    background-image: url("img/icons/edit-white.svg");
+  &__edit {
+    margin-right: 0;
+
+    &:before {
+      background-image: url("img/icons/edit-white.svg");
+    }
   }
 }
 
@@ -345,14 +355,50 @@
 
 .services {
   &__table {
+    thead {
+      display: block;
+      position: relative;
+
+      tr {
+        min-width: 100%;
+        display: block;
+
+        th {
+          min-width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+
+    tbody {
+      max-height: 500px;
+      overflow-y: auto;
+      display: block;
+    }
+
     .controls__item {
       display: none;
     }
 
     &:first-of-type {
+      max-width: 16.4%;
       .controls__item {
         display: block;
       }
+    }
+
+    &:nth-of-type(2) {
+      max-width: 16.4%;
+    }
+
+    &:nth-of-type(3) {
+      max-width: 37.5%;
+    }
+
+    &:last-of-type {
+      max-width: calc(100% - 2 * 16.4% - 37.5%);
     }
   }
 }

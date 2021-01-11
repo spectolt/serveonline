@@ -90,7 +90,7 @@ $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
                                     <button class="controls__edit"></button>
                                 </td>
                             </tr>
-                            <tr class="areas__area">
+                            <tr class="controls__area areas__area">
                                 <td>
                                     <p class="controls__item">Gydytojai</p>
                                 </td>
@@ -98,7 +98,7 @@ $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
                                     <p class="controls__item controls__item--profession">Ginekologas</p>
                                 </td>
                             </tr>
-                            <tr class="areas__area">
+                            <tr class="controls__area areas__area">
                                 <td>
                                     <p class="controls__item">Klinikos</p>
                                 </td>
@@ -106,7 +106,7 @@ $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
                                     <p class="controls__item controls__item--profession">Urologas</p>
                                 </td>
                             </tr>
-                            <tr class="areas__area">
+                            <tr class="controls__area areas__area">
                                 <td>
                                     <p></p>
                                 </td>
@@ -114,7 +114,7 @@ $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
                                     <p class="controls__item controls__item--profession">Dermatologas</p>
                                 </td>
                             </tr>
-                            <tr class="areas__area">
+                            <tr class="controls__area areas__area">
                                 <td>
                                     <p></p>
                                 </td>
@@ -122,7 +122,7 @@ $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
                                     <p class="controls__item controls__item--profession">Venerologas</p>
                                 </td>
                             </tr>
-                            <tr class="areas__area">
+                            <tr class="controls__area areas__area">
                                 <td>
                                     <p></p>
                                 </td>
@@ -130,7 +130,7 @@ $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
                                     <p class="controls__item controls__item--profession">Chirurgas</p>
                                 </td>
                             </tr>
-                            <tr class="areas__area">
+                            <tr class="controls__area areas__area">
                                 <td>
                                     <p></p>
                                 </td>

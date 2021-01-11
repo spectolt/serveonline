@@ -378,7 +378,7 @@ body {
 
             &--active {
               background-color: $darkgray;
-              padding: 10px 20px 30px;
+              padding: 10px 20px;
 
               a {
                 font-weight: bold;
@@ -389,6 +389,10 @@ body {
                 margin: 20px 0 7px 15px;
                 font-size: 0.875rem;
               }
+            }
+
+            &--open {
+              padding: 10px 20px 30px;
             }
 
             .site-aside__datepicker-container {
@@ -700,7 +704,7 @@ body {
           display: block;
           //margin: 0 auto;
           text-align: right;
-          margin-bottom: 10px;
+          margin-bottom: 5px;
           transition: font-weight 0.3s ease-in-out;
 
           @include breakpoint(xs) {
@@ -709,10 +713,6 @@ body {
 
           &:hover {
             font-weight: 600;
-          }
-
-          &:first-of-type {
-            margin-top: 5px;
           }
         }
       }

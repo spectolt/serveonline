@@ -30,7 +30,7 @@ $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
                         </thead>
                         <tbody>
                             <tr>
-                                <td colspan="1">
+                                <td colspan="1" class="controls__buttons">
                                     <button class="controls__add"></button>
                                     <button class="controls__trash"></button>
                                     <button class="controls__edit"></button>
@@ -61,7 +61,7 @@ $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
                         </thead>
                         <tbody>
                             <tr>
-                                <td colspan="1">
+                                <td colspan="1" class="controls__buttons">
                                     <button class="controls__add"></button>
                                     <button class="controls__trash"></button>
                                     <button class="controls__edit"></button>
@@ -69,17 +69,17 @@ $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
                             </tr>
                             <tr class="controls__area areas__area">
                                 <td>
-                                    <p class="controls__item controls__item--title">Plaukų priežiūra</p>
+                                    <p class="controls__item controls__item--title">Kirpimai moterims</p>
                                 </td>
                             </tr>
                             <tr class="controls__area areas__area">
                                 <td>
-                                    <p class="controls__item controls__item--title">Rankų priežiūra</p>
+                                    <p class="controls__item controls__item--title">Kirpimai vyrams</p>
                                 </td>
                             </tr>
                             <tr class="controls__area areas__area">
                                 <td>
-                                    <p class="controls__item controls__item--title">Pėdų priežiūra</p>
+                                    <p class="controls__item controls__item--title">Šukavimai moterims</p>
                                 </td>
                             </tr>
                         </tbody>
@@ -92,7 +92,7 @@ $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
                         </thead>
                         <tbody>
                             <tr>
-                                <td colspan="1">
+                                <td colspan="1" class="controls__buttons">
                                     <button class="controls__add"></button>
                                     <button class="controls__trash"></button>
                                     <button class="controls__edit"></button>
@@ -100,17 +100,17 @@ $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
                             </tr>
                             <tr class="controls__area areas__area">
                                 <td>
-                                    <p class="controls__item controls__item--title">Plaukų priežiūra</p>
+                                    <p class="controls__item controls__item--title">Visų plaukų dažymas sruogelėmis</p>
                                 </td>
                             </tr>
                             <tr class="controls__area areas__area">
                                 <td>
-                                    <p class="controls__item controls__item--title">Rankų priežiūra</p>
+                                    <p class="controls__item controls__item--title">Visų plaukų dažymas sruogelėmis</p>
                                 </td>
                             </tr>
                             <tr class="controls__area areas__area">
                                 <td>
-                                    <p class="controls__item controls__item--title">Pėdų priežiūra</p>
+                                    <p class="controls__item controls__item--title">Visų plaukų dažymas sruogelėmis</p>
                                 </td>
                             </tr>
                         </tbody>
@@ -123,7 +123,7 @@ $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
                         </thead>
                         <tbody>
                             <tr>
-                                <td colspan="1">
+                                <td colspan="1" class="controls__buttons">
                                     <button class="controls__add"></button>
                                     <button class="controls__trash"></button>
                                     <button class="controls__edit"></button>

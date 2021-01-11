@@ -37,7 +37,7 @@
                 <div class="site-aside__item">
                     <a href="#">Žinučių nustatymai</a>
                 </div>
-                <div class="site-aside__item <?php if ($thisPage == "messages") echo "site-aside__item--active"; ?>">
+                <div class="site-aside__item <?php if ($thisPage == "messages") echo "site-aside__item--active site-aside__item--open"; ?>">
                     <a href="#">Pranešimai</a>
                     <div class="site-aside__filters <?php if ($thisPage != "messages") echo "hidden"; ?>">
                         <p>Sukūrimo data</p>
@@ -50,7 +50,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="site-aside__item <?php if ($thisPage == "services") echo "site-aside__item--active"; ?>">
+                <div class="site-aside__item <?php if ($thisPage == "services") echo "site-aside__item--active site-aside__item--open"; ?>">
                     <a href="#">Paslaugos</a>
                     <div class="site-aside__filters <?php if ($thisPage != "services") echo "hidden"; ?>">
                         <p>Rodyti paslaugas, kurios</p>
