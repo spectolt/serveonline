@@ -375,22 +375,55 @@ body {
 
           .site-aside__item {
             padding: 10px 20px;
+
             &--active {
               background-color: $darkgray;
+              padding: 10px 20px 30px;
 
-              a{
-              font-weight: bold;
-              color: $darkdarkblue;
+              a {
+                font-weight: bold;
+                color: $darkdarkblue;
               }
 
-              p{
+              p {
                 margin: 20px 0 7px 15px;
                 font-size: 0.875rem;
               }
             }
 
+            .site-aside__datepicker-container {
+              position: relative;
+
+              &:after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                right: 15px;
+                transform: translateY(-50%);
+                width: 24px;
+                height: 23px;
+                background-image: url("img/icons/calendar.svg");
+                background-size: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+                display: block;
+              }
+            }
+
+            .site-aside__datepicker {
+              font-size: 0.875rem;
+              padding: 10px 15px;
+              border-radius: 5px;
+              border: 1px solid $gray;
+              width: 100%;
+            }
+
             .select2-selection__rendered {
-              font-size: .875rem;
+              font-size: 0.875rem;
+            }
+
+            .select2-selection--single {
+              border: 1px solid $gray;
             }
 
             .site-aside__filters {
@@ -453,7 +486,7 @@ body {
         .page-content__wrapper {
           width: 100%;
           margin: 60px #{"min(54px, 5.1%)"} 0 #{"min(100px, 6.9%)"};
-          
+
           @include breakpoint(880px) {
             padding: 0 20px;
           }
@@ -467,6 +500,48 @@ body {
       @include breakpoint(xs) {
         flex-wrap: wrap;
       }
+    }
+  }
+}
+
+.select2-dropdown.select2-dropdown--controls {
+  border-radius: 5px;
+
+  ul {
+    padding: 15px 10px;
+
+    li {
+      padding: 5px;
+      margin-bottom: 10px;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.ui-datepicker--filters {
+  width: 300px;
+  padding: 20px;
+
+  .ui-datepicker-buttonpane {
+    padding: 0;
+    margin-right: 0;
+    display: flex;
+    justify-content: center;
+
+    button {
+      height: auto;
+      padding: 5px;
+      width: 88px;
+      font-size: 0.875rem;
+    }
+    button.ui-datepicker-current {
+      margin-right: 10px;
+    }
+    button.ui-datepicker-close {
+      margin-right: 0;
     }
   }
 }

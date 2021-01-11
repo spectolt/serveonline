@@ -37,26 +37,41 @@
                 <div class="site-aside__item">
                     <a href="#">Žinučių nustatymai</a>
                 </div>
-                <div class="site-aside__item">
+                <div class="site-aside__item <?php if ($thisPage == "messages") echo "site-aside__item--active"; ?>">
                     <a href="#">Pranešimai</a>
+                    <div class="site-aside__filters <?php if ($thisPage != "messages") echo "hidden"; ?>">
+                        <p>Sukūrimo data</p>
+                        <div class="site-aside__datepicker-container">
+                            <input class="site-aside__datepicker" placeholder="Nuo">
+                        </div>
+                        <p>Sukūrimo data</p>
+                        <div class="site-aside__datepicker-container">
+                            <input class="site-aside__datepicker" placeholder="Iki">
+                        </div>
+                    </div>
                 </div>
                 <div class="site-aside__item <?php if ($thisPage == "services") echo "site-aside__item--active"; ?>">
                     <a href="#">Paslaugos</a>
                     <div class="site-aside__filters <?php if ($thisPage != "services") echo "hidden"; ?>">
-                        <p>Rodyti paslaugas</p>
-                        <select>
-                            <option>Nepanaudotas</option>
+                        <p>Rodyti paslaugas, kurios</p>
+                        <select class="js-dropdown-placeholder">
+                            <option></option>
+                            <option>Dar nebuvo panaudotos</option>
                         </select>
                         <p>Paslaugų aprašymai</p>
-                        <select>
+                        <select class="js-dropdown-placeholder">
+                            <option></option>
                             <option>Nėra</option>
+                            <option>Yra</option>
                         </select>
                     </div>
                 </div>
                 <div class="site-aside__item <?php if ($thisPage == "areas") echo "site-aside__item--active"; ?>">
                     <a href="#">Sritys</a>
                 </div>
+               
             </div>
         </div>
+        <button class="search-clean search-clean--controls">Valyti</button>
     </aside>
 </div>

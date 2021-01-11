@@ -1,4 +1,4 @@
-<?php $thisPage="services"; ?>
+<?php $thisPage = "services"; ?>
 
 <?php
 $areas = array('Klinikos ir estetinė medicina', 'Odontologijos klinikos', 'Grožio salonai', 'SPA ir masažo kabinetai', 'Sportas ir reabilitacija', 'Veterinarija');
@@ -25,51 +25,123 @@ $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
                     <table class="controls__table services__table">
                         <thead>
                             <tr>
-                                <th>Paslaugų sritis</th>
-                                <th>Spalva #</th>
-                                <th>svg</th>
-                                <th>URL</th>
+                                <th>Paslaugų grupė</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td colspan="4">
+                                <td colspan="1">
                                     <button class="controls__add"></button>
                                     <button class="controls__trash"></button>
                                     <button class="controls__edit"></button>
                                 </td>
                             </tr>
-                            <?php for ($y = 0; $y < 6; $y++) { ?>
-                                <tr class="controls__area areas__area">
-                                    <td>
-                                        <p class="controls__item controls__item--title"><?php echo $areas[$y] ?></p>
-                                    </td>
-                                    <td>
-                                        <p class="controls__item areas__color"><?php echo $colors[$y] ?></p>
-                                    </td>
-                                    <td>
-                                        <div class="controls__item controls__item--image">
-                                            <img src="<?php echo $icons[$y] ?>">
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <p class="controls__item controls__item--title"><?php echo $areas[$y] ?></p>
-                                    </td>
-                                </tr>
-                            <?php } ?>
-                            <tr class="areas__inputs">
+                            <tr class="controls__area areas__area">
                                 <td>
-                                    <input class="controls__item">
+                                    <p class="controls__item controls__item--title">Plaukų priežiūra</p>
                                 </td>
+                            </tr>
+                            <tr class="controls__area areas__area">
                                 <td>
-                                    <input class="controls__item color-input">
+                                    <p class="controls__item controls__item--title">Rankų priežiūra</p>
                                 </td>
+                            </tr>
+                            <tr class="controls__area areas__area">
                                 <td>
-                                    <label for="upload-icon" class="controls__item icon-label"></label>
-                                    <input id="upload-icon" class="custom-file-input areas-item" type="file" id="img" name="img" accept=".svg" hidden>
+                                    <p class="controls__item controls__item--title">Pėdų priežiūra</p>
                                 </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="controls__table services__table">
+                        <thead>
+                            <tr>
+                                <th>Pogrupis</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="1">
+                                    <button class="controls__add"></button>
+                                    <button class="controls__trash"></button>
+                                    <button class="controls__edit"></button>
+                                </td>
+                            </tr>
+                            <tr class="controls__area areas__area">
                                 <td>
-                                    <input class="controls__item">
+                                    <p class="controls__item controls__item--title">Plaukų priežiūra</p>
+                                </td>
+                            </tr>
+                            <tr class="controls__area areas__area">
+                                <td>
+                                    <p class="controls__item controls__item--title">Rankų priežiūra</p>
+                                </td>
+                            </tr>
+                            <tr class="controls__area areas__area">
+                                <td>
+                                    <p class="controls__item controls__item--title">Pėdų priežiūra</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="controls__table services__table">
+                        <thead>
+                            <tr>
+                                <th>Paslaugos pavadinimas</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="1">
+                                    <button class="controls__add"></button>
+                                    <button class="controls__trash"></button>
+                                    <button class="controls__edit"></button>
+                                </td>
+                            </tr>
+                            <tr class="controls__area areas__area">
+                                <td>
+                                    <p class="controls__item controls__item--title">Plaukų priežiūra</p>
+                                </td>
+                            </tr>
+                            <tr class="controls__area areas__area">
+                                <td>
+                                    <p class="controls__item controls__item--title">Rankų priežiūra</p>
+                                </td>
+                            </tr>
+                            <tr class="controls__area areas__area">
+                                <td>
+                                    <p class="controls__item controls__item--title">Pėdų priežiūra</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="controls__table services__table">
+                        <thead>
+                            <tr>
+                                <th>Pasalugos detalizavimas</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="1">
+                                    <button class="controls__add"></button>
+                                    <button class="controls__trash"></button>
+                                    <button class="controls__edit"></button>
+                                </td>
+                            </tr>
+                            <tr class="controls__area areas__area">
+                                <td>
+                                    <p class="controls__item controls__item--title">Plaukų priežiūra</p>
+                                </td>
+                            </tr>
+                            <tr class="controls__area areas__area">
+                                <td>
+                                    <p class="controls__item controls__item--title">Rankų priežiūra</p>
+                                </td>
+                            </tr>
+                            <tr class="controls__area areas__area">
+                                <td>
+                                    <p class="controls__item controls__item--title">Pėdų priežiūra</p>
                                 </td>
                             </tr>
                         </tbody>

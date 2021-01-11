@@ -490,7 +490,10 @@ function onDocumentReady() {
   var color;
   $(".areas__color").each(function (index) {
     color = "#" + $(this).contents().get(0).nodeValue;
-    $(this).closest("tr").find(".controls__item").css("background-color", color);
+    $(this)
+      .closest("tr")
+      .find(".controls__item")
+      .css("background-color", color);
   });
 
   $(".color-input").on("input", function () {
@@ -526,12 +529,16 @@ function onDocumentReady() {
   $(".controls__table .controls__item").click(function () {
     $(this).addClass("changed-bg");
     $(this)
-        .closest(".controls__area")
+      .closest(".controls__area")
+      .siblings()
+      .find(".controls__item")
+      .removeClass("changed-bg");
+    if ($(this).closest(".areas__table").hasClass("areas__table--main")) {
+      $(this)
+        .parent()
         .siblings()
         .find(".controls__item")
-        .removeClass("changed-bg");
-    if ($(this).closest(".areas__table").hasClass("areas__table--main")) {
-      $(this).parent().siblings().find(".controls__item").addClass("changed-bg");
+        .addClass("changed-bg");
       if ($(this).closest(".areas__inputs")) {
         $(this)
           .closest(".areas__inputs")
@@ -546,6 +553,10 @@ function onDocumentReady() {
     $(".areas__table--menu tbody").removeClass("hidden");
   });
 
+  $(".services__table .controls__item").click(function() {
+    $(this).closest(".services__table").next(".services__table").find(".controls__item").css("display", "block");
+  })
+
   $(".feature-screen__slides-container").slick({
     arrows: true,
     dots: true,
@@ -558,9 +569,52 @@ function onDocumentReady() {
 
   $('.areas__area img[src$=".svg"]').each(imgToSvg).css("fill", "#101b51");
 
-  $(".site-aside__filters select").select2({
+  $(".site-aside__filters .js-dropdown-placeholder").select2({
     minimumResultsForSearch: Infinity,
-  })
+    placeholder: "Pasirinkti",
+    allowClear: true,
+    dropdownCssClass: "select2-dropdown--controls",
+  });
+
+  $(".site-aside__datepicker").datepicker({
+    showButtonPanel: true,
+    orientation: "bottom",
+    beforeShow: function (input, inst) {
+      $('#ui-datepicker-div').addClass("ui-datepicker--filters");
+      window.setTimeout(function () {
+        $("#ui-datepicker-div").position({
+          my: "top",
+          at: "bottom",
+          of: input,
+        });
+        inst.dpDiv.css({
+          left: "0",
+        });
+      }, 1);
+    },
+  });
+
+  $.datepicker._selectDateOverload = $.datepicker._selectDate;
+  $.datepicker._selectDate = function (id, dateStr) {
+    var target = $(id);
+    var inst = this._getInst(target[0]);
+    inst.inline = true;
+    $.datepicker._selectDateOverload(id, dateStr);
+    inst.inline = false;
+    this._updateDatepicker(inst);
+  };
+
+  $.datepicker._gotoToday = function (id) {
+    var inst = this._getInst($(id)[0]);
+
+    var date = new Date();
+    this._selectDay(
+      id,
+      date.getMonth(),
+      date.getFullYear(),
+      inst.dpDiv.find("td.ui-datepicker-today")
+    );
+  };
 
   moveAction();
   moveOrder();
