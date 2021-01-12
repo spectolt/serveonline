@@ -2388,11 +2388,15 @@ table.calendar .calendar__more-times--hidden {
 }
 
 .select2-results__option {
-  padding: 6px;
+  padding: 10px;
   -moz-user-select: none;
    -ms-user-select: none;
        user-select: none;
   -webkit-user-select: none;
+}
+
+.select2-results__option:hover {
+  background-color: rgba(214, 211, 211, 0.2);
 }
 
 .select2-results__option--selectable {
@@ -2417,11 +2421,11 @@ table.calendar .calendar__more-times--hidden {
 
 .select2-search--dropdown {
   display: block;
-  padding: 4px;
+  padding: 10px 10px 0;
 }
 
 .select2-search--dropdown .select2-search__field {
-  padding: 4px;
+  padding: 7px;
   width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -7153,27 +7157,6 @@ body {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
-}
-
-.select2-dropdown.select2-dropdown--controls {
-  border-radius: 5px;
-}
-
-.select2-dropdown.select2-dropdown--controls ul {
-  padding: 15px 10px;
-}
-
-.select2-dropdown.select2-dropdown--controls ul li {
-  padding: 5px;
-  margin-bottom: 10px;
-}
-
-.select2-dropdown.select2-dropdown--controls ul li:last-of-type {
-  margin-bottom: 0;
-}
-
-.select2-results__option--selected {
-  display: none;
 }
 
 .ui-datepicker--filters {

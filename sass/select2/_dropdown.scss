@@ -27,10 +27,14 @@
 }
 
 .select2-results__option {
-  padding: 6px;
+  padding: 10px;
 
   user-select: none;
   -webkit-user-select: none;
+
+  &:hover {
+    background-color: $color__controls-sidebar-background;
+  }
 }
 
 .select2-results__option--selectable {
@@ -55,10 +59,10 @@
 
 .select2-search--dropdown {
   display: block;
-  padding: 4px;
+  padding: 10px 10px 0;
 
   .select2-search__field {
-    padding: 4px;
+    padding: 7px;
     width: 100%;
     box-sizing: border-box;
 

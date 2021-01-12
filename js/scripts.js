@@ -25,6 +25,7 @@ function onDocumentReady() {
     inst.inline = false;
     this._updateDatepicker(inst);
   };
+
   if ($("main.hasUiAutocomplete").length > 0) {
     $(".search-container__submit").click(function () {
       $(".ui-autocomplete").fadeOut(300);
@@ -299,6 +300,13 @@ function onDocumentReady() {
 
   $("select").select2();
 
+  $(".site-aside__filters .js-dropdown-placeholder").select2({
+    minimumResultsForSearch: Infinity,
+    placeholder: "Pasirinkti",
+    allowClear: true,
+    dropdownCssClass: "select2-dropdown--controls",
+  });
+
   $(".checkbox-wrapper>.checkbox input").on("change", function () {
     $(this).closest(".checkbox-wrapper").toggleClass("toggled");
   });
@@ -444,8 +452,9 @@ function onDocumentReady() {
     }, 100);
   });
 
-  $(".select2-selection").click(function () {
+  $(".select2").click(function () {
     $(this).find(".select2-selection__arrow b").toggleClass("rotate");
+    console.log($(this));
   });
 
   $(".goto-top").on("click", function () {
@@ -577,13 +586,6 @@ function onDocumentReady() {
   });
 
   $('.areas__area img[src$=".svg"]').each(imgToSvg).css("fill", "#101b51");
-
-  $(".site-aside__filters .js-dropdown-placeholder").select2({
-    minimumResultsForSearch: Infinity,
-    placeholder: "Pasirinkti",
-    allowClear: true,
-    dropdownCssClass: "select2-dropdown--controls",
-  });
 
   $(".site-aside__datepicker").datepicker({
     showButtonPanel: true,
