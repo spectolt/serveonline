@@ -162,13 +162,13 @@ body {
       margin: 0 15px;
 
       @include breakpoint(xs) {
-        font-size: .875rem;
+        font-size: 0.875rem;
       }
 
-      &:nth-last-child(n+5),
-      &:nth-last-child(n+5) ~ li {
+      &:nth-last-child(n + 5),
+      &:nth-last-child(n + 5) ~ li {
         @include breakpoint(xs) {
-          font-size: .75rem;
+          font-size: 0.75rem;
         }
       }
 
@@ -351,26 +351,112 @@ body {
             // padding-bottom: 0;
           }
         }
+
+        &--controls {
+          h3 {
+            font-family: "Roboto", sans-serif;
+            margin: 0 20px 10px;
+          }
+
+          ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+              padding: 10px 20px;
+            }
+          }
+
+          a {
+            font-size: 0.875rem;
+            margin: 0;
+            color: $color__controls-sidebar-text;
+          }
+
+          .site-aside__item {
+            padding: 10px 20px;
+
+            &--active {
+              background-color: $color__controls-sidebar-background;
+              padding: 10px 20px;
+
+              a {
+                font-weight: bold;
+              }
+
+              p {
+                margin: 20px 0 7px 15px;
+                font-size: 0.875rem;
+              }
+            }
+
+            &--open {
+              padding: 10px 20px 30px;
+            }
+
+            .site-aside__datepicker-container {
+              position: relative;
+
+              &:after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                right: 15px;
+                transform: translateY(-50%);
+                width: 24px;
+                height: 23px;
+                background-image: url("img/icons/calendar.svg");
+                background-size: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+                display: block;
+              }
+            }
+
+            .site-aside__datepicker {
+              font-size: 0.875rem;
+              padding: 10px 15px;
+              border-radius: 5px;
+              border: 1px solid $gray;
+              width: 100%;
+            }
+
+            .select2-selection__rendered {
+              font-size: 0.875rem;
+            }
+
+            .select2-selection--single {
+              border: 1px solid $gray;
+            }
+
+            .site-aside__filters {
+              margin-left: 20px;
+            }
+          }
+        }
       }
     }
 
     .page-content {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       flex: 1;
       margin-left: 300px;
+      height: 100%;
 
       @include breakpoint(xl) {
         justify-content: center;
       }
       &__wrapper {
         display: flex;
-        flex-wrap: wrap;
         flex-direction: column;
         position: relative;
         width: 850px;
         // margin: 60px 25% 30px 7.1%;
-        margin: 60px 30px 30px 7.1%;
+        margin: 0 30px 30px 7.1%;
+        padding-top: 60px;
+        height: 100%;
 
         @media screen and (max-width: 1240px) {
           margin-left: auto;
@@ -378,15 +464,16 @@ body {
         }
 
         @include breakpoint(xl) {
-          margin: 60px 30px 0 30px;
+          margin: 0 30px;
         }
 
         @include breakpoint(xs) {
           padding-left: 20px;
           padding-right: 20px;
           width: 100%;
-          overflow-x: hidden;
-          margin: 40px auto 0 auto;
+          // overflow-x: hidden;
+          margin: 0 auto 0 auto;
+          padding-top: 40px;
         }
       }
 
@@ -400,18 +487,90 @@ body {
         margin-right: 0;
       }
 
-      &--flexible {
-        padding: 60px #{"min(54px, 5.1%)"} 0 #{"min(100px, 6.9%)"};
-        //flex-direction: column;
+      &--controls {
+        // overflow-x: auto;
+
+        .page-content__wrapper {
+          width: 100%;
+          padding: 60px #{"min(54px, 5.1%)"} 0 #{"min(100px, 6.9%)"};
+          margin: 0;
+
+          @include breakpoint(880px) {
+            padding: 60px 20px 0;
+          }
+
+          @include breakpoint(xs) {
+            padding: 40px 20px 0;
+            margin: 0;
+          }
+        }
+      }
+
+      &--messages {
+        .site-footer {
+          margin-top: 0;
+        }
+
+        .pagination {
+          margin-top: auto;
+          border-top: none;
+        }
       }
     }
 
     .site-footer {
       width: 100%;
+      margin-top: auto;
 
       @include breakpoint(xs) {
         flex-wrap: wrap;
       }
+    }
+  }
+}
+
+.select2-dropdown.select2-dropdown--controls {
+  border-radius: 5px;
+
+  ul {
+    padding: 15px 10px;
+
+    li {
+      padding: 5px;
+      margin-bottom: 10px;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.select2-results__option--selected {
+  display: none;
+}
+
+.ui-datepicker--filters {
+  width: 300px;
+  padding: 20px;
+
+  .ui-datepicker-buttonpane {
+    padding: 0;
+    margin-right: 0;
+    display: flex;
+    justify-content: center;
+
+    button {
+      height: auto;
+      padding: 5px;
+      width: 88px;
+      font-size: 0.875rem;
+    }
+    button.ui-datepicker-current {
+      margin-right: 10px;
+    }
+    button.ui-datepicker-close {
+      margin-right: 0;
     }
   }
 }
@@ -570,7 +729,7 @@ body {
           display: block;
           //margin: 0 auto;
           text-align: right;
-          margin-bottom: 10px;
+          margin-bottom: 5px;
           transition: font-weight 0.3s ease-in-out;
 
           @include breakpoint(xs) {
@@ -580,10 +739,6 @@ body {
           &:hover {
             font-weight: 600;
           }
-
-          &:first-of-type {
-            margin-top: 5px;
-          }
         }
       }
 
@@ -591,6 +746,10 @@ body {
         display: block;
       }
     }
+  }
+
+  &--controls {
+    border-top: none;
   }
 }
 

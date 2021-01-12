@@ -1,8 +1,8 @@
 <?php
-$areas = array('Klinikos ir estetinė medicina', 'Odontologijos klinikos', 'Grožio salonai ir kirpyklos', 'SPA ir masažo salonai', 'Sportas ir reabilitacija', 'Veterinarijos klinikos');
-$icons = array('../img/icons/clinic.svg', '../img/icons/odontology.svg', '../img/icons/beauty.svg', '../img/icons/spa.svg', '../img/icons/sport.svg', '../img/icons/vet.svg');
-$colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2');
-$class = array('clinic', 'odontology', 'beauty', 'spa', 'sport', 'vet');
+$areas = array('Klinikos ir estetinė medicina', 'Odontologijos klinikos', 'Veterinarijos klinikos', 'Grožio salonai ir kirpyklos', 'SPA ir masažo salonai', 'Sportas ir reabilitacija');
+$icons = array('../img/icons/clinic.svg', '../img/icons/odontology.svg', '../img/icons/vet.svg', '../img/icons/beauty.svg', '../img/icons/spa.svg', '../img/icons/sport.svg');
+$colors = array('#fec994', '#cce2ff', '#c1e1d2', '#fed9c9', '#ffefd8', '#e2c4ae');
+$class = array('clinic', 'odontology', 'vet', 'beauty', 'spa', 'sport');
 ?>
 
 <?php require_once('header-home.php'); ?>
@@ -11,7 +11,7 @@ $class = array('clinic', 'odontology', 'beauty', 'spa', 'sport', 'vet');
     <section class="main-screen">
         <div class="main-screen__info">
             <h1 class="title title--home">Atrask savo<span style="display: block;">geriausią specialistą!</span></h1>
-            <h2 class="subtitle subtitle--home">Įvairių paslaugų užsakymai internetu nemokamai</h2>
+            <h2 class="subtitle subtitle--home">Įvairių paslaugų rezervacijos nemokamai</h2>
             <div class="main-screen__areas">
                 <?php for ($y = 0; $y < 6; $y++) { ?>
                     <div class="main-screen__area">

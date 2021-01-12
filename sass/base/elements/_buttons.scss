@@ -26,6 +26,11 @@ input[type="submit"] {
 	&.orange {
 		border: 1px solid $orange;
 		background: $orange;
+
+		&.transparent {
+			background: transparent;
+			color: $orange;
+		}
 	}
 
 	&.blue {
@@ -35,6 +40,16 @@ input[type="submit"] {
 			background: transparent;
 			color: $blue;
 			border: 1px solid $blue;
+		}
+	}
+
+	&.darkblue {
+		background: $darkblue;
+
+		&.transparent {
+			background: transparent;
+			color: $darkblue;
+			border: 1px solid $darkblue;
 		}
 	}
 

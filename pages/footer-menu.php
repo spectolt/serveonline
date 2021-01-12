@@ -1,5 +1,5 @@
 
-<footer class="site-footer container">
+<footer class="site-footer container <?php if ($thisCat == "controls") echo "site-footer--controls"; ?>">
     <img src="../img/logo-sidebar.svg" class="site-footer__logo" />
     <ul class="site-footer__menu">
         <li class="site-footer__item paragraph"><a href="#">Privatumo politika</a></li>
