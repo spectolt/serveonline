@@ -1,6 +1,30 @@
 $(document).ready(onDocumentReady);
 
 function onDocumentReady() {
+  //today button sets the date
+  $.datepicker._gotoToday = function (id) {
+    var inst = this._getInst($(id)[0]);
+
+    var date = new Date();
+    this._selectDay(
+      id,
+      date.getMonth(),
+      date.getFullYear(),
+      inst.dpDiv.find("td.ui-datepicker-today")
+    );
+    changeTextWidth();
+  };
+
+  // Don't hide the date picker when clicking a date
+  $.datepicker._selectDateOverload = $.datepicker._selectDate;
+  $.datepicker._selectDate = function (id, dateStr) {
+    var target = $(id);
+    var inst = this._getInst(target[0]);
+    inst.inline = true;
+    $.datepicker._selectDateOverload(id, dateStr);
+    inst.inline = false;
+    this._updateDatepicker(inst);
+  };
   if ($("main.hasUiAutocomplete").length > 0) {
     $(".search-container__submit").click(function () {
       $(".ui-autocomplete").fadeOut(300);
@@ -32,20 +56,6 @@ function onDocumentReady() {
   }
 
   if ($("main.hasUiDatepicker").length > 0) {
-    //today button sets the date
-    $.datepicker._gotoToday = function (id) {
-      var inst = this._getInst($(id)[0]);
-
-      var date = new Date();
-      this._selectDay(
-        id,
-        date.getMonth(),
-        date.getFullYear(),
-        inst.dpDiv.find("td.ui-datepicker-today")
-      );
-      changeTextWidth();
-    };
-
     var Event = function (text) {
       this.text = text;
     };
@@ -240,17 +250,6 @@ function onDocumentReady() {
     $(".ui-datepicker-popup__close").on("click", function () {
       $(popup).fadeOut(300);
     });
-
-    // Don't hide the date picker when clicking a date
-    $.datepicker._selectDateOverload = $.datepicker._selectDate;
-    $.datepicker._selectDate = function (id, dateStr) {
-      var target = $(id);
-      var inst = this._getInst(target[0]);
-      inst.inline = true;
-      $.datepicker._selectDateOverload(id, dateStr);
-      inst.inline = false;
-      this._updateDatepicker(inst);
-    };
 
     $(".product__nav-icon").click(function () {
       $(this).next(".product__nav-input").datepicker("show");
@@ -603,28 +602,6 @@ function onDocumentReady() {
       }, 1);
     },
   });
-
-  // $.datepicker._selectDateOverload = $.datepicker._selectDate;
-  // $.datepicker._selectDate = function (id, dateStr) {
-  //   var target = $(id);
-  //   var inst = this._getInst(target[0]);
-  //   inst.inline = true;
-  //   $.datepicker._selectDateOverload(id, dateStr);
-  //   inst.inline = false;
-  //   this._updateDatepicker(inst);
-  // };
-
-  // $.datepicker._gotoToday = function (id) {
-  //   var inst = this._getInst($(id)[0]);
-
-  //   var date = new Date();
-  //   this._selectDay(
-  //     id,
-  //     date.getMonth(),
-  //     date.getFullYear(),
-  //     inst.dpDiv.find("td.ui-datepicker-today")
-  //   );
-  // };
 
   moveAction();
   moveOrder();
