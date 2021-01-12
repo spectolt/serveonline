@@ -83,7 +83,7 @@
         }
 
         &__info {
-            margin-left: auto;
+            margin-left: 10px;
             position: relative;
 
             @include breakpoint(xs) {

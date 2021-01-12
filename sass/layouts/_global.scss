@@ -371,18 +371,18 @@ body {
           a {
             font-size: 0.875rem;
             margin: 0;
+            color: $color__controls-sidebar-text;
           }
 
           .site-aside__item {
             padding: 10px 20px;
 
             &--active {
-              background-color: $darkgray;
+              background-color: $color__controls-sidebar-background;
               padding: 10px 20px;
 
               a {
                 font-weight: bold;
-                color: $darkdarkblue;
               }
 
               p {
@@ -440,21 +440,23 @@ body {
 
     .page-content {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       flex: 1;
       margin-left: 300px;
+      height: 100%;
 
       @include breakpoint(xl) {
         justify-content: center;
       }
       &__wrapper {
         display: flex;
-        flex-wrap: wrap;
         flex-direction: column;
         position: relative;
         width: 850px;
         // margin: 60px 25% 30px 7.1%;
-        margin: 60px 30px 30px 7.1%;
+        margin: 0 30px 30px 7.1%;
+        padding-top: 60px;
+        height: 100%;
 
         @media screen and (max-width: 1240px) {
           margin-left: auto;
@@ -462,15 +464,16 @@ body {
         }
 
         @include breakpoint(xl) {
-          margin: 60px 30px 0 30px;
+          margin: 0 30px;
         }
 
         @include breakpoint(xs) {
           padding-left: 20px;
           padding-right: 20px;
           width: 100%;
-          overflow-x: hidden;
-          margin: 40px auto 0 auto;
+          // overflow-x: hidden;
+          margin: 0 auto 0 auto;
+          padding-top: 40px;
         }
       }
 
@@ -489,17 +492,35 @@ body {
 
         .page-content__wrapper {
           width: 100%;
-          margin: 60px #{"min(54px, 5.1%)"} 0 #{"min(100px, 6.9%)"};
+          padding: 60px #{"min(54px, 5.1%)"} 0 #{"min(100px, 6.9%)"};
+          margin: 0;
 
           @include breakpoint(880px) {
-            padding: 0 20px;
+            padding: 60px 20px 0;
           }
+
+          @include breakpoint(xs) {
+            padding: 40px 20px 0;
+            margin: 0;
+          }
+        }
+      }
+
+      &--messages {
+        .site-footer {
+          margin-top: 0;
+        }
+
+        .pagination {
+          margin-top: auto;
+          border-top: none;
         }
       }
     }
 
     .site-footer {
       width: 100%;
+      margin-top: auto;
 
       @include breakpoint(xs) {
         flex-wrap: wrap;
@@ -523,6 +544,10 @@ body {
       }
     }
   }
+}
+
+.select2-results__option--selected {
+  display: none;
 }
 
 .ui-datepicker--filters {

@@ -28,14 +28,73 @@
                 <div class="site-aside__item">
                     <a href="#">Darbuotojų profiliai</a>
                 </div>
-                <div class="site-aside__item">
+                <div class="site-aside__item <?php if ($thisPage == "messages-sent") echo "site-aside__item--active site-aside__item--open"; ?>">
                     <a href="#">Išsiųstos SMS</a>
+                    <div class="site-aside__filters <?php if ($thisPage != "messages-sent") echo "hidden"; ?>">
+                        <p>Sukūrimo data</p>
+                        <div class="site-aside__datepicker-container">
+                            <input class="site-aside__datepicker" placeholder="Nuo">
+                        </div>
+                        <p>Sukūrimo data</p>
+                        <div class="site-aside__datepicker-container">
+                            <input class="site-aside__datepicker" placeholder="Iki">
+                        </div>
+                        <p>Siuntimo data</p>
+                        <div class="site-aside__datepicker-container">
+                            <input class="site-aside__datepicker" placeholder="Nuo">
+                        </div>
+                        <p>Siuntimo data</p>
+                        <div class="site-aside__datepicker-container">
+                            <input class="site-aside__datepicker" placeholder="Iki">
+                        </div>
+                        <p>Žinutės tipas</p>
+                        <select class="js-dropdown-placeholder">
+                            <option selected>Visi</option>
+                            <option>Patvirtinimas</option>
+                            <option>Priminimas</option>
+                            <option>Reklama</option>
+                        </select>
+                        <p>Būsena</p>
+                        <select class="js-dropdown-placeholder">
+                            <option></option>
+                            <option>Paruošta</option>
+                            <option>Išsiųsta</option>
+                            <option>Klaida</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="site-aside__item">
+                <div class="site-aside__item <?php if ($thisPage == "messages-inbox") echo "site-aside__item--active site-aside__item--open"; ?>">
                     <a href="#">Gautos SMS</a>
+                    <div class="site-aside__filters <?php if ($thisPage != "messages-inbox") echo "hidden"; ?>">
+                        <p>Sukūrimo data</p>
+                        <div class="site-aside__datepicker-container">
+                            <input class="site-aside__datepicker" placeholder="Nuo">
+                        </div>
+                        <p>Sukūrimo data</p>
+                        <div class="site-aside__datepicker-container">
+                            <input class="site-aside__datepicker" placeholder="Iki">
+                        </div>
+                        <p>Siuntėjo tipas</p>
+                        <select class="js-dropdown-placeholder">
+                            <option></option>
+                            <option>Paslaugų gavėjas</option>
+                            <option>Specialistas</option>
+                            <option>Įmonės savininkas</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="site-aside__item">
+                <div class="site-aside__item <?php if ($thisPage == "messages-settings") echo "site-aside__item--active site-aside__item--open"; ?>">
                     <a href="#">Žinučių nustatymai</a>
+                    <div class="site-aside__filters <?php if ($thisPage != "messages-settings") echo "hidden"; ?>">
+                        <p>Sukūrimo data</p>
+                        <div class="site-aside__datepicker-container">
+                            <input class="site-aside__datepicker" placeholder="Nuo">
+                        </div>
+                        <p>Sukūrimo data</p>
+                        <div class="site-aside__datepicker-container">
+                            <input class="site-aside__datepicker" placeholder="Iki">
+                        </div>
+                    </div>
                 </div>
                 <div class="site-aside__item <?php if ($thisPage == "messages") echo "site-aside__item--active site-aside__item--open"; ?>">
                     <a href="#">Pranešimai</a>
@@ -69,7 +128,9 @@
                 <div class="site-aside__item <?php if ($thisPage == "areas") echo "site-aside__item--active"; ?>">
                     <a href="#">Sritys</a>
                 </div>
-               
+                <div class="site-aside__item">
+                    <a href="#">Bendri nustatymai</a>
+                </div>
             </div>
         </div>
         <button class="search-clean search-clean--controls">Valyti</button>

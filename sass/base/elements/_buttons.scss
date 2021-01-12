@@ -43,6 +43,16 @@ input[type="submit"] {
 		}
 	}
 
+	&.darkblue {
+		background: $darkblue;
+
+		&.transparent {
+			background: transparent;
+			color: $darkblue;
+			border: 1px solid $darkblue;
+		}
+	}
+
 	&.cyan {
 		background: $cyan;
 

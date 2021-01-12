@@ -1,44 +1,48 @@
 <?php $thisCat = "controls";
-$thisPage = "messages"; ?>
+$thisPage = "messages-settings"; ?>
 
 <?php require_once('header.php'); ?>
 <main class="site-main site-main--aside">
     <section class="page-content page-content--controls page-content--messages">
         <div class="page-content__wrapper">
-            <section class="controls messages">
-                <h1 class="title">Pranešimai</h1>
+            <section class="controls messages-settings">
+                <h1 class="title">Žinučių nustatymai</h1>
                 <div class="controls__top">
                     <ul class="controls__languages">
                         <li class="paragraph active"><a href="#">LT</a></li>
                         <li class="paragraph"><a href="#">EN</a></li>
                         <li class="paragraph"><a href="#">RU</a></li>
                     </ul>
+                    <button class="controls__new darkblue transparent small paragraph">Nauja SMS žinutė</button>
+                    <button class="controls__new darkblue transparent small paragraph">Nauja notification žinutė</button>
                 </div>
                 <div class="controls__table-container">
                     <table class="controls__table messages__table">
                         <thead>
                             <tr>
                                 <th>Sukūrimo data</th>
-                                <th>Pranešimo vieta</th>
-                                <th>Pranešimo ID</th>
-                                <th>Pranešimo data</th>
-                                <th>Pranešimo tekstas</th>
+                                <th>Žinutės tipas</th>
+                                <th>Žinutės ID</th>
+                                <th>Žinutės tema</th>
+                                <th>Žinutės tekstas</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php for ($y = 0; $y < 4; $y++) { ?>
                                 <tr>
                                     <td>2020 05 01</td>
-                                    <td>Registracija</td>
+                                    <td>SMS</td>
                                     <td>12345678</td>
-                                    <td>Įspėjimas</td>
+                                    <td>Užsakymo patvirtinimas</td>
                                     <td class="messages__text">
                                         <p>Aromatherapy Associates eterinių aliejų masažas, tai
                                             specializuotas masažas, sudarytas iš Rytų ir Vakarų tradicijų,
                                             dėmesį skiriant nugarai, galvai, kaklui, pečiams ir pėdoms,
                                             praturtintas grynų eterinių aliejų kvapais ir naudingosiomis
                                             savybėmis.</p>
-                                        <button class="controls__edit"></button>
+                                        <button class="controls__trash">
+                                            <button class="controls__edit">
+                                            </button>
                                     </td>
                                 </tr>
                             <?php } ?>

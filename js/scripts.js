@@ -533,6 +533,7 @@ function onDocumentReady() {
       .siblings()
       .find(".controls__item")
       .removeClass("changed-bg");
+    $(this).find("label").css("color", "unset");
     if ($(this).closest(".areas__table").hasClass("areas__table--main")) {
       $(this)
         .parent()
@@ -549,13 +550,22 @@ function onDocumentReady() {
     }
   });
 
+  $(".controls__table .controls__item label").click(function () {
+    $(this).parent().next(".controls__item-content").toggleClass("hidden");
+    $(this).css("color", "#fff");
+  });
+
   $(".areas__table .areas__area .controls__item").click(function () {
     $(".areas__table--menu tbody").removeClass("hidden");
   });
 
-  $(".services__table .controls__item").click(function() {
-    $(this).closest(".services__table").next(".services__table").find(".controls__item").css("display", "block");
-  })
+  $(".services__table .controls__item").click(function () {
+    $(this)
+      .closest(".services__table")
+      .next(".services__table")
+      .find(".controls__item")
+      .css("display", "block");
+  });
 
   $(".feature-screen__slides-container").slick({
     arrows: true,
@@ -580,7 +590,7 @@ function onDocumentReady() {
     showButtonPanel: true,
     orientation: "bottom",
     beforeShow: function (input, inst) {
-      $('#ui-datepicker-div').addClass("ui-datepicker--filters");
+      $("#ui-datepicker-div").addClass("ui-datepicker--filters");
       window.setTimeout(function () {
         $("#ui-datepicker-div").position({
           my: "top",

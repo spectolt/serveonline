@@ -3,26 +3,42 @@
   display: flex;
   flex-direction: column;
 
+  .title {
+    @include breakpoint(xs) {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+  }
+
   &__top {
     display: flex;
     margin-bottom: 20px;
     flex-wrap: wrap;
 
     @include breakpoint(sm) {
-      flex-direction: column;
-      //align-items: center;
+      margin-bottom: 10px;
     }
   }
 
-  &__restore,
-  &__save {
+  button.controls__restore,
+  button.controls__save,
+  button.controls__print,
+  button.controls__new,
+  button.controls__delete,
+  button.controls__cancel {
     display: flex;
     align-items: center;
 
+    @include breakpoint(sm) {
+      padding: 5px 10px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+
     &:before {
       content: "";
-      width: 20px;
-      height: 20px;
+      width: 18px;
+      height: 18px;
       background-size: contain;
       background-position: center center;
       background-repeat: no-repeat;
@@ -31,6 +47,10 @@
     }
 
     @include breakpoint(sm) {
+      max-width: 220px;
+    }
+
+    @include breakpoint(xs) {
       max-width: 174px;
     }
   }
@@ -42,16 +62,46 @@
     &:before {
       background-image: url("img/icons/restore-orange.svg");
     }
-
-    @include breakpoint(sm) {
-      margin-right: 0;
-      margin-bottom: 10px;
-    }
   }
 
   &__save {
     &:before {
       background-image: url("img/icons/checkmark-white.svg");
+    }
+  }
+
+  &__print {
+    margin-right: 10px;
+
+    &:before {
+      background-image: url("img/icons/printer.svg");
+    }
+  }
+
+  &__new {
+    margin-right: 10px;
+
+    &:before {
+      background-image: url("img/icons/plus.svg");
+    }
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  &__delete {
+    margin-left: auto;
+
+    &:before {
+      background-image: url("img/icons/trash.svg");
+    }
+  }
+
+  &__cancel {
+    margin-left: 10px;
+    &:before {
+      background-image: url("img/icons/message.svg");
     }
   }
 
@@ -106,7 +156,7 @@
       width: calc(100vw - #{"min(54px, 5.1vw)"} - #{"min(100px, 6.9vw)"});
     }
 
-    @include breakpoint(xs) {
+    @include breakpoint(880px) {
       width: auto;
     }
   }
@@ -114,6 +164,8 @@
   &__table {
     border-spacing: 0;
     border-collapse: collapse;
+    height: 1px;
+    margin-bottom: 0;
 
     tr:first-child th:first-child {
       border-top-left-radius: 5px;
@@ -130,6 +182,16 @@
       color: $white;
       height: 60px;
       font-family: "Sen", sans-serif;
+      padding: 10px;
+
+      @include breakpoint(xs) {
+        height: 54px;
+      }
+    }
+
+    tr {
+      height: 100%;
+      width: 100%;
     }
 
     td {
@@ -354,6 +416,67 @@
 }
 
 .services {
+  &__areas-list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    row-gap: 10px;
+    column-gap: 10px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @include breakpoint(xs) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .services__area-div {
+      min-width: 80px;
+      //max-width: 120px;
+
+      .services__area-img {
+        max-width: 100px;
+        position: relative;
+        border-radius: 50%;
+        margin: 0 auto;
+
+        &:after {
+          content: "";
+          display: block;
+          padding-bottom: 100%;
+        }
+
+        img {
+          position: absolute;
+          height: 50%;
+          max-width: 100%;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      h4 {
+        font-family: "Roboto", sans-serif;
+        font-size: 1.125rem;
+        text-align: center;
+        font-weight: 400;
+
+        @include breakpoint(xs) {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .active {
+      .services__area-img {
+        border: 1px solid $darkblue;
+      }
+
+      h4 {
+        font-weight: 600;
+      }
+    }
+  }
+
   &__table {
     thead {
       display: block;
@@ -373,7 +496,7 @@
     }
 
     tbody {
-      max-height: 500px;
+      max-height: 400px;
       overflow-y: auto;
       display: block;
     }
@@ -399,6 +522,92 @@
 
     &:last-of-type {
       max-width: calc(100% - 2 * 16.4% - 37.5%);
+    }
+  }
+
+  .controls__item-content {
+    // max-height: 0;
+    // visibility: hidden;
+    font-size: 0.875rem;
+    background-color: $white;
+    font-weight: 400;
+    border-radius: 5px;
+    border: 2px solid $darkblue;
+    padding: 10px;
+  }
+
+  label {
+    padding: 0 30px 0 0;
+    &:before {
+      border: 1px solid $orange;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      left: auto;
+      right: 0;
+      margin-right: 0;
+    }
+
+    &:after {
+      top: 50%;
+      transform: translate(-50%, -50%);
+      left: auto;
+      right: 6px;
+    }
+  }
+
+  .checkbox input:checked ~ label:before {
+    background-color: $orange;
+  }
+}
+
+.messages {
+  .controls__table-container {
+    border-left: none;
+    border-right: none;
+  }
+  &__table {
+    td {
+      padding: 10px;
+      border: 1px solid $lightgray;
+    }
+
+    tr td:first-child {
+      border-left: none;
+    }
+
+    tr td:last-child {
+      border-right: none;
+    }
+
+    tbody {
+      tr:nth-of-type(2n) {
+        background-color: $darkgray;
+      }
+    }
+  }
+
+  &__text {
+    p {
+      margin: 0;
+      float: left;
+      width: calc(100% - 45px);
+    }
+    button.controls__edit {
+      margin: 0;
+      float: left;
+    }
+  }
+}
+
+.messages-settings {
+  .messages__table {
+    .controls__trash {
+      margin: 0 10px 0 0;
+      float: left;
+    }
+    p {
+      width: calc(100% - 90px);
+      margin-right: 10px;
     }
   }
 }

@@ -416,16 +416,16 @@ section {
 
 .breadcrumbs__more {
     background-color: $darkblue;
-    margin-top: -100%;
+    // margin-top: -100%;
+    max-height: 0;
     position: relative;
     color: $white;
     width: 100%;
-    transition: top .3s ease-in-out;
     z-index: 0;
     opacity: 0;
     border-top: 1px solid $washedblue;
-    padding: 20px 20px;
-    transition: margin-top .3s ease-in-out, opacity .3s ease-in-out;
+    padding: 0 20px;
+    transition: max-height .3s ease-in-out, opacity .3s ease-in-out, padding .3s ease-in-out;
     display: block;
 
     @include breakpoint(xs) {
@@ -510,8 +510,10 @@ section {
 
     &--toggled {
         margin-top: 0;
+        max-height: 300px;
         //display: block;
         opacity: 1;
+        padding: 20px;
 
         @include breakpoint(xs) {
             //padding: 20px 20px;
