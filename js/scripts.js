@@ -445,6 +445,7 @@ function onDocumentReady() {
       moveOrder();
       changeTextWidth();
       changePadding();
+      tableHeight();
       var field = $(document.activeElement);
       if (field.is(".hasDatepicker")) {
         field.datepicker("hide").datepicker("show");
@@ -608,6 +609,7 @@ function onDocumentReady() {
   moveAction();
   moveOrder();
   changePadding();
+  tableHeight();
 
   setTimeout(function () {
     changeTextWidth();
@@ -915,4 +917,13 @@ function imgToSvg() {
     },
     "xml"
   );
+}
+
+function tableHeight() {
+  var $table = $(".controls__table-container");
+  var tableHeight = $(".page-content__wrapper").height() - $("h1.title").outerHeight(true) - $(".controls__top").outerHeight(true) - $(".site-footer").outerHeight() - ($table.outerHeight(true) - $table.outerHeight()) - $("th").outerHeight();
+  if ($(".services__areas-list").length > 0) {
+    tableHeight = tableHeight - $(".services__areas-list").outerHeight();
+  }
+  $table.find("table tbody").css("height", tableHeight);
 }

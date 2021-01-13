@@ -4,6 +4,8 @@
   flex-direction: column;
 
   .title {
+    margin-bottom: 34px;
+
     @include breakpoint(xs) {
       font-size: 1.5rem;
       margin-bottom: 20px;
@@ -151,9 +153,10 @@
     //width: calc(100vw - #{"min(54px, 5.1vw)"} - #{"min(100px, 6.9vw)"} - 300px);
     overflow-x: auto;
     width: 100%;
+    margin-bottom: 40px;
 
     @include breakpoint(xl) {
-      width: calc(100vw - #{"min(54px, 5.1vw)"} - #{"min(100px, 6.9vw)"});
+      width: calc(100vw - #{"min(40px, 2.8vw)"} - #{"min(40px, 2.8vw)"});
     }
 
     @include breakpoint(880px) {
@@ -164,7 +167,7 @@
   &__table {
     border-spacing: 0;
     border-collapse: collapse;
-    height: 1px;
+    height: 35px;
     margin-bottom: 0;
 
     tr:first-child th:first-child {
@@ -299,22 +302,43 @@
     width: 60%;
     min-width: 420px;
 
+    thead, tbody tr {
+      display: table;
+      width: 100%;
+      table-layout: fixed;
+  }
+  
+  tbody {
+      display: block;
+      overflow-y: overlay;
+  }
+
+  table, tr, th, td {
+    border-collapse: collapse;
+}
+
+td {
+  height: 1px;
+}
+
     tr:first-child th:last-child {
       border-right: none;
       border-top-right-radius: 0;
     }
 
-    th {
+    th, td {
       &:first-child {
-        width: 42%;
+        width: 36%;
       }
 
       &:nth-child(2) {
-        width: 10%;
+        width: 20%;
+        min-width: 88px;
       }
 
       &:nth-child(3) {
-        width: 8.14%;
+        width: 10%;
+        min-width: 40px;
       }
     }
 
@@ -374,7 +398,12 @@
         width: 40%;
       }
 
-      tr:first-child th:nth-child(2) {
+      td:first-child {
+        width: 40%
+      };
+
+      tr:first-child th:nth-child(2),
+      td:nth-child(2) {
         width: 60%;
       }
 
@@ -496,7 +525,7 @@
     }
 
     tbody {
-      max-height: 400px;
+      min-height: 400px;
       overflow-y: auto;
       display: block;
     }

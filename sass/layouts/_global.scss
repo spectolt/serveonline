@@ -427,7 +427,7 @@ body {
             }
 
             .select2-selection--single {
-              border: 1px solid $gray;
+              border: 1px solid #afb0b9;
             }
 
             .site-aside__filters {
@@ -492,11 +492,11 @@ body {
 
         .page-content__wrapper {
           width: 100%;
-          padding: 60px #{"min(54px, 5.1%)"} 0 #{"min(100px, 6.9%)"};
+          padding: 40px #{"min(40px, 2.8%)"} 0 #{"min(40px, 2.8%)"};
           margin: 0;
 
           @include breakpoint(880px) {
-            padding: 60px 20px 0;
+            padding: 40px 20px 0;
           }
 
           @include breakpoint(xs) {

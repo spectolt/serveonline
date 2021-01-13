@@ -24,6 +24,13 @@
                 </ul>
             </div>
             <div class="site-aside__block">
+                <h3>Ataskaitos</h3>
+                <ul>
+                    <li><a href="#">Veiklos ataskaita</a></li>
+                    <li><a href="#">Paslaugų teikėjų mokėjimai</a></li>
+                </ul>
+            </div>
+            <div class="site-aside__block">
                 <h3>Nustatymai</h3>
                 <div class="site-aside__item">
                     <a href="#">Darbuotojų profiliai</a>
