@@ -32,9 +32,14 @@
             <button class="site-header__hamburger"></button>
             <img src="../img/logo.svg" class="site-header__logo" alt="" />
             <ul class="site-header__menu site-header__menu--items">
-                <li class="site-header__item site-header__item--active paragraph"><a href="#">Specialistai</a></li>
+                <li class="site-header__item paragraph <?php if ($thisCat == "services") echo "site-header__item--active"; ?>"><a href="#">Specialistai</a></li>
                 <li class="site-header__item paragraph"><a href="#">Įstaigos</a></li>
-                <li class="site-header__item paragraph"><a href="#">Prisijungti</a></li>
+                <?php if ($thisCat == "controls") { ?>
+                <li class="site-header__item paragraph <?php if ($thisCat == "controls") echo "site-header__item--active"; ?>"><a href="#">Valdymas</a></li>
+                <li class="site-header__item paragraph"><a href="#">Mano Serve</a></li>
+
+                <?php } ?>
+                <li class="site-header__item paragraph"><a href="#"><?php if ($thisCat == "controls") echo "Atsijungti"; else echo "Prisijungti" ?></a></li>
             </ul>
             <ul class="site-header__menu site-header__menu--main">
 

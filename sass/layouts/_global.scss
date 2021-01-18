@@ -16,7 +16,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: white;
-  height: auto;
+  height: 100%;
   font-size: 1rem;
   scroll-behavior: smooth;
   cursor: default;
@@ -111,13 +111,14 @@ body {
       display: flex;
       align-items: flex-end;
       justify-content: flex-end;
+      white-space: nowrap;
 
-      @include breakpoint(sm) {
+      @include breakpoint(l) {
         margin: 0;
       }
 
       &--main {
-        @include breakpoint(sm) {
+        @include breakpoint(l) {
           order: 0;
         }
       }
@@ -131,7 +132,7 @@ body {
         background-color: $darkblue;
         flex: 0;
 
-        @include breakpoint(sm) {
+        @include breakpoint(l) {
           margin: 0;
           padding: 18px 0 12px;
           align-items: center;
@@ -169,6 +170,7 @@ body {
       &:nth-last-child(n + 5) ~ li {
         @include breakpoint(xs) {
           font-size: 0.75rem;
+          margin: 0 5px;
         }
       }
 
@@ -195,12 +197,12 @@ body {
             display: block;
           }
 
-          @include breakpoint(sm) {
+          @include breakpoint(l) {
             margin: 0;
           }
         }
 
-        @include breakpoint(sm) {
+        @include breakpoint(l) {
           margin: 0;
         }
       }
@@ -353,6 +355,11 @@ body {
         }
 
         &--controls {
+          .site-aside__block {
+            &:last-of-type {
+              padding-bottom: 70px;
+            }
+          }
           h3 {
             font-family: "Roboto", sans-serif;
             margin: 0 20px 10px;
@@ -430,6 +437,10 @@ body {
               border: 1px solid #afb0b9;
             }
 
+            .select2-selection__placeholder {
+              color: #afb0b9 !important;
+            }
+
             .site-aside__filters {
               margin-left: 20px;
             }
@@ -441,13 +452,10 @@ body {
     .page-content {
       display: flex;
       flex-direction: column;
-      flex: 1;
+      flex: 1 0;
       margin-left: 300px;
       height: 100%;
 
-      @include breakpoint(xl) {
-        justify-content: center;
-      }
       &__wrapper {
         display: flex;
         flex-direction: column;
@@ -522,9 +530,9 @@ body {
       width: 100%;
       margin-top: auto;
 
-      @include breakpoint(xs) {
-        flex-wrap: wrap;
-      }
+      // @include breakpoint(xs) {
+      //   flex-wrap: wrap;
+      // }
     }
   }
 }
@@ -587,6 +595,7 @@ body {
     justify-items: center;
     padding-top: 30px;
     padding-bottom: 50px;
+    flex-wrap: nowrap;
   }
 
   .site-footer {
@@ -610,6 +619,7 @@ body {
         flex-direction: row;
         width: 100%;
         justify-content: space-between;
+        min-height: 14px;
       }
 
       a {

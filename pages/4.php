@@ -1,4 +1,4 @@
-<?php require_once('header.php'); ?>
+<?php $thisCat="services"; $thisPage="specialists"; ?>
 
 <?php
 $pfp = array('../img/1.jpg', '../img/2.jpg', '../img/3.jpg', '../img/4.jpg', '../img/5.jpg');
@@ -9,6 +9,8 @@ $areas = array('Klinikos ir estetinė medicina', 'Odontologijos klinikos', 'Gro�
 $icons = array('../img/icons/clinic.svg', '../img/icons/odontology.svg', '../img/icons/beauty.svg', '../img/icons/spa.svg', '../img/icons/sport.svg', '../img/icons/vet.svg');
 $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2')
 ?>
+
+<?php require_once('header.php'); ?>
 
 <main class="site-main site-main--aside hasUiDatepicker hasUiAutocomplete hasSelect2">
     <?php require_once('product-sidebar.php'); ?>
@@ -154,7 +156,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                                         <div class="product-action__duration">01:00</div>
                                         <div class="product-action__price">45€<strike>60€</strike></div>
                                     </div>
-                                    <button class="button cyan transparent small product-action__order">Užsakyti</button>
+                                    <button class="button cyan transparent small product-action__order">Registruotis</button>
                                 </div>
                             <?php } ?>
                         </div>

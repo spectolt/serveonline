@@ -7,7 +7,7 @@ $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
 ?>
 
 <?php require_once('header.php'); ?>
-<main class="site-main site-main--aside">
+<main class="site-main site-main--aside hasTable">
     <section class="page-content page-content--controls">
         <div class="page-content__wrapper">
             <section class="controls areas">
@@ -83,7 +83,9 @@ $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
                         </thead>
                         <tbody class="hidden">
                             <tr>
-                                <td></td>
+                                <td>
+                                    <button class="controls__edit"></button>
+                                </td>
                                 <td colspan="1">
                                     <button class="controls__add"></button>
                                     <button class="controls__trash"></button>
@@ -92,7 +94,7 @@ $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
                             </tr>
                             <tr class="controls__area areas__area">
                                 <td>
-                                    <p class="controls__item">Gydytojai</p>
+                                    <p class="controls__item controls__item--menu">Gydytojai</p>
                                 </td>
                                 <td>
                                     <p class="controls__item controls__item--profession">Ginekologas</p>
@@ -100,7 +102,7 @@ $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
                             </tr>
                             <tr class="controls__area areas__area">
                                 <td>
-                                    <p class="controls__item">Klinikos</p>
+                                    <p class="controls__item controls__item--menu">Klinikos</p>
                                 </td>
                                 <td>
                                     <p class="controls__item controls__item--profession">Urologas</p>

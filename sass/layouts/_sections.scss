@@ -427,10 +427,6 @@ section {
     padding: 0 20px;
     transition: max-height .3s ease-in-out, opacity .3s ease-in-out, padding .3s ease-in-out;
     display: block;
-
-    @include breakpoint(xs) {
-        padding: 25px 20px 20px;
-    }
     
     ul {
         display: flex;
@@ -516,8 +512,7 @@ section {
         padding: 20px;
 
         @include breakpoint(xs) {
-            //padding: 20px 20px;
-            //margin-top: 9px;
+            padding: 25px 20px 20px;
         }
     }
 }
