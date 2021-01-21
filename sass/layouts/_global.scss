@@ -170,7 +170,19 @@ body {
       &:nth-last-child(n + 5) ~ li {
         @include breakpoint(xs) {
           font-size: 0.75rem;
-          margin: 0 5px;
+          margin: 0 auto;
+
+          &:first-of-type {
+            margin-left: 0;
+          }
+
+          &:last-of-type {
+            margin-right: 0;
+          }
+        }
+
+        @include breakpoint(345px) {
+          font-size: .6rem;
         }
       }
 
@@ -588,6 +600,7 @@ body {
   align-items: center;
   padding: 40px 0;
   border-top: 1px solid $lightgray;
+  position: relative;
 
   @include breakpoint(xs) {
     flex-direction: column;
@@ -596,6 +609,7 @@ body {
     padding-top: 30px;
     padding-bottom: 50px;
     flex-wrap: nowrap;
+    min-height: 200px;
   }
 
   .site-footer {

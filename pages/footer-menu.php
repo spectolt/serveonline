@@ -1,5 +1,6 @@
 
 <footer class="site-footer container <?php if ($thisCat == "controls") echo "site-footer--controls"; ?>">
+<button class="goto-top"></button>
     <img src="../img/logo-sidebar.svg" class="site-footer__logo" />
     <ul class="site-footer__menu">
         <li class="site-footer__item paragraph"><a href="#">Privatumo politika</a></li>
@@ -14,6 +15,4 @@
         </div>
     </div>
 </footer>
-
 </div>
-<button class="goto-top"></button>

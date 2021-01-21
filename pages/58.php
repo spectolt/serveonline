@@ -31,7 +31,7 @@ $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
                                 <th>URL</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody class="controls__table-body">
                             <tr>
                                 <td colspan="4">
                                     <button class="controls__add"></button>
@@ -81,7 +81,7 @@ $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
                                 <th>Profesijos</th>
                             </tr>
                         </thead>
-                        <tbody class="hidden">
+                        <tbody class="controls__table-body hidden">
                             <tr>
                                 <td>
                                     <button class="controls__edit"></button>

@@ -585,10 +585,10 @@ function onDocumentReady() {
     }
   });
 
-  $(".controls__table .controls__item").click(function () {
-    // $(this).parent().next(".controls__item-content").toggleClass("hidden");
-    $(this).css("color", "#fff");
-  });
+  // $(".controls__table .controls__item").click(function () {
+  //   // $(this).parent().next(".controls__item-content").toggleClass("hidden");
+  //   $(this).css("color", "#fff");
+  // });
 
   $(".areas__table .areas__area .controls__item").click(function () {
     $(".areas__table--menu tbody").removeClass("hidden");
@@ -600,8 +600,24 @@ function onDocumentReady() {
       .next(".services__table")
       .find("tbody")
       .removeClass("hidden");
-      console.log($(this).closest(".services__table").next(".services__table").find("tbody"));
+    console.log(
+      $(this).closest(".services__table").next(".services__table").find("tbody")
+    );
   });
+
+  $(document).on("input", "textarea[name='product-description']", function () {
+    $(this).css("height", "5px");
+    $(this).css("height", $(this).prop("scrollHeight"));
+  });
+
+  $(".controls__item--service-title").on("input", function() {
+    if (!$(this).prop('checked')) {
+      console.log( $(this).closest("table").next("table").find(".controls__item input"))
+      $(this).closest("table").next("table").find(".controls__item input").prop('checked', false);
+    } else {
+      alert("m")
+    }
+  })
 
   $(".feature-screen__slides-container").slick({
     arrows: true,
@@ -882,23 +898,35 @@ function gotoTopPosition(el, element) {
   const footer = $("footer");
   const scrollBtn = $(".goto-top");
   var distanceFromBottom;
-  if (el == document) {
-    distanceFromBottom = Math.floor(
-      $(el).height() - $(el).scrollTop() - $(window).height()
-    );
-    if (distanceFromBottom <= footer.outerHeight()) {
-      scrollBtn.css("bottom", footer.outerHeight() - distanceFromBottom + 40);
-    } else {
-      scrollBtn.css("bottom", 40);
+  if (window.matchMedia("(max-width: 600px)").matches) {
+    if (scrollBtn.offset().top + scrollBtn.height() >= footer.offset().top - 10) {
+      var rightPos = 40 - footer.offset().left + "px";
+      console.log(footer.offset().left)
+      scrollBtn.css({ position: "absolute", right: rightPos, top: "-45px" });
     }
+    if ($(document).scrollTop() + window.innerHeight < footer.offset().top)
+      scrollBtn.css({ position: "fixed", right: "40px", top: "auto" });
   } else {
-    distanceFromBottom = Math.floor(
-      $(el).prop("scrollHeight") - $(el).scrollTop() - $(window).height()
-    );
-    if (distanceFromBottom <= footer.outerHeight()) {
-      scrollBtn.css("bottom", footer.outerHeight() - distanceFromBottom);
+    if (el == document) {
+      distanceFromBottom = Math.floor(
+        $(el).height() - $(el).scrollTop() - $(window).height()
+      );
+      if (distanceFromBottom <= footer.outerHeight()) {
+        scrollBtn.css("bottom", footer.outerHeight() - distanceFromBottom + 40);
+      } else if (distanceFromBottom <= 0) {
+        scrollBtn.css("bottom", footer.outerHeight() + 40);
+      } else {
+        scrollBtn.css("bottom", 40);
+      }
     } else {
-      scrollBtn.css("bottom", 40);
+      distanceFromBottom = Math.floor(
+        $(el).prop("scrollHeight") - $(el).scrollTop() - $(window).height()
+      );
+      if (distanceFromBottom <= footer.outerHeight()) {
+        scrollBtn.css("bottom", footer.outerHeight() - distanceFromBottom);
+      } else {
+        scrollBtn.css("bottom", 40);
+      }
     }
   }
 }

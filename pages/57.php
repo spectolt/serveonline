@@ -14,12 +14,12 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
             <section class="controls services">
                 <h1 class="title">Paslaugos</h1>
                 <div class="services__areas-list">
-                    <?php for ($y = 0; $y < 6; $y++) {?>
-                        <div class="services__area-div <?php if ($y == 2) echo "active"?>">
-                        <div class="services__area-img" style="background-color: <?php echo "$colors[$y]" ?>">
-                            <img src=<?php echo "$icons[$y]" ?>>
+                    <?php for ($y = 0; $y < 6; $y++) { ?>
+                        <div class="services__area-div <?php if ($y == 2) echo "active" ?>">
+                            <div class="services__area-img" style="background-color: <?php echo "$colors[$y]" ?>">
+                                <img src=<?php echo "$icons[$y]" ?>>
+                            </div>
                         </div>
-                    </div>
                     <?php } ?>
                 </div>
                 <div class="controls__top">
@@ -117,19 +117,20 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                             </tr>
                         </thead>
                         <tbody class="hidden">
-                            <tr>
+                            <tr class="fixed-row">
                                 <td colspan="1" class="controls__buttons">
                                     <button class="controls__add"></button>
                                     <button class="controls__trash"></button>
                                     <button class="controls__edit"></button>
-                                    <h4>Jei paslauga neužsakoma,<br/>nuimkite varnelę</h4>
+                                    <h4>Jei paslauga neužsakoma,<br />nuimkite varnelę</h4>
                                 </td>
                             </tr>
                             <tr class="controls__area areas__area">
                                 <td>
-                                    <div class="checkbox controls__item controls__item--title">
-                                        <input name="distance" type="checkbox" id="product_1" checked/>
-                                        <label for="product_1">Visų plaukų dažymas sruogelėmis</label>
+                                    <div class="checkbox controls__item controls__item--title controls__item--service-title">
+                                        <p>Visų plaukų dažymas sruogelėmis</p>
+                                        <input name="product" type="checkbox" id="product_1" checked />
+                                        <label for="product_1"></label>
                                     </div>
                                     <div class="controls__item-content">
                                         Aromatherapy Associates eterinių aliejų masažas, tai
@@ -152,9 +153,10 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                             </tr>
                             <tr class="controls__area areas__area">
                                 <td>
-                                    <div class="checkbox controls__item controls__item--title">
-                                        <input name="distance" type="checkbox" id="product_2" checked/>
-                                        <label for="product_2">Visų plaukų dažymas sruogelėmis</label>
+                                    <div class="checkbox controls__item controls__item--title controls__item--service-title">
+                                        <p>Visų plaukų dažymas sruogelėmis</p>
+                                        <input name="product" type="checkbox" id="product_2" checked />
+                                        <label for="product_2"></label>
                                     </div>
                                     <div class="controls__item-content">
                                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
@@ -163,12 +165,25 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                             </tr>
                             <tr class="controls__area areas__area">
                                 <td>
-                                    <div class="checkbox controls__item controls__item--title">
-                                        <input name="distance" type="checkbox" id="product_3" checked/>
-                                        <label for="product_3">Visų plaukų dažymas sruogelėmis</label>
+                                    <div class="checkbox controls__item controls__item--title controls__item--service-title">
+                                        <p>Visų plaukų dažymas sruogelėmis</p>
+                                        <input name="product" type="checkbox" id="product_3" checked />
+                                        <label for="product_3"></label>
                                     </div>
                                     <div class="controls__item-content">
                                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="controls__area areas__area">
+                                <td>
+                                    <div class="checkbox controls__item controls__item--title controls__item--service-title">
+                                        <input type="text" name="product-title" placeholder="Paslaugos pavadinimas">
+                                        <input name="product" type="checkbox" id="product_4" checked />
+                                        <label for="product_4"></label>
+                                    </div>
+                                    <div class="controls__item-content">
+                                    <textarea type="text" name="product-description" placeholder="Paslaugos aprašymas" rows="1"></textarea>
                                     </div>
                                 </td>
                             </tr>
@@ -186,30 +201,33 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                                     <button class="controls__add"></button>
                                     <button class="controls__trash"></button>
                                     <button class="controls__edit"></button>
-                                    <h4>Jei paslauga neužsakoma,<br/>nuimkite varnelę</h4>
+                                    <h4>Jei paslauga neužsakoma,<br />nuimkite varnelę</h4>
                                 </td>
                             </tr>
                             <tr class="controls__area areas__area">
                                 <td>
                                     <div class="checkbox controls__item controls__item--title">
-                                        <input name="distance" type="checkbox" id="detail_1" checked/>
-                                        <label for="detail_1">Trumpi plaukai</label>
+                                        <p>Trumpi plaukai</p>
+                                        <input name="distance" type="checkbox" id="detail_1" checked />
+                                        <label for="detail_1"></label>
                                     </div>
                                 </td>
                             </tr>
                             <tr class="controls__area areas__area">
                                 <td>
-                                <div class="checkbox controls__item controls__item--title">
-                                        <input name="distance" type="checkbox" id="detail_2" checked/>
-                                        <label for="detail_2">Vidutinio ilgio plaukai</label>
+                                    <div class="checkbox controls__item controls__item--title">
+                                        <p>Vidutinio ilgio plaukai</p>
+                                        <input name="distance" type="checkbox" id="detail_2" checked />
+                                        <label for="detail_2"></label>
                                     </div>
                                 </td>
                             </tr>
                             <tr class="controls__area areas__area">
                                 <td>
-                                <div class="checkbox controls__item controls__item--title">
-                                        <input name="distance" type="checkbox" id="detail_3" checked/>
-                                        <label for="detail_3">Ilgi plaukai</label>
+                                    <div class="checkbox controls__item controls__item--title">
+                                        <p>Ilgi plaukai</p>   
+                                        <input name="distance" type="checkbox" id="detail_3" checked />
+                                        <label for="detail_3"></label>
                                     </div>
                                 </td>
                             </tr>
