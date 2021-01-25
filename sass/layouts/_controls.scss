@@ -365,7 +365,7 @@
     tbody {
       display: block;
       overflow-y: auto;
-      min-height: 200px;
+      min-height: 150px;
     }
 
     table,
@@ -636,7 +636,7 @@
     tbody {
       display: block;
       overflow-y: auto;
-      min-height: 200px;
+      min-height: 150px;
     }
 
     table,
@@ -689,6 +689,12 @@
     height: 100%;
     font-size: inherit;
     font-weight: inherit;
+  }
+
+  input[name="product-title"] {
+    @include breakpoint(xs) {
+      font-size: .75rem;
+    }
   }
 
   .controls__item {

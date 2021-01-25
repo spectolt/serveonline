@@ -9346,7 +9346,7 @@ section.product .product__block-recommend {
 .areas__table tbody {
   display: block;
   overflow-y: auto;
-  min-height: 200px;
+  min-height: 150px;
 }
 
 .areas__table table,
@@ -9638,7 +9638,7 @@ section.product .product__block-recommend {
 .services__table tbody {
   display: block;
   overflow-y: auto;
-  min-height: 200px;
+  min-height: 150px;
 }
 
 .services__table table,
@@ -9690,6 +9690,12 @@ section.product .product__block-recommend {
   height: 100%;
   font-size: inherit;
   font-weight: inherit;
+}
+
+@media (max-width: 600px) {
+  .services input[name="product-title"] {
+    font-size: .75rem;
+  }
 }
 
 .services .controls__item {

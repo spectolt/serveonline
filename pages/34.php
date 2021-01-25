@@ -110,7 +110,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                             </tr>
                         </tbody>
                     </table>
-                    <table class="controls__table services__table">
+                    <table class="controls__table services__table services__table--service-title">
                         <thead>
                             <tr>
                                 <th>Paslaugos pavadinimas</th>
