@@ -1,5 +1,6 @@
 
 <footer class="site-footer container site-footer--homepage">
+<button class="goto-top"></button>
     <img src="../img/serve-online-horizontal-white-logo.svg" class="site-footer__logo" />
     <ul class="site-footer__menu">
         <li class="site-footer__item paragraph"><a href="#">Privatumo politika</a></li>
@@ -16,4 +17,3 @@
 </footer>
 
 </div>
-<button class="goto-top"></button>

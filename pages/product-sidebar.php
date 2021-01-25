@@ -17,10 +17,6 @@
                     <input name="distance" type="radio" id="distance_asc" class="" value="asc" checked/>
                     <label for="distance_asc">Arčiausiai nuo manęs</label>
                 </div>
-                <div class="radio">
-                    <input name="distance" type="radio" id="distance_desc" class="" value="desc" />
-                    <label for="distance_desc">Toliausiai nuo manęs</label>
-                </div>
             </div>
 
             <div class="site-aside__block">

@@ -442,11 +442,19 @@ section.product {
           line-height: 1.5;
         }
 
+        @include breakpoint(xxs) {
+          font-size: .75rem;
+        }
+
         h2 {
           font-weight: 600;
           line-height: 30px;
           word-spacing: 999999px;
           margin: 0;
+
+          @include breakpoint(xxs) {
+            font-size: 1rem;
+          }
         }
 
         span {
@@ -460,7 +468,7 @@ section.product {
 
         p {
           margin: 0;
-          font-size: 14px;
+          // font-size: 14px;
         }
 
         a {

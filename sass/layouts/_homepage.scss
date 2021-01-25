@@ -215,6 +215,10 @@
         font-size: 0.9375rem;
         font-family: "Roboto", sans-serif;
         margin-bottom: 0;
+
+        @include breakpoint(xxs) {
+          font-size: .875rem;
+        }
       }
     }
   }
@@ -246,7 +250,7 @@
       overflow: hidden;
     }
 
-    @include breakpoint(400px) {
+    @include breakpoint(450px) {
       display: none;
     }
 

@@ -897,14 +897,19 @@ setInterval(function () {
 function gotoTopPosition(el, element) {
   const footer = $("footer");
   const scrollBtn = $(".goto-top");
+  var rightPos;
   var distanceFromBottom;
   if (window.matchMedia("(max-width: 600px)").matches) {
-    if (scrollBtn.offset().top + scrollBtn.height() >= footer.offset().top - 10) {
-      var rightPos = 40 - footer.offset().left + "px";
+    if (scrollBtn.offset().top + scrollBtn.height() >= footer.offset().top + 45) {
+      if (el == document) {
+      rightPos = 40 - footer.offset().left + "px";
+      } else {
+        rightPos = 24 - footer.offset().left + "px";
+      }
       console.log(footer.offset().left)
-      scrollBtn.css({ position: "absolute", right: rightPos, top: "-45px" });
+      scrollBtn.css({ position: "absolute", right: rightPos, top: "30px" });
     }
-    if ($(document).scrollTop() + window.innerHeight < footer.offset().top)
+    if ($(document).scrollTop() + window.innerHeight < footer.offset().top + 95)
       scrollBtn.css({ position: "fixed", right: "40px", top: "auto" });
   } else {
     if (el == document) {
@@ -985,6 +990,8 @@ function tableHeight() {
     if ($(".services__areas-list").length > 0 && tableHeight > 100) {
       tableHeight = tableHeight - $(".services__areas-list").outerHeight();
       $table.find("table tbody").css("height", tableHeight);
+      $(".services__table tbody .fixed-row").parent().css("height", "auto");
+      $(".services__table tbody .fixed-row").parent().css("min-height", "0");
     } else if (tableHeight > 200) {
       $table.find("table tbody").css("height", tableHeight);
     }

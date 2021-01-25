@@ -47,6 +47,10 @@
       background-repeat: no-repeat;
       display: block;
       margin-right: 10px;
+
+      @include breakpoint(xs) {
+        margin-right: 5px;
+      }
     }
 
     @include breakpoint(sm) {
@@ -168,7 +172,7 @@
     }
 
     @include breakpoint(880px) {
-      width: auto;
+      // width: auto;
     }
   }
 
@@ -257,7 +261,7 @@
 
   &__area {
     &:last-of-type > td {
-      padding: 5px 5px 30px 20px;
+      padding-bottom: 30px;
     }
   }
 
@@ -524,27 +528,30 @@
 }
 
 .services {
+  position: relative;
+
+  .title {
+    line-height: 1;
+  }
   &__areas-list {
-    // display: inline-grid;
-    // grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
-    // grid-template-columns: repeat(auto-fit, 100px);
-    // row-gap: 10px;
-    // column-gap: 10px;
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
     margin-bottom: 20px;
-    margin-right: -30px;
+    margin-right: -20px;
+    position: absolute;
+    right: 0;
 
-    @include breakpoint(xs) {
-      grid-template-columns: repeat(3, 1fr);
+    @include breakpoint(880px) {
+      // grid-template-columns: repeat(3, 1fr);
+      position: relative;
     }
 
     .services__area-div {
-      min-width: 60px;
+      min-width: 43px;
       //max-width: 120px;
       margin-bottom: 10px;
-      margin-right: 30px;
+      margin-right: 20px;
 
       // @include breakpoint(xs) {
       //   min-width: 80px;
@@ -680,6 +687,8 @@
     color: inherit;
     resize: none;
     height: 100%;
+    font-size: inherit;
+    font-weight: inherit;
   }
 
   .controls__item {

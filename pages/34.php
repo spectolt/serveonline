@@ -117,7 +117,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                             </tr>
                         </thead>
                         <tbody class="hidden">
-                            <tr class="fixed-row">
+                        <tr class="fixed-row">
                                 <td colspan="1" class="controls__buttons">
                                     <button class="controls__add"></button>
                                     <button class="controls__trash"></button>
@@ -125,6 +125,8 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                                     <h4>Jei paslauga neužsakoma,<br />nuimkite varnelę</h4>
                                 </td>
                             </tr>
+                        </tbody>
+                        <tbody class="hidden">
                             <tr class="controls__area areas__area">
                                 <td>
                                     <div class="checkbox controls__item controls__item--title controls__item--service-title">
