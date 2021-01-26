@@ -526,6 +526,17 @@ body {
         }
       }
 
+      &--company {
+        margin: 0 auto;
+        max-width: 1200px;
+
+        .page-content__wrapper {
+          margin: 0;
+          width: 100%;
+          padding: 0 40px;
+        }
+      }
+
       &--messages {
         .site-footer {
           margin-top: 0;

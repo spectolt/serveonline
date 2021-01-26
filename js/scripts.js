@@ -655,6 +655,37 @@ function onDocumentReady() {
     },
   });
 
+  $("button.js-create-group").one("click", function() {
+    $(this).parent().append('<input type="text" class="group-name" name="group-name" placeholder="Grupės pavadinimas">');
+  });
+
+  var count = 0;
+  $("button.js-create-company").on("click", function() {
+    count += 1;
+    $(this).next(".company__items").append('<div class="company__item"> \
+    <h3>Įmonė '+ count +'</h3> \
+    <div class="company__inputs-container company__inputs-companies">\
+        <input type="text" name="title" placeholder="Pavadinimas">\
+        <input type="text" name="name" placeholder="Vardas Pavardė">\
+        <input type="text" name="phone" placeholder="+370 XXXXXX">\
+        <input type="text" name="email" placeholder="Elektroninis paštas">\
+        <h4>Teisės</h4>\
+        <div class="checkbox">\
+            <input name="rights" type="checkbox" id="rights1" class="" value="1" />\
+            <label for="rights1">Gali matyti tik savo įmonę</label>\
+        </div>\
+        <div class="checkbox">\
+            <input name="rights" type="checkbox" id="rights2" class="" value="1" />\
+            <label for="rights2">Gali matyti grupę</label>\
+        </div>\
+    </div>\
+</div>')
+
+    if (!$("input[name='group-name']").length) {
+      $(this).off("click");
+    }
+  });
+
   moveAction();
   moveOrder();
   changePadding();
@@ -995,26 +1026,30 @@ function tableHeight() {
     $(".controls__top").outerHeight(true) -
     $(".site-footer").outerHeight() -
     $("th").outerHeight();
-  if (window.matchMedia("(min-width: 600px)").matches) {
+  // if (window.matchMedia("(min-width: 600px)").matches) {
     if ($(".services__areas-list").length > 0 && tableHeight > 100) {
+      if (window.matchMedia("(min-width: 880px)").matches) {
       tableHeight = tableHeight - $(".services__areas-list").outerHeight();
+      }
       $table.find("table tbody").css("height", tableHeight);
       $(".services__table tbody .fixed-row").parent().css("height", "auto");
       $(".services__table tbody .fixed-row").parent().css("min-height", "0");
     } else if (tableHeight > 200) {
       $table.find("table tbody").css("height", tableHeight);
     }
-  } else if (window.matchMedia("(max-width: 600px)").matches) {
+  // } else
+  if (window.matchMedia("(max-width: 600px)").matches) {
     var mainTableHeight = $(".areas__table--main tbody").outerHeight();
     $(".areas__table--menu tbody").css("height", mainTableHeight);
     $(".services__table tbody .fixed-row").parent().css("height", "auto");
     $(".services__table tbody .fixed-row").parent().css("min-height", "0");
   }
 
-  $(".fixed-row").parent().removeClass("hidden");
-  $table.find(".services__table--service-title tbody").last().css({"height": tableHeight - $(".fixed-row").parent().outerHeight(true)})
+  $(".fixed-row").parent().css({'position':'absolute','visibility':'hidden', 'display':'block'});
+  // $table.find(".services__table--service-title tbody").last().css({"height": tableHeight - $(".fixed-row").parent().outerHeight(true)})
+  $table.find("tbody").last().css({"height": tableHeight - $(this).find(".fixed-row").parent().outerHeight(true)})
   console.log(tableHeight)
-  $(".fixed-row").parent().addClass("hidden");
+  $(".fixed-row").parent().css({'position':'','visibility':'', 'display':''});
 }
 
 (function ($) {

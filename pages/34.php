@@ -40,13 +40,15 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <tr class="fixed-row">
                                 <td colspan="1" class="controls__buttons">
                                     <button class="controls__add"></button>
                                     <button class="controls__trash"></button>
                                     <button class="controls__edit"></button>
                                 </td>
                             </tr>
+                        </tbody>
+                        <tbody>
                             <tr class="controls__area areas__area">
                                 <td>
                                     <p class="controls__item controls__item--title">Plaukų priežiūra</p>
@@ -71,13 +73,15 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                             </tr>
                         </thead>
                         <tbody class="hidden">
-                            <tr>
+                            <tr class="fixed-row">
                                 <td colspan="1" class="controls__buttons">
                                     <button class="controls__add"></button>
                                     <button class="controls__trash"></button>
                                     <button class="controls__edit"></button>
                                 </td>
                             </tr>
+                        </tbody>
+                        <tbody class="hidden">
                             <tr class="controls__area areas__area">
                                 <td>
                                     <p class="controls__item controls__item--title">Kirpimai moterims</p>
@@ -127,6 +131,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                             </tr>
                         </tbody>
                         <tbody class="hidden">
+                            <?php for ($i = 0; $i < 10; $i++) { ?>
                             <tr class="controls__area areas__area">
                                 <td>
                                     <div class="checkbox controls__item controls__item--title controls__item--service-title">
@@ -153,36 +158,12 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                                     </div>
                                 </td>
                             </tr>
-                            <tr class="controls__area areas__area">
-                                <td>
-                                    <div class="checkbox controls__item controls__item--title controls__item--service-title">
-                                        <p>Visų plaukų dažymas sruogelėmis</p>
-                                        <input name="product" type="checkbox" id="product_2" checked />
-                                        <label for="product_2"></label>
-                                    </div>
-                                    <div class="controls__item-content">
-                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="controls__area areas__area">
-                                <td>
-                                    <div class="checkbox controls__item controls__item--title controls__item--service-title">
-                                        <p>Visų plaukų dažymas sruogelėmis</p>
-                                        <input name="product" type="checkbox" id="product_3" checked />
-                                        <label for="product_3"></label>
-                                    </div>
-                                    <div class="controls__item-content">
-                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="controls__area areas__area">
+                            <?php } ?>
                                 <td>
                                     <div class="checkbox controls__item controls__item--title controls__item--service-title">
                                         <input type="text" name="product-title" placeholder="Paslaugos pavadinimas">
-                                        <input name="product" type="checkbox" id="product_4" checked />
-                                        <label for="product_4"></label>
+                                        <input name="product" type="checkbox" id="product_input" checked />
+                                        <label for="product_input"></label>
                                     </div>
                                     <div class="controls__item-content">
                                     <textarea type="text" name="product-description" placeholder="Paslaugos aprašymas" rows="1"></textarea>
@@ -198,7 +179,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                             </tr>
                         </thead>
                         <tbody class="hidden">
-                            <tr>
+                            <tr class="fixed-row">
                                 <td colspan="1" class="controls__buttons">
                                     <button class="controls__add"></button>
                                     <button class="controls__trash"></button>
@@ -206,6 +187,8 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                                     <h4>Jei paslauga neužsakoma,<br />nuimkite varnelę</h4>
                                 </td>
                             </tr>
+                        </tbody>
+                        <tbody class="hidden">
                             <tr class="controls__area areas__area">
                                 <td>
                                     <div class="checkbox controls__item controls__item--title">

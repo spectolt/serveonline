@@ -7162,6 +7162,17 @@ body {
   }
 }
 
+.site-main--aside .page-content--company {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.site-main--aside .page-content--company .page-content__wrapper {
+  margin: 0;
+  width: 100%;
+  padding: 0 40px;
+}
+
 .site-main--aside .page-content--messages .site-footer {
   margin-top: 0;
 }
@@ -9563,6 +9574,12 @@ section.product .product__block-recommend {
   margin-right: 20px;
 }
 
+@media (max-width: 600px) {
+  .services__areas-list .services__area-div {
+    margin-right: 10px;
+  }
+}
+
 .services__areas-list .services__area-div .services__area-img {
   max-width: 100px;
   position: relative;
@@ -10711,5 +10728,237 @@ section.product .product__block-recommend {
   .site-footer--homepage .site-footer__langs-items a {
     text-align: center;
   }
+}
+
+.company h3 {
+  margin: 0 0 10px;
+  font-size: 1.875rem;
+}
+
+.company input {
+  padding-left: 50px;
+}
+
+.company input[name="name"] {
+  background: url("./img/icons/user.svg") no-repeat scroll 10px 7px;
+}
+
+.company input[name="title"] {
+  background: url("./img/icons/building.svg") no-repeat scroll 10px 9px;
+}
+
+.company input[name="phone"] {
+  background: url("./img/icons/phone.svg") no-repeat scroll 10px 8px;
+}
+
+.company input[name="email"] {
+  background: url("./img/icons/envelope.svg") no-repeat scroll 10px 9px;
+}
+
+.company input[name="address"] {
+  background: url("./img/icons/marker.svg") no-repeat scroll 10px 8px;
+}
+
+.company__header {
+  background-color: #f4f4f6;
+  width: 100vw;
+  position: relative;
+  left: calc(50% - 50vw);
+  padding: 60px 40px 0;
+  -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.49);
+          box-shadow: 0 2px 3px rgba(0, 0, 0, 0.49);
+}
+
+.company__header-content {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.company__header h2 {
+  margin: 0;
+  margin-bottom: 40px;
+  font-weight: bold;
+  font-size: 3.75rem;
+}
+
+.company__header ul.company__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.company__header ul.company__nav li {
+  list-style: none;
+  margin-right: 30px;
+  padding-bottom: 10px;
+  font-family: "Sen", sans-serif;
+}
+
+.company__header ul.company__nav li.active {
+  border-bottom: 3px solid #101b51;
+  font-weight: 600;
+}
+
+.company__inputs-container {
+  padding: 20px 20px 0;
+  border: 1px solid #e8e8e8;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+}
+
+.company__info {
+  padding-top: 45px;
+}
+
+.company__info input {
+  width: auto;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.company__info input:last-of-type {
+  margin-right: 0;
+}
+
+.company__info input[name="name"] {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 100%;
+          flex: 1 0 100%;
+}
+
+.company__info input[name="email"] {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.company__info input[name="address"] {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.company__group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 40px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.company__group button {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  margin-right: 30px;
+  padding-left: 50px;
+  position: relative;
+  width: 168px;
+}
+
+.company__group button:before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 22px;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: inline-block;
+  background-image: url("img/icons/building.svg");
+  left: 10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.company__group input {
+  padding-left: 50px;
+  margin-right: 20px;
+  background: url("./img/icons/building.svg") no-repeat scroll 10px 8px;
+}
+
+.company__companies {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 40px 0;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.company__companies button {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  width: 168px;
+  margin-right: 30px;
+  padding-left: 50px;
+  position: relative;
+}
+
+.company__companies button:before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 22px;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: inline-block;
+  background-image: url("img/icons/building.svg");
+  left: 10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.company__companies .company__inputs-companies {
+  margin-bottom: 40px;
+}
+
+.company__companies .company__inputs-companies input {
+  margin-bottom: 20px;
+  margin-right: 30px;
+  width: auto;
+}
+
+.company__companies .company__inputs-companies input[name="title"] {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+}
+
+.company__companies .company__inputs-companies input[name="name"] {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.company__companies .company__inputs-companies input[name="email"] {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.company__companies .company__inputs-companies h4 {
+  width: 100%;
+  margin: 0 0 10px;
+  font-weight: 400;
+  font-size: 1.25rem;
+}
+
+.company__companies .company__inputs-companies .checkbox {
+  margin-right: 40px;
+  margin-bottom: 20px;
 }
 /*# sourceMappingURL=style.css.map */

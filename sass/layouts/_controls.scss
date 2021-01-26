@@ -553,9 +553,9 @@
       margin-bottom: 10px;
       margin-right: 20px;
 
-      // @include breakpoint(xs) {
-      //   min-width: 80px;
-      // }
+      @include breakpoint(xs) {
+        margin-right: 10px;
+      }
 
       .services__area-img {
         max-width: 100px;
