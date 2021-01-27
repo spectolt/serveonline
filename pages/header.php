@@ -16,7 +16,7 @@
 
 <body>
     <div id="page">
-        <?php if ($thisCat != "company") { ?>
+        <?php if ($thisCat != "company" && $thisCat != "controls") { ?>
             <div class="search-container">
                 <form class="search-panel">
                     <input type="text" name="search" placeholder="Specialistas, įstaiga, įmonių grupė..." />
@@ -27,6 +27,13 @@
                         <button type="button" class="search-container__submit"><span>Ieškoti</span></button>
                     </div>
                 </div>
+                <button type="button" class="search-container__close"></button>
+            </div>
+        <?php } else if ($thisCat == "controls") { ?>
+            <div class="search-container">
+                <form class="search-panel">
+                    <input type="text" name="search" placeholder="Paieška" />
+                </form>
                 <button type="button" class="search-container__close"></button>
             </div>
         <?php } ?>

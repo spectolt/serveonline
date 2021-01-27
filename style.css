@@ -1131,7 +1131,7 @@ select {
           justify-content: center;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 991px) {
   .search-container .search-panel {
     height: calc(112.2px / 2);
     width: 100%;
@@ -1206,7 +1206,7 @@ select {
   display: block;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 991px) {
   .search-container__close {
     top: 30px;
   }
@@ -1245,7 +1245,7 @@ select {
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 991px) {
   .search-container__submit {
     padding: 15px;
     right: 12px;
@@ -1313,7 +1313,7 @@ select {
   padding: 22px 20px;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 991px) {
   .search-container.search-container--toggled input[name="search"] {
     padding: 0 80px 0 20px;
   }
@@ -1334,7 +1334,7 @@ select {
   top: 0;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 991px) {
   .search-container .search-product {
     min-height: calc(112.2px / 2);
     width: 100%;
@@ -1369,7 +1369,7 @@ select {
   padding-bottom: 20px;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 991px) {
   .search-container .ui-autocomplete .ui-autocomplete-wrapper {
     width: 100%;
   }
@@ -1443,7 +1443,7 @@ select {
   background-color: #d7d7d9;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 991px) {
   #ui-id-2 {
     width: calc(100vw - (100vw - 100%)) !important;
     -webkit-box-shadow: 22px 28px 34px 0px rgba(16, 27, 81, 0.43) !important;
@@ -1608,7 +1608,7 @@ select {
   position: relative;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 991px) {
   .product__search--header {
     min-height: calc(112.2px / 2);
     border-top: 1px solid #e8e8e8;
@@ -1648,6 +1648,12 @@ select {
 @media (max-width: 1180px) {
   .product__search--header input {
     padding-right: 100px;
+  }
+}
+
+@media (max-width: 991px) {
+  .product__search--header input {
+    padding-left: 10px;
   }
 }
 

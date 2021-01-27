@@ -80,7 +80,7 @@
     align-items: center;
     position: relative;
 
-    @include breakpoint(sm) {
+    @include breakpoint(l) {
       min-height: calc(112.2px / 2);
       border-top: 1px solid $lightgray;
       border-left: none;
@@ -112,6 +112,10 @@
 
       @include breakpoint(xl) {
         padding-right: 100px;
+      }
+
+      @include breakpoint(l) {
+        padding-left: 10px;
       }
 
       @include breakpoint(sm) {
