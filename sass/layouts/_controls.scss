@@ -171,8 +171,8 @@
       width: calc(100vw - #{"min(40px, 2.8vw)"} - #{"min(40px, 2.8vw)"});
     }
 
-    @include breakpoint(880px) {
-      // width: auto;
+    @include breakpoint(xs) {
+      width: 100%;
     }
   }
 

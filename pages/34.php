@@ -64,6 +64,16 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                                     <p class="controls__item controls__item--title">Pėdų priežiūra</p>
                                 </td>
                             </tr>
+                            <tr class="controls__area areas__area">
+                                <td>
+                                    <p class="controls__item controls__item--title">Veido priežiūra</p>
+                                </td>
+                            </tr>
+                            <tr class="controls__area areas__area">
+                                <td>
+                                    <p class="controls__item controls__item--title">Kūno priežiūra</p>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="controls__table services__table">
@@ -159,6 +169,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                                 </td>
                             </tr>
                             <?php } ?>
+                            <tr class="controls__area">
                                 <td>
                                     <div class="checkbox controls__item controls__item--title controls__item--service-title">
                                         <input type="text" name="product-title" placeholder="Paslaugos pavadinimas">

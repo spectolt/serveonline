@@ -9171,6 +9171,12 @@ section.product .product__block-recommend {
   }
 }
 
+@media (max-width: 600px) {
+  .controls__table-container {
+    width: 100%;
+  }
+}
+
 .controls__table {
   border-spacing: 0;
   border-collapse: collapse;

@@ -1018,38 +1018,29 @@ function imgToSvg() {
   );
 }
 
-function tableHeight() {
-  var $table = $(".controls__table-container");
-  var tableHeight =
-    $(".page-content__wrapper").height() -
-    $("h1.title").outerHeight(true) -
-    $(".controls__top").outerHeight(true) -
-    $(".site-footer").outerHeight() -
-    $("th").outerHeight();
-  // if (window.matchMedia("(min-width: 600px)").matches) {
-    if ($(".services__areas-list").length > 0 && tableHeight > 100) {
-      if (window.matchMedia("(min-width: 880px)").matches) {
-      tableHeight = tableHeight - $(".services__areas-list").outerHeight();
-      }
-      $table.find("table tbody").css("height", tableHeight);
-      $(".services__table tbody .fixed-row").parent().css("height", "auto");
-      $(".services__table tbody .fixed-row").parent().css("min-height", "0");
-    } else if (tableHeight > 200) {
-      $table.find("table tbody").css("height", tableHeight);
-    }
-  // } else
+function tableHeight(el) {
+  var $table = $(".controls__table");
+  var tablePos;
+  $table.each(function() {
+    var $wrap = $("<div />").appendTo($(this));
+    $wrap.css({
+        "position":   "absolute !important",
+        "visibility": "hidden !important",
+        "display":    "block !important"
+    });
+
+    $clone = $(this).find(".fixed-row").clone().appendTo($wrap);
+    console.log($clone.height())
+    tablePos = $(".controls__table-container").offset().top + $("th").outerHeight() + $clone.height() + 16;
+    $wrap.remove();
+    $(this).find("tbody").css("height", "calc(100vh - " + tablePos + "px)");
+  })
   if (window.matchMedia("(max-width: 600px)").matches) {
     var mainTableHeight = $(".areas__table--main tbody").outerHeight();
     $(".areas__table--menu tbody").css("height", mainTableHeight);
-    $(".services__table tbody .fixed-row").parent().css("height", "auto");
-    $(".services__table tbody .fixed-row").parent().css("min-height", "0");
   }
-
-  $(".fixed-row").parent().css({'position':'absolute','visibility':'hidden', 'display':'block'});
-  // $table.find(".services__table--service-title tbody").last().css({"height": tableHeight - $(".fixed-row").parent().outerHeight(true)})
-  $table.find("tbody").last().css({"height": tableHeight - $(this).find(".fixed-row").parent().outerHeight(true)})
-  console.log(tableHeight)
-  $(".fixed-row").parent().css({'position':'','visibility':'', 'display':''});
+  $(".services__table tbody .fixed-row").parent().css("height", "auto");
+  $(".services__table tbody .fixed-row").parent().css("min-height", "0");
 }
 
 (function ($) {
