@@ -38,6 +38,12 @@
       height: calc(107.4px / 2);
     }
 
+    &--wide {
+      width: 100%;
+      padding-right: 200px;
+      z-index: 0;
+    }
+
     input[name="search"] {
       padding: 44px 20px 0 20px;
       font-size: 1.7vw;

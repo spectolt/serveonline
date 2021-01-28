@@ -8,7 +8,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
 ?>
 
 <?php require_once('header.php'); ?>
-<main class="site-main site-main--aside hasTable">
+<main class="site-main site-main--aside hasTable hasUiAutocomplete">
     <section class="page-content page-content--controls">
         <div class="page-content__wrapper">
             <section class="controls services">

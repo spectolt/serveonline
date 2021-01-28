@@ -31,9 +31,10 @@
             </div>
         <?php } else if ($thisCat == "controls") { ?>
             <div class="search-container">
-                <form class="search-panel">
+                <form class="search-panel search-panel--wide">
                     <input type="text" name="search" placeholder="Paieška" />
                 </form>
+                <button type="button" class="search-container__submit"><span>Ieškoti</span></button>
                 <button type="button" class="search-container__close"></button>
             </div>
         <?php } ?>

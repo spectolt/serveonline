@@ -30,13 +30,16 @@ function onDocumentReady() {
     $(".search-container__submit").click(function () {
       $(".ui-autocomplete").fadeOut(300);
       if (
+        $("input#search-product").length &&
         $("input#search-product").val().length ||
         $(".search-panel input").val().length
       ) {
         if ($(this).find("span").html() == "Ieškoti") {
           $(this).find("span").html("Valyti");
           $(this).addClass("change-search-icon");
-          $(".search-clean").css("display", "flex");
+          if (!$("main.hasTable").length > 0) {
+            $(".search-clean").css("display", "flex");
+          }
         } else {
           $(this).find("span").html("Ieškoti");
           $(".product-header-chosen").fadeOut(300);
@@ -655,15 +658,17 @@ function onDocumentReady() {
     },
   });
 
+  var $group = $('<input type="text" class="group-name" name="group-name" placeholder="Grupės pavadinimas">');
+
   $("button.js-create-group").one("click", function() {
-    $(this).parent().append('<input type="text" class="group-name" name="group-name" placeholder="Grupės pavadinimas">');
+    $(this).parent().append($group);
   });
 
-  var count = 0;
+  var count = 1;
   $("button.js-create-company").on("click", function() {
     count += 1;
-    $(this).next(".company__items").append('<div class="company__item"> \
-    <h3>Įmonė '+ count +'</h3> \
+    var $company = $('<div class="company__item"> \
+    <h3>'+ count + ' Įmonė</h3> \
     <div class="company__inputs-container company__inputs-companies">\
         <input type="text" name="title" placeholder="Pavadinimas">\
         <input type="text" name="name" placeholder="Vardas Pavardė">\
@@ -679,11 +684,33 @@ function onDocumentReady() {
             <label for="rights2">Gali matyti grupę</label>\
         </div>\
     </div>\
-</div>')
+    </div>');
+    $(this).next(".company__items").append($company);
 
     if (!$("input[name='group-name']").length) {
-      $(this).off("click");
+      $("button.js-create-group").parent().append($group);
     }
+  });
+
+  function formatOpt (opt) {
+    if (!opt.id) {
+      return opt.text;
+  }               
+  var optimage = $(opt.element).data('image'); 
+  if(!optimage){
+      return opt.text;
+  } else {                    
+      var $opt = $(
+          '<span><img src="' + optimage + '" class="select-icons" /> ' + opt.text + '</span>'
+      );
+      return $opt;
+  }
+  };
+  
+  $(".company__select").select2({
+    templateResult: formatOpt,
+    templateSelection: formatOpt,
+    minimumResultsForSearch: Infinity
   });
 
   moveAction();

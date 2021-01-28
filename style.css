@@ -1144,6 +1144,12 @@ select {
   }
 }
 
+.search-container .search-panel--wide {
+  width: 100%;
+  padding-right: 200px;
+  z-index: 0;
+}
+
 .search-container .search-panel input[name="search"] {
   padding: 44px 20px 0 20px;
   font-size: 1.7vw;
@@ -10813,8 +10819,16 @@ section.product .product__block-recommend {
   font-weight: 600;
 }
 
+.company__container {
+  margin: 45px 0 40px;
+  border: 1px solid #e8e8e8;
+  border-bottom: none;
+  border-radius: 5px;
+  padding: 25px 20px 0;
+}
+
 .company__inputs-container {
-  padding: 20px 20px 0;
+  padding: 20px 0 0 20px;
   border: 1px solid #e8e8e8;
   border-radius: 5px;
   display: -webkit-box;
@@ -10823,10 +10837,6 @@ section.product .product__block-recommend {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   width: 100%;
-}
-
-.company__info {
-  padding-top: 45px;
 }
 
 .company__info input {
@@ -10843,12 +10853,6 @@ section.product .product__block-recommend {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 100%;
           flex: 1 0 100%;
-}
-
-.company__info input[name="email"] {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
 }
 
 .company__info input[name="address"] {
@@ -10903,7 +10907,7 @@ section.product .product__block-recommend {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 40px 0;
+  margin: 40px 0 0;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
@@ -10939,10 +10943,14 @@ section.product .product__block-recommend {
   margin-bottom: 40px;
 }
 
-.company__companies .company__inputs-companies input {
+.company__companies .company__inputs-companies input, .company__companies .company__inputs-companies .select2 {
   margin-bottom: 20px;
-  margin-right: 30px;
+  margin-right: 20px;
   width: auto;
+}
+
+.company__companies .company__inputs-companies .select2 {
+  width: 100%;
 }
 
 .company__companies .company__inputs-companies input[name="title"] {
@@ -10972,5 +10980,34 @@ section.product .product__block-recommend {
 .company__companies .company__inputs-companies .checkbox {
   margin-right: 40px;
   margin-bottom: 20px;
+}
+
+.company__button-container {
+  width: calc(100% + 40px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 -20px;
+}
+
+.company__button-container button {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.company__button-container button:first-of-type {
+  border-radius: 0 0 0 5px;
+}
+
+.company__button-container button:last-of-type {
+  border-radius: 0 0 5px 0;
+}
+
+.select-icons {
+  max-width: 20px;
+  max-height: 20px;
+  vertical-align: middle;
+  display: inline-block;
 }
 /*# sourceMappingURL=style.css.map */
