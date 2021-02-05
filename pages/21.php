@@ -8,7 +8,7 @@
                 <div class="company__header">
                     <div class="company__header-content">
                         <div class="company__header-top">
-                            <h2>GRUPĖS PAVADINIMAS</h2>
+                            <h2>PAVADINIMAS</h2>
                             <button class="button darkblue">Publikuoti</button>
                         </div>
                         <ul class="company__nav">

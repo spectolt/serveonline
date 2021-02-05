@@ -92,8 +92,8 @@
                         </select>
                     </div>
                     <div class="checkbox">
-                        <input name="feature" type="checkbox" id="feature-1" class="" value="1" />
-                        <label for="feature-1"></label>
+                        <input name="feature" type="checkbox" id="feature-2" class="" value="1" />
+                        <label for="feature-2"></label>
                     </div>
                 </div>
                 <div class="company__button-container">
@@ -142,8 +142,8 @@
                             </select>
                         </div>
                         <div class="checkbox">
-                            <input name="feature" type="checkbox" id="feature-1" class="" value="1" />
-                            <label for="feature-1"></label>
+                            <input name="feature" type="checkbox" id="feature-3" class="" value="1" />
+                            <label for="feature-3"></label>
                         </div>
                     </div>
                 </div>
@@ -171,8 +171,8 @@
                             </select>
                         </div>
                         <div class="checkbox">
-                            <input name="feature" type="checkbox" id="feature-1" class="" value="1" />
-                            <label for="feature-1"></label>
+                            <input name="feature" type="checkbox" id="feature-4" class="" value="1" />
+                            <label for="feature-4"></label>
                         </div>
                     </div>
                 </div>
@@ -200,8 +200,8 @@
                             </select>
                         </div>
                         <div class="checkbox">
-                            <input name="feature" type="checkbox" id="feature-1" class="" value="1" />
-                            <label for="feature-1"></label>
+                            <input name="feature" type="checkbox" id="feature-5" class="" value="1" />
+                            <label for="feature-5"></label>
                         </div>
                     </div>
                 </div>

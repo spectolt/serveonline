@@ -9585,6 +9585,10 @@ section.product .product__block-recommend {
   padding: 7.5px 0;
 }
 
+.areas__table--main {
+  border-right: 1px solid #eee;
+}
+
 .areas__table--main thead {
   border-top-right-radius: 0;
 }

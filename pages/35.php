@@ -52,7 +52,7 @@ $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
                                     <td>
                                         <p class="controls__item controls__item--title"><?php echo $areas[$y] ?></p>
                                     </td>
-                                    <td class="controls__menu-title">
+                                    <td class="controls__menu-title hidden-visibility">
                                         <?php if ($y == 0) { ?>
                                             <p class="controls__item controls__item--menu">Gydytojai</p>
                                         <?php } else if ($y == 1) { ?>

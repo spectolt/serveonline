@@ -617,6 +617,7 @@ function onDocumentReady() {
 
   $(".areas__table .areas__area .controls__item").click(function () {
     $(".areas__table--menu tbody").removeClass("hidden");
+    $(".areas__table--main tbody tr td").removeClass("hidden-visibility");
   });
 
   $(".services__table .controls__item").click(function () {
@@ -706,10 +707,18 @@ function onDocumentReady() {
     if ($("input.group-name").length == 0) {
       $(".company__header h2").html($("input.company-name").val());
       if ($("input.company-name").val().length == 0) {
-        $(".company__header h2").html("GRUPĖS PAVADINIMAS");
+        $(".company__header h2").html("PAVADINIMAS");
       }
     }
   });
+
+  var companyName = $("input[name='company']:checked").next("label").html();
+  $(".company__header--company h2").html(companyName);
+
+  $("input[name='company']").on("change", function() {
+    companyName = $(this).next("label").html();
+    $(".company__header--company h2").html(companyName);
+  })
 
   var count = 1;
   $("button.js-create-company").on("click", function () {
