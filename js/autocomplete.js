@@ -101,7 +101,7 @@ $("#search")
       return $("<li>")
         .append(
           "<div class='autocomplete-product autocomplete-product--choices'>" +
-            "<span class='autocomplete-product-expand'></span>" +
+            "<span class='product-expand'></span>" +
             "<span class='autocomplete-product-title'>" +
             item.title +
             "<button class='autocomplete-product-button'>Plačiau</button></span><span class='autocomplete-product-desc paragraph hidden'>" +
@@ -165,7 +165,7 @@ $(document).on("click", ".autocomplete-product-button", function () {
   $(this).html($(this).html() == "Uždaryti" ? "Plačiau" : "Uždaryti");
 });
 
-$(document).on("click", ".autocomplete-product-expand", function () {
+$(document).on("click", ".product-expand", function () {
   $(this)
     .siblings(".autocomplete-product--choice, .autocomplete-product-duration")
     .toggleClass("hidden");

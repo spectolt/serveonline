@@ -1,0 +1,219 @@
+<section class="company__tab hidden" id="paslaugos">
+    <div class="company__info company__services">
+        <div class="company__aside">
+            <?php $cats = array(
+                'Plaukų priežiūra',
+                'Rankų priežiūra',
+                'Pėdų priežiūra',
+                'Veido priežiūra',
+                'Kūno priežiūra'
+            );
+            foreach ($cats as $k => $c) { ?>
+                <div class="checkbox-wrapper">
+                    <div class="radio">
+                        <input name="services" type="radio" id="s<?php echo $k; ?>" class="" value="1" />
+                        <label for="s<?php echo $k; ?>"><?php echo $c; ?></label>
+                    </div>
+                    <div class="checkbox-children">
+                        <div class="radio">
+                            <input name="service[]" type="radio" id="s<?php echo $k; ?>1" class="" value="1" />
+                            <label for="s<?php echo $k; ?>1">Moterims</label>
+                        </div>
+                        <div class="radio">
+                            <input name="service[]" type="radio" id="s<?php echo $k; ?>2" class="" value="1" />
+                            <label for="s<?php echo $k; ?>2">Vyrams</label>
+                        </div>
+                        <div class="radio">
+                            <input name="service[]" type="radio" id="s<?php echo $k; ?>3" class="" value="1" />
+                            <label for="s<?php echo $k; ?>3">Vaikams</label>
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
+        </div>
+        <div class="company__services-blocks hidden">
+            <h4 class="company__services-notice">Sužymėkite paslaugas atliekamos Jūsų įstaigoje ir jos atsiras <b>Serve Professionals</b> sistemoje</h4>
+            <div class="company__services-block">
+                <h4>Paprastas kirpimas <span class="more-button">Plačiau</span></h4>
+                <p class="more-description hidden">Galvos plovimas, modelinis kirpimas, dieninis sušukavimas.</p>
+                <div class="company__features">
+                    <div class="time-inputs-container">
+                        <div class="time-inputs disabled">
+                            <input type="number" name="hour" placeholder="00" min="0" max="23" disabled>
+                            <p>:</p>
+                            <input type="number" name="minute" placeholder="00" min="0" max="59" disabled>
+                        </div>
+                    </div>
+                    <div class="discount-inputs">
+                        <input type="text" name="before-discount" placeholder="0€" disabled>
+                        <p>Kaina po nuolaidos: </p>
+                        <input type="text" name="after-discount" placeholder="0€" disabled>
+                    </div>
+                    <div class="periodicity-inputs">
+                        <p>Periodiškumas: </p>
+                        <input type="number" name="periodicity" placeholder="0" disabled>
+                        <select class="company__select">
+                            <option selected>sav.</option>
+                            <option>d.</option>
+                        </select>
+                    </div>
+                    <div class="checkbox">
+                        <input name="feature" type="checkbox" id="feature-1" class="" value="1" />
+                        <label for="feature-1"></label>
+                    </div>
+                </div>
+                <div class="company__button-container">
+                    <button class="cyan small">Užsakoma</button>
+                    <button class="cyan transparent small">Neužsakoma</button>
+                </div>
+            </div>
+            <div class="company__services-block">
+                <h4>Paprastas kirpimas <span class="more-button">Plačiau</span></h4>
+                <p class="more-description hidden">Galvos plovimas, modelinis kirpimas, dieninis sušukavimas.</p>
+                <div class="company__features">
+                    <div class="time-inputs-container">
+                        <div class="time-inputs disabled">
+                            <input type="number" name="hour" placeholder="00" min="0" max="23" disabled>
+                            <p>:</p>
+                            <input type="number" name="minute" placeholder="00" min="0" max="59" disabled>
+                        </div>
+                    </div>
+                    <div class="discount-inputs">
+                        <input type="text" name="before-discount" placeholder="0€" disabled>
+                        <p>Kaina po nuolaidos: </p>
+                        <input type="text" name="after-discount" placeholder="0€" disabled>
+                    </div>
+                    <div class="periodicity-inputs">
+                        <p>Periodiškumas: </p>
+                        <input type="number" name="periodicity" placeholder="0" disabled>
+                        <select class="company__select">
+                            <option selected>sav.</option>
+                            <option>d.</option>
+                        </select>
+                    </div>
+                    <div class="checkbox">
+                        <input name="feature" type="checkbox" id="feature-1" class="" value="1" />
+                        <label for="feature-1"></label>
+                    </div>
+                </div>
+                <div class="company__button-container">
+                    <button class="cyan transparent small">Užsakoma</button>
+                    <button class="cyan small">Neužsakoma</button>
+                </div>
+            </div>
+            <div class="company__services-block company__services-block--choices">
+                <h4>Balayage / Ombre dažymas <span class="more-button">Plačiau</span></h4>
+                <span class="product-expand"></span>
+                <p class="more-description hidden">
+                    Konsultacija. Dažymui atlikti nenaudojamos jokios pagalbinės priemonės. Jų nereikia todėl, kad siekiama išgauti ypatingą sruogų formą, kuri primena natūraliai nušviesėjusias sruogas. Dažai ant plaukų tepami laisvai rankomis, švelniai braukiant per plaukus. Dažniausiai nėra naudojama ir folija, bet yra visokių technikų.
+                </p>
+                <p class="more-description hidden">
+                    Plaukų sruogos dažomos laisvai, dažymo šepetėliu tapšnojant per pasirinktas plaukų sruogas, stengiamasi, kad viršuje jos būtų siauresnės, o į apačią išplatėtų. Dažoma taip, kad krentant plaukų sruogoms, dažytos vietos atrodytų kuo natūraliau - tarsi nubučiuotos saulės. Žinoma, tam, kad būtų tinkamai išgautas natūralus efektas Jums dažymą turėtų atlikti įgudusi plaukų stilistė.
+                <p class="more-description hidden">
+                    Plaukų dažymas balayage technika suteikia daugybę privalumų. Plaukai yra daug mažiau pažeidžiami, kadangi šviesinama tik dalis plaukų, bet to, parenkami tonai, kurie nenutolsta per daug nuo Jūsų natūralios plaukų spalvos. Dažniausiai tai būna keliais tonais šviesesni atspalviai. Žinoma, visada yra ir išimčių, kartais parenkamos labai kontrastingos spalvos, bet jos atrodo pakankamai natūraliai dėl pačios dažymo technikos. Dažymui naudojami tik profesionalūs dažai, kurie ne tik padeda išgauti norimą atspalvį, bet ir apsaugo plaukus nuo stipresnių pažeidimų. Plaukai išliks sveikai atrodantys ir gyvybingi.
+                </p>
+                <p class="more-description hidden">
+                    Dažant plaukus balayage technika pas kirpėją lankysitės tikrai daug rečiau - juk priešingai nei pilnu sruogų dažymu nuo šaknų, šiuo atveju nesimatys kiek plaukai nuaugo. Jei Jūsų plaukų galai yra išplonėję, balayage dažymas Jums suteiks apimties. Kadangi šviesesni plaukų galai atrodys pilnesni bei puresni. Balayage technika gražiausiai atrodo ilgaplaukėms, bet puikiai tiks ir toms, kurios turi trumpesnius plaukus.
+                </p>
+                <p class="more-description hidden">
+                    Paslaugos kaina gali keistis pagal sunaudotų dažų kiekį.
+                </p>
+                <div class="product-choice hidden">
+                    <h4>Trumpi plaukai</h4>
+                    <div class="company__features">
+                        <div class="time-inputs-container">
+                            <div class="time-inputs disabled">
+                                <input type="number" name="hour" placeholder="00" min="0" max="23" disabled>
+                                <p>:</p>
+                                <input type="number" name="minute" placeholder="00" min="0" max="59" disabled>
+                            </div>
+                        </div>
+                        <div class="discount-inputs">
+                            <input type="text" name="before-discount" placeholder="0€" disabled>
+                            <p>Kaina po nuolaidos: </p>
+                            <input type="text" name="after-discount" placeholder="0€" disabled>
+                        </div>
+                        <div class="periodicity-inputs">
+                            <p>Periodiškumas: </p>
+                            <input type="number" name="periodicity" placeholder="0" disabled>
+                            <select class="company__select">
+                                <option selected>sav.</option>
+                                <option>d.</option>
+                            </select>
+                        </div>
+                        <div class="checkbox">
+                            <input name="feature" type="checkbox" id="feature-1" class="" value="1" />
+                            <label for="feature-1"></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-choice hidden">
+                    <h4>Vidutinio ilgio plaukai</h4>
+                    <div class="company__features">
+                        <div class="time-inputs-container">
+                            <div class="time-inputs disabled">
+                                <input type="number" name="hour" placeholder="00" min="0" max="23" disabled>
+                                <p>:</p>
+                                <input type="number" name="minute" placeholder="00" min="0" max="59" disabled>
+                            </div>
+                        </div>
+                        <div class="discount-inputs">
+                            <input type="text" name="before-discount" placeholder="0€" disabled>
+                            <p>Kaina po nuolaidos: </p>
+                            <input type="text" name="after-discount" placeholder="0€" disabled>
+                        </div>
+                        <div class="periodicity-inputs">
+                            <p>Periodiškumas: </p>
+                            <input type="number" name="periodicity" placeholder="0" disabled>
+                            <select class="company__select">
+                                <option selected>sav.</option>
+                                <option>d.</option>
+                            </select>
+                        </div>
+                        <div class="checkbox">
+                            <input name="feature" type="checkbox" id="feature-1" class="" value="1" />
+                            <label for="feature-1"></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-choice hidden">
+                    <h4>Ilgi plaukai</h4>
+                    <div class="company__features">
+                        <div class="time-inputs-container">
+                            <div class="time-inputs disabled">
+                                <input type="number" name="hour" placeholder="00" min="0" max="23" disabled>
+                                <p>:</p>
+                                <input type="number" name="minute" placeholder="00" min="0" max="59" disabled>
+                            </div>
+                        </div>
+                        <div class="discount-inputs">
+                            <input type="text" name="before-discount" placeholder="0€" disabled>
+                            <p>Kaina po nuolaidos: </p>
+                            <input type="text" name="after-discount" placeholder="0€" disabled>
+                        </div>
+                        <div class="periodicity-inputs">
+                            <p>Periodiškumas: </p>
+                            <input type="number" name="periodicity" placeholder="0" disabled>
+                            <select class="company__select">
+                                <option selected>sav.</option>
+                                <option>d.</option>
+                            </select>
+                        </div>
+                        <div class="checkbox">
+                            <input name="feature" type="checkbox" id="feature-1" class="" value="1" />
+                            <label for="feature-1"></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="company__button-container">
+                    <button class="cyan transparent small">Užsakoma</button>
+                    <button class="cyan small">Neužsakoma</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="company__button-container">
+        <button class="orange transparent">Atšaukti pakeitimus</button>
+        <button class="orange">Saugoti pakeitimus</button>
+    </div>
+</section>

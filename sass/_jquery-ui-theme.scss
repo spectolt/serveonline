@@ -1017,22 +1017,22 @@ a.ui-button:active,
     width: 100%;
     overflow-y: auto;
     overflow-x: hidden;
-	position: relative;
-	
-	@include breakpoint(xs) {
-	@supports (-webkit-touch-callout: none) {
-		/* CSS specific to iOS devices */ 
-		max-height: 40vh;
-	 }
-	}
+    position: relative;
+
+    @include breakpoint(xs) {
+      @supports (-webkit-touch-callout: none) {
+        /* CSS specific to iOS devices */
+        max-height: 40vh;
+      }
+    }
   }
 
   li.ui-menu-item {
-	padding: 0 30px;
-	
-	@include breakpoint(xs) {
-		padding: 0;
-	}
+    padding: 0 30px;
+
+    @include breakpoint(xs) {
+      padding: 0;
+    }
 
     &:hover,
     &:focus {
@@ -1071,8 +1071,8 @@ a.ui-button:active,
     transition: background-color 0.3s ease-in-out;
 
     @include breakpoint(xs) {
-	  padding: 10px;
-	  border-radius: 0;
+      padding: 10px;
+      border-radius: 0;
     }
 
     &:hover {
@@ -1096,7 +1096,7 @@ a.ui-button:active,
     margin: 30px 0 20px 50px;
 
     @include breakpoint(xs) {
-     // margin: 30px 0 10px 0;
+      // margin: 30px 0 10px 0;
       font-size: 1.125rem;
     }
   }
@@ -1110,41 +1110,41 @@ a.ui-button:active,
     margin: 30px 0 20px 50px;
 
     @include breakpoint(xs) {
-	  margin-bottom: 10px;
-	  margin-top: 20px;
-	  margin-left: 10px;
+      margin-bottom: 10px;
+      margin-top: 20px;
+      margin-left: 10px;
       font-size: 1rem;
     }
   }
 
   .ui-autocomplete &-choose {
-	width: 100%;
-	font-size: 1.5rem;
-	border-radius: 0 0 5px 5px;
-	font-family: 'Sen', sans-serif;
-	
-	@include breakpoint(xs) {
-		font-size: 1rem;
-	}
+    width: 100%;
+    font-size: 1.5rem;
+    border-radius: 0 0 5px 5px;
+    font-family: "Sen", sans-serif;
+
+    @include breakpoint(xs) {
+      font-size: 1rem;
+    }
   }
 
   &-choose-text {
     position: absolute;
     top: 30px;
     right: 30px;
-	color: $red;
-	font-family: 'Sen', sans-serif;
-	margin: 0;
+    color: $red;
+    font-family: "Sen", sans-serif;
+    margin: 0;
 
     @include breakpoint(xs) {
-	  position: relative;
-	  display: inline-block;
-	  right: 0;
-	  left: 10px;
-	  top: 20px;
-	  font-size: 1rem;
-	  margin-top: 0;
-	  margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+      right: 0;
+      left: 10px;
+      top: 20px;
+      font-size: 1rem;
+      margin-top: 0;
+      margin-bottom: 20px;
     }
   }
 }
@@ -1177,12 +1177,12 @@ a.ui-button:active,
         transform: translateY(-50%);
         right: 0;
         left: auto;
-		margin: 0;
-	  }
-	  
-	  &:before {
-		background-color: $white;
-	  }
+        margin: 0;
+      }
+
+      &:before {
+        background-color: $white;
+      }
 
       &:after {
         right: 3px;
@@ -1213,13 +1213,13 @@ a.ui-button:active,
     margin-left: 25px;
     font-weight: 600;
     background-color: transparent;
-	padding: 0;
-	font-size: 1rem;
-	
-	@include breakpoint(xs) {
-		margin-left: 10px;
-		font-size: .75rem;
-	}
+    padding: 0;
+    font-size: 1rem;
+
+    @include breakpoint(xs) {
+      margin-left: 10px;
+      font-size: 0.75rem;
+    }
   }
 
   &-desc {
@@ -1255,21 +1255,6 @@ a.ui-button:active,
     }
   }
 
-  &-expand {
-    position: absolute;
-    right: 20px;
-    top: 15px;
-    display: block;
-    width: 15px;
-    height: 9px;
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-image: url("img/icons/angle-down-bold.svg");
-    transition: transform 0.3s ease-in-out;
-	cursor: pointer;
-  }
-
   &--choices {
     padding: 10px 0 0;
 
@@ -1287,6 +1272,21 @@ a.ui-button:active,
     padding: 10px 20px;
     //   display: none;
   }
+}
+
+.product-expand {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  display: block;
+  width: 15px;
+  height: 9px;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("img/icons/angle-down-bold.svg");
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 .ui-datepicker {

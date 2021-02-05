@@ -30,8 +30,8 @@ function onDocumentReady() {
     $(".search-container__submit").click(function () {
       $(".ui-autocomplete").fadeOut(300);
       if (
-        $("input#search-product").length &&
-        $("input#search-product").val().length ||
+        ($("input#search-product").length &&
+          $("input#search-product").val().length) ||
         $(".search-panel input").val().length
       ) {
         if ($(this).find("span").html() == "Ieškoti") {
@@ -323,8 +323,26 @@ function onDocumentReady() {
     dropdownCssClass: "select2-dropdown--controls",
   });
 
-  $(".checkbox-wrapper>.checkbox input").on("change", function () {
-    $(this).closest(".checkbox-wrapper").toggleClass("toggled");
+  $(".checkbox-wrapper>.checkbox input, .checkbox-wrapper>.radio input").on(
+    "change",
+    function () {
+      $(this).closest(".checkbox-wrapper").toggleClass("toggled");
+    }
+  );
+
+  $(".checkbox-wrapper .radio input").on("change", function () {
+    $(this)
+      .closest(".checkbox-wrapper")
+      .siblings()
+      .find("input")
+      .prop("checked", false);
+    if ($(this).closest(".checkbox-children").length > 0) {
+      $(this)
+        .closest(".checkbox-wrapper")
+        .find(".radio input")
+        .first()
+        .prop("checked", true);
+    }
   });
 
   $(".site-header .site-header__item--search, .search-container__close").click(
@@ -518,6 +536,10 @@ function onDocumentReady() {
       .closest("tr")
       .find(".controls__item")
       .css("background-color", color);
+    if ($(this).closest("tr").find("p").hasClass("controls__item--menu")) {
+      $(this).closest("tr").find("p.controls__item--menu").css("background-color", "#101b51");
+
+    }
   });
 
   $(".color-input").on("input", function () {
@@ -545,7 +567,7 @@ function onDocumentReady() {
     }
   });
 
-  $(".controls__languages li").click(function () {
+  $(".languages li").click(function () {
     $(this).addClass("active");
     $(this).siblings().removeClass("active");
   });
@@ -658,64 +680,311 @@ function onDocumentReady() {
     },
   });
 
-  var $group = $('<input type="text" class="group-name" name="group-name" placeholder="Grupės pavadinimas">');
+  var $group = $(
+    '<div class="company__info">\
+  <h3>Grupės savininkas</h3>\
+  <div class="company__inputs-container company__inputs-group-owner">\
+      <input type="text" class="group-name" name="group-name" placeholder="Grupės pavadinimas">\
+      <input type="text" name="name" placeholder="Vardas Pavardė">\
+      <input type="text" name="phone" placeholder="+370 XXXXXX">\
+      <input type="text" name="email" placeholder="Elektroninis paštas">\
+      <input type="text" name="address" placeholder="Adresas">\
+      <button class="company__trash company__trash--group"></button>\
+  </div>\
+</div>'
+  );
 
-  $("button.js-create-group").one("click", function() {
-    $(this).parent().append($group);
+  $("button.js-create-company").one("click", function () {
+    $(".company__group")
+      .removeClass("hidden")
+      .append($group)
+      .css({ "margin-left": $("button.js-create-company").outerWidth(true) });
+    $(".company__header h2").html("GRUPĖS PAVADINIMAS");
+  });
+
+  $("input.company-name").on("input", function () {
+    if ($("input.group-name").length == 0) {
+      $(".company__header h2").html($("input.company-name").val());
+      if ($("input.company-name").val().length == 0) {
+        $(".company__header h2").html("GRUPĖS PAVADINIMAS");
+      }
+    }
   });
 
   var count = 1;
-  $("button.js-create-company").on("click", function() {
+  $("button.js-create-company").on("click", function () {
     count += 1;
-    var $company = $('<div class="company__item"> \
-    <h3>'+ count + ' Įmonė</h3> \
+    var $company = $(
+      '<div class="company__item"> \
+    <h3>' +
+        count +
+        ' Įmonės vadovas</h3> \
     <div class="company__inputs-container company__inputs-companies">\
-        <input type="text" name="title" placeholder="Pavadinimas">\
+    <select class="company__select">\
+    <option></option>\
+        <option data-image="../img/icons/clinic.svg">Klinikos ir estetinė medicina</option>\
+        <option data-image="../img/icons/odontology.svg">Odontologijos klinikos</option>\
+        <option data-image="../img/icons/beauty.svg">Grožio salonai ir kirpyklos</option>\
+        <option data-image="../img/icons/spa.svg">SPA ir masažo salonai</option>\
+        <option data-image="../img/icons/sport.svg">Sportas ir reabilitacija</option>\
+        <option data-image="../img/icons/vet.svg">Veterinarijos klinikos</option>\
+      </select>\
+        <input type="text" class="company-name" name="title" placeholder="Pavadinimas">\
         <input type="text" name="name" placeholder="Vardas Pavardė">\
         <input type="text" name="phone" placeholder="+370 XXXXXX">\
         <input type="text" name="email" placeholder="Elektroninis paštas">\
         <h4>Teisės</h4>\
-        <div class="checkbox">\
-            <input name="rights" type="checkbox" id="rights1" class="" value="1" />\
-            <label for="rights1">Gali matyti tik savo įmonę</label>\
+        <div class="radio">\
+            <input name="rights' +
+        count +
+        '" type="radio" id="rights-company' +
+        count +
+        '" class="" value="1" checked/>\
+            <label for="rights-company' +
+        count +
+        '">Gali matyti tik savo įmonę</label>\
         </div>\
-        <div class="checkbox">\
-            <input name="rights" type="checkbox" id="rights2" class="" value="1" />\
-            <label for="rights2">Gali matyti grupę</label>\
+        <div class="radio">\
+            <input name="rights' +
+        count +
+        '" type="radio" id="rights-group' +
+        count +
+        '" class="" value="1" />\
+            <label for="rights-group' +
+        count +
+        '">Gali matyti grupę</label>\
         </div>\
+        <button class="company__trash"></button>\
     </div>\
-    </div>');
+    </div>'
+    );
     $(this).next(".company__items").append($company);
 
-    if (!$("input[name='group-name']").length) {
-      $("button.js-create-group").parent().append($group);
+    $(".company__select").select2({
+      templateResult: formatOpt,
+      templateSelection: formatOpt,
+      minimumResultsForSearch: Infinity,
+      placeholder:
+        "<img src='../img/icons/clinic.svg' class='select-icons'>\
+        <img src='../img/icons/odontology.svg' class='select-icons'>\
+        <img src='../img/icons/beauty.svg' class='select-icons'>\
+        <img src='../img/icons/spa.svg' class='select-icons'>\
+        <img src='../img/icons/sport.svg' class='select-icons'>\
+        <img src='../img/icons/vet.svg' class='select-icons'>",
+      escapeMarkup: function (markup) {
+        return markup;
+      },
+    });
+    if ($("input.group-name").length > 0) {
+      $(document).on("input", "input.group-name", function () {
+        $(".company__header h2").html($("input.group-name").val());
+        if ($("input.group-name").val().length == 0) {
+          $(".company__header h2").html("GRUPĖS PAVADINIMAS");
+        }
+      });
     }
   });
 
-  function formatOpt (opt) {
-    if (!opt.id) {
-      return opt.text;
-  }               
-  var optimage = $(opt.element).data('image'); 
-  if(!optimage){
-      return opt.text;
-  } else {                    
-      var $opt = $(
-          '<span><img src="' + optimage + '" class="select-icons" /> ' + opt.text + '</span>'
-      );
-      return $opt;
-  }
-  };
-  
   $(".company__select").select2({
     templateResult: formatOpt,
     templateSelection: formatOpt,
-    minimumResultsForSearch: Infinity
+    minimumResultsForSearch: Infinity,
+    placeholder:
+      "<img src='../img/icons/clinic.svg' class='select-icons'>\
+    <img src='../img/icons/odontology.svg' class='select-icons'>\
+    <img src='../img/icons/beauty.svg' class='select-icons'>\
+    <img src='../img/icons/spa.svg' class='select-icons'>\
+    <img src='../img/icons/sport.svg' class='select-icons'>\
+    <img src='../img/icons/vet.svg' class='select-icons'>",
+    escapeMarkup: function (markup) {
+      return markup;
+    },
+  });
+
+  $(".time-inputs input[type='number']").on("input", function () {
+    var maxLength = 2;
+    if ($(this).val().length > maxLength) {
+      this.value = this.value.slice(0, this.maxLength);
+    } else if ($(this).val().length == maxLength) {
+      if ($(this).attr("name") == "hour") {
+        $(this).siblings("input").focus().select();
+      }
+      // else {
+      //   $(this).closest("td").next("td").find("input[name='hour']").focus().select();
+      // }
+    }
+  });
+  $(".time-inputs input[type='number']").on("blur", function () {
+    if (this.value.length == 1) {
+      this.value = "0" + this.value;
+    }
+  });
+
+  $(".time-inputs input[name='minute']").on("click", function () {
+    if ($(this).siblings("input[name='hour']").val().length == 0) {
+      $(this).blur();
+      $(this).siblings("input[name='hour']").focus().select();
+    }
+  });
+
+  $(".sortable").sortable({
+    tolerance: "pointer",
+    helper: "clone",
+    sort: function (event, ui) {
+      var $target = $(event.target);
+      if (!/html|body/i.test($target.offsetParent()[0].tagName)) {
+        var top =
+          event.pageY -
+          $target.offsetParent().offset().top -
+          ui.helper.outerHeight(true) / 2;
+        ui.helper.css({ top: top + "px" });
+      }
+    },
+  });
+  $(".sortable").disableSelection();
+
+  $(".company__specialist-activate").on("click", function () {
+    if ($(this).html() == "Deaktyvuoti") {
+      $(this).html("Aktyvuoti");
+      $(this).addClass("transparent");
+    } else {
+      $(this).html("Deaktyvuoti");
+      $(this).removeClass("transparent");
+    }
+  });
+
+  $(".company__services-block button").on("click", function () {
+    $(this).toggleClass("transparent");
+    $(this).siblings("button").toggleClass("transparent");
+  });
+
+  $(".more-button").on("click", function () {
+    if ($(this).html() == "Plačiau") {
+      $(this).html("Uždaryti");
+    } else {
+      $(this).html("Plačiau");
+    }
+    $(this).parent().siblings(".more-description").toggleClass("hidden");
+  });
+
+  $("input[name='after-discount'").on("input", function () {
+    if (parseInt($(this).val(), 10) > 0) {
+      $(this)
+        .siblings("input[name='before-discount']")
+        .css({ color: "#fec288", "text-decoration": "line-through" });
+    } else {
+      $(this)
+        .siblings("input[name='before-discount']")
+        .css({ color: "#5999b4", "text-decoration": "none" });
+    }
+  });
+
+  $(".product-expand").on("click", function () {
+    $(this).toggleClass("rotate-arrow");
+    $(this).siblings(".product-choice").toggleClass("hidden");
+  });
+
+  $(".number-up").on("click", function () {
+    $(this).parent().siblings("input")[0].stepUp();
+  });
+
+  $(".number-down").on("click", function () {
+    $(this).parent().siblings("input")[0].stepDown();
+  });
+
+  $(".payment-plan th:empty").on("click", function () {
+    var checkbox = $(this)
+      .closest(".payment-plan")
+      .find("input[type='checkbox']");
+    checkbox.prop("checked", !checkbox.prop("checked"));
+  });
+
+  //default plan selected
+  $(".payment-plan__info")
+    .find("td:nth-child(2), th:nth-child(2)")
+    .addClass("active");
+  $(".payment-plan__info table > tbody > tr:last-child")
+    .find("td:nth-child(2)")
+    .addClass("active-last");
+
+  $(".payment-plan__info td, .payment-plan__info th").on("click", function () {
+    var index = $(this).index() + 1;
+    var column = $(this)
+      .closest(".payment-plan__info")
+      .find("td:nth-child(" + index + "), th:nth-child(" + index + ")");
+    if (index > 1) {
+      $(".payment-plan__info td, .payment-plan__info th").removeClass("active");
+      $(".active-last").removeClass("active-last");
+      column.addClass("active");
+      column.last().addClass("active-last");
+    }
+  });
+
+  $(".company__aside .radio input").on("change", function () {
+    $(".company__services-blocks").removeClass("hidden");
+  });
+
+  $(".time-inputs input").on("change", function () {
+    var inputValue = parseInt($(this).val());
+    var max = parseInt($(this).attr("max"));
+    var min = parseInt($(this).attr("min"));
+    console.log(inputValue, max, min);
+    if (inputValue > max) {
+      $(this).val(max);
+    } else if (inputValue < min) {
+      $(this).val(min);
+    }
+  });
+
+  $(".discount-inputs input").on("change", function () {
+    if ($(this).val().indexOf("€") <= -1) {
+      $(this).val($(this).val() + "€");
+    }
+  });
+
+  $("span.more-button").on("click", function () {
+    $(this).toggleClass("rotate-arr");
+
+    if ($(this).closest(".company__services-block--choices").length > 0) {
+      $(this)
+        .closest(".company__services-block--choices")
+        .find(".product-choice")
+        .removeClass("hidden");
+      $(this)
+        .closest(".company__services-block--choices")
+        .find(".product-expand")
+        .addClass("rotate-arrow");
+    }
+  });
+
+  $(document).on("click", ".warning-popup-container", function (e) {
+    if (
+      !$(e.target).closest(".warning-popup").length ||
+      $(e.target).hasClass("warning-popup__close")
+    ) {
+      $(this).fadeOut(300);
+    }
+  });
+
+  $(".company__features input[name='feature']").on("change", function () {
+    $(this)
+      .closest(".company__features")
+      .find("input")
+      .prop(
+        "disabled",
+        !$(this).closest(".company__features").find("input").attr("disabled")
+      );
+    $(this).prop("disabled", false);
+    $(this)
+      .closest(".company__features")
+      .find(".time-inputs")
+      .toggleClass("disabled");
   });
 
   moveAction();
   moveOrder();
   changePadding();
+  openTab();
 
   setTimeout(function () {
     changeTextWidth();
@@ -1048,20 +1317,26 @@ function imgToSvg() {
 function tableHeight(el) {
   var $table = $(".controls__table");
   var tablePos;
-  $table.each(function() {
+  $table.each(function () {
     var $wrap = $("<div />").appendTo($(this));
     $wrap.css({
-        "position":   "absolute !important",
-        "visibility": "hidden !important",
-        "display":    "block !important"
+      position: "absolute !important",
+      visibility: "hidden !important",
+      display: "block !important",
     });
 
     $clone = $(this).find(".fixed-row").clone().appendTo($wrap);
-    console.log($clone.height())
-    tablePos = $(".controls__table-container").offset().top + $("th").outerHeight() + $clone.height() + 16;
+    console.log($clone.height());
+    tablePos =
+      $(".controls__table-container").offset().top +
+      $("th").outerHeight() +
+      $clone.height() +
+      16;
     $wrap.remove();
-    $(this).find("tbody").css("height", "calc(100vh - " + tablePos + "px)");
-  })
+    $(this)
+      .find("tbody")
+      .css("height", "calc(100vh - " + tablePos + "px)");
+  });
   if (window.matchMedia("(max-width: 600px)").matches) {
     var mainTableHeight = $(".areas__table--main tbody").outerHeight();
     $(".areas__table--menu tbody").css("height", mainTableHeight);
@@ -1102,4 +1377,52 @@ function getMaxHeight() {
         });
     });
   }
+}
+
+function formatOpt(opt) {
+  if (!opt.id) {
+    return opt.text;
+  }
+  var optimage = $(opt.element).data("image");
+  if (!optimage) {
+    return opt.text;
+  } else {
+    var $opt = $(
+      '<span><img src="' +
+        optimage +
+        '" class="select-icons" /> ' +
+        opt.text +
+        "</span>"
+    );
+    return $opt;
+  }
+}
+
+function openTab() {
+  $(".company__nav li a").each(function () {
+    $(this).on("click", function (e) {
+      e.preventDefault();
+      $(this).parent().siblings().removeClass("active");
+      $(this).parent().addClass("active");
+      var href = $(this).attr("href");
+      if ($(this).closest("#imoniu-profiliai").length == 0) {
+        $(".group__tab").each(function () {
+          if ("#" + $(this).attr("id") == href) {
+            $(this).removeClass("hidden");
+          } else {
+            $(this).addClass("hidden");
+          }
+        });
+      } else {
+        console.log(href);
+        $(".company__tab").each(function () {
+          if ("#" + $(this).attr("id") == href) {
+            $(this).removeClass("hidden");
+          } else {
+            $(this).addClass("hidden");
+          }
+        });
+      }
+    });
+  });
 }

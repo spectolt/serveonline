@@ -17,8 +17,9 @@
                 <h3>Specialistai</h3>
                 <ul>
                     <li><a href="#">Specialistų profiliai</a></li>
-                    <li><a href="#">Įmonių profiliai</a></li>
                     <li><a href="#">Ataskaita specialistui</a></li>
+                    <li><a href="#">Įmonių profiliai</a></li>
+                    <li><a href="#">Ataskaita įmonei</a></li>
                     <li><a href="#">Yra MANO sąraše</a></li>
                     <li><a href="#">Nėra MANO sąraše</a></li>
                 </ul>

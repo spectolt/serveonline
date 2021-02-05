@@ -1,0 +1,38 @@
+.languages {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-self: flex-end;
+    margin-right: auto;
+
+    @include breakpoint(sm) {
+      flex: 1 0 100%;
+      margin-bottom: 10px;
+    }
+
+    li {
+      position: relative;
+      margin: 0 20px 0 0;
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: -10px;
+        width: 1px;
+        height: 100%;
+        background: $darkblue;
+        display: inline-block;
+      }
+
+      &:last-child {
+        &:after {
+          display: none;
+        }
+      }
+    }
+    .active {
+      font-weight: 600;
+    }
+  }

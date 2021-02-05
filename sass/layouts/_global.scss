@@ -26,6 +26,7 @@ body {
 
 body {
   margin-top: 70px;
+  height: calc(100% - 70px);
 }
 
 .site-header {
@@ -216,6 +217,24 @@ body {
 
         @include breakpoint(l) {
           margin: 0;
+        }
+      }
+
+      &--back {
+        display: flex;
+        align-items: center;
+
+        &:before {
+          content: "";
+          width: 12px;
+          height: 24px;
+          margin-right: 20px;
+          background-image: url("img/icons/arrow-up-white.svg");
+          background-size: 100%;
+          background-position: center;
+          background-repeat: no-repeat;
+          display: block;
+          transform: rotate(-90deg);
         }
       }
     }

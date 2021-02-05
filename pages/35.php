@@ -1,4 +1,5 @@
-<?php $thisCat="controls"; $thisPage="areas"; ?>
+<?php $thisCat = "controls";
+$thisPage = "areas"; ?>
 
 <?php
 $areas = array('Klinikos ir estetinė medicina', 'Odontologijos klinikos', 'Grožio salonai', 'SPA ir masažo kabinetai', 'Sportas ir reabilitacija', 'Veterinarija');
@@ -13,11 +14,6 @@ $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
             <section class="controls areas">
                 <h1 class="title">Sritys</h1>
                 <div class="controls__top">
-                    <ul class="controls__languages">
-                        <li class="paragraph active"><a href="#">LT</a></li>
-                        <li class="paragraph"><a href="#">EN</a></li>
-                        <li class="paragraph"><a href="#">RU</a></li>
-                    </ul>
                     <button class="controls__restore orange transparent small paragraph">Atstatyti pakeitimus</button>
                     <button class="controls__save orange small paragraph">Saugoti pakeitimus</button>
                 </div>
@@ -29,6 +25,7 @@ $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
                                 <th>Spalva #</th>
                                 <th>svg</th>
                                 <th>URL</th>
+                                <th>Meniu pavadinimai</th>
                             </tr>
                         </thead>
                         <tbody class="controls__table-body">
@@ -55,6 +52,13 @@ $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
                                     <td>
                                         <p class="controls__item controls__item--title"><?php echo $areas[$y] ?></p>
                                     </td>
+                                    <td class="controls__menu-title">
+                                        <?php if ($y == 0) { ?>
+                                            <p class="controls__item controls__item--menu">Gydytojai</p>
+                                        <?php } else if ($y == 1) { ?>
+                                            <p class="controls__item controls__item--menu">Klinikos</p>
+                                        <?php } ?>
+                                    </td>
                                 </tr>
                             <?php } ?>
                             <tr class="areas__inputs">
@@ -71,21 +75,23 @@ $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
                                 <td>
                                     <input class="controls__item">
                                 </td>
+                                <td>
+
+                                </td>
                             </tr>
                         </tbody>
                     </table>
                     <table class="controls__table areas__table areas__table--menu">
                         <thead>
                             <tr>
-                                <th>Meniu pavadinimai</th>
+                                <!-- <th>Meniu pavadinimai</th> -->
                                 <th>Profesijos</th>
                             </tr>
                         </thead>
                         <tbody class="controls__table-body hidden">
                             <tr>
-                                <td>
-                                    <button class="controls__edit"></button>
-                                </td>
+                                <!-- <td>
+                                </td> -->
                                 <td colspan="1">
                                     <button class="controls__add"></button>
                                     <button class="controls__trash"></button>
@@ -93,49 +99,49 @@ $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
                                 </td>
                             </tr>
                             <tr class="controls__area areas__area">
-                                <td>
+                                <!-- <td>
                                     <p class="controls__item controls__item--menu">Gydytojai</p>
-                                </td>
+                                </td> -->
                                 <td>
                                     <p class="controls__item controls__item--profession">Ginekologas</p>
                                 </td>
                             </tr>
                             <tr class="controls__area areas__area">
-                                <td>
+                                <!-- <td>
                                     <p class="controls__item controls__item--menu">Klinikos</p>
-                                </td>
+                                </td> -->
                                 <td>
                                     <p class="controls__item controls__item--profession">Urologas</p>
                                 </td>
                             </tr>
                             <tr class="controls__area areas__area">
-                                <td>
+                                <!-- <td>
                                     <p></p>
-                                </td>
+                                </td> -->
                                 <td>
                                     <p class="controls__item controls__item--profession">Dermatologas</p>
                                 </td>
                             </tr>
                             <tr class="controls__area areas__area">
-                                <td>
+                                <!-- <td>
                                     <p></p>
-                                </td>
+                                </td> -->
                                 <td>
                                     <p class="controls__item controls__item--profession">Venerologas</p>
                                 </td>
                             </tr>
                             <tr class="controls__area areas__area">
-                                <td>
+                                <!-- <td>
                                     <p></p>
-                                </td>
+                                </td> -->
                                 <td>
                                     <p class="controls__item controls__item--profession">Chirurgas</p>
                                 </td>
                             </tr>
                             <tr class="controls__area areas__area">
-                                <td>
+                                <!-- <td>
                                     <p></p>
-                                </td>
+                                </td> -->
                                 <td>
                                     <p class="controls__item controls__item--profession">Terapeutas</p>
                                 </td>

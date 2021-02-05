@@ -47,6 +47,16 @@ textarea {
 	}
 }
 
+input:disabled {
+	border: none;
+	outline: none;
+
+	&::-webkit-input-placeholder {
+		color: $lightgray;
+		-webkit-text-fill-color: $lightgray;
+	}
+}
+
 select {
 	border: 1px solid $color__border-input;
 }
