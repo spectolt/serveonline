@@ -18,6 +18,7 @@
     margin-bottom: 20px;
     flex-wrap: wrap;
     justify-content: flex-end;
+    margin-right: -10px;
 
     @include breakpoint(sm) {
       margin-bottom: 10px;
@@ -63,9 +64,9 @@
     }
   }
 
-  button:last-of-type {
-    margin-right: 0;
-  }
+  // button:last-of-type {
+  //   margin-right: 0;
+  // }
 
   &__restore {
     //margin-left: auto;
@@ -200,6 +201,10 @@
         width: 35px;
         height: 35px;
         margin: 10px 10px 10px 0;
+
+        &:last-of-type {
+          margin-right: 0;
+        }
       }
     }
 
@@ -320,7 +325,7 @@
 .areas {
   &__table {
     width: 80%;
-    min-width: 420px;
+    // min-width: 420px;
 
     thead,
     tbody tr {
@@ -370,6 +375,10 @@
       &:nth-child(4) {
         width: 28%;
       }
+
+      &:last-child {
+        width: calc(100% - 30% - 16% - 8% - 28%);
+      }
     }
 
     tr {
@@ -411,6 +420,7 @@
 
     &--main {
       border-right: 1px solid #eee;
+      min-width: 640px;
 
       thead {
         border-top-right-radius: 0;
@@ -421,7 +431,7 @@
       width: 20%;
       table-layout: fixed;
       // min-width: 380px;
-      min-width: 0;
+      min-width: 160px;
 
       thead {
         border-top-left-radius: 0;
@@ -635,7 +645,7 @@
     }
 
     &:nth-of-type(3) {
-      max-width: auto;
+      max-width: calc(33% + 90px);
       min-width: 300px;
     }
 

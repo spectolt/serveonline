@@ -16,10 +16,22 @@
                         <option data-image="../img/icons/sport.svg">Sportas ir reabilitacija</option>
                         <option data-image="../img/icons/vet.svg">Veterinarijos klinikos</option>
                     </select>
-                    <input type="text" class="company-name" name="title" placeholder="Pavadinimas">
-                    <input type="text" name="name" placeholder="Vardas Pavardė">
-                    <input type="text" name="phone" placeholder="+370 XXXXXXX">
-                    <input type="text" name="email" placeholder="Elektroninis paštas">
+                    <div class="input-container input-container--company">
+                        <input type="text" class="company-name" name="title" placeholder="Pavadinimas">
+                        <span class="input-icon"></span>
+                    </div>
+                    <div class="input-container input-container--name">
+                        <input type="text" name="name" placeholder="Vardas Pavardė">
+                        <span class="input-icon"></span>
+                    </div>
+                    <div class="input-container input-container--phone">
+                        <input type="text" name="phone" placeholder="+370 XXXXXXXX">
+                        <span class="input-icon"></span>
+                    </div>
+                    <div class="input-container input-container--email">
+                        <input type="text" name="email" placeholder="Elektroninis paštas">
+                        <span class="input-icon"></span>
+                    </div>
                     <h4>Teisės</h4>
                     <div class="radio">
                         <input name="rights1" type="radio" id="rights-company1" class="" value="1" checked />

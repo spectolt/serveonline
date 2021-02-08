@@ -14,10 +14,11 @@
             </div>
         </div>
         <div class="company__payment-plans">
-            <?php for ($i = 0; $i < 6; $i++) { ?>
+            <?php $number = array("5", "15", "25", "40", "60", "80", "100", "200");
+            foreach ($number as $k => $c) { ?>
                 <div class="payment-plan">
-                    <input type="checkbox" id="plan<?php echo $i ?>" name="plan">
-                    <label for="plan<?php echo $i ?>">Pasiūlymai verslui <b>iki 5</b> specialistų</label>
+                    <input type="radio" id="plan<?php echo $k ?>" name="plan">
+                    <label for="plan<?php echo $k ?>">Pasiūlymai verslui <b>iki <?php echo $c ?></b> specialistų</label>
                     <div class="payment-plan__info">
                         <table>
                             <thead>

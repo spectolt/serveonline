@@ -1,8 +1,17 @@
 <section class="company__tab" id="imones-bendra-informacija">
     <div class="company__inputs-container">
-        <input type="text" name="address" placeholder="Adresas">
-        <input type="text" name="phone" placeholder="+370 XXXXXXX">
-        <input type="text" name="email" placeholder="Elektroninis paštas">
+        <div class="input-container input-container--address">
+            <input type="text" name="address" placeholder="Adresas">
+            <span class="input-icon"></span>
+        </div>
+        <div class="input-container input-container--phone">
+            <input type="text" name="phone" placeholder="+370 XXXXXXXX">
+            <span class="input-icon"></span>
+        </div>
+        <div class="input-container">
+            <input type="text" name="email" placeholder="Elektroninis paštas">
+            <span class="input-icon"></span>
+        </div>
     </div>
     <div class="company__info">
         <div class="company__about">
@@ -42,14 +51,14 @@
                             <div class="company__time time-inputs">
                                 <input type="number" name="hour" placeholder="00" max="23">
                                 <p>:</p>
-                                <input type="number" name="minute" placeholder="00">
+                                <input type="number" name="minute" placeholder="00" max="59">
                             </div>
                         </td>
                         <td>
                             <div class="company__time time-inputs">
-                                <input type="number" name="hour" placeholder="00">
+                                <input type="number" name="hour" placeholder="00" max="23">
                                 <p>:</p>
-                                <input type="number" name="minute" placeholder="00">
+                                <input type="number" name="minute" placeholder="00" max="59">
                             </div>
                         </td>
                     </tr>
@@ -57,16 +66,16 @@
                         <td>Antradienis</td>
                         <td>
                             <div class="company__time time-inputs">
-                                <input type="number" name="hour" placeholder="00">
+                                <input type="number" name="hour" placeholder="00" max="23">
                                 <p>:</p>
-                                <input type="number" name="minute" placeholder="00">
+                                <input type="number" name="minute" placeholder="00" max="59">
                             </div>
                         </td>
                         <td>
                             <div class="company__time time-inputs">
-                                <input type="number" name="hour" placeholder="00">
+                                <input type="number" name="hour" placeholder="00" max="23">
                                 <p>:</p>
-                                <input type="number" name="minute" placeholder="00">
+                                <input type="number" name="minute" placeholder="00" max="59">
                             </div>
                         </td>
                     </tr>
@@ -74,16 +83,16 @@
                         <td>Trečiadienis</td>
                         <td>
                             <div class="company__time time-inputs">
-                                <input type="number" name="hour" placeholder="00">
+                                <input type="number" name="hour" placeholder="00" max="23">
                                 <p>:</p>
-                                <input type="number" name="minute" placeholder="00">
+                                <input type="number" name="minute" placeholder="00" max="59">
                             </div>
                         </td>
                         <td>
                             <div class="company__time time-inputs">
-                                <input type="number" name="hour" placeholder="00">
+                                <input type="number" name="hour" placeholder="00" max="23">
                                 <p>:</p>
-                                <input type="number" name="minute" placeholder="00">
+                                <input type="number" name="minute" placeholder="00" max="59">
                             </div>
                         </td>
                     </tr>
@@ -91,16 +100,16 @@
                         <td>Ketvirtadienis</td>
                         <td>
                             <div class="company__time time-inputs">
-                                <input type="number" name="hour" placeholder="00">
+                                <input type="number" name="hour" placeholder="00" max="23">
                                 <p>:</p>
-                                <input type="number" name="minute" placeholder="00">
+                                <input type="number" name="minute" placeholder="00" max="59">
                             </div>
                         </td>
                         <td>
                             <div class="company__time time-inputs">
-                                <input type="number" name="hour" placeholder="00">
+                                <input type="number" name="hour" placeholder="00" max="23">
                                 <p>:</p>
-                                <input type="number" name="minute" placeholder="00">
+                                <input type="number" name="minute" placeholder="00" max="59">
                             </div>
                         </td>
                     </tr>
@@ -108,16 +117,16 @@
                         <td>Penktadienis</td>
                         <td>
                             <div class="company__time time-inputs">
-                                <input type="number" name="hour" placeholder="00">
+                                <input type="number" name="hour" placeholder="00" max="23">
                                 <p>:</p>
-                                <input type="number" name="minute" placeholder="00">
+                                <input type="number" name="minute" placeholder="00" max="59">
                             </div>
                         </td>
                         <td>
                             <div class="company__time time-inputs">
-                                <input type="number" name="hour" placeholder="00">
+                                <input type="number" name="hour" placeholder="00" max="23">
                                 <p>:</p>
-                                <input type="number" name="minute" placeholder="00">
+                                <input type="number" name="minute" placeholder="00" max="59">
                             </div>
                         </td>
                     </tr>
@@ -125,16 +134,16 @@
                         <td>Šeštadienis</td>
                         <td>
                             <div class="company__time time-inputs">
-                                <input type="number" name="hour" placeholder="00">
+                                <input type="number" name="hour" placeholder="00" max="23">
                                 <p>:</p>
-                                <input type="number" name="minute" placeholder="00">
+                                <input type="number" name="minute" placeholder="00" max="59">
                             </div>
                         </td>
                         <td>
                             <div class="company__time time-inputs">
-                                <input type="number" name="hour" placeholder="00">
+                                <input type="number" name="hour" placeholder="00" max="23">
                                 <p>:</p>
-                                <input type="number" name="minute" placeholder="00">
+                                <input type="number" name="minute" placeholder="00" max="59">
                             </div>
                         </td>
                     </tr>
@@ -142,16 +151,16 @@
                         <td>Sekmadienis</td>
                         <td>
                             <div class="company__time time-inputs">
-                                <input type="number" name="hour" placeholder="00">
+                                <input type="number" name="hour" placeholder="00" max="23">
                                 <p>:</p>
-                                <input type="number" name="minute" placeholder="00">
+                                <input type="number" name="minute" placeholder="00" max="59">
                             </div>
                         </td>
                         <td>
                             <div class="company__time time-inputs">
-                                <input type="number" name="hour" placeholder="00">
+                                <input type="number" name="hour" placeholder="00" max="23">
                                 <p>:</p>
-                                <input type="number" name="minute" placeholder="00">
+                                <input type="number" name="minute" placeholder="00" max="59">
                             </div>
                         </td>
                     </tr>

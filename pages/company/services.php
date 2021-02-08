@@ -52,7 +52,8 @@
                     <div class="periodicity-inputs">
                         <p>Periodiškumas: </p>
                         <input type="number" name="periodicity" placeholder="0" disabled>
-                        <select class="company__select">
+                        <select class="company__select" disabled>
+                            <option></option>
                             <option selected>sav.</option>
                             <option>d.</option>
                         </select>
@@ -86,7 +87,7 @@
                     <div class="periodicity-inputs">
                         <p>Periodiškumas: </p>
                         <input type="number" name="periodicity" placeholder="0" disabled>
-                        <select class="company__select">
+                        <select class="company__select" disabled>
                             <option selected>sav.</option>
                             <option>d.</option>
                         </select>
@@ -136,7 +137,7 @@
                         <div class="periodicity-inputs">
                             <p>Periodiškumas: </p>
                             <input type="number" name="periodicity" placeholder="0" disabled>
-                            <select class="company__select">
+                            <select class="company__select" disabled>
                                 <option selected>sav.</option>
                                 <option>d.</option>
                             </select>
@@ -165,7 +166,7 @@
                         <div class="periodicity-inputs">
                             <p>Periodiškumas: </p>
                             <input type="number" name="periodicity" placeholder="0" disabled>
-                            <select class="company__select">
+                            <select class="company__select" disabled>
                                 <option selected>sav.</option>
                                 <option>d.</option>
                             </select>
@@ -194,7 +195,7 @@
                         <div class="periodicity-inputs">
                             <p>Periodiškumas: </p>
                             <input type="number" name="periodicity" placeholder="0" disabled>
-                            <select class="company__select">
+                            <select class="company__select" disabled>
                                 <option selected>sav.</option>
                                 <option>d.</option>
                             </select>

@@ -537,12 +537,14 @@ function onDocumentReady() {
       .find(".controls__item")
       .css("background-color", color);
     if ($(this).closest("tr").find("p").hasClass("controls__item--menu")) {
-      $(this).closest("tr").find("p.controls__item--menu").css("background-color", "#101b51");
-
+      $(this)
+        .closest("tr")
+        .find("p.controls__item--menu")
+        .css("background-color", "#101b51");
     }
   });
 
-  $(".color-input").on("input", function () {
+  $(".color-input").on("input click", function () {
     color = "#" + $(this).val();
     var inputs = $(this).closest("tr").find("td input, td label");
     if ($(this).val().length == 0) {
@@ -564,7 +566,10 @@ function onDocumentReady() {
     );
     if (isDark($(this).css("background-color"))) {
       $(this).closest("tr").find("td input").addClass("white-text");
+      $(".controls__item--profession").css("color", "#fff");
     }
+
+    $(".controls__item--profession").css("background-color", color);
   });
 
   $(".languages li").click(function () {
@@ -573,47 +578,71 @@ function onDocumentReady() {
   });
 
   $(".controls__table .controls__item").click(function () {
-    $(this).addClass("changed-bg");
-    if (!$(this).closest(".areas__table").hasClass("areas__table--menu")) {
+    if (!$(this).hasClass("controls__item--menu")) {
+      $(this).addClass("changed-bg");
       $(this)
         .closest(".controls__area")
         .siblings()
         .find(".controls__item")
         .removeClass("changed-bg");
-    } else if ($(this).hasClass("controls__item--menu")) {
-      $(this)
-        .closest(".controls__area")
-        .siblings()
-        .find(".controls__item.controls__item--menu")
-        .removeClass("changed-bg");
-    } else if ($(this).hasClass("controls__item--profession")) {
-      $(this)
-        .closest(".controls__area")
-        .siblings()
-        .find(".controls__item.controls__item--profession")
-        .removeClass("changed-bg");
-    }
-    $(this).find("label").css("color", "unset");
-    if ($(this).closest(".areas__table").hasClass("areas__table--main")) {
-      $(this)
-        .parent()
-        .siblings()
-        .find(".controls__item")
-        .addClass("changed-bg");
-      if ($(this).closest(".areas__inputs")) {
+      $(this).find("label").css("color", "unset");
+      if ($(this).closest(".areas__table").hasClass("areas__table--main")) {
         $(this)
-          .closest(".areas__inputs")
-          .children()
-          .children()
-          .removeClass("changed-bg");
+          .parent()
+          .siblings()
+          .find(".controls__item")
+          .addClass("changed-bg");
+        if ($(this).closest(".areas__inputs")) {
+          $(this)
+            .closest(".areas__inputs")
+            .children()
+            .children()
+            .removeClass("changed-bg");
+          $(this)
+            .closest(".areas__inputs")
+            .siblings()
+            .find(".controls__item")
+            .removeClass("changed-bg");
+        }
+        var clickedRow = $(this).closest("tr");
+        $(".controls__item--menu").each(function (i) {
+          var index = clickedRow.index() + i + 1;
+          var targetRows = $(this)
+            .closest(".areas__table--main")
+            .find("tr")
+            .eq(index);
+          if (targetRows.length == 0) {
+            $(this)
+              .closest(".areas__table--main")
+              .find("tbody")
+              .append("<tr><td></td><td></td><td></td><td></td><td></td></tr>");
+            targetRows = $(this)
+              .closest(".areas__table--main")
+              .find("tr")
+              .eq(index);
+          }
+          targetRows.find("td").last().append($(this));
+          // $(this).css("height", "0");
+          getMaxHeight();
+        });
+        //remove row if empty
+        $(this)
+          .closest(".areas__table--main tbody")
+          .find("tr")
+          .each(function () {
+            if ($(this).find("td").length === $(this).find("td:empty").length)
+              $(this).remove();
+          });
+
+        $(".controls__item--profession").css(
+          "background-color",
+          "#" +
+            $(this).closest("tr").find(".areas__color").contents().get(0)
+              .nodeValue
+        );
       }
     }
   });
-
-  // $(".controls__table .controls__item").click(function () {
-  //   // $(this).parent().next(".controls__item-content").toggleClass("hidden");
-  //   $(this).css("color", "#fff");
-  // });
 
   $(".areas__table .areas__area .controls__item").click(function () {
     $(".areas__table--menu tbody").removeClass("hidden");
@@ -646,8 +675,6 @@ function onDocumentReady() {
         .next("table")
         .find(".controls__item input")
         .prop("checked", false);
-    } else {
-      alert("m");
     }
   });
 
@@ -685,11 +712,26 @@ function onDocumentReady() {
     '<div class="company__info">\
   <h3>Grupės savininkas</h3>\
   <div class="company__inputs-container company__inputs-group-owner">\
+  <div class="input-container">\
       <input type="text" class="group-name" name="group-name" placeholder="Grupės pavadinimas">\
+      <span class="input-icon"></span>\
+      </div>\
+      <div class="input-container">\
       <input type="text" name="name" placeholder="Vardas Pavardė">\
-      <input type="text" name="phone" placeholder="+370 XXXXXX">\
+      <span class="input-icon"></span>\
+      </div>\
+      <div class="input-container">\
+      <input type="text" name="phone" placeholder="+370 XXXXXXXX">\
+      <span class="input-icon"></span>\
+      </div>\
+      <div class="input-container">\
       <input type="text" name="email" placeholder="Elektroninis paštas">\
+      <span class="input-icon"></span>\
+      </div>\
+      <div class="input-container">\
       <input type="text" name="address" placeholder="Adresas">\
+      <span class="input-icon"></span>\
+      </div>\
       <button class="company__trash company__trash--group"></button>\
   </div>\
 </div>'
@@ -700,14 +742,14 @@ function onDocumentReady() {
       .removeClass("hidden")
       .append($group)
       .css({ "margin-left": $("button.js-create-company").outerWidth(true) });
-    $(".company__header h2").html("GRUPĖS PAVADINIMAS");
+    $(".company__header--main h2").html("GRUPĖS PAVADINIMAS");
   });
 
   $("input.company-name").on("input", function () {
     if ($("input.group-name").length == 0) {
       $(".company__header h2").html($("input.company-name").val());
       if ($("input.company-name").val().length == 0) {
-        $(".company__header h2").html("PAVADINIMAS");
+        $(".company__header h2").html("Pavadinimas");
       }
     }
   });
@@ -715,10 +757,10 @@ function onDocumentReady() {
   var companyName = $("input[name='company']:checked").next("label").html();
   $(".company__header--company h2").html(companyName);
 
-  $("input[name='company']").on("change", function() {
+  $("input[name='company']").on("change", function () {
     companyName = $(this).next("label").html();
     $(".company__header--company h2").html(companyName);
-  })
+  });
 
   var count = 1;
   $("button.js-create-company").on("click", function () {
@@ -738,10 +780,22 @@ function onDocumentReady() {
         <option data-image="../img/icons/sport.svg">Sportas ir reabilitacija</option>\
         <option data-image="../img/icons/vet.svg">Veterinarijos klinikos</option>\
       </select>\
-        <input type="text" class="company-name" name="title" placeholder="Pavadinimas">\
-        <input type="text" name="name" placeholder="Vardas Pavardė">\
-        <input type="text" name="phone" placeholder="+370 XXXXXX">\
-        <input type="text" name="email" placeholder="Elektroninis paštas">\
+      <div class="input-container input-container--company">\
+      <input type="text" class="company-name" name="title" placeholder="Pavadinimas">\
+      <span class="input-icon"></span>\
+  </div>\
+  <div class="input-container input-container--name">\
+      <input type="text" name="name" placeholder="Vardas Pavardė">\
+      <span class="input-icon"></span>\
+  </div>\
+  <div class="input-container input-container--phone">\
+      <input type="text" name="phone" placeholder="+370 XXXXXXXX">\
+      <span class="input-icon"></span>\
+  </div>\
+  <div class="input-container input-container--email">\
+      <input type="text" name="email" placeholder="Elektroninis paštas">\
+      <span class="input-icon"></span>\
+  </div>\
         <h4>Teisės</h4>\
         <div class="radio">\
             <input name="rights' +
@@ -788,7 +842,7 @@ function onDocumentReady() {
       $(document).on("input", "input.group-name", function () {
         $(".company__header h2").html($("input.group-name").val());
         if ($("input.group-name").val().length == 0) {
-          $(".company__header h2").html("GRUPĖS PAVADINIMAS");
+          $(".company__header--main h2").html("GRUPĖS PAVADINIMAS");
         }
       });
     }
@@ -818,9 +872,6 @@ function onDocumentReady() {
       if ($(this).attr("name") == "hour") {
         $(this).siblings("input").focus().select();
       }
-      // else {
-      //   $(this).closest("td").next("td").find("input[name='hour']").focus().select();
-      // }
     }
   });
   $(".time-inputs input[type='number']").on("blur", function () {
@@ -886,6 +937,9 @@ function onDocumentReady() {
         .siblings("input[name='before-discount']")
         .css({ color: "#5999b4", "text-decoration": "none" });
     }
+    if (parseInt($(this).val(), 10) > parseInt($(this).siblings("input[name='before-discount']").val(), 10)) {
+      $(this).val($(this).siblings("input[name='before-discount']").val());
+    }
   });
 
   $(".product-expand").on("click", function () {
@@ -901,12 +955,12 @@ function onDocumentReady() {
     $(this).parent().siblings("input")[0].stepDown();
   });
 
-  $(".payment-plan th:empty").on("click", function () {
-    var checkbox = $(this)
-      .closest(".payment-plan")
-      .find("input[type='checkbox']");
-    checkbox.prop("checked", !checkbox.prop("checked"));
-  });
+  // $(".payment-plan th:empty").on("click", function () {
+  //   var checkbox = $(this)
+  //     .closest(".payment-plan")
+  //     .find("input[type='radio']");
+  //   checkbox.prop("checked", false);
+  // });
 
   //default plan selected
   $(".payment-plan__info")
@@ -978,17 +1032,94 @@ function onDocumentReady() {
   $(".company__features input[name='feature']").on("change", function () {
     $(this)
       .closest(".company__features")
-      .find("input")
+      .find("input, select")
       .prop(
         "disabled",
         !$(this).closest(".company__features").find("input").attr("disabled")
       );
+    if (
+      !parseInt($("input[name='before-discount']").val()) ||
+      parseInt($("input[name='before-discount']").val()) == 0
+    ) {
+      $(this)
+        .closest(".company__features")
+        .find("input[name='after-discount']")
+        .prop("disabled", true);
+    }
     $(this).prop("disabled", false);
     $(this)
       .closest(".company__features")
       .find(".time-inputs")
       .toggleClass("disabled");
+
+    var block = $(this).closest(".company__services-block");
+    if ($(this).prop("checked")) {
+      $(".company__services-notice").after(block);
+    } else if (
+      $(this)
+        .closest(".company__services-block")
+        .hasClass("company__services-block--choices")
+    ) {
+      //if all choices are unchecked
+      if (
+        $(this)
+          .closest(".product-choice")
+          .siblings()
+          .find("input[name='feature']:checked").length == 0
+      ) {
+        $(".company__features input[name='feature']:checked")
+          .last()
+          .closest(".company__services-block")
+          .after(block);
+      }
+    } else {
+      $(".company__features input[name='feature']:checked")
+        .last()
+        .closest(".company__services-block")
+        .after(block);
+    }
   });
+
+  $(".company__features input[name='before-discount']").on(
+    "input",
+    function () {
+      if (parseInt($(this).val()) > 0) {
+        $(this)
+          .siblings("input[name='after-discount']")
+          .prop("disabled", false);
+      }
+    }
+  );
+
+  $("input[name='plan'], ~ label, .payment-plan th:empty").on(
+    "click",
+    function () {
+      var $self = $(this).closest(".payment-plan").find("input[name='plan']");
+      console.log($self);
+      if ($self.attr("checkstate") == "true") {
+        $self.prop("checked", false);
+        $self.each(function () {
+          $self.attr("checkstate", "false");
+        });
+      } else {
+        $self.prop("checked", true);
+        $self.attr("checkstate", "true");
+        $("input[type='radio'].myClass:not(:checked)").attr(
+          "checkstate",
+          "false"
+        );
+      }
+    }
+  );
+
+  $(".input-container--password-eye > .input-icon").on("click", function() {
+    $(this).toggleClass("input-icon--toggled-eye");
+    if ($(this).hasClass("input-icon--toggled-eye")) {
+      $(this).siblings("input[type='password']").attr("type", "text");
+    } else {
+      $(this).siblings("input[type='text']").attr("type", "password");
+    }
+  })
 
   moveAction();
   moveOrder();

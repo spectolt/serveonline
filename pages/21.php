@@ -5,10 +5,10 @@
     <section class="page-content page-content--company">
         <div class="page-content__wrapper">
             <section class="company">
-                <div class="company__header">
+                <div class="company__header company__header--main">
                     <div class="company__header-content">
                         <div class="company__header-top">
-                            <h2>PAVADINIMAS</h2>
+                            <h2>Pavadinimas</h2>
                             <button class="button darkblue">Publikuoti</button>
                         </div>
                         <ul class="company__nav">
@@ -50,6 +50,7 @@
                     <?php require_once("company/services.php") ?>
                     <?php require_once("company/payments.php") ?>
                 </section>
+                <?php require_once("company/login.php") ?>
             </section>
             <?php require_once('footer-menu.php'); ?>
         </div>
