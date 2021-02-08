@@ -9431,11 +9431,6 @@ section.product .product__block-recommend {
   margin: auto 0;
 }
 
-.controls__item--menu {
-  background-color: #101b51;
-  color: #fff;
-}
-
 .controls__item p {
   margin: 0;
 }
@@ -9506,7 +9501,7 @@ section.product .product__block-recommend {
 }
 
 .areas__table {
-  width: 80%;
+  width: 84%;
 }
 
 .areas__table thead,
@@ -9540,12 +9535,12 @@ section.product .product__block-recommend {
 
 .areas__table th:first-child,
 .areas__table td:first-child {
-  width: 30%;
+  width: 28%;
 }
 
 .areas__table th:nth-child(2),
 .areas__table td:nth-child(2) {
-  width: 16%;
+  width: 10%;
   min-width: 88px;
 }
 
@@ -9557,12 +9552,20 @@ section.product .product__block-recommend {
 
 .areas__table th:nth-child(4),
 .areas__table td:nth-child(4) {
-  width: 28%;
+  width: 25%;
 }
 
-.areas__table th:last-child,
+.areas__table th:nth-child(5),
+.areas__table td:nth-child(5) {
+  min-width: 100px;
+}
+
+.areas__table th:last-child {
+  width: calc(100% - 28% - 10% - 8% - 25%);
+}
+
 .areas__table td:last-child {
-  width: calc(100% - 30% - 16% - 8% - 28%);
+  width: calc((100% - 28% - 10% - 8% - 25%)/2);
 }
 
 .areas__table tr {
@@ -9629,7 +9632,7 @@ section.product .product__block-recommend {
 
 .areas__table--main {
   border-right: 1px solid #eee;
-  min-width: 640px;
+  min-width: 800px;
 }
 
 .areas__table--main thead {
@@ -9637,7 +9640,7 @@ section.product .product__block-recommend {
 }
 
 .areas__table--menu {
-  width: 20%;
+  width: 16%;
   table-layout: fixed;
   min-width: 160px;
 }
