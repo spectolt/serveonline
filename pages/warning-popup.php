@@ -1,3 +1,5 @@
+<?php require_once('head.php') ?>
+
 <div class="warning-popup-container">
     <div class="warning-popup">
         <div class="warning-popup__header">

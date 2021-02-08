@@ -14,6 +14,10 @@
     border-radius: 5px;
     overflow: hidden;
 
+    @include breakpoint(sm) {
+      width: 90%;
+    }
+
     &__header {
       display: flex;
       padding-bottom: 30px;
