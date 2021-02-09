@@ -417,6 +417,20 @@
 
         .select2-container {
           width: 100% !important;
+
+          .select2-selection--single {
+            height: 41.2px;
+          }
+
+          .select2-selection__rendered {
+            height: 41.2px;
+            display: flex;
+            align-items: center;
+          }
+
+          .select2-selection__arrow {
+            height: 41.2px;
+          }
         }
 
         // input[name="title"] {

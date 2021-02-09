@@ -2462,7 +2462,7 @@ table.calendar .calendar__more-times--hidden {
   font-size: 1.5rem;
   font-weight: 600;
   margin: 0;
-  text-align: center;
+  text-align: left;
   font-family: "Sen", sans-serif;
 }
 
@@ -11450,6 +11450,24 @@ section.product .product__block-recommend {
 
 .company__companies .company__inputs-companies .select2-container {
   width: 100% !important;
+}
+
+.company__companies .company__inputs-companies .select2-container .select2-selection--single {
+  height: 41.2px;
+}
+
+.company__companies .company__inputs-companies .select2-container .select2-selection__rendered {
+  height: 41.2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.company__companies .company__inputs-companies .select2-container .select2-selection__arrow {
+  height: 41.2px;
 }
 
 .company__companies .company__inputs-companies h4 {

@@ -5,7 +5,7 @@
         <button class="js-create-company company__create-company">Nauja įmonė</button>
         <div class="company__items">
             <div class="company__item">
-                <h3>1 Įmonės vadovas</h3>
+                <h3>1 Įmonės admin</h3>
                 <div class="company__inputs-container company__inputs-companies">
                     <select class="company__select">
                         <option></option>

@@ -772,7 +772,7 @@ function onDocumentReady() {
       '<div class="company__item"> \
     <h3>' +
         count +
-        ' Įmonės vadovas</h3> \
+        ' Įmonės admin</h3> \
     <div class="company__inputs-container company__inputs-companies">\
     <select class="company__select">\
     <option></option>\
