@@ -44,7 +44,7 @@
                     <li class="site-header__item site-header__item--search"><a href="#"></a></li>
                 </ul>
             <?php } else if($thisCat == "company") { ?>
-                <ul class="site-header__menu site-header__menu--main">
+                <ul class="site-header__menu site-header__menu--main site-header__menu--company">
                     <li class="site-header__item site-header__item--back"><a href="#">Atgal</a></li>
                 </ul>
             <?php } ?>

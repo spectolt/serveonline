@@ -102,6 +102,7 @@ body {
       @include breakpoint(sm) {
         margin: 20px auto;
         height: 23px;
+        order: 1;
       }
     }
 
@@ -113,6 +114,7 @@ body {
       align-items: flex-end;
       justify-content: flex-end;
       white-space: nowrap;
+      order: 1;
 
       @include breakpoint(l) {
         margin: 0;
@@ -120,6 +122,12 @@ body {
 
       &--main {
         @include breakpoint(l) {
+          order: 1;
+        }
+      }
+
+      &--company {
+        @include breakpoint(sm) {
           order: 0;
         }
       }
@@ -138,7 +146,7 @@ body {
           padding: 18px 0 12px;
           align-items: center;
           justify-content: flex-end;
-          order: 1;
+          order: 2;
           width: 100%;
           flex: 1 0 100%;
 
@@ -553,6 +561,10 @@ body {
           margin: 0;
           width: 100%;
           padding: 0 40px;
+
+          @include breakpoint(sm) {
+            padding: 0 10px;
+          }
         }
       }
 

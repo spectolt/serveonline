@@ -4,7 +4,7 @@
         <div class="company__email-container">
             <p>Prisijungimo vardas</p>
             <div class="input-container">
-                <input type="text" name="email" placeholder="Elektroninis paštas">
+                <input type="text" name="email" placeholder="Elektroninis paštas" value="vardas.pavarde@gmail.com">
                 <span class="input-icon"></span>
             </div>
         </div>
@@ -29,14 +29,14 @@
         <div class="company__login-container">
             <p>Prisijungimo vardas</p>
             <div class="input-container input-container--password-eye">
-                <input type="password" name="login" placeholder="Vardas">
+                <input type="password" name="login" placeholder="Vardas" value="vardas.pavarde@gmail.com">
                 <span class="input-icon"></span>
             </div>
         </div>
         <div class="company__password-container">
             <p>Prisijungimo slaptažodis</p>
             <div class="input-container input-container--password-eye">
-                <input type="password" name="password" placeholder="Slaptažodis">
+                <input type="password" name="password" placeholder="Slaptažodis" value="slaptazodis">
                 <span class="input-icon"></span>
             </div>
         </div>
@@ -51,11 +51,11 @@
         <div class="company__password-container company__password-container--current">
             <p>Įveskite esamą slaptažodį</p>
             <div class="input-container input-container--password-eye">
-                <input type="password" name="password" placeholder="Slaptažodis">
-                <span class="input-icon"></span>
+                <input type="text" name="password" placeholder="Slaptažodis">
+                <span class="input-icon input-icon--toggled-eye"></span>
             </div>
         </div>
-        <button class="orange small company__change-login">Keisti prisijungimo duomenis</button>
+        <!-- <button class="orange small company__change-login">Keisti prisijungimo duomenis</button> -->
         <div class="company__button-container">
             <button class="orange transparent">Atšaukti pakeitimus</button>
             <button class="orange">Saugoti pakeitimus</button>
