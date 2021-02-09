@@ -1,9 +1,9 @@
 <section class="company__tab hidden" id="produktai">
     <div class="company__info company__photos">
-        <button class="button orange small upload-image">Įkelti gamintojo logotipą (iki 16)</button>
+        <button class="button orange small upload-image">Įkelti gamintojo logotipą (iki 15)</button>
         <p>Logotipo vietą pakeiskite traukdami ją pele</p>
         <ul class="sortable">
-            <?php for ($i = 0; $i < 16; $i++) { ?>
+            <?php for ($i = 0; $i < 15; $i++) { ?>
                 <li class=<?php if ($i == 0 || $i == 1) echo "hide-after" ?>>
                     <?php if ($i == 0) { ?>
                         <div class="company__photo company__photo--logo">

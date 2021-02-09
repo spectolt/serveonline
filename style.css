@@ -11179,7 +11179,7 @@ section.product .product__block-recommend {
 }
 
 .company__header--company {
-  width: calc(100vw - 80px);
+  width: 100%;
   overflow-y: auto;
   text-align: center;
   left: 0;
@@ -11188,6 +11188,12 @@ section.product .product__block-recommend {
   border: 1px solid #e8e8e8;
   border-bottom: none;
   margin-left: 0;
+}
+
+@media (max-width: 1200px) {
+  .company__header--company {
+    width: calc(100vw - 80px);
+  }
 }
 
 .company__header--company ul.company__nav {

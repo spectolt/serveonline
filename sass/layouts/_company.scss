@@ -159,7 +159,7 @@
     }
 
     &--company {
-      width: calc(100vw - 80px);
+      width: 100%;
       overflow-y: auto;
       text-align: center;
       left: 0;
@@ -168,6 +168,10 @@
       border: 1px solid $lightgray;
       border-bottom: none;
       margin-left: 0;
+
+      @include breakpoint(1200px) {
+        width: calc(100vw - 80px);
+      }
 
       ul.company__nav {
         justify-content: space-between;
