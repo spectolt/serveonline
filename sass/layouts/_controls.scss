@@ -167,7 +167,7 @@
     }
 
     th {
-      border-left: 1px solid $white;
+      border-left: 1px solid $washedblue;
       background-color: $darkblue;
       color: $white;
       height: 60px;
@@ -214,6 +214,18 @@
 
       path {
         fill: $white !important;
+      }
+    }
+
+    tfoot {
+      // margin-top: 10px;
+      border-left: 1px solid $washedblue;
+
+      td {
+        background-color: $darkblue;
+        color: $white;
+        text-align: center;
+        padding: 5px 20px;
       }
     }
   }
@@ -359,21 +371,21 @@
     th,
     td {
       &:first-child {
-        width: 28%;
+        width: 27.5%;
       }
 
       &:nth-child(2) {
-        width: 10%;
-        min-width: 88px;
+        width: 12.5%;
+        min-width: 100px;
       }
 
       &:nth-child(3) {
-        width: 8%;
+        width: 6.5%;
         min-width: 40px;
       }
 
       &:nth-child(4) {
-        width: 25%;
+        width: 23%;
       }
 
       &:nth-child(5) {
@@ -381,13 +393,13 @@
       }
     }
 
-    
     th:last-child {
-      width: calc(100% - 28% - 10% - 8% - 25%);
+      width: calc(100% - 28% - 12% - 6.5% - 23%);
     }
 
-    td:last-child {
-      width: calc((100% - 28% - 10% - 8% - 25%)/2);
+    td:last-child,
+    td:nth-last-child(2) {
+      width: calc((100% - 28% - 12% - 6.5% - 23%) / 2);
     }
 
     tr {
@@ -428,11 +440,14 @@
     }
 
     &--main {
-      border-right: 1px solid #eee;
       min-width: 800px;
 
       thead {
         border-top-right-radius: 0;
+      }
+
+      tbody {
+        border-right: 1px solid #eee;
       }
     }
 
@@ -462,13 +477,13 @@
         border-top-left-radius: 0px;
         border-bottom-left-radius: 0px;
         border-top-right-radius: 5px;
-        border-left: 1px solid $white;
+        border-left: 1px solid $washedblue;
       }
 
       tr:first-child th:first-child {
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
-        border-left: 1px solid $white;
+        border-left: 1px solid $washedblue;
         width: 40%;
       }
 
@@ -593,32 +608,56 @@
     }
   }
 
+  .controls__table-container {
+    // width: calc(100% + 10px);
+    overflow-x: hidden;
+    // display: block;
+    
+
+    @include breakpoint(xl) {
+      width: calc(100vw - min(40px, 2.8vw) - min(40px, 2.8vw));
+    }
+
+    @include breakpoint(880px) {
+      overflow-x: auto;
+    }
+  }
+
   &__table {
-    border-left: 1px solid #eee;
     min-width: 150px;
+    // width: calc(100% + 2px);
+    display: inline-block;
+    justify-content: flex-start;
 
     &:first-of-type {
       border-left: none;
+      border-right: none;
     }
 
     thead {
       border-radius: 0;
+      border-left: 1px solid $washedblue;
     }
 
     &:first-of-type {
       thead {
-      border-top-left-radius: 5px;
+        border-top-left-radius: 5px;
+      }
+
+      tbody {
+        border-left: none;
       }
     }
 
     &:last-of-type {
       thead {
-      border-top-right-radius: 5px;
+        border-top-right-radius: 5px;
       }
     }
 
     thead,
-    tbody tr {
+    tbody tr,
+    tfoot {
       display: table;
       width: 100%;
       table-layout: fixed;
@@ -628,6 +667,8 @@
       display: block;
       overflow-y: auto;
       min-height: 150px;
+
+      border-left: 1px solid #eee;
     }
 
     table,
@@ -646,27 +687,64 @@
     }
 
     &:first-of-type {
-      max-width: 16.4%;
+      flex: 0 0 17%;
+      max-width: 17%;
+
+      tfoot {
+        margin-left: -1px;
+        width: calc(100% + 1px);
+      }
     }
 
     &:nth-of-type(2) {
-      max-width: calc(20% - 30px);
+      flex: 0 0 17%;
+      max-width: 17%;
     }
 
     &:nth-of-type(3) {
-      max-width: calc(33% + 90px);
-      min-width: 300px;
-    }
-
-    &:last-of-type {
-      max-width: calc(100% - 16.4% - 20% - 33% - 90px);
+      // flex: 0 0 calc(33% + 90px);
+      // width: calc(33% + 90px);
+      // flex:1 0 auto;
       min-width: 250px;
     }
 
+    &:last-of-type {
+      max-width: calc(100% - 16.4% - 17% - 39%);
+      min-width: 250px;
+      flex: 0 1 auto;
+
+      tfoot {
+        margin-right: -1px;
+        width: calc(100% + 1px);
+      }
+    }
+
     h4 {
-      font-size: .875rem;
+      font-size: 0.875rem;
       margin: auto 0 auto auto;
       text-align: right;
+    }
+
+    &--service-title,
+    &--service-detail {
+      thead {
+        th {
+          position: relative;
+
+          &:after {
+            content: url("img/icons/angle-down-white.svg");
+            position: absolute;
+            bottom: 5px;
+            right: 10px;
+            width: 12px;
+            transition: transform .3s ease-in-out;
+          }
+
+          &.rotate:after {
+            transform: rotate(180deg);
+          }
+        }
+      }
     }
   }
 
@@ -684,7 +762,7 @@
 
   input[name="product-title"] {
     @include breakpoint(xs) {
-      font-size: .75rem;
+      font-size: 0.75rem;
     }
   }
 
@@ -724,7 +802,6 @@
       right: 0;
       margin-right: 0;
       background-color: $white;
-
     }
 
     &:after {

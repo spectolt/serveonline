@@ -34,76 +34,81 @@
         <div class="company__services-blocks hidden">
             <h4 class="company__services-notice">Sužymėkite paslaugas atliekamos Jūsų įstaigoje ir jos atsiras <b>Serve Professionals</b> sistemoje</h4>
             <div class="company__services-block">
-                <h4>Paprastas kirpimas <span class="more-button">Plačiau</span></h4>
+                <h4><span>Paprastas kirpimas</span> <span class="more-button">Plačiau</span></h4>
                 <p class="more-description hidden">Galvos plovimas, modelinis kirpimas, dieninis sušukavimas.</p>
                 <div class="company__features">
                     <div class="time-inputs-container">
+                        <p class="inputs__before-text">Trukmė:</p>
                         <div class="time-inputs disabled">
-                            <input type="number" name="hour" placeholder="00" min="0" max="23" disabled>
+                            <input type="number" name="hour" placeholder="00" min="0" max="23" length="2" disabled>
                             <p>:</p>
-                            <input type="number" name="minute" placeholder="00" min="0" max="59" disabled>
+                            <input type="number" name="minute" placeholder="00" min="0" max="59" length="2" disabled>
                         </div>
                     </div>
                     <div class="discount-inputs">
+                        <p class="inputs__before-text">Kaina:</p>
                         <input type="text" name="before-discount" placeholder="0€" disabled>
+                        <span class="discount-inputs__after-icon"></span>
                         <p>Kaina po nuolaidos: </p>
                         <input type="text" name="after-discount" placeholder="0€" disabled>
                     </div>
                     <div class="periodicity-inputs">
                         <p>Periodiškumas: </p>
-                        <input type="number" name="periodicity" placeholder="0" disabled>
-                        <select class="company__select" disabled>
-                            <option></option>
-                            <option selected>sav.</option>
-                            <option>d.</option>
-                        </select>
+                        <div class="periodicity">
+                            <input type="number" name="periodicity" placeholder="0" disabled>
+                            <select class="company__select" disabled>
+                                <option></option>
+                                <option selected>sav.</option>
+                                <option>d.</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="checkbox">
                         <input name="feature" type="checkbox" id="feature-1" class="" value="1" />
                         <label for="feature-1"></label>
                     </div>
                 </div>
-                <div class="company__button-container">
-                    <button class="cyan small">Užsakoma</button>
-                    <button class="cyan transparent small">Neužsakoma</button>
-                </div>
+                <button class="cyan small company__button-order">Galima rezervuoti online</button>
             </div>
             <div class="company__services-block">
-                <h4>Paprastas kirpimas <span class="more-button">Plačiau</span></h4>
+                <h4><span>Paprastas kirpimas</span> <span class="more-button">Plačiau</span></h4>
                 <p class="more-description hidden">Galvos plovimas, modelinis kirpimas, dieninis sušukavimas.</p>
                 <div class="company__features">
                     <div class="time-inputs-container">
+                        <p class="inputs__before-text">Trukmė:</p>
                         <div class="time-inputs disabled">
-                            <input type="number" name="hour" placeholder="00" min="0" max="23" disabled>
+                            <input type="number" name="hour" placeholder="00" min="0" max="23" length="2" disabled>
                             <p>:</p>
-                            <input type="number" name="minute" placeholder="00" min="0" max="59" disabled>
+                            <input type="number" name="minute" placeholder="00" min="0" max="59" length="2" disabled>
                         </div>
                     </div>
                     <div class="discount-inputs">
+                        <p class="inputs__before-text">Kaina:</p>
                         <input type="text" name="before-discount" placeholder="0€" disabled>
+                        <span class="discount-inputs__after-icon"></span>
                         <p>Kaina po nuolaidos: </p>
                         <input type="text" name="after-discount" placeholder="0€" disabled>
                     </div>
                     <div class="periodicity-inputs">
                         <p>Periodiškumas: </p>
-                        <input type="number" name="periodicity" placeholder="0" disabled>
-                        <select class="company__select" disabled>
-                            <option selected>sav.</option>
-                            <option>d.</option>
-                        </select>
+                        <div class="periodicity">
+                            <input type="number" name="periodicity" placeholder="0" disabled>
+                            <select class="company__select" disabled>
+                                <option></option>
+                                <option selected>sav.</option>
+                                <option>d.</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="checkbox">
                         <input name="feature" type="checkbox" id="feature-2" class="" value="1" />
                         <label for="feature-2"></label>
                     </div>
                 </div>
-                <div class="company__button-container">
-                    <button class="cyan transparent small">Užsakoma</button>
-                    <button class="cyan small">Neužsakoma</button>
-                </div>
+                <button class="cyan small company__button-order">Galima rezervuoti online</button>
             </div>
             <div class="company__services-block company__services-block--choices">
-                <h4>Balayage / Ombre dažymas <span class="more-button">Plačiau</span></h4>
+                <h4><span>Balayage / Ombre dažymas</span> <span class="more-button">Plačiau</span></h4>
                 <span class="product-expand"></span>
                 <p class="more-description hidden">
                     Konsultacija. Dažymui atlikti nenaudojamos jokios pagalbinės priemonės. Jų nereikia todėl, kad siekiama išgauti ypatingą sruogų formą, kuri primena natūraliai nušviesėjusias sruogas. Dažai ant plaukų tepami laisvai rankomis, švelniai braukiant per plaukus. Dažniausiai nėra naudojama ir folija, bet yra visokių technikų.
@@ -123,24 +128,30 @@
                     <h4>Trumpi plaukai</h4>
                     <div class="company__features">
                         <div class="time-inputs-container">
+                            <p class="inputs__before-text">Trukmė:</p>
                             <div class="time-inputs disabled">
-                                <input type="number" name="hour" placeholder="00" min="0" max="23" disabled>
+                                <input type="number" name="hour" placeholder="00" min="0" max="23" length="2" disabled>
                                 <p>:</p>
-                                <input type="number" name="minute" placeholder="00" min="0" max="59" disabled>
+                                <input type="number" name="minute" placeholder="00" min="0" max="59" length="2" disabled>
                             </div>
                         </div>
                         <div class="discount-inputs">
+                            <p class="inputs__before-text">Kaina:</p>
                             <input type="text" name="before-discount" placeholder="0€" disabled>
+                            <span class="discount-inputs__after-icon"></span>
                             <p>Kaina po nuolaidos: </p>
                             <input type="text" name="after-discount" placeholder="0€" disabled>
                         </div>
                         <div class="periodicity-inputs">
                             <p>Periodiškumas: </p>
-                            <input type="number" name="periodicity" placeholder="0" disabled>
-                            <select class="company__select" disabled>
-                                <option selected>sav.</option>
-                                <option>d.</option>
-                            </select>
+                            <div class="periodicity">
+                                <input type="number" name="periodicity" placeholder="0" disabled>
+                                <select class="company__select" disabled>
+                                    <option></option>
+                                    <option selected>sav.</option>
+                                    <option>d.</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="checkbox">
                             <input name="feature" type="checkbox" id="feature-3" class="" value="1" />
@@ -152,24 +163,30 @@
                     <h4>Vidutinio ilgio plaukai</h4>
                     <div class="company__features">
                         <div class="time-inputs-container">
+                            <p class="inputs__before-text">Trukmė:</p>
                             <div class="time-inputs disabled">
-                                <input type="number" name="hour" placeholder="00" min="0" max="23" disabled>
+                                <input type="number" name="hour" placeholder="00" min="0" max="23" length="2" disabled>
                                 <p>:</p>
-                                <input type="number" name="minute" placeholder="00" min="0" max="59" disabled>
+                                <input type="number" name="minute" placeholder="00" min="0" max="59" length="2" disabled>
                             </div>
                         </div>
                         <div class="discount-inputs">
+                            <p class="inputs__before-text">Kaina:</p>
                             <input type="text" name="before-discount" placeholder="0€" disabled>
+                            <span class="discount-inputs__after-icon"></span>
                             <p>Kaina po nuolaidos: </p>
                             <input type="text" name="after-discount" placeholder="0€" disabled>
                         </div>
                         <div class="periodicity-inputs">
                             <p>Periodiškumas: </p>
-                            <input type="number" name="periodicity" placeholder="0" disabled>
-                            <select class="company__select" disabled>
-                                <option selected>sav.</option>
-                                <option>d.</option>
-                            </select>
+                            <div class="periodicity">
+                                <input type="number" name="periodicity" placeholder="0" disabled>
+                                <select class="company__select" disabled>
+                                    <option></option>
+                                    <option selected>sav.</option>
+                                    <option>d.</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="checkbox">
                             <input name="feature" type="checkbox" id="feature-4" class="" value="1" />
@@ -181,24 +198,30 @@
                     <h4>Ilgi plaukai</h4>
                     <div class="company__features">
                         <div class="time-inputs-container">
+                            <p class="inputs__before-text">Trukmė:</p>
                             <div class="time-inputs disabled">
-                                <input type="number" name="hour" placeholder="00" min="0" max="23" disabled>
+                                <input type="number" name="hour" placeholder="00" min="0" max="23" length="2" disabled>
                                 <p>:</p>
-                                <input type="number" name="minute" placeholder="00" min="0" max="59" disabled>
+                                <input type="number" name="minute" placeholder="00" min="0" max="59" length="2" disabled>
                             </div>
                         </div>
                         <div class="discount-inputs">
+                            <p class="inputs__before-text">Kaina:</p>
                             <input type="text" name="before-discount" placeholder="0€" disabled>
+                            <span class="discount-inputs__after-icon"></span>
                             <p>Kaina po nuolaidos: </p>
                             <input type="text" name="after-discount" placeholder="0€" disabled>
                         </div>
                         <div class="periodicity-inputs">
                             <p>Periodiškumas: </p>
-                            <input type="number" name="periodicity" placeholder="0" disabled>
-                            <select class="company__select" disabled>
-                                <option selected>sav.</option>
-                                <option>d.</option>
-                            </select>
+                            <div class="periodicity">
+                                <input type="number" name="periodicity" placeholder="0" disabled>
+                                <select class="company__select" disabled>
+                                    <option></option>
+                                    <option selected>sav.</option>
+                                    <option>d.</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="checkbox">
                             <input name="feature" type="checkbox" id="feature-5" class="" value="1" />
@@ -206,10 +229,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="company__button-container">
-                    <button class="cyan transparent small">Užsakoma</button>
-                    <button class="cyan small">Neužsakoma</button>
-                </div>
+                <button class="cyan small company__button-order">Galima rezervuoti online</button>
             </div>
         </div>
     </div>

@@ -16,7 +16,20 @@
                 <button type="button" class="search-container__close"></button>
             </div>
         <?php } else if ($thisCat == "controls") { ?>
-            <div class="search-container">
+            <div class="search-container search-container--controls">
+                <div class="search-container__select">
+                <select class="search-panel__select" multiple="true">
+                <?php if ($thisPage == "areas") { ?>
+                    <option>Paslaugų sritis</option>
+                    <option>Profesija</option>
+                <?php } else if ($thisPage == "services") {?>
+                    <option>Paslaugų grupė</option>
+                    <option>Pogrupis</option>
+                    <option>Paslaugos pavadinimas</option>
+                    <option>Paslaugos detalizavimas</option>
+                <?php } ?>
+                </select>
+                </div>
                 <form class="search-panel search-panel--wide">
                     <input type="text" name="search" placeholder="Paieška" />
                 </form>
@@ -24,7 +37,7 @@
                 <button type="button" class="search-container__close"></button>
             </div>
         <?php } ?>
-        <header class="site-header site-header--show">
+        <header class="site-header site-header--show <?php if ($thisCat == "company") echo "site-header--company"?>">
             <?php if ($thisCat != "company") { ?>
                 <button class="site-header__hamburger"></button>
             <?php } ?>

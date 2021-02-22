@@ -27,31 +27,33 @@ function onDocumentReady() {
   };
 
   if ($("main.hasUiAutocomplete").length > 0) {
-    $(".search-container__submit").unbind('click').click(function () {
-      $(".ui-autocomplete").fadeOut(300);
-      if (
-        ($("input#search-product").length &&
-          $("input#search-product").val().length) ||
-        $(".search-panel input").val().length
-      ) {
-        if ($(this).find("span").html() == "Ieškoti") {
-          $(this).find("span").html("Valyti");
-          $(this).addClass("change-search-icon");
-          if (!$("main.hasTable").length > 0) {
-            $(".search-clean").css("display", "flex");
+    $(".search-container__submit")
+      .unbind("click")
+      .click(function () {
+        $(".ui-autocomplete").fadeOut(300);
+        if (
+          ($("input#search-product").length &&
+            $("input#search-product").val().length) ||
+          $(".search-panel input").val().length
+        ) {
+          if ($(this).find("span").html() == "Ieškoti") {
+            $(this).find("span").html("Valyti");
+            $(this).addClass("change-search-icon");
+            // if (!$("main.hasTable").length > 0) {
+            //   $(".search-clean").css("display", "flex");
+            // }
+          } else {
+            $(this).find("span").html("Ieškoti");
+            $(".product-header-chosen").fadeOut(300);
+            $("input#search-product").fadeIn(300);
           }
-        } else {
-          $(this).find("span").html("Ieškoti");
-          $(".product-header-chosen").fadeOut(300);
-          $("input#search-product").fadeIn(300);
         }
-      }
-      if ($(this).find("span").html() == "Ieškoti") {
-        $("input#search-product").val("");
-        $(".search-panel input").val("");
-        $(this).removeClass("change-search-icon");
-      }
-    });
+        if ($(this).find("span").html() == "Ieškoti") {
+          $("input#search-product").val("");
+          $(".search-panel input").val("");
+          $(this).removeClass("change-search-icon");
+        }
+      });
 
     // autocomplete results width fix
     jQuery.ui.autocomplete.prototype._resizeMenu = function () {
@@ -101,7 +103,6 @@ function onDocumentReady() {
           ];
         if (event) {
           var selectedDate = $(".ui-datepicker-current-day");
-          console.log(selectedDate);
           popup.show(300);
         }
         changeTextWidth();
@@ -177,7 +178,6 @@ function onDocumentReady() {
             ];
           if (event) {
             var selectedDate = $(".ui-datepicker-current-day");
-            console.log(selectedDate);
             popup.show(300);
           }
           changeTextWidth();
@@ -255,9 +255,11 @@ function onDocumentReady() {
       $(popup).fadeOut(300);
     });
 
-    $(".product__nav-icon").unbind('click').click(function () {
-      $(this).next(".product__nav-input").datepicker("show");
-    });
+    $(".product__nav-icon")
+      .unbind("click")
+      .click(function () {
+        $(this).next(".product__nav-input").datepicker("show");
+      });
 
     //prevent ios from scrolling to input
     document.querySelector(".js-datepicker").addEventListener("focus", (e) => {
@@ -302,6 +304,44 @@ function onDocumentReady() {
   }
 
   if ($("main.hasTable").length > 0) {
+    $(".search-container__submit")
+      .unbind("click")
+      .click(function () {
+        if ($(this).find("span").html() == "Valyti") {
+          $(".search-container__select .select2-search__field")
+            .val("")
+            .trigger("change");
+          $(
+            ".search-container__select .select2-selection__choice__remove"
+          ).trigger("click");
+          console.log($(".search-container__select .select2-search__field"));
+          $(this).find("span").html("Ieškoti");
+          $(this).removeClass("change-search-icon");
+          $(".search-panel input").val("");
+          $(this).find("span").html("Ieškoti");
+          $(this).removeClass("change-search-icon");
+        } else {
+          // $(".search-container__select .select2-search__field").val("");
+          if (
+            $(".search-container__select .select2-search__field").length ||
+            $(".search-panel input").length
+          ) {
+            $(this).find("span").html("Valyti");
+            $(this).addClass("change-search-icon");
+          }
+        }
+      });
+
+    $(window).scroll(function () {
+      if (/iPhone|iPad|iPod|/i.test(navigator.userAgent)) {
+        if ($(window).scrollTop() + $(window).height() > $(document).height()) {
+          var diff =
+            $(window).scrollTop() + $(window).height() - $(document).height();
+          $(".controls__table tbody:last-of-type").height($(".controls__table tbody:last-of-type").height() + diff);
+        }
+      }
+    });
+
     tableHeight();
     changeRowWidth();
     getMaxHeight();
@@ -314,7 +354,22 @@ function onDocumentReady() {
     });
   }
 
-  $("select").select2();
+  $("select")
+    .select2()
+    .on("select2:open", function () {
+      $(this)
+        .siblings(".select2-container")
+        .first()
+        .find(".select2-selection__arrow b")
+        .addClass("rotate");
+    })
+    .on("select2:close", function () {
+      $(this)
+        .siblings(".select2-container")
+        .first()
+        .find(".select2-selection__arrow b")
+        .removeClass("rotate");
+    });
 
   $(".site-aside__filters .js-dropdown-placeholder").select2({
     minimumResultsForSearch: Infinity,
@@ -345,8 +400,9 @@ function onDocumentReady() {
     }
   });
 
-  $(".site-header .site-header__item--search, .search-container__close").unbind('click').click(
-    function () {
+  $(".site-header .site-header__item--search, .search-container__close")
+    .unbind("click")
+    .click(function () {
       $(".search-container").toggleClass("search-container--toggled");
       $(".site-header").toggleClass("hidden-visibility");
       window.setTimeout(function () {
@@ -374,34 +430,46 @@ function onDocumentReady() {
         $(".search-panel input").val("");
         $(".ui-autocomplete").css("display", "none");
         $(".product-header-chosen").remove();
+        $(".search-panel__select").val(null).trigger("change");
       }
-    }
-  );
 
-  $(".venue__slider").not('.slick-initialized').slick({
+      if ($(this).hasClass("site-header__item--search")) {
+        $(
+          '<span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span>'
+        ).appendTo(".select2-selection--multiple");
+      }
+    });
+
+  $(".venue__slider").not(".slick-initialized").slick({
     arrows: true,
     dots: false,
     slidesToShow: 1,
     // slides
   });
-  $(".venue__description-more").unbind('click').click(function () {
-    $(this)
-      .closest(".venue__description")
-      .addClass("venue__description--visible");
-  });
+  $(".venue__description-more")
+    .unbind("click")
+    .click(function () {
+      $(this)
+        .closest(".venue__description")
+        .addClass("venue__description--visible");
+    });
 
-  $(".calendar__more-button").unbind('click').click(function () {
-    var times = $(this).closest(".calendar").children(".calendar__more-times");
-    times.removeClass("calendar__more-times--hidden");
-    $(this).removeClass("calendar__more-button");
-    $(this).html("09:15");
-  });
+  $(".calendar__more-button")
+    .unbind("click")
+    .click(function () {
+      var times = $(this)
+        .closest(".calendar")
+        .children(".calendar__more-times");
+      times.removeClass("calendar__more-times--hidden");
+      $(this).removeClass("calendar__more-button");
+      $(this).html("09:15");
+    });
 
   $(".site-aside__block input").on("click", function () {
     $(".search-clean").css("display", "flex");
   });
 
-  $("select").on("select2:select", function (e) {
+  $(".site-aside__item select").on("select2:select", function (e) {
     $(".search-clean").css("display", "flex");
     $(this).next(".select2").find("b").removeClass("rotate");
   });
@@ -415,6 +483,7 @@ function onDocumentReady() {
     $("#search-product").css("display", "block");
     $(".site-aside__block input").prop("checked", false);
     $("#distance_asc").prop("checked", true);
+    $(".search-panel__select").val(null).trigger("change");
     $(this).fadeOut(300);
   });
 
@@ -426,13 +495,15 @@ function onDocumentReady() {
     $(".search-clean").css("left", "50%");
   }
 
-  $(".breadcrumbs__change").unbind('click').click(function () {
-    $(".breadcrumbs__more").toggleClass("breadcrumbs__more--toggled");
-  });
+  $(".breadcrumbs__change")
+    .unbind("click")
+    .click(function () {
+      $(".breadcrumbs__more").toggleClass("breadcrumbs__more--toggled");
+    });
 
   var likeBtn = $(".product__block-like");
 
-  likeBtn.unbind('click').click(function () {
+  likeBtn.unbind("click").click(function () {
     var like = $(this)
       .closest(".product__block-top")
       .find(".product__block-like-status");
@@ -455,21 +526,24 @@ function onDocumentReady() {
 
   var hamburgerBtn = $(".site-header__hamburger");
 
-  hamburgerBtn.unbind('click').click(function () {
+  hamburgerBtn.unbind("click").click(function () {
     $(".site-aside-container").addClass("site-aside-container--toggled");
   });
 
-  $(document).unbind('click').click(function (event) {
-    //if you click on anything except the menu or the hamburger menu, close the menu
-    if (
-      !$(event.target).closest(".site-aside,.site-header__hamburger").length &&
-      $(event.target).length != $(".select2-search").length
-    ) {
-      $("body")
-        .find(".site-aside-container")
-        .removeClass("site-aside-container--toggled");
-    }
-  });
+  $(document)
+    .unbind("click")
+    .click(function (event) {
+      //if you click on anything except the menu or the hamburger menu, close the menu
+      if (
+        !$(event.target).closest(".site-aside,.site-header__hamburger")
+          .length &&
+        $(event.target).length != $(".select2-search").length
+      ) {
+        $("body")
+          .find(".site-aside-container")
+          .removeClass("site-aside-container--toggled");
+      }
+    });
 
   var timer_id;
   $(window).resize(function () {
@@ -483,12 +557,21 @@ function onDocumentReady() {
       if (field.is(".hasDatepicker")) {
         field.datepicker("hide").datepicker("show");
       }
+      if ($(".select2-dropdown--controls").length > 0) {
+        dropdownWidth =
+          parseInt(
+            document.querySelector(".select2-dropdown--controls").style.width
+          ) +
+          1 +
+          "px";
+      }
+      $(".select2-results").css("width", dropdownWidth);
     }, 100);
   });
 
-  $(".select2").unbind('click').click(function () {
-    $(this).find(".select2-selection__arrow b").toggleClass("rotate");
-  });
+  // $(".select2").unbind('click').click(function () {
+  //   $(this).find(".select2-selection__arrow b").toggleClass("rotate");
+  // });
 
   $(".goto-top").on("click", function () {
     document.body.scrollTop = 0; // For Safari
@@ -501,14 +584,16 @@ function onDocumentReady() {
     }
   });
 
-  $(".feature-screen__slides-container").not('.slick-initialized').slick({
-    arrows: true,
-    dots: true,
-    slidesToShow: 1,
-    autoplay: true,
-    autoplaySpeed: 8000,
-    appendDots: $(".feature-screen"),
-  });
+  $(".feature-screen__slides-container")
+    .not(".slick-initialized")
+    .slick({
+      arrows: true,
+      dots: true,
+      slidesToShow: 1,
+      autoplay: true,
+      autoplaySpeed: 8000,
+      appendDots: $(".feature-screen"),
+    });
 
   $("#upload-icon").change(function (e) {
     for (var i = 0; i < e.originalEvent.srcElement.files.length; i++) {
@@ -571,13 +656,17 @@ function onDocumentReady() {
     $(".controls__item--profession").css("background-color", color);
   });
 
-  $(".languages li").unbind('click').click(function () {
-    $(this).addClass("active");
-    $(this).siblings().removeClass("active");
-  });
+  $(".languages li")
+    .unbind("click")
+    .click(function () {
+      $(this).addClass("active");
+      $(this).siblings().removeClass("active");
+    });
 
-  $(".controls__table .controls__item").unbind('click').click(function () {
-    // if (!$(this).hasClass("controls__item--menu")) {
+  $(".controls__table .controls__item")
+    .unbind("click")
+    .click(function () {
+      // if (!$(this).hasClass("controls__item--menu")) {
       $(this).addClass("changed-bg");
       $(this)
         .closest(".controls__area")
@@ -640,23 +729,23 @@ function onDocumentReady() {
               .nodeValue
         );
       }
-    // }
-    if ($(this).closest(".services__table")) {
-      $(this)
-      .closest(".services__table")
-      .next(".services__table")
-      .find("tbody")
-      .removeClass("hidden");
-    }
+      // }
+      if ($(this).closest(".services__table")) {
+        $(this)
+          .closest(".services__table")
+          .next(".services__table")
+          .find("tbody, tfoot")
+          .removeClass("hidden");
+      }
 
-    if ($(this).closest(".services__table")) {
-      $(".areas__table--menu tbody").removeClass("hidden");
-      // $(".areas__table--main tbody tr td").removeClass("hidden-visibility");
-    }
-  });
+      if ($(this).closest(".services__table")) {
+        $(".areas__table--menu tbody").removeClass("hidden");
+        // $(".areas__table--main tbody tr td").removeClass("hidden-visibility");
+      }
+    });
 
   // $(".areas__table .areas__area .controls__item").unbind('click').click(function () {
-    
+
   // });
 
   // $(".services__table .controls__item").unbind('click').click(function () {
@@ -670,9 +759,6 @@ function onDocumentReady() {
 
   $(".controls__item--service-title").on("input", function () {
     if (!$(this).prop("checked")) {
-      console.log(
-        $(this).closest("table").next("table").find(".controls__item input")
-      );
       $(this)
         .closest("table")
         .next("table")
@@ -681,15 +767,17 @@ function onDocumentReady() {
     }
   });
 
-  $(".feature-screen__slides-container").not('.slick-initialized').slick({
-    arrows: true,
-    dots: true,
-    slidesToShow: 1,
-    autoplay: true,
-    autoplaySpeed: 8000,
-    appendDots: $(".feature-screen"),
-    adaptiveHeight: true,
-  });
+  $(".feature-screen__slides-container")
+    .not(".slick-initialized")
+    .slick({
+      arrows: true,
+      dots: true,
+      slidesToShow: 1,
+      autoplay: true,
+      autoplaySpeed: 8000,
+      appendDots: $(".feature-screen"),
+      adaptiveHeight: true,
+    });
 
   $('.areas__area img[src$=".svg"]').each(imgToSvg).css("fill", "#101b51");
 
@@ -713,38 +801,18 @@ function onDocumentReady() {
 
   var $group = $(
     '<div class="company__info">\
-  <h3>Grupės savininkas</h3>\
+  <h3>Grupė</h3>\
   <div class="company__inputs-container company__inputs-group-owner">\
-  <div class="input-container">\
+    <div class="input-container">\
       <input type="text" class="group-name" name="group-name" placeholder="Grupės pavadinimas">\
       <span class="input-icon"></span>\
       </div>\
-      <div class="input-container">\
-      <input type="text" name="name" placeholder="Vardas Pavardė">\
-      <span class="input-icon"></span>\
-      </div>\
-      <div class="input-container">\
-      <input type="text" name="phone" placeholder="+370 XXXXXXXX">\
-      <span class="input-icon"></span>\
-      </div>\
-      <div class="input-container">\
-      <input type="text" name="email" placeholder="Elektroninis paštas">\
-      <span class="input-icon"></span>\
-      </div>\
-      <div class="input-container">\
-      <input type="text" name="address" placeholder="Adresas">\
-      <span class="input-icon"></span>\
-      </div>\
-      <button class="company__trash company__trash--group"></button>\
-  </div>\
-</div>'
+    </div>\
+  </div>'
   );
 
   $("button.js-create-company").one("click", function () {
-    $(".company__group")
-      .removeClass("hidden")
-      .append($group)
-      .css({ "margin-left": $("button.js-create-company").outerWidth(true) });
+    $(".company__group").removeClass("hidden").append($group);
     $(".company__header--main h2").html("GRUPĖS PAVADINIMAS");
   });
 
@@ -766,65 +834,35 @@ function onDocumentReady() {
   });
 
   var count = 1;
-  $("button.js-create-company").on("click", function () {
+  $(document).on("click", "button.js-create-company", function () {
     count += 1;
     var $company = $(
       '<div class="company__item"> \
     <h3>' +
         count +
-        ' Įmonės admin</h3> \
-    <div class="company__inputs-container company__inputs-companies">\
-    <select class="company__select">\
-    <option></option>\
-        <option data-image="../img/icons/clinic.svg">Klinikos ir estetinė medicina</option>\
-        <option data-image="../img/icons/odontology.svg">Odontologijos klinikos</option>\
-        <option data-image="../img/icons/beauty.svg">Grožio salonai ir kirpyklos</option>\
-        <option data-image="../img/icons/spa.svg">SPA ir masažo salonai</option>\
-        <option data-image="../img/icons/sport.svg">Sportas ir reabilitacija</option>\
-        <option data-image="../img/icons/vet.svg">Veterinarijos klinikos</option>\
-      </select>\
-      <div class="input-container input-container--company">\
-      <input type="text" class="company-name" name="title" placeholder="Pavadinimas">\
-      <span class="input-icon"></span>\
-  </div>\
-  <div class="input-container input-container--name">\
-      <input type="text" name="name" placeholder="Vardas Pavardė">\
-      <span class="input-icon"></span>\
-  </div>\
-  <div class="input-container input-container--phone">\
-      <input type="text" name="phone" placeholder="+370 XXXXXXXX">\
-      <span class="input-icon"></span>\
-  </div>\
-  <div class="input-container input-container--email">\
-      <input type="text" name="email" placeholder="Elektroninis paštas">\
-      <span class="input-icon"></span>\
-  </div>\
-        <h4>Teisės</h4>\
-        <div class="radio">\
-            <input name="rights' +
-        count +
-        '" type="radio" id="rights-company' +
-        count +
-        '" class="" value="1" checked/>\
-            <label for="rights-company' +
-        count +
-        '">Gali matyti tik savo įmonę</label>\
+        ' Įmonė</h3> \
+        <div class="company__inputs-container company__inputs-companies">\
+        <div class="input-container input-container--company">\
+            <input type="text" class="company-name" name="title" placeholder="Įmonės pavadinimas">\
+            <span class="input-icon"></span>\
         </div>\
-        <div class="radio">\
-            <input name="rights' +
-        count +
-        '" type="radio" id="rights-group' +
-        count +
-        '" class="" value="1" />\
-            <label for="rights-group' +
-        count +
-        '">Gali matyti grupę</label>\
-        </div>\
-        <button class="company__trash"></button>\
+        <select class="company__select">\
+            <option></option>\
+            <option data-image="../img/icons/clinic.svg">Klinikos ir estetinė medicina</option>\
+            <option data-image="../img/icons/odontology.svg">Odontologijos klinikos</option>\
+            <option data-image="../img/icons/beauty.svg">Grožio salonai ir kirpyklos</option>\
+            <option data-image="../img/icons/spa.svg">SPA ir masažo salonai</option>\
+            <option data-image="../img/icons/sport.svg">Sportas ir reabilitacija</option>\
+            <option data-image="../img/icons/vet.svg">Veterinarijos klinikos</option>\
+        </select>\
     </div>\
-    </div>'
+    <div class="company__buttons">\
+    <button class="company__trash"></button>\
+    <button class="js-create-company company__create-company"></button>\
+    </div>\
+</div>'
     );
-    $(this).next(".company__items").append($company);
+    $(this).closest(".company__items").append($company);
 
     $(".company__select").select2({
       templateResult: formatOpt,
@@ -867,8 +905,14 @@ function onDocumentReady() {
     },
   });
 
-  $(".time-inputs input[type='number']").on("input", function () {
-    var maxLength = 2;
+  $(".company__select-city").select2({
+    placeholder: "Miestas",
+    minimumResultsForSearch: Infinity,
+  });
+
+  $("input[type='number']").on("input", function () {
+    var maxLength = $(this).attr("length");
+    console.log(maxLength);
     if ($(this).val().length > maxLength) {
       this.value = this.value.slice(0, this.maxLength);
     } else if ($(this).val().length == maxLength) {
@@ -918,7 +962,12 @@ function onDocumentReady() {
 
   $(".company__services-block button").on("click", function () {
     $(this).toggleClass("transparent");
-    $(this).siblings("button").toggleClass("transparent");
+    // $(this).siblings("button").toggleClass("transparent");
+    if ($(this).hasClass("transparent")) {
+      $(this).html("Galima rezervuoti tik telefonu arba atvykus į vietą");
+    } else {
+      $(this).html("Galima rezervuoti online");
+    }
   });
 
   $(".more-button").on("click", function () {
@@ -930,19 +979,56 @@ function onDocumentReady() {
     $(this).parent().siblings(".more-description").toggleClass("hidden");
   });
 
+  var isLastCharEur;
+
+  $("input[name='before-discount'], input[name='after-discount']")
+    .on("click", function () {
+      var lastChar = $(this).val().substr(-1);
+      if (
+        lastChar == "€" &&
+        $(this).prop("selectionStart") == $(this).val().length
+      ) {
+        $(this).prop("selectionStart", $(this).val().length - 1);
+        $(this).prop("selectionEnd", $(this).val().length - 1);
+      }
+    })
+    .on("input", function () {
+      if ($(this).val().indexOf("€") > 0) {
+        $(this).val(
+          $(this)
+            .val()
+            .substr(0, $(this).val().indexOf("€") + 1)
+        );
+      }
+      $(this).val(
+        $(this)
+          .val()
+          .replace(/[^\d€]/g, "")
+      );
+    });
+
   $("input[name='after-discount'").on("input", function () {
     if (parseInt($(this).val(), 10) > 0) {
       $(this)
         .siblings("input[name='before-discount']")
+        .prop("readonly", true)
         .css({ color: "#fec288", "text-decoration": "line-through" });
     } else {
       $(this)
         .siblings("input[name='before-discount']")
+        .prop("readonly", false)
         .css({ color: "#5999b4", "text-decoration": "none" });
     }
-    if (parseInt($(this).val(), 10) > parseInt($(this).siblings("input[name='before-discount']").val(), 10)) {
+    if (
+      parseInt($(this).val(), 10) >
+      parseInt($(this).siblings("input[name='before-discount']").val(), 10)
+    ) {
       $(this).val($(this).siblings("input[name='before-discount']").val());
     }
+    // var lastChar = $(this).val().substr(-1);
+    // if (lastChar == "€") {
+    //   $(this).prop('selectionStart', 2)
+    // }
   });
 
   $(".product-expand").on("click", function () {
@@ -986,15 +1072,18 @@ function onDocumentReady() {
     }
   });
 
-  $(".company__aside .radio input").on("change", function () {
+  $(".company__aside .radio input[name='service[]']").on("change", function () {
     $(".company__services-blocks").removeClass("hidden");
+
+    if (window.matchMedia("(max-width: 700px)").matches) {
+      $(".company__services-blocks").insertAfter($(this).closest(".radio"));
+    }
   });
 
-  $(".time-inputs input").on("change", function () {
+  $("input[type='number']").on("input", function () {
     var inputValue = parseInt($(this).val());
     var max = parseInt($(this).attr("max"));
     var min = parseInt($(this).attr("min"));
-    console.log(inputValue, max, min);
     if (inputValue > max) {
       $(this).val(max);
     } else if (inputValue < min) {
@@ -1003,7 +1092,7 @@ function onDocumentReady() {
   });
 
   $(".discount-inputs input").on("change", function () {
-    if ($(this).val().indexOf("€") <= -1) {
+    if ($(this).val().indexOf("€") <= -1 && $(this).val() != "") {
       $(this).val($(this).val() + "€");
     }
   });
@@ -1098,7 +1187,6 @@ function onDocumentReady() {
     "click",
     function () {
       var $self = $(this).closest(".payment-plan").find("input[name='plan']");
-      console.log($self);
       if ($self.attr("checkstate") == "true") {
         $self.prop("checked", false);
         $self.each(function () {
@@ -1106,28 +1194,231 @@ function onDocumentReady() {
         });
       } else {
         $self.prop("checked", true);
+        $self
+          .siblings(".payment-plan__info")
+          .find("input#Mini")
+          .prop("checked", true);
         $self.attr("checkstate", "true");
-        $("input[type='radio'].myClass:not(:checked)").attr(
-          "checkstate",
-          "false"
-        );
+        $("input[type='radio']:not(:checked)").attr("checkstate", "false");
       }
     }
   );
 
-  $(".input-container--password-eye > .input-icon").on("click", function() {
-    $(this).toggleClass("input-icon--toggled-eye");
-    if ($(this).hasClass("input-icon--toggled-eye")) {
-      $(this).siblings("input[type='password']").attr("type", "text");
-    } else {
-      $(this).siblings("input[type='text']").attr("type", "password");
-    }
-  })
+  // $(".input-container--password-eye > .input-icon").on("click", function() {
+  //   $(this).toggleClass("input-icon--toggled-eye");
+  //   if ($(this).hasClass("input-icon--toggled-eye")) {
+  //     $(this).siblings("input[type='password']").attr("type", "text");
+  //   } else {
+  //     $(this).siblings("input[type='text']").attr("type", "password");
+  //   }
+  // })
+
+  if (
+    navigator.userAgent.match(
+      /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i
+    )
+  ) {
+    $(".company__header--company").css("width", "calc(100vw - 20px)");
+  }
+
+  var dropdownWidth;
+  var searchValue;
+  $(".search-panel__select")
+    .select2({
+      // multiple: true,
+      maximumSelectionLength: 1,
+      placeholder: "Pasirinkite vietą paieškai",
+      dropdownCssClass: "select2-dropdown--controls",
+      dropdownParent: $(".search-container__select"),
+      language: {
+        // You can find all of the options in the language files provided in the
+        // build. They all must be functions that return the string that should be
+        // displayed.
+        maximumSelected: function () {
+          return "";
+        },
+      },
+    })
+    .on("select2:open", function (e) {
+      dropdownWidth =
+        parseInt(
+          document.querySelector(".select2-dropdown--controls").style.width
+        ) +
+        1 +
+        "px";
+      $(".select2-results").css("width", dropdownWidth);
+      console.log($(this));
+      searchValue = $(".select2-search__field").val();
+    })
+    .on("select2:select", function (e) {
+      // if ($(".search-container__submit span").html() == "Ieškoti") {
+      //   $(".search-container__submit span").html("Valyti");
+      //   $(".search-container__submit").addClass("change-search-icon");
+      // }
+      $(this).siblings().find(".select2-search__field").val("");
+    })
+    .on("select2:closing", function (e) {
+      searchValue = $(".select2-search__field").val();
+    })
+    .on("select2:close", function (e) {
+      $(this).siblings().find(".select2-search__field").val(searchValue);
+    });
+
+  $(".services__table--service-title th, .services__table--service-detail th")
+    .unbind("click")
+    .click(function () {
+      $(this).toggleClass("rotate");
+    });
+
+  var companyNum;
+  var countAdmin = 0;
+
+  $(document).on("click", ".js-create-admin", function () {
+    countAdmin += 1;
+    companyNum = $(this).closest(".company__login").index() + 1;
+    $(this)
+      .closest(".company__login")
+      .append(
+        '<div class="company__admin" id="admin' +
+          companyNum +
+          "_" +
+          countAdmin +
+          '">\
+  <div class="company__inputs-container company__inputs-container--login">\
+      <div class="company__login-left">\
+          <div class="company__login-photo"></div>\
+          <h4>Įmonės adminstratorius</h4>\
+          <div class="input-container input-container--person">\
+              <input type="text" name="person" class="company__login-search">\
+              <span class="input-icon"></span>\
+          </div>\
+      </div>\
+      <div class="company__login-right">\
+          <h4>Teisės</h4>\
+          <div class="checkbox">\
+              <input id="rights_' +
+          companyNum +
+          "_" +
+          countAdmin +
+          '_1" type="checkbox">\
+              <label for="rights_' +
+          companyNum +
+          "_" +
+          countAdmin +
+          '_1">Gali matyti grupę</label>\
+          </div>\
+          <div class="checkbox">\
+              <input id="rights_' +
+          companyNum +
+          "_" +
+          countAdmin +
+          '_2" type="checkbox">\
+              <label for="rights_' +
+          companyNum +
+          "_" +
+          countAdmin +
+          '_2">Gali tik savo įmonę</label>\
+          </div>\
+          <div class="checkbox">\
+              <input id="rights_' +
+          companyNum +
+          "_" +
+          countAdmin +
+          '_3" type="checkbox">\
+              <label for="rights_' +
+          companyNum +
+          "_" +
+          countAdmin +
+          '_3">Gali nustatyti įmonės specialistų profilius</label>\
+          </div>\
+          <div class="checkbox">\
+              <input id="rights_' +
+          companyNum +
+          "_" +
+          countAdmin +
+          '_4" type="checkbox">\
+              <label for="rights_' +
+          companyNum +
+          "_" +
+          countAdmin +
+          '_4">Gali aktyvuoti/deaktyvuoti įmonės specialistų profilius</label>\
+          </div>\
+          <div class="checkbox">\
+              <input id="rights_' +
+          companyNum +
+          "_" +
+          countAdmin +
+          '_5" type="checkbox">\
+              <label for="rights_' +
+          companyNum +
+          "_" +
+          countAdmin +
+          '_5">Gali nustatyti įmonės specialistų darbo grafikus</label>\
+          </div>\
+      </div>\
+  </div>\
+  <div class="company__buttons">\
+      <button class="company__trash"></button>\
+      <button class="js-create-admin company__create-company"></button>\
+  </div>\
+  </div>'
+      );
+
+    $(this).remove();
+
+    $(".company__login-search").each(function () {
+      var id = $(this).closest(".company__admin").attr("id");
+      $(this).autocomplete({
+        source: ["Saulė Braškinienė", "Romas Dimša", "Ramunė Varnaliauskienė"],
+        appendTo: "#" + id + " .company__login-left",
+        select: function (event, ui) {
+          event.stopPropagation();
+          $(this)
+            .closest(".company__login-left")
+            .find(".company__login-photo")
+            .css("background-image", "url('../img/1.jpg')");
+        },
+      });
+    });
+  });
+
+  $(".company__login-search").each(function () {
+    var id = $(this).closest(".company__admin").attr("id");
+    $(this).autocomplete({
+      source: ["Saulė Braškinienė", "Romas Dimša", "Ramunė Varnaliauskienė"],
+      appendTo: "#" + id + " .company__login-left",
+      select: function (event, ui) {
+        event.stopPropagation();
+        $(this)
+          .closest(".company__login-left")
+          .find(".company__login-photo")
+          .css("background-image", "url('../img/1.jpg')");
+      },
+    });
+  });
+
+  // $(".company__header--company").on("scroll", function () {
+  //   // .css('top', $(window).scrollTop());
+  //   $(this)
+  //     .find("h2")
+  //     .css({
+  //       left: $(this).scrollLeft(), //Use it later
+  //     });
+  // });
+
+  if (
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    )
+  ) {
+    $(".company__header--company").addClass("disable-scrollbars")
+  }
 
   moveAction();
   moveOrder();
   changePadding();
   openTab();
+  paymentLayout();
 
   setTimeout(function () {
     changeTextWidth();
@@ -1385,7 +1676,6 @@ function gotoTopPosition(el, element) {
       } else {
         rightPos = 24 - footer.offset().left + "px";
       }
-      console.log(footer.offset().left);
       scrollBtn.css({ position: "absolute", right: rightPos, top: "30px" });
     }
     if ($(document).scrollTop() + window.innerHeight < footer.offset().top + 95)
@@ -1460,6 +1750,7 @@ function imgToSvg() {
 function tableHeight(el) {
   var $table = $(".controls__table");
   var tablePos;
+  var $clone, $cloneFooter;
   $table.each(function () {
     var $wrap = $("<div />").appendTo($(this));
     $wrap.css({
@@ -1469,12 +1760,17 @@ function tableHeight(el) {
     });
 
     $clone = $(this).find(".fixed-row").clone().appendTo($wrap);
-    console.log($clone.height());
+    $cloneFooter = $(this).find("tfoot tr").clone().appendTo($wrap);
     tablePos =
-      $(".controls__table-container").offset().top +
-      $("th").outerHeight() +
-      $clone.height() +
-      16;
+      $(".controls__table-container").offset().top + $("th").outerHeight() + 16;
+
+    if ($clone.length > 0) {
+      tablePos += $clone.height();
+    }
+
+    if ($(this).find("tfoot").length > 0) {
+      tablePos += $cloneFooter.outerHeight(true);
+    }
     $wrap.remove();
     $(this)
       .find("tbody")
@@ -1557,7 +1853,6 @@ function openTab() {
           }
         });
       } else {
-        console.log(href);
         $(".company__tab").each(function () {
           if ("#" + $(this).attr("id") == href) {
             $(this).removeClass("hidden");
@@ -1568,4 +1863,81 @@ function openTab() {
       }
     });
   });
+}
+
+function paymentLayout() {
+  var index, column, columnChecked, columnDesc, price, headerClone;
+  if (window.matchMedia("(max-width: 700px)").matches) {
+    $(".payment-plan").each(function () {
+      $(this)
+        .find("thead th:nth-of-type(n+2)")
+        .each(function () {
+          index = $(this).index();
+          childIndex = index + 1;
+          column = $(this)
+            .closest("table")
+            .find("td:nth-of-type(" + childIndex + ")");
+          columnChecked = column.closest(
+            "td:not('.checked'):not('.unchecked'):not('.payment-plan__price'), .checked"
+          );
+
+          headerClone = $(this)
+            .clone()
+            .appendTo($(this).closest(".payment-plan__info"));
+          price = column
+            .closest("td.payment-plan__price")
+            .clone()
+            .appendTo($(this).closest(".payment-plan__info"));
+          columnDesc = columnChecked
+            .closest("tr")
+            .find("td:first-of-type")
+            .clone()
+            .appendTo($(this).closest(".payment-plan__info"));
+
+          $(headerClone)
+            .nextAll(columnDesc)
+            .addBack()
+            .wrapAll("<div class='payment-plan__mobile' />");
+          $(
+            "<input type='radio' name='plan-details' id=" + $(this).html() + ">"
+          ).prependTo(headerClone.closest(".payment-plan__mobile"));
+          $(headerClone)
+            .nextUntil(columnDesc)
+            .addBack()
+            .wrapAll(
+              "<label class='payment-plan__details-label' for=" +
+                $(this).html() +
+                " />"
+            );
+          columnDesc
+            .find(".payment-plan__main-functions")
+            .appendTo(headerClone.closest("label"))
+            .append("<span class='payment-plan__more'>Plačiau</span>");
+          columnDesc.wrapAll("<div class='payment-plan__details' />");
+          price.wrapAll("<div class='payment-plan__price-mobile' />");
+
+          // .appendTo($(this).closest(".payment-plan__info"));
+          // price.clone().appendTo($(this).closest(".payment-plan__info"));
+          // columnDesc.clone().appendTo($(this).closest(".payment-plan__info"));
+          // $(this).closest(".payment-plan__info th, .payment-plan__info td").wrapAll("<div class='payment-plan__item'>")
+          // var checkedDesc = columnChecked.closest("tr").find("td:first-of-type") + columnEmpty.closest("tr").td("first-of-type");
+          // console.log(checkedDesc)
+          // $(this).appendTo($(this).closest(".payment-plan__info"));
+        });
+    });
+
+    $(".payment-plan__info table").remove();
+    $(".payment-plan__info th").replaceWith(function () {
+      return "<h2>" + this.innerHTML + "</h2>";
+    });
+    $(".payment-plan__info td").replaceWith(function () {
+      return "<p>" + this.innerHTML + "</p>";
+    });
+
+    $(".payment-plan__info p").each(function () {
+      if ($.trim($(this).text()) == "") {
+        $(this).remove();
+      }
+    });
+  }
 }

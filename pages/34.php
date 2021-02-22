@@ -70,8 +70,13 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                                 </td>
                             </tr>
                         </tbody>
-                    </table>
-                    <table class="controls__table services__table">
+                        <tfoot>
+                            <tr>
+                                <td>5</td>
+                            </tr>
+                        </tfoot>
+                    </table><!--
+                    --><table class="controls__table services__table">
                         <thead>
                             <tr>
                                 <th>Pogrupis</th>
@@ -118,8 +123,13 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                                 </td>
                             </tr>
                         </tbody>
-                    </table>
-                    <table class="controls__table services__table services__table--service-title">
+                        <tfoot class="hidden">
+                            <tr>
+                                <td>5</td>
+                            </tr>
+                        </tfoot>
+                    </table><!--
+                    --><table class="controls__table services__table services__table--service-title">
                         <thead>
                             <tr>
                                 <th>Paslaugos pavadinimas</th>
@@ -177,11 +187,16 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                                 </td>
                             </tr>
                         </tbody>
-                    </table>
-                    <table class="controls__table services__table">
+                        <tfoot class="hidden">
+                            <tr>
+                                <td>5</td>
+                            </tr>
+                        </tfoot>
+                    </table><!--
+                    --><table class="controls__table services__table services__table--service-detail">
                         <thead>
                             <tr>
-                                <th>Pasalugos detalizavimas</th>
+                                <th>Paslaugos detalizavimas</th>
                             </tr>
                         </thead>
                         <tbody class="hidden">
@@ -223,6 +238,11 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                                 </td>
                             </tr>
                         </tbody>
+                        <tfoot class="hidden">
+                            <tr>
+                                <td>5</td>
+                            </tr>
+                        </tfoot>
                     </table>
                 </div>
             </section>

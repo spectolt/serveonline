@@ -5,11 +5,15 @@
                 <div class="company__specialist-photo" style="background-image:url(../img/1.jpg)">
                 </div>
                 <div class="company__specialist-info">
-                    <h4>Saulė</h4>
-                    <h4>Brašiškienėnienė</h4>
-                    <p>Stilistė</p>
-                    <button class="button darkblue transparent small">Profilis</button>
-                    <button class="button orange small company__specialist-activate">Deaktyvuoti</button>
+                    <div class="company__specialist-name">
+                        <h4>Saulė</h4>
+                        <h4>Brašiškienėnienė</h4>
+                        <p>Stilistė</p>
+                    </div>
+                    <div class="company__specialist-buttons">
+                        <button class="button darkblue transparent small">Profilis</button>
+                        <button class="button orange small company__specialist-activate">Deaktyvuoti</button>
+                    </div>
                 </div>
             </div>
         <?php } ?>

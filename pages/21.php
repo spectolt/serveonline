@@ -1,7 +1,7 @@
 <?php $thisCat = "company"; ?>
 
 <?php require_once('header.php'); ?>
-<main class="site-main site-main--aside">
+<main class="site-main site-main--aside hasUiAutocomplete">
     <section class="page-content page-content--company">
         <div class="page-content__wrapper">
             <section class="company">
@@ -11,9 +11,9 @@
                             <h2>Pavadinimas</h2>
                         </div>
                         <ul class="company__nav">
-                            <li class="active"><a href="#bendra-informacija">Bendra informacija</a></li>
+                            <li class="active"><a href="#imones">Įmonės</a></li>
                             <li><a href="#imoniu-profiliai">Įmonių profiliai</a></li>
-                            <li><a href="#prisijungimas">Prisijungimas</a></li>
+                            <li><a href="#prisijungimas">Administratoriai ir teisės</a></li>
                         </ul>
                     </div>
                 </div>

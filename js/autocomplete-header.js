@@ -44,7 +44,7 @@ $("#search-product")
     },
     select: function (event, ui) {
       event.preventDefault();
-      $("input#search-product").val(ui.item.title);
+      // $("input#search-product").val(ui.item.title);
       // $("#project").val(ui.item.label);
       // $("#project-id").val(ui.item.value);
       // $("#project-description").html(ui.item.desc);

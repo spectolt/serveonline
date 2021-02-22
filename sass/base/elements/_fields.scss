@@ -50,6 +50,8 @@ textarea {
 input:disabled {
 	border: none;
 	outline: none;
+	-webkit-appearance: none;
+	background-color: $white;
 
 	&::-webkit-input-placeholder {
 		color: $lightgray;

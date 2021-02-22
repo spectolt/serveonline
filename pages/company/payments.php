@@ -18,7 +18,7 @@
             foreach ($number as $k => $c) { ?>
                 <div class="payment-plan">
                     <input type="radio" id="plan<?php echo $k ?>" name="plan">
-                    <label for="plan<?php echo $k ?>">Pasiūlymai verslui <b>iki <?php echo $c ?></b> specialistų</label>
+                    <label class="payment-plan__label" for="plan<?php echo $k ?>"><p>Pasiūlymai verslui <b>iki <?php echo $c ?></b> specialistų</p></label>
                     <div class="payment-plan__info">
                         <table>
                             <thead>
@@ -32,7 +32,7 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                        <h3>Pagrindinės funkcijos</h3>
+                                        <h3 class="payment-plan__main-functions">Pagrindinės funkcijos</h3>
                                     </td>
                                     <td></td>
                                     <td class="coming-soon">

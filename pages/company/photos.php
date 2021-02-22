@@ -1,7 +1,9 @@
 <section class="company__tab hidden" id="nuotraukos">
     <div class="company__info company__photos">
-        <button class="button orange small upload-image">Įkelti nuotraukas (iki 24)</button>
+        <div class="company__photos-button-container">
+        <button class="button orange small upload-image">Įkelti nuotraukas <span>(iki 24)<span></button>
         <button class="button orange transparent small archive-image">Įkelti iš archyvo</button>
+        </div>
         <p>Nuotraukos vietą pakeiskite traukdami ją pele</p>
         <ul class="sortable">
             <?php for ($i = 0; $i < 24; $i++) { ?>

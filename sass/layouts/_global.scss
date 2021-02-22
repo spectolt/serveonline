@@ -126,11 +126,11 @@ body {
         }
       }
 
-      &--company {
-        @include breakpoint(sm) {
-          order: 0;
-        }
-      }
+      // &--company {
+      //   @include breakpoint(sm) {
+      //     order: 0;
+      //   }
+      // }
 
       a {
         padding: 21px 0;
@@ -232,6 +232,15 @@ body {
         display: flex;
         align-items: center;
 
+        @include breakpoint(sm) {
+          // position: absolute;
+          // left: 10px;
+          // margin: 0 0 0 5px;
+          // top: 50%;
+          // transform: translateY(-50%);
+          // font-size: .75rem;
+        }
+
         &:before {
           content: "";
           width: 12px;
@@ -244,6 +253,14 @@ body {
           display: block;
           transform: rotate(-90deg);
         }
+      }
+    }
+  }
+
+  &--company {
+    .site-header__logo {
+      @include breakpoint(sm) {
+        margin: 0 auto 0 0;
       }
     }
   }
