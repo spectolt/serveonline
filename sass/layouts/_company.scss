@@ -51,28 +51,24 @@
     height: 100%;
   }
 
-  input[name="title"] {
-    padding-left: 38px;
-  }
-
   input[name="name"] ~ .input-icon {
     background: url("./img/icons/user.svg") no-repeat scroll 10px 8px;
   }
 
   input[name="title"] ~ .input-icon {
-    background: url("./img/icons/building.svg") no-repeat scroll 10px 10px;
+    background: url("./img/icons/building.svg") no-repeat scroll 16px 10px;
   }
 
   input[name="phone"] ~ .input-icon {
-    background: url("./img/icons/phone.svg") no-repeat scroll 10px 9px;
+    background: url("./img/icons/phone.svg") no-repeat scroll 18px 9px;
   }
 
   input[name="email"] ~ .input-icon {
-    background: url("./img/icons/envelope.svg") no-repeat scroll 10px 10px;
+    background: url("./img/icons/envelope.svg") no-repeat scroll 12px 10px;
   }
 
   input[name="coordinates"] ~ .input-icon {
-    background: url("./img/icons/marker.svg") no-repeat scroll 10px 9px;
+    background: url("./img/icons/marker.svg") no-repeat scroll 16.5px 9px;
   }
 
   input[name="person"] ~ .input-icon {
@@ -80,29 +76,13 @@
     background-size: 45%;
   }
 
-  input[name="address"] {
-    padding-left: 42px;
-  }
-
-  input[name="coordinates"] {
-    padding-left: 32px;
-  }
-
-  input[name="phone"] {
-    padding-left: 28px;
-  }
-
-  input[name="email"] {
-    padding-left: 43px;
-  }
-
   .input-container--city .input-icon {
-    background: url("./img/icons/city.svg") no-repeat scroll 10px 9px;
+    background: url("./img/icons/city.svg") no-repeat scroll 15px 9px;
     background-size: 50%;
   }
 
   .input-container--street .input-icon {
-    background: url("./img/icons/street.svg") no-repeat scroll 10px 9px;
+    background: url("./img/icons/street.svg") no-repeat scroll 14px 9px;
     background-size: 50%;
   }
 
@@ -171,7 +151,7 @@
       font-size: 3.75rem;
 
       @include breakpoint(sm) {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
         margin-bottom: 30px;
         margin-left: 10px;
       }
@@ -217,7 +197,7 @@
 
     &--company {
       width: 100%;
-      overflow-y: auto;
+      // overflow-y: auto;
       text-align: center;
       left: 0;
       padding: 60px 20px 0;
@@ -225,25 +205,28 @@
       border: 1px solid $lightgray;
       border-bottom: none;
       margin-left: 0;
+      overflow: auto;
 
       @include breakpoint(1200px) {
         width: calc(100vw - 80px);
       }
 
       @include breakpoint(sm) {
-        width: calc(100vw - 36px);
-        padding: 30px 10px 0;
+        // width: calc(100vw - 36px);
+        width: 100%;
+        padding: 30px 0 0;
       }
 
       h2 {
         @include breakpoint(sm) {
-          position: sticky;
+          position: relative;
           // margin-left: 50%;
           margin: 0;
           left: 0;
           // transform: translateX(-50%);
           width: auto;
           white-space: nowrap;
+          display: block;
         }
       }
 
@@ -252,6 +235,18 @@
 
         @include breakpoint(sm) {
           margin-top: 40px;
+          // padding: 10px 0;
+          overflow-y: auto;
+          padding-left: 10px;
+          padding-right: 10px;
+
+          &::-webkit-scrollbar {
+            height: 8px;
+          }
+
+          &::-webkit-scrollbar-thumb {
+            border-width: 2px;
+          }
         }
       }
     }
@@ -327,10 +322,10 @@
       width: 100%;
       margin-right: 0;
       text-transform: uppercase;
-      padding-left: 38px;
+      // padding-left: 38px;
 
       & ~ .input-icon {
-        background: url("./img/icons/building.svg") no-repeat scroll 10px 10px;
+        background: url("./img/icons/building.svg") no-repeat scroll 16px 10px;
       }
     }
 
@@ -690,6 +685,11 @@
     ul {
       margin: 0 20px 40px 0;
       padding: 0;
+
+      @include breakpoint(sm) {
+        margin: 0 20px 20px 0;
+      }
+
       li {
         list-style: none;
         margin-bottom: 20px;
@@ -738,7 +738,7 @@
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
-      max-height: 880px;
+      max-height: 900px;
 
       @include breakpoint(sm) {
         max-height: none;
@@ -842,7 +842,7 @@
 
           &__rendered {
             margin: auto 0;
-            padding-left: 40px;
+            padding-left: 50px;
           }
 
           &__arrow {
@@ -880,7 +880,7 @@
         resize: none;
         height: 234px;
         border: 1px solid $lightgray;
-        -webkit-appearance: none; 
+        -webkit-appearance: none;
 
         @include breakpoint(sm) {
           margin: 10px 0;
@@ -910,7 +910,7 @@
 
       &--about-us {
         textarea {
-          height: 340px;
+          height: 360px;
         }
       }
     }
@@ -924,6 +924,13 @@
         margin-top: 20px;
       }
 
+      h3 {
+        @include breakpoint(sm) {
+          padding-bottom: 5px;
+          border-bottom: 1px solid $lightgray;
+        }
+      }
+
       table {
         border: 1px solid $lightgray;
         border-radius: 5px;
@@ -933,8 +940,9 @@
         @include breakpoint(sm) {
           padding: 0;
           border: none;
-          border-top: 1px solid $lightgray;
+          // border-top: 1px solid $lightgray;
           margin-bottom: 30px;
+          margin-top: 0;
         }
 
         tr {
@@ -960,15 +968,20 @@
           @include breakpoint(sm) {
             &:nth-last-of-type(2),
             &:last-of-type {
-              width: 80px;
+              width: 60px;
 
               input {
                 padding: 0;
               }
 
-              input:first-of-type{
+              input:first-of-type {
                 padding-left: 6px;
               }
+            }
+
+            &:last-of-type {
+              padding-left: 0;
+              padding-right: 0;
             }
           }
         }
@@ -988,6 +1001,10 @@
 
           input {
             height: 20px;
+
+            @include breakpoint(sm) {
+              height: 24px;
+            }
           }
         }
       }
@@ -1009,6 +1026,7 @@
       h3 {
         @include breakpoint(sm) {
           border-bottom: 1px solid $lightgray;
+          padding-bottom: 5px;
         }
       }
 
@@ -1115,6 +1133,7 @@
 
         @include breakpoint(sm) {
           border-bottom: 1px solid $lightgray;
+          padding-bottom: 5px;
         }
       }
 
@@ -1135,25 +1154,25 @@
       }
 
       input {
-        padding-top: 5px;
-        padding-bottom: 5px;
+        // padding-top: 7.5px;
+        // padding-bottom: 7.5px;
         width: 100%;
       }
 
       input[name="facebook-address"] {
-        background: url("img/icons/facebook.svg") no-repeat scroll 10px 2px;
+        background: url("img/icons/facebook.svg") no-repeat scroll 12px 7px;
         background-size: 26px;
       }
       input[name="instagram-address"] {
-        background: url("img/icons/instagram.svg") no-repeat scroll 10px 2px;
+        background: url("img/icons/instagram.svg") no-repeat scroll 12px 7px;
         background-size: 26px;
       }
       input[name="linkedin-address"] {
-        background: url("img/icons/linkedin.svg") no-repeat scroll 10px 2px;
+        background: url("img/icons/linkedin.svg") no-repeat scroll 12px 7px;
         background-size: 26px;
       }
       input[name="youtube-address"] {
-        background: url("img/icons/youtube.svg") no-repeat scroll 10px 2px;
+        background: url("img/icons/youtube.svg") no-repeat scroll 12px 7px;
         background-size: 26px;
       }
     }
@@ -1471,7 +1490,7 @@
               flex-direction: column;
             }
           }
- 
+
           button {
             // margin-right: 10px;
 
@@ -2028,7 +2047,7 @@
           padding: 0 10px;
           display: flex;
           align-items: center;
-          
+
           p {
             font-size: 1.5rem;
 
@@ -2348,13 +2367,30 @@
             }
           }
 
+          .payment-plan__details.toggled {
+            max-height: 1200px;
+            border: 3px solid $darkblue;
+            border-top: none;
+            transition: border 0.3s ease-in-out, padding 0.3s ease-in-out;
+            margin-top: 0;
+            padding: 10px 0 0;
+          }
+
+          .payment-plan__more.toggled:after {
+            transform: rotate(180deg) !important;
+          }
+
+          .payment-plan__more.untoggled:after {
+            transform: rotate(0) !important;
+          }
+
           .payment-plan__price-mobile {
             text-align: right;
 
             span b {
               font-size: 1.5rem;
               text-transform: uppercase;
-              font-family: 'Sen', sans-serif;
+              font-family: "Sen", sans-serif;
             }
           }
 
@@ -2366,7 +2402,7 @@
             align-items: flex-end;
 
             @include breakpoint(sm) {
-              font-size: .875rem;
+              font-size: 0.875rem;
             }
           }
 

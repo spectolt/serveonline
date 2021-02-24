@@ -1,6 +1,6 @@
 <?php require_once('head.php'); ?>
 
-<body>
+<body class="<?php if ($thisCat == "company") echo "margin-small"?>">
     <div id="page">
         <?php if ($thisCat != "company" && $thisCat != "controls") { ?>
             <div class="search-container">

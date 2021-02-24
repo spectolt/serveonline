@@ -332,15 +332,18 @@ function onDocumentReady() {
         }
       });
 
-    $(window).scroll(function () {
-      if (/iPhone|iPad|iPod|/i.test(navigator.userAgent)) {
-        if ($(window).scrollTop() + $(window).height() > $(document).height()) {
-          var diff =
-            $(window).scrollTop() + $(window).height() - $(document).height();
-          $(".controls__table tbody:last-of-type").height($(".controls__table tbody:last-of-type").height() + diff);
-        }
-      }
-    });
+    // $(window).scroll(function () {
+    //   if (/iPhone|iPad|iPod|/i.test(navigator.userAgent)) {
+    //     if ($(window).scrollTop() + $(window).height() > $(document).height()) {
+    //       var diff =
+    //         $(window).scrollTop() + $(window).height() - $(document).height();
+    //       $(".controls__table tbody:last-of-type").each(function() {
+    //         $(this).height($(this).height() + diff);
+    //         console.log(diff)
+    //       })
+    //     }
+    //   }
+    // });
 
     tableHeight();
     changeRowWidth();
@@ -553,6 +556,7 @@ function onDocumentReady() {
       moveOrder();
       changeTextWidth();
       changePadding();
+      paymentLayout();
       var field = $(document.activeElement);
       if (field.is(".hasDatepicker")) {
         field.datepicker("hide").datepicker("show");
@@ -1411,8 +1415,36 @@ function onDocumentReady() {
       navigator.userAgent
     )
   ) {
-    $(".company__header--company").addClass("disable-scrollbars")
+    $(".company__header--company").addClass("disable-scrollbars");
+    $(".controls__table tbody").addClass("disable-scrollbars");
   }
+
+  $(document).on("click", ".payment-plan__more", function() {
+    if($(this).closest(".payment-plan__details-label").siblings(".payment-plan__details").height() > 0) {
+      $(this).closest(".payment-plan__details-label").siblings(".payment-plan__details").css({"max-height": "0", "padding": "0", "transition": "max-height .3s ease-in-out"});
+      $(this).removeClass("toggled").addClass("untoggled");
+    } else {
+      $(this).closest(".payment-plan__details-label").siblings(".payment-plan__details").css({"max-height": "1200px", "padding": "10px 0 0", "transition": "max-height .3s ease-in-out"});
+      $(this).removeClass("untoggled").addClass("toggled");
+    }
+  });
+
+  $(".expand-button").unbind("click").click(function() {
+    if (!$(this).hasClass("rotate-arr")) {
+      // $(this).closest(".controls").find(".title, .services__areas-list, .controls__top").fadeOut(300).promise().done(function() {
+        $(this).closest(".controls").find(".title, .services__areas-list, .controls__top").css({"height": "0", "transition": "height .3s ease-in-out", "overflow": "hidden"}).promise().done(function() {
+          $(this).addClass("hidden");
+        })
+      // });      
+    } else {
+      $(this).closest(".controls").find(".title, .services__areas-list, .controls__top").css({"height": "auto", "transition": "height .3s ease-in-out", "overflow": "visible"}).promise().done(function() {
+        $(this).removeClass("hidden");
+      })
+    }
+    $(this).closest(".controls").find("tbody").css({"transition": "height .3s ease-in-out"})
+    tableHeight();
+    $(this).toggleClass("rotate-arr");
+  })
 
   moveAction();
   moveOrder();
@@ -1634,10 +1666,20 @@ function hasScrolled() {
   if (st > lastScrollTop && st > navbarHeight) {
     // Scroll Down
     $(".site-header").removeClass("site-header--show");
+
+    $(".controls__table tbody").each(function() {
+      if($(this).closest(".controls__table-container-wrapper").find(".expand-button").hasClass("rotate-arr")) {
+        $(this).height("calc(100vh - 150px)");
+        $(".services__table tbody .fixed-row").parent().css("height", "auto");
+        $(".services__table tbody .fixed-row").parent().css("min-height", "0");
+      }
+    })
   } else {
     // Scroll Up
     if (st + $(window).height() < $(document).height()) {
       $(".site-header").addClass("site-header--show");
+     
+      tableHeight();
     }
   }
 
@@ -1762,7 +1804,7 @@ function tableHeight(el) {
     $clone = $(this).find(".fixed-row").clone().appendTo($wrap);
     $cloneFooter = $(this).find("tfoot tr").clone().appendTo($wrap);
     tablePos =
-      $(".controls__table-container").offset().top + $("th").outerHeight() + 16;
+      $(".controls__table-container").offset().top + $("th").outerHeight() + 8;
 
     if ($clone.length > 0) {
       tablePos += $clone.height();
@@ -1852,6 +1894,10 @@ function openTab() {
             $(this).addClass("hidden");
           }
         });
+        $(".company__tab").addClass("hidden");
+        $(".company__tab#imones-bendra-informacija").removeClass("hidden");
+        $(".company__nav").eq(1).find("li").removeClass("active");
+        $(".company__nav:last-of-type").find("li a[href='#imones-bendra-informacija']").parent().addClass("active");
       } else {
         $(".company__tab").each(function () {
           if ("#" + $(this).attr("id") == href) {
@@ -1866,7 +1912,7 @@ function openTab() {
 }
 
 function paymentLayout() {
-  var index, column, columnChecked, columnDesc, price, headerClone;
+  var index, column, columnChecked, columnDesc, price, headerClone, cacheDom;
   if (window.matchMedia("(max-width: 700px)").matches) {
     $(".payment-plan").each(function () {
       $(this)
@@ -1927,6 +1973,7 @@ function paymentLayout() {
     });
 
     $(".payment-plan__info table").remove();
+    // $(".payment-plan__info table").detach();
     $(".payment-plan__info th").replaceWith(function () {
       return "<h2>" + this.innerHTML + "</h2>";
     });
