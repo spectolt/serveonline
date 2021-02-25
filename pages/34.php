@@ -138,7 +138,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                         <table class="controls__table services__table services__table--service-title">
                             <thead>
                                 <tr>
-                                    <th>Paslaugos pavadinimas <span>Varnelė - galima rezervuoti online</span></th>
+                                    <th class="top-arrow bottom-arrow">Paslaugos pavadinimas <span>Varnelė - galima rezervuoti online</span></th>
                                 </tr>
                             </thead>
                             <tbody class="hidden">
@@ -203,7 +203,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                         <table class="controls__table services__table services__table--service-detail">
                             <thead>
                                 <tr>
-                                    <th>Paslaugos detalizavimas <span>Varnelė - galima rezervuoti online</span></th>
+                                    <th class="top-arrow bottom-arrow">Paslaugos detalizavimas <span>Varnelė - galima rezervuoti online</span></th>
                                 </tr>
                             </thead>
                             <tbody class="hidden">

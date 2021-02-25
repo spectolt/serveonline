@@ -740,12 +740,12 @@
       // flex: 0 0 calc(33% + 90px);
       // width: calc(33% + 90px);
       // flex:1 0 auto;
-      min-width: 250px;
+      min-width: 270px;
     }
 
     &:last-of-type {
       max-width: calc(100% - 16.4% - 17% - 39%);
-      min-width: 250px;
+      min-width: 270px;
       flex: 0 1 auto;
 
       tfoot {
@@ -766,17 +766,27 @@
         th {
           position: relative;
 
-          &:after {
-            content: url("img/icons/angle-down-white.svg");
+          &::after,
+          &::before {
+            // content: url("img/icons/angle-down-white.svg");
+            content:"";
             position: absolute;
-            bottom: 5px;
-            right: 10px;
-            width: 12px;
+            bottom: 12px;
+            right: 5px;
+            width: 8px;
+            height: 7px;
             transition: transform .3s ease-in-out;
+            opacity: .5;
+            cursor: pointer;
           }
 
-          &.rotate:after {
-            transform: rotate(180deg);
+          &.bottom-arrow:after {
+            content: url("img/icons/list-bottom-white.svg");
+          }
+
+          &.top-arrow::before {
+            background-image: url("img/icons/list-white.svg");
+            bottom: 15px;
           }
         }
 

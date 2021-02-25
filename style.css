@@ -1550,8 +1550,8 @@ select {
   background-color: #101b51;
   color: #fff;
   display: none;
-  padding: 8px 10px 8px 8px;
-  border-radius: 15px;
+  padding: 8px 15px;
+  border-radius: 25px;
 }
 
 .search-clean:before {
@@ -1684,7 +1684,6 @@ select {
 .select2-dropdown--controls {
   border-left: none !important;
   border-radius: 0 !important;
-  width: 100vw !important;
   border-right: none !important;
   border-top: 1px solid #e8e8e8 !important;
 }
@@ -10237,12 +10236,12 @@ section.product .product__block-recommend {
 }
 
 .services__table:nth-of-type(3) {
-  min-width: 250px;
+  min-width: 270px;
 }
 
 .services__table:last-of-type {
   max-width: calc(100% - 16.4% - 17% - 39%);
-  min-width: 250px;
+  min-width: 270px;
   -webkit-box-flex: 0;
       -ms-flex: 0 1 auto;
           flex: 0 1 auto;
@@ -10263,21 +10262,28 @@ section.product .product__block-recommend {
   position: relative;
 }
 
-.services__table--service-title thead th:after, .services__table--service-detail thead th:after {
-  content: url("img/icons/angle-down-white.svg");
+.services__table--service-title thead th::after, .services__table--service-title thead th::before, .services__table--service-detail thead th::after, .services__table--service-detail thead th::before {
+  content: "";
   position: absolute;
-  bottom: 5px;
-  right: 10px;
-  width: 12px;
+  bottom: 12px;
+  right: 5px;
+  width: 8px;
+  height: 7px;
   -webkit-transition: -webkit-transform .3s ease-in-out;
   transition: -webkit-transform .3s ease-in-out;
   transition: transform .3s ease-in-out;
   transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+  opacity: .5;
+  cursor: pointer;
 }
 
-.services__table--service-title thead th.rotate:after, .services__table--service-detail thead th.rotate:after {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
+.services__table--service-title thead th.bottom-arrow:after, .services__table--service-detail thead th.bottom-arrow:after {
+  content: url("img/icons/list-bottom-white.svg");
+}
+
+.services__table--service-title thead th.top-arrow::before, .services__table--service-detail thead th.top-arrow::before {
+  background-image: url("img/icons/list-white.svg");
+  bottom: 15px;
 }
 
 .services__table--service-title thead span, .services__table--service-detail thead span {

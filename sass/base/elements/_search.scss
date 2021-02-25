@@ -380,8 +380,8 @@
   background-color: $darkblue;
   color: $white;
   display: none;
-  padding: 8px 10px 8px 8px;
-  border-radius: 15px;
+  padding: 8px 15px;
+  border-radius: 25px;
 
   &:before {
     content: "";
@@ -488,7 +488,7 @@
 .select2-dropdown--controls {
   border-left: none !important;
   border-radius: 0 !important;
-  width: 100vw !important;
+  // width: 100vw !important;
   border-right: none !important;
   border-top: 1px solid $lightgray !important;
 

@@ -1271,7 +1271,13 @@ function onDocumentReady() {
   $(".services__table--service-title th, .services__table--service-detail th")
     .unbind("click")
     .click(function () {
-      $(this).toggleClass("rotate");
+      if ($(this).hasClass("top-arrow bottom-arrow")) {
+        $(this).removeClass("top-arrow");
+      } else if ($(this).hasClass("bottom-arrow")) {
+        $(this).removeClass("bottom-arrow").addClass("top-arrow");
+      } else if ($(this).hasClass("top-arrow")) {
+        $(this).addClass("bottom-arrow");
+      }
     });
 
   var companyNum;
