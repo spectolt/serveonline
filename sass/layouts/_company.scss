@@ -57,18 +57,34 @@
 
   input[name="title"] ~ .input-icon {
     background: url("./img/icons/building.svg") no-repeat scroll 16px 10px;
+
+    @include breakpoint(sm) {
+      background: url("./img/icons/building.svg") no-repeat scroll 12px 10px;
+    }
   }
 
   input[name="phone"] ~ .input-icon {
     background: url("./img/icons/phone.svg") no-repeat scroll 18px 9px;
+
+    @include breakpoint(sm) {
+      background: url("./img/icons/phone.svg") no-repeat scroll 16px 9px;
+    }
   }
 
   input[name="email"] ~ .input-icon {
     background: url("./img/icons/envelope.svg") no-repeat scroll 12px 10px;
+
+    @include breakpoint(sm) {
+      background: url("./img/icons/envelope.svg") no-repeat scroll 8px 10px;
+    }
   }
 
   input[name="coordinates"] ~ .input-icon {
     background: url("./img/icons/marker.svg") no-repeat scroll 16.5px 9px;
+
+    @include breakpoint(sm) {
+      background: url("./img/icons/marker.svg") no-repeat scroll 13px 9px;
+    }
   }
 
   input[name="person"] ~ .input-icon {
@@ -79,11 +95,21 @@
   .input-container--city .input-icon {
     background: url("./img/icons/city.svg") no-repeat scroll 15px 9px;
     background-size: 50%;
+
+    @include breakpoint(sm) {
+      background: url("./img/icons/city.svg") no-repeat scroll 10px 9px;
+      background-size: 50%;
+    }
   }
 
   .input-container--street .input-icon {
     background: url("./img/icons/street.svg") no-repeat scroll 14px 9px;
     background-size: 50%;
+
+    @include breakpoint(sm) {
+      background: url("./img/icons/street.svg") no-repeat scroll 10px 8px;
+      background-size: 50%;
+    }
   }
 
   &__header {
@@ -282,6 +308,7 @@
 
       @include breakpoint(sm) {
         margin-bottom: 15px;
+        padding-left: 40px;
       }
     }
   }
@@ -326,6 +353,10 @@
 
       & ~ .input-icon {
         background: url("./img/icons/building.svg") no-repeat scroll 16px 10px;
+
+        @include breakpoint(sm) {
+          background: url("./img/icons/building.svg") no-repeat scroll 12px 10px;
+        }
       }
     }
 
@@ -439,7 +470,6 @@
     // }
 
     input {
-      padding-left: 50px;
       margin-right: 20px;
       // background: url("./img/icons/building.svg") no-repeat scroll 10px 8px;
 
@@ -843,6 +873,10 @@
           &__rendered {
             margin: auto 0;
             padding-left: 50px;
+
+            @include breakpoint(sm) {
+              padding-left: 40px;
+            }
           }
 
           &__arrow {
