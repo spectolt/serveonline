@@ -16,6 +16,13 @@
             <input type="text" name="coordinates" placeholder="Koordinatės">
             <span class="input-icon"></span>
         </div>
+        <div class="input-container input-container--neighborhood">
+            <select class="company__select-neighborhood">
+                <option></option>
+                <option>Centras</option>
+            </select>
+            <span class="input-icon"></span>
+        </div>
         <div class="input-container input-container--phone">
             <input type="text" name="phone" placeholder="+370 XXXXXXXX">
             <span class="input-icon"></span>

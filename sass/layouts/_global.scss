@@ -239,6 +239,7 @@ body {
           // top: 50%;
           // transform: translateY(-50%);
           // font-size: .75rem;
+          margin: 0;
         }
 
         &:before {
@@ -660,6 +661,7 @@ body {
   padding: 40px 0;
   border-top: 1px solid $lightgray;
   position: relative;
+  flex: 0 0 auto;
 
   @include breakpoint(l) {
     flex-direction: column;
@@ -843,6 +845,12 @@ body {
 .hidden-visibility {
   opacity: 0 !important;
   transition: opacity 0.3s !important;
+}
+
+.hidden-height {
+  max-height: 0;
+  transition: max-height .3s cubic-bezier(0, 1, 0, 1);
+  overflow: hidden;
 }
 
 .disable-scrollbars {

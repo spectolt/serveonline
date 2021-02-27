@@ -33,6 +33,11 @@
       margin-right: 20px;
     }
 
+    &--neighborhood {
+      flex-basis: calc(40% - 20px);
+      margin-right: 20px;
+    }
+
     @include breakpoint(sm) {
       flex-basis: 100%;
     }
@@ -49,6 +54,10 @@
     left: 0;
     width: 50px;
     height: 100%;
+
+    @include breakpoint(sm) {
+      width: 40px;
+    }
   }
 
   input[name="name"] ~ .input-icon {
@@ -59,31 +68,31 @@
     background: url("./img/icons/building.svg") no-repeat scroll 16px 10px;
 
     @include breakpoint(sm) {
-      background: url("./img/icons/building.svg") no-repeat scroll 12px 10px;
+      background: url("./img/icons/building.svg") no-repeat scroll 12px 5.5px;
     }
   }
 
   input[name="phone"] ~ .input-icon {
-    background: url("./img/icons/phone.svg") no-repeat scroll 18px 9px;
+    background: url("./img/icons/phone.svg") no-repeat scroll 19px 10px;
 
     @include breakpoint(sm) {
-      background: url("./img/icons/phone.svg") no-repeat scroll 16px 9px;
+      background: url("./img/icons/phone.svg") no-repeat scroll 15px 6px;
     }
   }
 
   input[name="email"] ~ .input-icon {
-    background: url("./img/icons/envelope.svg") no-repeat scroll 12px 10px;
+    background: url("./img/icons/envelope.svg") no-repeat scroll 12px 11px;
 
     @include breakpoint(sm) {
-      background: url("./img/icons/envelope.svg") no-repeat scroll 8px 10px;
+      background: url("./img/icons/envelope.svg") no-repeat scroll 8px 6px;
     }
   }
 
   input[name="coordinates"] ~ .input-icon {
-    background: url("./img/icons/marker.svg") no-repeat scroll 16.5px 9px;
+    background: url("./img/icons/marker.svg") no-repeat scroll 18px 9px;
 
     @include breakpoint(sm) {
-      background: url("./img/icons/marker.svg") no-repeat scroll 13px 9px;
+      background: url("./img/icons/marker.svg") no-repeat scroll 13px 5px;
     }
   }
 
@@ -97,19 +106,24 @@
     background-size: 50%;
 
     @include breakpoint(sm) {
-      background: url("./img/icons/city.svg") no-repeat scroll 10px 9px;
+      background: url("./img/icons/city.svg") no-repeat scroll 11px 6px;
       background-size: 50%;
     }
   }
 
   .input-container--street .input-icon {
-    background: url("./img/icons/street.svg") no-repeat scroll 14px 9px;
+    background: url("./img/icons/street.svg") no-repeat scroll 14px 8px;
     background-size: 50%;
 
     @include breakpoint(sm) {
-      background: url("./img/icons/street.svg") no-repeat scroll 10px 8px;
+      background: url("./img/icons/street.svg") no-repeat scroll 11px 6px;
       background-size: 50%;
     }
+  }
+
+  .input-container--neighborhood .input-icon {
+    background: url("./img/icons/neighborhood.svg") no-repeat scroll 15px 9px;
+    background-size: 50%;
   }
 
   &__header {
@@ -244,6 +258,8 @@
       }
 
       h2 {
+        margin-bottom: 0;
+
         @include breakpoint(sm) {
           position: relative;
           // margin-left: 50%;
@@ -258,9 +274,10 @@
 
       ul.company__nav {
         justify-content: space-between;
+        padding-top: 40px;
 
         @include breakpoint(sm) {
-          margin-top: 40px;
+          // margin-top: 40px;
           // padding: 10px 0;
           overflow-y: auto;
           padding-left: 10px;
@@ -309,6 +326,7 @@
       @include breakpoint(sm) {
         margin-bottom: 15px;
         padding-left: 40px;
+        height: 32px;
       }
     }
   }
@@ -577,6 +595,10 @@
 
           .select2-selection--single {
             height: 41.2px;
+
+            @include breakpoint(sm) {
+              height: 32px;
+            }
           }
 
           .select2-selection__rendered {
@@ -651,6 +673,7 @@
       @include breakpoint(sm) {
         font-size: 0.875rem;
         padding: 5px 5px;
+        height: 32px;
       }
 
       &::before {
@@ -826,7 +849,7 @@
       }
 
       .input-container--phone {
-        flex-basis: 18%;
+        flex-basis: 25%;
         flex-grow: 0;
 
         @include breakpoint(sm) {
@@ -839,7 +862,7 @@
       }
 
       .input-container--phone ~ .input-container {
-        flex-basis: 22%;
+        flex-basis: 35%;
         flex-grow: 0;
 
         @include breakpoint(sm) {
@@ -855,7 +878,8 @@
         }
       }
 
-      select.company__select-city ~ span.select2-container {
+      select.company__select-city ~ span.select2-container,
+      select.company__select-neighborhood ~ span.select2-container {
         // flex-basis: calc(30% - 20px);
         height: 41.2px;
         width: 100% !important;
@@ -863,12 +887,17 @@
 
         @include breakpoint(sm) {
           flex-basis: 100%;
-          margin-bottom: 20px;
+          margin-bottom: 15px;
+          height: 32px;
         }
 
         .select2-selection {
           display: flex;
           height: 41.2px;
+
+          @include breakpoint(sm) {
+            height: 32px;
+          }
 
           &__rendered {
             margin: auto 0;
@@ -932,6 +961,8 @@
 
           @include breakpoint(sm) {
             font-size: 0.875rem;
+            width: 222px;
+            height: 32px;
           }
         }
       }
@@ -942,11 +973,11 @@
         margin-left: 10px;
       }
 
-      &--about-us {
-        textarea {
-          height: 360px;
-        }
-      }
+      // &--about-us {
+      //   textarea {
+      //     height: 360px;
+      //   }
+      // }
     }
 
     .company__work-hours {
@@ -962,6 +993,7 @@
         @include breakpoint(sm) {
           padding-bottom: 5px;
           border-bottom: 1px solid $lightgray;
+          font-size: 1rem;
         }
       }
 
@@ -1061,6 +1093,7 @@
         @include breakpoint(sm) {
           border-bottom: 1px solid $lightgray;
           padding-bottom: 5px;
+          font-size: 1rem;
         }
       }
 
@@ -1102,6 +1135,10 @@
         padding: 2px 8px;
         margin: 0;
         width: 64px;
+
+        @include breakpoint(sm) {
+          height: 32px;
+        }
       }
 
       .percent,
@@ -1114,12 +1151,20 @@
           top: 2px;
           left: 1em;
           z-index: 1;
+
+          @include breakpoint(sm) {
+            top: 7px;
+          }
         }
 
         &:after {
           position: absolute;
           top: 2px;
           right: 0.5em;
+
+          @include breakpoint(sm) {
+            top: 6.5px;
+          }
         }
 
         input {
@@ -1168,6 +1213,7 @@
         @include breakpoint(sm) {
           border-bottom: 1px solid $lightgray;
           padding-bottom: 5px;
+          font-size: 1rem;
         }
       }
 
@@ -1191,23 +1237,47 @@
         // padding-top: 7.5px;
         // padding-bottom: 7.5px;
         width: 100%;
+
+        @include breakpoint(sm) {
+          height: 32px;
+        }
       }
 
       input[name="facebook-address"] {
         background: url("img/icons/facebook.svg") no-repeat scroll 12px 7px;
         background-size: 26px;
+
+        @include breakpoint(sm) {
+          background: url("img/icons/facebook.svg") no-repeat scroll 12px 2px;
+          background-size: 26px;
+        }
       }
       input[name="instagram-address"] {
         background: url("img/icons/instagram.svg") no-repeat scroll 12px 7px;
         background-size: 26px;
+
+        @include breakpoint(sm) {
+          background: url("img/icons/instagram.svg") no-repeat scroll 12px 2px;
+          background-size: 26px;
+        }
       }
       input[name="linkedin-address"] {
         background: url("img/icons/linkedin.svg") no-repeat scroll 12px 7px;
         background-size: 26px;
+
+        @include breakpoint(sm) {
+          background: url("img/icons/linkedin.svg") no-repeat scroll 12px 2px;
+          background-size: 26px;
+        }
       }
       input[name="youtube-address"] {
         background: url("img/icons/youtube.svg") no-repeat scroll 12px 7px;
         background-size: 26px;
+
+        @include breakpoint(sm) {
+          background: url("img/icons/youtube.svg") no-repeat scroll 12px 2px;
+          background-size: 26px;
+        }
       }
     }
 
@@ -1762,6 +1832,7 @@
 
         input {
           font-weight: 500;
+          height: 23px; 
 
           &:disabled {
             border: 1px solid transparent;
@@ -1917,6 +1988,7 @@
 
             .select2-selection__rendered {
               line-height: 25.2px;
+              height: 23px; 
             }
 
             .select2-selection__arrow {
@@ -2388,17 +2460,17 @@
             }
 
             + .payment-plan__details {
-              max-height: 1200px;
+              // max-height: 1200px;
               border: 3px solid $darkblue;
               border-top: none;
-              transition: border 0.3s ease-in-out, padding 0.3s ease-in-out;
-              margin-top: 0;
-              padding: 10px 0 0;
+              // transition: border 0.3s ease-in-out, padding 0.3s ease-in-out;
+              // margin-top: 0;
+              // padding: 10px 0 0;
             }
 
-            .payment-plan__more:after {
-              transform: rotate(180deg);
-            }
+            // .payment-plan__more:after {
+            //   transform: rotate(180deg);
+            // }
           }
 
           .payment-plan__details.toggled {
@@ -2644,6 +2716,10 @@
   margin-right: 5px;
   vertical-align: middle;
   display: inline-block;
+
+  @include breakpoint(sm) {
+    margin-bottom: 10px;
+  }
 }
 
 .time-inputs {

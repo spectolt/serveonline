@@ -4,8 +4,22 @@
   flex-direction: column;
   flex: 1 0 auto;
 
+  &__header {
+    position: relative;
+    // transition: all 3s ease-in-out;
+    max-height: 300px;
+
+    &--hidden {
+      // height: 0;
+      // max-height: 0;
+      // transition: all 3s ease-in-out;
+      overflow:hidden;
+    }
+  }
+
   .title {
-    margin-bottom: 34px;
+    margin-bottom: 25px;
+    transition: max-height .3s ease-in-out, margin-top .3s ease-in-out;
 
     @include breakpoint(xs) {
       font-size: 1.5rem;
@@ -19,6 +33,7 @@
     flex-wrap: wrap;
     justify-content: flex-end;
     margin-right: -10px;
+    transition: max-height .3s ease-in-out, margin-top .3s ease-in-out;
 
     @include breakpoint(sm) {
       margin-bottom: 10px;
@@ -223,7 +238,7 @@
       height: 100%;
 
       &:first-of-type {
-        padding-left: 20px;
+        padding-left: 10px;
       }
 
       // &:last-of-type {
@@ -252,7 +267,8 @@
 
     tfoot {
       // margin-top: 10px;
-      border-left: 1px solid $washedblue;
+      // border-left: 1px solid $washedblue;
+      z-index: 2;
 
       td {
         background-color: $darkblue;
@@ -282,7 +298,7 @@
     margin: 0;
     min-height: 35px;
     height: 100%;
-    padding: 7.5px 15px;
+    padding: 7.5px 10px;
     border-radius: 5px;
     width: 100%;
     border: 1px solid $darkblue;
@@ -580,6 +596,8 @@
     margin-right: -20px;
     position: absolute;
     right: 0;
+    top:0;
+    transition: max-height .3s ease-in-out, margin-top .3s ease-in-out;
 
     @include breakpoint(880px) {
       // grid-template-columns: repeat(3, 1fr);
@@ -671,7 +689,11 @@
 
     thead {
       border-radius: 0;
-      border-left: 1px solid $washedblue;
+      box-shadow: $washedblue 1px 0;
+    }
+
+    tfoot {
+      box-shadow: $washedblue 1px 0;
     }
 
     &:first-of-type {
@@ -682,11 +704,19 @@
       tbody {
         border-left: none;
       }
+
+      tfoot {
+        border-bottom-left-radius: 5px;
+      }
     }
 
     &:last-of-type {
       thead {
         border-top-right-radius: 5px;
+      }
+
+      tfoot {
+        border-bottom-right-radius: 5px;
       }
     }
 
@@ -724,34 +754,29 @@
     &:first-of-type {
       flex: 0 0 17%;
       max-width: 17%;
+      z-index: 3;
 
-      tfoot {
-        margin-left: -1px;
-        width: calc(100% + 1px);
-      }
+      // tfoot {
+      //   margin-left: -1px;
+      //   width: calc(100% + 1px);
+      // }
     }
 
     &:nth-of-type(2) {
       flex: 0 0 17%;
       max-width: 17%;
+      z-index: 2;
     }
 
     &:nth-of-type(3) {
-      // flex: 0 0 calc(33% + 90px);
-      // width: calc(33% + 90px);
-      // flex:1 0 auto;
       min-width: 270px;
+      z-index: 1;
     }
 
     &:last-of-type {
       max-width: calc(100% - 16.4% - 17% - 39%);
       min-width: 270px;
       flex: 0 1 auto;
-
-      tfoot {
-        margin-right: -1px;
-        width: calc(100% + 1px);
-      }
     }
 
     h4 {
@@ -934,7 +959,7 @@
   left: 0;
   transform: translate(-50%, -50%);
   box-shadow: 3px 3px 3px rgba(0, 0, 0, .24);
-  z-index: 2;
+  z-index: 10;
 
   &:after {
     content: "";

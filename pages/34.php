@@ -12,6 +12,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
     <section class="page-content page-content--controls">
         <div class="page-content__wrapper">
             <section class="controls services">
+            <div class="controls__header">
                 <h1 class="title">Paslaugos</h1>
                 <div class="services__areas-list">
                     <?php for ($y = 0; $y < 6; $y++) { ?>
@@ -27,6 +28,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                     <button class="controls__restore orange transparent small paragraph">Atstatyti pakeitimus</button>
                     <button class="controls__save orange small paragraph">Saugoti pakeitimus</button>
                 </div>
+            </div>
                 <div class="controls__table-container-wrapper">
                     <button class="expand-button"></button>
                     <div class="controls__table-container">

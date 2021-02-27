@@ -1,13 +1,35 @@
+
+<?php $thisCat="login"; $thisPage="login"; ?>
+
+<?php
+$areas = array('Klinikos ir estetinė medicina', 'Odontologijos klinikos', 'Grožio salonai', 'SPA ir masažo kabinetai', 'Sportas ir reabilitacija', 'Veterinarija');
+$icons = array('../img/icons/clinic.svg', '../img/icons/odontology.svg', '../img/icons/beauty.svg', '../img/icons/spa.svg', '../img/icons/sport.svg', '../img/icons/vet.svg');
+$colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2')
+?>
+
 <?php require_once('header.php'); ?>
- 
+
 <section class="breadcrumbs">
-        <a href="#" class="breadcrumbs__change">Pakeisti</a>
-        <span class="breadcrumbs__location">Grožio salonai</span>
-        <button class="breadcrumbs__cart"></button>
-    </section>
-<main class="site-main container">   
+    <div class="breadcrumbs__selected">
+        <img src="../img/icons/beauty.svg">
+    </div>
+    <button class="breadcrumbs__change paragraph">Grožio salonai ir kirpyklos</button>
+    <button class="breadcrumbs__cart"><span>2</span></button>
+</section>
+<div class="breadcrumbs__more">
+    <ul>
+        <?php for ($y = 0; $y < 6; $y++) { ?>
+            <li <?php if ($y === 2) { ?> style="display:none" <?php } ?>>
+                <div class="breadcrumbs__area-img" style="background-color: <?php echo "$colors[$y]" ?>">
+                    <img src=<?php echo "$icons[$y]" ?>>
+                </div>
+                <p><?php echo $areas[$y] ?></p>
+            </li>
+        <?php } ?>
+    </ul>
+</div>
+<main class="site-main container">
     <section class="login">
-        <h1 class="title">Prisijungti</h1>
         <div class="login__blocks">
             <div class="login__block">
                 <h2 class="title">Prisijungti</h2>
@@ -69,7 +91,7 @@
     </section>
 </main>
 
-<?php 
-require_once('footer-menu.php'); 
-require_once('footer.php'); 
+<?php
+require_once('footer-menu.php');
+require_once('footer.php');
 ?>

@@ -361,8 +361,8 @@ function onDocumentReady() {
     .select2()
     .on("select2:open", function () {
       $(this)
-        .siblings(".select2-container")
-        .first()
+        .next(".select2-container")
+        // .first()
         .find(".select2-selection__arrow b")
         .addClass("rotate");
     })
@@ -378,7 +378,7 @@ function onDocumentReady() {
     minimumResultsForSearch: Infinity,
     placeholder: "Pasirinkti",
     allowClear: true,
-    dropdownCssClass: "select2-dropdown--controls",
+    dropdownCssClass: "select2-dropdown--controls-side",
   });
 
   $(".checkbox-wrapper>.checkbox input, .checkbox-wrapper>.radio input").on(
@@ -538,9 +538,9 @@ function onDocumentReady() {
     .click(function (event) {
       //if you click on anything except the menu or the hamburger menu, close the menu
       if (
-        !$(event.target).closest(".site-aside,.site-header__hamburger")
-          .length &&
-        $(event.target).length != $(".select2-search").length
+        !$(event.target).closest(
+          ".site-aside,.site-header__hamburger,.select2-search"
+        ).length
       ) {
         $("body")
           .find(".site-aside-container")
@@ -913,6 +913,10 @@ function onDocumentReady() {
     placeholder: "Miestas",
     minimumResultsForSearch: Infinity,
   });
+  $(".company__select-neighborhood").select2({
+    placeholder: "Mikrorajonas",
+    minimumResultsForSearch: Infinity,
+  });
 
   $("input[type='number']").on("input", function () {
     var maxLength = $(this).attr("length");
@@ -1202,6 +1206,18 @@ function onDocumentReady() {
           .siblings(".payment-plan__info")
           .find("input#Mini")
           .prop("checked", true);
+
+        $self
+          .siblings(".payment-plan__info")
+          .find("input#Mini")
+          .siblings(".payment-plan__details")
+          .addClass("toggled");
+
+        $self
+          .siblings(".payment-plan__info")
+          .find("label[for='Mini']")
+          .find(".payment-plan__more")
+          .addClass("toggled");
         $self.attr("checkstate", "true");
         $("input[type='radio']:not(:checked)").attr("checkstate", "false");
       }
@@ -1421,36 +1437,72 @@ function onDocumentReady() {
       navigator.userAgent
     )
   ) {
-    $(".company__header--company").addClass("disable-scrollbars");
+    $(".company__header--company ul.company__nav").addClass(
+      "disable-scrollbars"
+    );
     $(".controls__table tbody").addClass("disable-scrollbars");
   }
 
-  $(document).on("click", ".payment-plan__more", function() {
-    if($(this).closest(".payment-plan__details-label").siblings(".payment-plan__details").height() > 0) {
-      $(this).closest(".payment-plan__details-label").siblings(".payment-plan__details").css({"max-height": "0", "padding": "0", "transition": "max-height .3s ease-in-out"});
+  $(document).on("click", ".payment-plan__more", function () {
+    if (
+      $(this)
+        .closest(".payment-plan__details-label")
+        .siblings(".payment-plan__details")
+        .height() > 0
+    ) {
+      $(this)
+        .closest(".payment-plan__details-label")
+        .siblings(".payment-plan__details")
+        .removeClass("toggled");
       $(this).removeClass("toggled").addClass("untoggled");
     } else {
-      $(this).closest(".payment-plan__details-label").siblings(".payment-plan__details").css({"max-height": "1200px", "padding": "10px 0 0", "transition": "max-height .3s ease-in-out"});
+      $(this)
+        .closest(".payment-plan__details-label")
+        .siblings(".payment-plan__details")
+        .addClass("toggled");
       $(this).removeClass("untoggled").addClass("toggled");
     }
   });
 
-  $(".expand-button").unbind("click").click(function() {
-    if (!$(this).hasClass("rotate-arr")) {
-      // $(this).closest(".controls").find(".title, .services__areas-list, .controls__top").fadeOut(300).promise().done(function() {
-        $(this).closest(".controls").find(".title, .services__areas-list, .controls__top").css({"height": "0", "transition": "height .3s ease-in-out", "overflow": "hidden"}).promise().done(function() {
-          $(this).addClass("hidden");
-        })
-      // });      
-    } else {
-      $(this).closest(".controls").find(".title, .services__areas-list, .controls__top").css({"height": "auto", "transition": "height .3s ease-in-out", "overflow": "visible"}).promise().done(function() {
-        $(this).removeClass("hidden");
-      })
-    }
-    $(this).closest(".controls").find("tbody").css({"transition": "height .3s ease-in-out"})
-    tableHeight();
-    $(this).toggleClass("rotate-arr");
-  })
+  $(".expand-button")
+    .unbind("click")
+    .click(function () {
+      // $(this)
+      //   .closest(".controls")
+      //   .find("tbody")
+      //   .css({ transition: "height .3s ease-in-out" });
+      var interval = setInterval(tableHeight, 0);
+      if (!$(this).hasClass("rotate-arr")) {
+        $(this)
+          .closest(".controls")
+          .find(".controls__header").addClass("controls__header--hidden")
+          .animate({"max-height": "0"}, {
+            duration: 300,
+            complete: function() {
+              clearInterval(interval);
+            }
+          })
+          
+      } else {
+        $(this)
+          .closest(".controls")
+          .find(".controls__header").removeClass("controls__header--hidden")
+          .animate({"max-height": "300px"}, {
+            duration: 150,
+            complete: function() {
+              clearInterval(interval);
+            }
+          })
+      }
+      $(this).toggleClass("rotate-arr");
+      // $(this)
+      //     .closest(".controls")
+      //     .find(".title, .services__areas-list, .controls__top")
+      //     .on("transitionend webkitTransitionEnd oTransitionEnd", function () {
+      //       $(this).addClass("hidden");
+      //       alert($(this));
+      //     });
+    });
 
   moveAction();
   moveOrder();
@@ -1673,18 +1725,23 @@ function hasScrolled() {
     // Scroll Down
     $(".site-header").removeClass("site-header--show");
 
-    $(".controls__table tbody").each(function() {
-      if($(this).closest(".controls__table-container-wrapper").find(".expand-button").hasClass("rotate-arr")) {
+    $(".controls__table tbody").each(function () {
+      if (
+        $(this)
+          .closest(".controls__table-container-wrapper")
+          .find(".expand-button")
+          .hasClass("rotate-arr")
+      ) {
         $(this).height("calc(100vh - 150px)");
         $(".services__table tbody .fixed-row").parent().css("height", "auto");
         $(".services__table tbody .fixed-row").parent().css("min-height", "0");
       }
-    })
+    });
   } else {
     // Scroll Up
     if (st + $(window).height() < $(document).height()) {
       $(".site-header").addClass("site-header--show");
-     
+
       tableHeight();
     }
   }
@@ -1903,7 +1960,10 @@ function openTab() {
         $(".company__tab").addClass("hidden");
         $(".company__tab#imones-bendra-informacija").removeClass("hidden");
         $(".company__nav").eq(1).find("li").removeClass("active");
-        $(".company__nav:last-of-type").find("li a[href='#imones-bendra-informacija']").parent().addClass("active");
+        $(".company__nav:last-of-type")
+          .find("li a[href='#imones-bendra-informacija']")
+          .parent()
+          .addClass("active");
       } else {
         $(".company__tab").each(function () {
           if ("#" + $(this).attr("id") == href) {
