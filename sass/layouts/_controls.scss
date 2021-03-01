@@ -85,7 +85,7 @@
     align-items: center;
     position: relative;
     padding-left: 50px;
-    height: 30px;
+    height: 35px;
     margin-right: 10px;
 
     @include breakpoint(sm) {
@@ -93,6 +93,7 @@
       margin-right: 10px;
       margin-bottom: 10px;
       padding-left: 40px;
+      height: 32px;
     }
 
     &:before {
@@ -337,6 +338,7 @@
     display: flex;
     align-items: center;
     margin: auto 0;
+    background-color: $white;
 
     // &--title {
     //   font-weight: 600;

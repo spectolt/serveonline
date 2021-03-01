@@ -1495,14 +1495,9 @@ function onDocumentReady() {
           })
       }
       $(this).toggleClass("rotate-arr");
-      // $(this)
-      //     .closest(".controls")
-      //     .find(".title, .services__areas-list, .controls__top")
-      //     .on("transitionend webkitTransitionEnd oTransitionEnd", function () {
-      //       $(this).addClass("hidden");
-      //       alert($(this));
-      //     });
     });
+
+    $(".controls__table tbody").sortable();
 
   moveAction();
   moveOrder();
