@@ -9,7 +9,7 @@
   min-height: 0;
   height: 72.8px;
   position: relative;
-  z-index: 100;
+  z-index: 101;
 
   @include breakpoint(l) {
     height: 112.2px;
@@ -336,6 +336,8 @@
 
     @include breakpoint(l) {
       min-height: calc(112.2px / 2);
+      width: 90% !important;
+      margin-right: auto;
 
       & + .select2-container {
       top: 112.2px !important;

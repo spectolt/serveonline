@@ -1128,7 +1128,7 @@ select {
   min-height: 0;
   height: 72.8px;
   position: relative;
-  z-index: 100;
+  z-index: 101;
 }
 
 @media (max-width: 991px) {
@@ -1506,6 +1506,8 @@ select {
 @media (max-width: 991px) {
   .search-container .select2-container {
     min-height: calc(112.2px / 2);
+    width: 90% !important;
+    margin-right: auto;
   }
   .search-container .select2-container + .select2-container {
     top: 112.2px !important;
