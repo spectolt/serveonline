@@ -1016,3 +1016,10 @@
     transform: translate(-50%, -50%);
   }
 }
+
+.select2-dropdown--controls-side {
+  .select2-results {
+    font-size: .875rem;
+    color: $darkdarkblue;
+  }
+}

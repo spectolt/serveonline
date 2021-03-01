@@ -10538,6 +10538,11 @@ section.product .product__block-recommend {
           transform: translate(-50%, -50%);
 }
 
+.select2-dropdown--controls-side .select2-results {
+  font-size: .875rem;
+  color: #282e4b;
+}
+
 .search-container--home {
   height: 70px;
 }
