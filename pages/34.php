@@ -23,10 +23,12 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                         </div>
                     <?php } ?>
                 </div>
-                <div class="controls__top">
+                <div class="controls__top controls__top--services">
                     <button class="controls__print darkblue transparent small paragraph">Spausdinti</button>
-                    <button class="controls__restore orange transparent small paragraph">Atstatyti pakeitimus</button>
-                    <button class="controls__save orange small paragraph">Saugoti pakeitimus</button>
+                    <div class="controls__buttons-cancel-save">
+                        <button class="controls__restore orange transparent small paragraph">Atstatyti pakeitimus</button>
+                        <button class="controls__save orange small paragraph">Saugoti pakeitimus</button>
+                    </div>
                 </div>
             </div>
                 <div class="controls__table-container-wrapper">

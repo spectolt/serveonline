@@ -35,6 +35,10 @@
     margin-right: -10px;
     transition: max-height .3s ease-in-out, margin-top .3s ease-in-out;
 
+    @include breakpoint(880px) {
+      justify-content: center;
+    }
+
     @include breakpoint(sm) {
       margin-bottom: 10px;
     }
@@ -42,6 +46,33 @@
     @include breakpoint(xs) {
       margin-right: -20px;
     }
+
+    &.controls__top--services {
+      @include breakpoint(520px) {
+        justify-content: flex-end;
+      }
+
+      .controls__print {
+        @include breakpoint(520px) {
+          width: 174px;
+          justify-content: center;
+
+          &::before {
+            left: 30px;
+          }
+        }
+      }
+
+      .controls__save, .controls__restore {
+        @include breakpoint(520px) {
+          width: 174px;
+        }
+      }
+    }
+  }
+
+  &__buttons-cancel-save {
+    display: flex;
   }
 
   button.controls__restore,
@@ -55,6 +86,7 @@
     position: relative;
     padding-left: 50px;
     height: 30px;
+    margin-right: 10px;
 
     @include breakpoint(sm) {
       padding: 5px 10px;
@@ -606,6 +638,10 @@
       justify-content: space-between;
     }
 
+    @include breakpoint(sm) {
+      margin-left: -10px;
+    }
+
     .services__area-div {
       min-width: 43px;
       //max-width: 120px;
@@ -667,9 +703,9 @@
     // display: block;
     
 
-    @include breakpoint(xl) {
-      width: calc(100vw - min(40px, 2.8vw) - min(40px, 2.8vw));
-    }
+    // @include breakpoint(xl) {
+    //   width: calc(100vw - min(40px, 2.8vw) - min(40px, 2.8vw));
+    // }
 
     @include breakpoint(880px) {
       overflow-x: auto;
@@ -705,7 +741,7 @@
         border-left: none;
       }
 
-      tfoot {
+      tfoot td {
         border-bottom-left-radius: 5px;
       }
     }
@@ -715,7 +751,7 @@
         border-top-right-radius: 5px;
       }
 
-      tfoot {
+      tfoot td {
         border-bottom-right-radius: 5px;
       }
     }

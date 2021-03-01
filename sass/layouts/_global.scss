@@ -45,7 +45,7 @@ body {
   transform: translateY(-100%);
   transition: transform 300ms 0ms cubic-bezier(0.4, 0, 0.6, 1), opacity 0s 300ms;
   opacity: 0;
-  z-index: 3;
+  z-index: 100;
 
   @include breakpoint(xs) {
     padding: 0 20px;
@@ -301,7 +301,7 @@ body {
       &--toggled {
         visibility: visible;
         // background-color: $white;
-        z-index: 4;
+        z-index: 99;
 
         @include breakpoint(xxl) {
           z-index: 1;
@@ -712,7 +712,7 @@ body {
           background: $darkblue;
           display: inline-block;
 
-          @include breakpoint(xs) {
+          @include breakpoint(l) {
             display: none;
           }
         }
