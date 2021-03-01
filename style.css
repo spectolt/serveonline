@@ -9551,6 +9551,16 @@ section.product .product__block-recommend {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+@media (max-width: 375px) {
+  .controls__buttons-cancel-save {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
 }
 
 .controls button.controls__restore,

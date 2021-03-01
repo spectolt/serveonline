@@ -73,6 +73,12 @@
 
   &__buttons-cancel-save {
     display: flex;
+    // flex-wrap: wrap;
+    justify-content: flex-end;
+
+    @include breakpoint(375px) {
+      flex-wrap: wrap;
+    }
   }
 
   button.controls__restore,
