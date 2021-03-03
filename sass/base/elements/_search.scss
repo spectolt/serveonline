@@ -336,8 +336,7 @@
 
     @include breakpoint(l) {
       min-height: calc(112.2px / 2);
-      width: 90% !important;
-      margin-right: auto;
+      width: 100% !important;
 
       & + .select2-container {
       top: 112.2px !important;
@@ -418,6 +417,11 @@
         transform: translateY(-50%);
         right: 1px;
         width: 20px;
+
+        @include breakpoint(sm) {
+          right: 40px;
+        }
+
         b {
           top: 50%;
           right: 20px;
@@ -493,6 +497,8 @@
   // width: 100vw !important;
   border-right: none !important;
   border-top: 1px solid $lightgray !important;
+  box-shadow: 22px 28px 34px 0px rgba(16, 27, 81, 0.43);
+  width: 100vw !important;
 
   @include breakpoint(l) {
     border-top: none;
@@ -527,6 +533,10 @@
 
     &:last-of-type {
       margin-bottom: 10px;
+    }
+
+    &:hover {
+      background-color: #d7d7d9;
     }
   }
 }

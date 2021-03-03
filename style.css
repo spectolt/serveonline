@@ -1506,8 +1506,7 @@ select {
 @media (max-width: 991px) {
   .search-container .select2-container {
     min-height: calc(112.2px / 2);
-    width: 90% !important;
-    margin-right: auto;
+    width: 100% !important;
   }
   .search-container .select2-container + .select2-container {
     top: 112.2px !important;
@@ -1597,6 +1596,12 @@ select {
           transform: translateY(-50%);
   right: 1px;
   width: 20px;
+}
+
+@media (max-width: 700px) {
+  .search-container--controls .select2-container .select2-selection--multiple .select2-selection__arrow {
+    right: 40px;
+  }
 }
 
 .search-container--controls .select2-container .select2-selection--multiple .select2-selection__arrow b {
@@ -1691,6 +1696,9 @@ select {
   border-radius: 0 !important;
   border-right: none !important;
   border-top: 1px solid #e8e8e8 !important;
+  -webkit-box-shadow: 22px 28px 34px 0px rgba(16, 27, 81, 0.43);
+          box-shadow: 22px 28px 34px 0px rgba(16, 27, 81, 0.43);
+  width: 100vw !important;
 }
 
 @media (max-width: 991px) {
@@ -1729,6 +1737,10 @@ select {
 
 .select2-dropdown--controls li:last-of-type {
   margin-bottom: 10px;
+}
+
+.select2-dropdown--controls li:hover {
+  background-color: #d7d7d9;
 }
 
 .product__search {
@@ -7647,7 +7659,7 @@ body {
 
 @media (max-width: 600px) {
   .site-main--aside .page-content--controls .page-content__wrapper {
-    padding: 40px 20px 0;
+    padding: 30px 20px 0;
     margin: 0;
   }
 }
@@ -11602,7 +11614,7 @@ section.product .product__block-recommend {
 }
 
 .company input[name="person"] ~ .input-icon {
-  background: url("./img/icons/person.svg") no-repeat scroll 10px 9px;
+  background: url("./img/icons/search-darkblue.svg") no-repeat scroll 12px 7px;
   background-size: 45%;
 }
 
@@ -11995,6 +12007,7 @@ section.product .product__block-recommend {
 
 .company__info input:last-of-type {
   margin-right: 0;
+  color: #101b51;
 }
 
 .company__info input[name="name"] {
@@ -12140,6 +12153,7 @@ section.product .product__block-recommend {
   margin-bottom: 20px;
   margin-right: 20px;
   width: calc(100% - 20px);
+  color: #101b51;
 }
 
 @media (max-width: 700px) {
@@ -12250,7 +12264,7 @@ section.product .product__block-recommend {
   .company__button-container button {
     font-size: 0.875rem;
     padding: 5px 5px;
-    height: 32px;
+    height: 35px;
   }
 }
 
@@ -12439,6 +12453,7 @@ section.product .product__block-recommend {
 .company__tab .company__inputs-container input {
   width: calc(100% - 20px);
   margin-right: 20px;
+  color: #101b51;
 }
 
 .company__tab .company__inputs-container .input-container:first-of-type {
@@ -12582,6 +12597,7 @@ section.product .product__block-recommend {
   height: 234px;
   border: 1px solid #e8e8e8;
   -webkit-appearance: none;
+  color: #101b51;
 }
 
 @media (max-width: 700px) {
@@ -13295,8 +13311,8 @@ section.product .product__block-recommend {
   background-position: center;
   background-size: cover;
   margin-right: 20px;
-  -webkit-box-shadow: 0px 12px 29px 0px rgba(0, 0, 0, 0.35);
-          box-shadow: 0px 12px 29px 0px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: 0px 12px 29px 0px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 12px 29px 0px rgba(0, 0, 0, 0.15);
   -webkit-box-flex: 0;
       -ms-flex-positive: 0;
           flex-grow: 0;
@@ -14525,8 +14541,8 @@ section.product .product__block-recommend {
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 50%;
-  -webkit-box-shadow: 0px 12px 29px 0px rgba(0, 0, 0, 0.35);
-          box-shadow: 0px 12px 29px 0px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: 0px 12px 29px 0px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 12px 29px 0px rgba(0, 0, 0, 0.15);
   margin-right: 20px;
   background-image: url("img/profile.svg");
 }

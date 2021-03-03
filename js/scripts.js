@@ -534,8 +534,8 @@ function onDocumentReady() {
   });
 
   $(document)
-    .unbind("click")
-    .click(function (event) {
+    // .unbind("click")
+    .on("click", function (event) {
       //if you click on anything except the menu or the hamburger menu, close the menu
       if (
         !$(event.target).closest(
@@ -1039,7 +1039,7 @@ function onDocumentReady() {
     // }
   });
 
-  $(".product-expand").on("click", function () {
+  $(document).on("click", ".product-expand", function () {
     $(this).toggleClass("rotate-arrow");
     $(this).siblings(".product-choice").toggleClass("hidden");
   });
@@ -1315,7 +1315,7 @@ function onDocumentReady() {
           <div class="company__login-photo"></div>\
           <h4>Įmonės adminstratorius</h4>\
           <div class="input-container input-container--person">\
-              <input type="text" name="person" class="company__login-search">\
+              <input type="text" name="person" class="company__login-search" placeholder="Ieškoti žmogaus">\
               <span class="input-icon"></span>\
           </div>\
       </div>\
@@ -1465,7 +1465,7 @@ function onDocumentReady() {
   });
 
   $(".expand-button")
-    .unbind("click")
+    // .unbind("click")
     .click(function () {
       // $(this)
       //   .closest(".controls")
@@ -1497,7 +1497,7 @@ function onDocumentReady() {
       $(this).toggleClass("rotate-arr");
     });
 
-    $(".controls__table tbody").sortable();
+    $(".controls__table tbody:last-of-type").sortable();
 
   moveAction();
   moveOrder();

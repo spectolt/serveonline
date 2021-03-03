@@ -96,19 +96,19 @@ $("#search-product")
             item.title +
             "<button class='autocomplete-product-button'>Plačiau</button></span><span class='autocomplete-product-desc paragraph hidden'>" +
             item.about +
-            "</span><div class='autocomplete-product autocomplete-product--choice hidden'><div class='checkbox'><input type='checkbox' class='autocomplete-product-input' id='item-" +
+            "</span><div class='autocomplete-product autocomplete-product--choice product-choice hidden'><div class='checkbox'><input type='checkbox' class='autocomplete-product-input' id='item-" +
             item.index +
             "'><label class='autocomplete-product-checkbox' for='item-" +
             item.index +
             "'><span class='autocomplete-product-title'>" +
             item.choice1title +
-            "</span></label></div></div><div class='autocomplete-product autocomplete-product--choice hidden'><div class='checkbox'><input type='checkbox' class='autocomplete-product-input' id='item-" +
+            "</span></label></div></div><div class='autocomplete-product autocomplete-product--choice product-choice hidden'><div class='checkbox'><input type='checkbox' class='autocomplete-product-input' id='item-" +
             item.index +
             "'><label class='autocomplete-product-checkbox' for='item-" +
             item.index +
             "'><span class='autocomplete-product-title'>" +
             item.choice2title +
-            "</span></label></div></div><div class='autocomplete-product autocomplete-product--choice hidden'><div class='checkbox'><input type='checkbox' class='autocomplete-product-input' id='item-" +
+            "</span></label></div></div><div class='autocomplete-product autocomplete-product--choice product-choice hidden'><div class='checkbox'><input type='checkbox' class='autocomplete-product-input' id='item-" +
             item.index +
             "'><label class='autocomplete-product-checkbox' for='item-" +
             item.index +
@@ -130,6 +130,7 @@ $(document).on("click", ".autocomplete-product-button", function () {
     .closest(".autocomplete-product")
     .find(".autocomplete-product-desc");
   description.toggleClass("hidden");
+  console.log(description)
   $(this).html($(this).html() == "Uždaryti" ? "Plačiau" : "Uždaryti");
 });
 

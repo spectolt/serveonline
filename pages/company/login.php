@@ -7,7 +7,7 @@
                     <div class="company__login-photo"></div>
                     <h4>Įmonės adminstratorius</h4>
                     <div class="input-container input-container--person">
-                        <input type="text" name="person" class="company__login-search">
+                        <input type="text" name="person" class="company__login-search" placeholder="Ieškoti žmogaus">
                         <span class="input-icon"></span>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                     <div class="company__login-photo"></div>
                     <h4>Įmonės adminstratorius</h4>
                     <div class="input-container input-container--person">
-                        <input type="text" name="person" class="company__login-search">
+                        <input type="text" name="person" class="company__login-search" placeholder="Ieškoti žmogaus">
                         <span class="input-icon"></span>
                     </div>
                 </div>
