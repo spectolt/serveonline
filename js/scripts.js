@@ -1207,17 +1207,17 @@ function onDocumentReady() {
           .find("input#Mini")
           .prop("checked", true);
 
-        $self
-          .siblings(".payment-plan__info")
-          .find("input#Mini")
-          .siblings(".payment-plan__details")
-          .addClass("toggled");
+        // $self
+        //   .siblings(".payment-plan__info")
+        //   .find("input#Mini")
+        //   .siblings(".payment-plan__details")
+        //   .addClass("toggled");
 
-        $self
-          .siblings(".payment-plan__info")
-          .find("label[for='Mini']")
-          .find(".payment-plan__more")
-          .addClass("toggled");
+        // $self
+        //   .siblings(".payment-plan__info")
+        //   .find("label[for='Mini']")
+        //   .find(".payment-plan__more")
+        //   .addClass("toggled");
         $self.attr("checkstate", "true");
         $("input[type='radio']:not(:checked)").attr("checkstate", "false");
       }
@@ -1454,6 +1454,7 @@ function onDocumentReady() {
         .closest(".payment-plan__details-label")
         .siblings(".payment-plan__details")
         .removeClass("toggled");
+      $(this).html("Plačiau");
       $(this).removeClass("toggled").addClass("untoggled");
     } else {
       $(this)
@@ -1461,6 +1462,7 @@ function onDocumentReady() {
         .siblings(".payment-plan__details")
         .addClass("toggled");
       $(this).removeClass("untoggled").addClass("toggled");
+      $(this).html("Uždaryti");
     }
   });
 
