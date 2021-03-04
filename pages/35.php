@@ -28,14 +28,16 @@ $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
                                 <th>Meniu pavadinimai</th>
                             </tr>
                         </thead>
-                        <tbody class="controls__table-body">
-                            <tr>
+                        <tbody>
+                            <tr class="fixed-row">
                                 <td colspan="4">
                                     <button class="controls__add"></button>
                                     <button class="controls__trash"></button>
                                     <button class="controls__edit"></button>
                                 </td>
                             </tr>
+                        </tbody>
+                        <tbody class="controls__table-body">
                             <?php for ($y = 0; $y < 6; $y++) { ?>
                                 <tr class="controls__area areas__area">
                                     <td>

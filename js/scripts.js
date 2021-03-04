@@ -55,6 +55,14 @@ function onDocumentReady() {
         }
       });
 
+      $("input#search, input#search-product").on("keydown",function search(e) {
+        if(e.keyCode == 13) {
+          $(".ui-autocomplete").fadeOut(300);
+          $(".search-container__submit").find("span").html("Valyti");
+          $(".search-container__submit").addClass("change-search-icon");
+        }
+    });
+
     // autocomplete results width fix
     jQuery.ui.autocomplete.prototype._resizeMenu = function () {
       this.menu.element.css("width", this.element.outerWidth());
@@ -1499,7 +1507,12 @@ function onDocumentReady() {
       $(this).toggleClass("rotate-arr");
     });
 
-    $(".controls__table tbody:last-of-type").sortable();
+    // $(".controls__table tbody:last-of-type").sortable();
+    // $(".controls__table tbody:last-of-type").sortable("disable");
+    $(".controls__edit").on("click", function() {
+      $(this).closest("tbody").next("tbody").sortable();
+      console.log($(this).parent("tbody").next("tbody"))
+    })
 
   moveAction();
   moveOrder();
@@ -1882,8 +1895,8 @@ function tableHeight(el) {
     var mainTableHeight = $(".areas__table--main tbody").outerHeight();
     $(".areas__table--menu tbody").css("height", mainTableHeight);
   }
-  $(".services__table tbody .fixed-row").parent().css("height", "auto");
-  $(".services__table tbody .fixed-row").parent().css("min-height", "0");
+  $(".controls__table tbody .fixed-row").parent().css("height", "auto");
+  $(".controls__table tbody .fixed-row").parent().css("min-height", "0");
 }
 
 (function ($) {

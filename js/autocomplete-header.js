@@ -136,9 +136,9 @@ $(document).on("click", ".autocomplete-product-button", function () {
 
 $(document).on("click", ".product-expand", function () {
   $(this)
-    .siblings(".autocomplete-product--choice, .autocomplete-product-duration")
+    .siblings(" .autocomplete-product-duration")
     .toggleClass("hidden");
-  $(this).toggleClass("rotate-arrow");
+  // $(this).toggleClass("rotate-arrow");
 });
 
 $(document).click(function (event) {

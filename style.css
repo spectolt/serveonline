@@ -1170,7 +1170,7 @@ select {
 
 @media (max-width: 600px) {
   .search-container .search-panel {
-    height: calc(107.4px / 2);
+    height: calc(109.8px / 2);
   }
 }
 
@@ -1234,7 +1234,7 @@ select {
   transition: -webkit-transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
-  z-index: 100;
+  z-index: 102;
 }
 
 @media (max-width: 600px) {
@@ -1397,8 +1397,8 @@ select {
 
 .search-container .ui-autocomplete.ui-widget {
   border-radius: 0;
-  -webkit-box-shadow: 22px 28px 34px 0px rgba(16, 27, 81, 0.43);
-          box-shadow: 22px 28px 34px 0px rgba(16, 27, 81, 0.43);
+  -webkit-box-shadow: 22px 28px 28px 0px rgba(16, 27, 81, 0.43);
+          box-shadow: 22px 28px 28px 0px rgba(16, 27, 81, 0.43);
   border-top: 1px solid #e8e8e8;
 }
 
@@ -1538,8 +1538,8 @@ select {
 @media (max-width: 991px) {
   .search-container .ui-autocomplete#ui-id-2 {
     width: calc(100vw - (100vw - 100%)) !important;
-    -webkit-box-shadow: 22px 28px 34px 0px rgba(16, 27, 81, 0.43) !important;
-            box-shadow: 22px 28px 34px 0px rgba(16, 27, 81, 0.43) !important;
+    -webkit-box-shadow: 22px 28px 28px 0px rgba(16, 27, 81, 0.43) !important;
+            box-shadow: 22px 28px 28px 0px rgba(16, 27, 81, 0.43) !important;
     border: 0;
   }
 }
@@ -1692,13 +1692,19 @@ select {
   height: 100%;
 }
 
+@media (max-width: 600px) {
+  .search-container--controls .search-panel {
+    height: calc(111px / 2);
+  }
+}
+
 .select2-dropdown--controls {
   border-left: none !important;
   border-radius: 0 !important;
   border-right: none !important;
   border-top: 1px solid #e8e8e8 !important;
-  -webkit-box-shadow: 22px 28px 34px 0px rgba(16, 27, 81, 0.43);
-          box-shadow: 22px 28px 34px 0px rgba(16, 27, 81, 0.43);
+  -webkit-box-shadow: 22px 28px 28px 0px rgba(16, 27, 81, 0.43);
+          box-shadow: 22px 28px 28px 0px rgba(16, 27, 81, 0.43);
   width: 100vw !important;
 }
 
@@ -9739,6 +9745,7 @@ section.product .product__block-recommend {
   width: 100%;
   min-height: 280px;
   overflow-y: hidden;
+  border-radius: 5px;
 }
 
 .controls__table-container::-webkit-scrollbar {

@@ -204,7 +204,8 @@
     // align-items: stretch;
     overflow-y: hidden;
     // position: relative;
-
+    border-radius: 5px;
+    
     &::-webkit-scrollbar {
       height: 8px;
     }

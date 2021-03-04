@@ -35,7 +35,7 @@
     }
 
     @include breakpoint(xs) {
-      height: calc(107.4px / 2);
+      height: calc(109.8px / 2);
     }
 
     &--wide {
@@ -92,7 +92,7 @@
     border: 0;
     background: transparent;
     transition: transform 0.3s ease-in-out;
-    z-index: 100;
+    z-index: 102;
 
     @include breakpoint(xs) {
       right: 20px;
@@ -228,7 +228,7 @@
 
   .ui-autocomplete.ui-widget {
     border-radius: 0;
-    box-shadow: 22px 28px 34px 0px rgba(16, 27, 81, 0.43);
+    box-shadow: 22px 28px 28px 0px rgba(16, 27, 81, 0.43);
     border-top: 1px solid $lightgray;
   }
 
@@ -367,7 +367,7 @@
 
   @include breakpoint(l) {
     width: calc(100vw - (100vw - 100%)) !important;
-    box-shadow: 22px 28px 34px 0px rgba(16, 27, 81, 0.43) !important;
+    box-shadow: 22px 28px 28px 0px rgba(16, 27, 81, 0.43) !important;
     border: 0;
   }
 }
@@ -490,6 +490,12 @@
       height: 100%;
     }
   }
+
+  .search-panel {
+    @include breakpoint(xs) {
+      height: calc(111px / 2);
+    }
+  }
 }
 
 .select2-dropdown--controls {
@@ -498,7 +504,7 @@
   // width: 100vw !important;
   border-right: none !important;
   border-top: 1px solid $lightgray !important;
-  box-shadow: 22px 28px 34px 0px rgba(16, 27, 81, 0.43);
+  box-shadow: 22px 28px 28px 0px rgba(16, 27, 81, 0.43);
   width: 100vw !important;
 
   @include breakpoint(l) {
