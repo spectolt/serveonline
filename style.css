@@ -7332,6 +7332,20 @@ body {
   }
 }
 
+.site-header--home .site-header__menu.site-header__menu--items {
+  -webkit-box-flex: 0;
+      -ms-flex: 0;
+          flex: 0;
+}
+
+@media (max-width: 700px) {
+  .site-header--home .site-header__menu.site-header__menu--items {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+}
+
 .site-main {
   height: calc(100vh - 70px);
   -webkit-box-align: start;

@@ -264,6 +264,15 @@ body {
       }
     }
   }
+
+  &--home {
+    .site-header__menu.site-header__menu--items {
+      flex: 0;
+      @include breakpoint(sm) {
+        order: 1;
+      }
+    }
+  }
 }
 
 // .default-content {
