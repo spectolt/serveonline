@@ -26,6 +26,109 @@ function onDocumentReady() {
     this._updateDatepicker(inst);
   };
 
+  $("select")
+    .select2()
+    .on("select2:open", function () {
+      $(this)
+        .next(".select2-container")
+        // .first()
+        .find(".select2-selection__arrow b")
+        .addClass("rotate");
+    })
+    .on("select2:close", function () {
+      $(this)
+        .siblings(".select2-container")
+        .first()
+        .find(".select2-selection__arrow b")
+        .removeClass("rotate");
+    });
+
+
+    var dropdownWidth;
+    var searchValue;
+    $(".search-panel__select")
+      .select2({
+        // multiple: true,
+        maximumSelectionLength: 2,
+        placeholder: "Pasirinkite vietą paieškai",
+        dropdownCssClass: "select2-dropdown--controls",
+        dropdownParent: $(".search-container__select"),
+        templateResult: hideSelected,
+        language: {
+          // You can find all of the options in the language files provided in the
+          // build. They all must be functions that return the string that should be
+          // displayed.
+          maximumSelected: function () {
+            return "";
+          },
+        },
+      })
+      .on("select2:open", function (e) {
+        dropdownWidth =
+          parseInt(
+            document.querySelector(".select2-dropdown--controls").style.width
+          ) +
+          1 +
+          "px";
+        $(".select2-results").css("width", dropdownWidth);
+        searchValue = $(".select2-search__field").val();
+      })
+      .on("select2:select", function (e) {
+        $(this)
+          .siblings()
+          .find(".select2-search")
+          .css("caret-color", "transparent");
+        $(this).siblings().find(".select2-search__field").val("");
+        if (
+          $(this).siblings().find(".select2-selection__rendered").find("li")
+            .length > 0
+        ) {
+          $(this)
+            .siblings()
+            .find(".select2-search__field")
+            .on("keydown", function (e) {
+              if (
+                e.keyCode == 8 ||
+                e.keyCode == 46 ||
+                $(this)
+                  .parent()
+                  .siblings(".select2-selection__rendered")
+                  .find("li").length == 0
+              ) {
+                return true;
+              } else {
+                return false;
+              }
+            });
+        } else {
+          $(this)
+            .siblings()
+            .find(".select2-search__field")
+            .on("keydown", function (e) {
+              return true;
+            });
+        }
+
+        if($(".search-panel input").val().length) {
+          $(".search-container__submit").find("span").html("Valyti");
+          $(".search-container__submit").addClass("change-search-icon");
+        }
+      })
+      .on("select2:unselect", function () {
+        $(this).siblings().find(".select2-search").css("caret-color", "inherit");
+      })
+      .on("select2:closing", function (e) {
+        searchValue = $(".select2-search__field").val();
+      })
+      .on("select2:close", function (e) {
+        $(this).siblings().find(".select2-search__field").val(searchValue);
+      })
+      .on("change", function (e) {
+        if ($(this).val().length > 0) {
+          $(this).val($(this).val().slice(0, 0));
+        }
+      });
+
   if ($("main.hasUiAutocomplete").length > 0) {
     $(".search-container__submit")
       .unbind("click")
@@ -325,8 +428,11 @@ function onDocumentReady() {
           $(this).find("span").html("Ieškoti");
           $(this).removeClass("change-search-icon");
           $(".search-panel input").val("");
+          $(".search-panel__select").select2("close");
+
           $(this).find("span").html("Ieškoti");
           $(this).removeClass("change-search-icon");
+          
         } else {
           // $(".search-container__select .select2-search__field").val("");
           if (
@@ -336,24 +442,22 @@ function onDocumentReady() {
             $(this).find("span").html("Valyti");
             $(this).addClass("change-search-icon");
           }
-        }
 
-        $(".search-panel__select").select2("close");
+          if (
+            !$(".search-container__select .select2-selection__rendered").children().length
+          ) {
+            $(".search-panel__select").select2("open");
+            $(this).find("span").html("Ieškoti");
+            $(this).removeClass("change-search-icon");
+          } else {
+            $(".search-container__submit").find("span").html("Valyti");
+            $(".search-container__submit").addClass("change-search-icon");
+            $(".search-panel__select").select2("close");
+          }
+        }
       });
 
-    // $(window).scroll(function () {
-    //   if (/iPhone|iPad|iPod|/i.test(navigator.userAgent)) {
-    //     if ($(window).scrollTop() + $(window).height() > $(document).height()) {
-    //       var diff =
-    //         $(window).scrollTop() + $(window).height() - $(document).height();
-    //       $(".controls__table tbody:last-of-type").each(function() {
-    //         $(this).height($(this).height() + diff);
-    //         console.log(diff)
-    //       })
-    //     }
-    //   }
-    // });
-
+      
     tableHeight();
     changeRowWidth();
     getMaxHeight();
@@ -366,23 +470,7 @@ function onDocumentReady() {
     });
   }
 
-  $("select")
-    .select2()
-    .on("select2:open", function () {
-      $(this)
-        .next(".select2-container")
-        // .first()
-        .find(".select2-selection__arrow b")
-        .addClass("rotate");
-    })
-    .on("select2:close", function () {
-      $(this)
-        .siblings(".select2-container")
-        .first()
-        .find(".select2-selection__arrow b")
-        .removeClass("rotate");
-    });
-
+  
   $(".site-aside__filters .js-dropdown-placeholder").select2({
     minimumResultsForSearch: Infinity,
     placeholder: "Pasirinkti",
@@ -584,10 +672,6 @@ function onDocumentReady() {
     }, 100);
   });
 
-  // $(".select2").unbind('click').click(function () {
-  //   $(this).find(".select2-selection__arrow b").toggleClass("rotate");
-  // });
-
   $(".goto-top").on("click", function () {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
@@ -635,12 +719,6 @@ function onDocumentReady() {
       .closest("tr")
       .find(".controls__item")
       .css("background-color", color);
-    // if ($(this).closest("tr").find("p").hasClass("controls__item--menu")) {
-    //   $(this)
-    //     .closest("tr")
-    //     .find("p.controls__item--menu")
-    //     .css("background-color", "#101b51");
-    // }
   });
 
   $(".color-input").on("input click", function () {
@@ -656,7 +734,6 @@ function onDocumentReady() {
           $(this).css("color", "#101b51");
         }
       });
-      //inputs.css("color", '#8d92a3');
     }
     inputs.css("background-color", color);
     inputs.css(
@@ -681,7 +758,6 @@ function onDocumentReady() {
   $(".controls__table .controls__item")
     .unbind("click")
     .click(function () {
-      // if (!$(this).hasClass("controls__item--menu")) {
       $(this).addClass("changed-bg");
       $(this)
         .closest(".controls__area")
@@ -707,35 +783,6 @@ function onDocumentReady() {
             .find(".controls__item")
             .removeClass("changed-bg");
         }
-        // var clickedRow = $(this).closest("tr");
-        // $(".controls__item--menu").each(function (i) {
-        //   var index = clickedRow.index() + i + 1;
-        //   var targetRows = $(this)
-        //     .closest(".areas__table--main")
-        //     .find("tr")
-        //     .eq(index);
-        //   if (targetRows.length == 0) {
-        //     $(this)
-        //       .closest(".areas__table--main")
-        //       .find("tbody")
-        //       .append("<tr><td></td><td></td><td></td><td></td><td></td></tr>");
-        //     targetRows = $(this)
-        //       .closest(".areas__table--main")
-        //       .find("tr")
-        //       .eq(index);
-        //   }
-        //   targetRows.find("td").last().append($(this));
-        //   // $(this).css("height", "0");
-        //   getMaxHeight();
-        // });
-        //remove row if empty
-        // $(this)
-        //   .closest(".areas__table--main tbody")
-        //   .find("tr")
-        //   .each(function () {
-        //     if ($(this).find("td").length === $(this).find("td:empty").length)
-        //       $(this).remove();
-        //   });
 
         $(".controls__item--profession").css(
           "background-color",
@@ -1252,80 +1299,6 @@ function onDocumentReady() {
     $(".company__header--company").css("width", "calc(100vw - 20px)");
   }
 
-  var dropdownWidth;
-  var searchValue;
-  $(".search-panel__select")
-    .select2({
-      // multiple: true,
-      maximumSelectionLength: 2,
-      placeholder: "Pasirinkite vietą paieškai",
-      dropdownCssClass: "select2-dropdown--controls",
-      dropdownParent: $(".search-container__select"),
-      language: {
-        // You can find all of the options in the language files provided in the
-        // build. They all must be functions that return the string that should be
-        // displayed.
-        maximumSelected: function () {
-          return "";
-        },
-      },
-    })
-    .on("select2:open", function (e) {
-      $(this).val("").trigger("change")
-      dropdownWidth =
-        parseInt(
-          document.querySelector(".select2-dropdown--controls").style.width
-        ) +
-        1 +
-        "px";
-      $(".select2-results").css("width", dropdownWidth);
-      searchValue = $(".select2-search__field").val();
-    })
-    .on("select2:select", function (e) {
-      $(this).siblings().find(".select2-search").css("caret-color", "transparent");
-      $(this).siblings().find(".select2-search__field").val("");
-      if (
-        $(this).siblings().find(".select2-selection__rendered").find("li")
-          .length > 0
-      ) {
-        $(this)
-          .siblings()
-          .find(".select2-search__field")
-          .on("keydown", function (e) {
-            // console.log(
-            //   $(this).siblings().find(".select2-selection__rendered").find("li")
-            //     .length
-            // );
-            if (
-              e.keyCode == 8 ||
-              e.keyCode == 46 ||
-              $(this).parent().siblings(".select2-selection__rendered").find("li")
-                .length == 0
-            ) {
-              return true;
-            } else {
-              return false;
-            }
-          });
-      } else {
-        $(this)
-          .siblings()
-          .find(".select2-search__field")
-          .on("keydown", function (e) {
-            return true;
-          });
-      }
-    })
-    .on("select2:unselect",function() {
-      $(this).siblings().find(".select2-search").css("caret-color", "inherit");
-    })
-    .on("select2:closing", function (e) {
-      searchValue = $(".select2-search__field").val();
-    })
-    .on("select2:close", function (e) {
-      $(this).siblings().find(".select2-search__field").val(searchValue);
-    });
-
   $(".services__table--service-title th, .services__table--service-detail th")
     .unbind("click")
     .click(function () {
@@ -1548,22 +1521,30 @@ function onDocumentReady() {
       $(this).toggleClass("rotate-arr");
     });
 
-  // $(".controls__table tbody:last-of-type").sortable();
-  // $(".controls__table tbody:last-of-type").sortable("disable");
-  $(".controls__edit").on("click", function () {
+  $(".controls__switch").on("click", function () {
     $(this).closest("tbody").next("tbody").sortable();
-    console.log($(this).parent("tbody").next("tbody"));
   });
 
-  $(".search-panel").on("submit", function(e) {
+  $(".search-panel").on("submit", function (e) {
     e.preventDefault();
-  })
+  });
 
-  $(".search-container--controls .search-panel").on("keydown", function(e) {
-    if(e.keyCode == 13) {
+  $(".search-container--controls .search-panel").on("keydown", function (e) {
+    if (
+      e.keyCode == 13 &&
+      !$(".search-container__select .select2-selection__rendered").children()
+        .length
+    ) {
       $(".search-panel__select").select2("open");
+    } else if (
+      e.keyCode == 13 &&
+      $(".search-container__select .select2-selection__rendered").children()
+        .length
+    ) {
+      $(".search-container__submit").find("span").html("Valyti");
+      $(".search-container__submit").addClass("change-search-icon");
     }
-  })
+  });
 
   moveAction();
   moveOrder();
@@ -1574,6 +1555,13 @@ function onDocumentReady() {
   setTimeout(function () {
     changeTextWidth();
   }, 100);
+}
+
+function hideSelected(value) {
+  if ($(".select2-selection__choice__display").html() != value.text) {
+    console.log($(".select2-selection__choice__display").html(), value.text);
+    return $("<span>" + value.text + "</span>");
+  }
 }
 
 function changeTextWidth() {

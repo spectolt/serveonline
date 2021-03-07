@@ -239,7 +239,7 @@
     //margin-top: 72.8px;
     height: calc(50vh + 1px);
     overflow-y: auto;
-    top: 100% !important;
+    top: calc(100% - 1px) !important;
 
     @include breakpoint(sm) {
       //margin-top: 112.2px;
@@ -340,7 +340,7 @@
       width: 100% !important;
 
       & + .select2-container {
-      top: 112.2px !important;
+      top: 111.2px !important;
       position: absolute !important;
       }
     }

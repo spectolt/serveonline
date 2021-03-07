@@ -34,6 +34,7 @@ $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
                                     <button class="controls__add"></button>
                                     <button class="controls__trash"></button>
                                     <button class="controls__edit"></button>
+                                    <button class="controls__switch"></button>
                                 </td>
                             </tr>
                         </tbody>
@@ -88,64 +89,44 @@ $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
                     <table class="controls__table areas__table areas__table--menu">
                         <thead>
                             <tr>
-                                <!-- <th>Meniu pavadinimai</th> -->
                                 <th>Profesijos</th>
                             </tr>
                         </thead>
                         <tbody class="controls__table-body hidden">
                             <tr>
-                                <!-- <td>
-                                </td> -->
                                 <td colspan="1">
                                     <button class="controls__add"></button>
                                     <button class="controls__trash"></button>
                                     <button class="controls__edit"></button>
+                                    <button class="controls__switch"></button>
                                 </td>
                             </tr>
                             <tr class="controls__area areas__area">
-                                <!-- <td>
-                                    <p class="controls__item controls__item--menu">Gydytojai</p>
-                                </td> -->
                                 <td>
                                     <p class="controls__item controls__item--profession">Ginekologas</p>
                                 </td>
                             </tr>
                             <tr class="controls__area areas__area">
-                                <!-- <td>
-                                    <p class="controls__item controls__item--menu">Klinikos</p>
-                                </td> -->
                                 <td>
                                     <p class="controls__item controls__item--profession">Urologas</p>
                                 </td>
                             </tr>
                             <tr class="controls__area areas__area">
-                                <!-- <td>
-                                    <p></p>
-                                </td> -->
                                 <td>
                                     <p class="controls__item controls__item--profession">Dermatologas</p>
                                 </td>
                             </tr>
                             <tr class="controls__area areas__area">
-                                <!-- <td>
-                                    <p></p>
-                                </td> -->
                                 <td>
                                     <p class="controls__item controls__item--profession">Venerologas</p>
                                 </td>
                             </tr>
                             <tr class="controls__area areas__area">
-                                <!-- <td>
-                                    <p></p>
-                                </td> -->
                                 <td>
                                     <p class="controls__item controls__item--profession">Chirurgas</p>
                                 </td>
                             </tr>
                             <tr class="controls__area areas__area">
-                                <!-- <td>
-                                    <p></p>
-                                </td> -->
                                 <td>
                                     <p class="controls__item controls__item--profession">Terapeutas</p>
                                 </td>

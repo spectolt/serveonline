@@ -382,7 +382,8 @@
 
   &__add,
   &__trash,
-  &__edit {
+  &__edit,
+  &__switch {
     position: relative;
 
     &:before {
@@ -409,10 +410,17 @@
   }
 
   &__edit {
-    margin-right: 0;
 
     &:before {
       background-image: url("img/icons/edit-white.svg");
+    }
+  }
+
+  &__switch {
+    margin-right: 0;
+
+    &:before {
+      background-image: url("img/icons/switch-white.svg");
     }
   }
 
@@ -545,7 +553,7 @@
       width: 16%;
       table-layout: fixed;
       // min-width: 380px;
-      min-width: 160px;
+      min-width: 200px;
 
       thead {
         border-top-left-radius: 0;
@@ -722,7 +730,7 @@
   }
 
   &__table {
-    min-width: 150px;
+    min-width: 185px;
     // width: calc(100% + 2px);
     display: inline-block;
     justify-content: flex-start;
@@ -800,11 +808,6 @@
       flex: 0 0 17%;
       max-width: 17%;
       z-index: 3;
-
-      // tfoot {
-      //   margin-left: -1px;
-      //   width: calc(100% + 1px);
-      // }
     }
 
     &:nth-of-type(2) {

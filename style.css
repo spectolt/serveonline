@@ -1407,7 +1407,7 @@ select {
   left: 0 !important;
   height: calc(50vh + 1px);
   overflow-y: auto;
-  top: 100% !important;
+  top: calc(100% - 1px) !important;
 }
 
 .search-container .ui-autocomplete .ui-autocomplete-wrapper {
@@ -1510,7 +1510,7 @@ select {
     width: 100% !important;
   }
   .search-container .select2-container + .select2-container {
-    top: 112.2px !important;
+    top: 111.2px !important;
     position: absolute !important;
   }
 }
@@ -9919,11 +9919,11 @@ section.product .product__block-recommend {
   margin-right: 0;
 }
 
-.controls__add, .controls__trash, .controls__edit {
+.controls__add, .controls__trash, .controls__edit, .controls__switch {
   position: relative;
 }
 
-.controls__add:before, .controls__trash:before, .controls__edit:before {
+.controls__add:before, .controls__trash:before, .controls__edit:before, .controls__switch:before {
   content: "";
   width: 20px;
   height: 20px;
@@ -9946,12 +9946,16 @@ section.product .product__block-recommend {
   background-image: url("img/icons/trash-white.svg");
 }
 
-.controls__edit {
+.controls__edit:before {
+  background-image: url("img/icons/edit-white.svg");
+}
+
+.controls__switch {
   margin-right: 0;
 }
 
-.controls__edit:before {
-  background-image: url("img/icons/edit-white.svg");
+.controls__switch:before {
+  background-image: url("img/icons/switch-white.svg");
 }
 
 .controls .fixed-row {
@@ -10108,7 +10112,7 @@ section.product .product__block-recommend {
 .areas__table--menu {
   width: 16%;
   table-layout: fixed;
-  min-width: 160px;
+  min-width: 200px;
 }
 
 .areas__table--menu thead {
@@ -10286,7 +10290,7 @@ section.product .product__block-recommend {
 }
 
 .services__table {
-  min-width: 150px;
+  min-width: 185px;
   display: inline-block;
   -webkit-box-pack: start;
       -ms-flex-pack: start;

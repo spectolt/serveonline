@@ -46,6 +46,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                                         <button class="controls__add"></button>
                                         <button class="controls__trash"></button>
                                         <button class="controls__edit"></button>
+                                        <button class="controls__switch"></button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -96,6 +97,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                                         <button class="controls__add"></button>
                                         <button class="controls__trash"></button>
                                         <button class="controls__edit"></button>
+                                        <button class="controls__switch"></button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -151,6 +153,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                                         <button class="controls__add"></button>
                                         <button class="controls__trash"></button>
                                         <button class="controls__edit"></button>
+                                        <button class="controls__switch"></button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -216,6 +219,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                                         <button class="controls__add"></button>
                                         <button class="controls__trash"></button>
                                         <button class="controls__edit"></button>
+                                        <button class="controls__switch"></button>
                                     </td>
                                 </tr>
                             </tbody>
