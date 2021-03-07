@@ -369,6 +369,7 @@
     width: calc(100vw - (100vw - 100%)) !important;
     box-shadow: 22px 28px 28px 0px rgba(16, 27, 81, 0.43) !important;
     border: 0;
+    border-top: 1px solid $lightgray;
   }
 }
 
@@ -447,6 +448,7 @@
         margin: 0 0 0 20px;
         display: flex;
         align-items: center;
+        white-space: nowrap;
 
         button {
           display: none;

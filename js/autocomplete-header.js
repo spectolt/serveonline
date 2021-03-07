@@ -264,5 +264,7 @@ $(".search-panel input").autocomplete({
   select: function(event, ui) {
     $("#ui-id-1").css("display", "none");
     $("#ui-id-2").css("display", "none");
+    $(".search-container__submit span").html("Valyti");
+    $(".search-container__submit").addClass("change-search-icon");
   }
 })

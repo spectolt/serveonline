@@ -55,12 +55,12 @@ function onDocumentReady() {
         }
       });
 
-      $("input#search, input#search-product").on("keydown",function search(e) {
-        if(e.keyCode == 13) {
-          $(".ui-autocomplete").fadeOut(300);
-          $(".search-container__submit").find("span").html("Valyti");
-          $(".search-container__submit").addClass("change-search-icon");
-        }
+    $("input#search, input#search-product").on("keydown", function search(e) {
+      if (e.keyCode == 13) {
+        $(".ui-autocomplete").fadeOut(300);
+        $(".search-container__submit").find("span").html("Valyti");
+        $(".search-container__submit").addClass("change-search-icon");
+      }
     });
 
     // autocomplete results width fix
@@ -322,7 +322,6 @@ function onDocumentReady() {
           $(
             ".search-container__select .select2-selection__choice__remove"
           ).trigger("click");
-          console.log($(".search-container__select .select2-search__field"));
           $(this).find("span").html("Ieškoti");
           $(this).removeClass("change-search-icon");
           $(".search-panel input").val("");
@@ -331,13 +330,15 @@ function onDocumentReady() {
         } else {
           // $(".search-container__select .select2-search__field").val("");
           if (
-            $(".search-container__select .select2-search__field").length ||
+            $(".search-container__select .select2-search__field").length &&
             $(".search-panel input").length
           ) {
             $(this).find("span").html("Valyti");
             $(this).addClass("change-search-icon");
           }
         }
+
+        $(".search-panel__select").select2("close");
       });
 
     // $(window).scroll(function () {
@@ -442,6 +443,8 @@ function onDocumentReady() {
         $(".ui-autocomplete").css("display", "none");
         $(".product-header-chosen").remove();
         $(".search-panel__select").val(null).trigger("change");
+        $(".search-container__submit span").html("Ieškoti");
+        $(".search-container__submit").removeClass("change-search-icon");
       }
 
       if ($(this).hasClass("site-header__item--search")) {
@@ -1254,7 +1257,7 @@ function onDocumentReady() {
   $(".search-panel__select")
     .select2({
       // multiple: true,
-      maximumSelectionLength: 1,
+      maximumSelectionLength: 2,
       placeholder: "Pasirinkite vietą paieškai",
       dropdownCssClass: "select2-dropdown--controls",
       dropdownParent: $(".search-container__select"),
@@ -1268,6 +1271,7 @@ function onDocumentReady() {
       },
     })
     .on("select2:open", function (e) {
+      $(this).val("").trigger("change")
       dropdownWidth =
         parseInt(
           document.querySelector(".select2-dropdown--controls").style.width
@@ -1275,15 +1279,45 @@ function onDocumentReady() {
         1 +
         "px";
       $(".select2-results").css("width", dropdownWidth);
-      console.log($(this));
       searchValue = $(".select2-search__field").val();
     })
     .on("select2:select", function (e) {
-      // if ($(".search-container__submit span").html() == "Ieškoti") {
-      //   $(".search-container__submit span").html("Valyti");
-      //   $(".search-container__submit").addClass("change-search-icon");
-      // }
+      $(this).siblings().find(".select2-search").css("caret-color", "transparent");
       $(this).siblings().find(".select2-search__field").val("");
+      if (
+        $(this).siblings().find(".select2-selection__rendered").find("li")
+          .length > 0
+      ) {
+        $(this)
+          .siblings()
+          .find(".select2-search__field")
+          .on("keydown", function (e) {
+            // console.log(
+            //   $(this).siblings().find(".select2-selection__rendered").find("li")
+            //     .length
+            // );
+            if (
+              e.keyCode == 8 ||
+              e.keyCode == 46 ||
+              $(this).parent().siblings(".select2-selection__rendered").find("li")
+                .length == 0
+            ) {
+              return true;
+            } else {
+              return false;
+            }
+          });
+      } else {
+        $(this)
+          .siblings()
+          .find(".select2-search__field")
+          .on("keydown", function (e) {
+            return true;
+          });
+      }
+    })
+    .on("select2:unselect",function() {
+      $(this).siblings().find(".select2-search").css("caret-color", "inherit");
     })
     .on("select2:closing", function (e) {
       searchValue = $(".select2-search__field").val();
@@ -1485,34 +1519,51 @@ function onDocumentReady() {
       if (!$(this).hasClass("rotate-arr")) {
         $(this)
           .closest(".controls")
-          .find(".controls__header").addClass("controls__header--hidden")
-          .animate({"max-height": "0"}, {
-            duration: 300,
-            complete: function() {
-              clearInterval(interval);
+          .find(".controls__header")
+          .addClass("controls__header--hidden")
+          .animate(
+            { "max-height": "0" },
+            {
+              duration: 300,
+              complete: function () {
+                clearInterval(interval);
+              },
             }
-          })
-          
+          );
       } else {
         $(this)
           .closest(".controls")
-          .find(".controls__header").removeClass("controls__header--hidden")
-          .animate({"max-height": "300px"}, {
-            duration: 150,
-            complete: function() {
-              clearInterval(interval);
+          .find(".controls__header")
+          .removeClass("controls__header--hidden")
+          .animate(
+            { "max-height": "300px" },
+            {
+              duration: 150,
+              complete: function () {
+                clearInterval(interval);
+              },
             }
-          })
+          );
       }
       $(this).toggleClass("rotate-arr");
     });
 
-    // $(".controls__table tbody:last-of-type").sortable();
-    // $(".controls__table tbody:last-of-type").sortable("disable");
-    $(".controls__edit").on("click", function() {
-      $(this).closest("tbody").next("tbody").sortable();
-      console.log($(this).parent("tbody").next("tbody"))
-    })
+  // $(".controls__table tbody:last-of-type").sortable();
+  // $(".controls__table tbody:last-of-type").sortable("disable");
+  $(".controls__edit").on("click", function () {
+    $(this).closest("tbody").next("tbody").sortable();
+    console.log($(this).parent("tbody").next("tbody"));
+  });
+
+  $(".search-panel").on("submit", function(e) {
+    e.preventDefault();
+  })
+
+  $(".search-container--controls .search-panel").on("keydown", function(e) {
+    if(e.keyCode == 13) {
+      $(".search-panel__select").select2("open");
+    }
+  })
 
   moveAction();
   moveOrder();
