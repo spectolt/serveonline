@@ -267,16 +267,15 @@
 
       h2 {
         margin-bottom: 0;
+        position: sticky;
+        width: auto;
+          white-space: nowrap;
+          display: block;
+          margin: 0;
+          left: 0;
 
         @include breakpoint(sm) {
           position: relative;
-          // margin-left: 50%;
-          margin: 0;
-          left: 0;
-          // transform: translateX(-50%);
-          width: auto;
-          white-space: nowrap;
-          display: block;
         }
       }
 
@@ -2261,6 +2260,8 @@
 
         input:checked {
           + .payment-plan__label {
+            border-radius: 5px 5px 0 0;
+
             &:before {
               background-image: url("img/icons/minus-thin.svg");
             }
@@ -2431,7 +2432,7 @@
             box-shadow: inset 0 5px 6px -5px rgba(0, 0, 0, 0.49);
           }
 
-          &:first-child {
+          &:first-of-type {
             .payment-plan__details-label {
               background-color: #fff9f0;
             }
@@ -2440,12 +2441,12 @@
               border-top: none;
             }
           }
-          &:nth-child(2) {
+          &:nth-of-type(2) {
             .payment-plan__details-label {
               background-color: #ffe7dc;
             }
           }
-          &:last-child {
+          &:last-of-type {
             .payment-plan__details-label {
               border-radius: 0 0 5px 5px;
               background-color: #ffd9bd;

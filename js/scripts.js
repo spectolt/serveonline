@@ -43,91 +43,90 @@ function onDocumentReady() {
         .removeClass("rotate");
     });
 
-
-    var dropdownWidth;
-    var searchValue;
-    $(".search-panel__select")
-      .select2({
-        // multiple: true,
-        maximumSelectionLength: 2,
-        placeholder: "Pasirinkite vietą paieškai",
-        dropdownCssClass: "select2-dropdown--controls",
-        dropdownParent: $(".search-container__select"),
-        templateResult: hideSelected,
-        language: {
-          // You can find all of the options in the language files provided in the
-          // build. They all must be functions that return the string that should be
-          // displayed.
-          maximumSelected: function () {
-            return "";
-          },
+  var dropdownWidth;
+  var searchValue;
+  $(".search-panel__select")
+    .select2({
+      // multiple: true,
+      maximumSelectionLength: 2,
+      placeholder: "Pasirinkite vietą paieškai",
+      dropdownCssClass: "select2-dropdown--controls",
+      dropdownParent: $(".search-container__select"),
+      templateResult: hideSelected,
+      language: {
+        // You can find all of the options in the language files provided in the
+        // build. They all must be functions that return the string that should be
+        // displayed.
+        maximumSelected: function () {
+          return "";
         },
-      })
-      .on("select2:open", function (e) {
-        dropdownWidth =
-          parseInt(
-            document.querySelector(".select2-dropdown--controls").style.width
-          ) +
-          1 +
-          "px";
-        $(".select2-results").css("width", dropdownWidth);
-        searchValue = $(".select2-search__field").val();
-      })
-      .on("select2:select", function (e) {
+      },
+    })
+    .on("select2:open", function (e) {
+      dropdownWidth =
+        parseInt(
+          document.querySelector(".select2-dropdown--controls").style.width
+        ) +
+        1 +
+        "px";
+      $(".select2-results").css("width", dropdownWidth);
+      searchValue = $(".select2-search__field").val();
+    })
+    .on("select2:select", function (e) {
+      $(this)
+        .siblings()
+        .find(".select2-search")
+        .css("caret-color", "transparent");
+      $(this).siblings().find(".select2-search__field").val("");
+      if (
+        $(this).siblings().find(".select2-selection__rendered").find("li")
+          .length > 0
+      ) {
         $(this)
           .siblings()
-          .find(".select2-search")
-          .css("caret-color", "transparent");
-        $(this).siblings().find(".select2-search__field").val("");
-        if (
-          $(this).siblings().find(".select2-selection__rendered").find("li")
-            .length > 0
-        ) {
-          $(this)
-            .siblings()
-            .find(".select2-search__field")
-            .on("keydown", function (e) {
-              if (
-                e.keyCode == 8 ||
-                e.keyCode == 46 ||
-                $(this)
-                  .parent()
-                  .siblings(".select2-selection__rendered")
-                  .find("li").length == 0
-              ) {
-                return true;
-              } else {
-                return false;
-              }
-            });
-        } else {
-          $(this)
-            .siblings()
-            .find(".select2-search__field")
-            .on("keydown", function (e) {
+          .find(".select2-search__field")
+          .on("keydown", function (e) {
+            if (
+              e.keyCode == 8 ||
+              e.keyCode == 46 ||
+              $(this)
+                .parent()
+                .siblings(".select2-selection__rendered")
+                .find("li").length == 0
+            ) {
               return true;
-            });
-        }
+            } else {
+              return false;
+            }
+          });
+      } else {
+        $(this)
+          .siblings()
+          .find(".select2-search__field")
+          .on("keydown", function (e) {
+            return true;
+          });
+      }
 
-        // if($(".search-panel input").val().length) {
-        //   $(".search-container__submit").find("span").html("Valyti");
-        //   $(".search-container__submit").addClass("change-search-icon");
-        // }
-      })
-      .on("select2:unselect", function () {
-        $(this).siblings().find(".select2-search").css("caret-color", "inherit");
-      })
-      .on("select2:closing", function (e) {
-        searchValue = $(".select2-search__field").val();
-      })
-      .on("select2:close", function (e) {
-        $(this).siblings().find(".select2-search__field").val(searchValue);
-      })
-      .on("change", function (e) {
-        if ($(this).val().length > 0) {
-          $(this).val($(this).val().slice(0, 0));
-        }
-      });
+      // if($(".search-panel input").val().length) {
+      //   $(".search-container__submit").find("span").html("Valyti");
+      //   $(".search-container__submit").addClass("change-search-icon");
+      // }
+    })
+    .on("select2:unselect", function () {
+      $(this).siblings().find(".select2-search").css("caret-color", "inherit");
+    })
+    .on("select2:closing", function (e) {
+      searchValue = $(".select2-search__field").val();
+    })
+    .on("select2:close", function (e) {
+      $(this).siblings().find(".select2-search__field").val(searchValue);
+    })
+    .on("change", function (e) {
+      if ($(this).val().length > 0) {
+        $(this).val($(this).val().slice(0, 0));
+      }
+    });
 
   if ($("main.hasUiAutocomplete").length > 0) {
     $(".search-container__submit")
@@ -432,7 +431,6 @@ function onDocumentReady() {
 
           $(this).find("span").html("Ieškoti");
           $(this).removeClass("change-search-icon");
-          
         } else {
           // $(".search-container__select .select2-search__field").val("");
           if (
@@ -444,7 +442,9 @@ function onDocumentReady() {
           }
 
           if (
-            !$(".search-container__select .select2-selection__rendered").children().length
+            !$(
+              ".search-container__select .select2-selection__rendered"
+            ).children().length
           ) {
             $(".search-panel__select").select2("open");
             $(this).find("span").html("Ieškoti");
@@ -457,7 +457,6 @@ function onDocumentReady() {
         }
       });
 
-      
     tableHeight();
     changeRowWidth();
     getMaxHeight();
@@ -470,7 +469,6 @@ function onDocumentReady() {
     });
   }
 
-  
   $(".site-aside__filters .js-dropdown-placeholder").select2({
     minimumResultsForSearch: Infinity,
     placeholder: "Pasirinkti",
@@ -805,14 +803,6 @@ function onDocumentReady() {
         // $(".areas__table--main tbody tr td").removeClass("hidden-visibility");
       }
     });
-
-  // $(".areas__table .areas__area .controls__item").unbind('click').click(function () {
-
-  // });
-
-  // $(".services__table .controls__item").unbind('click').click(function () {
-
-  // });
 
   $(document).on("input", "textarea[name='product-description']", function () {
     $(this).css("height", "5px");
@@ -1459,6 +1449,8 @@ function onDocumentReady() {
   }
 
   $(document).on("click", ".payment-plan__more", function () {
+    $(this).closest(".payment-plan__mobile").siblings().find(".payment-plan__details").removeClass("toggled");
+    $(this).closest(".payment-plan__mobile").siblings().find(".payment-plan__more").html("Plačiau").removeClass("toggled").addClass("untoggled");
     if (
       $(this)
         .closest(".payment-plan__details-label")
@@ -1523,7 +1515,7 @@ function onDocumentReady() {
 
   $(".controls__switch").on("click", function () {
     $(this).toggleClass("controls__switch--active");
-    if($(this).hasClass("controls__switch--active")) {
+    if ($(this).hasClass("controls__switch--active")) {
       $(this).closest("tbody").next("tbody").sortable();
     } else {
       $(this).closest("tbody").next("tbody").sortable("disable");
@@ -2032,79 +2024,85 @@ function openTab() {
 }
 
 function paymentLayout() {
-  var index, column, columnChecked, columnDesc, price, headerClone, cacheDom;
-  if (window.matchMedia("(max-width: 700px)").matches) {
-    $(".payment-plan").each(function () {
-      $(this)
-        .find("thead th:nth-of-type(n+2)")
-        .each(function () {
-          index = $(this).index();
-          childIndex = index + 1;
-          column = $(this)
-            .closest("table")
-            .find("td:nth-of-type(" + childIndex + ")");
-          columnChecked = column.closest(
-            "td:not('.checked'):not('.unchecked'):not('.payment-plan__price'), .checked"
-          );
-
-          headerClone = $(this)
-            .clone()
-            .appendTo($(this).closest(".payment-plan__info"));
-          price = column
-            .closest("td.payment-plan__price")
-            .clone()
-            .appendTo($(this).closest(".payment-plan__info"));
-          columnDesc = columnChecked
-            .closest("tr")
-            .find("td:first-of-type")
-            .clone()
-            .appendTo($(this).closest(".payment-plan__info"));
-
-          $(headerClone)
-            .nextAll(columnDesc)
-            .addBack()
-            .wrapAll("<div class='payment-plan__mobile' />");
-          $(
-            "<input type='radio' name='plan-details' id=" + $(this).html() + ">"
-          ).prependTo(headerClone.closest(".payment-plan__mobile"));
-          $(headerClone)
-            .nextUntil(columnDesc)
-            .addBack()
-            .wrapAll(
-              "<label class='payment-plan__details-label' for=" +
-                $(this).html() +
-                " />"
+  var index,
+    column,
+    columnChecked,
+    columnDesc,
+    price,
+    headerClone,
+    cacheDom,
+    cacheMob;
+  if (!$(".payment-plan__mobile").length) {
+    if (window.matchMedia("(max-width: 700px)").matches) {
+      $(".payment-plan__info table").each(function () {
+        $(this)
+          .find("thead th:nth-of-type(n+2)")
+          .each(function () {
+            index = $(this).index();
+            childIndex = index + 1;
+            column = $(this)
+              .closest("table")
+              .find("td:nth-of-type(" + childIndex + ")");
+            columnChecked = column.closest(
+              "td:not('.checked'):not('.unchecked'):not('.payment-plan__price'), .checked"
             );
-          columnDesc
-            .find(".payment-plan__main-functions")
-            .appendTo(headerClone.closest("label"))
-            .append("<span class='payment-plan__more'>Plačiau</span>");
-          columnDesc.wrapAll("<div class='payment-plan__details' />");
-          price.wrapAll("<div class='payment-plan__price-mobile' />");
 
-          // .appendTo($(this).closest(".payment-plan__info"));
-          // price.clone().appendTo($(this).closest(".payment-plan__info"));
-          // columnDesc.clone().appendTo($(this).closest(".payment-plan__info"));
-          // $(this).closest(".payment-plan__info th, .payment-plan__info td").wrapAll("<div class='payment-plan__item'>")
-          // var checkedDesc = columnChecked.closest("tr").find("td:first-of-type") + columnEmpty.closest("tr").td("first-of-type");
-          // console.log(checkedDesc)
-          // $(this).appendTo($(this).closest(".payment-plan__info"));
-        });
-    });
+            headerClone = $(this)
+              .clone()
+              .appendTo($(this).closest(".payment-plan__info"));
+            price = column
+              .closest("td.payment-plan__price")
+              .clone()
+              .appendTo($(this).closest(".payment-plan__info"));
+            columnDesc = columnChecked
+              .closest("tr")
+              .find("td:first-of-type")
+              .clone()
+              .appendTo($(this).closest(".payment-plan__info"));
 
-    $(".payment-plan__info table").remove();
-    // $(".payment-plan__info table").detach();
-    $(".payment-plan__info th").replaceWith(function () {
-      return "<h2>" + this.innerHTML + "</h2>";
-    });
-    $(".payment-plan__info td").replaceWith(function () {
-      return "<p>" + this.innerHTML + "</p>";
-    });
+            $(headerClone)
+              .nextAll(columnDesc)
+              .addBack()
+              .wrapAll("<div class='payment-plan__mobile' />");
+            $(
+              "<input type='radio' name='plan-details' id=" +
+                $(this).html() +
+                ">"
+            ).prependTo(headerClone.closest(".payment-plan__mobile"));
+            $(headerClone)
+              .nextUntil(columnDesc)
+              .addBack()
+              .wrapAll(
+                "<label class='payment-plan__details-label' for=" +
+                  $(this).html() +
+                  " />"
+              );
+            columnDesc
+              .find(".payment-plan__main-functions")
+              .appendTo(headerClone.closest("label"))
+              .append("<span class='payment-plan__more'>Plačiau</span>");
+            columnDesc.wrapAll("<div class='payment-plan__details' />");
+            price.wrapAll("<div class='payment-plan__price-mobile' />");
+          });
+      });
 
-    $(".payment-plan__info p").each(function () {
-      if ($.trim($(this).text()) == "") {
-        $(this).remove();
-      }
-    });
+      $(".payment-plan .payment-plan__info table").hide();
+
+      $(".payment-plan__mobile th").replaceWith(function () {
+        return "<h2>" + this.innerHTML + "</h2>";
+      });
+      $(".payment-plan__mobile td").replaceWith(function () {
+        return "<p>" + this.innerHTML + "</p>";
+      });
+
+      $(".payment-plan__mobile p").each(function () {
+        if ($.trim($(this).text()) == "") {
+          $(this).remove();
+        }
+      });
+    }
+  } else if (window.matchMedia("(min-width: 700px)").matches) {
+    $(".payment-plan .payment-plan__info table").show();
+    $(".payment-plan__mobile").remove();
   }
 }

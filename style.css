@@ -11872,16 +11872,18 @@ section.product .product__block-recommend {
 
 .company__header--company h2 {
   margin-bottom: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  width: auto;
+  white-space: nowrap;
+  display: block;
+  margin: 0;
+  left: 0;
 }
 
 @media (max-width: 700px) {
   .company__header--company h2 {
     position: relative;
-    margin: 0;
-    left: 0;
-    width: auto;
-    white-space: nowrap;
-    display: block;
   }
 }
 
@@ -14190,6 +14192,10 @@ section.product .product__block-recommend {
   }
 }
 
+.company__tab .company__payment .payment-plan input:checked + .payment-plan__label {
+  border-radius: 5px 5px 0 0;
+}
+
 .company__tab .company__payment .payment-plan input:checked + .payment-plan__label:before {
   background-image: url("img/icons/minus-thin.svg");
 }
@@ -14348,28 +14354,28 @@ section.product .product__block-recommend {
           box-shadow: inset 0 5px 6px -5px rgba(0, 0, 0, 0.49);
 }
 
-.company__tab .company__payment .payment-plan__mobile:first-child .payment-plan__details-label {
+.company__tab .company__payment .payment-plan__mobile:first-of-type .payment-plan__details-label {
   background-color: #fff9f0;
 }
 
-.company__tab .company__payment .payment-plan__mobile:first-child input:checked ~ .payment-plan__details-label {
+.company__tab .company__payment .payment-plan__mobile:first-of-type input:checked ~ .payment-plan__details-label {
   border-top: none;
 }
 
-.company__tab .company__payment .payment-plan__mobile:nth-child(2) .payment-plan__details-label {
+.company__tab .company__payment .payment-plan__mobile:nth-of-type(2) .payment-plan__details-label {
   background-color: #ffe7dc;
 }
 
-.company__tab .company__payment .payment-plan__mobile:last-child .payment-plan__details-label {
+.company__tab .company__payment .payment-plan__mobile:last-of-type .payment-plan__details-label {
   border-radius: 0 0 5px 5px;
   background-color: #ffd9bd;
 }
 
-.company__tab .company__payment .payment-plan__mobile:last-child input:checked ~ .payment-plan__details-label {
+.company__tab .company__payment .payment-plan__mobile:last-of-type input:checked ~ .payment-plan__details-label {
   border-radius: 0;
 }
 
-.company__tab .company__payment .payment-plan__mobile:last-child input:checked ~ .payment-plan__details-label + .payment-plan__details {
+.company__tab .company__payment .payment-plan__mobile:last-of-type input:checked ~ .payment-plan__details-label + .payment-plan__details {
   border-radius: 0 0 5px 5px;
 }
 
