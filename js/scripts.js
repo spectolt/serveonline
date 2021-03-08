@@ -109,10 +109,10 @@ function onDocumentReady() {
             });
         }
 
-        if($(".search-panel input").val().length) {
-          $(".search-container__submit").find("span").html("Valyti");
-          $(".search-container__submit").addClass("change-search-icon");
-        }
+        // if($(".search-panel input").val().length) {
+        //   $(".search-container__submit").find("span").html("Valyti");
+        //   $(".search-container__submit").addClass("change-search-icon");
+        // }
       })
       .on("select2:unselect", function () {
         $(this).siblings().find(".select2-search").css("caret-color", "inherit");
@@ -1522,7 +1522,12 @@ function onDocumentReady() {
     });
 
   $(".controls__switch").on("click", function () {
-    $(this).closest("tbody").next("tbody").sortable();
+    $(this).toggleClass("controls__switch--active");
+    if($(this).hasClass("controls__switch--active")) {
+      $(this).closest("tbody").next("tbody").sortable();
+    } else {
+      $(this).closest("tbody").next("tbody").sortable("disable");
+    }
   });
 
   $(".search-panel").on("submit", function (e) {

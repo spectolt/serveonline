@@ -399,6 +399,13 @@
       display: block;
       position: absolute;
     }
+
+    &:disabled {
+      filter: grayscale(1) invert(1);
+      background: transparent;
+      border: 1px solid $white;
+      opacity: .15;
+    } 
   }
 
   &__add:before {
@@ -421,6 +428,20 @@
 
     &:before {
       background-image: url("img/icons/switch-white.svg");
+    }
+
+    &:active,
+    &:focus {
+      border: 1px solid $orange;
+    }
+
+    &--active {
+      border: 1px solid $orange;
+      background-color: transparent;
+
+      &:before {
+        background-image: url("img/icons/switch-orange.svg");
+      }
     }
   }
 

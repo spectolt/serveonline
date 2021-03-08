@@ -32,8 +32,8 @@ $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
                             <tr class="fixed-row">
                                 <td colspan="4">
                                     <button class="controls__add"></button>
-                                    <button class="controls__trash"></button>
-                                    <button class="controls__edit"></button>
+                                    <button class="controls__trash" disabled></button>
+                                    <button class="controls__edit" disabled></button>
                                     <button class="controls__switch"></button>
                                 </td>
                             </tr>
@@ -93,7 +93,7 @@ $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
                             </tr>
                         </thead>
                         <tbody class="controls__table-body hidden">
-                            <tr>
+                            <tr class="fixed-row">
                                 <td colspan="1">
                                     <button class="controls__add"></button>
                                     <button class="controls__trash"></button>
@@ -101,6 +101,8 @@ $colors = array('fec994', 'cce2ff', 'fed9c9', 'ffefd8', 'e2c4ae', 'c1e1d2')
                                     <button class="controls__switch"></button>
                                 </td>
                             </tr>
+                        </tbody>
+                        <tbody class="controls__table-body hidden">
                             <tr class="controls__area areas__area">
                                 <td>
                                     <p class="controls__item controls__item--profession">Ginekologas</p>

@@ -9938,6 +9938,14 @@ section.product .product__block-recommend {
   position: absolute;
 }
 
+.controls__add:disabled, .controls__trash:disabled, .controls__edit:disabled, .controls__switch:disabled {
+  -webkit-filter: grayscale(1) invert(1);
+          filter: grayscale(1) invert(1);
+  background: transparent;
+  border: 1px solid #fff;
+  opacity: .15;
+}
+
 .controls__add:before {
   background-image: url("img/icons/plus-thin-white.svg");
 }
@@ -9956,6 +9964,19 @@ section.product .product__block-recommend {
 
 .controls__switch:before {
   background-image: url("img/icons/switch-white.svg");
+}
+
+.controls__switch:active, .controls__switch:focus {
+  border: 1px solid #ff9954;
+}
+
+.controls__switch--active {
+  border: 1px solid #ff9954;
+  background-color: transparent;
+}
+
+.controls__switch--active:before {
+  background-image: url("img/icons/switch-orange.svg");
 }
 
 .controls .fixed-row {
