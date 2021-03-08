@@ -1540,6 +1540,7 @@ function onDocumentReady() {
     ) {
       $(".search-container__submit").find("span").html("Valyti");
       $(".search-container__submit").addClass("change-search-icon");
+      $(this).find("input").blur();
     }
   });
 

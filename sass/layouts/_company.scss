@@ -380,7 +380,7 @@
         background: url("./img/icons/building.svg") no-repeat scroll 16px 10px;
 
         @include breakpoint(sm) {
-          background: url("./img/icons/building.svg") no-repeat scroll 12px 10px;
+          background: url("./img/icons/building.svg") no-repeat scroll 12px 6px;
         }
       }
     }

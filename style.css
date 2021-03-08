@@ -11998,7 +11998,7 @@ section.product .product__block-recommend {
 
 @media (max-width: 700px) {
   .company__inputs-group-owner input[name="group-name"] ~ .input-icon {
-    background: url("./img/icons/building.svg") no-repeat scroll 12px 10px;
+    background: url("./img/icons/building.svg") no-repeat scroll 12px 6px;
   }
 }
 
