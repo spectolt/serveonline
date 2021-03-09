@@ -12182,7 +12182,7 @@ section.product .product__block-recommend {
 }
 
 .company__companies .company__item {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12687,7 +12687,7 @@ section.product .product__block-recommend {
 
 .company__tab .company__about .company__signature + input[name="signature"] {
   font-family: "Sacramento", cursive;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   padding: 2px 10px;
 }
 
@@ -12944,7 +12944,7 @@ section.product .product__block-recommend {
 }
 
 .company__tab .company__social-media {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 @media (max-width: 890px) {
@@ -13055,7 +13055,7 @@ section.product .product__block-recommend {
   display: flex;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 750px) {
   .company__tab .company__photos-button-container {
     margin: 0 auto;
     width: 100%;
@@ -13078,7 +13078,7 @@ section.product .product__block-recommend {
   margin-right: 20px;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 750px) {
   .company__tab .company__photos button {
     margin-right: 5px;
     font-size: 0.875rem;
@@ -13105,10 +13105,10 @@ section.product .product__block-recommend {
           align-items: center;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 750px) {
   .company__tab .company__photos button.upload-image, .company__tab .company__photos button.archive-image {
     padding: 8px 5px;
-    width: 50%;
+    width: 100%;
   }
 }
 
@@ -13128,7 +13128,7 @@ section.product .product__block-recommend {
   margin-right: 10px;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 750px) {
   .company__tab .company__photos button.upload-image:before, .company__tab .company__photos button.archive-image:before {
     width: 18px;
     height: 16px;
@@ -13160,10 +13160,11 @@ section.product .product__block-recommend {
           align-items: center;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 750px) {
   .company__tab .company__photos button.switch-image {
     margin: 10px auto 0;
     font-size: 0.875rem;
+    width: 100%;
     text-align: center;
   }
 }
@@ -13183,6 +13184,14 @@ section.product .product__block-recommend {
   margin-left: auto;
   margin-right: 10px;
   background-image: url("img/icons/switch-orange.svg");
+}
+
+@media (max-width: 750px) {
+  .company__tab .company__photos button.switch-image::before {
+    width: 18px;
+    height: 16px;
+    margin-left: 0;
+  }
 }
 
 .company__tab .company__photos ul {
@@ -13518,6 +13527,7 @@ section.product .product__block-recommend {
 
 .company__tab .company__services .company__aside .checkbox-children {
   margin-left: -20px;
+  margin-bottom: 0px;
 }
 
 @media (max-width: 700px) {
@@ -14208,7 +14218,7 @@ section.product .product__block-recommend {
   overflow: visible;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1050px) {
   .company__tab .company__payment .payment-plan input:checked ~ .payment-plan__info {
     margin-top: 0;
   }
@@ -14258,6 +14268,13 @@ section.product .product__block-recommend {
 .company__tab .company__payment .payment-plan th,
 .company__tab .company__payment .payment-plan td {
   width: 160px;
+}
+
+@media (max-width: 1050px) {
+  .company__tab .company__payment .payment-plan th,
+  .company__tab .company__payment .payment-plan td {
+    color: #101b51;
+  }
 }
 
 .company__tab .company__payment .payment-plan th:first-of-type,

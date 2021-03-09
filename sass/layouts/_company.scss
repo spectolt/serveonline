@@ -269,10 +269,10 @@
         margin-bottom: 0;
         position: sticky;
         width: auto;
-          white-space: nowrap;
-          display: block;
-          margin: 0;
-          left: 0;
+        white-space: nowrap;
+        display: block;
+        margin: 0;
+        left: 0;
 
         @include breakpoint(sm) {
           position: relative;
@@ -562,7 +562,7 @@
 
     .company {
       &__item {
-        margin-bottom: 40px;
+        margin-bottom: 30px;
         display: flex;
         flex-direction: column;
 
@@ -977,7 +977,7 @@
 
         & + input[name="signature"] {
           font-family: "Sacramento", cursive;
-          font-size: 1.75rem;
+          font-size: 1.5rem;
           padding: 2px 10px;
 
           @include breakpoint(sm) {
@@ -1221,7 +1221,7 @@
     }
 
     .company__social-media {
-      margin-bottom: 40px;
+      margin-bottom: 30px;
 
       @include breakpoint(890px) {
         width: 100%;
@@ -1309,7 +1309,7 @@
 
       &-button-container {
         display: flex;
-        @include breakpoint(sm) {
+        @include breakpoint(750px) {
           margin: 0 auto;
           width: 100%;
           align-items: center;
@@ -1326,7 +1326,7 @@
       button {
         margin-right: 20px;
 
-        @include breakpoint(sm) {
+        @include breakpoint(750px) {
           margin-right: 5px;
           font-size: 0.875rem;
           margin-bottom: 10px;
@@ -1343,9 +1343,9 @@
           display: flex;
           align-items: center;
 
-          @include breakpoint(sm) {
+          @include breakpoint(750px) {
             padding: 8px 5px;
-            width: 50%;
+            width: 100%;
           }
 
           &:before {
@@ -1363,7 +1363,7 @@
             margin-left: auto;
             margin-right: 10px;
 
-            @include breakpoint(sm) {
+            @include breakpoint(750px) {
               width: 18px;
               height: 16px;
               margin-left: 0;
@@ -1393,10 +1393,10 @@
         display: flex;
         align-items: center;
 
-        @include breakpoint(sm) {
+        @include breakpoint(750px) {
           margin: 10px auto 0;
           font-size: 0.875rem;
-          // width: 100%;
+          width: 100%;
           text-align: center;
         }
 
@@ -1415,6 +1415,12 @@
           margin-left: auto;
           margin-right: 10px;
           background-image: url("img/icons/switch-orange.svg");
+
+          @include breakpoint(750px) {
+            width: 18px;
+            height: 16px;
+            margin-left: 0;
+          }
         }
       }
       ul {
@@ -1692,6 +1698,7 @@
 
         .checkbox-children {
           margin-left: -20px;
+          margin-bottom: 0px;
 
           @include breakpoint(sm) {
             margin-left: -10px;
@@ -2273,7 +2280,7 @@
             opacity: 1;
             overflow: visible;
 
-            @include breakpoint(sm) {
+            @include breakpoint(1050px) {
               margin-top: 0;
             }
           }
@@ -2327,6 +2334,9 @@
         th,
         td {
           width: 160px;
+          @include breakpoint(1050px) {
+            color: $darkblue;
+          }
 
           &:first-of-type {
             width: auto;
@@ -2674,7 +2684,7 @@
   &__login {
     margin-bottom: 40px;
 
-    @include breakpoint(sm){
+    @include breakpoint(sm) {
       margin-bottom: 30px;
     }
 
@@ -2733,9 +2743,9 @@
       width: 100%;
       margin-right: 40px;
 
-      @include breakpoint(sm){
+      @include breakpoint(sm) {
         margin-bottom: 20px;
-        } 
+      }
 
       input {
         margin-bottom: 0;

@@ -1260,25 +1260,18 @@ function onDocumentReady() {
         $self.each(function () {
           $self.attr("checkstate", "false");
         });
+        clearTimeout(timer_id);
+        timer_id = setTimeout(function() {
+          $self.siblings(".payment-plan__info").css({"display": "none"})
+        }, 300)
       } else {
         $self.prop("checked", true);
         $self
           .siblings(".payment-plan__info")
-          .find("input#Mini")
+          .find("input[data-name='Mini'], input#Mini")
           .prop("checked", true);
-
-        // $self
-        //   .siblings(".payment-plan__info")
-        //   .find("input#Mini")
-        //   .siblings(".payment-plan__details")
-        //   .addClass("toggled");
-
-        // $self
-        //   .siblings(".payment-plan__info")
-        //   .find("label[for='Mini']")
-        //   .find(".payment-plan__more")
-        //   .addClass("toggled");
         $self.attr("checkstate", "true");
+        $self.siblings(".payment-plan__info").css({"display": "block"})
         $("input[type='radio']:not(:checked)").attr("checkstate", "false");
       }
     }
@@ -1461,18 +1454,12 @@ function onDocumentReady() {
   }
 
   $(document).on("click", ".payment-plan__more:not(.js_ignore_mark)", function () {
-    $(this)
-      .closest(".payment-plan__mobile")
-      .siblings()
-      .find(".payment-plan__details")
-      .removeClass("toggled");
-    $(this)
-      .closest(".payment-plan__mobile")
-      .siblings()
-      .find(".payment-plan__more")
-      .html("Plačiau")
-      .removeClass("toggled")
-      .addClass("untoggled");
+    $(".payment-plan__details").removeClass("toggled");
+    // $(this).closest(".payment-plan__mobile").find(".payment-plan__details").addClass("toggled");
+    // $(this).closest(".payment-plan__mobile").find(".payment-plan__details").addClass("toggled");
+    // $(this).closest(".payment-plan__mobile").siblings().find(".payment-plan__details").removeClass("toggled");
+    $(".payment-plan__more").html("Plačiau").removeClass("toggled").addClass("untoggled");
+    // $(this).html("Uždaryti").removeClass("untoggled").addClass("toggled");
     if (
       $(this)
         .closest(".payment-plan__details-label")
@@ -2040,7 +2027,7 @@ function paymentLayout() {
     headerClone;
   if (!$(".payment-plan__mobile").length) {
     if (window.matchMedia("(max-width: 700px)").matches) {
-      $(".payment-plan__info table").each(function () {
+      $(".payment-plan__info table").each(function (i) {
         $(this)
           .find("thead th:nth-of-type(n+2)")
           .each(function () {
@@ -2072,7 +2059,7 @@ function paymentLayout() {
               .wrapAll("<div class='payment-plan__mobile' />");
             $(
               "<input type='radio' name='plan-details' id=" +
-                $(this).html() +
+                $(this).html() + i + " data-name =" + $(this).html() +
                 ">"
             ).prependTo(headerClone.closest(".payment-plan__mobile"));
             $(headerClone)
@@ -2080,7 +2067,7 @@ function paymentLayout() {
               .addBack()
               .wrapAll(
                 "<label class='payment-plan__details-label' for=" +
-                  $(this).html() +
+                  $(this).html() + i +
                   " />"
               );
             columnDesc
