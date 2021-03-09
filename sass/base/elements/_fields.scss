@@ -66,6 +66,14 @@ input:disabled {
     color: $lightgray;
     -webkit-text-fill-color: $lightgray;
   }
+
+  &.hide-disabled-gray {
+    cursor: pointer;
+    &::-webkit-input-placeholder {
+      color: $gray;
+      -webkit-text-fill-color: $gray;
+    }
+  }
 }
 
 select {

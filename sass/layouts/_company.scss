@@ -1388,7 +1388,7 @@
         }
       }
 
-      p {
+      button.switch-image {
         margin: 0 0 0 auto;
         display: flex;
         align-items: center;
@@ -1414,7 +1414,7 @@
           padding: 0;
           margin-left: auto;
           margin-right: 10px;
-          background-image: url("img/icons/switch.svg");
+          background-image: url("img/icons/switch-orange.svg");
         }
       }
       ul {

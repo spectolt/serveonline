@@ -534,15 +534,15 @@
   li {
     font-family: "Sen", sans-serif;
     font-weight: 600;
-    margin: 0 10px;
+    margin: 10px;
 
-    &:first-of-type {
-      margin-top: 10px;
-    }
+    // &:first-of-type {
+    //   margin-top: 10px;
+    // }
 
-    &:last-of-type {
-      margin-bottom: 10px;
-    }
+    // &:last-of-type {
+    //   margin-bottom: 10px;
+    // }
 
     &:hover {
       background-color: #d7d7d9;

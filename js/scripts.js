@@ -70,7 +70,7 @@ function onDocumentReady() {
         1 +
         "px";
       $(".select2-results").css("width", dropdownWidth);
-      searchValue = $(".select2-search__field").val();
+      searchValue = $(".search-container--controls .select2-search__field").val();
     })
     .on("select2:select", function (e) {
       $(this)
@@ -108,10 +108,10 @@ function onDocumentReady() {
           });
       }
 
-      // if($(".search-panel input").val().length) {
-      //   $(".search-container__submit").find("span").html("Valyti");
-      //   $(".search-container__submit").addClass("change-search-icon");
-      // }
+      if ($(".search-panel input").val().length) {
+        $(".search-container__submit").find("span").html("Valyti");
+        $(".search-container__submit").addClass("change-search-icon");
+      }
     })
     .on("select2:unselect", function () {
       $(this).siblings().find(".select2-search").css("caret-color", "inherit");
@@ -416,7 +416,7 @@ function onDocumentReady() {
   if ($("main.hasTable").length > 0) {
     $(".search-container__submit")
       .unbind("click")
-      .click(function () {
+      .click(function (e) {
         if ($(this).find("span").html() == "Valyti") {
           $(".search-container__select .select2-search__field")
             .val("")
@@ -432,6 +432,7 @@ function onDocumentReady() {
           $(this).find("span").html("Ieškoti");
           $(this).removeClass("change-search-icon");
         } else {
+          e.preventDefault();
           // $(".search-container__select .select2-search__field").val("");
           if (
             $(".search-container__select .select2-search__field").length &&
@@ -537,6 +538,9 @@ function onDocumentReady() {
         $(
           '<span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span>'
         ).appendTo(".select2-selection--multiple");
+
+        $(".search-container--controls .select2-search__field").prop("disabled", true);
+        $(".search-container--controls .select2-search__field").addClass("hide-disabled-gray");
       }
     });
 
@@ -990,21 +994,32 @@ function onDocumentReady() {
     }
   });
 
-  $(".sortable").sortable({
-    tolerance: "pointer",
-    helper: "clone",
-    sort: function (event, ui) {
-      var $target = $(event.target);
-      if (!/html|body/i.test($target.offsetParent()[0].tagName)) {
-        var top =
-          event.pageY -
-          $target.offsetParent().offset().top -
-          ui.helper.outerHeight(true) / 2;
-        ui.helper.css({ top: top + "px" });
-      }
-    },
+  var isSortable = true;
+  $("button.switch-image").on("click", function () {
+    if (isSortable) {
+      $(this)
+        .siblings(".sortable")
+        .sortable({
+          tolerance: "pointer",
+          helper: "clone",
+          sort: function (event, ui) {
+            var $target = $(event.target);
+            if (!/html|body/i.test($target.offsetParent()[0].tagName)) {
+              var top =
+                event.pageY -
+                $target.offsetParent().offset().top -
+                ui.helper.outerHeight(true) / 2;
+              ui.helper.css({ top: top + "px" });
+            }
+          },
+        });
+      $(".sortable").disableSelection();
+      isSortable = false;
+    } else {
+      $(this).siblings(".sortable").sortable("disable");
+      isSortable = true;
+    }
   });
-  $(".sortable").disableSelection();
 
   $(".company__specialist-activate").on("click", function () {
     if ($(this).html() == "Deaktyvuoti") {
@@ -1449,8 +1464,18 @@ function onDocumentReady() {
   }
 
   $(document).on("click", ".payment-plan__more", function () {
-    $(this).closest(".payment-plan__mobile").siblings().find(".payment-plan__details").removeClass("toggled");
-    $(this).closest(".payment-plan__mobile").siblings().find(".payment-plan__more").html("Plačiau").removeClass("toggled").addClass("untoggled");
+    $(this)
+      .closest(".payment-plan__mobile")
+      .siblings()
+      .find(".payment-plan__details")
+      .removeClass("toggled");
+    $(this)
+      .closest(".payment-plan__mobile")
+      .siblings()
+      .find(".payment-plan__more")
+      .html("Plačiau")
+      .removeClass("toggled")
+      .addClass("untoggled");
     if (
       $(this)
         .closest(".payment-plan__details-label")
@@ -1526,23 +1551,62 @@ function onDocumentReady() {
     e.preventDefault();
   });
 
-  $(".search-container--controls .search-panel").on("keydown", function (e) {
-    if (
-      e.keyCode == 13 &&
-      !$(".search-container__select .select2-selection__rendered").children()
-        .length
-    ) {
-      $(".search-panel__select").select2("open");
-    } else if (
-      e.keyCode == 13 &&
-      $(".search-container__select .select2-selection__rendered").children()
-        .length
-    ) {
-      $(".search-container__submit").find("span").html("Valyti");
-      $(".search-container__submit").addClass("change-search-icon");
-      $(this).find("input").blur();
+  // $(".search-container--controls .search-panel input")
+  // .on("focusout",function(e) {
+  //   e.preventDefault();
+  //   if (
+  //     !$(".search-container__select .select2-selection__rendered").children()
+  //       .length
+  //   ) {
+  //     $(".search-panel__select").select2("open");
+  //   } else if (
+  //     $(".search-container__select .select2-selection__rendered").children()
+  //       .length
+  //   ) {
+  //     $(".search-container__submit").find("span").html("Valyti");
+  //     $(".search-container__submit").addClass("change-search-icon");
+  //     $(this).find("input").blur();
+  //   }
+  // })
+  $(".search-container--controls .search-panel").on(
+    "keydown focusout",
+    function (e) {
+      if (e.type == "keydown") {
+        if (
+          e.keyCode == 13 &&
+          !$(
+            ".search-container__select .select2-selection__rendered"
+          ).children().length
+        ) {
+          $(".search-panel__select").select2("open");
+        } else if (
+          e.keyCode == 13 &&
+          $(".search-container__select .select2-selection__rendered").children()
+            .length
+        ) {
+          $(".search-container__submit").find("span").html("Valyti");
+          $(".search-container__submit").addClass("change-search-icon");
+          $(this).find("input").blur();
+        }
+      } 
+      // else if(e.type == "focusout") {
+      //   if (
+      //     !$(
+      //       ".search-container__select .select2-selection__rendered"
+      //     ).children().length
+      //   ) {
+      //     $(".search-panel__select").select2("open");
+      //   } else if (
+      //     $(".search-container__select .select2-selection__rendered").children()
+      //       .length
+      //   ) {
+      //     $(".search-container__submit").find("span").html("Valyti");
+      //     $(".search-container__submit").addClass("change-search-icon");
+      //     $(this).find("input").blur();
+      //   }
+      // }
     }
-  });
+  );
 
   moveAction();
   moveOrder();

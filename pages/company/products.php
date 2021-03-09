@@ -3,7 +3,7 @@
     <div class="company__photos-button-container">
         <button class="button orange small upload-image">Įkelti gamintojo logotipą (iki 15)</button>
     </div>
-        <buttton>Pakeisti nuotraukos vietą</button>
+        <button class="orange transparent small switch-image">Pakeisti nuotraukos vietą</button>
         <ul class="sortable">
             <?php for ($i = 0; $i < 15; $i++) { ?>
                 <li class=<?php if ($i == 0 || $i == 1) echo "hide-after" ?>>
