@@ -18,11 +18,13 @@
         <?php } else if ($thisCat == "controls") { ?>
             <div class="search-container search-container--controls">
                 <div class="search-container__select">
-                <select class="search-panel__select" multiple="true">
+                <select class="search-panel__select">
                 <?php if ($thisPage == "areas") { ?>
+                    <option></option>
                     <option>Paslaugų sritis</option>
                     <option>Profesija</option>
                 <?php } else if ($thisPage == "services") {?>
+                    <option></option>
                     <option>Paslaugų grupė</option>
                     <option>Pogrupis</option>
                     <option>Paslaugos pavadinimas</option>

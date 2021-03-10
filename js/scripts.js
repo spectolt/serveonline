@@ -47,20 +47,21 @@ function onDocumentReady() {
   var searchValue;
   $(".search-panel__select").not(".js_ignore_mark")
     .select2({
-      // multiple: true,
-      maximumSelectionLength: 2,
+      multiple: false,
+      // maximumSelectionLength: 2,
       placeholder: "Pasirinkite vietą paieškai",
       dropdownCssClass: "select2-dropdown--controls",
       dropdownParent: $(".search-container__select"),
-      templateResult: hideSelected,
-      language: {
-        // You can find all of the options in the language files provided in the
-        // build. They all must be functions that return the string that should be
-        // displayed.
-        maximumSelected: function () {
-          return "";
-        },
-      },
+      minimumResultsForSearch: Infinity,
+      // templateResult: hideSelected,
+      // language: {
+      //   // You can find all of the options in the language files provided in the
+      //   // build. They all must be functions that return the string that should be
+      //   // displayed.
+      //   maximumSelected: function () {
+      //     return "";
+      //   },
+      // },
     })
     .on("select2:open", function (e) {
       dropdownWidth =
@@ -73,7 +74,7 @@ function onDocumentReady() {
       searchValue = $(".search-container--controls .select2-search__field").val();
     })
     .on("select2:select", function (e) {
-      console.log($(this).siblings(".select2-container").find(".select2-selection__choice__display").html());
+      // console.log($(this).siblings(".select2-container").find(".select2-selection__choice__display").html());
       $(this)
         .siblings()
         .find(".select2-search")
@@ -123,11 +124,11 @@ function onDocumentReady() {
     .on("select2:close", function (e) {
       $(this).siblings().find(".select2-search__field").val(searchValue);
     })
-    .on("change", function (e) {
-      if ($(this).val().length > 0) {
-        $(this).val($(this).val().slice(0, 0));
-      }
-    });
+    // .on("change", function (e) {
+    //   // if ($(this).val().length > 1) {
+    //   //   $(this).val($(this).val().slice(0, 1));
+    //   // }
+    // });
 
   if ($("main.hasUiAutocomplete").length > 0) {
     $(".search-container__submit").not(".js_ignore_mark")
@@ -540,7 +541,7 @@ function onDocumentReady() {
           '<span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span>'
         ).appendTo(".select2-selection--multiple");
 
-        $(".search-container--controls .select2-search__field").prop("disabled", true);
+        // $(".search-container--controls .select2-search__field").prop("disabled", true);
         $(".search-container--controls .select2-search__field").addClass("hide-disabled-gray");
       }
     });
@@ -972,7 +973,6 @@ function onDocumentReady() {
 
   $("input[type='number']").not(".js_ignore_mark").on("input", function () {
     var maxLength = $(this).attr("length");
-    console.log(maxLength);
     if ($(this).val().length > maxLength) {
       this.value = this.value.slice(0, this.maxLength);
     } else if ($(this).val().length == maxLength) {
@@ -1579,6 +1579,14 @@ function onDocumentReady() {
       // }
     }
   );
+
+  $("input[name='phone']").on("input", function() {
+    $(this).val(
+      $(this)
+        .val()
+        .replace(/[^\d+]/g, "")
+    );
+  })
 
   moveAction();
   moveOrder();

@@ -404,9 +404,11 @@
   .select2-container {
     background-color: $white;
 
-    .select2-selection--multiple {
+    .select2-selection {
       height: 100%;
       display: flex;
+      border: none;
+      padding-left: 20px;
 
       @include breakpoint(l) {
         min-height: calc(112.2px / 2);
@@ -454,34 +456,42 @@
           display: none;
         }
       }
-    }
 
-    .select2-search,
-    .select2-selection__choice__display {
-      font-size: 1.5rem;
-      display: flex;
-      align-items: center;
-      // margin-left: 20px;
-      width: 100%;
-      font-family: 'Sen', sans-serif;
-      font-weight: 600;
+      &__rendered {
+        line-height: 72px;
 
-      @include breakpoint(1200px) {
-        font-size: 1.7vw;
-      }
-
-      @include breakpoint(sm) {
-        font-size: 1.5rem;
-      }
-
-      @include breakpoint(xs) {
-        font-size: 1rem;
-      }
-
-      input {
-        margin: 0;
+        @include breakpoint(l) {
+          line-height: 56px;
+        }
       }
     }
+
+    // .select2-search,
+    // .select2-selection__choice__display {
+    //   font-size: 1.5rem;
+    //   display: flex;
+    //   align-items: center;
+    //   // margin-left: 20px;
+    //   width: 100%;
+    //   font-family: 'Sen', sans-serif;
+    //   font-weight: 600;
+
+    //   @include breakpoint(1200px) {
+    //     font-size: 1.7vw;
+    //   }
+
+    //   @include breakpoint(sm) {
+    //     font-size: 1.5rem;
+    //   }
+
+    //   @include breakpoint(xs) {
+    //     font-size: 1rem;
+    //   }
+
+    //   input {
+    //     margin: 0;
+    //   }
+    // }
 
     &:last-of-type {
       min-height: 0;
