@@ -1592,6 +1592,7 @@ function onDocumentReady() {
   changePadding();
   openTab();
   paymentLayout();
+  tableWidths($(".profiles"));
 
   setTimeout(function () {
     changeTextWidth();
@@ -2115,7 +2116,6 @@ function paymentLayout() {
   }
 }
 
-tableWidths($(".profiles"))
 function tableWidths($table) {
   var indexes = [];
   var widths = [];
