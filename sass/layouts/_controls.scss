@@ -13,13 +13,13 @@
       // height: 0;
       // max-height: 0;
       // transition: all 3s ease-in-out;
-      overflow:hidden;
+      overflow: hidden;
     }
   }
 
   .title {
     margin-bottom: 25px;
-    transition: max-height .3s ease-in-out, margin-top .3s ease-in-out;
+    transition: max-height 0.3s ease-in-out, margin-top 0.3s ease-in-out;
 
     @include breakpoint(xs) {
       font-size: 1.5rem;
@@ -33,7 +33,7 @@
     flex-wrap: wrap;
     justify-content: flex-end;
     margin-right: -10px;
-    transition: max-height .3s ease-in-out, margin-top .3s ease-in-out;
+    transition: max-height 0.3s ease-in-out, margin-top 0.3s ease-in-out;
 
     @include breakpoint(880px) {
       justify-content: center;
@@ -63,7 +63,8 @@
         }
       }
 
-      .controls__save, .controls__restore {
+      .controls__save,
+      .controls__restore {
         @include breakpoint(520px) {
           width: 174px;
         }
@@ -144,9 +145,9 @@
   }
 
   button.controls__save {
-      @include breakpoint(sm) {
-        padding-right: 18px;
-      }
+    @include breakpoint(sm) {
+      padding-right: 18px;
+    }
 
     &:before {
       background-image: url("img/icons/checkmark-white.svg");
@@ -205,7 +206,7 @@
     overflow-y: hidden;
     // position: relative;
     border-radius: 5px;
-    
+
     &::-webkit-scrollbar {
       height: 8px;
     }
@@ -268,7 +269,7 @@
     }
 
     tr {
-      height: 100%;
+      // height: 100%;
       width: 100%;
     }
 
@@ -310,14 +311,44 @@
       // border-left: 1px solid $washedblue;
       z-index: 2;
 
+      tr {
+        display: table;
+      }
+
       td {
         background-color: $darkblue;
         color: $white;
         text-align: center;
-        padding: 5px 20px;
+        padding: 5px;
+        border-right: 1px solid $washedblue;
       }
     }
   }
+
+  thead,
+  tbody tr,
+  tfoot {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  tbody {
+    display: block;
+    overflow-y: auto;
+    min-height: 150px;
+  }
+
+  table,
+  tr,
+  th,
+  td {
+    border-collapse: collapse;
+  }
+
+  // tbody tr {
+  //   height: 35px;
+  // }
 
   tbody::-webkit-scrollbar {
     width: 8px;
@@ -331,6 +362,10 @@
     &:last-of-type > td {
       padding-bottom: 30px;
     }
+  }
+
+  tfoot {
+    box-shadow: $washedblue 1px 0;
   }
 
   &__item {
@@ -404,8 +439,8 @@
       filter: grayscale(1) invert(1);
       background: transparent;
       border: 1px solid $white;
-      opacity: .15;
-    } 
+      opacity: 0.15;
+    }
   }
 
   &__add:before {
@@ -417,7 +452,6 @@
   }
 
   &__edit {
-
     &:before {
       background-image: url("img/icons/edit-white.svg");
     }
@@ -450,6 +484,50 @@
     top: 0;
     z-index: 2;
     background-color: $white;
+  }
+
+  thead th, td {
+    position: relative;
+    &::after,
+    &::before {
+      // content: url("img/icons/angle-down-white.svg");
+      content: "";
+      position: absolute;
+      bottom: 12px;
+      right: 5px;
+      width: 8px;
+      height: 7px;
+      transition: transform 0.3s ease-in-out;
+      opacity: 0.5;
+      cursor: pointer;
+    }
+
+    &.bottom-arrow:after {
+      content: url("img/icons/list-bottom-white.svg");
+    }
+
+    &.top-arrow::before {
+      background-image: url("img/icons/list-white.svg");
+      bottom: 15px;
+    }
+
+    &.filter-arrow::before {
+      content: url("img/icons/angle-down-white.svg");
+      width: 12px;
+      height: 10px;
+    }
+
+    &.left-arrow::before {
+      content: url("img/icons/angle-down.svg");
+      transform: translate(-50%, -50%) rotate(-90deg);
+      opacity: 1;
+      right: 0;
+      bottom: auto;
+      top: 50%;
+      left: 50%;
+      width: auto;
+      height: auto;
+    }
   }
 }
 
@@ -666,8 +744,8 @@
     margin-right: -20px;
     position: absolute;
     right: 0;
-    top:0;
-    transition: max-height .3s ease-in-out, margin-top .3s ease-in-out;
+    top: 0;
+    transition: max-height 0.3s ease-in-out, margin-top 0.3s ease-in-out;
 
     @include breakpoint(880px) {
       // grid-template-columns: repeat(3, 1fr);
@@ -739,7 +817,6 @@
     // width: calc(100% + 10px);
     overflow-x: hidden;
     // display: block;
-    
 
     // @include breakpoint(xl) {
     //   width: calc(100vw - min(40px, 2.8vw) - min(40px, 2.8vw));
@@ -763,10 +840,6 @@
 
     thead {
       border-radius: 0;
-      box-shadow: $washedblue 1px 0;
-    }
-
-    tfoot {
       box-shadow: $washedblue 1px 0;
     }
 
@@ -859,38 +932,15 @@
       thead {
         th {
           position: relative;
-
-          &::after,
-          &::before {
-            // content: url("img/icons/angle-down-white.svg");
-            content:"";
-            position: absolute;
-            bottom: 12px;
-            right: 5px;
-            width: 8px;
-            height: 7px;
-            transition: transform .3s ease-in-out;
-            opacity: .5;
-            cursor: pointer;
-          }
-
-          &.bottom-arrow:after {
-            content: url("img/icons/list-bottom-white.svg");
-          }
-
-          &.top-arrow::before {
-            background-image: url("img/icons/list-white.svg");
-            bottom: 15px;
-          }
         }
 
         span {
           display: block;
           font-weight: 400;
-          font-size: .875rem;
+          font-size: 0.875rem;
 
           @include breakpoint(sm) {
-            font-size: .75rem;
+            font-size: 0.75rem;
           }
         }
       }
@@ -1018,6 +1068,37 @@
   }
 }
 
+.profiles {
+  th {
+    label {
+      &::before {
+        background-color: rgba(255, 255, 255, 0.49);
+      }
+    }
+
+    &:last-of-type {
+      min-width: 35px;
+    }
+  }
+
+  tbody {
+    tr:nth-of-type(2n) {
+      background-color: $darkgray;
+    }
+
+    td {
+      border: 1px solid $lightgray;
+      word-break: break-all; //pakeisti galbūt
+    }
+  }
+
+  tfoot {
+    td {
+      font-size: .875rem;
+    }
+  }
+}
+
 .expand-button {
   width: 30px;
   height: 30px;
@@ -1027,7 +1108,7 @@
   top: 0;
   left: 0;
   transform: translate(-50%, -50%);
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, .24);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.24);
   z-index: 10;
 
   &:after {
@@ -1042,7 +1123,7 @@
     left: 50%;
     transform: translate(-50%, -50%) rotate(180deg);
     background-image: url("img/icons/angle-down-white-bold.svg");
-    transition: transform .3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
   }
 
   &.rotate-arr::after {
@@ -1052,7 +1133,7 @@
 
 .select2-dropdown--controls-side {
   .select2-results {
-    font-size: .875rem;
+    font-size: 0.875rem;
     color: $darkdarkblue;
   }
 }
