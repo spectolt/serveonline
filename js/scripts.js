@@ -73,6 +73,7 @@ function onDocumentReady() {
       searchValue = $(".search-container--controls .select2-search__field").val();
     })
     .on("select2:select", function (e) {
+      console.log($(this).siblings(".select2-container").find(".select2-selection__choice__display").html());
       $(this)
         .siblings()
         .find(".select2-search")
@@ -1251,6 +1252,8 @@ function onDocumentReady() {
     }
   );
 
+
+  $(".payment-plan__info").css("display", "none")
   $("input[name='plan'], ~ label, .payment-plan th:empty").not(".js_ignore_mark").on(
     "click",
     function () {
@@ -1262,7 +1265,9 @@ function onDocumentReady() {
         });
         clearTimeout(timer_id);
         timer_id = setTimeout(function() {
-          $self.siblings(".payment-plan__info").css({"display": "none"})
+          $self.each(function() {
+            $(this).siblings(".payment-plan__info").css({"display": "none"})
+          })
         }, 300)
       } else {
         $self.prop("checked", true);

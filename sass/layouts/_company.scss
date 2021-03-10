@@ -2107,8 +2107,9 @@
         font-family: "Sen", sans-serif;
         border: 1px solid $darkblue;
         border-radius: 35px;
+        height: 60px;
         align-items: center;
-        padding: 10px 20px;
+        padding: 0 20px;
         width: fit-content;
         margin-right: 30px;
         white-space: nowrap;
@@ -2120,6 +2121,7 @@
 
         input {
           min-width: 60px;
+          height: 100%;
           font-family: "Sen", sans-serif;
           font-weight: 600;
           font-size: 2.25rem;
