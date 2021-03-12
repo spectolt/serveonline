@@ -340,8 +340,8 @@
       width: 100% !important;
 
       & + .select2-container {
-      top: 111.2px !important;
-      position: absolute !important;
+        top: 111.2px !important;
+        position: absolute !important;
       }
     }
   }
@@ -439,7 +439,7 @@
           background-repeat: no-repeat;
           display: block;
           transition: transform 0.3s ease-in-out;
-    
+
           &.rotate {
             transform: translateY(-50%) rotate(180deg);
           }
@@ -457,11 +457,25 @@
         }
       }
 
-      &__rendered {
+      .select2-selection__rendered {
         line-height: 72px;
+        font-size: 1.7vw;
+        padding-left: 0;
+
+        // @include breakpoint(1220px) {
+        //   font-size: 1.5rem;
+        // }
 
         @include breakpoint(l) {
           line-height: 56px;
+        }
+
+        @include breakpoint(sm) {
+          font-size: 1.5rem;
+        }
+
+        @include breakpoint(xs) {
+          font-size: 1rem;
         }
       }
     }
