@@ -21,8 +21,8 @@
                 <select class="search-panel__select">
                 <?php if ($thisPage == "areas") { ?>
                     <option></option>
-                    <option>Paslaugų sritis</option>
-                    <option>Profesija</option>
+                    <option value="name">Paslaugų sritis</option>
+                    <option value="skillname">Profesija</option>
                 <?php } else if ($thisPage == "services") {?>
                     <option></option>
                     <option>Paslaugų grupė</option>

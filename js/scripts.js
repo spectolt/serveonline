@@ -52,14 +52,6 @@ function onDocumentReady() {
       dropdownParent: $(".search-container__select"),
       minimumResultsForSearch: Infinity,
       templateResult: hideSelected,
-      // language: {
-      //   // You can find all of the options in the language files provided in the
-      //   // build. They all must be functions that return the string that should be
-      //   // displayed.
-      //   maximumSelected: function () {
-      //     return "";
-      //   },
-      // },
     })
     .on("select2:open", function (e) {
       dropdownWidth =
