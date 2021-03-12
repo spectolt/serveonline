@@ -7883,7 +7883,7 @@ footer.container {
 
 .site-main--aside .site-aside-container--toggled {
   visibility: visible;
-  z-index: 99;
+  z-index: 102;
 }
 
 @media (min-width: 1181px) {
@@ -8006,7 +8006,7 @@ footer.container {
 
 .site-main--aside .site-aside-container .site-aside--controls h3 {
   font-family: "Roboto", sans-serif;
-  margin: 0 20px 10px;
+  margin: 0 20px 20px;
 }
 
 .site-main--aside .site-aside-container .site-aside--controls ul {
@@ -8016,7 +8016,7 @@ footer.container {
 }
 
 .site-main--aside .site-aside-container .site-aside--controls ul li {
-  padding: 10px 20px;
+  padding: 5px 20px;
 }
 
 .site-main--aside .site-aside-container .site-aside--controls a {
@@ -8044,7 +8044,8 @@ footer.container {
 }
 
 .site-main--aside .site-aside-container .site-aside--controls .site-aside__item--open {
-  padding: 10px 20px 30px;
+  margin-top: 5px;
+  padding: 10px 20px 15px;
 }
 
 .site-main--aside .site-aside-container .site-aside--controls .site-aside__item .site-aside__datepicker-container {
@@ -8089,6 +8090,11 @@ footer.container {
 
 .site-main--aside .site-aside-container .site-aside--controls .site-aside__item .site-aside__filters {
   margin-left: 20px;
+}
+
+.site-main--aside .site-aside-container .site-aside--controls .site-aside__item .site-aside__filters p {
+  margin-bottom: 5px;
+  margin-top: 10px;
 }
 
 .site-main--aside .page-content {
@@ -11273,6 +11279,8 @@ section.product .product__block-recommend {
   vertical-align: top;
   font-size: 0.75rem;
   font-weight: normal;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .profiles th label::before {
@@ -11284,6 +11292,11 @@ section.product .product__block-recommend {
   top: 10px;
   left: 7px;
   border-radius: 5px;
+}
+
+.profiles th .checkbox label:after {
+  top: 14px;
+  left: 10px;
 }
 
 .profiles tbody tr:nth-of-type(2n) {
@@ -11301,8 +11314,13 @@ section.product .product__block-recommend {
   top: -10px;
 }
 
+.profiles tbody td .checkbox label::after {
+  top: -6.5px;
+  left: 5px;
+}
+
 .profiles tbody td:last-of-type label:before {
-  left: 4px;
+  left: 7px;
 }
 
 .profiles tfoot td {
@@ -11320,6 +11338,11 @@ section.product .product__block-recommend {
 
 .profiles .controls__buttons-container button {
   height: 35px;
+}
+
+.profiles .pagination {
+  padding-bottom: 22px;
+  border-bottom: 1px solid #e8e8e8;
 }
 
 .expand-button {

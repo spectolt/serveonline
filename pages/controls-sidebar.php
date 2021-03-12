@@ -7,17 +7,17 @@
             <div class="site-aside__block">
                 <h3>Paslaugų gavėjai</h3>
                 <ul>
-                    <li><a href="#">Paslaugų gavėjų profiliai</a></li>
-                    <li><a href="#">Rezervacijos</a></li>
-                    <li><a href="#">Turi MANO sąrašą</a></li>
-                    <li><a href="#">Neturi MANO sąrašo</a></li>
+                    <div class="site-aside__item"><a href="#">Paslaugų gavėjų profiliai</a></div>
+                    <div class="site-aside__item"><a href="#">Rezervacijos</a></div>
+                    <div class="site-aside__item"><a href="#">Turi MANO sąrašą</a></div>
+                    <div class="site-aside__item"><a href="#">Neturi MANO sąrašo</a></div>
                 </ul>
             </div>
             <div class="site-aside__block">
                 <h3>Specialistai</h3>
                 <ul>
-                    <li><a href="#">Specialistų profiliai</a></li>
-                    <li><a href="#">Ataskaita specialistui</a></li>
+                    <div class="site-aside__item"><a href="#">Specialistų profiliai</a></div>
+                    <div class="site-aside__item"><a href="#">Ataskaita specialistui</a></div>
                     <div class="site-aside__item <?php if ($thisPage == "company-profiles") echo "site-aside__item--active site-aside__item--open"; ?>">
                         <a href="#">Įmonių profiliai</a>
                         <div class="site-aside__filters <?php if ($thisPage != "company-profiles") echo "hidden"; ?>">
@@ -60,16 +60,16 @@
                             </select>
                         </div>
                     </div>
-                    <li><a href="#">Ataskaita įmonei</a></li>
-                    <li><a href="#">Yra MANO sąraše</a></li>
-                    <li><a href="#">Nėra MANO sąraše</a></li>
+                    <div class="site-aside__item"><a href="#">Ataskaita įmonei</a></div>
+                    <div class="site-aside__item"><a href="#">Yra MANO sąraše</a></div>
+                    <div class="site-aside__item"><a href="#">Nėra MANO sąraše</a></div>
                 </ul>
             </div>
             <div class="site-aside__block">
                 <h3>Ataskaitos</h3>
                 <ul>
-                    <li><a href="#">Veiklos ataskaita</a></li>
-                    <li><a href="#">Paslaugų teikėjų mokėjimai</a></li>
+                    <div class="site-aside__item"><a href="#">Veiklos ataskaita</a></div>
+                    <div class="site-aside__item"><a href="#">Paslaugų teikėjų mokėjimai</a></div>
                 </ul>
             </div>
             <div class="site-aside__block">

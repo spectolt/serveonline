@@ -317,7 +317,7 @@ footer.container {
       &--toggled {
         visibility: visible;
         // background-color: $white;
-        z-index: 99;
+        z-index: 102;
 
         @include breakpoint(xxl) {
           z-index: 1;
@@ -435,7 +435,7 @@ footer.container {
           }
           h3 {
             font-family: "Roboto", sans-serif;
-            margin: 0 20px 10px;
+            margin: 0 20px 20px;
           }
 
           ul {
@@ -444,7 +444,7 @@ footer.container {
             padding: 0;
 
             li {
-              padding: 10px 20px;
+              padding: 5px 20px;
             }
           }
 
@@ -472,7 +472,8 @@ footer.container {
             }
 
             &--open {
-              padding: 10px 20px 30px;
+              margin-top: 5px;
+              padding: 10px 20px 15px;
             }
 
             .site-aside__datepicker-container {
@@ -516,6 +517,11 @@ footer.container {
 
             .site-aside__filters {
               margin-left: 20px;
+
+              p {
+                margin-bottom: 5px;
+                margin-top: 10px;
+              }
             }
           }
         }
