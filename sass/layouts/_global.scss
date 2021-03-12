@@ -570,6 +570,11 @@ footer.container {
 
       &--controls {
         // overflow-x: auto;
+        width: calc(100vw - 300px);
+
+        @include breakpoint(xl) {
+          width: 100%;
+        }
 
         .page-content__wrapper {
           width: 100%;

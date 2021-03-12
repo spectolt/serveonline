@@ -486,7 +486,8 @@
     background-color: $white;
   }
 
-  thead th, td {
+  thead th,
+  td {
     position: relative;
     &::after,
     &::before {
@@ -555,6 +556,34 @@
     &--trash {
       &::before {
         background: url("img/icons/trash.svg") no-repeat center;
+        background-size: 40%;
+      }
+    }
+
+    &--new {
+      &::before {
+        background: url("img/icons/new-company-group.svg") no-repeat center;
+        background-size: 60%;
+      }
+    }
+
+    &--activate {
+      &::before {
+        background: url("img/icons/active.svg") no-repeat center;
+        background-size: 45%;
+      }
+    }
+
+    &--send {
+      &::before {
+        background: url("img/icons/message.svg") no-repeat center;
+        background-size: 40%;
+      }
+    }
+
+    &--print {
+      &::before {
+        background: url("img/icons/printer.svg") no-repeat center;
         background-size: 40%;
       }
     }
@@ -1099,15 +1128,55 @@
 }
 
 .profiles {
+  thead {
+    th {
+      &:nth-of-type(2) {
+        min-width: 80px;
+      }
+      &:nth-of-type(3) {
+        min-width: 70px;
+      }
+      &:nth-of-type(5) {
+        min-width: 76px;
+      }
+      &:nth-of-type(6) {
+        min-width: 105px;
+      }
+      &:nth-of-type(7) {
+        min-width: 144px;
+      }
+      &:nth-of-type(9) {
+        min-width: 96px;
+      }
+      &:nth-of-type(10) {
+        min-width: 122px;
+      }
+      &:nth-of-type(11) {
+        min-width: 112px;
+      }
+      &:nth-of-type(12) {
+        min-width: 156px;
+      }
+      &:last-of-type {
+        min-width: 36px;
+      }
+    }
+  }
   th {
+    vertical-align: top;
+    font-size: 0.75rem;
+font-weight: normal;
     label {
       &::before {
         background-color: rgba(255, 255, 255, 0.49);
       }
     }
 
-    &:last-of-type {
-      min-width: 35px;
+    .checkbox label:before {
+      position: absolute;
+      top: 10px;
+      left: 7px;
+      border-radius: 5px;
     }
   }
 
@@ -1119,16 +1188,39 @@
     td {
       border: 1px solid $lightgray;
       word-break: break-all; //pakeisti galbūt
+      vertical-align: middle;
+
+      .checkbox label::before {
+        left: 2px;
+        top: -10px;
+      }
+
+      &:last-of-type label:before {
+        left: 4px;
+      }
     }
   }
 
   tfoot {
     td {
-      font-size: .875rem;
+      font-size: 0.875rem;
     }
   }
 
+  .controls__group {
+    position: absolute;
+    left: 0px;
 
+    button {
+      height: 35px;
+    }
+  }
+
+  .controls__buttons-container {
+    button {
+      height: 35px;
+    }
+  }
 }
 
 .expand-button {

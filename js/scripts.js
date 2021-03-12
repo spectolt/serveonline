@@ -1584,7 +1584,7 @@ function onDocumentReady() {
   changePadding();
   openTab();
   paymentLayout();
-  tableWidths($(".profiles"));
+  tableWidths($(".profiles table"));
 
   setTimeout(function () {
     changeTextWidth();
@@ -2121,7 +2121,7 @@ function tableWidths($table) {
     })
   })
 
-  if ($table.hasScrollBar()) {
-    $table.find("tfoot tr").css("width", "calc(100% - 8px)");
-  }
+  // if ($table.hasScrollBar()) {
+  //   $table.find("tfoot tr").css("width", "calc(100% - 8px)");
+  // }
 }

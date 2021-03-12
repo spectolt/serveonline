@@ -77,8 +77,8 @@ $thisPage = "company-profiles"; ?>
                                 <?php for ($y = 0; $y < 15; $y++) { ?>
                                     <tr>
                                         <td>
-                                            <div class="checkbox"><input name="select_all" type="checkbox" id="select-all" />
-                                                <label for="select-all"></label>
+                                            <div class="checkbox"><input name="select_all" type="checkbox" id="select_<?php echo $y ?>" />
+                                                <label for="select_<?php echo $y ?>"></label>
                                             </div>
                                         </td>
                                         <td><span>2020 05 01</span> <span>12:35</span></td>
@@ -93,8 +93,8 @@ $thisPage = "company-profiles"; ?>
                                         <td>+370 688 12345</td>
                                         <td>vardasilgas.pavardeilgalabai@gmail.com</td>
                                         <td>
-                                            <div class="checkbox"><input name="select_all" type="checkbox" id="select-all" />
-                                                <label for="select-all"></label>
+                                            <div class="checkbox"><input name="select_all" type="checkbox" id="A-N_<?php echo $y ?>" />
+                                                <label for="A-N_<?php echo $y ?>"></label>
                                             </div>
                                         </td>
                                         <td class="left-arrow"></td>
