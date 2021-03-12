@@ -407,9 +407,9 @@ function onDocumentReady() {
           $(".search-panel__select")
             .val("")
             .trigger("change");
-          $(
-            ".search-container__select .select2-selection__choice__remove"
-          ).trigger("click");
+          // $(
+          //   ".search-container__select .select2-selection__choice__remove"
+          // ).trigger("click");
           $(this).find("span").html("Ieškoti");
           $(this).removeClass("change-search-icon");
           $(".search-panel input").val("");
