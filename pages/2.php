@@ -1,5 +1,5 @@
-
-<?php $thisCat="login"; $thisPage="login"; ?>
+<?php $thisCat = "login";
+$thisPage = "login"; ?>
 
 <?php
 $areas = array('Klinikos ir estetinė medicina', 'Odontologijos klinikos', 'Grožio salonai', 'SPA ir masažo kabinetai', 'Sportas ir reabilitacija', 'Veterinarija');
@@ -44,8 +44,10 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                         <a href="#" class="">Pamiršai slaptažodį?</a>
                     </div>
 
-                    <button class="button orange login__button--half">Prisijungti</button>
-                    <button class="button blue login__button--half login__button--fb">Prisijungti per <div class="login__button-fb"></div></button>
+                    <div class="login__button-container">
+                        <button class="button orange login__button--half login__button--submit">Prisijungti</button>
+                        <button class="button blue login__button--half login__button--fb">Prisijungti per <div class="login__button-fb"></div></button>
+                    </div>
                 </form>
             </div>
             <div class="login__block login__block--register">
@@ -63,7 +65,18 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                     <div class="input-wrapper input-wrapper--half input-wrapper--marker">
                         <input type="text" name="city" placeholder="Miestas" />
                     </div>
-                    <label class="login__passwords">Slaptaždis, ne mažiau 8 simbolių.</label>
+                    <div class="login__gender">
+                        <p>Lytis:</p>
+                        <div class="radio">
+                            <input name="gender" type="radio" id="gender-female" class="" />
+                            <label for="gender-female">Moteris</label>
+                        </div>
+                        <div class="radio">
+                            <input name="gender" type="radio" id="gender-male" class="" />
+                            <label for="gender-male">Vyras</label>
+                        </div>
+                    </div>
+                    <label class="login__passwords">Slaptažodis, ne mažiau 8 simbolių.</label>
                     <div class="input-wrapper input-wrapper--half input-wrapper--lock">
                         <input type="password" name="password" placeholder="Slaptažodis" />
                     </div>
@@ -84,7 +97,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                             <label for="sms">Pažymėkite, jei sutinkate, kad įstaiga, kurioje registruojatės, siųstų jums el. laiškus bei SMS apie jų paslaugas.</label>
                         </div>
                     </div>
-                    <button class="button orange">Registruotis</button>
+                    <button class="button orange login__button login__button--register">Registruotis</button>
                 </form>
             </div>
         </div>

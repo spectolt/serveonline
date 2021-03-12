@@ -1,6 +1,6 @@
 <section class="company__tab hidden" id="paslaugos">
-    <div class="company__info company__services">
-        <div class="company__aside">
+    <div class="services-list">
+        <div class="services-list__aside">
             <?php $cats = array(
                 'Plaukų priežiūra',
                 'Rankų priežiūra',
@@ -31,12 +31,12 @@
                 </div>
             <?php } ?>
         </div>
-        <div class="company__services-blocks hidden">
-            <h4 class="company__services-notice">Sužymėkite paslaugas atliekamos Jūsų įstaigoje ir jos atsiras <b>Serve Professionals</b> sistemoje</h4>
-            <div class="company__services-block">
+        <div class="services-list__blocks hidden">
+            <h4 class="services-list__notice">Sužymėkite paslaugas atliekamos Jūsų įstaigoje ir jos atsiras <b>Serve Professionals</b> sistemoje</h4>
+            <div class="services-list__block">
                 <h4><span>Paprastas kirpimas</span> <span class="more-button">Plačiau</span></h4>
                 <p class="more-description hidden">Galvos plovimas, modelinis kirpimas, dieninis sušukavimas.</p>
-                <div class="company__features">
+                <div class="services-list__features">
                     <div class="time-inputs-container">
                         <p class="inputs__before-text">Trukmė:</p>
                         <div class="time-inputs disabled">
@@ -70,10 +70,10 @@
                 </div>
                 <button class="cyan small company__button-order">Galima rezervuoti online</button>
             </div>
-            <div class="company__services-block">
+            <div class="services-list__block">
                 <h4><span>Paprastas kirpimas</span> <span class="more-button">Plačiau</span></h4>
                 <p class="more-description hidden">Galvos plovimas, modelinis kirpimas, dieninis sušukavimas.</p>
-                <div class="company__features">
+                <div class="services-list__features">
                     <div class="time-inputs-container">
                         <p class="inputs__before-text">Trukmė:</p>
                         <div class="time-inputs disabled">
@@ -107,7 +107,7 @@
                 </div>
                 <button class="cyan small company__button-order">Galima rezervuoti online</button>
             </div>
-            <div class="company__services-block company__services-block--choices">
+            <div class="services-list__block services-list__block--choices">
                 <h4><span>Balayage / Ombre dažymas</span> <span class="more-button">Plačiau</span></h4>
                 <span class="product-expand"></span>
                 <p class="more-description hidden">
@@ -126,7 +126,7 @@
                 </p>
                 <div class="product-choice hidden">
                     <h4>Trumpi plaukai</h4>
-                    <div class="company__features">
+                    <div class="services-list__features">
                         <div class="time-inputs-container">
                             <p class="inputs__before-text">Trukmė:</p>
                             <div class="time-inputs disabled">
@@ -161,7 +161,7 @@
                 </div>
                 <div class="product-choice hidden">
                     <h4>Vidutinio ilgio plaukai</h4>
-                    <div class="company__features">
+                    <div class="services-list__features">
                         <div class="time-inputs-container">
                             <p class="inputs__before-text">Trukmė:</p>
                             <div class="time-inputs disabled">
@@ -196,7 +196,7 @@
                 </div>
                 <div class="product-choice hidden">
                     <h4>Ilgi plaukai</h4>
-                    <div class="company__features">
+                    <div class="services-list__features">
                         <div class="time-inputs-container">
                             <p class="inputs__before-text">Trukmė:</p>
                             <div class="time-inputs disabled">

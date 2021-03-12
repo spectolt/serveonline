@@ -29,6 +29,14 @@ body {
   height: calc(100% - 70px);
 }
 
+main.container,
+footer.container {
+  max-width: 1440px;
+  width: 90%;
+  margin: 0 auto;
+  height: 100%;
+}
+
 .site-header {
   position: fixed;
   top: 0;

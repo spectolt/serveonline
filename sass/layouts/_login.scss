@@ -1,8 +1,7 @@
 section {
   &.login {
     width: 1040px;
-
-    margin: 0 auto;
+    margin: 60px auto 40px;
 
     .login {
       &__blocks {
@@ -15,12 +14,15 @@ section {
         border-radius: 5px;
         background: #f7f6f6;
         width: 48%;
-        padding: 20px;
+        padding: 20px 20px 0;
 
-        &--register {
-          .button {
-            width: 100%;
-          }
+        input {
+          height: 35px;
+          padding-left: 50px;
+        }
+
+        h2 {
+          margin: 0 0 20px 20px;
         }
       }
 
@@ -41,6 +43,29 @@ section {
         }
       }
 
+      &__gender {
+        display: flex;
+
+        p{
+          margin: 0 20px 0 0;
+          font-weight: 600;
+        }
+
+        .radio {
+          margin-right: 20px;
+
+          label {
+            padding-left: 20px;
+
+            &::before,
+            &::after {
+              top: 50%;
+              transform: translateY(-50%);
+            }
+          }
+        }
+      }
+
       &__checkboxes {
         margin: 25px 0 40px 0;
 
@@ -58,15 +83,26 @@ section {
         }
       }
 
+      &__button-container {
+        width: calc(100% + 40px);
+        display: flex;
+        margin: 0 -20px;
+      }
+
       &__button {
         &--half {
-          width: 48%;
+          width: 50%;
+        }
+
+        &--submit {
+          border-radius: 0 0 0 5px;
         }
 
         &--fb {
           display: flex;
           align-items: center;
           justify-content: center;
+          border-radius: 0 0 5px 0;
         }
 
         &-fb {
@@ -83,6 +119,12 @@ section {
             background-repeat: no-repeat;
             display: block;
           }
+        }
+
+        &--register {
+          width: calc(100% + 40px);
+          border-radius: 0 0 5px 5px;
+          margin: 0 -20px;
         }
       }
     }

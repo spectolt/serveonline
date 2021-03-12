@@ -31,14 +31,12 @@ function onDocumentReady() {
     .on("select2:open", function () {
       $(this)
         .next(".select2-container")
-        // .first()
         .find(".select2-selection__arrow b")
         .addClass("rotate");
     })
     .on("select2:close", function () {
       $(this)
-        .siblings(".select2-container")
-        .first()
+        .next(".select2-container")
         .find(".select2-selection__arrow b")
         .removeClass("rotate");
     });
@@ -1140,11 +1138,11 @@ function onDocumentReady() {
     }
   });
 
-  $(".company__aside .radio input[name='service[]']").not(".js_ignore_mark").on("change", function () {
-    $(".company__services-blocks").removeClass("hidden");
+  $(".services-list__aside .radio input[name='service[]']").not(".js_ignore_mark").on("change", function () {
+    $(".services-list__blocks").removeClass("hidden");
 
-    if (window.matchMedia("(max-width: 700px)").matches) {
-      $(".company__services-blocks").insertAfter($(this).closest(".radio"));
+    if (window.matchMedia("(max-width: 991px)").matches) {
+      $(".services-list__blocks").insertAfter($(this).closest(".radio"));
     }
   });
 

@@ -529,6 +529,36 @@
       height: auto;
     }
   }
+
+  .controls__button {
+    padding-left: 50px;
+    position: relative;
+
+    @include breakpoint(sm) {
+      padding-left: 40px;
+    }
+
+    &::before {
+      content: "";
+      width: 50px;
+      height: 100%;
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+
+      @include breakpoint(sm) {
+        width: 40px;
+      }
+    }
+
+    &--trash {
+      &::before {
+        background: url("img/icons/trash.svg") no-repeat center;
+        background-size: 40%;
+      }
+    }
+  }
 }
 
 .areas {
@@ -1097,6 +1127,8 @@
       font-size: .875rem;
     }
   }
+
+
 }
 
 .expand-button {

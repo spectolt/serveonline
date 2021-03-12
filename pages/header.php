@@ -40,7 +40,7 @@
             </div>
         <?php } ?>
         <header class="site-header site-header--show <?php if ($thisCat == "company") echo "site-header--company"?>">
-            <?php if ($thisCat != "company") { ?>
+            <?php if ($thisCat != "company" && $thisCat != "login") { ?>
                 <button class="site-header__hamburger"></button>
             <?php } ?>
             <img src="../img/logo.svg" class="site-header__logo" alt="" />
