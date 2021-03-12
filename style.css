@@ -1662,6 +1662,12 @@ select {
   padding-left: 0;
 }
 
+@media screen and (min-width: 1220px) {
+  .search-container--controls .select2-container .select2-selection .select2-selection__rendered {
+    font-size: 1.5rem;
+  }
+}
+
 @media (max-width: 991px) {
   .search-container--controls .select2-container .select2-selection .select2-selection__rendered {
     line-height: 56px;

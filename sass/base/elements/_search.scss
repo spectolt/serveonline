@@ -462,9 +462,9 @@
         font-size: 1.7vw;
         padding-left: 0;
 
-        // @include breakpoint(1220px) {
-        //   font-size: 1.5rem;
-        // }
+        @media screen and (min-width: 1220px) {
+          font-size: 1.5rem;
+        }
 
         @include breakpoint(l) {
           line-height: 56px;
