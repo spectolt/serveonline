@@ -6,16 +6,13 @@
         <div class="site-aside__blocks">
             <div class="site-aside__block">
                 <h3>Paslaugų gavėjai</h3>
-                <ul>
                     <div class="site-aside__item"><a href="#">Paslaugų gavėjų profiliai</a></div>
                     <div class="site-aside__item"><a href="#">Rezervacijos</a></div>
                     <div class="site-aside__item"><a href="#">Turi MANO sąrašą</a></div>
                     <div class="site-aside__item"><a href="#">Neturi MANO sąrašo</a></div>
-                </ul>
             </div>
             <div class="site-aside__block">
                 <h3>Specialistai</h3>
-                <ul>
                     <div class="site-aside__item"><a href="#">Specialistų profiliai</a></div>
                     <div class="site-aside__item"><a href="#">Ataskaita specialistui</a></div>
                     <div class="site-aside__item <?php if ($thisPage == "company-profiles") echo "site-aside__item--active site-aside__item--open"; ?>">
@@ -63,14 +60,11 @@
                     <div class="site-aside__item"><a href="#">Ataskaita įmonei</a></div>
                     <div class="site-aside__item"><a href="#">Yra MANO sąraše</a></div>
                     <div class="site-aside__item"><a href="#">Nėra MANO sąraše</a></div>
-                </ul>
             </div>
             <div class="site-aside__block">
                 <h3>Ataskaitos</h3>
-                <ul>
                     <div class="site-aside__item"><a href="#">Veiklos ataskaita</a></div>
                     <div class="site-aside__item"><a href="#">Paslaugų teikėjų mokėjimai</a></div>
-                </ul>
             </div>
             <div class="site-aside__block">
                 <h3>Nustatymai</h3>
