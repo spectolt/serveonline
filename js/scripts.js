@@ -1924,10 +1924,11 @@ function tableHeight(el) {
       tablePos += $cloneFooter.outerHeight(true);
     }
 
+    console.log($(window).innerHeight())
     $wrap.remove();
     $(this)
       .find("tbody")
-      .css("height", "calc(100vh - " + tablePos + "px)");
+      .css("height", "calc("+ $(window).innerHeight() +"px - " + tablePos + "px)");
      
   });
   if (window.matchMedia("(max-width: 600px)").matches) {
