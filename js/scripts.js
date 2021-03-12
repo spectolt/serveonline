@@ -51,7 +51,7 @@ function onDocumentReady() {
       dropdownCssClass: "select2-dropdown--controls",
       dropdownParent: $(".search-container__select"),
       minimumResultsForSearch: Infinity,
-      // templateResult: hideSelected,
+      templateResult: hideSelected,
       // language: {
       //   // You can find all of the options in the language files provided in the
       //   // build. They all must be functions that return the string that should be
@@ -1598,7 +1598,7 @@ function onDocumentReady() {
 }
 
 function hideSelected(value) {
-  if ($(".select2-selection__choice__display").html() != value.text) {
+  if ($(".select2-selection__rendered").html() != value.text) {
     return $("<span>" + value.text + "</span>");
   }
 }
