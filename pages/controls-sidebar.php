@@ -18,39 +18,39 @@
                     <div class="site-aside__item <?php if ($thisPage == "company-profiles") echo "site-aside__item--active site-aside__item--open"; ?>">
                         <a href="#">Įmonių profiliai</a>
                         <div class="site-aside__filters <?php if ($thisPage != "company-profiles") echo "hidden"; ?>">
-                            <p>Registracijos data</p>
+                            <p>Registracijos data nuo</p>
                             <div class="site-aside__datepicker-container">
                                 <input class="site-aside__datepicker" placeholder="Nuo">
                             </div>
-                            <p>Registracijos data</p>
+                            <p>Registracijos data iki</p>
                             <div class="site-aside__datepicker-container">
                                 <input class="site-aside__datepicker" placeholder="Iki">
                             </div>
                             <p>Sritis</p>
-                            <select data-placeholder="Visi">
+                            <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
                                 <option></option>
                                 <option>Klinikos ir estetinė medicina</option>
                                 <option>Odontologijos klinikos</option>
                                 <option>Veterinarijos klinikos</option>
                             </select>
                             <p>Šalis</p>
-                            <select data-placeholder="Visi">
+                            <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
                                 <option></option>
                                 <option>Lietuva</option>
                             </select>
                             <p>Įmonės miestas</p>
-                            <select data-placeholder="Visi">
+                            <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
                                 <option></option>
                                 <option>Vilnius</option>
                             </select>
                             <p>Pažymėti/Nepažymėti</p>
-                            <select data-placeholder="Visi">
+                            <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
                                 <option></option>
                                 <option>Pažymėti</option>
                                 <option>Nepažymėti</option>
                             </select>
                             <p>Aktyvūs/Neaktyvūs</p>
-                            <select data-placeholder="Visi">
+                            <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
                                 <option></option>
                                 <option>Aktyvūs</option>
                                 <option>Neaktyvūs</option>

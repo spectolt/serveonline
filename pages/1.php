@@ -7,7 +7,7 @@ $class = array('clinic', 'odontology', 'vet', 'beauty', 'spa', 'sport');
 
 <?php require_once('header-home.php'); ?>
 
-<main class="site-main container">
+<main class="site-main">
     <section class="main-screen">
         <div class="main-screen__info">
             <h1 class="title title--home">Atrask savo<span style="display: block;">geriausią specialistą!</span></h1>

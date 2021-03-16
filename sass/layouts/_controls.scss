@@ -45,12 +45,18 @@
 
     @include breakpoint(xs) {
       margin-right: -20px;
+      flex-wrap: nowrap;
+      margin-left: -10px;
+      white-space: nowrap;
     }
 
     &.controls__top--services {
       @include breakpoint(520px) {
         justify-content: flex-end;
         width: 100%;
+        flex-wrap: wrap;
+        margin-left: 20px;
+        margin-right: 0px;
       }
 
       .controls__print {
@@ -571,6 +577,13 @@
     &--activate {
       &::before {
         background: url("img/icons/active.svg") no-repeat center;
+        background-size: 45%;
+      }
+    }
+
+    &--deactivate {
+      &::before {
+        background: url("img/icons/deactive.svg") no-repeat center;
         background-size: 45%;
       }
     }
@@ -1129,40 +1142,47 @@
 }
 
 .profiles {
-  thead {
-    th {
+    th, td {
+      &:first-child {
+        width: 40px;
+        &::before {
+          right: 14px;
+        }
+      }
       &:nth-of-type(2) {
-        min-width: 80px;
+        width: 83.2px;
       }
       &:nth-of-type(3) {
-        min-width: 70px;
+        width: 70px;
+      }
+      &:nth-of-type(4) {
+        width: 83.2px;
       }
       &:nth-of-type(5) {
-        min-width: 76px;
+        width: 76px;
       }
       &:nth-of-type(6) {
-        min-width: 105px;
+        width: 105px;
       }
       &:nth-of-type(7) {
-        min-width: 144px;
+        width: 144px;
       }
       &:nth-of-type(9) {
-        min-width: 96px;
+        width: 96px;
       }
       &:nth-of-type(10) {
-        min-width: 122px;
+        width: 122px;
       }
       &:nth-of-type(11) {
-        min-width: 112px;
+        width: 112px;
       }
       &:nth-of-type(12) {
-        min-width: 156px;
+        width: 156px;
       }
       &:last-of-type {
-        min-width: 36px;
+        width: 36px;
       }
     }
-  }
   th {
     vertical-align: top;
     font-size: 0.75rem;
@@ -1197,6 +1217,7 @@
       border: 1px solid $lightgray;
       word-break: break-all; //pakeisti galbūt
       vertical-align: middle;
+      padding: 0 10px;
 
       .checkbox label {
         &::before {

@@ -3,6 +3,10 @@ section {
     max-width: 1040px;
     margin: 60px auto 40px;
 
+    @include breakpoint(sm) {
+      margin: 30px auto 40px;
+    }
+
     .login {
       &__blocks {
         display: flex;
@@ -21,7 +25,7 @@ section {
 
         @include breakpoint(800px) {
           width: 100%;
-          margin-bottom: 20px;
+          margin-bottom: 30px;
         }
 
         input {
@@ -57,6 +61,7 @@ section {
         p {
           margin: 0 20px 0 0;
           font-weight: 600;
+          font-size: 1rem;
         }
 
         .radio {
@@ -104,6 +109,10 @@ section {
 
         &--submit {
           border-radius: 0 0 0 5px;
+
+          @include breakpoint(sm){
+            padding-top: 8px;
+          }
         }
 
         &--fb {
@@ -133,6 +142,14 @@ section {
           width: calc(100% + 40px);
           border-radius: 0 0 5px 5px;
           margin: 0 -20px;
+        }
+      }
+
+      &__button--half,  &__button--register{
+        height: 44px;
+
+        @include breakpoint(sm){
+          height: 35px;
         }
       }
     }

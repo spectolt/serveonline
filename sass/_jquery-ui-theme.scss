@@ -1290,7 +1290,7 @@ a.ui-button:active,
 }
 
 .ui-datepicker {
-  z-index: 100 !important;
+  z-index: 999 !important;
 
   .ui-state-active,
   .ui-widget-content .ui-state-active,

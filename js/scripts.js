@@ -26,7 +26,8 @@ function onDocumentReady() {
     this._updateDatepicker(inst);
   };
 
-  $("select").not(".js_ignore_mark")
+  $("select")
+    .not(".js_ignore_mark")
     .select2()
     .on("select2:open", function () {
       $(this)
@@ -43,7 +44,8 @@ function onDocumentReady() {
 
   var dropdownWidth;
   var searchValue;
-  $(".search-panel__select").not(".js_ignore_mark")
+  $(".search-panel__select")
+    .not(".js_ignore_mark")
     .select2({
       multiple: false,
       // maximumSelectionLength: 2,
@@ -61,7 +63,9 @@ function onDocumentReady() {
         1 +
         "px";
       $(".select2-results").css("width", dropdownWidth);
-      searchValue = $(".search-container--controls .select2-search__field").val();
+      searchValue = $(
+        ".search-container--controls .select2-search__field"
+      ).val();
     })
     .on("select2:select", function (e) {
       $(this)
@@ -112,10 +116,11 @@ function onDocumentReady() {
     })
     .on("select2:close", function (e) {
       $(this).siblings().find(".select2-search__field").val(searchValue);
-    })
+    });
 
   if ($("main.hasUiAutocomplete").length > 0) {
-    $(".search-container__submit").not(".js_ignore_mark")
+    $(".search-container__submit")
+      .not(".js_ignore_mark")
       .unbind("click")
       .click(function () {
         $(".ui-autocomplete").fadeOut(300);
@@ -143,13 +148,15 @@ function onDocumentReady() {
         }
       });
 
-    $("input#search, input#search-product").not(".js_ignore_mark").on("keydown", function search(e) {
-      if (e.keyCode == 13) {
-        $(".ui-autocomplete").fadeOut(300);
-        $(".search-container__submit").find("span").html("Valyti");
-        $(".search-container__submit").addClass("change-search-icon");
-      }
-    });
+    $("input#search, input#search-product")
+      .not(".js_ignore_mark")
+      .on("keydown", function search(e) {
+        if (e.keyCode == 13) {
+          $(".ui-autocomplete").fadeOut(300);
+          $(".search-container__submit").find("span").html("Valyti");
+          $(".search-container__submit").addClass("change-search-icon");
+        }
+      });
 
     // autocomplete results width fix
     jQuery.ui.autocomplete.prototype._resizeMenu = function () {
@@ -171,80 +178,87 @@ function onDocumentReady() {
     availableDates[new Date("01/12/2021")] = new Date("01/12/2021");
     availableDates[new Date("01/13/2021")] = new Date("01/13/2021");
 
-    $(".js-datepicker").not(".js_ignore_mark").datepicker({
-      showButtonPanel: true,
-      orientation: "bottom",
-      buttonText: "Pasirinkti",
-      minDate: "+0",
-      defaultDate: "+1",
-      dateFormat: "yy M dd",
-      monthNamesShort: [
-        "Sausio",
-        "Vasario",
-        "Kovo",
-        "Balandžio",
-        "Gegužės",
-        "Birželio",
-        "Liepos",
-        "Rugpjūčio",
-        "Rugsėjo",
-        "Spalio",
-        "Lapkričio",
-        "Gruodžio",
-      ],
-      onSelect: function (date, inst) {
-        var event =
-          eventDates[
-            new Date(inst.selectedYear, inst.selectedMonth, inst.selectedDay)
-          ];
-        if (event) {
-          var selectedDate = $(".ui-datepicker-current-day");
-          popup.show(300);
-        }
-        changeTextWidth();
-
-        //main input sets date of all inputs, persons' inputs don't change main input
-        var getDate = $(".product__nav-input:first").val();
-        var getDate2 = $(this).val();
-        $(".product__nav-input").datepicker("setDate", getDate);
-        $(this).datepicker("setDate", getDate2);
-        $(this).blur();
-      },
-
-      beforeShowDay: function (date) {
-        var available = availableDates[date];
-        var highlight = eventDates[date];
-        if (available && highlight) {
-          return [true, "ui-datepicker-available ui-datepicker-highlight", ""];
-        } else if (highlight) {
-          return [true, "ui-datepicker-highlight", ""];
-        } else if (available) {
-          return [true, "ui-datepicker-available", ""];
-        } else {
-          return [true, "", ""];
-        }
-      },
-      beforeShow: function (input, inst) {
-        var offsetHeight = $(".product__list").offset();
-        var offsetLeft = $(this).closest(".product__nav").offset();
-        window.setTimeout(function () {
-          if (window.matchMedia("(max-width: 600px)").matches) {
-            $(inst.dpDiv).css({
-              left: "50%",
-              transform: "translateX(-50%)",
-            });
-          } else {
-            $(inst.dpDiv).css({
-              top: offsetHeight.top + "px",
-              left: offsetLeft.left + "px",
-              transform: "translateX(0)",
-            });
+    $(".js-datepicker")
+      .not(".js_ignore_mark")
+      .datepicker({
+        showButtonPanel: true,
+        orientation: "bottom",
+        buttonText: "Pasirinkti",
+        minDate: "+0",
+        defaultDate: "+1",
+        dateFormat: "yy M dd",
+        monthNamesShort: [
+          "Sausio",
+          "Vasario",
+          "Kovo",
+          "Balandžio",
+          "Gegužės",
+          "Birželio",
+          "Liepos",
+          "Rugpjūčio",
+          "Rugsėjo",
+          "Spalio",
+          "Lapkričio",
+          "Gruodžio",
+        ],
+        onSelect: function (date, inst) {
+          var event =
+            eventDates[
+              new Date(inst.selectedYear, inst.selectedMonth, inst.selectedDay)
+            ];
+          if (event) {
+            var selectedDate = $(".ui-datepicker-current-day");
+            popup.show(300);
           }
-        }, 1);
-      },
-    });
+          changeTextWidth();
 
-    $(".product__nav-input").not(".js_ignore_mark")
+          //main input sets date of all inputs, persons' inputs don't change main input
+          var getDate = $(".product__nav-input:first").val();
+          var getDate2 = $(this).val();
+          $(".product__nav-input").datepicker("setDate", getDate);
+          $(this).datepicker("setDate", getDate2);
+          $(this).blur();
+        },
+
+        beforeShowDay: function (date) {
+          var available = availableDates[date];
+          var highlight = eventDates[date];
+          if (available && highlight) {
+            return [
+              true,
+              "ui-datepicker-available ui-datepicker-highlight",
+              "",
+            ];
+          } else if (highlight) {
+            return [true, "ui-datepicker-highlight", ""];
+          } else if (available) {
+            return [true, "ui-datepicker-available", ""];
+          } else {
+            return [true, "", ""];
+          }
+        },
+        beforeShow: function (input, inst) {
+          var offsetHeight = $(".product__list").offset();
+          var offsetLeft = $(this).closest(".product__nav").offset();
+          window.setTimeout(function () {
+            if (window.matchMedia("(max-width: 600px)").matches) {
+              $(inst.dpDiv).css({
+                left: "50%",
+                transform: "translateX(-50%)",
+              });
+            } else {
+              $(inst.dpDiv).css({
+                top: offsetHeight.top + "px",
+                left: offsetLeft.left + "px",
+                transform: "translateX(0)",
+              });
+            }
+          }, 1);
+        },
+      });
+
+    $(".product__nav-input")
+      .not(".js_ignore_mark")
       .datepicker({
         showButtonPanel: true,
         orientation: "bottom",
@@ -347,52 +361,64 @@ function onDocumentReady() {
         "</div>"
     );
     $(popup).appendTo("body");
-    $(".ui-datepicker-popup__close").not(".js_ignore_mark").on("click", function () {
-      $(popup).fadeOut(300);
-    });
+    $(".ui-datepicker-popup__close")
+      .not(".js_ignore_mark")
+      .on("click", function () {
+        $(popup).fadeOut(300);
+      });
 
-    $(".product__nav-icon").not(".js_ignore_mark")
+    $(".product__nav-icon")
+      .not(".js_ignore_mark")
       .unbind("click")
       .click(function () {
         $(this).next(".product__nav-input").datepicker("show");
       });
 
     //prevent ios from scrolling to input
-    document.querySelector(".js-datepicker:not(.js_ignore_mark)").addEventListener("focus", (e) => {
-      e.preventDefault();
-      setTimeout(() => {
-        window.scroll(0, 100);
-      }, 0);
-    });
+    document
+      .querySelector(".js-datepicker:not(.js_ignore_mark)")
+      .addEventListener("focus", (e) => {
+        e.preventDefault();
+        setTimeout(() => {
+          window.scroll(0, 100);
+        }, 0);
+      });
 
-    $(".product__nav-button--next").not(".js_ignore_mark").on("click", function () {
-      var date = $(".product__nav-input").datepicker("getDate");
-      if (window.matchMedia("(max-width: 600px)").matches) {
-        date.setDate(date.getDate() + 1);
-      } else {
-        date.setDate(date.getDate() + 7);
-      }
-      $(".product__nav-input").not(".js_ignore_mark").datepicker("setDate", date);
+    $(".product__nav-button--next")
+      .not(".js_ignore_mark")
+      .on("click", function () {
+        var date = $(".product__nav-input").datepicker("getDate");
+        if (window.matchMedia("(max-width: 600px)").matches) {
+          date.setDate(date.getDate() + 1);
+        } else {
+          date.setDate(date.getDate() + 7);
+        }
+        $(".product__nav-input")
+          .not(".js_ignore_mark")
+          .datepicker("setDate", date);
 
-      changeTextWidth();
-    });
+        changeTextWidth();
+      });
 
-    $(".product__nav-button--prev").not(".js_ignore_mark").on("click", function () {
-      var date = $(".product__nav-input").datepicker("getDate");
-      if (window.matchMedia("(max-width: 600px)").matches) {
-        date.setDate(date.getDate() - 1);
-      } else {
-        date.setDate(date.getDate() - 7);
-      }
-      $(".product__nav-input").datepicker("setDate", date);
+    $(".product__nav-button--prev")
+      .not(".js_ignore_mark")
+      .on("click", function () {
+        var date = $(".product__nav-input").datepicker("getDate");
+        if (window.matchMedia("(max-width: 600px)").matches) {
+          date.setDate(date.getDate() - 1);
+        } else {
+          date.setDate(date.getDate() - 7);
+        }
+        $(".product__nav-input").datepicker("setDate", date);
 
-      changeTextWidth();
-    });
+        changeTextWidth();
+      });
 
     $(window).scroll(function () {
       if (
         $(this).scrollTop() >
-        $("#ui-datepicker-div").not(".js_ignore_mark").offset().top + $("#ui-datepicker-div").not(".js_ignore_mark").height()
+        $("#ui-datepicker-div").not(".js_ignore_mark").offset().top +
+          $("#ui-datepicker-div").not(".js_ignore_mark").height()
       ) {
         $(".product__nav-input").not(".js_ignore_mark").datepicker("hide");
       }
@@ -400,13 +426,12 @@ function onDocumentReady() {
   }
 
   if ($("main.hasTable").length > 0) {
-    $(".search-container__submit").not(".js_ignore_mark")
+    $(".search-container__submit")
+      .not(".js_ignore_mark")
       .unbind("click")
       .click(function (e) {
         if ($(this).find("span").html() == "Valyti") {
-          $(".search-panel__select")
-            .val("")
-            .trigger("change");
+          $(".search-panel__select").val("").trigger("change");
           // $(
           //   ".search-container__select .select2-selection__choice__remove"
           // ).trigger("click");
@@ -458,36 +483,40 @@ function onDocumentReady() {
     });
   }
 
-  $(".site-aside__filters .js-dropdown-placeholder").not(".js_ignore_mark").select2({
-    minimumResultsForSearch: Infinity,
-    placeholder: "Pasirinkti",
-    allowClear: true,
-    dropdownCssClass: "select2-dropdown--controls-side",
-  });
+  $(".site-aside__filters .js-dropdown-placeholder")
+    .not(".js_ignore_mark")
+    .select2({
+      minimumResultsForSearch: Infinity,
+      placeholder: "Pasirinkti",
+      allowClear: true,
+      dropdownCssClass: "select2-dropdown--controls-side",
+    });
 
-  $(".checkbox-wrapper>.checkbox input, .checkbox-wrapper>.radio input").not(".js_ignore_mark").on(
-    "change",
-    function () {
+  $(".checkbox-wrapper>.checkbox input, .checkbox-wrapper>.radio input")
+    .not(".js_ignore_mark")
+    .on("change", function () {
       $(this).closest(".checkbox-wrapper").toggleClass("toggled");
-    }
-  );
+    });
 
-  $(".checkbox-wrapper .radio input").not(".js_ignore_mark").on("change", function () {
-    $(this)
-      .closest(".checkbox-wrapper")
-      .siblings()
-      .find("input")
-      .prop("checked", false);
-    if ($(this).closest(".checkbox-children").length > 0) {
+  $(".checkbox-wrapper .radio input")
+    .not(".js_ignore_mark")
+    .on("change", function () {
       $(this)
         .closest(".checkbox-wrapper")
-        .find(".radio input")
-        .first()
-        .prop("checked", true);
-    }
-  });
+        .siblings()
+        .find("input")
+        .prop("checked", false);
+      if ($(this).closest(".checkbox-children").length > 0) {
+        $(this)
+          .closest(".checkbox-wrapper")
+          .find(".radio input")
+          .first()
+          .prop("checked", true);
+      }
+    });
 
-  $(".site-header .site-header__item--search, .search-container__close").not(".js_ignore_mark")
+  $(".site-header .site-header__item--search, .search-container__close")
+    .not(".js_ignore_mark")
     .unbind("click")
     .click(function () {
       $(".search-container").toggleClass("search-container--toggled");
@@ -528,7 +557,9 @@ function onDocumentReady() {
         ).appendTo(".select2-selection--multiple");
 
         // $(".search-container--controls .select2-search__field").prop("disabled", true);
-        $(".search-container--controls .select2-search__field").addClass("hide-disabled-gray");
+        $(".search-container--controls .select2-search__field").addClass(
+          "hide-disabled-gray"
+        );
       }
     });
 
@@ -538,7 +569,8 @@ function onDocumentReady() {
     slidesToShow: 1,
     // slides
   });
-  $(".venue__description-more").not(".js_ignore_mark")
+  $(".venue__description-more")
+    .not(".js_ignore_mark")
     .unbind("click")
     .click(function () {
       $(this)
@@ -546,7 +578,8 @@ function onDocumentReady() {
         .addClass("venue__description--visible");
     });
 
-  $(".calendar__more-button").not(".js_ignore_mark")
+  $(".calendar__more-button")
+    .not(".js_ignore_mark")
     .unbind("click")
     .click(function () {
       var times = $(this)
@@ -557,27 +590,33 @@ function onDocumentReady() {
       $(this).html("09:15");
     });
 
-  $(".site-aside__block input").not(".js_ignore_mark").on("click", function () {
-    $(".search-clean").css("display", "flex");
-  });
+  $(".site-aside__block input")
+    .not(".js_ignore_mark")
+    .on("click", function () {
+      $(".search-clean").css("display", "flex");
+    });
 
-  $(".site-aside__item select").not(".js_ignore_mark").on("select2:select", function (e) {
-    $(".search-clean").css("display", "flex");
-    $(this).next(".select2").find("b").removeClass("rotate");
-  });
+  $(".site-aside__item select")
+    .not(".js_ignore_mark")
+    .on("select2:select", function (e) {
+      $(".search-clean").css("display", "flex");
+      $(this).next(".select2").find("b").removeClass("rotate");
+    });
 
-  $(".search-clean").not(".js_ignore_mark").on("click", function () {
-    $("#city").val($("#city option:first-child").val()).trigger("change");
-    $("#time").val($("#time option:first-child").val()).trigger("change");
-    $(".search-container__submit span").html("Ieškoti");
-    $(".search-container__submit").removeClass("change-search-icon");
-    $(".product-header-chosen").remove();
-    $("#search-product").css("display", "block");
-    $(".site-aside__block input").prop("checked", false);
-    $("#distance_asc").prop("checked", true);
-    $(".search-panel__select").val(null).trigger("change");
-    $(this).fadeOut(300);
-  });
+  $(".search-clean")
+    .not(".js_ignore_mark")
+    .on("click", function () {
+      $("#city").val($("#city option:first-child").val()).trigger("change");
+      $("#time").val($("#time option:first-child").val()).trigger("change");
+      $(".search-container__submit span").html("Ieškoti");
+      $(".search-container__submit").removeClass("change-search-icon");
+      $(".product-header-chosen").remove();
+      $("#search-product").css("display", "block");
+      $(".site-aside__block input").prop("checked", false);
+      $("#distance_asc").prop("checked", true);
+      $(".search-panel__select").val(null).trigger("change");
+      $(this).fadeOut(300);
+    });
 
   if (
     /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
@@ -587,54 +626,61 @@ function onDocumentReady() {
     $(".search-clean").css("left", "50%");
   }
 
-  $(".breadcrumbs__change").not(".js_ignore_mark")
+  $(".breadcrumbs__change")
+    .not(".js_ignore_mark")
     .unbind("click")
     .click(function () {
       $(".breadcrumbs__more").toggleClass("breadcrumbs__more--toggled");
+      $(this).toggleClass("rotate");
     });
 
   var likeBtn = $(".product__block-like");
 
-  likeBtn.not(".js_ignore_mark").unbind("click").click(function () {
-    var like = $(this)
-      .closest(".product__block-top")
-      .find(".product__block-like-status");
-    var product = $(this).closest(".product__block");
+  likeBtn
+    .not(".js_ignore_mark")
+    .unbind("click")
+    .click(function () {
+      var like = $(this)
+        .closest(".product__block-top")
+        .find(".product__block-like-status");
+      var product = $(this).closest(".product__block");
 
-    like.toggleClass("hidden");
-    $(this).toggleClass(
-      "product__block-like--active product__block-like--greyed-out"
-    );
-
-    if ($(this).hasClass("product__block-like--active")) {
-      var parent = $(".product__block-like--greyed-out:last").closest(
-        ".product__block"
+      like.toggleClass("hidden");
+      $(this).toggleClass(
+        "product__block-like--active product__block-like--greyed-out"
       );
-      $(product).insertAfter(parent);
-    } else {
-      product.parent().prepend(product);
-    }
-  });
+
+      if ($(this).hasClass("product__block-like--active")) {
+        var parent = $(".product__block-like--greyed-out:last").closest(
+          ".product__block"
+        );
+        $(product).insertAfter(parent);
+      } else {
+        product.parent().prepend(product);
+      }
+    });
 
   var hamburgerBtn = $(".site-header__hamburger");
 
-  hamburgerBtn.not(".js_ignore_mark").unbind("click").click(function () {
-    $(".site-aside-container").addClass("site-aside-container--toggled");
-  });
-
-  $(document)
-    .on("click", ":not(.js_ignore_mark)", function (event) {
-      //if you click on anything except the menu or the hamburger menu, close the menu
-      if (
-        !$(event.target).closest(
-          ".site-aside,.site-header__hamburger,.select2-search"
-        ).length
-      ) {
-        $("body")
-          .find(".site-aside-container")
-          .removeClass("site-aside-container--toggled");
-      }
+  hamburgerBtn
+    .not(".js_ignore_mark")
+    .unbind("click")
+    .click(function () {
+      $(".site-aside-container").addClass("site-aside-container--toggled");
     });
+
+  $(document).on("click", ":not(.js_ignore_mark)", function (event) {
+    //if you click on anything except the menu or the hamburger menu, close the menu
+    if (
+      !$(event.target).closest(
+        ".site-aside,.site-header__hamburger,.select2-search, button.ui-state-default"
+      ).length
+    ) {
+      $("body")
+        .find(".site-aside-container")
+        .removeClass("site-aside-container--toggled");
+    }
+  });
 
   var timer_id;
   $(window).resize(function () {
@@ -661,18 +707,21 @@ function onDocumentReady() {
     }, 100);
   });
 
-  $(".goto-top").not(".js_ignore_mark").on("click", function () {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-    document.querySelector("main").scrollTop = 0;
+  $(".goto-top")
+    .not(".js_ignore_mark")
+    .on("click", function () {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+      document.querySelector("main").scrollTop = 0;
 
-    if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
-      $("html,body,main").animate({ scrollTop: 0 }, 300);
-      return false;
-    }
-  });
+      if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+        $("html,body,main").animate({ scrollTop: 0 }, 300);
+        return false;
+      }
+    });
 
-  $(".feature-screen__slides-container").not(".js_ignore_mark")
+  $(".feature-screen__slides-container")
+    .not(".js_ignore_mark")
     .not(".slick-initialized")
     .slick({
       arrows: true,
@@ -683,68 +732,76 @@ function onDocumentReady() {
       appendDots: $(".feature-screen"),
     });
 
-  $("#upload-icon").not(".js_ignore_mark").change(function (e) {
-    for (var i = 0; i < e.originalEvent.srcElement.files.length; i++) {
-      var file = e.originalEvent.srcElement.files[i];
-      var img = document.createElement("img");
-      var reader = new FileReader();
-      reader.onloadend = function () {
-        img.src = reader.result;
-      };
-      reader.readAsDataURL(file);
-      $("#upload-icon").siblings("label").html(img);
-      $(img).css("display", "none");
-      setTimeout(function () {
-        $(".areas__inputs img").css({ display: "unset", height: "20px" });
-        $(".areas__inputs img").each(imgToSvg);
-      }, 10);
-    }
-  });
+  $("#upload-icon")
+    .not(".js_ignore_mark")
+    .change(function (e) {
+      for (var i = 0; i < e.originalEvent.srcElement.files.length; i++) {
+        var file = e.originalEvent.srcElement.files[i];
+        var img = document.createElement("img");
+        var reader = new FileReader();
+        reader.onloadend = function () {
+          img.src = reader.result;
+        };
+        reader.readAsDataURL(file);
+        $("#upload-icon").siblings("label").html(img);
+        $(img).css("display", "none");
+        setTimeout(function () {
+          $(".areas__inputs img").css({ display: "unset", height: "20px" });
+          $(".areas__inputs img").each(imgToSvg);
+        }, 10);
+      }
+    });
 
   var color;
-  $(".areas__color").not(".js_ignore_mark").each(function (index) {
-    color = "#" + $(this).contents().get(0).nodeValue;
-    $(this)
-      .closest("tr")
-      .find(".controls__item")
-      .css("background-color", color);
-  });
+  $(".areas__color")
+    .not(".js_ignore_mark")
+    .each(function (index) {
+      color = "#" + $(this).contents().get(0).nodeValue;
+      $(this)
+        .closest("tr")
+        .find(".controls__item")
+        .css("background-color", color);
+    });
 
-  $(".color-input").not(".js_ignore_mark").on("input click", function () {
-    color = "#" + $(this).val();
-    var inputs = $(this).closest("tr").find("td input, td label");
-    if ($(this).val().length == 0) {
-      color = "transparent";
-      inputs.each(function () {
-        if ($(this).val().length == 0) {
-          $(this).removeClass("white-text");
-          $(this).css("color", "#8d92a3");
-        } else {
-          $(this).css("color", "#101b51");
-        }
-      });
-    }
-    inputs.css("background-color", color);
-    inputs.css(
-      "color",
-      isDark($(this).css("background-color")) ? "white" : "#101b51"
-    );
-    if (isDark($(this).css("background-color"))) {
-      $(this).closest("tr").find("td input").addClass("white-text");
-      $(".controls__item--profession").css("color", "#fff");
-    }
+  $(".color-input")
+    .not(".js_ignore_mark")
+    .on("input click", function () {
+      color = "#" + $(this).val();
+      var inputs = $(this).closest("tr").find("td input, td label");
+      if ($(this).val().length == 0) {
+        color = "transparent";
+        inputs.each(function () {
+          if ($(this).val().length == 0) {
+            $(this).removeClass("white-text");
+            $(this).css("color", "#8d92a3");
+          } else {
+            $(this).css("color", "#101b51");
+          }
+        });
+      }
+      inputs.css("background-color", color);
+      inputs.css(
+        "color",
+        isDark($(this).css("background-color")) ? "white" : "#101b51"
+      );
+      if (isDark($(this).css("background-color"))) {
+        $(this).closest("tr").find("td input").addClass("white-text");
+        $(".controls__item--profession").css("color", "#fff");
+      }
 
-    $(".controls__item--profession").css("background-color", color);
-  });
+      $(".controls__item--profession").css("background-color", color);
+    });
 
-  $(".languages li").not(".js_ignore_mark")
+  $(".languages li")
+    .not(".js_ignore_mark")
     .unbind("click")
     .click(function () {
       $(this).addClass("active");
       $(this).siblings().removeClass("active");
     });
 
-  $(".controls__table .controls__item").not(".js_ignore_mark")
+  $(".controls__table .controls__item")
+    .not(".js_ignore_mark")
     .unbind("click")
     .click(function () {
       $(this).addClass("changed-bg");
@@ -795,22 +852,29 @@ function onDocumentReady() {
       }
     });
 
-  $(document).on("input", "textarea[name='product-description']:not(.js_ignore_mark)", function () {
-    $(this).css("height", "5px");
-    $(this).css("height", $(this).prop("scrollHeight"));
-  });
-
-  $(".controls__item--service-title").not(".js_ignore_mark").on("input", function () {
-    if (!$(this).prop("checked")) {
-      $(this)
-        .closest("table")
-        .next("table")
-        .find(".controls__item input")
-        .prop("checked", false);
+  $(document).on(
+    "input",
+    "textarea[name='product-description']:not(.js_ignore_mark)",
+    function () {
+      $(this).css("height", "5px");
+      $(this).css("height", $(this).prop("scrollHeight"));
     }
-  });
+  );
 
-  $(".feature-screen__slides-container").not(".js_ignore_mark")
+  $(".controls__item--service-title")
+    .not(".js_ignore_mark")
+    .on("input", function () {
+      if (!$(this).prop("checked")) {
+        $(this)
+          .closest("table")
+          .next("table")
+          .find(".controls__item input")
+          .prop("checked", false);
+      }
+    });
+
+  $(".feature-screen__slides-container")
+    .not(".js_ignore_mark")
     .not(".slick-initialized")
     .slick({
       arrows: true,
@@ -822,25 +886,31 @@ function onDocumentReady() {
       adaptiveHeight: true,
     });
 
-  $('.areas__area img[src$=".svg"]').not(".js_ignore_mark").each(imgToSvg).css("fill", "#101b51");
+  $('.areas__area img[src$=".svg"]')
+    .not(".js_ignore_mark")
+    .each(imgToSvg)
+    .css("fill", "#101b51");
 
-  $(".site-aside__datepicker").not(".js_ignore_mark").datepicker({
-    showButtonPanel: true,
-    orientation: "bottom",
-    beforeShow: function (input, inst) {
-      $("#ui-datepicker-div").addClass("ui-datepicker--filters");
-      window.setTimeout(function () {
-        $("#ui-datepicker-div").position({
-          my: "top",
-          at: "bottom",
-          of: input,
-        });
-        inst.dpDiv.css({
-          left: "0",
-        });
-      }, 1);
-    },
-  });
+  $(".site-aside__datepicker")
+    .not(".js_ignore_mark")
+    .datepicker({
+      showButtonPanel: true,
+      orientation: "bottom",
+      appendTo: ".site-aside__datepicker-container",
+      beforeShow: function (input, inst) {
+        $("#ui-datepicker-div").addClass("ui-datepicker--filters");
+        window.setTimeout(function () {
+          $("#ui-datepicker-div").position({
+            my: "top",
+            at: "bottom",
+            of: input,
+          });
+          inst.dpDiv.css({
+            left: "0",
+          });
+        }, 1);
+      },
+    });
 
   var $group = $(
     '<div class="company__info">\
@@ -854,36 +924,45 @@ function onDocumentReady() {
   </div>'
   );
 
-  $("button.js-create-company").not(".js_ignore_mark").one("click", function () {
-    $(".company__group").removeClass("hidden").append($group);
-    $(".company__header--main h2").html("GRUPĖS PAVADINIMAS");
-  });
+  $("button.js-create-company")
+    .not(".js_ignore_mark")
+    .one("click", function () {
+      $(".company__group").removeClass("hidden").append($group);
+      $(".company__header--main h2").html("GRUPĖS PAVADINIMAS");
+    });
 
-  $("input.company-name").not(".js_ignore_mark").on("input", function () {
-    if ($("input.group-name").length == 0) {
-      $(".company__header h2").html($("input.company-name").val());
-      if ($("input.company-name").val().length == 0) {
-        $(".company__header h2").html("Pavadinimas");
+  $("input.company-name")
+    .not(".js_ignore_mark")
+    .on("input", function () {
+      if ($("input.group-name").length == 0) {
+        $(".company__header h2").html($("input.company-name").val());
+        if ($("input.company-name").val().length == 0) {
+          $(".company__header h2").html("Pavadinimas");
+        }
       }
-    }
-  });
+    });
 
   var companyName = $("input[name='company']:checked").next("label").html();
   $(".company__header--company h2").html(companyName);
 
-  $("input[name='company']").not(".js_ignore_mark").on("change", function () {
-    companyName = $(this).next("label").html();
-    $(".company__header--company h2").html(companyName);
-  });
+  $("input[name='company']")
+    .not(".js_ignore_mark")
+    .on("change", function () {
+      companyName = $(this).next("label").html();
+      $(".company__header--company h2").html(companyName);
+    });
 
   var count = 1;
-  $(document).on("click", "button.js-create-company:not(.js_ignore_mark)", function () {
-    count += 1;
-    var $company = $(
-      '<div class="company__item"> \
+  $(document).on(
+    "click",
+    "button.js-create-company:not(.js_ignore_mark)",
+    function () {
+      count += 1;
+      var $company = $(
+        '<div class="company__item"> \
     <h3>' +
-        count +
-        ' Įmonė</h3> \
+          count +
+          ' Įmonė</h3> \
         <div class="company__inputs-container company__inputs-companies">\
         <div class="input-container input-container--company">\
             <input type="text" class="company-name" name="title" placeholder="Įmonės pavadinimas">\
@@ -904,49 +983,52 @@ function onDocumentReady() {
     <button class="js-create-company company__create-company"></button>\
     </div>\
 </div>'
-    );
-    $(this).closest(".company__items").append($company);
+      );
+      $(this).closest(".company__items").append($company);
 
-    $(".company__select").select2({
-      templateResult: formatOpt,
-      templateSelection: formatOpt,
-      minimumResultsForSearch: Infinity,
-      placeholder:
-        "<img src='../img/icons/clinic.svg' class='select-icons'>\
+      $(".company__select").select2({
+        templateResult: formatOpt,
+        templateSelection: formatOpt,
+        minimumResultsForSearch: Infinity,
+        placeholder:
+          "<img src='../img/icons/clinic.svg' class='select-icons'>\
         <img src='../img/icons/odontology.svg' class='select-icons'>\
         <img src='../img/icons/beauty.svg' class='select-icons'>\
         <img src='../img/icons/spa.svg' class='select-icons'>\
         <img src='../img/icons/sport.svg' class='select-icons'>\
         <img src='../img/icons/vet.svg' class='select-icons'>",
-      escapeMarkup: function (markup) {
-        return markup;
-      },
-    });
-    if ($("input.group-name").length > 0) {
-      $(document).on("input", "input.group-name", function () {
-        $(".company__header h2").html($("input.group-name").val());
-        if ($("input.group-name").val().length == 0) {
-          $(".company__header--main h2").html("GRUPĖS PAVADINIMAS");
-        }
+        escapeMarkup: function (markup) {
+          return markup;
+        },
       });
+      if ($("input.group-name").length > 0) {
+        $(document).on("input", "input.group-name", function () {
+          $(".company__header h2").html($("input.group-name").val());
+          if ($("input.group-name").val().length == 0) {
+            $(".company__header--main h2").html("GRUPĖS PAVADINIMAS");
+          }
+        });
+      }
     }
-  });
+  );
 
-  $(".company__select").not(".js_ignore_mark").select2({
-    templateResult: formatOpt,
-    templateSelection: formatOpt,
-    minimumResultsForSearch: Infinity,
-    placeholder:
-      "<img src='../img/icons/clinic.svg' class='select-icons'>\
+  $(".company__select")
+    .not(".js_ignore_mark")
+    .select2({
+      templateResult: formatOpt,
+      templateSelection: formatOpt,
+      minimumResultsForSearch: Infinity,
+      placeholder:
+        "<img src='../img/icons/clinic.svg' class='select-icons'>\
     <img src='../img/icons/odontology.svg' class='select-icons'>\
     <img src='../img/icons/beauty.svg' class='select-icons'>\
     <img src='../img/icons/spa.svg' class='select-icons'>\
     <img src='../img/icons/sport.svg' class='select-icons'>\
     <img src='../img/icons/vet.svg' class='select-icons'>",
-    escapeMarkup: function (markup) {
-      return markup;
-    },
-  });
+      escapeMarkup: function (markup) {
+        return markup;
+      },
+    });
 
   $(".company__select-city").not(".js_ignore_mark").select2({
     placeholder: "Miestas",
@@ -957,91 +1039,102 @@ function onDocumentReady() {
     minimumResultsForSearch: Infinity,
   });
 
-  $("input[type='number']").not(".js_ignore_mark").on("input", function () {
-    $(this).val(
-      $(this)
-        .val()
-        .replace(/[^\d]/g, "")
-    );
-    var maxLength = $(this).attr("length");
-    if ($(this).val().length > maxLength) {
-      this.value = this.value.slice(0, this.maxLength);
-    } else if ($(this).val().length == maxLength) {
-      if ($(this).attr("name") == "hour") {
-        $(this).siblings("input").focus().select();
+  $("input[type='number']")
+    .not(".js_ignore_mark")
+    .on("input", function () {
+      $(this).val($(this).val().replace(/[^\d]/g, ""));
+      var maxLength = $(this).attr("length");
+      if ($(this).val().length > maxLength) {
+        this.value = this.value.slice(0, this.maxLength);
+      } else if ($(this).val().length == maxLength) {
+        if ($(this).attr("name") == "hour") {
+          $(this).siblings("input").focus().select();
+        }
       }
-    }
-  });
-  $(".time-inputs input[type='number']").not(".js_ignore_mark").on("blur", function () {
-    if (this.value.length == 1) {
-      this.value = "0" + this.value;
-    }
-  });
+    });
+  $(".time-inputs input[type='number']")
+    .not(".js_ignore_mark")
+    .on("blur", function () {
+      if (this.value.length == 1) {
+        this.value = "0" + this.value;
+      }
+    });
 
-  $(".time-inputs input[name='minute']").not(".js_ignore_mark").on("click", function () {
-    if ($(this).siblings("input[name='hour']").val().length == 0) {
-      $(this).blur();
-      $(this).siblings("input[name='hour']").focus().select();
-    }
-  });
+  $(".time-inputs input[name='minute']")
+    .not(".js_ignore_mark")
+    .on("click", function () {
+      if ($(this).siblings("input[name='hour']").val().length == 0) {
+        $(this).blur();
+        $(this).siblings("input[name='hour']").focus().select();
+      }
+    });
 
   var isSortable = true;
-  $("button.switch-image").not(".js_ignore_mark").on("click", function () {
-    if (isSortable) {
-      $(this)
-        .siblings(".sortable")
-        .sortable({
-          tolerance: "pointer",
-          helper: "clone",
-          sort: function (event, ui) {
-            var $target = $(event.target);
-            if (!/html|body/i.test($target.offsetParent()[0].tagName)) {
-              var top =
-                event.pageY -
-                $target.offsetParent().offset().top -
-                ui.helper.outerHeight(true) / 2;
-              ui.helper.css({ top: top + "px" });
-            }
-          },
-        });
-      $(".sortable").disableSelection();
-      isSortable = false;
-    } else {
-      $(this).siblings(".sortable").sortable("disable");
-      isSortable = true;
-    }
-  });
+  $("button.switch-image")
+    .not(".js_ignore_mark")
+    .on("click", function () {
+      if (isSortable) {
+        $(this)
+          .siblings(".sortable")
+          .sortable({
+            tolerance: "pointer",
+            helper: "clone",
+            sort: function (event, ui) {
+              var $target = $(event.target);
+              if (!/html|body/i.test($target.offsetParent()[0].tagName)) {
+                var top =
+                  event.pageY -
+                  $target.offsetParent().offset().top -
+                  ui.helper.outerHeight(true) / 2;
+                ui.helper.css({ top: top + "px" });
+              }
+            },
+          });
+        $(".sortable").disableSelection();
+        isSortable = false;
+      } else {
+        $(this).siblings(".sortable").sortable("disable");
+        isSortable = true;
+      }
+    });
 
-  $(".company__specialist-activate").not(".js_ignore_mark").on("click", function () {
-    if ($(this).html() == "Deaktyvuoti") {
-      $(this).html("Aktyvuoti");
-      $(this).addClass("transparent");
-    } else {
-      $(this).html("Deaktyvuoti");
-      $(this).removeClass("transparent");
-    }
-  });
+  $(".company__specialist-activate")
+    .not(".js_ignore_mark")
+    .on("click", function () {
+      if ($(this).html() == "Deaktyvuoti") {
+        $(this).html("Aktyvuoti");
+        $(this).addClass("transparent");
+      } else {
+        $(this).html("Deaktyvuoti");
+        $(this).removeClass("transparent");
+      }
+    });
 
-  $(".company__services-block button").not(".js_ignore_mark").on("click", function () {
-    $(this).toggleClass("transparent");
-    // $(this).siblings("button").toggleClass("transparent");
-    if ($(this).hasClass("transparent")) {
-      $(this).html("Galima rezervuoti tik telefonu arba atvykus į vietą");
-    } else {
-      $(this).html("Galima rezervuoti online");
-    }
-  });
+  $(".company__services-block button")
+    .not(".js_ignore_mark")
+    .on("click", function () {
+      $(this).toggleClass("transparent");
+      // $(this).siblings("button").toggleClass("transparent");
+      if ($(this).hasClass("transparent")) {
+        $(this).html("Galima rezervuoti tik telefonu arba atvykus į vietą");
+      } else {
+        $(this).html("Galima rezervuoti online");
+      }
+    });
 
-  $(".more-button").not(".js_ignore_mark").on("click", function () {
-    if ($(this).html() == "Plačiau") {
-      $(this).html("Uždaryti");
-    } else {
-      $(this).html("Plačiau");
-    }
-    $(this).parent().siblings(".more-description").toggleClass("hidden");
-  });
+  $(".more-button")
+    .not(".js_ignore_mark")
+    .on("click", function () {
+      if ($(this).html() == "Plačiau") {
+        $(this).html("Uždaryti");
+      } else {
+        $(this).html("Plačiau");
+      }
+      $(this).parent().siblings(".more-description").toggleClass("hidden");
+    });
 
-  $("input[name='before-discount'], input[name='after-discount']").not(".js_ignore_mark")
+  $("input[name='before-discount'], input[name='after-discount']")
+    .not(".js_ignore_mark")
     .on("click", function () {
       var lastChar = $(this).val().substr(-1);
       if (
@@ -1067,42 +1160,48 @@ function onDocumentReady() {
       );
     });
 
-  $("input[name='after-discount'").not(".js_ignore_mark").on("input", function () {
-    if (parseInt($(this).val(), 10) > 0) {
-      $(this)
-        .siblings("input[name='before-discount']")
-        .prop("readonly", true)
-        .css({ color: "#fec288", "text-decoration": "line-through" });
-    } else {
-      $(this)
-        .siblings("input[name='before-discount']")
-        .prop("readonly", false)
-        .css({ color: "#5999b4", "text-decoration": "none" });
-    }
-    if (
-      parseInt($(this).val(), 10) >
-      parseInt($(this).siblings("input[name='before-discount']").val(), 10)
-    ) {
-      $(this).val($(this).siblings("input[name='before-discount']").val());
-    }
-    // var lastChar = $(this).val().substr(-1);
-    // if (lastChar == "€") {
-    //   $(this).prop('selectionStart', 2)
-    // }
-  });
+  $("input[name='after-discount'")
+    .not(".js_ignore_mark")
+    .on("input", function () {
+      if (parseInt($(this).val(), 10) > 0) {
+        $(this)
+          .siblings("input[name='before-discount']")
+          .prop("readonly", true)
+          .css({ color: "#fec288", "text-decoration": "line-through" });
+      } else {
+        $(this)
+          .siblings("input[name='before-discount']")
+          .prop("readonly", false)
+          .css({ color: "#5999b4", "text-decoration": "none" });
+      }
+      if (
+        parseInt($(this).val(), 10) >
+        parseInt($(this).siblings("input[name='before-discount']").val(), 10)
+      ) {
+        $(this).val($(this).siblings("input[name='before-discount']").val());
+      }
+      // var lastChar = $(this).val().substr(-1);
+      // if (lastChar == "€") {
+      //   $(this).prop('selectionStart', 2)
+      // }
+    });
 
   $(document).on("click", ".product-expand:not(.js_ignore_mark)", function () {
     $(this).toggleClass("rotate-arrow");
     $(this).siblings(".product-choice").toggleClass("hidden");
   });
 
-  $(".number-up").not(".js_ignore_mark").on("click", function () {
-    $(this).parent().siblings("input")[0].stepUp();
-  });
+  $(".number-up")
+    .not(".js_ignore_mark")
+    .on("click", function () {
+      $(this).parent().siblings("input")[0].stepUp();
+    });
 
-  $(".number-down").not(".js_ignore_mark").on("click", function () {
-    $(this).parent().siblings("input")[0].stepDown();
-  });
+  $(".number-down")
+    .not(".js_ignore_mark")
+    .on("click", function () {
+      $(this).parent().siblings("input")[0].stepDown();
+    });
 
   // $(".payment-plan th:empty").on("click", function () {
   //   var checkbox = $(this)
@@ -1119,135 +1218,150 @@ function onDocumentReady() {
     .find("td:nth-child(2)")
     .addClass("active-last");
 
-  $(".payment-plan__info td, .payment-plan__info th").not(".js_ignore_mark").on("click", function () {
-    var index = $(this).index() + 1;
-    var column = $(this)
-      .closest(".payment-plan__info")
-      .find("td:nth-child(" + index + "), th:nth-child(" + index + ")");
-    if (index > 1) {
-      $(".payment-plan__info td, .payment-plan__info th").removeClass("active");
-      $(".active-last").removeClass("active-last");
-      column.addClass("active");
-      column.last().addClass("active-last");
+  $(".payment-plan__info td, .payment-plan__info th")
+    .not(".js_ignore_mark")
+    .on("click", function () {
+      var index = $(this).index() + 1;
+      var column = $(this)
+        .closest(".payment-plan__info")
+        .find("td:nth-child(" + index + "), th:nth-child(" + index + ")");
+      if (index > 1) {
+        $(".payment-plan__info td, .payment-plan__info th").removeClass(
+          "active"
+        );
+        $(".active-last").removeClass("active-last");
+        column.addClass("active");
+        column.last().addClass("active-last");
+      }
+    });
+
+  $(".services-list__aside .radio input[name='service[]']")
+    .not(".js_ignore_mark")
+    .on("change", function () {
+      $(".services-list__blocks").removeClass("hidden");
+
+      if (window.matchMedia("(max-width: 991px)").matches) {
+        $(".services-list__blocks").insertAfter($(this).closest(".radio"));
+      }
+    });
+
+  $("input[type='number']")
+    .not(".js_ignore_mark")
+    .on("input", function () {
+      var inputValue = parseInt($(this).val());
+      var max = parseInt($(this).attr("max"));
+      var min = parseInt($(this).attr("min"));
+      if (inputValue > max) {
+        $(this).val(max);
+      } else if (inputValue < min) {
+        $(this).val(min);
+      }
+    });
+
+  $(".discount-inputs input")
+    .not(".js_ignore_mark")
+    .on("change", function () {
+      if ($(this).val().indexOf("€") <= -1 && $(this).val() != "") {
+        $(this).val($(this).val() + "€");
+      }
+    });
+
+  $("span.more-button")
+    .not(".js_ignore_mark")
+    .on("click", function () {
+      $(this).toggleClass("rotate-arr");
+
+      if ($(this).closest(".company__services-block--choices").length > 0) {
+        $(this)
+          .closest(".company__services-block--choices")
+          .find(".product-choice")
+          .removeClass("hidden");
+        $(this)
+          .closest(".company__services-block--choices")
+          .find(".product-expand")
+          .addClass("rotate-arrow");
+      }
+    });
+
+  $(document).on(
+    "click",
+    ".warning-popup-container:not(.js_ignore_mark)",
+    function (e) {
+      if (
+        !$(e.target).closest(".warning-popup").length ||
+        $(e.target).hasClass("warning-popup__close")
+      ) {
+        $(this).fadeOut(300);
+      }
     }
-  });
+  );
 
-  $(".services-list__aside .radio input[name='service[]']").not(".js_ignore_mark").on("change", function () {
-    $(".services-list__blocks").removeClass("hidden");
-
-    if (window.matchMedia("(max-width: 991px)").matches) {
-      $(".services-list__blocks").insertAfter($(this).closest(".radio"));
-    }
-  });
-
-  $("input[type='number']").not(".js_ignore_mark").on("input", function () {
-    var inputValue = parseInt($(this).val());
-    var max = parseInt($(this).attr("max"));
-    var min = parseInt($(this).attr("min"));
-    if (inputValue > max) {
-      $(this).val(max);
-    } else if (inputValue < min) {
-      $(this).val(min);
-    }
-  });
-
-  $(".discount-inputs input").not(".js_ignore_mark").on("change", function () {
-    if ($(this).val().indexOf("€") <= -1 && $(this).val() != "") {
-      $(this).val($(this).val() + "€");
-    }
-  });
-
-  $("span.more-button").not(".js_ignore_mark").on("click", function () {
-    $(this).toggleClass("rotate-arr");
-
-    if ($(this).closest(".company__services-block--choices").length > 0) {
-      $(this)
-        .closest(".company__services-block--choices")
-        .find(".product-choice")
-        .removeClass("hidden");
-      $(this)
-        .closest(".company__services-block--choices")
-        .find(".product-expand")
-        .addClass("rotate-arrow");
-    }
-  });
-
-  $(document).on("click", ".warning-popup-container:not(.js_ignore_mark)", function (e) {
-    if (
-      !$(e.target).closest(".warning-popup").length ||
-      $(e.target).hasClass("warning-popup__close")
-    ) {
-      $(this).fadeOut(300);
-    }
-  });
-
-  $(".services-list__features input[name='feature']").not(".js_ignore_mark").on("change", function () {
-    $(this)
-      .closest(".services-list__features")
-      .find("input, select")
-      .prop(
-        "disabled",
-        !$(this).closest(".services-list__features").find("input").attr("disabled")
-      );
-    if (
-      !parseInt($("input[name='before-discount']").val()) ||
-      parseInt($("input[name='before-discount']").val()) == 0
-    ) {
+  $(".services-list__features input[name='feature']")
+    .not(".js_ignore_mark")
+    .on("change", function () {
       $(this)
         .closest(".services-list__features")
-        .find("input[name='after-discount']")
-        .prop("disabled", true);
-    }
-    $(this).prop("disabled", false);
-    $(this)
-      .closest(".services-list__features")
-      .find(".time-inputs")
-      .toggleClass("disabled");
-
-    var block = $(this).closest(".company__services-block");
-    if ($(this).prop("checked")) {
-      $(".company__services-notice").after(block);
-    } else if (
-      $(this)
-        .closest(".company__services-block")
-        .hasClass("company__services-block--choices")
-    ) {
-      //if all choices are unchecked
+        .find("input, select")
+        .prop(
+          "disabled",
+          !$(this)
+            .closest(".services-list__features")
+            .find("input")
+            .attr("disabled")
+        );
       if (
-        $(this)
-          .closest(".product-choice")
-          .siblings()
-          .find("input[name='feature']:checked").length == 0
+        !parseInt($("input[name='before-discount']").val()) ||
+        parseInt($("input[name='before-discount']").val()) == 0
       ) {
-        $(".company__features input[name='feature']:checked")
+        $(this)
+          .closest(".services-list__features")
+          .find("input[name='after-discount']")
+          .prop("disabled", true);
+      }
+      $(this).prop("disabled", false);
+      $(this)
+        .closest(".services-list__features")
+        .find(".time-inputs")
+        .toggleClass("disabled");
+
+      var block = $(this).closest(".services-list__block");
+      if ($(this).prop("checked")) {
+        $(".services-list__notice").after(block);
+      } else if (block.hasClass("services-list__block--choices")) {
+        //if all choices are unchecked
+        if (
+          $(this)
+            .closest(".product-choice")
+            .siblings()
+            .find("input[name='feature']:checked").length == 0
+        ) {
+          $(".services-list__features input[name='feature']:checked")
+            .last()
+            .closest(".services-list__block")
+            .after(block);
+        }
+      } else {
+        $(".services-list__features input[name='feature']:checked")
           .last()
-          .closest(".company__services-block")
+          .closest(".services-list__block")
           .after(block);
       }
-    } else {
-      $(".company__features input[name='feature']:checked")
-        .last()
-        .closest(".company__services-block")
-        .after(block);
-    }
-  });
+    });
 
-  $(".services-list__features input[name='before-discount']").not(".js_ignore_mark").on(
-    "input",
-    function () {
+  $(".services-list__features input[name='before-discount']")
+    .not(".js_ignore_mark")
+    .on("input", function () {
       if (parseInt($(this).val()) > 0) {
         $(this)
           .siblings("input[name='after-discount']")
           .prop("disabled", false);
       }
-    }
-  );
+    });
 
-
-  $(".payment-plan__info").css("display", "none")
-  $("input[name='plan'], ~ label, .payment-plan th:empty").not(".js_ignore_mark").on(
-    "click",
-    function () {
+  $(".payment-plan__info").css("display", "none");
+  $("input[name='plan'], ~ label, .payment-plan th:empty")
+    .not(".js_ignore_mark")
+    .on("click", function () {
       var $self = $(this).closest(".payment-plan").find("input[name='plan']");
       if ($self.attr("checkstate") == "true") {
         $self.prop("checked", false);
@@ -1255,11 +1369,11 @@ function onDocumentReady() {
           $self.attr("checkstate", "false");
         });
         clearTimeout(timer_id);
-        timer_id = setTimeout(function() {
-          $self.each(function() {
-            $(this).siblings(".payment-plan__info").css({"display": "none"})
-          })
-        }, 300)
+        timer_id = setTimeout(function () {
+          $self.each(function () {
+            $(this).siblings(".payment-plan__info").css({ display: "none" });
+          });
+        }, 300);
       } else {
         $self.prop("checked", true);
         $self
@@ -1267,11 +1381,10 @@ function onDocumentReady() {
           .find("input[data-name='Mini'], input#Mini")
           .prop("checked", true);
         $self.attr("checkstate", "true");
-        $self.siblings(".payment-plan__info").css({"display": "block"})
+        $self.siblings(".payment-plan__info").css({ display: "block" });
         $("input[type='radio']:not(:checked)").attr("checkstate", "false");
       }
-    }
-  );
+    });
 
   // $(".input-container--password-eye > .input-icon").on("click", function() {
   //   $(this).toggleClass("input-icon--toggled-eye");
@@ -1290,7 +1403,8 @@ function onDocumentReady() {
     $(".company__header--company").css("width", "calc(100vw - 20px)");
   }
 
-  $("thead th").not(".js_ignore_mark")
+  $("thead th")
+    .not(".js_ignore_mark")
     .unbind("click")
     .click(function () {
       if ($(this).hasClass("top-arrow bottom-arrow")) {
@@ -1414,20 +1528,22 @@ function onDocumentReady() {
     });
   });
 
-  $(".company__login-search").not(".js_ignore_mark").each(function () {
-    var id = $(this).closest(".company__admin").attr("id");
-    $(this).autocomplete({
-      source: ["Saulė Braškinienė", "Romas Dimša", "Ramunė Varnaliauskienė"],
-      appendTo: "#" + id + " .company__login-left",
-      select: function (event, ui) {
-        event.stopPropagation();
-        $(this)
-          .closest(".company__login-left")
-          .find(".company__login-photo")
-          .css("background-image", "url('../img/1.jpg')");
-      },
+  $(".company__login-search")
+    .not(".js_ignore_mark")
+    .each(function () {
+      var id = $(this).closest(".company__admin").attr("id");
+      $(this).autocomplete({
+        source: ["Saulė Braškinienė", "Romas Dimša", "Ramunė Varnaliauskienė"],
+        appendTo: "#" + id + " .company__login-left",
+        select: function (event, ui) {
+          event.stopPropagation();
+          $(this)
+            .closest(".company__login-left")
+            .find(".company__login-photo")
+            .css("background-image", "url('../img/1.jpg')");
+        },
+      });
     });
-  });
 
   // $(".company__header--company").on("scroll", function () {
   //   // .css('top', $(window).scrollTop());
@@ -1449,42 +1565,58 @@ function onDocumentReady() {
     $(".controls__table tbody").addClass("disable-scrollbars");
   }
 
-  $(document).on("click", ".payment-plan__more:not(.js_ignore_mark)", function () {
-    $(".payment-plan__details").removeClass("toggled");
-    // $(this).closest(".payment-plan__mobile").find(".payment-plan__details").addClass("toggled");
-    // $(this).closest(".payment-plan__mobile").find(".payment-plan__details").addClass("toggled");
-    // $(this).closest(".payment-plan__mobile").siblings().find(".payment-plan__details").removeClass("toggled");
-    $(".payment-plan__more").html("Plačiau").removeClass("toggled").addClass("untoggled");
-    // $(this).html("Uždaryti").removeClass("untoggled").addClass("toggled");
-    if (
-      $(this)
-        .closest(".payment-plan__details-label")
-        .siblings(".payment-plan__details")
-        .height() > 0
-    ) {
-      $(this)
-        .closest(".payment-plan__details-label")
-        .siblings(".payment-plan__details")
-        .removeClass("toggled");
-      $(this).html("Plačiau");
-      $(this).removeClass("toggled").addClass("untoggled");
-    } else {
-      $(this)
-        .closest(".payment-plan__details-label")
-        .siblings(".payment-plan__details")
-        .addClass("toggled");
-      $(this).removeClass("untoggled").addClass("toggled");
-      $(this).html("Uždaryti");
+  $(document).on(
+    "click",
+    ".payment-plan__more:not(.js_ignore_mark)",
+    function () {
+      $(".payment-plan__details").removeClass("toggled");
+      // $(this).closest(".payment-plan__mobile").find(".payment-plan__details").addClass("toggled");
+      // $(this).closest(".payment-plan__mobile").find(".payment-plan__details").addClass("toggled");
+      // $(this).closest(".payment-plan__mobile").siblings().find(".payment-plan__details").removeClass("toggled");
+      $(".payment-plan__more")
+        .html("Plačiau")
+        .removeClass("toggled")
+        .addClass("untoggled");
+      // $(this).html("Uždaryti").removeClass("untoggled").addClass("toggled");
+      if (
+        $(this)
+          .closest(".payment-plan__details-label")
+          .siblings(".payment-plan__details")
+          .height() > 0
+      ) {
+        $(this)
+          .closest(".payment-plan__details-label")
+          .siblings(".payment-plan__details")
+          .removeClass("toggled");
+        $(this).html("Plačiau");
+        $(this).removeClass("toggled").addClass("untoggled");
+      } else {
+        $(this)
+          .closest(".payment-plan__details-label")
+          .siblings(".payment-plan__details")
+          .addClass("toggled");
+        $(this).removeClass("untoggled").addClass("toggled");
+        $(this).html("Uždaryti");
+      }
     }
-  });
+  );
 
-  $(document).on("click", ".payment-plan__details-label:not(.js_ignore_mark)", function () {
-    var otherPlans = $(this).closest(".payment-plan__mobile").siblings();
-    otherPlans.find(".payment-plan__details").removeClass("toggled");
-    otherPlans.find(".payment-plan__more").removeClass("toggled").addClass("untoggled").html("Plačiau");
-  })
+  $(document).on(
+    "click",
+    ".payment-plan__details-label:not(.js_ignore_mark)",
+    function () {
+      var otherPlans = $(this).closest(".payment-plan__mobile").siblings();
+      otherPlans.find(".payment-plan__details").removeClass("toggled");
+      otherPlans
+        .find(".payment-plan__more")
+        .removeClass("toggled")
+        .addClass("untoggled")
+        .html("Plačiau");
+    }
+  );
 
-  $(".expand-button").not(".js_ignore_mark")
+  $(".expand-button")
+    .not(".js_ignore_mark")
     // .unbind("click")
     .on("click", function () {
       // $(this)
@@ -1524,22 +1656,26 @@ function onDocumentReady() {
       $(this).toggleClass("rotate-arr");
     });
 
-  $(".controls__switch").not(".js_ignore_mark").on("click", function () {
-    $(this).toggleClass("controls__switch--active");
-    if ($(this).hasClass("controls__switch--active")) {
-      $(this).closest("tbody").next("tbody").sortable();
-    } else {
-      $(this).closest("tbody").next("tbody").sortable("disable");
-    }
-  });
+  $(".controls__switch")
+    .not(".js_ignore_mark")
+    .on("click", function () {
+      $(this).toggleClass("controls__switch--active");
+      if ($(this).hasClass("controls__switch--active")) {
+        $(this).closest("tbody").next("tbody").sortable();
+      } else {
+        $(this).closest("tbody").next("tbody").sortable("disable");
+      }
+    });
 
-  $(".search-panel").not(".js_ignore_mark").on("submit", function (e) {
-    e.preventDefault();
-  });
+  $(".search-panel")
+    .not(".js_ignore_mark")
+    .on("submit", function (e) {
+      e.preventDefault();
+    });
 
-  $(".search-container--controls .search-panel").not(".js_ignore_mark").on(
-    "keydown focusout",
-    function (e) {
+  $(".search-container--controls .search-panel")
+    .not(".js_ignore_mark")
+    .on("keydown focusout", function (e) {
       if (e.type == "keydown") {
         if (
           e.keyCode == 13 &&
@@ -1557,7 +1693,7 @@ function onDocumentReady() {
           $(".search-container__submit").addClass("change-search-icon");
           $(this).find("input").blur();
         }
-      } 
+      }
       // else if(e.type == "focusout") {
       //   if (
       //     !$(
@@ -1574,15 +1710,40 @@ function onDocumentReady() {
       //     $(this).find("input").blur();
       //   }
       // }
-    }
-  );
+    });
 
-  $("input[name='phone']").on("input", function() {
+  $("input[name='phone']").not(".js_ignore_mark").on("input", function () {
     $(this).val(
       $(this)
         .val()
         .replace(/[^\d+]/g, "")
     );
+  });
+
+  $(".controls__button--activate, .controls__button--deactivate").not(".js_ignore_mark").on("click", function() {
+    if ($(this).hasClass("controls__button--activate")) {
+      $(this).html("Deaktyvuoti");
+      $(this).addClass("controls__button--deactivate").removeClass("controls__button--activate")
+    } else {
+      $(this).html("Aktyvuoti");
+      $(this).addClass("controls__button--activate").removeClass("controls__button--deactivate")
+
+    }
+  });
+
+  $(".controls__group-btn").not(".js_ignore_mark").on("click", function() {
+    $(this).toggleClass("transparent");
+    if($(this).hasClass("controls__group-btn--city")) {
+      $(this).html("Išgrupuoti pagal miestus");
+      if(!$(this).hasClass("transparent")) {
+        $(this).html("Grupuoti pagal miestus")
+      }
+    } else if($(this).hasClass("controls__group-btn--company")) {
+      $(this).html("Išgrupuoti pagal įmonių grupes");
+      if(!$(this).hasClass("transparent")) {
+        $(this).html("Grupuoti pagal įmonių grupes")
+      }
+    }
   })
 
   moveAction();
@@ -1590,7 +1751,7 @@ function onDocumentReady() {
   changePadding();
   openTab();
   paymentLayout();
-  tableWidths($(".profiles table"));
+  // tableWidths($(".profiles table"));
 
   setTimeout(function () {
     changeTextWidth();
@@ -1680,40 +1841,46 @@ function changePadding() {
 }
 
 function moveAction() {
-  $(".product__block-info-actions").not(".js_ignore_mark").each(function () {
-    if (window.matchMedia("(max-width: 600px)").matches) {
-      var calendar = $(this)
-        .closest(".product__block-person")
-        .next(".calendar-container");
-      $(this).insertAfter(calendar);
-    } else {
-      var initial = $(this)
-        .closest(".product__block-top")
-        .find(".product__block-distance");
-      $(this).insertAfter(initial);
-    }
-  });
+  $(".product__block-info-actions")
+    .not(".js_ignore_mark")
+    .each(function () {
+      if (window.matchMedia("(max-width: 600px)").matches) {
+        var calendar = $(this)
+          .closest(".product__block-person")
+          .next(".calendar-container");
+        $(this).insertAfter(calendar);
+      } else {
+        var initial = $(this)
+          .closest(".product__block-top")
+          .find(".product__block-distance");
+        $(this).insertAfter(initial);
+      }
+    });
 }
 
 function moveOrder() {
-  $(".product-action__order").not(".js_ignore_mark").each(function () {
-    if (window.matchMedia("(max-width: 600px)").matches) {
-      var actionInfo = $(this).prev(".product-action__info");
-      $(actionInfo).append($(this));
-    } else {
-      var initial = $(this).closest(".product-action__info");
-      $(this).insertAfter(initial);
-    }
-  });
+  $(".product-action__order")
+    .not(".js_ignore_mark")
+    .each(function () {
+      if (window.matchMedia("(max-width: 600px)").matches) {
+        var actionInfo = $(this).prev(".product-action__info");
+        $(actionInfo).append($(this));
+      } else {
+        var initial = $(this).closest(".product-action__info");
+        $(this).insertAfter(initial);
+      }
+    });
 }
 
 var rotateBtn = function (el) {
   el.not(".js_ignore_mark").toggleClass("rotate");
 };
 
-$(".breadcrumbs__change").not(".js_ignore_mark").on("click", function () {
-  rotateBtn($(this));
-});
+$(".breadcrumbs__change")
+  .not(".js_ignore_mark")
+  .on("click", function () {
+    rotateBtn($(this));
+  });
 
 $(window)
   .scroll(function () {
@@ -1722,12 +1889,14 @@ $(window)
 
     var scrollDistance = $(window).scrollTop();
 
-    $("*[data-nav-section]").not(".js_ignore_mark").each(function (i) {
-      if ($(this).position().top <= scrollDistance) {
-        $(".sliding-menu li").removeClass("active");
-        $(".sliding-menu li").eq(i).addClass("active");
-      }
-    });
+    $("*[data-nav-section]")
+      .not(".js_ignore_mark")
+      .each(function (i) {
+        if ($(this).position().top <= scrollDistance) {
+          $(".sliding-menu li").removeClass("active");
+          $(".sliding-menu li").eq(i).addClass("active");
+        }
+      });
   })
   .scroll();
 
@@ -1777,18 +1946,22 @@ function hasScrolled() {
     // Scroll Down
     $(".site-header").removeClass("site-header--show");
 
-    $(".controls__table tbody").not(".js_ignore_mark").each(function () {
-      if (
-        $(this)
-          .closest(".controls__table-container-wrapper")
-          .find(".expand-button")
-          .hasClass("rotate-arr")
-      ) {
-        $(this).height("calc(100vh - 150px)");
-        $(".services__table tbody .fixed-row").parent().css("height", "auto");
-        $(".services__table tbody .fixed-row").parent().css("min-height", "0");
-      }
-    });
+    $(".controls__table tbody")
+      .not(".js_ignore_mark")
+      .each(function () {
+        if (
+          $(this)
+            .closest(".controls__table-container-wrapper")
+            .find(".expand-button")
+            .hasClass("rotate-arr")
+        ) {
+          $(this).height("calc(100vh - 150px)");
+          $(".services__table tbody .fixed-row").parent().css("height", "auto");
+          $(".services__table tbody .fixed-row")
+            .parent()
+            .css("min-height", "0");
+        }
+      });
   } else {
     // Scroll Up
     if (st + $(window).height() < $(document).height()) {
@@ -1921,7 +2094,6 @@ function tableHeight(el) {
     tablePos =
       $(".controls__table-container").offset().top + $("th").outerHeight() + 8;
 
-
     if ($clone.length > 0) {
       tablePos += $clone.height();
     }
@@ -1930,12 +2102,14 @@ function tableHeight(el) {
       tablePos += $cloneFooter.outerHeight(true);
     }
 
-    console.log($(window).innerHeight())
+    console.log($(window).innerHeight());
     $wrap.remove();
     $(this)
       .find("tbody")
-      .css("height", "calc("+ $(window).innerHeight() +"px - " + tablePos + "px)");
-     
+      .css(
+        "height",
+        "calc(" + $(window).innerHeight() + "px - " + tablePos + "px)"
+      );
   });
   if (window.matchMedia("(max-width: 600px)").matches) {
     var mainTableHeight = $(".areas__table--main tbody").outerHeight();
@@ -1953,7 +2127,9 @@ function tableHeight(el) {
 
 function changeRowWidth() {
   var $table = $(".controls__table-container table tbody");
-  var $row = $(".controls__table-container thead tr, .controls__table-container tfoot tr");
+  var $row = $(
+    ".controls__table-container thead tr, .controls__table-container tfoot tr"
+  );
   if ($table.hasScrollBar()) {
     $row.css("width", "calc(100% - 8px)");
   } else {
@@ -2034,12 +2210,7 @@ function openTab() {
 }
 
 function paymentLayout() {
-  var index,
-    column,
-    columnChecked,
-    columnDesc,
-    price,
-    headerClone;
+  var index, column, columnChecked, columnDesc, price, headerClone;
   if (!$(".payment-plan__mobile").length) {
     if (window.matchMedia("(max-width: 1050px)").matches) {
       $(".payment-plan__info table").each(function (i) {
@@ -2074,7 +2245,10 @@ function paymentLayout() {
               .wrapAll("<div class='payment-plan__mobile' />");
             $(
               "<input type='radio' name='plan-details' id=" +
-                $(this).html() + i + " data-name =" + $(this).html() +
+                $(this).html() +
+                i +
+                " data-name =" +
+                $(this).html() +
                 ">"
             ).prependTo(headerClone.closest(".payment-plan__mobile"));
             $(headerClone)
@@ -2082,7 +2256,8 @@ function paymentLayout() {
               .addBack()
               .wrapAll(
                 "<label class='payment-plan__details-label' for=" +
-                  $(this).html() + i +
+                  $(this).html() +
+                  i +
                   " />"
               );
             columnDesc
@@ -2115,20 +2290,22 @@ function paymentLayout() {
   }
 }
 
-function tableWidths($table) {
-  var indexes = [];
-  var widths = [];
-  $table.find("thead th").each(function() {
-    indexes.push($(this).index())
-    widths.push($(this).outerWidth())
-  })
-  $table.find("tbody tr, tfoot tr").each(function() {
-    $(this).find("td").each(function(i) {
-      $(this).css("width", widths[i]);
-    })
-  })
+// function tableWidths($table) {
+//   var indexes = [];
+//   var widths = [];
+//   $table.find("thead th").each(function () {
+//     indexes.push($(this).index());
+//     widths.push($(this).outerWidth());
+//   });
+//   $table.find("tbody tr, tfoot tr").each(function () {
+//     $(this)
+//       .find("td")
+//       .each(function (i) {
+//         $(this).css("width", widths[i]);
+//       });
+//   });
 
-  // if ($table.hasScrollBar()) {
-  //   $table.find("tfoot tr").css("width", "calc(100% - 8px)");
-  // }
-}
+//   // if ($table.hasScrollBar()) {
+//   //   $table.find("tfoot tr").css("width", "calc(100% - 8px)");
+//   // }
+// }

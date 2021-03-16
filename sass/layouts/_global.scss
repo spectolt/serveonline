@@ -13,6 +13,8 @@ html {
 
 html,
 body {
+  -webkit-overflow-scrolling: auto;
+  touch-action: manipulation; //prevent double-click to zoom
   margin: 0;
   padding: 0;
   background-color: white;
@@ -27,6 +29,7 @@ body {
 body {
   margin-top: 70px;
   height: calc(100% - 70px);
+  // overflow-x: hidden;
 }
 
 main.container,
@@ -141,7 +144,7 @@ footer.container {
       // }
 
       a {
-        padding: 21px 0;
+        padding: 22.5px 0;
         color: $white;
       }
 
@@ -169,7 +172,7 @@ footer.container {
           }
 
           li a {
-            padding: 7px 0;
+            padding: 9px 0;
           }
         }
       }
@@ -492,6 +495,7 @@ footer.container {
                 background-position: center;
                 background-repeat: no-repeat;
                 display: block;
+                pointer-events: none;
               }
             }
 

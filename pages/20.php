@@ -11,19 +11,20 @@ $thisPage = "company-profiles"; ?>
                     <h1 class="title">Įmonių profiliai</h1>
                     <div class="controls__top">
                         <div class="controls__group">
-                            <button class="controls__group-btn darkblue small paragraph">Grupuoti pagal miestus</button>
-                            <button class="controls__group-btn darkblue small paragraph">Grupuoti pagal įmonių grupes</button>
+                            <button class="controls__group-btn controls__group-btn--city darkblue small paragraph">Grupuoti pagal miestus</button>
+                            <button class="controls__group-btn controls__group-btn--company darkblue small paragraph">Grupuoti pagal įmonių grupes</button>
                         </div>
                         <div class="controls__buttons-container">
-                            <button class="controls__button controls__button--new darkblue small transparent paragraph">Nauja</button>
-                            <button class="controls__button controls__button--trash darkblue small transparent paragraph">Trinti</button>
                             <button class="controls__button controls__button--activate darkblue small transparent paragraph">Aktyvuoti</button>
-                            <button class="controls__button controls__button--send darkblue small transparent paragraph">Siųsti SMS</button>
+                            <button class="controls__button controls__button--send darkblue small transparent paragraph" disabled>Siųsti SMS</button>
                             <button class="controls__button controls__button--print darkblue small transparent paragraph">Spausdinti</button>
+                            <button class="controls__button controls__button--trash darkblue small transparent paragraph" disabled>Trinti</button>
+                            <button class="controls__button controls__button--new darkblue small transparent paragraph">Nauja</button>
                         </div>
                     </div>
                 </div>
                 <div class="controls__table-container-wrapper">
+                <button class="expand-button"></button>
                     <div class="controls__table-container">
                         <table class="controls__table profiles__table">
                             <thead>
@@ -93,9 +94,7 @@ $thisPage = "company-profiles"; ?>
                                         <td>+370 688 12345</td>
                                         <td>vardasilgas.pavardeilgalabai@gmail.com</td>
                                         <td>
-                                            <div class="checkbox"><input name="select_all" type="checkbox" id="A-N_<?php echo $y ?>" />
-                                                <label for="A-N_<?php echo $y ?>"></label>
-                                            </div>
+                                            <b>A</b>
                                         </td>
                                         <td class="left-arrow"></td>
                                     </tr>

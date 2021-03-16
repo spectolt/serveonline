@@ -1,5 +1,5 @@
 
-<footer class="site-footer container site-footer--homepage">
+<footer class="site-footer site-footer--homepage">
 <button class="goto-top"></button>
     <img src="../img/serve-online-horizontal-white-logo.svg" class="site-footer__logo" />
     <ul class="site-footer__menu">

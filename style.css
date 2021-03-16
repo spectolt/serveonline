@@ -573,16 +573,6 @@ input[type="submit"] {
   cursor: pointer;
 }
 
-.button:disabled,
-button:disabled,
-input[type="button"]:disabled,
-input[type="reset"]:disabled,
-input[type="submit"]:disabled {
-  background-color: #f4f4f6;
-  color: #8d92a3;
-  border: #e8e8e8;
-}
-
 .button:hover,
 button:hover,
 input[type="button"]:hover,
@@ -708,6 +698,29 @@ input[type="button"].small,
 input[type="reset"].small,
 input[type="submit"].small {
   padding: 8px 10px;
+}
+
+.button:disabled,
+button:disabled,
+input[type="button"]:disabled,
+input[type="reset"]:disabled,
+input[type="submit"]:disabled {
+  color: #8d92a3 !important;
+  border: 1px solid #8d92a3 !important;
+}
+
+.button:disabled::before, .button:disabled::after,
+button:disabled::before,
+button:disabled::after,
+input[type="button"]:disabled::before,
+input[type="button"]:disabled::after,
+input[type="reset"]:disabled::before,
+input[type="reset"]:disabled::after,
+input[type="submit"]:disabled::before,
+input[type="submit"]:disabled::after {
+  -webkit-filter: grayscale(100) !important;
+          filter: grayscale(100) !important;
+  opacity: .5 !important;
 }
 
 input[type="text"],
@@ -7234,7 +7247,7 @@ a.ui-button:active,
 }
 
 .ui-datepicker {
-  z-index: 100 !important;
+  z-index: 999 !important;
 }
 
 .ui-datepicker .ui-state-active,
@@ -7531,6 +7544,9 @@ html {
 
 html,
 body {
+  -webkit-overflow-scrolling: auto;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
   margin: 0;
   padding: 0;
   background-color: white;
@@ -7690,7 +7706,7 @@ footer.container {
 }
 
 .site-header .site-header__menu a {
-  padding: 21px 0;
+  padding: 22.5px 0;
   color: #fff;
 }
 
@@ -7726,7 +7742,7 @@ footer.container {
     margin-right: 0;
   }
   .site-header .site-header__menu--items li a {
-    padding: 7px 0;
+    padding: 9px 0;
   }
 }
 
@@ -8066,6 +8082,7 @@ footer.container {
   background-position: center;
   background-repeat: no-repeat;
   display: block;
+  pointer-events: none;
 }
 
 .site-main--aside .site-aside-container .site-aside--controls .site-aside__item .site-aside__datepicker {
@@ -8570,6 +8587,12 @@ section.login {
   margin: 60px auto 40px;
 }
 
+@media (max-width: 700px) {
+  section.login {
+    margin: 30px auto 40px;
+  }
+}
+
 section.login .login__blocks {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -8598,7 +8621,7 @@ section.login .login__block {
 @media (max-width: 800px) {
   section.login .login__block {
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
 }
 
@@ -8641,6 +8664,7 @@ section.login .login__gender {
 section.login .login__gender p {
   margin: 0 20px 0 0;
   font-weight: 600;
+  font-size: 1rem;
 }
 
 section.login .login__gender .radio {
@@ -8690,6 +8714,12 @@ section.login .login__button--submit {
   border-radius: 0 0 0 5px;
 }
 
+@media (max-width: 700px) {
+  section.login .login__button--submit {
+    padding-top: 8px;
+  }
+}
+
 section.login .login__button--fb {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -8723,6 +8753,16 @@ section.login .login__button--register {
   width: calc(100% + 40px);
   border-radius: 0 0 5px 5px;
   margin: 0 -20px;
+}
+
+section.login .login__button--half, section.login .login__button--register {
+  height: 44px;
+}
+
+@media (max-width: 700px) {
+  section.login .login__button--half, section.login .login__button--register {
+    height: 35px;
+  }
 }
 
 section.login .login__passwords {
@@ -10121,6 +10161,10 @@ section.product .product__block-recommend {
 @media (max-width: 600px) {
   .controls__top {
     margin-right: -20px;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    margin-left: -10px;
+    white-space: nowrap;
   }
 }
 
@@ -10130,6 +10174,10 @@ section.product .product__block-recommend {
         -ms-flex-pack: end;
             justify-content: flex-end;
     width: 100%;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin-left: 20px;
+    margin-right: 0px;
   }
 }
 
@@ -10682,6 +10730,11 @@ section.product .product__block-recommend {
 
 .controls .controls__button--activate::before {
   background: url("img/icons/active.svg") no-repeat center;
+  background-size: 45%;
+}
+
+.controls .controls__button--deactivate::before {
+  background: url("img/icons/deactive.svg") no-repeat center;
   background-size: 45%;
 }
 
@@ -11249,44 +11302,56 @@ section.product .product__block-recommend {
   margin-right: 10px;
 }
 
-.profiles thead th:nth-of-type(2) {
-  min-width: 80px;
+.profiles th:first-child, .profiles td:first-child {
+  width: 40px;
 }
 
-.profiles thead th:nth-of-type(3) {
-  min-width: 70px;
+.profiles th:first-child::before, .profiles td:first-child::before {
+  right: 14px;
 }
 
-.profiles thead th:nth-of-type(5) {
-  min-width: 76px;
+.profiles th:nth-of-type(2), .profiles td:nth-of-type(2) {
+  width: 83.2px;
 }
 
-.profiles thead th:nth-of-type(6) {
-  min-width: 105px;
+.profiles th:nth-of-type(3), .profiles td:nth-of-type(3) {
+  width: 70px;
 }
 
-.profiles thead th:nth-of-type(7) {
-  min-width: 144px;
+.profiles th:nth-of-type(4), .profiles td:nth-of-type(4) {
+  width: 83.2px;
 }
 
-.profiles thead th:nth-of-type(9) {
-  min-width: 96px;
+.profiles th:nth-of-type(5), .profiles td:nth-of-type(5) {
+  width: 76px;
 }
 
-.profiles thead th:nth-of-type(10) {
-  min-width: 122px;
+.profiles th:nth-of-type(6), .profiles td:nth-of-type(6) {
+  width: 105px;
 }
 
-.profiles thead th:nth-of-type(11) {
-  min-width: 112px;
+.profiles th:nth-of-type(7), .profiles td:nth-of-type(7) {
+  width: 144px;
 }
 
-.profiles thead th:nth-of-type(12) {
-  min-width: 156px;
+.profiles th:nth-of-type(9), .profiles td:nth-of-type(9) {
+  width: 96px;
 }
 
-.profiles thead th:last-of-type {
-  min-width: 36px;
+.profiles th:nth-of-type(10), .profiles td:nth-of-type(10) {
+  width: 122px;
+}
+
+.profiles th:nth-of-type(11), .profiles td:nth-of-type(11) {
+  width: 112px;
+}
+
+.profiles th:nth-of-type(12), .profiles td:nth-of-type(12) {
+  width: 156px;
+}
+
+.profiles th:last-of-type, .profiles td:last-of-type {
+  width: 36px;
 }
 
 .profiles th {
@@ -11321,6 +11386,7 @@ section.product .product__block-recommend {
   border: 1px solid #e8e8e8;
   word-break: break-all;
   vertical-align: middle;
+  padding: 0 10px;
 }
 
 .profiles tbody td .checkbox label::before {
