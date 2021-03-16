@@ -1,0 +1,97 @@
+.specialist-profile {
+  &__top {
+    display: flex;
+  }
+
+  &__info {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+
+    .input-container--name {
+      flex-basis: 60%;
+    }
+
+    .input-container--profession {
+      flex-basis: 40%;
+    }
+
+    .input-container--company {
+        flex-basis: 40%;
+    }
+
+    p {
+        flex-basis: 100%;
+    }
+  }
+
+  .company__about {
+      width: 100%;
+
+      .languages {
+          align-self: center;
+          margin-left: auto;
+          margin-right: 0;
+      }
+  }
+
+  &__photo {
+    &-img {
+      margin-bottom: 20px;
+      width: 180px;
+      height: 180px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 50%;
+      box-shadow: 0px 12px 29px 0px rgba(0, 0, 0, 0.15);
+      margin-right: 20px;
+      background-image: url(img/profile.svg);
+    }
+  }
+
+  &__gender {
+    display: flex;
+
+    p {
+      margin: 0 20px 0 0;
+      font-weight: 600;
+    }
+
+    .radio {
+      margin-right: 20px;
+
+      label {
+        padding-left: 20px;
+
+        &::before,
+        &::after {
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+
+  &__choices {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+  }
+
+  &__choice {
+      width: 40%;
+  }
+
+  & .specialist-profile__time-options {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.choice-wrapper {
+    display: flex;
+    border: 1px solid $lightgray;
+    padding: 20px;
+    border-radius: 5px;
+}

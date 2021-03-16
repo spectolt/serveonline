@@ -1,4 +1,10 @@
-<section class="company__tab hidden" id="paslaugos">
+<section class="
+<?php if ($thisPage == "specialist-profile") { 
+    echo "group__tab company__container"; 
+    } else {
+        echo "company__tab";
+        } ?>
+        hidden" id="paslaugos">
     <div class="services-list">
         <div class="services-list__aside">
             <?php $cats = array(

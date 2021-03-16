@@ -1181,26 +1181,26 @@ function onDocumentReady() {
     }
   });
 
-  $(".company__features input[name='feature']").not(".js_ignore_mark").on("change", function () {
+  $(".services-list__features input[name='feature']").not(".js_ignore_mark").on("change", function () {
     $(this)
-      .closest(".company__features")
+      .closest(".services-list__features")
       .find("input, select")
       .prop(
         "disabled",
-        !$(this).closest(".company__features").find("input").attr("disabled")
+        !$(this).closest(".services-list__features").find("input").attr("disabled")
       );
     if (
       !parseInt($("input[name='before-discount']").val()) ||
       parseInt($("input[name='before-discount']").val()) == 0
     ) {
       $(this)
-        .closest(".company__features")
+        .closest(".services-list__features")
         .find("input[name='after-discount']")
         .prop("disabled", true);
     }
     $(this).prop("disabled", false);
     $(this)
-      .closest(".company__features")
+      .closest(".services-list__features")
       .find(".time-inputs")
       .toggleClass("disabled");
 
@@ -1232,7 +1232,7 @@ function onDocumentReady() {
     }
   });
 
-  $(".company__features input[name='before-discount']").not(".js_ignore_mark").on(
+  $(".services-list__features input[name='before-discount']").not(".js_ignore_mark").on(
     "input",
     function () {
       if (parseInt($(this).val()) > 0) {
@@ -1477,6 +1477,12 @@ function onDocumentReady() {
       $(this).html("Uždaryti");
     }
   });
+
+  $(document).on("click", ".payment-plan__details-label:not(.js_ignore_mark)", function () {
+    var otherPlans = $(this).closest(".payment-plan__mobile").siblings();
+    otherPlans.find(".payment-plan__details").removeClass("toggled");
+    otherPlans.find(".payment-plan__more").removeClass("toggled").addClass("untoggled").html("Plačiau");
+  })
 
   $(".expand-button").not(".js_ignore_mark")
     // .unbind("click")
@@ -2035,7 +2041,7 @@ function paymentLayout() {
     price,
     headerClone;
   if (!$(".payment-plan__mobile").length) {
-    if (window.matchMedia("(max-width: 700px)").matches) {
+    if (window.matchMedia("(max-width: 1050px)").matches) {
       $(".payment-plan__info table").each(function (i) {
         $(this)
           .find("thead th:nth-of-type(n+2)")
@@ -2103,7 +2109,7 @@ function paymentLayout() {
         }
       });
     }
-  } else if (window.matchMedia("(min-width: 700px)").matches) {
+  } else if (window.matchMedia("(min-width: 1050px)").matches) {
     $(".payment-plan .payment-plan__info table").show();
     $(".payment-plan__mobile").remove();
   }

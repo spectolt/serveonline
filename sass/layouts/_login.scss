@@ -1,6 +1,6 @@
 section {
   &.login {
-    width: 1040px;
+    max-width: 1040px;
     margin: 60px auto 40px;
 
     .login {
@@ -8,6 +8,9 @@ section {
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
+        @include breakpoint(800px) {
+          display: block;
+        }
       }
 
       &__block {
@@ -15,6 +18,11 @@ section {
         background: #f7f6f6;
         width: 48%;
         padding: 20px 20px 0;
+
+        @include breakpoint(800px) {
+          width: 100%;
+          margin-bottom: 20px;
+        }
 
         input {
           height: 35px;
@@ -46,7 +54,7 @@ section {
       &__gender {
         display: flex;
 
-        p{
+        p {
           margin: 0 20px 0 0;
           font-weight: 600;
         }
