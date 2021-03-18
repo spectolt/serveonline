@@ -14387,7 +14387,7 @@ section.product .product__block-recommend {
   margin-right: 20px;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1050px) {
   .company__tab .company__payment .payment-plan__info {
     margin: 0;
   }
@@ -14643,24 +14643,28 @@ section.product .product__block-recommend {
   }
 }
 
-.company__tab .company__payment .payment-plan__mobile input:checked ~ .payment-plan__details-label {
+.company__tab .company__payment .payment-plan__mobile input:checked ~ .payment-plan__details-label,
+.company__tab .company__payment .payment-plan__mobile .payment-plan__details-label.active {
   border: 3px solid #101b51;
   border-bottom: none;
   -webkit-transition: border 0.3s ease-in-out;
   transition: border 0.3s ease-in-out;
 }
 
-.company__tab .company__payment .payment-plan__mobile input:checked ~ .payment-plan__details-label h2 {
+.company__tab .company__payment .payment-plan__mobile input:checked ~ .payment-plan__details-label h2,
+.company__tab .company__payment .payment-plan__mobile .payment-plan__details-label.active h2 {
   -webkit-transition: color 0.3s ease-in-out;
   transition: color 0.3s ease-in-out;
   color: #ff9954;
 }
 
-.company__tab .company__payment .payment-plan__mobile input:checked ~ .payment-plan__details-label .payment-plan__price-mobile span b {
+.company__tab .company__payment .payment-plan__mobile input:checked ~ .payment-plan__details-label .payment-plan__price-mobile span b,
+.company__tab .company__payment .payment-plan__mobile .payment-plan__details-label.active .payment-plan__price-mobile span b {
   color: #ff9954;
 }
 
-.company__tab .company__payment .payment-plan__mobile input:checked ~ .payment-plan__details-label + .payment-plan__details {
+.company__tab .company__payment .payment-plan__mobile input:checked ~ .payment-plan__details-label + .payment-plan__details,
+.company__tab .company__payment .payment-plan__mobile .payment-plan__details-label.active + .payment-plan__details {
   border: 3px solid #101b51;
   border-top: none;
 }

@@ -1226,10 +1226,7 @@ function onDocumentReady() {
         .closest(".payment-plan__info")
         .find("td:nth-child(" + index + "), th:nth-child(" + index + ")");
       if (index > 1) {
-        $(".payment-plan__info td, .payment-plan__info th").removeClass(
-          "active"
-        );
-        $(".active-last").removeClass("active-last");
+        column.siblings().removeClass("active").removeClass("active-last");
         column.addClass("active");
         column.last().addClass("active-last");
       }
@@ -1378,13 +1375,17 @@ function onDocumentReady() {
         $self.prop("checked", true);
         $self
           .siblings(".payment-plan__info")
-          .find("input[data-name='Mini'], input#Mini")
-          .prop("checked", true);
+          .find("input")
+          .prop("checked", false);
+        // $self
+          // .siblings(".payment-plan__info")
+          // .find("input[data-name='Mini'], input#Mini")
+          // .prop("checked", true);
         $self.attr("checkstate", "true");
         $self.siblings(".payment-plan__info").css({ display: "block" });
         $("input[type='radio']:not(:checked)").attr("checkstate", "false");
       }
-    });
+    });  
 
   // $(".input-container--password-eye > .input-icon").on("click", function() {
   //   $(this).toggleClass("input-icon--toggled-eye");
@@ -1756,6 +1757,12 @@ function onDocumentReady() {
   setTimeout(function () {
     changeTextWidth();
   }, 100);
+
+  
+  $("input[name='plan-details']~label").on("click", function() {
+    var otherPlans = $(this).closest(".payment-plan__mobile").siblings();
+    otherPlans.find("label").removeClass("active");
+  })
 }
 
 function hideSelected(value) {
@@ -2102,7 +2109,6 @@ function tableHeight(el) {
       tablePos += $cloneFooter.outerHeight(true);
     }
 
-    console.log($(window).innerHeight());
     $wrap.remove();
     $(this)
       .find("tbody")
@@ -2210,7 +2216,8 @@ function openTab() {
 }
 
 function paymentLayout() {
-  var index, column, columnChecked, columnDesc, price, headerClone;
+  var index, column, columnChecked, columnDesc, price, headerClone, active;
+  active = $(".payment-plan__info table td.active, .payment-plan__info table .th.active, .payment-plan__info table td.active-last");
   if (!$(".payment-plan__mobile").length) {
     if (window.matchMedia("(max-width: 1050px)").matches) {
       $(".payment-plan__info table").each(function (i) {
@@ -2225,7 +2232,6 @@ function paymentLayout() {
             columnChecked = column.closest(
               "td:not('.checked'):not('.unchecked'):not('.payment-plan__price'), .checked"
             );
-
             headerClone = $(this)
               .clone()
               .appendTo($(this).closest(".payment-plan__info"));
@@ -2266,6 +2272,11 @@ function paymentLayout() {
               .append("<span class='payment-plan__more'>Plačiau</span>");
             columnDesc.wrapAll("<div class='payment-plan__details' />");
             price.wrapAll("<div class='payment-plan__price-mobile' />");
+
+            if( active.index() > 0) {
+              $(".payment-plan__mobile input").prop("checked", false);
+              $(".payment-plan__mobile:nth-of-type("+ active.index() +") label").addClass("active");
+            }
           });
       });
 
