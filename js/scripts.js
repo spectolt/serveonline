@@ -1369,6 +1369,7 @@ function onDocumentReady() {
         timer_id = setTimeout(function () {
           $self.each(function () {
             $(this).siblings(".payment-plan__info").css({ display: "none" });
+            $(this).closest(".payment-plan").siblings().find(".payment-plan__info").css("display", "none")
           });
         }, 300);
       } else {
@@ -1383,6 +1384,7 @@ function onDocumentReady() {
           // .prop("checked", true);
         $self.attr("checkstate", "true");
         $self.siblings(".payment-plan__info").css({ display: "block" });
+        $self.closest(".payment-plan").siblings().find(".payment-plan__info").css("display", "none")
         $("input[type='radio']:not(:checked)").attr("checkstate", "false");
       }
     });  
@@ -1759,7 +1761,7 @@ function onDocumentReady() {
   }, 100);
 
   
-  $("input[name='plan-details']~label").on("click", function() {
+  $("input[name='plan-details'] ~ label").on("click", function() {
     var otherPlans = $(this).closest(".payment-plan__mobile").siblings();
     otherPlans.find("label").removeClass("active");
   })
