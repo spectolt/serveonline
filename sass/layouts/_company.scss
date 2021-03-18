@@ -1910,7 +1910,11 @@
             }
           }
 
-          input:checked ~ .payment-plan__details-label,
+          input {
+            display: none;
+          }
+
+          // input:checked ~ .payment-plan__details-label,
           .payment-plan__details-label.active {
             border: 3px solid $darkblue;
             border-bottom: none;

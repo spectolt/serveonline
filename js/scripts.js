@@ -1385,7 +1385,7 @@ function onDocumentReady() {
         $self.attr("checkstate", "true");
         $self.siblings(".payment-plan__info").css({ display: "block" });
         $self.closest(".payment-plan").siblings().find(".payment-plan__info").css("display", "none")
-        $("input[type='radio']:not(:checked)").attr("checkstate", "false");
+        $("input[name='plan']:not(:checked)").attr("checkstate", "false");
       }
     });  
 
@@ -1761,7 +1761,8 @@ function onDocumentReady() {
   }, 100);
 
   
-  $("input[name='plan-details'] ~ label").on("click", function() {
+  $(".payment-plan__mobile label").on("click", function() {
+    $(this).addClass("active");
     var otherPlans = $(this).closest(".payment-plan__mobile").siblings();
     otherPlans.find("label").removeClass("active");
   })
@@ -2252,7 +2253,7 @@ function paymentLayout() {
               .addBack()
               .wrapAll("<div class='payment-plan__mobile' />");
             $(
-              "<input type='radio' name='plan-details' id=" +
+              "<input type='radio' name='plan-details"+i+"' id=" +
                 $(this).html() +
                 i +
                 " data-name =" +
