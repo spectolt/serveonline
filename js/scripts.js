@@ -1515,38 +1515,61 @@ function onDocumentReady() {
 
     $(this).remove();
 
-    $(".company__login-search").each(function () {
-      var id = $(this).closest(".company__admin").attr("id");
-      $(this).autocomplete({
-        source: ["Saulė Braškinienė", "Romas Dimša", "Ramunė Varnaliauskienė"],
-        appendTo: "#" + id + " .company__login-left",
-        select: function (event, ui) {
-          event.stopPropagation();
-          $(this)
-            .closest(".company__login-left")
-            .find(".company__login-photo")
-            .css("background-image", "url('../img/1.jpg')");
-        },
-      });
-    });
+    // $(".company__login-search").each(function () {
+    //   var id = $(this).closest(".company__admin").attr("id");
+    //   $(this).autocomplete({
+    //     source: ["Saulė Braškinienė", "Romas Dimša", "Ramunė Varnaliauskienė"],
+    //     appendTo: "#" + id + " .company__login-left",
+    //     select: function (event, ui) {
+    //       event.stopPropagation();
+    //       $(this)
+    //         .closest(".company__login-left")
+    //         .find(".company__login-photo")
+    //         .css("background-image", "url('../img/1.jpg')");
+    //     },
+    //   });
+    // });
   });
 
-  $(".company__login-search")
-    .not(".js_ignore_mark")
-    .each(function () {
-      var id = $(this).closest(".company__admin").attr("id");
-      $(this).autocomplete({
-        source: ["Saulė Braškinienė", "Romas Dimša", "Ramunė Varnaliauskienė"],
-        appendTo: "#" + id + " .company__login-left",
-        select: function (event, ui) {
-          event.stopPropagation();
-          $(this)
-            .closest(".company__login-left")
-            .find(".company__login-photo")
-            .css("background-image", "url('../img/1.jpg')");
-        },
-      });
-    });
+  $(document).on("click", ".js-create-specialist:not('.js_ignore_mark')", function() {
+    countAdmin++;
+    countSpecialistLabel = countAdmin + 1;
+    var newSpecialist = $(".company__specialist").last().clone();
+    var rights = newSpecialist.find(".company__specialist-rights .checkbox")
+    console.log(countAdmin)
+    var specialistLabelFirst = $(".company__specialist").first().find(".company__specialist-info h5").html().split(" ");
+    rights.each(function() {
+      var labelFirst = $(".company__specialist").first().find("label").prop("for");
+      var label = $(this).find("label").prop("for");
+      countLabel = parseInt(labelFirst.split("_")[1]) + countAdmin
+      newLabel = label.split("_")[0] + "_" + countLabel + "_" + label.split("_")[2];
+      $(this).find("label").prop("for", newLabel);
+      $(this).find("input").prop("id", newLabel);
+      console.log($(this).find("input").prop("id"))
+    })
+    newSpecialist.appendTo(".company__specialists");
+    newSpecialist.find(".company__specialist-inputs input").val("");
+    newSpecialist.find(".company__specialist-search").trigger("click");
+    newSpecialist.find(".company__specialist-info h5").html(specialistLabelFirst[0] + " " + countSpecialistLabel)
+    $(this).hide();
+  })
+
+  // $(".company__login-search")
+  //   .not(".js_ignore_mark")
+  //   .each(function () {
+  //     var id = $(this).closest(".company__admin").attr("id");
+  //     $(this).autocomplete({
+  //       source: ["Saulė Braškinienė", "Romas Dimša", "Ramunė Varnaliauskienė"],
+  //       appendTo: "#" + id + " .company__login-left",
+  //       select: function (event, ui) {
+  //         event.stopPropagation();
+  //         $(this)
+  //           .closest(".company__login-left")
+  //           .find(".company__login-photo")
+  //           .css("background-image", "url('../img/1.jpg')");
+  //       },
+  //     });
+  //   });
 
   // $(".company__header--company").on("scroll", function () {
   //   // .css('top', $(window).scrollTop());
@@ -1750,11 +1773,14 @@ function onDocumentReady() {
   })
 
   //if specialist is searched, reveal rights and buttons
-  $(".company__specialist-search").on("click", function() {
+  $(document).on("click", ".company__specialist-search:not(.js_ignore_mark)", function() {
+    var specialist = $(this).closest(".company__specialist");
     if($(this).siblings("input[name='name']").val().length > 0 && $(this).siblings("input[name='phone']").val().length > 0) {
-      var specialist = $(this).closest(".company__specialist");
       specialist.find(".company__specialist-rights").removeClass("hidden");
       specialist.find(".company__specialist-buttons").removeClass("hidden");
+    } else {
+      specialist.find(".company__specialist-rights").addClass("hidden");
+      specialist.find(".company__specialist-buttons").addClass("hidden");
     }
   })
 

@@ -43,32 +43,32 @@
                 <div class="company__specialist-rights hidden">
                     <h4>Teisės</h4>
                     <div class="checkbox">
-                        <input id="rights_1" type="checkbox">
-                        <label for="rights_1">Gali matyti bendrą informaciją</label>
+                        <input id="rights_0_1" type="checkbox">
+                        <label for="rights_0_1">Gali matyti bendrą informaciją</label>
                     </div>
                     <div class="checkbox">
-                        <input id="rights_2" type="checkbox">
-                        <label for="rights_2">Gali redaguoti bendrą informaciją</label>
+                        <input id="rights_0_2" type="checkbox">
+                        <label for="rights_0_2">Gali redaguoti bendrą informaciją</label>
                     </div>
                     <div class="checkbox">
-                        <input id="rights_3" type="checkbox">
-                        <label for="rights_3">Gali matyti paslaugas</label>
+                        <input id="rights_0_3" type="checkbox">
+                        <label for="rights_0_3">Gali matyti paslaugas</label>
                     </div>
                     <div class="checkbox">
-                        <input id="rights_4" type="checkbox">
-                        <label for="rights_4">Gali redaguoti paslaugas</label>
+                        <input id="rights_0_4" type="checkbox">
+                        <label for="rights_0_4">Gali redaguoti paslaugas</label>
                     </div>
                     <div class="checkbox">
-                        <input id="rights_5" type="checkbox">
-                        <label for="rights_5">Gali matyti darbo grafiką</label>
+                        <input id="rights_0_5" type="checkbox">
+                        <label for="rights_0_5">Gali matyti darbo grafiką</label>
                     </div>
                     <div class="checkbox">
-                        <input id="rights_6" type="checkbox">
-                        <label for="rights_6">Gali redaguoti darbo grafiką</label>
+                        <input id="rights_0_6" type="checkbox">
+                        <label for="rights_0_6">Gali redaguoti darbo grafiką</label>
                     </div>
                     <div class="checkbox">
-                        <input id="rights_7" type="checkbox">
-                        <label for="rights_7">Gali matyti / redaguoti teises</label>
+                        <input id="rights_0_7" type="checkbox">
+                        <label for="rights_0_7">Gali matyti / redaguoti teises</label>
                     </div>
                 </div>
             </div>
@@ -76,7 +76,7 @@
                 <button class="button darkblue transparent small">Specialisto profilis</button>
                 <button class="button orange small company__specialist-activate">Deaktyvuoti</button>
                 <button class="company__trash"></button>
-                <button class="js-create-admin company__create-company"></button>
+                <button class="js-create-specialist company__create-company"></button>
             </div>
         </div>
     </div>

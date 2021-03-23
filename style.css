@@ -14158,6 +14158,7 @@ section.product .product__block-recommend {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-right: -20px;
+  max-height: none;
 }
 
 .company__tab .company__specialists h4 {
