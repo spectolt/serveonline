@@ -40,7 +40,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="company__specialist-rights">
+                <div class="company__specialist-rights hidden">
                     <h4>Teisės</h4>
                     <div class="checkbox">
                         <input id="rights_1" type="checkbox">
@@ -72,7 +72,7 @@
                     </div>
                 </div>
             </div>
-            <div class="company__specialist-buttons">
+            <div class="company__specialist-buttons hidden">
                 <button class="button darkblue transparent small">Specialisto profilis</button>
                 <button class="button orange small company__specialist-activate">Deaktyvuoti</button>
                 <button class="company__trash"></button>

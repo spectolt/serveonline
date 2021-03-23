@@ -1749,6 +1749,15 @@ function onDocumentReady() {
     }
   })
 
+  //if specialist is searched, reveal rights and buttons
+  $(".company__specialist-search").on("click", function() {
+    if($(this).siblings("input[name='name']").val().length > 0 && $(this).siblings("input[name='phone']").val().length > 0) {
+      var specialist = $(this).closest(".company__specialist");
+      specialist.find(".company__specialist-rights").removeClass("hidden");
+      specialist.find(".company__specialist-buttons").removeClass("hidden");
+    }
+  })
+
   moveAction();
   moveOrder();
   changePadding();
