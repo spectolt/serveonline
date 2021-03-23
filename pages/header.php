@@ -2,7 +2,7 @@
 
 <body class="<?php if ($thisCat == "company") echo "margin-small"?>">
     <div id="page">
-        <?php if ($thisCat != "company" && $thisCat != "controls") { ?>
+        <?php if ($thisCat != "company" && $thisCat != "controls" && $thisCat != "login") { ?>
             <div class="search-container">
                 <form class="search-panel">
                     <input type="text" name="search" placeholder="Specialistas, įstaiga, įmonių grupė..." />
@@ -58,7 +58,7 @@
                 <ul class="site-header__menu site-header__menu--main">
                     <li class="site-header__item site-header__item--search"><a href="#"></a></li>
                 </ul>
-            <?php } else if($thisCat == "company") { ?>
+            <?php } else if($thisCat == "company" || $thisCat == "login") { ?>
                 <ul class="site-header__menu site-header__menu--main site-header__menu--company">
                     <li class="site-header__item site-header__item--back"><a href="#">Atgal</a></li>
                 </ul>

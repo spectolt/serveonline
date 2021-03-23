@@ -29,29 +29,37 @@
                             <p>Sritis</p>
                             <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
                                 <option></option>
+                                <option>Visi</option>
                                 <option>Klinikos ir estetinė medicina</option>
                                 <option>Odontologijos klinikos</option>
                                 <option>Veterinarijos klinikos</option>
+                                <option>Grožio salonai ir kirpyklos</option>
+                                <option>SPA ir masažo salonai</option>
+                                <option>Sportas ir reabilitacija</option>
                             </select>
                             <p>Šalis</p>
                             <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
                                 <option></option>
+                                <option>Visi</option>
                                 <option>Lietuva</option>
                             </select>
                             <p>Įmonės miestas</p>
                             <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
                                 <option></option>
+                                <option>Visi</option>
                                 <option>Vilnius</option>
                             </select>
                             <p>Pažymėti/Nepažymėti</p>
                             <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
                                 <option></option>
+                                <option>Visi</option>
                                 <option>Pažymėti</option>
                                 <option>Nepažymėti</option>
                             </select>
                             <p>Aktyvūs/Neaktyvūs</p>
                             <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
                                 <option></option>
+                                <option>Visi</option>
                                 <option>Aktyvūs</option>
                                 <option>Neaktyvūs</option>
                             </select>

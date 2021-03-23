@@ -1098,9 +1098,8 @@ function onDocumentReady() {
       }
     });
 
-  $(".company__specialist-activate")
-    .not(".js_ignore_mark")
-    .on("click", function () {
+  $(document)
+    .on("click", ".company__specialist-activate:not(.js_ignore_mark)", function () {
       if ($(this).html() == "Deaktyvuoti") {
         $(this).html("Aktyvuoti");
         $(this).addClass("transparent");
@@ -1419,139 +1418,18 @@ function onDocumentReady() {
       }
     });
 
-  var companyNum;
-  var countAdmin = 0;
-
+  var countAdmin;
+  var countSpecialist = 0;
+  var countSpecialistLabel = 0;
   $(document).on("click", ".js-create-admin:not(.js_ignore_mark)", function () {
-    countAdmin += 1;
-    companyNum = $(this).closest(".company__login").index() + 1;
-    $(this)
-      .closest(".company__login")
-      .append(
-        '<div class="company__admin" id="admin' +
-          companyNum +
-          "_" +
-          countAdmin +
-          '">\
-  <div class="company__inputs-container company__inputs-container--login">\
-      <div class="company__login-left">\
-          <div class="company__login-photo"></div>\
-          <h4>Įmonės adminstratorius</h4>\
-          <div class="input-container input-container--person">\
-              <input type="text" name="person" class="company__login-search" placeholder="Ieškoti žmogaus">\
-              <span class="input-icon"></span>\
-          </div>\
-      </div>\
-      <div class="company__login-right">\
-          <h4>Teisės</h4>\
-          <div class="checkbox">\
-              <input id="rights_' +
-          companyNum +
-          "_" +
-          countAdmin +
-          '_1" type="checkbox">\
-              <label for="rights_' +
-          companyNum +
-          "_" +
-          countAdmin +
-          '_1">Gali matyti grupę</label>\
-          </div>\
-          <div class="checkbox">\
-              <input id="rights_' +
-          companyNum +
-          "_" +
-          countAdmin +
-          '_2" type="checkbox">\
-              <label for="rights_' +
-          companyNum +
-          "_" +
-          countAdmin +
-          '_2">Gali tik savo įmonę</label>\
-          </div>\
-          <div class="checkbox">\
-              <input id="rights_' +
-          companyNum +
-          "_" +
-          countAdmin +
-          '_3" type="checkbox">\
-              <label for="rights_' +
-          companyNum +
-          "_" +
-          countAdmin +
-          '_3">Gali nustatyti įmonės specialistų profilius</label>\
-          </div>\
-          <div class="checkbox">\
-              <input id="rights_' +
-          companyNum +
-          "_" +
-          countAdmin +
-          '_4" type="checkbox">\
-              <label for="rights_' +
-          companyNum +
-          "_" +
-          countAdmin +
-          '_4">Gali aktyvuoti/deaktyvuoti įmonės specialistų profilius</label>\
-          </div>\
-          <div class="checkbox">\
-              <input id="rights_' +
-          companyNum +
-          "_" +
-          countAdmin +
-          '_5" type="checkbox">\
-              <label for="rights_' +
-          companyNum +
-          "_" +
-          countAdmin +
-          '_5">Gali nustatyti įmonės specialistų darbo grafikus</label>\
-          </div>\
-      </div>\
-  </div>\
-  <div class="company__buttons">\
-      <button class="company__trash"></button>\
-      <button class="js-create-admin company__create-company"></button>\
-  </div>\
-  </div>'
-      );
-
-    $(this).remove();
-
-    // $(".company__login-search").each(function () {
-    //   var id = $(this).closest(".company__admin").attr("id");
-    //   $(this).autocomplete({
-    //     source: ["Saulė Braškinienė", "Romas Dimša", "Ramunė Varnaliauskienė"],
-    //     appendTo: "#" + id + " .company__login-left",
-    //     select: function (event, ui) {
-    //       event.stopPropagation();
-    //       $(this)
-    //         .closest(".company__login-left")
-    //         .find(".company__login-photo")
-    //         .css("background-image", "url('../img/1.jpg')");
-    //     },
-    //   });
-    // });
+    countAdmin++;
+    newSpecialist($(this), countAdmin);
   });
 
   $(document).on("click", ".js-create-specialist:not('.js_ignore_mark')", function() {
-    countAdmin++;
-    countSpecialistLabel = countAdmin + 1;
-    var newSpecialist = $(".company__specialist").last().clone();
-    var rights = newSpecialist.find(".company__specialist-rights .checkbox")
-    console.log(countAdmin)
-    var specialistLabelFirst = $(".company__specialist").first().find(".company__specialist-info h5").html().split(" ");
-    rights.each(function() {
-      var labelFirst = $(".company__specialist").first().find("label").prop("for");
-      var label = $(this).find("label").prop("for");
-      countLabel = parseInt(labelFirst.split("_")[1]) + countAdmin
-      newLabel = label.split("_")[0] + "_" + countLabel + "_" + label.split("_")[2];
-      $(this).find("label").prop("for", newLabel);
-      $(this).find("input").prop("id", newLabel);
-      console.log($(this).find("input").prop("id"))
-    })
-    newSpecialist.appendTo(".company__specialists");
-    newSpecialist.find(".company__specialist-inputs input").val("");
-    newSpecialist.find(".company__specialist-search").trigger("click");
-    newSpecialist.find(".company__specialist-info h5").html(specialistLabelFirst[0] + " " + countSpecialistLabel)
-    $(this).hide();
+    countSpecialist++;
+    countSpecialistLabel = countSpecialist + 1;
+    newSpecialist($(this), countSpecialist, countSpecialistLabel);
   })
 
   // $(".company__login-search")
@@ -1776,11 +1654,9 @@ function onDocumentReady() {
   $(document).on("click", ".company__specialist-search:not(.js_ignore_mark)", function() {
     var specialist = $(this).closest(".company__specialist");
     if($(this).siblings("input[name='name']").val().length > 0 && $(this).siblings("input[name='phone']").val().length > 0) {
-      specialist.find(".company__specialist-rights").removeClass("hidden");
-      specialist.find(".company__specialist-buttons").removeClass("hidden");
+      specialist.find(".company__specialist-rights, .company__specialist-buttons, .company__specialist-inputs h4").removeClass("hidden");
     } else {
-      specialist.find(".company__specialist-rights").addClass("hidden");
-      specialist.find(".company__specialist-buttons").addClass("hidden");
+      specialist.find(".company__specialist-rights, .company__specialist-buttons, .company__specialist-inputs h4").addClass("hidden");
     }
   })
 
@@ -2360,3 +2236,26 @@ function paymentLayout() {
 //   //   $table.find("tfoot tr").css("width", "calc(100% - 8px)");
 //   // }
 // }
+
+
+
+function newSpecialist(button, countAdmin, countSpecialistLabel) {
+  var newSpecialist = button.closest(".company__specialist").clone();
+    var rights = newSpecialist.find(".company__specialist-rights .checkbox")
+    var specialistLabelFirst = button.closest(".company__specialists").find(".company__specialist").first().find(".company__specialist-info h5").html().split(" ");
+    rights.each(function() {
+      var labelFirst = $(".company__specialist").first().find("label").prop("for");
+      var label = $(this).find("label").prop("for");
+      countLabel = parseInt(labelFirst.split("_")[1]) + countAdmin
+      newLabel = label.split("_")[0] + "_" + countLabel + "_" + label.split("_")[2];
+      $(this).find("label").prop("for", newLabel);
+      $(this).find("input").prop("id", newLabel);
+      $(this).find("input").prop("checked", false);
+    })
+    newSpecialist.appendTo(button.closest(".company__specialists"));
+    newSpecialist.find(".company__specialist-inputs input").val("");
+    newSpecialist.find(".company__specialist-search").trigger("click");
+    newSpecialist.find(".company__specialist-info .company__specialist-number").html(specialistLabelFirst[0] + " " + countSpecialistLabel);
+    newSpecialist.find(".company__specialist-buttons").removeClass("hidden");
+    button.hide();
+}

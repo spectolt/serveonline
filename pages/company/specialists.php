@@ -1,33 +1,9 @@
-<!-- <section class="company__tab hidden" id="specialistai">
-    <div class="company__info company__specialists">
-            <div class="company__specialist-card">
-                <div class="company__specialist-photo" style="background-image:url(../img/1.jpg)">
-                </div>
-                <div class="company__specialist-info">
-                    <div class="company__specialist-name">
-                        <h4>Saulė</h4>
-                        <h4>Brašiškienėnienė</h4>
-                        <p>Stilistė</p>
-                    </div>
-                    <div class="company__specialist-buttons">
-                        <button class="button darkblue transparent small">Profilis</button>
-                        <button class="button orange small company__specialist-activate">Deaktyvuoti</button>
-                    </div>
-                </div>
-            </div>
-    </div>
-    <div class="company__button-container">
-        <button class="orange transparent">Atšaukti pakeitimus</button>
-        <button class="orange">Saugoti pakeitimus</button>
-    </div>
-</section> -->
-
 <section class="company__tab hidden" id="specialistai">
     <div class="company__info company__specialists">
         <div class="company__specialist">
             <div class="company__specialist-card">
                 <div class="company__specialist-info">
-                    <h5>Specialistas 1</h5>
+                    <h5 class="company__specialist-number">Specialistas 1</h5>
                     <div class="company__specialist-search-wrapper">
                         <div class="company__specialist-photo">
                             <img src="../img/icons/person-white.svg">
@@ -35,7 +11,7 @@
                         <div class="company__specialist-inputs">
                             <input type="text" name="name" placeholder="Vardas Pavardė">
                             <input type="text" name="phone" placeholder="+370 XXXXXXXX">
-                            <h4>ID 000000000</h4>
+                            <h4 class="hidden">ID 000000000</h4>
                             <button class="company__specialist-search darkblue small">Ieškoti</button>
                         </div>
                     </div>
@@ -74,7 +50,7 @@
             </div>
             <div class="company__specialist-buttons hidden">
                 <button class="button darkblue transparent small">Specialisto profilis</button>
-                <button class="button orange small company__specialist-activate">Deaktyvuoti</button>
+                <button class="button orange small transparent company__specialist-activate">Aktyvuoti</button>
                 <button class="company__trash"></button>
                 <button class="js-create-specialist company__create-company"></button>
             </div>

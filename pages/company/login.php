@@ -1,83 +1,89 @@
 <section class="group__tab company__container hidden" id="prisijungimas">
-    <div class="company__login">
+    <div class="company__login company__specialists">
         <h3>UAB Grožio salonas 1</h3>
-        <div class="company__admin" id="admin1_0">
-            <div class="company__inputs-container company__inputs-container--login">
-                <div class="company__login-left">
-                    <div class="company__login-photo"></div>
-                    <h4>Įmonės adminstratorius</h4>
-                    <div class="input-container input-container--person">
-                        <input type="text" name="person" class="company__login-search" placeholder="Ieškoti žmogaus">
-                        <span class="input-icon"></span>
+        <div class="company__specialist">
+            <div class="company__specialist-card">
+                <div class="company__specialist-info">
+                    <h5>Įmonės administratorius</h5>
+                    <div class="company__specialist-search-wrapper">
+                        <div class="company__specialist-inputs">
+                            <input type="text" name="name" placeholder="Vardas Pavardė">
+                            <input type="text" name="phone" placeholder="+370 XXXXXXXX">
+                            <h4 class="hidden">ID 000000000</h4>
+                            <button class="company__specialist-search darkblue small">Ieškoti</button>
+                        </div>
                     </div>
                 </div>
-                <div class="company__login-right">
+                <div class="company__specialist-rights hidden">
                     <h4>Teisės</h4>
                     <div class="checkbox">
-                        <input id="rights_1_0_1" type="checkbox">
-                        <label for="rights_1_0_1">Gali matyti grupę</label>
+                        <input id="login-rights_0_1" type="checkbox">
+                        <label for="login-rights_0_1">Gali matyti grupę</label>
                     </div>
                     <div class="checkbox">
-                        <input id="rights_1_0_2" type="checkbox">
-                        <label for="rights_1_0_2">Gali tik savo įmonę</label>
+                        <input id="login-rights_0_2" type="checkbox">
+                        <label for="login-rights_0_2">Gali tik savo įmonę</label>
                     </div>
                     <div class="checkbox">
-                        <input id="rights_1_0_3" type="checkbox">
-                        <label for="rights_1_0_3">Gali nustatyti įmonės specialistų profilius</label>
+                        <input id="login-rights_0_3" type="checkbox">
+                        <label for="login-rights_0_3">Gali nustatyti įmonės specialistų profilius</label>
                     </div>
                     <div class="checkbox">
-                        <input id="rights_1_0_4" type="checkbox">
-                        <label for="rights_1_0_4">Gali aktyvuoti/deaktyvuoti įmonės specialistų profilius</label>
+                        <input id="login-rights_0_4" type="checkbox">
+                        <label for="login-rights_0_4">Gali aktyvuoti / deaktyvuoti įmonės specialistų profilius</label>
                     </div>
                     <div class="checkbox">
-                        <input id="rights_1_0_5" type="checkbox">
-                        <label for="rights_1_0_5">Gali nustatyti įmonės specialistų darbo grafikus</label>
+                        <input id="login-rights_0_5" type="checkbox">
+                        <label for="login-rights_0_5">Gali nustatyti įmonės specialistų darbo grafikus</label>
                     </div>
                 </div>
             </div>
-            <div class="company__buttons">
+            <div class="company__specialist-buttons hidden">
                 <button class="company__trash"></button>
                 <button class="js-create-admin company__create-company"></button>
             </div>
         </div>
     </div>
-    <div class="company__login">
+    <div class="company__login company__specialists">
         <h3>UAB Grožio salonas 2</h3>
-        <div class="company__admin" id="admin2_0">
-            <div class="company__inputs-container company__inputs-container--login">
-                <div class="company__login-left">
-                    <div class="company__login-photo"></div>
-                    <h4>Įmonės adminstratorius</h4>
-                    <div class="input-container input-container--person">
-                        <input type="text" name="person" class="company__login-search" placeholder="Ieškoti žmogaus">
-                        <span class="input-icon"></span>
+        <div class="company__specialist">
+            <div class="company__specialist-card">
+                <div class="company__specialist-info">
+                    <h5>Įmonės administratorius</h5>
+                    <div class="company__specialist-search-wrapper">
+                        <div class="company__specialist-inputs">
+                            <input type="text" name="name" placeholder="Vardas Pavardė">
+                            <input type="text" name="phone" placeholder="+370 XXXXXXXX">
+                            <h4 class="hidden">ID 000000000</h4>
+                            <button class="company__specialist-search darkblue small">Ieškoti</button>
+                        </div>
                     </div>
                 </div>
-                <div class="company__login-right">
+                <div class="company__specialist-rights hidden">
                     <h4>Teisės</h4>
                     <div class="checkbox">
-                        <input id="rights_2_0_1" type="checkbox">
-                        <label for="rights_2_0_1">Gali matyti grupę</label>
+                        <input id="login-rights_0_1" type="checkbox">
+                        <label for="login-rights_0_1">Gali matyti grupę</label>
                     </div>
                     <div class="checkbox">
-                        <input id="rights_2_0_2" type="checkbox">
-                        <label for="rights_2_0_2">Gali tik savo įmonę</label>
+                        <input id="login-rights_0_2" type="checkbox">
+                        <label for="login-rights_0_2">Gali tik savo įmonę</label>
                     </div>
                     <div class="checkbox">
-                        <input id="rights_2_0_3" type="checkbox">
-                        <label for="rights_2_0_3">Gali nustatyti įmonės specialistų profilius</label>
+                        <input id="login-rights_0_3" type="checkbox">
+                        <label for="login-rights_0_3">Gali nustatyti įmonės specialistų profilius</label>
                     </div>
                     <div class="checkbox">
-                        <input id="rights_2_0_4" type="checkbox">
-                        <label for="rights_2_0_4">Gali aktyvuoti/deaktyvuoti įmonės specialistų profilius</label>
+                        <input id="login-rights_0_4" type="checkbox">
+                        <label for="login-rights_0_4">Gali aktyvuoti / deaktyvuoti įmonės specialistų profilius</label>
                     </div>
                     <div class="checkbox">
-                        <input id="rights_2_0_5" type="checkbox">
-                        <label for="rights_2_0_5">Gali nustatyti įmonės specialistų darbo grafikus</label>
+                        <input id="login-rights_0_5" type="checkbox">
+                        <label for="login-rights_0_5">Gali nustatyti įmonės specialistų darbo grafikus</label>
                     </div>
                 </div>
             </div>
-            <div class="company__buttons">
+            <div class="company__specialist-buttons hidden">
                 <button class="company__trash"></button>
                 <button class="js-create-admin company__create-company"></button>
             </div>
