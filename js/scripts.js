@@ -1765,6 +1765,8 @@ function onDocumentReady() {
     $(this).addClass("active");
     var otherPlans = $(this).closest(".payment-plan__mobile").siblings();
     otherPlans.find("label").removeClass("active");
+    otherPlans.find("input").prop("checked", false);
+    otherPlans.find(".payment-plan__details").removeClass("toggled");
   })
 }
 
