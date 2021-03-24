@@ -8,26 +8,6 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
 ?>
 
 <?php require_once('header.php'); ?>
-
-<section class="breadcrumbs">
-    <div class="breadcrumbs__selected">
-        <img src="../img/icons/beauty.svg">
-    </div>
-    <button class="breadcrumbs__change paragraph">Grožio salonai ir kirpyklos</button>
-    <button class="breadcrumbs__cart"><span>2</span></button>
-</section>
-<div class="breadcrumbs__more">
-    <ul>
-        <?php for ($y = 0; $y < 6; $y++) { ?>
-            <li <?php if ($y === 2) { ?> style="display:none" <?php } ?>>
-                <div class="breadcrumbs__area-img" style="background-color: <?php echo "$colors[$y]" ?>">
-                    <img src=<?php echo "$icons[$y]" ?>>
-                </div>
-                <p><?php echo $areas[$y] ?></p>
-            </li>
-        <?php } ?>
-    </ul>
-</div>
 <main class="site-main container">
     <section class="login">
         <div class="login__blocks">
@@ -65,7 +45,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                     <div class="input-wrapper input-wrapper--half input-wrapper--marker">
                         <input type="text" name="city" placeholder="Miestas" />
                     </div>
-                    <div class="login__gender">
+                    <!-- <div class="login__gender">
                         <p>Lytis:</p>
                         <div class="radio">
                             <input name="gender" type="radio" id="gender-female" class="" />
@@ -75,14 +55,14 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                             <input name="gender" type="radio" id="gender-male" class="" />
                             <label for="gender-male">Vyras</label>
                         </div>
-                    </div>
-                    <label class="login__passwords">Slaptažodis, ne mažiau 8 simbolių.</label>
+                    </div> -->
                     <div class="input-wrapper input-wrapper--half input-wrapper--lock">
                         <input type="password" name="password" placeholder="Slaptažodis" />
                     </div>
                     <div class="input-wrapper input-wrapper--half input-wrapper--lock">
                         <input type="password" name="password2" placeholder="Pakartokite slaptažodį" />
                     </div>
+                    <label class="login__passwords">Slaptažodis, ne mažiau 8 simbolių, kuriuos sudaro: skaičiai, raidės, bent viena didžioji raidė.</label>
                     <div class="login__checkboxes">
                         <div class="checkbox">
                             <input name="privacy_policy" type="checkbox" id="privacy_policy" class="" value="1" required />
@@ -90,12 +70,13 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                         </div>
                         <div class="checkbox">
                             <input name="newsletter" type="checkbox" id="newsletter" class="" value="1" required />
-                            <label for="newsletter">Pažymėkite, jei nenorite gauti el. laiškų apie naujausius pasiūlymus bei naujienas iš Serve Online.</label>
+                            <label for="newsletter">Sutinku gauti pasiūlymus bei informaciją apie naujas paslaugas.</label>
                         </div>
                         <div class="checkbox">
                             <input name="sms" type="checkbox" id="sms" class="" value="1" required />
-                            <label for="sms">Pažymėkite, jei sutinkate, kad įstaiga, kurioje registruojatės, siųstų jums el. laiškus bei SMS apie jų paslaugas.</label>
+                            <label for="sms">Sutinku gauti priminimus apie rezervacijas.</label>
                         </div>
+                        <p>Užpildydami šią formą, sutinkate su mūsų <a href="#">Naudojimosi taisyklėmis</a>.</p>
                     </div>
                     <button class="button orange login__button login__button--register">Registruotis</button>
                 </form>

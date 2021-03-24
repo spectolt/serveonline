@@ -39,12 +39,12 @@
                 <button type="button" class="search-container__close"></button>
             </div>
         <?php } ?>
-        <header class="site-header site-header--show <?php if ($thisCat == "company") echo "site-header--company"?>">
+        <header class="site-header site-header--show <?php if ($thisCat == "company" || $thisCat == "login") echo "site-header--company"?>">
             <?php if ($thisCat != "company" && $thisCat != "login") { ?>
                 <button class="site-header__hamburger"></button>
             <?php } ?>
             <img src="../img/logo.svg" class="site-header__logo" alt="" />
-            <?php if ($thisCat != "company") { ?>
+            <?php if ($thisCat != "company" && $thisCat !="login") { ?>
                 <ul class="site-header__menu site-header__menu--items">
                     <li class="site-header__item paragraph <?php if ($thisCat == "services") echo "site-header__item--active"; ?>"><a href="#">Specialistai</a></li>
                     <li class="site-header__item paragraph"><a href="#">Įstaigos</a></li>
