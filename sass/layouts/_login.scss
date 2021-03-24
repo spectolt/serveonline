@@ -36,6 +36,12 @@ section {
         h2 {
           margin: 0 0 20px 20px;
         }
+
+        .input-wrapper--half {
+          @include breakpoint(800px) {
+            width: 100%;
+          }
+        }
       }
 
       &__form {
@@ -110,7 +116,7 @@ section {
         &--submit {
           border-radius: 0 0 0 5px;
 
-          @include breakpoint(sm){
+          @include breakpoint(sm) {
             padding-top: 8px;
           }
         }
@@ -145,10 +151,11 @@ section {
         }
       }
 
-      &__button--half,  &__button--register{
+      &__button--half,
+      &__button--register {
         height: 44px;
 
-        @include breakpoint(sm){
+        @include breakpoint(sm) {
           height: 35px;
         }
       }
