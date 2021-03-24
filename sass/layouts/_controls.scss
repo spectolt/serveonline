@@ -32,7 +32,7 @@
     margin-bottom: 20px;
     flex-wrap: wrap;
     justify-content: flex-end;
-    margin-right: -10px;
+    // margin-right: -10px;
     transition: max-height 0.3s ease-in-out, margin-top 0.3s ease-in-out;
 
     @include breakpoint(880px) {
@@ -40,28 +40,36 @@
     }
 
     @include breakpoint(sm) {
-      margin-bottom: 10px;
+      margin-bottom: 20px;
     }
 
     @include breakpoint(xs) {
-      margin-right: -20px;
-      flex-wrap: nowrap;
-      margin-left: -10px;
-      white-space: nowrap;
+      // margin-right: -20px;
+      // flex-wrap: nowrap;
+      // margin-left: -10px;
+      // white-space: nowrap;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 10px;
     }
 
     &.controls__top--services {
       @include breakpoint(520px) {
         justify-content: flex-end;
-        width: 100%;
+        width: calc(100% + 10px);
         flex-wrap: wrap;
-        margin-left: 20px;
-        margin-right: 0px;
+        // margin-left: 20px;
+        margin-right: -10px;
       }
 
       .controls__print {
+        @include breakpoint(sm) {
+          grid-column-start: 2;
+        }
+
         @include breakpoint(520px) {
-          width: 104.7px;
+          // width: 104.7px;
+          // width: calc(50% - 10px);
           justify-content: center;
 
           // &::before {
@@ -83,6 +91,7 @@
     display: flex;
     // flex-wrap: wrap;
     justify-content: flex-end;
+    width: 100%;
 
     @include breakpoint(375px) {
       flex-wrap: nowrap;
@@ -110,6 +119,12 @@
       height: 32px;
     }
 
+    @include breakpoint(xs) {
+      margin: 0;
+      max-width: none;
+      width: 100%;
+    }
+
     &:before {
       content: "";
       // width: 18px;
@@ -127,14 +142,6 @@
         // margin-right: 5px;
         width: 40px;
       }
-    }
-
-    @include breakpoint(sm) {
-      max-width: 220px;
-    }
-
-    @include breakpoint(xs) {
-      max-width: 174px;
     }
   }
 
@@ -546,6 +553,10 @@
       padding-left: 40px;
     }
 
+    @include breakpoint(xs) {
+      text-align: left;
+    }
+
     &::before {
       content: "";
       width: 50px;
@@ -828,7 +839,8 @@
     }
 
     @include breakpoint(sm) {
-      margin-left: -10px;
+      // margin-left: -10px;
+      margin-right: -10px;
     }
 
     .services__area-div {
@@ -1142,6 +1154,7 @@
 }
 
 .profiles {
+
   th,
   td {
     &:first-of-type {
@@ -1291,6 +1304,30 @@
   .pagination {
     padding-bottom: 22px;
     border-bottom: 1px solid $lightgray;
+  }
+
+  .controls__top {
+    @include breakpoint(sm) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .controls__group,
+  .controls__buttons-container {
+    @include breakpoint(sm) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 10px;
+
+      button {
+        margin: 0;
+      }
+    }
+  }
+
+  .controls__buttons-container button:last-of-type {
+    grid-column-end: -1;
   }
 }
 

@@ -11,8 +11,8 @@ $thisPage = "company-profiles"; ?>
                     <h1 class="title">Įmonių profiliai</h1>
                     <div class="controls__top">
                         <div class="controls__group">
-                            <button class="controls__group-btn controls__group-btn--city darkblue small paragraph">Grupuoti pagal miestus</button>
-                            <button class="controls__group-btn controls__group-btn--company darkblue small paragraph">Grupuoti pagal įmonių grupes</button>
+                            <button class="controls__group-btn controls__group-btn--city darkblue small paragraph">Grupuoti miestus</button>
+                            <button class="controls__group-btn controls__group-btn--company darkblue small paragraph">Grupuoti įmones</button>
                         </div>
                         <div class="controls__buttons-container">
                             <button class="controls__button controls__button--activate darkblue small transparent paragraph">Aktyvuoti</button>

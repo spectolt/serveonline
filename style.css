@@ -10145,7 +10145,6 @@ section.product .product__block-recommend {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  margin-right: -10px;
   -webkit-transition: max-height 0.3s ease-in-out, margin-top 0.3s ease-in-out;
   transition: max-height 0.3s ease-in-out, margin-top 0.3s ease-in-out;
 }
@@ -10160,17 +10159,17 @@ section.product .product__block-recommend {
 
 @media (max-width: 700px) {
   .controls__top {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
 }
 
 @media (max-width: 600px) {
   .controls__top {
-    margin-right: -20px;
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-    margin-left: -10px;
-    white-space: nowrap;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
   }
 }
 
@@ -10179,17 +10178,22 @@ section.product .product__block-recommend {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
-    width: 100%;
+    width: calc(100% + 10px);
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    margin-left: 20px;
-    margin-right: 0px;
+    margin-right: -10px;
+  }
+}
+
+@media (max-width: 700px) {
+  .controls__top.controls__top--services .controls__print {
+    -ms-grid-column: 2;
+        grid-column-start: 2;
   }
 }
 
 @media (max-width: 520px) {
   .controls__top.controls__top--services .controls__print {
-    width: 104.7px;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -10210,6 +10214,7 @@ section.product .product__block-recommend {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  width: 100%;
 }
 
 @media (max-width: 375px) {
@@ -10252,6 +10257,19 @@ section.product .product__block-recommend {
   }
 }
 
+@media (max-width: 600px) {
+  .controls button.controls__restore,
+  .controls button.controls__save,
+  .controls button.controls__print,
+  .controls button.controls__new,
+  .controls button.controls__delete,
+  .controls button.controls__cancel {
+    margin: 0;
+    max-width: none;
+    width: 100%;
+  }
+}
+
 .controls button.controls__restore:before,
 .controls button.controls__save:before,
 .controls button.controls__print:before,
@@ -10277,28 +10295,6 @@ section.product .product__block-recommend {
   .controls button.controls__delete:before,
   .controls button.controls__cancel:before {
     width: 40px;
-  }
-}
-
-@media (max-width: 700px) {
-  .controls button.controls__restore,
-  .controls button.controls__save,
-  .controls button.controls__print,
-  .controls button.controls__new,
-  .controls button.controls__delete,
-  .controls button.controls__cancel {
-    max-width: 220px;
-  }
-}
-
-@media (max-width: 600px) {
-  .controls button.controls__restore,
-  .controls button.controls__save,
-  .controls button.controls__print,
-  .controls button.controls__new,
-  .controls button.controls__delete,
-  .controls button.controls__cancel {
-    max-width: 174px;
   }
 }
 
@@ -10705,6 +10701,12 @@ section.product .product__block-recommend {
   }
 }
 
+@media (max-width: 600px) {
+  .controls .controls__button {
+    text-align: left;
+  }
+}
+
 .controls .controls__button::before {
   content: "";
   width: 50px;
@@ -11004,7 +11006,7 @@ section.product .product__block-recommend {
 
 @media (max-width: 700px) {
   .services__areas-list {
-    margin-left: -10px;
+    margin-right: -10px;
   }
 }
 
@@ -11486,6 +11488,37 @@ section.product .product__block-recommend {
 .profiles .pagination {
   padding-bottom: 22px;
   border-bottom: 1px solid #e8e8e8;
+}
+
+@media (max-width: 700px) {
+  .profiles .controls__top {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media (max-width: 700px) {
+  .profiles .controls__group,
+  .profiles .controls__buttons-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+  }
+  .profiles .controls__group button,
+  .profiles .controls__buttons-container button {
+    margin: 0;
+  }
+}
+
+.profiles .controls__buttons-container button:last-of-type {
+  grid-column-end: -1;
 }
 
 .expand-button {

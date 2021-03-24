@@ -7,8 +7,8 @@
                     <h5>Įmonės administratorius</h5>
                     <div class="company__specialist-search-wrapper">
                         <div class="company__specialist-inputs">
-                            <input type="text" name="name" placeholder="Vardas Pavardė">
-                            <input type="text" name="phone" placeholder="+370 XXXXXXXX">
+                            <input type="text" name="name" placeholder="Vardas Pavardė" autocomplete="no">
+                            <input type="text" name="phone" placeholder="+370 XXXXXXXX" autocomplete="no">
                             <h4 class="hidden">ID 000000000</h4>
                             <button class="company__specialist-search darkblue small">Ieškoti</button>
                         </div>
@@ -46,14 +46,14 @@
     </div>
     <div class="company__login company__specialists">
         <h3>UAB Grožio salonas 2</h3>
-        <div class="company__specialist">
+        <div class="company__specialist company__specialist--admin">
             <div class="company__specialist-card">
                 <div class="company__specialist-info">
                     <h5>Įmonės administratorius</h5>
                     <div class="company__specialist-search-wrapper">
                         <div class="company__specialist-inputs">
-                            <input type="text" name="name" placeholder="Vardas Pavardė">
-                            <input type="text" name="phone" placeholder="+370 XXXXXXXX">
+                            <input type="text" name="name" placeholder="Vardas Pavardė" autocomplete="no">
+                            <input type="text" name="phone" placeholder="+370 XXXXXXXX" autocomplete="no">
                             <h4 class="hidden">ID 000000000</h4>
                             <button class="company__specialist-search darkblue small">Ieškoti</button>
                         </div>

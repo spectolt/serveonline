@@ -9,8 +9,8 @@
                             <img src="../img/icons/person-white.svg">
                         </div>
                         <div class="company__specialist-inputs">
-                            <input type="search" name="name" placeholder="Vardas Pavardė" autocomplete="off">
-                            <input type="search" name="phone" placeholder="+370 XXXXXXXX" autocomplete="off">
+                            <input type="text" name="name" placeholder="Vardas Pavardė" autocomplete="no">
+                            <input type="text" name="phone" placeholder="+370 XXXXXXXX" autocomplete="no">
                             <h4 class="hidden">ID 000000000</h4>
                             <button class="company__specialist-search darkblue small">Ieškoti</button>
                         </div>
