@@ -1672,7 +1672,7 @@ function onDocumentReady() {
   }, 100);
 
   
-  $(".payment-plan__mobile label").on("click", function() {
+  $(document).on("click", ".payment-plan__mobile label:not(.js_ignore_mark)", function() {
     $(this).addClass("active");
     var otherPlans = $(this).closest(".payment-plan__mobile").siblings();
     otherPlans.find("label").removeClass("active");
@@ -2165,14 +2165,14 @@ function paymentLayout() {
               .nextAll(columnDesc)
               .addBack()
               .wrapAll("<div class='payment-plan__mobile' />");
-            $(
-              "<input type='radio' name='plan-details"+i+"' id=" +
-                $(this).html() +
-                i +
-                " data-name =" +
-                $(this).html() +
-                ">"
-            ).prependTo(headerClone.closest(".payment-plan__mobile"));
+            // $(
+            //   "<input type='radio' name='plan-details"+i+"' id=" +
+            //     $(this).html() +
+            //     i +
+            //     " data-name =" +
+            //     $(this).html() +
+            //     ">"
+            // ).prependTo(headerClone.closest(".payment-plan__mobile"));
             $(headerClone)
               .nextUntil(columnDesc)
               .addBack()
