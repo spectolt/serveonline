@@ -1654,9 +1654,9 @@ function onDocumentReady() {
   $(document).on("click", ".company__specialist-search:not(.js_ignore_mark)", function() {
     var specialist = $(this).closest(".company__specialist");
     if($(this).siblings("input[name='name']").val().length > 0 && $(this).siblings("input[name='phone']").val().length > 0) {
-      specialist.find(".company__specialist-rights, .company__specialist-buttons, .company__specialist-inputs h4").removeClass("hidden");
+      specialist.find(".company__specialist-rights, .company__specialist-buttons, .company__specialist-inputs h4, .company__specialist-title").removeClass("hidden");
     } else {
-      specialist.find(".company__specialist-rights, .company__specialist-buttons, .company__specialist-inputs h4").addClass("hidden");
+      specialist.find(".company__specialist-rights, .company__specialist-buttons, .company__specialist-inputs h4, .company__specialist-title").addClass("hidden");
     }
   })
 

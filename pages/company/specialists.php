@@ -3,7 +3,7 @@
         <div class="company__specialist">
             <div class="company__specialist-card">
                 <div class="company__specialist-info">
-                    <h5 class="company__specialist-number">Specialistas 1</h5>
+                    <h5 class="company__specialist-number">Specialistas 1 <span class="company__specialist-title hidden">(<b>Venerodermatologė</b>)</span></h5>
                     <div class="company__specialist-search-wrapper">
                         <div class="company__specialist-photo">
                             <img src="../img/icons/person-white.svg">
@@ -11,7 +11,7 @@
                         <div class="company__specialist-inputs">
                             <input type="text" name="name" placeholder="Vardas Pavardė" autocomplete="no">
                             <input type="text" name="phone" placeholder="+370 XXXXXXXX" autocomplete="no">
-                            <h4 class="hidden">ID 000000000</h4>
+                            <h4 class="hidden"><b>ID 000000000</b></h4>
                             <button class="company__specialist-search darkblue small">Ieškoti</button>
                         </div>
                     </div>

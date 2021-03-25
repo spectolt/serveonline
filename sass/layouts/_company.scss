@@ -1982,6 +1982,7 @@
     h4 {
       font-size: 1.125rem;
       margin: 0;
+      font-weight: 400;
 
       @include breakpoint(sm) {
         font-size: 0.875rem;
@@ -2015,10 +2016,11 @@
         justify-content: space-between;
         height: 280px;
 
-        @include breakpoint(sm) {
+        @include breakpoint(880px) {
           width: 100%;
-          display: flex;
+          flex-direction: column;
           padding: 10px;
+          height: auto;
         }
 
         h5 {
@@ -2026,6 +2028,7 @@
           flex-basis: 100%;
           margin: 0 0 20px;
           font-size: 1.25rem;
+          font-weight: 400;
         }
       }
 

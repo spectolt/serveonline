@@ -14764,6 +14764,7 @@ section.product .product__block-recommend {
 .company .company__specialists h4 {
   font-size: 1.125rem;
   margin: 0;
+  font-weight: 400;
 }
 
 @media (max-width: 700px) {
@@ -14806,13 +14807,15 @@ section.product .product__block-recommend {
   height: 280px;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 880px) {
   .company .company__specialists .company__specialist-card {
     width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     padding: 10px;
+    height: auto;
   }
 }
 
@@ -14822,6 +14825,7 @@ section.product .product__block-recommend {
       flex-basis: 100%;
   margin: 0 0 20px;
   font-size: 1.25rem;
+  font-weight: 400;
 }
 
 .company .company__specialists .company__specialist-search-wrapper {
