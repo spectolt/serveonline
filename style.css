@@ -705,8 +705,8 @@ button:disabled,
 input[type="button"]:disabled,
 input[type="reset"]:disabled,
 input[type="submit"]:disabled {
-  color: #8d92a3 !important;
-  border: 1px solid #8d92a3 !important;
+  color: #d9d9d9 !important;
+  border: 1px solid #d9d9d9 !important;
 }
 
 .button:disabled::before, .button:disabled::after,
@@ -720,7 +720,7 @@ input[type="submit"]:disabled::before,
 input[type="submit"]:disabled::after {
   -webkit-filter: grayscale(100) !important;
           filter: grayscale(100) !important;
-  opacity: .5 !important;
+  opacity: .2 !important;
 }
 
 input[type="text"],
@@ -947,6 +947,12 @@ textarea {
   background-image: url("img/icons/briefcase.svg");
   width: 23px;
   height: 22px;
+}
+
+.input-wrapper.input-wrapper--city::before {
+  background-image: url("img/icons/city.svg");
+  width: 24px;
+  height: 24px;
 }
 
 .checkbox {
@@ -10691,7 +10697,7 @@ section.product .product__block-recommend {
 }
 
 .controls .controls__button {
-  padding-left: 50px;
+  padding-left: 40px;
   position: relative;
 }
 
@@ -10709,12 +10715,12 @@ section.product .product__block-recommend {
 
 .controls .controls__button::before {
   content: "";
-  width: 50px;
+  width: 40px;
   height: 100%;
   display: block;
   position: absolute;
   left: 0;
-  top: 0;
+  top: 1px;
 }
 
 @media (max-width: 700px) {
@@ -10725,32 +10731,32 @@ section.product .product__block-recommend {
 
 .controls .controls__button--trash::before {
   background: url("img/icons/trash.svg") no-repeat center;
-  background-size: 40%;
+  background-size: 50%;
 }
 
 .controls .controls__button--new::before {
   background: url("img/icons/new-company-group.svg") no-repeat center;
-  background-size: 60%;
+  background-size: 70%;
 }
 
 .controls .controls__button--activate::before {
   background: url("img/icons/active.svg") no-repeat center;
-  background-size: 45%;
+  background-size: 55%;
 }
 
 .controls .controls__button--deactivate::before {
   background: url("img/icons/deactive.svg") no-repeat center;
-  background-size: 45%;
+  background-size: 55%;
 }
 
 .controls .controls__button--send::before {
   background: url("img/icons/message.svg") no-repeat center;
-  background-size: 40%;
+  background-size: 48%;
 }
 
 .controls .controls__button--print::before {
   background: url("img/icons/printer.svg") no-repeat center;
-  background-size: 40%;
+  background-size: 47%;
 }
 
 .areas__table {
@@ -11312,8 +11318,9 @@ section.product .product__block-recommend {
   width: 40px;
 }
 
-.profiles th:first-of-type::before,
-.profiles td:first-of-type::before {
+.profiles th:first-of-type::before, .profiles th:first-of-type::after,
+.profiles td:first-of-type::before,
+.profiles td:first-of-type::after {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -11367,11 +11374,13 @@ section.product .product__block-recommend {
 .profiles th:nth-of-type(11),
 .profiles td:nth-of-type(11) {
   width: 176px;
+  word-break: break-all;
 }
 
 .profiles th:nth-of-type(12),
 .profiles td:nth-of-type(12) {
   width: 74px;
+  word-break: break-all;
 }
 
 .profiles th:nth-of-type(13),
@@ -11384,8 +11393,9 @@ section.product .product__block-recommend {
   width: 40px;
 }
 
-.profiles th:last-of-type::before,
-.profiles td:last-of-type::before {
+.profiles th:last-of-type::before, .profiles th:last-of-type::after,
+.profiles td:last-of-type::before,
+.profiles td:last-of-type::after {
   right: 8px;
 }
 
@@ -11398,19 +11408,21 @@ section.product .product__block-recommend {
   height: 54px;
 }
 
+.profiles th::after {
+  bottom: 8px !important;
+}
+
 .profiles th label::before {
   background-color: rgba(255, 255, 255, 0.49);
 }
 
 .profiles th .checkbox label:before {
   position: absolute;
-  top: 10px;
   left: 7px;
   border-radius: 5px;
 }
 
 .profiles th .checkbox label:after {
-  top: 14px;
   left: 10px;
 }
 
@@ -11420,7 +11432,6 @@ section.product .product__block-recommend {
 
 .profiles tbody td {
   border: 1px solid #e8e8e8;
-  word-break: break-all;
   vertical-align: middle;
   padding: 0 8px;
   font-size: .75rem;
@@ -11443,6 +11454,14 @@ section.product .product__block-recommend {
 
 .profiles tfoot td {
   font-size: 0.875rem;
+}
+
+.profiles tfoot td:first-of-type {
+  border-bottom-left-radius: 5px;
+}
+
+.profiles tfoot td:last-of-type {
+  border-bottom-right-radius: 5px;
 }
 
 .profiles .controls__group {
@@ -11481,8 +11500,18 @@ section.product .product__block-recommend {
   }
 }
 
+.profiles .controls__buttons-container {
+  margin-right: 10px;
+}
+
 .profiles .controls__buttons-container button {
   height: 35px;
+}
+
+@media (max-width: 700px) {
+  .profiles .controls__buttons-container button {
+    height: 32px;
+  }
 }
 
 .profiles .pagination {

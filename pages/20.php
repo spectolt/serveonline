@@ -15,9 +15,9 @@ $thisPage = "company-profiles"; ?>
                             <button class="controls__group-btn controls__group-btn--company darkblue small paragraph">Grupuoti įmones</button>
                         </div>
                         <div class="controls__buttons-container">
-                            <button class="controls__button controls__button--activate darkblue small transparent paragraph">Aktyvuoti</button>
+                            <button class="controls__button controls__button--activate darkblue small transparent paragraph" disabled>Aktyvuoti</button>
                             <button class="controls__button controls__button--send darkblue small transparent paragraph" disabled>Siųsti SMS</button>
-                            <button class="controls__button controls__button--print darkblue small transparent paragraph">Spausdinti</button>
+                            <button class="controls__button controls__button--print darkblue small transparent paragraph" disabled>Spausdinti</button>
                             <button class="controls__button controls__button--trash darkblue small transparent paragraph" disabled>Trinti</button>
                             <button class="controls__button controls__button--new darkblue small transparent paragraph">Nauja</button>
                         </div>

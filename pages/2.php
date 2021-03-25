@@ -42,7 +42,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                     <div class="input-wrapper input-wrapper--half input-wrapper--phone">
                         <input type="tel" name="phone" placeholder="+370 XXXXXXXX" />
                     </div>
-                    <div class="input-wrapper input-wrapper--half input-wrapper--marker">
+                    <div class="input-wrapper input-wrapper--half input-wrapper--city">
                         <input type="text" name="city" placeholder="Miestas" />
                     </div>
                     <!-- <div class="login__gender">

@@ -166,6 +166,14 @@ textarea {
         height: 22px;
       }
     }
+
+    &--city {
+      &::before {
+        background-image: url("img/icons/city.svg");
+        width: 24px;
+        height: 24px;
+      }
+    }
   }
 }
 
