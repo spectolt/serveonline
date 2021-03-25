@@ -2181,6 +2181,10 @@
 
         .company__specialist-card {
           height: 220px;
+
+          @include breakpoint(880px) {
+            height: auto;
+          }
         }
 
         .company__specialist-inputs{

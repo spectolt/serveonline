@@ -15024,6 +15024,12 @@ section.product .product__block-recommend {
   height: 220px;
 }
 
+@media (max-width: 880px) {
+  .company .company__specialists .company__specialist--admin .company__specialist-card {
+    height: auto;
+  }
+}
+
 .company .company__specialists .company__specialist--admin .company__specialist-inputs {
   margin-bottom: 0px;
   display: block;
