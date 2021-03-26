@@ -83,7 +83,7 @@ $thisPage = "company-profiles"; ?>
                                             </div>
                                         </td>
                                         <td><b>A</b></td>
-                                        <td><span>2020-05-01</span> <span>12:35</span></td>
+                                        <td><span>2020-05-01</span><br/><span>12:35</span></td>
                                         <td>GRUPĖ 1</td>
                                         <td>Grožio salonai ir kirpyklos</td>
                                         <td>Grožio meistrai</td>

@@ -10166,11 +10166,6 @@ section.product .product__block-recommend {
 @media (max-width: 700px) {
   .controls__top {
     margin-bottom: 20px;
-  }
-}
-
-@media (max-width: 600px) {
-  .controls__top {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: (1fr)[2];
@@ -11329,11 +11324,13 @@ section.product .product__block-recommend {
 .profiles th:nth-of-type(2),
 .profiles td:nth-of-type(2) {
   width: 40px;
+  text-align: center;
 }
 
 .profiles th:nth-of-type(3),
 .profiles td:nth-of-type(3) {
   width: 106px;
+  text-align: center;
 }
 
 .profiles th:nth-of-type(4),
@@ -11354,6 +11351,7 @@ section.product .product__block-recommend {
 .profiles th:nth-of-type(7),
 .profiles td:nth-of-type(7) {
   width: 76px;
+  text-align: center;
 }
 
 .profiles th:nth-of-type(8),
@@ -11424,6 +11422,10 @@ section.product .product__block-recommend {
 
 .profiles th .checkbox label:after {
   left: 10px;
+}
+
+.profiles tbody {
+  overflow-y: scroll;
 }
 
 .profiles tbody tr:nth-of-type(2n) {
@@ -11504,6 +11506,12 @@ section.product .product__block-recommend {
   margin-right: 10px;
 }
 
+@media (max-width: 700px) {
+  .profiles .controls__buttons-container {
+    margin-right: 0;
+  }
+}
+
 .profiles .controls__buttons-container button {
   height: 35px;
 }
@@ -11521,13 +11529,9 @@ section.product .product__block-recommend {
 
 @media (max-width: 700px) {
   .profiles .controls__top {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    grid-gap: 10px;
   }
 }
 

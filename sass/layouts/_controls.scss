@@ -41,6 +41,9 @@
 
     @include breakpoint(sm) {
       margin-bottom: 20px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 10px;
     }
 
     @include breakpoint(xs) {
@@ -48,9 +51,6 @@
       // flex-wrap: nowrap;
       // margin-left: -10px;
       // white-space: nowrap;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-gap: 10px;
     }
 
     &.controls__top--services {
@@ -1166,9 +1166,11 @@
     }
     &:nth-of-type(2) {
       width: 40px;
+      text-align: center;
     }
     &:nth-of-type(3) {
       width: 106px;
+      text-align: center;
     }
     &:nth-of-type(4) {
       width: 96px;
@@ -1181,6 +1183,7 @@
     }
     &:nth-of-type(7) {
       width: 76px;
+      text-align: center;
     }
     &:nth-of-type(8) {
       width: 68px;
@@ -1239,6 +1242,8 @@
   }
 
   tbody {
+    overflow-y: scroll;
+    
     tr:nth-of-type(2n) {
       background-color: $darkgray;
     }
@@ -1308,6 +1313,11 @@
 
   .controls__buttons-container {
     margin-right: 10px;
+
+    @include breakpoint(sm) {
+      margin-right: 0;
+    }
+
     button {
       height: 35px;
 
@@ -1323,8 +1333,8 @@
 
   .controls__top {
     @include breakpoint(sm) {
-      display: flex;
-      flex-direction: column;
+      grid-template-columns: 1fr;
+      grid-gap: 10px;
     }
   }
 

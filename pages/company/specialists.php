@@ -49,7 +49,7 @@
                 </div>
             </div>
             <div class="company__specialist-buttons hidden">
-                <button class="button darkblue transparent small">Specialisto profilis</button>
+                <button class="button darkblue transparent small">Profilis</button>
                 <button class="button orange small transparent company__specialist-activate">Aktyvuoti</button>
                 <button class="company__trash"></button>
                 <button class="js-create-specialist company__create-company"></button>
