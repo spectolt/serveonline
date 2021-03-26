@@ -8614,6 +8614,7 @@ section.login .login__blocks {
 @media (max-width: 800px) {
   section.login .login__blocks {
     display: block;
+    margin-top: 90px;
   }
 }
 
@@ -8622,12 +8623,14 @@ section.login .login__block {
   background: #f7f6f6;
   width: 48%;
   padding: 20px 20px 0;
+  margin-top: 60px;
 }
 
 @media (max-width: 800px) {
   section.login .login__block {
     width: 100%;
     margin-bottom: 30px;
+    margin-top: 0px;
   }
 }
 
@@ -8644,6 +8647,14 @@ section.login .login__block h2 {
   section.login .login__block .input-wrapper--half {
     width: 100%;
   }
+}
+
+section.login .login__block .input-wrapper--lock {
+  margin-bottom: 12px;
+}
+
+section.login .login__block .input-wrapper--eye {
+  margin-bottom: 20px;
 }
 
 section.login .login__form {
@@ -8697,12 +8708,22 @@ section.login .login__checkboxes {
   margin: 25px 0 40px 0;
 }
 
+section.login .login__checkboxes p {
+  margin-top: 40px;
+  margin-left: 30px;
+  font-size: 0.875rem;
+}
+
 section.login .login__checkboxes .checkbox {
   margin-bottom: 20px;
 }
 
 section.login .login__checkboxes .checkbox:last-child {
   margin-bottom: 0;
+}
+
+section.login .login__checkboxes .checkbox label {
+  font-size: 0.875rem;
 }
 
 section.login .login__checkboxes a {
@@ -8779,7 +8800,9 @@ section.login .login__button--half, section.login .login__button--register {
 
 section.login .login__passwords {
   width: 100%;
-  margin: 25px 0 10px 0;
+  margin: 25px 0 40px 0;
+  margin-top: 0px;
+  font-family: 'Sen', regular;
 }
 
 section.breadcrumbs {
