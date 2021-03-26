@@ -1167,6 +1167,11 @@
     &:nth-of-type(2) {
       width: 40px;
       text-align: center;
+
+      &::before, &::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
     }
     &:nth-of-type(3) {
       width: 106px;
@@ -1243,7 +1248,7 @@
 
   tbody {
     overflow-y: scroll;
-    
+
     tr:nth-of-type(2n) {
       background-color: $darkgray;
     }

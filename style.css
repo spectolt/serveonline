@@ -11350,6 +11350,14 @@ section.product .product__block-recommend {
   text-align: center;
 }
 
+.profiles th:nth-of-type(2)::before, .profiles th:nth-of-type(2)::after,
+.profiles td:nth-of-type(2)::before,
+.profiles td:nth-of-type(2)::after {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
 .profiles th:nth-of-type(3),
 .profiles td:nth-of-type(3) {
   width: 106px;
