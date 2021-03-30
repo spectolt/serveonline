@@ -115,7 +115,11 @@ textarea {
         background-image: url("img/icons/envelope.svg");
         width: 27px;
         height: 19px;
-        left: 15px;
+        left: 13px;
+
+        @include breakpoint(sm) {
+          left: 8px;
+        }
       }
     }
 
@@ -124,6 +128,11 @@ textarea {
         background-image: url("img/icons/eye.svg");
         width: 18px;
         height: 13px;
+        left: 17px;
+
+        @include breakpoint(sm) {
+          left: 11px;
+        }
       }
     }
 
@@ -132,6 +141,10 @@ textarea {
         background-image: url("img/icons/user.svg");
         width: 20px;
         height: 22px;
+        left: 16px;
+        @include breakpoint(sm) {
+          left: 11px;
+        }
       }
     }
 
@@ -139,7 +152,11 @@ textarea {
       &:before {
         background-image: url("img/icons/phone.svg");
         width: 13px;
-        height: 21px;
+        height: 22px;
+            left: 19px;
+            @include breakpoint(sm){
+              left: 14px;
+            }
       }
     }
 
@@ -148,6 +165,10 @@ textarea {
         background-image: url("img/icons/lock.svg");
         width: 15px;
         height: 21px;
+        left: 18px;
+            @include breakpoint(sm){
+              left: 12px;
+            }
       }
     }
 
@@ -172,6 +193,10 @@ textarea {
         background-image: url("img/icons/city.svg");
         width: 24px;
         height: 24px;
+        left: 19px;
+            @include breakpoint(sm){
+              left: 9px;
+            }
       }
     }
   }

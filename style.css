@@ -910,31 +910,65 @@ textarea {
   background-image: url("img/icons/envelope.svg");
   width: 27px;
   height: 19px;
-  left: 15px;
+  left: 13px;
+}
+
+@media (max-width: 700px) {
+  .input-wrapper.input-wrapper--envelope:before {
+    left: 8px;
+  }
 }
 
 .input-wrapper.input-wrapper--eye:before {
   background-image: url("img/icons/eye.svg");
   width: 18px;
   height: 13px;
+  left: 17px;
+}
+
+@media (max-width: 700px) {
+  .input-wrapper.input-wrapper--eye:before {
+    left: 11px;
+  }
 }
 
 .input-wrapper.input-wrapper--user:before {
   background-image: url("img/icons/user.svg");
   width: 20px;
   height: 22px;
+  left: 16px;
+}
+
+@media (max-width: 700px) {
+  .input-wrapper.input-wrapper--user:before {
+    left: 11px;
+  }
 }
 
 .input-wrapper.input-wrapper--phone:before {
   background-image: url("img/icons/phone.svg");
   width: 13px;
-  height: 21px;
+  height: 22px;
+  left: 19px;
+}
+
+@media (max-width: 700px) {
+  .input-wrapper.input-wrapper--phone:before {
+    left: 14px;
+  }
 }
 
 .input-wrapper.input-wrapper--lock:before {
   background-image: url("img/icons/lock.svg");
   width: 15px;
   height: 21px;
+  left: 18px;
+}
+
+@media (max-width: 700px) {
+  .input-wrapper.input-wrapper--lock:before {
+    left: 12px;
+  }
 }
 
 .input-wrapper.input-wrapper--marker:before {
@@ -953,6 +987,13 @@ textarea {
   background-image: url("img/icons/city.svg");
   width: 24px;
   height: 24px;
+  left: 19px;
+}
+
+@media (max-width: 700px) {
+  .input-wrapper.input-wrapper--city::before {
+    left: 9px;
+  }
 }
 
 .checkbox {
@@ -8589,13 +8630,12 @@ footer.container {
 }
 
 section.login {
-  max-width: 1040px;
   margin: 60px auto 40px;
 }
 
 @media (max-width: 700px) {
   section.login {
-    margin: 30px auto 40px;
+    margin: 30px auto 30px;
   }
 }
 
@@ -8621,9 +8661,9 @@ section.login .login__blocks {
 section.login .login__block {
   border-radius: 5px;
   background: #f7f6f6;
-  width: 48%;
+  width: 43.2%;
   padding: 20px 20px 0;
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 @media (max-width: 800px) {
@@ -8637,6 +8677,13 @@ section.login .login__block {
 section.login .login__block input {
   height: 35px;
   padding-left: 50px;
+}
+
+@media (max-width: 700px) {
+  section.login .login__block input {
+    height: 32px;
+    padding-left: 40px;
+  }
 }
 
 section.login .login__block h2 {
@@ -8705,13 +8752,26 @@ section.login .login__gender .radio label::before, section.login .login__gender 
 }
 
 section.login .login__checkboxes {
-  margin: 25px 0 40px 0;
+  margin: 0 0 40px 0;
+}
+
+@media (max-width: 700px) {
+  section.login .login__checkboxes {
+    margin-bottom: 30px;
+  }
 }
 
 section.login .login__checkboxes p {
   margin-top: 40px;
   margin-left: 30px;
   font-size: 0.875rem;
+  margin-bottom: 0;
+}
+
+@media (max-width: 700px) {
+  section.login .login__checkboxes p {
+    margin-top: 30px;
+  }
 }
 
 section.login .login__checkboxes .checkbox {
@@ -8803,6 +8863,12 @@ section.login .login__passwords {
   margin: 25px 0 40px 0;
   margin-top: 0px;
   font-family: 'Sen', regular;
+}
+
+@media (max-width: 700px) {
+  section.login .login__passwords {
+    margin-bottom: 30px;
+  }
 }
 
 section.breadcrumbs {
@@ -10393,14 +10459,6 @@ section.product .product__block-recommend {
   border-radius: 5px;
 }
 
-.controls__table-container::-webkit-scrollbar {
-  height: 8px;
-}
-
-.controls__table-container::-webkit-scrollbar-thumb {
-  border-width: 2px;
-}
-
 @media (max-width: 1180px) {
   .controls__table-container {
     width: calc(100vw - min(40px, 2.8vw) - min(40px, 2.8vw));
@@ -10416,6 +10474,20 @@ section.product .product__block-recommend {
 .controls__table-container.rotate-arr:after {
   -webkit-transform: translate(-50%, -50%) rotate(0);
           transform: translate(-50%, -50%) rotate(0);
+}
+
+.controls__table-container::-webkit-scrollbar {
+  height: 8px;
+  border-radius: 5px;
+}
+
+.controls__table-container::-webkit-scrollbar-track {
+  border-radius: 5px;
+}
+
+.controls__table-container::-webkit-scrollbar-thumb {
+  border-width: 2px;
+  border-radius: 5px;
 }
 
 .controls__table {
@@ -10495,6 +10567,7 @@ section.product .product__block-recommend {
 
 .controls__table tfoot {
   z-index: 2;
+  background-color: #101b51;
 }
 
 .controls__table tfoot tr {
@@ -10506,7 +10579,7 @@ section.product .product__block-recommend {
   color: #fff;
   text-align: center;
   padding: 5px;
-  border-right: 1px solid #454e78;
+  border-left: 1px solid #454e78;
 }
 
 .controls thead,
@@ -10521,6 +10594,10 @@ section.product .product__block-recommend {
   display: block;
   overflow-y: auto;
   min-height: 150px;
+}
+
+.controls table {
+  border-bottom: 1px solid #fff;
 }
 
 .controls table,
@@ -11092,6 +11169,7 @@ section.product .product__block-recommend {
 
 .services .controls__table-container {
   overflow-x: hidden;
+  border-bottom: none;
 }
 
 @media (max-width: 880px) {
@@ -11464,7 +11542,8 @@ section.product .product__block-recommend {
 }
 
 .profiles tbody td {
-  border: 1px solid #e8e8e8;
+  border-left: 1px solid #e8e8e8;
+  border-top: 1px solid #e8e8e8;
   vertical-align: middle;
   padding: 0 8px;
   font-size: .75rem;
@@ -11578,6 +11657,7 @@ section.product .product__block-recommend {
   .profiles .controls__group button,
   .profiles .controls__buttons-container button {
     margin: 0;
+    height: 32px;
   }
 }
 

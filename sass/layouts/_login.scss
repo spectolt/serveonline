@@ -1,10 +1,11 @@
 section {
   &.login {
-    max-width: 1040px;
+    // max-width: 1040px;
     margin: 60px auto 40px;
 
     @include breakpoint(sm) {
-      margin: 30px auto 40px;
+      // margin: 30px auto 40px;
+      margin: 30px auto 30px;
     }
 
     .login {
@@ -21,9 +22,9 @@ section {
       &__block {
         border-radius: 5px;
         background: #f7f6f6;
-        width: 48%;
+        width: 43.2%;
         padding: 20px 20px 0;
-        margin-top: 60px;
+        margin-top: 40px;
 
         @include breakpoint(800px) {
           width: 100%;
@@ -34,6 +35,11 @@ section {
         input {
           height: 35px;
           padding-left: 50px;
+
+          @include breakpoint(sm){
+            height: 32px;
+            padding-left: 40px;  
+          }
         }
 
         h2 {
@@ -95,12 +101,22 @@ section {
       }
 
       &__checkboxes {
-        margin: 25px 0 40px 0;
+        // margin: 25px 0 40px 0;
+        margin: 0 0 40px 0;
+
+        @include breakpoint(sm){
+          margin-bottom: 30px;
+        }
 
         p{
           margin-top: 40px;
           margin-left: 30px;
           font-size: 0.875rem;
+          margin-bottom: 0;
+
+          @include breakpoint(sm){
+            margin-top: 30px;
+          }
        }
 
         .checkbox {
@@ -185,6 +201,10 @@ section {
       margin: 25px 0 40px 0;
       margin-top: 0px;
       font-family: 'Sen', regular;
+
+      @include breakpoint(sm){
+        margin-bottom: 30px;
+      }
     }
   }
 }
