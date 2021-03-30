@@ -1109,9 +1109,8 @@ function onDocumentReady() {
       }
     });
 
-  $(".company__services-block button")
-    .not(".js_ignore_mark")
-    .on("click", function () {
+  $(document)
+    .on("click", ".company__button-order:not(.js_ignore_mark)", function () {
       $(this).toggleClass("transparent");
       // $(this).siblings("button").toggleClass("transparent");
       if ($(this).hasClass("transparent")) {

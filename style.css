@@ -12612,7 +12612,7 @@ section.product .product__block-recommend {
   }
 }
 
-.company input {
+.company input[type="text"] {
   padding-left: 50px;
   position: relative;
   height: 35px;
