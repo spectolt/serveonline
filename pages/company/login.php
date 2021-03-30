@@ -90,7 +90,7 @@
         </div>
     </div>
     <div class="company__button-container">
-        <button class="orange transparent">Atšaukti pakeitimus</button>
-        <button class="orange">Saugoti pakeitimus</button>
+        <button class="orange transparent">Atšaukti</button>
+        <button class="orange">Saugoti</button>
     </div>
 </section>

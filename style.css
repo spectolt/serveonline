@@ -14892,6 +14892,12 @@ section.product .product__block-recommend {
   font-weight: 400;
 }
 
+@media (max-width: 700px) {
+  .company .company__specialists .company__specialist-card h5 {
+    font-size: 0.9375rem;
+  }
+}
+
 .company .company__specialists .company__specialist-search-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -15064,11 +15070,19 @@ section.product .product__block-recommend {
 
 .company .company__specialists .company__specialist-buttons button {
   margin-right: 10px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 
 .company .company__specialists .company__specialist-rights h4 {
   margin-bottom: 18px;
   font-size: 1.25rem;
+}
+
+@media (max-width: 700px) {
+  .company .company__specialists .company__specialist-rights h4 {
+    font-size: 0.9375rem;
+  }
 }
 
 .company .company__specialists .company__specialist-rights .checkbox {
