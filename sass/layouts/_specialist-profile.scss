@@ -1,38 +1,62 @@
 .specialist-profile {
+  input {
+    width: 100%;
+    // width: calc(100% - 20px);
+  }
+
+  .input-wrapper {
+    margin-right: 20px;
+  }
+
+  .input-wrapper--phone {
+    flex-basis: calc(35% - 20px);
+  }
+
+  .input-wrapper--envelope {
+    flex-basis: calc(65% - 20px);
+  }
+
   &__top {
     display: flex;
+  }
+
+  h3{
+    font-size: 1.25rem;
   }
 
   &__info {
     display: flex;
     width: 100%;
     flex-wrap: wrap;
+    margin-right: -20px;
 
-    .input-container--name {
-      flex-basis: 60%;
+    h3 {
+      width: 100%;
     }
 
     .input-container--profession {
-      flex-basis: 40%;
-    }
-
-    .input-container--company {
-        flex-basis: 40%;
+      flex-basis: calc(30% - 20px);
+      margin-right: 20px;
     }
 
     p {
-        flex-basis: 100%;
+      flex-basis: 100%;
     }
   }
 
   .company__about {
-      width: 100%;
+    width: 100%;
 
-      .languages {
-          align-self: center;
-          margin-left: auto;
-          margin-right: 0;
-      }
+    .languages {
+      align-self: center;
+      margin-left: auto;
+      margin-right: 0;
+    }
+
+    textarea {
+      height: 260px;
+      padding-left: 25px;
+    }
   }
 
   &__photo {
@@ -74,24 +98,24 @@
   }
 
   &__choices {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
 
   &__choice {
-      width: 40%;
+    width: 40%;
   }
 
   & .specialist-profile__time-options {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 .choice-wrapper {
-    display: flex;
-    border: 1px solid $lightgray;
-    padding: 20px;
-    border-radius: 5px;
+  display: flex;
+  border: 1px solid $lightgray;
+  padding: 20px;
+  border-radius: 5px;
 }

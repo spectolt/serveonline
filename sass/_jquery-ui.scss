@@ -573,6 +573,8 @@ button.ui-button::-moz-focus-inner {
 .ui-datepicker select.ui-datepicker-month,
 .ui-datepicker select.ui-datepicker-year {
   width: 45%;
+  border: none;
+  font-weight: 600;
 }
 
 .ui-datepicker table {

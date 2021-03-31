@@ -5,7 +5,7 @@
             <span class="input-icon"></span>
         </div>
         <div class="input-container input-container--city">
-            <select class="company__select-city">
+            <select class="select-input company__select-city">
                 <option></option>
                 <option>Vilnius</option>
                 <option>Kaunas</option>
@@ -17,7 +17,7 @@
             <span class="input-icon"></span>
         </div>
         <div class="input-container input-container--neighborhood">
-            <select class="company__select-neighborhood">
+            <select class="select-input company__select-neighborhood">
                 <option></option>
                 <option>Centras</option>
             </select>

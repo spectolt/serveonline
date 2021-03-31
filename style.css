@@ -1182,6 +1182,98 @@ select {
   width: 100%;
 }
 
+.about-datepicker {
+  height: 35px;
+  width: 100%;
+  border: 1px solid #101b51;
+  border-radius: 5px;
+  padding-left: 70px;
+}
+
+@media (max-width: 890px) {
+  .about-datepicker {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    margin-bottom: 15px;
+    height: 32px;
+  }
+}
+
+.about-datepicker ~ .input-arrow {
+  background: url("img/icons/angle-down-bold.svg") no-repeat center;
+  height: 35px;
+  width: 15px;
+  display: block;
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+@media (max-width: 700px) {
+  .about-datepicker ~ .input-arrow {
+    right: 10px;
+  }
+}
+
+.datepicker-placeholder {
+  font-weight: 600;
+  color: #101b51;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+select.select-input ~ span.select2-container {
+  height: 35px;
+  width: 100% !important;
+}
+
+@media (max-width: 890px) {
+  select.select-input ~ span.select2-container {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    margin-bottom: 15px;
+    height: 32px;
+  }
+}
+
+select.select-input ~ span.select2-container .select2-selection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 35px;
+}
+
+@media (max-width: 700px) {
+  select.select-input ~ span.select2-container .select2-selection {
+    height: 32px;
+  }
+}
+
+select.select-input ~ span.select2-container .select2-selection__rendered {
+  margin: auto 0;
+  padding-left: 50px;
+}
+
+@media (max-width: 890px) {
+  select.select-input ~ span.select2-container .select2-selection__rendered {
+    padding-left: 40px;
+  }
+}
+
+select.select-input ~ span.select2-container .select2-selection__arrow {
+  height: 35px;
+}
+
+.input-container--profession .input-icon {
+  background: url(./img/icons/briefcase.svg) no-repeat scroll 15px 5px;
+  background-size: 50%;
+}
+
 .search-container {
   -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.49);
           box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.49);
@@ -4443,6 +4535,8 @@ button.ui-button::-moz-focus-inner {
 .ui-datepicker select.ui-datepicker-month,
 .ui-datepicker select.ui-datepicker-year {
   width: 45%;
+  border: none;
+  font-weight: 600;
 }
 
 .ui-datepicker table {
@@ -10446,6 +10540,14 @@ section.product .product__block-recommend {
   position: relative;
 }
 
+.controls__table-border {
+  border: 1px solid #e8e8e8;
+  border-radius: 5px;
+  margin-bottom: 1px;
+  width: 100%;
+  height: 100%;
+}
+
 .controls__table-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -10568,6 +10670,7 @@ section.product .product__block-recommend {
 .controls__table tfoot {
   z-index: 2;
   background-color: #101b51;
+  border-top: 1px solid #101b51;
 }
 
 .controls__table tfoot tr {
@@ -10594,10 +10697,6 @@ section.product .product__block-recommend {
   display: block;
   overflow-y: auto;
   min-height: 150px;
-}
-
-.controls table {
-  border-bottom: 1px solid #fff;
 }
 
 .controls table,
@@ -11409,6 +11508,10 @@ section.product .product__block-recommend {
   margin-right: 10px;
 }
 
+.profiles .controls__table-container {
+  border: none;
+}
+
 .profiles th:first-of-type,
 .profiles td:first-of-type {
   width: 40px;
@@ -11515,6 +11618,15 @@ section.product .product__block-recommend {
   height: 54px;
 }
 
+.profiles th:first-of-type {
+  padding: 0;
+}
+
+.profiles th:first-of-type .checkbox {
+  left: 5px;
+  top: 9px;
+}
+
 .profiles th::after {
   bottom: 8px !important;
 }
@@ -11550,6 +11662,14 @@ section.product .product__block-recommend {
   height: 60px;
 }
 
+.profiles tbody td:last-of-type, .profiles tbody td:first-of-type {
+  border-left: none;
+}
+
+.profiles tbody td:nth-last-of-type(2) {
+  border-right: 1px solid #e8e8e8;
+}
+
 .profiles tbody td .checkbox label::before {
   left: 2px;
   top: -10px;
@@ -11564,12 +11684,18 @@ section.product .product__block-recommend {
   left: 7px;
 }
 
+.profiles tfoot {
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
 .profiles tfoot td {
   font-size: 0.875rem;
 }
 
 .profiles tfoot td:first-of-type {
   border-bottom-left-radius: 5px;
+  border-left: none;
 }
 
 .profiles tfoot td:last-of-type {
@@ -11635,6 +11761,7 @@ section.product .product__block-recommend {
 .profiles .pagination {
   padding-bottom: 22px;
   border-bottom: 1px solid #e8e8e8;
+  border-top: none;
 }
 
 @media (max-width: 700px) {
@@ -13677,55 +13804,6 @@ section.product .product__block-recommend {
   }
 }
 
-.company__tab .company__inputs-container select.company__select-city ~ span.select2-container,
-.company__tab .company__inputs-container select.company__select-neighborhood ~ span.select2-container {
-  height: 35px;
-  width: 100% !important;
-}
-
-@media (max-width: 890px) {
-  .company__tab .company__inputs-container select.company__select-city ~ span.select2-container,
-  .company__tab .company__inputs-container select.company__select-neighborhood ~ span.select2-container {
-    -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
-    margin-bottom: 15px;
-    height: 32px;
-  }
-}
-
-.company__tab .company__inputs-container select.company__select-city ~ span.select2-container .select2-selection,
-.company__tab .company__inputs-container select.company__select-neighborhood ~ span.select2-container .select2-selection {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 35px;
-}
-
-@media (max-width: 700px) {
-  .company__tab .company__inputs-container select.company__select-city ~ span.select2-container .select2-selection,
-  .company__tab .company__inputs-container select.company__select-neighborhood ~ span.select2-container .select2-selection {
-    height: 32px;
-  }
-}
-
-.company__tab .company__inputs-container select.company__select-city ~ span.select2-container .select2-selection__rendered,
-.company__tab .company__inputs-container select.company__select-neighborhood ~ span.select2-container .select2-selection__rendered {
-  margin: auto 0;
-  padding-left: 50px;
-}
-
-@media (max-width: 890px) {
-  .company__tab .company__inputs-container select.company__select-city ~ span.select2-container .select2-selection__rendered,
-  .company__tab .company__inputs-container select.company__select-neighborhood ~ span.select2-container .select2-selection__rendered {
-    padding-left: 40px;
-  }
-}
-
-.company__tab .company__inputs-container select.company__select-city ~ span.select2-container .select2-selection__arrow,
-.company__tab .company__inputs-container select.company__select-neighborhood ~ span.select2-container .select2-selection__arrow {
-  height: 35px;
-}
-
 .company__tab .company__inputs-container input[name="email"] {
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -15614,10 +15692,32 @@ section.product .product__block-recommend {
   opacity: 0.5;
 }
 
+.specialist-profile input {
+  width: 100%;
+}
+
+.specialist-profile .input-wrapper {
+  margin-right: 20px;
+}
+
+.specialist-profile .input-wrapper--phone {
+  -ms-flex-preferred-size: calc(35% - 20px);
+      flex-basis: calc(35% - 20px);
+}
+
+.specialist-profile .input-wrapper--envelope {
+  -ms-flex-preferred-size: calc(65% - 20px);
+      flex-basis: calc(65% - 20px);
+}
+
 .specialist-profile__top {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.specialist-profile h3 {
+  font-size: 1.25rem;
 }
 
 .specialist-profile__info {
@@ -15627,21 +15727,17 @@ section.product .product__block-recommend {
   width: 100%;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  margin-right: -20px;
 }
 
-.specialist-profile__info .input-container--name {
-  -ms-flex-preferred-size: 60%;
-      flex-basis: 60%;
+.specialist-profile__info h3 {
+  width: 100%;
 }
 
 .specialist-profile__info .input-container--profession {
-  -ms-flex-preferred-size: 40%;
-      flex-basis: 40%;
-}
-
-.specialist-profile__info .input-container--company {
-  -ms-flex-preferred-size: 40%;
-      flex-basis: 40%;
+  -ms-flex-preferred-size: calc(30% - 20px);
+      flex-basis: calc(30% - 20px);
+  margin-right: 20px;
 }
 
 .specialist-profile__info p {
@@ -15659,6 +15755,11 @@ section.product .product__block-recommend {
       align-self: center;
   margin-left: auto;
   margin-right: 0;
+}
+
+.specialist-profile .company__about textarea {
+  height: 260px;
+  padding-left: 25px;
 }
 
 .specialist-profile__photo-img {

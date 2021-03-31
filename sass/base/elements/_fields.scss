@@ -434,3 +434,82 @@ textarea {
 select {
   width: 100%;
 }
+
+.about-datepicker {
+  height: 35px;
+  width: 100%;
+  border: 1px solid $darkblue;
+  border-radius: 5px;
+  padding-left: 70px;
+
+  @include breakpoint(890px) {
+    flex-basis: 100%;
+    margin-bottom: 15px;
+    height: 32px;
+  }
+
+  & ~ .input-arrow {
+    background: url("img/icons/angle-down-bold.svg") no-repeat center;
+    height: 35px;
+    width: 15px;
+    display: block;
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    @include breakpoint(sm) {
+      right: 10px;
+    }
+  }
+}
+
+.datepicker-placeholder {
+  font-weight: 600;
+  color: $darkblue;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+select.select-input ~ span.select2-container {
+  // flex-basis: calc(30% - 20px);
+  height: 35px;
+  width: 100% !important;
+  // margin-right: 20px;
+
+  @include breakpoint(890px) {
+    flex-basis: 100%;
+    margin-bottom: 15px;
+    height: 32px;
+  }
+
+  .select2-selection {
+    display: flex;
+    height: 35px;
+
+    @include breakpoint(sm) {
+      height: 32px;
+    }
+
+    &__rendered {
+      margin: auto 0;
+      padding-left: 50px;
+
+      @include breakpoint(890px) {
+        padding-left: 40px;
+      }
+    }
+
+    &__arrow {
+      height: 35px;
+    }
+  }
+}
+
+.input-container--profession .input-icon {
+  background: url(./img/icons/briefcase.svg) no-repeat scroll 15px 5px;
+  background-size: 50%;
+}
+

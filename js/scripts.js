@@ -1659,6 +1659,26 @@ function onDocumentReady() {
     }
   })
 
+  //age datepicker
+  $(".about-datepicker")
+    .not(".js_ignore_mark")
+    .datepicker({
+      changeYear: true,
+      changeMonth: true,
+      showButtonPanel: true,
+      orientation: "bottom",
+      beforeShow: function (input, inst) {
+        $("#ui-datepicker-div").addClass("ui-datepicker--filters");
+        window.setTimeout(function () {
+          $("#ui-datepicker-div").position({
+            my: "top",
+            at: "bottom",
+            of: input,
+          });
+        }, 1);
+      },
+    });
+
   moveAction();
   moveOrder();
   changePadding();
