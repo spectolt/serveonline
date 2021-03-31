@@ -468,9 +468,13 @@ select {
   font-weight: 600;
   color: $darkblue;
   position: absolute;
-  left: 10px;
+  left: 50px;
   top: 50%;
   transform: translateY(-50%);
+
+  @include breakpoint(sm) {
+    left: 40px;
+  }
 }
 
 select.select-input ~ span.select2-container {

@@ -33,7 +33,7 @@ $thisPage = "specialist-profile" ?>
                                 </select>
                                 <span class="input-icon"></span>
                             </div>
-                            <div class="input-container input-container--age">
+                            <div class="input-wrapper input-wrapper--age">
                                 <!-- <select data-placeholder="Amžius:">
                                     <option></option>
                                     <option>Gydytojas</option>
@@ -43,12 +43,13 @@ $thisPage = "specialist-profile" ?>
                                 <span class="datepicker-placeholder">Amžius:</span>
                                 <span class="input-arrow"></span>
                             </div>
-                            <div class="input-container input-container--experience">
-                                <select data-placeholder="Stažas nuo:">
+                            <div class="input-wrapper input-wrapper--experience">
+                                <select>
                                     <option></option>
                                     <option>1990</option>
                                 </select>
                                 <span class="input-icon"></span>
+                                <span class="datepicker-placeholder">Stažas nuo:</span>
                             </div>
                             <p>Veiklos administravimo kontaktai</p>
                             <div class="input-wrapper input-wrapper--phone">
@@ -62,7 +63,7 @@ $thisPage = "specialist-profile" ?>
                             <p>Kalbos, kuriomis galite bendrauti</p>
                             <?php for ($i = 0; $i < 4; $i++) { ?>
                                 <div class="input-container input-container--language">
-                                    <select data-placeholder="Pasirinkite">
+                                    <select data-placeholder="Pasirinkite" class="select-input">
                                         <option></option>
                                         <option>Lietuvių</option>
                                     </select>
@@ -171,16 +172,16 @@ $thisPage = "specialist-profile" ?>
                         </div>
                     </div>
                     <div class="company__button-container">
-                        <button class="orange transparent">Atšaukti pakeitimus</button>
-                        <button class="orange">Saugoti pakeitimus</button>
+                        <button class="orange transparent">Atšaukti</button>
+                        <button class="orange">Saugoti</button>
                     </div>
                 </section>
                 <?php require_once("company/services.php") ?>
                 <section class="group__tab company__container hidden" id="darbo-grafikas">
                     
                     <div class="company__button-container">
-                        <button class="orange transparent">Atšaukti pakeitimus</button>
-                        <button class="orange">Saugoti pakeitimus</button>
+                        <button class="orange transparent">Atšaukti</button>
+                        <button class="orange">Saugoti</button>
                     </div>
                 </section>
             </section>

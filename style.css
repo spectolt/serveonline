@@ -1221,10 +1221,16 @@ select {
   font-weight: 600;
   color: #101b51;
   position: absolute;
-  left: 10px;
+  left: 50px;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+}
+
+@media (max-width: 700px) {
+  .datepicker-placeholder {
+    left: 40px;
+  }
 }
 
 select.select-input ~ span.select2-container {
@@ -15700,6 +15706,17 @@ section.product .product__block-recommend {
   margin-right: 20px;
 }
 
+.specialist-profile .input-container--profession {
+  -ms-flex-preferred-size: calc(30% - 20px);
+      flex-basis: calc(30% - 20px);
+  margin-right: 20px;
+}
+
+.specialist-profile .input-wrapper--age, .specialist-profile .input-wrapper--experience {
+  -ms-flex-preferred-size: calc(30% - 20px);
+      flex-basis: calc(30% - 20px);
+}
+
 .specialist-profile .input-wrapper--phone {
   -ms-flex-preferred-size: calc(35% - 20px);
       flex-basis: calc(35% - 20px);
@@ -15708,6 +15725,12 @@ section.product .product__block-recommend {
 .specialist-profile .input-wrapper--envelope {
   -ms-flex-preferred-size: calc(65% - 20px);
       flex-basis: calc(65% - 20px);
+}
+
+.specialist-profile .input-container--language {
+  -ms-flex-preferred-size: calc(25% - 20px);
+      flex-basis: calc(25% - 20px);
+  margin-right: 20px;
 }
 
 .specialist-profile__top {
@@ -15732,12 +15755,6 @@ section.product .product__block-recommend {
 
 .specialist-profile__info h3 {
   width: 100%;
-}
-
-.specialist-profile__info .input-container--profession {
-  -ms-flex-preferred-size: calc(30% - 20px);
-      flex-basis: calc(30% - 20px);
-  margin-right: 20px;
 }
 
 .specialist-profile__info p {
@@ -15813,7 +15830,7 @@ section.product .product__block-recommend {
 }
 
 .specialist-profile__choice {
-  width: 40%;
+  width: 42.2%;
 }
 
 .specialist-profile .specialist-profile__time-options {
@@ -15823,6 +15840,10 @@ section.product .product__block-recommend {
       grid-template-columns: repeat(2, 1fr);
 }
 
+.specialist-profile .company__button-container button {
+  height: 44px;
+}
+
 .choice-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -15830,5 +15851,6 @@ section.product .product__block-recommend {
   border: 1px solid #e8e8e8;
   padding: 20px;
   border-radius: 5px;
+  width: 425px;
 }
 /*# sourceMappingURL=style.css.map */

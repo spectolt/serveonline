@@ -8,12 +8,26 @@
     margin-right: 20px;
   }
 
+  .input-container--profession {
+    flex-basis: calc(30% - 20px);
+    margin-right: 20px;
+  }
+
+  .input-wrapper--age, .input-wrapper--experience {
+    flex-basis: calc(30% - 20px);
+  }
+
   .input-wrapper--phone {
     flex-basis: calc(35% - 20px);
   }
 
   .input-wrapper--envelope {
     flex-basis: calc(65% - 20px);
+  }
+
+  .input-container--language {
+    flex-basis: calc(25% - 20px);
+    margin-right: 20px;
   }
 
   &__top {
@@ -32,11 +46,6 @@
 
     h3 {
       width: 100%;
-    }
-
-    .input-container--profession {
-      flex-basis: calc(30% - 20px);
-      margin-right: 20px;
     }
 
     p {
@@ -104,18 +113,23 @@
   }
 
   &__choice {
-    width: 40%;
+    width: 42.2%;
   }
 
   & .specialist-profile__time-options {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .company__button-container button {
+    height: 44px;
+  }
 }
 
 .choice-wrapper {
   display: flex;
-  border: 1px solid $lightgray;
-  padding: 20px;
-  border-radius: 5px;
+    border: 1px solid $lightgray;
+    padding: 20px;
+    border-radius: 5px;
+    width: 425px;
 }
