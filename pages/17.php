@@ -177,11 +177,79 @@ $thisPage = "specialist-profile" ?>
                     </div>
                 </section>
                 <?php require_once("company/services.php") ?>
-                <section class="group__tab company__container hidden" id="darbo-grafikas">
-                    
-                    <div class="company__button-container">
-                        <button class="orange transparent">Atšaukti</button>
-                        <button class="orange">Saugoti</button>
+                <section class="group__tab timetable hidden" id="darbo-grafikas">
+                    <div class="timetable__top">
+                        <h2>2021 Sausis</h2>
+                        <button class="arrow arrow--left"></button>
+                        <button class="arrow arrow--right"></button>
+                        <select>
+                            <option>Kartoti pažymėtą dieną kas dieną</option>
+                            <option>Kartoti pažymėtą dieną kas antrą dieną</option>
+                            <option>Kartoti pažymėtą dieną kas savaitę</option>
+                        </select>
+                        <div class="checkbox">
+                            <input name="exceptions" type="checkbox" id="holidays" />
+                            <label for="holidays">
+                                Išskyrus šventines d.
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <input name="exceptions" type="checkbox" id="weekends" />
+                            <label for="weekends">
+                                Išskyrus nedarbo d.
+                            </label>
+                        </div>
+                    </div>
+                    <div class="company__container">
+                        <div class="timetable__container">
+                            <?php for ($i = 0; $i < 35; $i++) { ?>
+                                <div class="timetable__day <?php if($i == 14) echo "active-from"; else if($i == 22) echo "active-to" ?>">
+                                    <h4><b>Pr</b> 31 <span class="timetable__month">GRUODIS</span></h4>
+                                    <table class="timetable__table">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="company__time time-inputs">
+                                                        <input type="number" name="hour" placeholder="00" max="23" length="2">
+                                                        <p>:</p>
+                                                        <input type="number" name="minute" placeholder="00" max="59" length="2">
+                                                    </div>
+                                                </td>
+                                                <td>-</td>
+                                                <td>
+                                                    <div class="company__time time-inputs">
+                                                        <input type="number" name="hour" placeholder="00" max="23" length="2">
+                                                        <p>:</p>
+                                                        <input type="number" name="minute" placeholder="00" max="59" length="2">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="company__time time-inputs">
+                                                        <input type="number" name="hour" placeholder="00" max="23" length="2">
+                                                        <p>:</p>
+                                                        <input type="number" name="minute" placeholder="00" max="59" length="2">
+                                                    </div>
+                                                </td>
+                                                <td>-</td>
+                                                <td>
+                                                    <div class="company__time time-inputs">
+                                                        <input type="number" name="hour" placeholder="00" max="23" length="2">
+                                                        <p>:</p>
+                                                        <input type="number" name="minute" placeholder="00" max="59" length="2">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            <?php } ?>
+                        </div>
+                        <div class="company__button-container company__button-container--timetable">
+                            <button class="orange transparent">Ištrinti grafiką</button>
+                            <button class="orange">Sukurti grafiką</button>
+                        </div>
                     </div>
                 </section>
             </section>

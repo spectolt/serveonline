@@ -1,0 +1,51 @@
+.timetable {
+  &__top {
+    display: flex;
+    justify-content: space-between;
+
+    h2 {
+      margin: 0;
+    }
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  }
+
+  &__day {
+    &:nth-of-type(7n + 6),
+    &:nth-of-type(7n) {
+      tbody {
+        background-color: $lightgray;
+      }
+    }
+
+    &.active-from {
+        tbody {
+            background-color: $darkblue;
+        }
+    }
+
+    &.active-to {
+        tbody {
+            background-color: $orange;
+        }
+    }
+  }
+
+  &__table {
+    border-collapse: separate;
+
+    tbody {
+      border-radius: 5px;
+      display: block;
+      background-color: $darkgray;
+      padding: 1px;
+    }
+  }
+
+  .time-inputs {
+    border-radius: 5px;
+  }
+}

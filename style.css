@@ -723,6 +723,35 @@ input[type="submit"]:disabled::after {
   opacity: .2 !important;
 }
 
+.arrow {
+  background-color: transparent;
+  padding: 5px;
+  width: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.arrow:before {
+  content: url("img/icons/angle-down-bold.svg");
+  display: block;
+  width: 100%;
+  position: relative;
+}
+
+.arrow.arrow--left::before {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.arrow.arrow--right::before {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -3412,6 +3441,53 @@ div.services-list__features .inputs__before-text {
     display: block;
     margin: 0;
   }
+}
+
+.timetable__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.timetable__top h2 {
+  margin: 0;
+}
+
+.timetable__container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[7];
+      grid-template-columns: repeat(7, 1fr);
+}
+
+.timetable__day:nth-of-type(7n + 6) tbody, .timetable__day:nth-of-type(7n) tbody {
+  background-color: #e8e8e8;
+}
+
+.timetable__day.active-from tbody {
+  background-color: #101b51;
+}
+
+.timetable__day.active-to tbody {
+  background-color: #ff9954;
+}
+
+.timetable__table {
+  border-collapse: separate;
+}
+
+.timetable__table tbody {
+  border-radius: 5px;
+  display: block;
+  background-color: #f4f4f6;
+  padding: 1px;
+}
+
+.timetable .time-inputs {
+  border-radius: 5px;
 }
 
 .select2-container {

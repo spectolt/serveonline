@@ -1,7 +1,7 @@
 <?php $thisCat = "controls";
 $thisPage = "company-profiles"; ?>
 
-<?php require_once('header.php'); ?>
+<?php require_once ('header.php'); ?>
 
 <main class="site-main site-main--aside hasTable hasUiAutocomplete">
     <section class="page-content page-content--controls">
