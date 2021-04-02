@@ -1072,11 +1072,12 @@ function onDocumentReady() {
       }
     });
 
-  var isSortable = true;
+  // var isSortable;
   $("button.switch-image")
     .not(".js_ignore_mark")
     .on("click", function () {
-      if (isSortable) {
+      var disabled = $("#sortable").sortable( "option", "disabled" );
+      if (disabled) {
         $(this)
           .siblings(".sortable")
           .sortable({
@@ -1094,10 +1095,11 @@ function onDocumentReady() {
             },
           });
         $(".sortable").disableSelection();
-        isSortable = false;
-      } else {
+        // isSortable = false;
+      } 
+      else {
         $(this).siblings(".sortable").sortable("disable");
-        isSortable = true;
+        // isSortable = true;
       }
     });
 
