@@ -960,7 +960,7 @@ function onDocumentReady() {
       count += 1;
       var $company = $(
         '<div class="company__item"> \
-    <h3>' +
+        <h3>' +
           count +
           ' Įmonė</h3> \
         <div class="company__inputs-container company__inputs-companies">\
@@ -977,12 +977,12 @@ function onDocumentReady() {
             <option data-image="../img/icons/sport.svg">Sportas ir reabilitacija</option>\
             <option data-image="../img/icons/vet.svg">Veterinarijos klinikos</option>\
         </select>\
-    </div>\
-    <div class="company__buttons">\
-    <button class="company__trash"></button>\
-    <button class="js-create-company company__create-company"></button>\
-    </div>\
-</div>'
+      </div>\
+      <div class="company__buttons">\
+      <button class="company__trash"></button>\
+      <button class="js-create-company company__create-company"></button>\
+      </div>\
+      </div>'
       );
       $(this).closest(".company__items").append($company);
 
@@ -1009,6 +1009,9 @@ function onDocumentReady() {
           }
         });
       }
+
+      $(this).siblings(".company__trash").remove();
+      $(this).remove();
     }
   );
 

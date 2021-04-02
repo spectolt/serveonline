@@ -3204,17 +3204,17 @@ div.services-list__features > div {
   margin-bottom: 10px;
 }
 
-div.services-list__features input {
+div.services-list__features input[type="text"] {
   font-weight: 500;
   height: 23px;
 }
 
-div.services-list__features input:disabled {
+div.services-list__features input[type="text"]:disabled {
   border: 1px solid transparent;
   opacity: 1;
 }
 
-div.services-list__features input::-webkit-input-placeholder {
+div.services-list__features input[type="text"]::-webkit-input-placeholder {
   color: #101b51;
 }
 
