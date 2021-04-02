@@ -16,25 +16,13 @@
                 </div>
                 <div class="company__specialist-rights hidden">
                     <h4>Teisės</h4>
-                    <div class="checkbox">
-                        <input id="login-rights_0_1" type="checkbox">
-                        <label for="login-rights_0_1">Gali matyti grupę</label>
+                    <div class="radio">
+                        <input id="login-rights_0_1" type="radio" name="login-right_0">
+                        <label for="login-rights_0_1">Gali redaguoti specialistų profilius</label>
                     </div>
-                    <div class="checkbox">
-                        <input id="login-rights_0_2" type="checkbox">
-                        <label for="login-rights_0_2">Gali tik savo įmonę</label>
-                    </div>
-                    <div class="checkbox">
-                        <input id="login-rights_0_3" type="checkbox">
-                        <label for="login-rights_0_3">Gali nustatyti įmonės specialistų profilius</label>
-                    </div>
-                    <div class="checkbox">
-                        <input id="login-rights_0_4" type="checkbox">
-                        <label for="login-rights_0_4">Gali aktyvuoti / deaktyvuoti įmonės specialistų profilius</label>
-                    </div>
-                    <div class="checkbox">
-                        <input id="login-rights_0_5" type="checkbox">
-                        <label for="login-rights_0_5">Gali nustatyti įmonės specialistų darbo grafikus</label>
+                    <div class="radio">
+                        <input id="login-rights_0_2" type="radio" name="login-right_0">
+                        <label for="login-rights_0_2">Gali redaguoti ir aktyvuoti specialistų profilius</label>
                     </div>
                 </div>
             </div>
@@ -61,25 +49,13 @@
                 </div>
                 <div class="company__specialist-rights hidden">
                     <h4>Teisės</h4>
-                    <div class="checkbox">
-                        <input id="login-rights_0_1" type="checkbox">
-                        <label for="login-rights_0_1">Gali matyti grupę</label>
+                    <div class="radio">
+                        <input id="login-rights_1_1" type="radio" name="login-right_1">
+                        <label for="login-rights_1_1">Gali redaguoti specialistų profilius</label>
                     </div>
-                    <div class="checkbox">
-                        <input id="login-rights_0_2" type="checkbox">
-                        <label for="login-rights_0_2">Gali tik savo įmonę</label>
-                    </div>
-                    <div class="checkbox">
-                        <input id="login-rights_0_3" type="checkbox">
-                        <label for="login-rights_0_3">Gali nustatyti įmonės specialistų profilius</label>
-                    </div>
-                    <div class="checkbox">
-                        <input id="login-rights_0_4" type="checkbox">
-                        <label for="login-rights_0_4">Gali aktyvuoti / deaktyvuoti įmonės specialistų profilius</label>
-                    </div>
-                    <div class="checkbox">
-                        <input id="login-rights_0_5" type="checkbox">
-                        <label for="login-rights_0_5">Gali nustatyti įmonės specialistų darbo grafikus</label>
+                    <div class="radio">
+                        <input id="login-rights_1_2" type="radio" name="login-right_1">
+                        <label for="login-rights_1_2">Gali redaguoti ir aktyvuoti specialistų profilius</label>
                     </div>
                 </div>
             </div>

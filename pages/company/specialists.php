@@ -20,31 +20,15 @@
                     <h4>Teisės</h4>
                     <div class="checkbox">
                         <input id="rights_0_1" type="checkbox">
-                        <label for="rights_0_1">Gali matyti bendrą informaciją</label>
+                        <label for="rights_0_1">Gali redaguoti bendrą informaciją</label>
                     </div>
                     <div class="checkbox">
                         <input id="rights_0_2" type="checkbox">
-                        <label for="rights_0_2">Gali redaguoti bendrą informaciją</label>
+                        <label for="rights_0_2">Gali redaguoti paslaugas</label>
                     </div>
                     <div class="checkbox">
                         <input id="rights_0_3" type="checkbox">
-                        <label for="rights_0_3">Gali matyti paslaugas</label>
-                    </div>
-                    <div class="checkbox">
-                        <input id="rights_0_4" type="checkbox">
-                        <label for="rights_0_4">Gali redaguoti paslaugas</label>
-                    </div>
-                    <div class="checkbox">
-                        <input id="rights_0_5" type="checkbox">
-                        <label for="rights_0_5">Gali matyti darbo grafiką</label>
-                    </div>
-                    <div class="checkbox">
-                        <input id="rights_0_6" type="checkbox">
-                        <label for="rights_0_6">Gali redaguoti darbo grafiką</label>
-                    </div>
-                    <div class="checkbox">
-                        <input id="rights_0_7" type="checkbox">
-                        <label for="rights_0_7">Gali matyti / redaguoti teises</label>
+                        <label for="rights_0_3">Gali redaguoti darbo grafiką</label>
                     </div>
                 </div>
             </div>

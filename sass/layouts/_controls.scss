@@ -56,10 +56,10 @@
     &.controls__top--services {
       @include breakpoint(520px) {
         justify-content: flex-end;
-        width: calc(100% + 10px);
+        // width: calc(100% + 10px);
         flex-wrap: wrap;
         // margin-left: 20px;
-        margin-right: -10px;
+        // margin-right: -10px;
       }
 
       .controls__print {
@@ -70,7 +70,7 @@
         @include breakpoint(520px) {
           // width: 104.7px;
           // width: calc(50% - 10px);
-          justify-content: center;
+          // justify-content: center;
 
           // &::before {
           //   left: 30px;
@@ -207,13 +207,13 @@
     position: relative;
   }
 
-  &__table-border {
-    // border: 1px solid $lightgray;
-    border-radius: 5px;
-    margin-bottom: 1px;
-    width: 100%;
-    height: 100%;
-  }
+  // &__table-border {
+  //   // border: 1px solid $lightgray;
+  //   border-radius: 5px;
+  //   // margin-bottom: 1px;
+  //   width: 100%;
+  //   height: 100%;
+  // }
 
   &__table-container {
     display: flex;
@@ -223,7 +223,7 @@
     //width: calc(100vw - #{"min(54px, 5.1vw)"} - #{"min(100px, 6.9vw)"} - 300px);
     overflow-x: auto;
     width: 100%;
-    min-height: 280px;
+    // min-height: 280px;
     // align-items: stretch;
     overflow-y: hidden;
     // position: relative;
@@ -1178,6 +1178,10 @@
     // border: none;
   }
 
+  .checkbox input[type="checkbox"]:checked ~ label:before {
+    background-color: rgba(255, 255, 255, 0.49);
+  }
+
   th,
   td {
     &:first-of-type {
@@ -1325,13 +1329,14 @@
     border-bottom-left-radius: 5px;
     td {
       font-size: 0.875rem;
+      background-color: none;
       &:first-of-type {
         border-bottom-left-radius: 5px;
         border-left: none;
       }
-      &:last-of-type {
-        border-bottom-right-radius: 5px;
-      }
+      // &:last-of-type {
+      //   border-bottom-right-radius: 5px;
+      // }
     }
   }
 

@@ -1412,7 +1412,9 @@ function onDocumentReady() {
   $("thead th")
     .not(".js_ignore_mark")
     .unbind("click")
-    .click(function () {
+    .click(function (e) {
+      if (e.target !== this)
+    return;
       if ($(this).hasClass("top-arrow bottom-arrow")) {
         $(this).removeClass("top-arrow");
       } else if ($(this).hasClass("bottom-arrow")) {
