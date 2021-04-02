@@ -1637,14 +1637,14 @@ function onDocumentReady() {
   $(".controls__group-btn").not(".js_ignore_mark").on("click", function() {
     $(this).toggleClass("transparent");
     if($(this).hasClass("controls__group-btn--city")) {
-      $(this).html("Išgrupuoti pagal miestus");
+      $(this).html("Išgrupuoti miestus");
       if(!$(this).hasClass("transparent")) {
-        $(this).html("Grupuoti pagal miestus")
+        $(this).html("Grupuoti miestus")
       }
     } else if($(this).hasClass("controls__group-btn--company")) {
-      $(this).html("Išgrupuoti pagal įmonių grupes");
+      $(this).html("Išgrupuoti įmones");
       if(!$(this).hasClass("transparent")) {
-        $(this).html("Grupuoti pagal įmonių grupes")
+        $(this).html("Grupuoti įmones")
       }
     }
   })

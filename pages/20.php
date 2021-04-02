@@ -105,10 +105,10 @@ $thisPage = "company-profiles"; ?>
                                     <td></td>
                                     <td></td>
                                     <td>9999999</td>
-                                    <td>9999999</td>
-                                    <td>9999999</td>
-                                    <td>9999999</td>
                                     <td></td>
+                                    <td>9999999</td>
+                                    <td>9999999</td>
+                                    <td>9999999</td>
                                     <td></td>
                                     <td></td>
                                     <td></td>

@@ -10623,7 +10623,6 @@ section.product .product__block-recommend {
 }
 
 .controls__table-border {
-  border: 1px solid #e8e8e8;
   border-radius: 5px;
   margin-bottom: 1px;
   width: 100%;
@@ -10752,7 +10751,6 @@ section.product .product__block-recommend {
 .controls__table tfoot {
   z-index: 2;
   background-color: #101b51;
-  border-top: 1px solid #101b51;
 }
 
 .controls__table tfoot tr {
@@ -10790,6 +10788,8 @@ section.product .product__block-recommend {
 
 .controls tbody::-webkit-scrollbar {
   width: 8px;
+  bottom: 1px;
+  height: 100%;
 }
 
 .controls tbody::-webkit-scrollbar-thumb {
@@ -11588,10 +11588,6 @@ section.product .product__block-recommend {
 .messages-settings .messages__table p {
   width: calc(100% - 90px);
   margin-right: 10px;
-}
-
-.profiles .controls__table-container {
-  border: none;
 }
 
 .profiles th:first-of-type,
