@@ -1231,7 +1231,8 @@
       word-break:break-all;
     }
     &:nth-of-type(12) {
-      width: 74px;
+      min-width: 74px;
+      // width: calc(100% - 1200px);
       word-break:break-all;
     }
     &:nth-of-type(13) {
@@ -1329,7 +1330,7 @@
     border-bottom-left-radius: 5px;
     td {
       font-size: 0.875rem;
-      background-color: none;
+      background-color: transparent;
       &:first-of-type {
         border-bottom-left-radius: 5px;
         border-left: none;

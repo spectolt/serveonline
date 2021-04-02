@@ -11653,7 +11653,7 @@ section.product .product__block-recommend {
 
 .profiles th:nth-of-type(12),
 .profiles td:nth-of-type(12) {
-  width: 74px;
+  min-width: 74px;
   word-break: break-all;
 }
 
@@ -11755,7 +11755,7 @@ section.product .product__block-recommend {
 
 .profiles tfoot td {
   font-size: 0.875rem;
-  background-color: none;
+  background-color: transparent;
 }
 
 .profiles tfoot td:first-of-type {
