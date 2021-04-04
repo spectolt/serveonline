@@ -11572,7 +11572,7 @@ section.product .product__block-recommend {
   margin-right: 10px;
 }
 
-.profiles .checkbox input[type="checkbox"]:checked ~ label:before {
+.profiles th .checkbox input[type="checkbox"]:checked ~ label:before {
   background-color: rgba(255, 255, 255, 0.49);
 }
 
@@ -11654,6 +11654,7 @@ section.product .product__block-recommend {
 .profiles th:nth-of-type(12),
 .profiles td:nth-of-type(12) {
   min-width: 74px;
+  width: 74px;
   word-break: break-all;
 }
 
@@ -15086,14 +15087,13 @@ section.product .product__block-recommend {
   display: flex;
   border: 1px solid #e8e8e8;
   border-radius: 5px;
-  padding: 20px 20px 40px;
+  padding: 20px 20px 30px;
   width: 100%;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  height: 280px;
 }
 
 @media (max-width: 880px) {
@@ -15103,7 +15103,7 @@ section.product .product__block-recommend {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    padding: 10px 10px 30px;
+    padding: 10px 10px;
     height: auto;
   }
 }
@@ -15180,7 +15180,7 @@ section.product .product__block-recommend {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
-  padding-bottom: 50px;
+  padding-bottom: 10px;
   display: block;
 }
 
@@ -15312,7 +15312,7 @@ section.product .product__block-recommend {
   }
 }
 
-.company .company__specialists .company__specialist-rights .checkbox {
+.company .company__specialists .company__specialist-rights .radio, .company .company__specialists .company__specialist-rights .checkbox {
   margin-top: 10px;
 }
 

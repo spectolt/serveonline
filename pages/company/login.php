@@ -2,7 +2,7 @@
     <div class="company__login company__specialists">
         <h3>UAB Grožio salonas 1</h3>
         <div class="company__specialist company__specialist--admin">
-            <div class="company__specialist-card">
+            <div class="company__specialist-card company__specialist-card--login">
                 <div class="company__specialist-info">
                     <h5>Įmonės administratorius</h5>
                     <div class="company__specialist-search-wrapper">
