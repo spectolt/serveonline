@@ -85,6 +85,10 @@
         }
       }
     }
+
+    &--profiles {
+      justify-content: space-between;
+    }
   }
 
   &__buttons-cancel-save {
@@ -1343,8 +1347,10 @@
   }
 
   .controls__group {
-    position: absolute;
-    left: 0px;
+    // position: relative;
+    // left: 0px;
+    margin-right: 10px;
+
 
     button {
       height: 35px;
@@ -1359,7 +1365,7 @@
 
     @include breakpoint(1470px) {
       position: relative;
-      width: 100%;
+      // width: 100%;
     }
 
     @include breakpoint(sm) {
@@ -1369,11 +1375,11 @@
   }
 
   .controls__buttons-container {
-    margin-right: 10px;
+    // margin-right: 10px;
 
-    @include breakpoint(sm) {
-      margin-right: 0;
-    }
+    // @include breakpoint(sm) {
+    //   margin-right: 0;
+    // }
 
     button {
       height: 35px;

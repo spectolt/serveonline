@@ -10463,6 +10463,12 @@ section.product .product__block-recommend {
   }
 }
 
+.controls__top--profiles {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .controls__buttons-cancel-save {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -11765,8 +11771,7 @@ section.product .product__block-recommend {
 }
 
 .profiles .controls__group {
-  position: absolute;
-  left: 0px;
+  margin-right: 10px;
 }
 
 .profiles .controls__group button {
@@ -11789,7 +11794,6 @@ section.product .product__block-recommend {
 @media (max-width: 1470px) {
   .profiles .controls__group {
     position: relative;
-    width: 100%;
   }
 }
 
@@ -11797,16 +11801,6 @@ section.product .product__block-recommend {
   .profiles .controls__group {
     position: relative;
     width: 100%;
-  }
-}
-
-.profiles .controls__buttons-container {
-  margin-right: 10px;
-}
-
-@media (max-width: 700px) {
-  .profiles .controls__buttons-container {
-    margin-right: 0;
   }
 }
 
@@ -13951,7 +13945,7 @@ section.product .product__block-recommend {
 
 .company__tab .company__work-hours table p {
   margin: 0;
-  margin-left: -5px;
+  margin-left: -2.5px;
   z-index: 1;
 }
 
@@ -15427,7 +15421,9 @@ section.product .product__block-recommend {
 .company .company__offer .percent:before,
 .company .company__offer .hours:before {
   position: absolute;
-  top: 8px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   left: 1em;
   z-index: 1;
 }
@@ -15442,7 +15438,9 @@ section.product .product__block-recommend {
 .company .company__offer .percent:after,
 .company .company__offer .hours:after {
   position: absolute;
-  top: 8px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   right: 0.5em;
 }
 
@@ -15738,7 +15736,7 @@ section.product .product__block-recommend {
 
 .time-inputs input[name="hour"] {
   padding-right: 0;
-  margin-left: 2.5px;
+  margin-left: 3px;
 }
 
 .time-inputs input[name="minute"] {

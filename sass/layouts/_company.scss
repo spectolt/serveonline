@@ -981,7 +981,7 @@
 
         p {
           margin: 0;
-          margin-left: -5px;
+          margin-left: -2.5px;
           z-index: 1;
         }
 
@@ -2254,7 +2254,8 @@
 
       &:before {
         position: absolute;
-        top: 8px;
+        top: 50%;
+        transform: translateY(-50%);
         left: 1em;
         z-index: 1;
 
@@ -2265,7 +2266,8 @@
 
       &:after {
         position: absolute;
-        top: 8px;
+        top: 50%;
+        transform: translateY(-50%);
         right: 0.5em;
 
         @include breakpoint(sm) {
@@ -2542,7 +2544,7 @@
   input[name="hour"] {
     // text-align: right;
     padding-right: 0;
-    margin-left: 2.5px;
+    margin-left: 3px;
   }
 
   input[name="minute"] {
