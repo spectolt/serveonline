@@ -78,14 +78,14 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                         </div>
                         <p>Užpildydami šią formą, sutinkate su mūsų <a href="#">Naudojimosi taisyklėmis</a>.</p>
                     </div>
-                    <button class="button orange login__button login__button--register">Registruotis</button>
+                    <button class="button orange small login__button login__button--register">Registruotis</button>
                 </form>
             </div>
         </div>
     </section>
+    <?php require_once('footer-menu.php'); ?>
 </main>
 
 <?php
-require_once('footer-menu.php');
 require_once('footer.php');
 ?>

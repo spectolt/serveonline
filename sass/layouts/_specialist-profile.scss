@@ -13,7 +13,8 @@
     margin-right: 20px;
   }
 
-  .input-wrapper--age, .input-wrapper--experience {
+  .input-wrapper--age,
+  .input-wrapper--experience {
     flex-basis: calc(30% - 20px);
   }
 
@@ -34,7 +35,7 @@
     display: flex;
   }
 
-  h3{
+  h3 {
     font-size: 1.25rem;
   }
 
@@ -110,6 +111,7 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-bottom: 30px;
   }
 
   &__choice {
@@ -118,18 +120,106 @@
 
   & .specialist-profile__time-options {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 88px;
   }
 
   .company__button-container button {
     height: 44px;
   }
+
+  .input-wrapper--experience
+    .select2-container
+    .select2-selection--single
+    .select2-selection__rendered {
+    padding-top: 1px;
+    padding-left: 135px;
+  }
+
+  .specialist-profile__choice--payment {
+    padding-bottom: 35px;
+    .choice-wrapper {
+      height: 85px;
+      padding-left: 50px;
+
+      label:before {
+        left: 105px;
+      }
+      label:after {
+        left: 108px;
+      }
+    }
+    p {
+      margin-top: 0;
+    }
+  }
+
+  .specialist-profile__choice--period {
+    width: auto;
+    .choice-wrapper {
+      width: 364px;
+      height: 75px;
+    }
+    p {
+      margin-top: 0;
+    }
+  }
+
+  .specialist-profile__choice--time {
+    .choice-wrapper {
+      height: 148px;
+      padding-left: 17px;
+      p {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-right: 10px;
+        text-align: right;
+      }
+      .select2-selection--single {
+        height: 21px;
+        width: 82px;
+        .select2-selection__arrow {
+          height: 21px;
+          right: -8px;
+        }
+        .select2-selection__rendered {
+          line-height: normal;
+        }
+      }
+    }
+    .select2-container--default {
+      height: 21px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .company__offer {
+    width: auto;
+    .company__offer-info {
+      width: 364px;
+      height: 95px;
+    }
+    // .percent:before {
+    //   top: 4px !important;
+    // }
+    // .percent:after,
+    // .hours::after {
+    //   top: 3px !important;
+    // }
+    .percent,
+    .hours {
+      right: -5px;
+
+      // &:after {
+      //   top: 3px;
+      // }
+    }
+  }
 }
 
 .choice-wrapper {
   display: flex;
-    border: 1px solid $lightgray;
-    padding: 20px;
-    border-radius: 5px;
-    width: 425px;
+  border: 1px solid $lightgray;
+  padding: 20px;
+  border-radius: 5px;
+  width: 425px;
 }

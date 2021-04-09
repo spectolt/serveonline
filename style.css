@@ -925,6 +925,7 @@ textarea {
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
+  z-index: 1;
 }
 
 .input-wrapper input {
@@ -937,8 +938,8 @@ textarea {
 
 .input-wrapper.input-wrapper--envelope:before {
   background-image: url("img/icons/envelope.svg");
-  width: 27px;
-  height: 19px;
+  width: 26px;
+  height: 18px;
   left: 13px;
 }
 
@@ -1014,8 +1015,8 @@ textarea {
 
 .input-wrapper.input-wrapper--city::before {
   background-image: url("img/icons/city.svg");
-  width: 24px;
-  height: 24px;
+  width: 23px;
+  height: 23px;
   left: 19px;
 }
 
@@ -1023,6 +1024,20 @@ textarea {
   .input-wrapper.input-wrapper--city::before {
     left: 9px;
   }
+}
+
+.input-wrapper.input-wrapper--age .input-icon {
+  background: url("img/icons/cake.svg") no-repeat scroll 13px 5px;
+  background-size: 46%;
+}
+
+.input-wrapper.input-wrapper--experience .input-icon {
+  background: url("img/icons/briefcase.svg") no-repeat scroll 12px 6px;
+}
+
+.input-container--language .input-icon {
+  background: url("img/icons/translate.svg") no-repeat scroll 14px 6px;
+  background-size: 44%;
 }
 
 .checkbox {
@@ -3456,6 +3471,20 @@ div.services-list__features .inputs__before-text {
   margin: 0;
 }
 
+.timetable__top .select2-container--default {
+  width: 343px !important;
+}
+
+.timetable__top .checkbox label {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.timetable .company__container {
+  margin-top: 20px;
+}
+
 .timetable__container {
   display: -ms-grid;
   display: grid;
@@ -3475,8 +3504,26 @@ div.services-list__features .inputs__before-text {
   background-color: #ff9954;
 }
 
+.timetable__day h4 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.timetable__day table {
+  margin-bottom: 5px;
+}
+
+.timetable__day .time-inputs input[name="hour"] {
+  text-align: right;
+  margin-left: 0;
+}
+
 .timetable__table {
   border-collapse: separate;
+}
+
+.timetable__table tbody {
+  background-color: #f6f6f7;
 }
 
 .timetable__table tbody {
@@ -3488,6 +3535,33 @@ div.services-list__features .inputs__before-text {
 
 .timetable .time-inputs {
   border-radius: 5px;
+  border: 0px;
+}
+
+.timetable .time-inputs p {
+  color: #dedfe0;
+}
+
+.timetable .time-inputs ::-webkit-input-placeholder {
+  /* Chrome */
+  color: #dedfe0;
+}
+
+.timetable .time-inputs :-ms-input-placeholder {
+  /* IE 10+ */
+  color: #dedfe0;
+}
+
+.timetable .time-inputs ::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #dedfe0;
+  opacity: 1;
+}
+
+.timetable .time-inputs :-moz-placeholder {
+  /* Firefox 4 - 18 */
+  color: #dedfe0;
+  opacity: 1;
 }
 
 .select2-container {
@@ -7790,7 +7864,16 @@ footer.container {
   max-width: 1440px;
   width: 90%;
   margin: 0 auto;
-  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .site-header {
@@ -8508,6 +8591,7 @@ footer.container {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
+  width: 100%;
 }
 
 @media (max-width: 991px) {
@@ -8806,7 +8890,7 @@ footer.container {
 }
 
 section.login {
-  margin: 60px auto 40px;
+  margin: 0 auto 40px;
 }
 
 @media (max-width: 700px) {
@@ -15773,7 +15857,8 @@ section.product .product__block-recommend {
   margin-right: 20px;
 }
 
-.specialist-profile .input-wrapper--age, .specialist-profile .input-wrapper--experience {
+.specialist-profile .input-wrapper--age,
+.specialist-profile .input-wrapper--experience {
   -ms-flex-preferred-size: calc(30% - 20px);
       flex-basis: calc(30% - 20px);
 }
@@ -15888,6 +15973,7 @@ section.product .product__block-recommend {
           justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  margin-bottom: 30px;
 }
 
 .specialist-profile__choice {
@@ -15897,12 +15983,99 @@ section.product .product__block-recommend {
 .specialist-profile .specialist-profile__time-options {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
+  -ms-grid-columns: 1fr 88px;
+      grid-template-columns: 1fr 88px;
 }
 
 .specialist-profile .company__button-container button {
   height: 44px;
+}
+
+.specialist-profile .input-wrapper--experience
+.select2-container
+.select2-selection--single
+.select2-selection__rendered {
+  padding-top: 1px;
+  padding-left: 135px;
+}
+
+.specialist-profile .specialist-profile__choice--payment {
+  padding-bottom: 35px;
+}
+
+.specialist-profile .specialist-profile__choice--payment .choice-wrapper {
+  height: 85px;
+  padding-left: 50px;
+}
+
+.specialist-profile .specialist-profile__choice--payment .choice-wrapper label:before {
+  left: 105px;
+}
+
+.specialist-profile .specialist-profile__choice--payment .choice-wrapper label:after {
+  left: 108px;
+}
+
+.specialist-profile .specialist-profile__choice--payment p {
+  margin-top: 0;
+}
+
+.specialist-profile .specialist-profile__choice--period {
+  width: auto;
+}
+
+.specialist-profile .specialist-profile__choice--period .choice-wrapper {
+  width: 364px;
+  height: 75px;
+}
+
+.specialist-profile .specialist-profile__choice--period p {
+  margin-top: 0;
+}
+
+.specialist-profile .specialist-profile__choice--time .choice-wrapper {
+  height: 148px;
+  padding-left: 17px;
+}
+
+.specialist-profile .specialist-profile__choice--time .choice-wrapper p {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-right: 10px;
+  text-align: right;
+}
+
+.specialist-profile .specialist-profile__choice--time .choice-wrapper .select2-selection--single {
+  height: 21px;
+  width: 82px;
+}
+
+.specialist-profile .specialist-profile__choice--time .choice-wrapper .select2-selection--single .select2-selection__arrow {
+  height: 21px;
+  right: -8px;
+}
+
+.specialist-profile .specialist-profile__choice--time .choice-wrapper .select2-selection--single .select2-selection__rendered {
+  line-height: normal;
+}
+
+.specialist-profile .specialist-profile__choice--time .select2-container--default {
+  height: 21px;
+  margin-bottom: 20px;
+}
+
+.specialist-profile .company__offer {
+  width: auto;
+}
+
+.specialist-profile .company__offer .company__offer-info {
+  width: 364px;
+  height: 95px;
+}
+
+.specialist-profile .company__offer .percent,
+.specialist-profile .company__offer .hours {
+  right: -5px;
 }
 
 .choice-wrapper {

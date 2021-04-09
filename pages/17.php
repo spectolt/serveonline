@@ -34,11 +34,7 @@ $thisPage = "specialist-profile" ?>
                                 <span class="input-icon"></span>
                             </div>
                             <div class="input-wrapper input-wrapper--age">
-                                <!-- <select data-placeholder="Amžius:">
-                                    <option></option>
-                                    <option>Gydytojas</option>
-                                </select>
-                                <span class="input-icon"></span> -->
+                                <span class="input-icon"></span>
                                 <input class="about-datepicker">
                                 <span class="datepicker-placeholder">Amžius:</span>
                                 <span class="input-arrow"></span>
@@ -54,11 +50,11 @@ $thisPage = "specialist-profile" ?>
                             <p>Veiklos administravimo kontaktai</p>
                             <div class="input-wrapper input-wrapper--phone">
                                 <input type="text" name="phone" placeholder="+370 XXXXXXXX">
-                                <span class="input-icon"></span>
+                                <!-- <span class="input-icon"></span> -->
                             </div>
                             <div class="input-wrapper input-wrapper--envelope">
                                 <input type="text" name="email" placeholder="Elektroninis paštas">
-                                <span class="input-icon"></span>
+                                <!-- <span class="input-icon"></span> -->
                             </div>
                             <p>Kalbos, kuriomis galite bendrauti</p>
                             <?php for ($i = 0; $i < 4; $i++) { ?>
@@ -82,7 +78,7 @@ $thisPage = "specialist-profile" ?>
                         <textarea type="text" name="about-description" placeholder="" rows="1"></textarea>
                     </div>
                     <div class="specialist-profile__choices">
-                        <div class="specialist-profile__choice">
+                        <div class="specialist-profile__choice specialist-profile__choice--payment">
                             <h3>Atsiskaitymo nustatymai</h3>
                             <div class="choice-wrapper">
                                 <p>Atsiskaitymas už paslaugas:</p>
@@ -102,7 +98,7 @@ $thisPage = "specialist-profile" ?>
                                 </div>
                             </div>
                         </div>
-                        <div class="specialist-profile__choice">
+                        <div class="specialist-profile__choice specialist-profile__choice--period">
                             <h3>Paslaugų periodiškumas</h3>
                             <div class="checkbox">
                                 <input type="checkbox" name="periodicity" id="periodicity">
@@ -113,7 +109,7 @@ $thisPage = "specialist-profile" ?>
                                 </label>
                             </div>
                         </div>
-                        <div class="specialist-profile__choice">
+                        <div class="specialist-profile__choice specialist-profile__choice--time">
                             <h3>Laikai rezervavimui</h3>
                             <div class="specialist-profile__time-options choice-wrapper">
                                 <p>Pirmoje dienos pusėje rodyti laisvų laikų:</p>

@@ -99,6 +99,7 @@ textarea {
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
+    z-index: 1;
   }
 
   input {
@@ -113,8 +114,8 @@ textarea {
     &--envelope {
       &:before {
         background-image: url("img/icons/envelope.svg");
-        width: 27px;
-        height: 19px;
+        width: 26px;
+        height: 18px;
         left: 13px;
 
         @include breakpoint(sm) {
@@ -153,10 +154,10 @@ textarea {
         background-image: url("img/icons/phone.svg");
         width: 13px;
         height: 22px;
-            left: 19px;
-            @include breakpoint(sm){
-              left: 14px;
-            }
+        left: 19px;
+        @include breakpoint(sm) {
+          left: 14px;
+        }
       }
     }
 
@@ -166,9 +167,9 @@ textarea {
         width: 15px;
         height: 21px;
         left: 18px;
-            @include breakpoint(sm){
-              left: 12px;
-            }
+        @include breakpoint(sm) {
+          left: 12px;
+        }
       }
     }
 
@@ -191,13 +192,31 @@ textarea {
     &--city {
       &::before {
         background-image: url("img/icons/city.svg");
-        width: 24px;
-        height: 24px;
+        width: 23px;
+        height: 23px;
         left: 19px;
-            @include breakpoint(sm){
-              left: 9px;
-            }
+        @include breakpoint(sm) {
+          left: 9px;
+        }
       }
+    }
+
+    &--age .input-icon {
+      background: url("img/icons/cake.svg") no-repeat scroll 13px 5px;
+      background-size: 46%;
+    }
+
+    &--experience .input-icon {
+      background: url("img/icons/briefcase.svg") no-repeat scroll 12px 6px;
+    }
+  }
+}
+
+.input-container {
+  &--language {
+    .input-icon {
+      background: url("img/icons/translate.svg") no-repeat scroll 14px 6px;
+      background-size: 44%;
     }
   }
 }
@@ -516,4 +535,3 @@ select.select-input ~ span.select2-container {
   background: url(./img/icons/briefcase.svg) no-repeat scroll 15px 5px;
   background-size: 50%;
 }
-

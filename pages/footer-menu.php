@@ -1,5 +1,5 @@
 
-<footer class="site-footer <?php if ($thisCat == "login") echo "container"; ?> <?php if ($thisCat == "controls") echo "site-footer--controls"; ?>">
+<footer class="site-footer  <?php if ($thisCat == "controls") echo "site-footer--controls"; ?>">
 <button class="goto-top"></button>
     <img src="../img/logo-sidebar.svg" class="site-footer__logo" />
     <ul class="site-footer__menu">
