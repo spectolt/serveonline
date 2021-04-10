@@ -143,9 +143,13 @@
 
       label:before {
         left: 105px;
+        top: 50%;
+    transform: translateY(-50%)
       }
       label:after {
         left: 108px;
+        top: 50%;
+    transform: translateY(-50%)
       }
     }
     p {
@@ -212,6 +216,30 @@
       // &:after {
       //   top: 3px;
       // }
+    }
+  }
+
+  &__payment {
+    .checkbox {
+      position: relative;
+      &:before {
+        content: "";
+        display: block;
+        width: 18px;
+        height: 16px;
+        position: absolute;
+        left: 5px;
+        background-repeat: no-repeat;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+
+    &--cash .checkbox::before {
+      background-image: url("img/icons/cash.svg");
+    }
+    &--card .checkbox::before {
+      background-image: url("img/icons/card.svg");
     }
   }
 }

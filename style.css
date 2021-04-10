@@ -939,7 +939,7 @@ textarea {
 .input-wrapper.input-wrapper--envelope:before {
   background-image: url("img/icons/envelope.svg");
   width: 26px;
-  height: 18px;
+  height: 19px;
   left: 13px;
 }
 
@@ -1226,16 +1226,16 @@ select {
   width: 100%;
 }
 
-.about-datepicker {
+input.about-datepicker {
   height: 35px;
   width: 100%;
   border: 1px solid #101b51;
   border-radius: 5px;
-  padding-left: 70px;
+  padding-left: 110px;
 }
 
 @media (max-width: 890px) {
-  .about-datepicker {
+  input.about-datepicker {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
     margin-bottom: 15px;
@@ -1243,7 +1243,7 @@ select {
   }
 }
 
-.about-datepicker ~ .input-arrow {
+input.about-datepicker ~ .input-arrow {
   background: url("img/icons/angle-down-bold.svg") no-repeat center;
   height: 35px;
   width: 15px;
@@ -1256,7 +1256,7 @@ select {
 }
 
 @media (max-width: 700px) {
-  .about-datepicker ~ .input-arrow {
+  input.about-datepicker ~ .input-arrow {
     right: 10px;
   }
 }
@@ -8914,7 +8914,6 @@ section.login .login__blocks {
 @media (max-width: 800px) {
   section.login .login__blocks {
     display: block;
-    margin-top: 90px;
   }
 }
 
@@ -16010,10 +16009,16 @@ section.product .product__block-recommend {
 
 .specialist-profile .specialist-profile__choice--payment .choice-wrapper label:before {
   left: 105px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .specialist-profile .specialist-profile__choice--payment .choice-wrapper label:after {
   left: 108px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .specialist-profile .specialist-profile__choice--payment p {
@@ -16076,6 +16081,31 @@ section.product .product__block-recommend {
 .specialist-profile .company__offer .percent,
 .specialist-profile .company__offer .hours {
   right: -5px;
+}
+
+.specialist-profile__payment .checkbox {
+  position: relative;
+}
+
+.specialist-profile__payment .checkbox:before {
+  content: "";
+  display: block;
+  width: 18px;
+  height: 16px;
+  position: absolute;
+  left: 5px;
+  background-repeat: no-repeat;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.specialist-profile__payment--cash .checkbox::before {
+  background-image: url("img/icons/cash.svg");
+}
+
+.specialist-profile__payment--card .checkbox::before {
+  background-image: url("img/icons/card.svg");
 }
 
 .choice-wrapper {

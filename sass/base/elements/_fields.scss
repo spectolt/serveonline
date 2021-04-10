@@ -115,7 +115,7 @@ textarea {
       &:before {
         background-image: url("img/icons/envelope.svg");
         width: 26px;
-        height: 18px;
+        height: 19px;
         left: 13px;
 
         @include breakpoint(sm) {
@@ -454,12 +454,12 @@ select {
   width: 100%;
 }
 
-.about-datepicker {
+input.about-datepicker {
   height: 35px;
   width: 100%;
   border: 1px solid $darkblue;
   border-radius: 5px;
-  padding-left: 70px;
+  padding-left: 110px;
 
   @include breakpoint(890px) {
     flex-basis: 100%;

@@ -40,7 +40,7 @@ $thisPage = "specialist-profile" ?>
                                 <span class="input-arrow"></span>
                             </div>
                             <div class="input-wrapper input-wrapper--experience">
-                                <select>
+                                <select data-placeholder="" data-minimum-results-for-search="Infinity">
                                     <option></option>
                                     <option>1990</option>
                                 </select>
