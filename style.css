@@ -12113,7 +12113,7 @@ section.product .product__block-recommend {
   grid-column-end: -1;
 }
 
-.profiles__table--service thead tr {
+.profiles__table--service thead tr, .profiles__table--service tfoot tr {
   table-layout: fixed;
 }
 

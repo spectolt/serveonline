@@ -1453,7 +1453,7 @@
   }
 
   &__table--service{
-    thead tr {
+    thead tr, tfoot tr {
       table-layout: fixed;
     }
     th{
