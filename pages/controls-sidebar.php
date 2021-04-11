@@ -6,7 +6,55 @@
         <div class="site-aside__blocks">
             <div class="site-aside__block">
                 <h3>Paslaugų gavėjai</h3>
-                    <div class="site-aside__item"><a href="#">Paslaugų gavėjų profiliai</a></div>
+                <div class="site-aside__item <?php if ($thisPage == "service-profiles") echo "site-aside__item--active site-aside__item--open"; ?>">
+                        <a href="#">Paslaugų gavėjų profiliai</a>
+                        <div class="site-aside__filters <?php if ($thisPage != "service-profiles") echo "hidden"; ?>">
+                            <p>Registracijos data nuo</p>
+                            <div class="site-aside__datepicker-container">
+                                <input class="site-aside__datepicker" placeholder="Nuo">
+                            </div>
+                            <p>Registracijos data iki</p>
+                            <div class="site-aside__datepicker-container">
+                                <input class="site-aside__datepicker" placeholder="Iki">
+                            </div>
+                            <p>Šalis</p>
+                            <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
+                                <option></option>
+                                <option>Visi</option>
+                                <option>Lietuva</option>
+                            </select>
+                            <p>Paslaugų gavėjo miestas</p>
+                            <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
+                                <option></option>
+                                <option>Visi</option>
+                                <option>Vilnius</option>
+                                <option>Kaunas</option>
+                                <option>Klaipėda</option>
+                            </select>
+                            <p>Profilio sąsajos</p>
+                            <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
+                                <option></option>
+                                <option>Visi</option>
+                                <option>Įmonės administratorius</option>
+                                <option>Specialistas</option>
+                                <option>Darbuotojas</option>
+                            </select>
+                            <p>Pažymėti/Nepažymėti</p>
+                            <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
+                                <option></option>
+                                <option>Visi</option>
+                                <option>Pažymėti</option>
+                                <option>Nepažymėti</option>
+                            </select>
+                            <p>Aktyvūs/Neaktyvūs</p>
+                            <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
+                                <option></option>
+                                <option>Visi</option>
+                                <option>Aktyvūs</option>
+                                <option>Neaktyvūs</option>
+                            </select>
+                        </div>
+                </div>
                     <div class="site-aside__item"><a href="#">Rezervacijos</a></div>
                     <div class="site-aside__item"><a href="#">Turi MANO sąrašą</a></div>
                     <div class="site-aside__item"><a href="#">Neturi MANO sąrašo</a></div>

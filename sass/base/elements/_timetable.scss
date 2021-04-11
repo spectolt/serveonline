@@ -1,10 +1,36 @@
 .timetable {
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint(1200px) {
+    width: calc(100vw - 80px);
+  }
+
+  @include breakpoint(sm) {
+    width: calc(100vw - 10px);
+  }
+
   &__top {
     display: flex;
     justify-content: space-between;
 
+    @include breakpoint(890px) {
+      order: 1;
+      margin-top: 30px;
+    }
+
     h2 {
       margin: 0;
+
+      @include breakpoint(890px) {
+        display: none;
+      }
+    }
+
+    .arrow {
+      @include breakpoint(890px) {
+        display: none;
+      }
     }
 
     .select2-container--default {
@@ -22,14 +48,65 @@
 
   .company__container {
     margin-top: 20px;
+    padding: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+    @include breakpoint(890px) {
+      border: none;
+    }
+  }
+
+  .company__button-container {
+    width: 100%;
+    margin: 0;
+
+    @include breakpoint(890px) {
+      order: 2;
+    }
+
+    @include breakpoint(sm) {
+      width: calc(100% - 10px);
+    }
+
+    button:first-of-type, button:last-of-type {
+      margin-top: 0;
+    }
   }
 
   &__container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+
+    @include breakpoint(890px) {
+      padding: 0;
+    }
+  }
+
+  &__week {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
+    overflow: auto;
+
+    @include breakpoint(890px) {
+      display: none;
+    }
+
+    &.selected-week {
+      @include breakpoint(890px) {
+        display: grid;
+        width: calc(100vw - 40px);
+      }
+    }
+
+    &::-webkit-scrollbar {
+      height: 8px;
+    }
   }
 
   &__day {
+
     &:nth-of-type(7n + 6),
     &:nth-of-type(7n) {
       tbody {
@@ -46,6 +123,12 @@
     &.active-to {
       tbody {
         background-color: $orange;
+      }
+    }
+
+    &.inactive {
+      h4 {
+        color: $lightgray;
       }
     }
 
@@ -101,6 +184,52 @@
       /* Firefox 4 - 18 */
       color: #dedfe0;
       opacity: 1;
+    }
+  }
+
+  &__datepicker-container {
+    display: flex;
+  }
+
+  &__datepicker {
+    .ui-datepicker.ui-widget {
+      position: relative;
+      box-shadow: none;
+
+      .ui-datepicker-buttonpane {
+        padding: 0;
+        margin: 0;
+
+        .ui-datepicker-current {
+          margin: 0;
+          float: right;
+          border: none;
+          text-decoration: underline;
+          padding: 0;
+          width: auto;
+        }
+      }
+      .ui-datepicker-close {
+        display: none;
+      }
+
+      .ui-datepicker-today a {
+        border: none;
+        color: $red;
+        font-weight: 600;
+      }
+    }
+
+    &--until {
+      .ui-datepicker.ui-widget {
+        .ui-state-active {
+          background-color: $orange;
+        }
+
+        .ui-datepicker-current {
+          display: none;
+        }
+      }
     }
   }
 }

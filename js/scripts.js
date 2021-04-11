@@ -691,6 +691,7 @@ function onDocumentReady() {
       changeTextWidth();
       changePadding();
       paymentLayout();
+      timetableLayout();
       var field = $(document.activeElement);
       if (field.is(".hasDatepicker")) {
         field.datepicker("hide").datepicker("show");
@@ -1653,6 +1654,11 @@ function onDocumentReady() {
       if(!$(this).hasClass("transparent")) {
         $(this).html("Grupuoti įmones")
       }
+    } else if($(this).hasClass("controls__group-btn--profession")) {
+      $(this).html("Išgrupuoti profesijas");
+      if(!$(this).hasClass("transparent")) {
+        $(this).html("Grupuoti profesijas")
+      }
     }
   })
 
@@ -1686,11 +1692,16 @@ function onDocumentReady() {
       },
     });
 
+  $(".timetable__datepicker").datepicker({
+    showButtonPanel: true
+  });
+
   moveAction();
   moveOrder();
   changePadding();
   openTab();
   paymentLayout();
+  timetableLayout();
   // tableWidths($(".profiles table"));
 
   setTimeout(function () {
@@ -2080,8 +2091,14 @@ function changeRowWidth() {
   );
   if ($table.hasScrollBar()) {
     $row.css("width", "calc(100% - 8px)");
+    if ($table.parent("table.profiles__table--specialists").length > 0) {
+      $table.parent("table").find("thead tr th:last-of-type").css("width", "48px");
+    }
   } else {
     $row.css("width", "100%");
+    if ($table.parent("table.profiles__table--specialists").length > 0) {
+      $table.parent("table").find("thead tr th:last-of-type").css("width", "40px");
+    }
   }
 }
 
@@ -2284,4 +2301,13 @@ function newSpecialist(button, countAdmin, countSpecialistLabel) {
     newSpecialist.find(".company__specialist-info .company__specialist-number").html(specialistLabelFirst[0] + " " + countSpecialistLabel);
     newSpecialist.find(".company__specialist-buttons").removeClass("hidden");
     button.hide();
+}
+
+function timetableLayout() {
+  if (window.matchMedia("(max-width: 890px)").matches) {
+    $(".timetable__datepicker--from").insertBefore(".selected-week--from")
+    $(".timetable__datepicker--until").insertBefore(".selected-week--to")
+  } else {
+    $(".timetable__datepicker--from, .timetable__datepicker--until").appendTo(".timetable__datepicker-container")
+  }
 }

@@ -196,56 +196,74 @@ $thisPage = "specialist-profile" ?>
                             </label>
                         </div>
                     </div>
+                    <div class="timetable__datepicker-container">
+                        <div class="timetable__datepicker timetable__datepicker--from">
+                            <h3>Nuo</h3>
+                        </div>
+                        <div class="timetable__datepicker timetable__datepicker--until">
+                            <h3>Iki</h3>
+                        </div>
+                    </div>
                     <div class="company__container">
                         <div class="timetable__container">
-                            <?php for ($i = 0; $i < 35; $i++) { ?>
-                                <div class="timetable__day <?php if($i == 14) echo "active-from"; else if($i == 22) echo "active-to" ?>">
-                                    <h4><b>Pr</b> 31 <span class="timetable__month">GRUODIS</span></h4>
-                                    <table class="timetable__table">
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    <div class="company__time time-inputs">
-                                                        <input type="number" name="hour" placeholder="00" max="23" length="2">
-                                                        <p>:</p>
-                                                        <input type="number" name="minute" placeholder="00" max="59" length="2">
-                                                    </div>
-                                                </td>
-                                                <td>-</td>
-                                                <td>
-                                                    <div class="company__time time-inputs">
-                                                        <input type="number" name="hour" placeholder="00" max="23" length="2">
-                                                        <p>:</p>
-                                                        <input type="number" name="minute" placeholder="00" max="59" length="2">
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="company__time time-inputs">
-                                                        <input type="number" name="hour" placeholder="00" max="23" length="2">
-                                                        <p>:</p>
-                                                        <input type="number" name="minute" placeholder="00" max="59" length="2">
-                                                    </div>
-                                                </td>
-                                                <td>-</td>
-                                                <td>
-                                                    <div class="company__time time-inputs">
-                                                        <input type="number" name="hour" placeholder="00" max="23" length="2">
-                                                        <p>:</p>
-                                                        <input type="number" name="minute" placeholder="00" max="59" length="2">
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                            <?php for ($j = 0; $j < 5; $j++) { ?>
+                                <div class="timetable__week <?php if ($j == 2) echo "selected-week selected-week--from ";
+                                                            if ($j == 4) echo "selected-week selected-week--to " ?>">
+                                    <?php for ($i = 0; $i < 7; $i++) { ?>
+                                        <div class="timetable__day <?php if ($j == 2 && $i == 0) echo "active-from ";
+                                                                    else if ($j == 4 && $i == 1) echo "active-to ";
+                                                                    if ($j == 0 && $i < 1 || $j == 4 && $i > 4) echo "inactive ";?>">
+                                            <h4><b>Pr</b> 31 <span class="timetable__month-name"><?php if ($j == 0 && $i == 0) echo "GRUODIS";
+                                                                                            else if ($j == 0 && $i == 1) echo "SAUSIS";
+                                                                                            else if ($j == 4 && $i == 5) echo "VASARIS"; ?></span>
+                                                <?php if ($j == 2 && $i == 0) { ?> <span class="timetable__copy">Kopijuoti</span> <?php } ?></h4>
+                                            <table class="timetable__table">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="company__time time-inputs">
+                                                                <input type="number" name="hour" placeholder="00" max="23" length="2">
+                                                                <p>:</p>
+                                                                <input type="number" name="minute" placeholder="00" max="59" length="2">
+                                                            </div>
+                                                        </td>
+                                                        <td>-</td>
+                                                        <td>
+                                                            <div class="company__time time-inputs">
+                                                                <input type="number" name="hour" placeholder="00" max="23" length="2">
+                                                                <p>:</p>
+                                                                <input type="number" name="minute" placeholder="00" max="59" length="2">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="company__time time-inputs">
+                                                                <input type="number" name="hour" placeholder="00" max="23" length="2">
+                                                                <p>:</p>
+                                                                <input type="number" name="minute" placeholder="00" max="59" length="2">
+                                                            </div>
+                                                        </td>
+                                                        <td>-</td>
+                                                        <td>
+                                                            <div class="company__time time-inputs">
+                                                                <input type="number" name="hour" placeholder="00" max="23" length="2">
+                                                                <p>:</p>
+                                                                <input type="number" name="minute" placeholder="00" max="59" length="2">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    <?php } ?>
                                 </div>
                             <?php } ?>
                         </div>
-                        <div class="company__button-container company__button-container--timetable">
-                            <button class="orange transparent">Ištrinti grafiką</button>
-                            <button class="orange">Sukurti grafiką</button>
-                        </div>
+                    </div>
+                    <div class="company__button-container company__button-container--timetable">
+                        <button class="orange transparent">Ištrinti grafiką</button>
+                        <button class="orange">Sukurti grafiką</button>
                     </div>
                 </section>
             </section>
