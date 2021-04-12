@@ -18,14 +18,22 @@
     display: flex;
     justify-content: space-between;
 
+    @include breakpoint(l) {
+      flex-wrap: wrap;
+    }
+
     @include breakpoint(890px) {
       order: 1;
       // margin-top: 30px;
-      flex-wrap: wrap;
+    }
+
+    .timetable__title {
+      display: flex;
     }
 
     h2 {
       margin: 0;
+      margin-right: 10px;
 
       @include breakpoint(890px) {
         display: none;
@@ -48,6 +56,10 @@
     }
 
     .checkbox {
+      @include breakpoint(l) {
+        flex-basis: 50%;
+        margin-top: 20px;
+      }
       label {
         top: 50%;
         -ms-transform: translateY(-50%);
@@ -68,6 +80,7 @@
 
     @include breakpoint(890px) {
       border: none;
+      margin-top: 0;
     }
 
     @include breakpoint(sm) {
@@ -175,6 +188,14 @@
     }
   }
 
+  &__copy {
+    font-size: .75rem;
+    text-decoration: underline;
+    margin: 5px 5px 0 0;
+    float: right;
+    cursor: pointer;
+  }
+
   &__table {
     border-collapse: separate;
 
@@ -218,6 +239,12 @@
 
   &__datepicker-container {
     display: flex;
+    margin-top: 30px;
+    justify-content: space-between;
+
+    @include breakpoint(890px) {
+      display: none;
+    }
   }
 
   &__datepicker {

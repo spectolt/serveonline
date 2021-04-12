@@ -29,13 +29,19 @@
     }
 
     &--city {
-      flex-basis: calc(30% - 20px);
-      margin-right: 20px;
+      flex-basis: calc(30% - 10px);
+      margin-right: 10px;
     }
 
     &--neighborhood {
-      flex-basis: calc(40% - 20px);
-      margin-right: 20px;
+      flex-basis: calc(40% - 10px);
+      margin-right: 10px;
+    }
+
+    &--house, &--apartment {
+      input[type="text"] {
+        padding: 10px;
+      }
     }
 
     @include breakpoint(sm) {
@@ -407,7 +413,7 @@
 
       &:nth-of-type(n + 3) {
         flex-basis: 33%;
-        width: calc(100% - 20px);
+        width: calc(100% - 10px);
 
         @include breakpoint(880px) {
           flex-basis: 50%;
@@ -442,7 +448,7 @@
     flex: 1;
 
     input {
-      width: calc(100% - 20px);
+      width: calc(100% - 10px);
       min-width: 31%;
       //margin-right: 20px;
       // margin-bottom: 20px;
@@ -587,7 +593,7 @@
         .select2-container {
           margin-bottom: 20px;
           margin-right: 20px;
-          width: calc(100% - 20px);
+          width: calc(100% - 10px);
           color: $darkblue;
 
           @include breakpoint(sm) {
@@ -847,12 +853,12 @@
       padding: 0;
       border: none;
       // margin-bottom: 20px;
-      margin-right: -20px;
+      margin-right: -10px;
       align-items: flex-start;
 
       input {
-        width: calc(100% - 20px);
-        margin-right: 20px;
+        width: calc(100% - 10px);
+        margin-right: 10px;
         color: $darkblue;
       }
 
@@ -860,8 +866,12 @@
       //   width: 40%;
       // }
 
-      .input-container:first-of-type {
-        flex-basis: 40%;
+      .input-container--street {
+        flex-basis: 24%;
+      }
+
+      .input-container--house, .input-container--apartment {
+        flex-basis: 8%;
       }
 
       .input-container:last-of-type {
@@ -2341,7 +2351,7 @@
   }
 
   &__email-container {
-    width: calc(50% - 20px);
+    width: calc(50% - 10px);
   }
 
   &__password-container {
@@ -2351,7 +2361,7 @@
     margin-right: 0;
 
     .input-container {
-      margin-right: 20px;
+      margin-right: 10px;
     }
 
     &--current {

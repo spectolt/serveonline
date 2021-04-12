@@ -27,11 +27,6 @@ $thisPage = "company-profiles"; ?>
                     <button class="expand-button"></button>
                     <div class="controls__table-container">
                         <!-- <div class="controls__table-border"> -->
-
-         
-
-
-
                         <table class="controls__table profiles__table profiles__table--specialists">
                             <thead>
                                 <tr>
@@ -85,10 +80,10 @@ $thisPage = "company-profiles"; ?>
                                     <th class="bottom-arrow top-arrow" rowspan="2">
                                         Kalbos
                                     </th>
-                                    <th class="bottom-arrow top-arrow" colspan="2">
+                                    <th colspan="2">
                                         Paskutinės valandos pasiūlymas
                                     </th>
-                                    <th class="bottom-arrow top-arrow" colspan="3">
+                                    <th colspan="3">
                                         Laikai rezervavimui
                                     </th>
                                     <th rowspan="2">
@@ -140,15 +135,23 @@ $thisPage = "company-profiles"; ?>
                                     <td></td>
                                     <td></td>
                                     <td>9999999</td>
-                                    <td></td>
-                                    <td>9999999</td>
-                                    <td>9999999</td>
                                     <td>9999999</td>
                                     <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
                                     <td>9999999</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
                                     <td></td>
                                 </tr>
                             </tfoot>

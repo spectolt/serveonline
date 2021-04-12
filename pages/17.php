@@ -48,12 +48,12 @@ $thisPage = "specialist-profile" ?>
                                 <span class="datepicker-placeholder">Stažas nuo:</span>
                             </div>
                             <p>Veiklos administravimo kontaktai</p>
-                            <div class="input-wrapper input-wrapper--phone">
-                                <input type="text" name="phone" placeholder="+370 XXXXXXXX">
-                                <!-- <span class="input-icon"></span> -->
-                            </div>
                             <div class="input-wrapper input-wrapper--envelope">
                                 <input type="text" name="email" placeholder="Elektroninis paštas">
+                                <!-- <span class="input-icon"></span> -->
+                            </div>
+                            <div class="input-wrapper input-wrapper--phone">
+                                <input type="text" name="phone" placeholder="+370 XXXXXXXX">
                                 <!-- <span class="input-icon"></span> -->
                             </div>
                             <p>Kalbos, kuriomis galite bendrauti</p>
@@ -175,9 +175,11 @@ $thisPage = "specialist-profile" ?>
                 <?php require_once("company/services.php") ?>
                 <section class="group__tab timetable hidden" id="darbo-grafikas">
                     <div class="timetable__top">
+                        <div class="timetable__title">
                         <h2>2021 Sausis</h2>
                         <button class="arrow arrow--left"></button>
                         <button class="arrow arrow--right"></button>
+                        </div>
                         <select>
                             <option>Kartoti pažymėtą dieną kas dieną</option>
                             <option>Kartoti pažymėtą dieną kas antrą dieną</option>
