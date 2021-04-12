@@ -1,11 +1,16 @@
 .specialist-profile {
-  input {
+  .company__container {
+    @include breakpoint(890px) {
+      padding: 10px 10px 0;
+    }
+  }
+  input[type="text"] {
     width: 100%;
     // width: calc(100% - 20px);
-  }
 
-  .input-wrapper {
-    margin-right: 20px;
+    @include breakpoint(sm) {
+      height: 32px;
+    }
   }
 
   .input-container--profession {
@@ -16,6 +21,18 @@
   .input-wrapper--age,
   .input-wrapper--experience {
     flex-basis: calc(30% - 20px);
+
+    .select2-container {
+      @include breakpoint(sm) {
+        width: 100% !important;
+      }
+    }
+
+    .select2-container .select2-selection--single {
+      @include breakpoint(sm) {
+        height: 32px;
+      }
+    }
   }
 
   .input-wrapper--phone {
@@ -31,12 +48,48 @@
     margin-right: 20px;
   }
 
+  .input-wrapper {
+    margin-right: 20px;
+
+    @include breakpoint(sm) {
+      flex-basis: 100%;
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }
+
+  .input-container {
+    @include breakpoint(sm) {
+      flex-basis: 100%;
+      margin-right: 0;
+    }
+
+    &--language {
+      @include breakpoint(sm) {
+        flex-basis: calc(50% - 10px);
+        margin-right: 10px;
+
+        &:nth-of-type(2n+1) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
   &__top {
     display: flex;
+
+    @include breakpoint(l) {
+      flex-direction: column;
+    }
   }
 
   h3 {
     font-size: 1.25rem;
+
+    @include breakpoint(890px) {
+      font-size: 1.125rem;
+    }
   }
 
   &__info {
@@ -51,25 +104,57 @@
 
     p {
       flex-basis: 100%;
+
+      @include breakpoint(890px) {
+        font-size: 1rem;
+        margin: 0 0 10px;
+      }
     }
+  }
+
+  select.select-input ~ span.select2-container {
+    margin-bottom: 10px;
   }
 
   .company__about {
     width: 100%;
 
+    @include breakpoint(sm) {
+      margin-top: 20px;
+    }
+
     .languages {
       align-self: center;
       margin-left: auto;
       margin-right: 0;
+
+      @include breakpoint(sm) {
+        flex: 0 0 auto;
+        margin-left: auto;
+        margin-right: -20px;
+      }
     }
 
     textarea {
       height: 260px;
       padding-left: 25px;
     }
+
+    h3 {
+      @include breakpoint(sm) {
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+    }
   }
 
   &__photo {
+    @include breakpoint(l) {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 30px;
+    }
     &-img {
       margin-bottom: 20px;
       width: 180px;
@@ -81,6 +166,12 @@
       box-shadow: 0px 12px 29px 0px rgba(0, 0, 0, 0.15);
       margin-right: 20px;
       background-image: url(img/profile.svg);
+
+      @include breakpoint(l) {
+        margin-bottom: 0;
+        width: 136px;
+        height: 136px;
+      }
     }
   }
 
@@ -112,10 +203,31 @@
     justify-content: space-between;
     flex-wrap: wrap;
     margin-bottom: 30px;
+
+    @include breakpoint(sm) {
+      margin-top: 20px;
+      margin-bottom: 0;
+    }
+
+    h3 {
+      @include breakpoint(sm) {
+        font-size: 1rem;
+        font-weight: 400;
+      }
+    }
   }
 
   &__choice {
     width: 42.2%;
+
+    @include breakpoint(l) {
+      width: 100% !important; 
+    }
+
+    @include breakpoint(sm) {
+      padding: 0;
+      margin-bottom: 30px;
+    }
   }
 
   & .specialist-profile__time-options {
@@ -137,9 +249,23 @@
 
   .specialist-profile__choice--payment {
     padding-bottom: 35px;
+
+    @include breakpoint(sm) {
+      padding-bottom: 0;
+    }
     .choice-wrapper {
       height: 85px;
       padding-left: 50px;
+
+      @include breakpoint(sm) {
+        padding-left: 20px;
+      }
+
+      label {
+        @include breakpoint(xs) {
+          font-size: .875rem;
+        }
+      }
 
       label:before {
         left: 105px;
@@ -162,9 +288,27 @@
     .choice-wrapper {
       width: 364px;
       height: 75px;
+
+      @include breakpoint(890px) {
+        border: none;
+        padding: 0;
+        height: auto;
+      }
     }
     p {
       margin-top: 0;
+
+      @include breakpoint(890px) {
+        margin-bottom: 0;
+      }
+    }
+
+    .checkbox {
+      @include breakpoint(890px) {
+        border: 1px solid $lightgray;
+        border-radius: 5px;
+        padding: 20px;
+      }
     }
   }
 
@@ -201,6 +345,28 @@
     .company__offer-info {
       width: 364px;
       height: 95px;
+
+      @include breakpoint(l) {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    h3 {
+      @include breakpoint(890px) {
+        border: none;
+        padding: 0;
+      }
+    }
+
+    .checkbox {
+      @include breakpoint(890px) {
+        border: 1px solid $lightgray;
+        padding: 20px;
+        border-radius: 5px;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
     }
     // .percent:before {
     //   top: 4px !important;
@@ -250,4 +416,8 @@
   padding: 20px;
   border-radius: 5px;
   width: 425px;
+
+  @include breakpoint(l) {
+    width: 100% !important;
+  }
 }

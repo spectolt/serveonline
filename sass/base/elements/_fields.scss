@@ -208,6 +208,10 @@ textarea {
 
     &--experience .input-icon {
       background: url("img/icons/briefcase.svg") no-repeat scroll 12px 6px;
+
+      @include breakpoint(sm) {
+        background-size: 50%;
+      }
     }
   }
 }
@@ -463,14 +467,17 @@ input.about-datepicker {
 
   @include breakpoint(890px) {
     flex-basis: 100%;
-    margin-bottom: 15px;
+    // margin-bottom: 15px;
+  }
+
+  @include breakpoint(sm) {
     height: 32px;
   }
 
   & ~ .input-arrow {
     background: url("img/icons/angle-down-bold.svg") no-repeat center;
     height: 35px;
-    width: 15px;
+    width: 14px;
     display: block;
     position: absolute;
     right: 30px;
@@ -478,7 +485,7 @@ input.about-datepicker {
     transform: translateY(-50%);
 
     @include breakpoint(sm) {
-      right: 10px;
+      right: 21px;
     }
   }
 }
@@ -534,4 +541,9 @@ select.select-input ~ span.select2-container {
 .input-container--profession .input-icon {
   background: url(./img/icons/briefcase.svg) no-repeat scroll 15px 5px;
   background-size: 50%;
+
+  @include breakpoint(sm) {
+    background: url(./img/icons/briefcase.svg) no-repeat scroll 12px 6px;
+    background-size: 50%;
+  }
 }

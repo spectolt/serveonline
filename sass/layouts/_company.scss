@@ -2259,9 +2259,9 @@
         left: 1em;
         z-index: 1;
 
-        @include breakpoint(sm) {
-          top: 7px;
-        }
+        // @include breakpoint(sm) {
+        //   top: 7px;
+        // }
       }
 
       &:after {
@@ -2270,9 +2270,9 @@
         transform: translateY(-50%);
         right: 0.5em;
 
-        @include breakpoint(sm) {
-          top: 6.5px;
-        }
+        // @include breakpoint(sm) {
+        //   top: 6.5px;
+        // }
       }
 
       input {

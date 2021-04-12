@@ -22,7 +22,7 @@ $thisPage = "specialist-profile" ?>
                     <div class="specialist-profile__top">
                         <div class="specialist-profile__photo">
                             <div class="specialist-profile__photo-img"></div>
-                            <button class="specialist-profile__photo-button">Keisti nuotrauką</button>
+                            <button class="specialist-profile__photo-button small">Keisti nuotrauką</button>
                         </div>
                         <div class="specialist-profile__info">
                             <h3>Įmonės pavadinimas</h3>

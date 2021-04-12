@@ -1035,6 +1035,12 @@ textarea {
   background: url("img/icons/briefcase.svg") no-repeat scroll 12px 6px;
 }
 
+@media (max-width: 700px) {
+  .input-wrapper.input-wrapper--experience .input-icon {
+    background-size: 50%;
+  }
+}
+
 .input-container--language .input-icon {
   background: url("img/icons/translate.svg") no-repeat scroll 14px 6px;
   background-size: 44%;
@@ -1238,7 +1244,11 @@ input.about-datepicker {
   input.about-datepicker {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
-    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 700px) {
+  input.about-datepicker {
     height: 32px;
   }
 }
@@ -1246,7 +1256,7 @@ input.about-datepicker {
 input.about-datepicker ~ .input-arrow {
   background: url("img/icons/angle-down-bold.svg") no-repeat center;
   height: 35px;
-  width: 15px;
+  width: 14px;
   display: block;
   position: absolute;
   right: 30px;
@@ -1257,7 +1267,7 @@ input.about-datepicker ~ .input-arrow {
 
 @media (max-width: 700px) {
   input.about-datepicker ~ .input-arrow {
-    right: 10px;
+    right: 21px;
   }
 }
 
@@ -1322,6 +1332,13 @@ select.select-input ~ span.select2-container .select2-selection__arrow {
 .input-container--profession .input-icon {
   background: url(./img/icons/briefcase.svg) no-repeat scroll 15px 5px;
   background-size: 50%;
+}
+
+@media (max-width: 700px) {
+  .input-container--profession .input-icon {
+    background: url(./img/icons/briefcase.svg) no-repeat scroll 12px 6px;
+    background-size: 50%;
+  }
 }
 
 .search-container {
@@ -3476,7 +3493,13 @@ div.services-list__features .inputs__before-text {
 
 @media (max-width: 700px) {
   .timetable {
-    width: calc(100vw - 10px);
+    width: calc(100vw - (100vw - 100%) - 20px);
+  }
+}
+
+@media (max-width: 600px) {
+  .timetable {
+    width: 100%;
   }
 }
 
@@ -3494,7 +3517,8 @@ div.services-list__features .inputs__before-text {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
-    margin-top: 30px;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 }
 
@@ -3518,10 +3542,24 @@ div.services-list__features .inputs__before-text {
   width: 343px !important;
 }
 
+@media (max-width: 890px) {
+  .timetable__top .select2-container--default {
+    -ms-flex-preferred-size: 90%;
+        flex-basis: 90%;
+    margin: 0 auto 10px;
+  }
+}
+
 .timetable__top .checkbox label {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+}
+
+@media (max-width: 600px) {
+  .timetable__top .checkbox label {
+    font-size: .875rem;
+  }
 }
 
 .timetable .company__container {
@@ -3534,6 +3572,12 @@ div.services-list__features .inputs__before-text {
 @media (max-width: 890px) {
   .timetable .company__container {
     border: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .timetable .company__container {
+    margin-top: 0;
   }
 }
 
@@ -3550,9 +3594,9 @@ div.services-list__features .inputs__before-text {
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 890px) {
   .timetable .company__button-container {
-    width: calc(100% - 10px);
+    margin-top: 20px;
   }
 }
 
@@ -3569,11 +3613,17 @@ div.services-list__features .inputs__before-text {
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 20px;
+  overflow: auto;
+}
+
+.timetable__container::-webkit-scrollbar {
+  height: 8px;
 }
 
 @media (max-width: 890px) {
   .timetable__container {
     padding: 0;
+    overflow: visible;
   }
 }
 
@@ -3582,12 +3632,16 @@ div.services-list__features .inputs__before-text {
   display: grid;
   -ms-grid-columns: (1fr)[7];
       grid-template-columns: repeat(7, 1fr);
-  overflow: auto;
 }
 
 @media (max-width: 890px) {
   .timetable__week {
     display: none;
+    border-top: 1px solid #e8e8e8;
+    border-bottom: 1px solid #e8e8e8;
+    padding: 5px 0;
+    margin-bottom: 20px;
+    overflow: auto;
   }
 }
 
@@ -3685,10 +3739,45 @@ div.services-list__features .inputs__before-text {
   display: flex;
 }
 
+.timetable__datepicker {
+  position: relative;
+}
+
+@media (max-width: 890px) {
+  .timetable__datepicker {
+    margin-left: -15px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 890px) {
+  .timetable__datepicker h3 {
+    position: absolute;
+    top: 0;
+    left: 15px;
+    z-index: 1000;
+    font-size: 1.5rem;
+    font-weight: 900;
+  }
+}
+
 .timetable__datepicker .ui-datepicker.ui-widget {
   position: relative;
   -webkit-box-shadow: none;
           box-shadow: none;
+}
+
+@media (max-width: 890px) {
+  .timetable__datepicker .ui-datepicker.ui-widget {
+    padding: 0;
+  }
+}
+
+@media (max-width: 890px) {
+  .timetable__datepicker .ui-datepicker.ui-widget .ui-datepicker-header {
+    width: 60%;
+    float: right;
+  }
 }
 
 .timetable__datepicker .ui-datepicker.ui-widget .ui-datepicker-buttonpane {
@@ -3703,6 +3792,7 @@ div.services-list__features .inputs__before-text {
   text-decoration: underline;
   padding: 0;
   width: auto;
+  margin-left: auto;
 }
 
 .timetable__datepicker .ui-datepicker.ui-widget .ui-datepicker-close {
@@ -15781,13 +15871,6 @@ section.product .product__block-recommend {
   z-index: 1;
 }
 
-@media (max-width: 700px) {
-  .company .company__offer .percent:before,
-  .company .company__offer .hours:before {
-    top: 7px;
-  }
-}
-
 .company .company__offer .percent:after,
 .company .company__offer .hours:after {
   position: absolute;
@@ -15795,13 +15878,6 @@ section.product .product__block-recommend {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   right: 0.5em;
-}
-
-@media (max-width: 700px) {
-  .company .company__offer .percent:after,
-  .company .company__offer .hours:after {
-    top: 6.5px;
-  }
 }
 
 .company .company__offer .percent input,
@@ -16112,12 +16188,20 @@ section.product .product__block-recommend {
   opacity: 0.5;
 }
 
-.specialist-profile input {
+@media (max-width: 890px) {
+  .specialist-profile .company__container {
+    padding: 10px 10px 0;
+  }
+}
+
+.specialist-profile input[type="text"] {
   width: 100%;
 }
 
-.specialist-profile .input-wrapper {
-  margin-right: 20px;
+@media (max-width: 700px) {
+  .specialist-profile input[type="text"] {
+    height: 32px;
+  }
 }
 
 .specialist-profile .input-container--profession {
@@ -16130,6 +16214,20 @@ section.product .product__block-recommend {
 .specialist-profile .input-wrapper--experience {
   -ms-flex-preferred-size: calc(30% - 20px);
       flex-basis: calc(30% - 20px);
+}
+
+@media (max-width: 700px) {
+  .specialist-profile .input-wrapper--age .select2-container,
+  .specialist-profile .input-wrapper--experience .select2-container {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .specialist-profile .input-wrapper--age .select2-container .select2-selection--single,
+  .specialist-profile .input-wrapper--experience .select2-container .select2-selection--single {
+    height: 32px;
+  }
 }
 
 .specialist-profile .input-wrapper--phone {
@@ -16148,14 +16246,61 @@ section.product .product__block-recommend {
   margin-right: 20px;
 }
 
+.specialist-profile .input-wrapper {
+  margin-right: 20px;
+}
+
+@media (max-width: 700px) {
+  .specialist-profile .input-wrapper {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 700px) {
+  .specialist-profile .input-container {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .specialist-profile .input-container--language {
+    -ms-flex-preferred-size: calc(50% - 10px);
+        flex-basis: calc(50% - 10px);
+    margin-right: 10px;
+  }
+  .specialist-profile .input-container--language:nth-of-type(2n+1) {
+    margin-right: 0;
+  }
+}
+
 .specialist-profile__top {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
+@media (max-width: 991px) {
+  .specialist-profile__top {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .specialist-profile h3 {
   font-size: 1.25rem;
+}
+
+@media (max-width: 890px) {
+  .specialist-profile h3 {
+    font-size: 1.125rem;
+  }
 }
 
 .specialist-profile__info {
@@ -16177,8 +16322,25 @@ section.product .product__block-recommend {
       flex-basis: 100%;
 }
 
+@media (max-width: 890px) {
+  .specialist-profile__info p {
+    font-size: 1rem;
+    margin: 0 0 10px;
+  }
+}
+
+.specialist-profile select.select-input ~ span.select2-container {
+  margin-bottom: 10px;
+}
+
 .specialist-profile .company__about {
   width: 100%;
+}
+
+@media (max-width: 700px) {
+  .specialist-profile .company__about {
+    margin-top: 20px;
+  }
 }
 
 .specialist-profile .company__about .languages {
@@ -16189,9 +16351,41 @@ section.product .product__block-recommend {
   margin-right: 0;
 }
 
+@media (max-width: 700px) {
+  .specialist-profile .company__about .languages {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    margin-left: auto;
+    margin-right: -20px;
+  }
+}
+
 .specialist-profile .company__about textarea {
   height: 260px;
   padding-left: 25px;
+}
+
+@media (max-width: 700px) {
+  .specialist-profile .company__about h3 {
+    font-weight: 400;
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 991px) {
+  .specialist-profile__photo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-bottom: 30px;
+  }
 }
 
 .specialist-profile__photo-img {
@@ -16206,6 +16400,14 @@ section.product .product__block-recommend {
           box-shadow: 0px 12px 29px 0px rgba(0, 0, 0, 0.15);
   margin-right: 20px;
   background-image: url(img/profile.svg);
+}
+
+@media (max-width: 991px) {
+  .specialist-profile__photo-img {
+    margin-bottom: 0;
+    width: 136px;
+    height: 136px;
+  }
 }
 
 .specialist-profile__gender {
@@ -16245,8 +16447,35 @@ section.product .product__block-recommend {
   margin-bottom: 30px;
 }
 
+@media (max-width: 700px) {
+  .specialist-profile__choices {
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .specialist-profile__choices h3 {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+}
+
 .specialist-profile__choice {
   width: 42.2%;
+}
+
+@media (max-width: 991px) {
+  .specialist-profile__choice {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .specialist-profile__choice {
+    padding: 0;
+    margin-bottom: 30px;
+  }
 }
 
 .specialist-profile .specialist-profile__time-options {
@@ -16272,9 +16501,27 @@ section.product .product__block-recommend {
   padding-bottom: 35px;
 }
 
+@media (max-width: 700px) {
+  .specialist-profile .specialist-profile__choice--payment {
+    padding-bottom: 0;
+  }
+}
+
 .specialist-profile .specialist-profile__choice--payment .choice-wrapper {
   height: 85px;
   padding-left: 50px;
+}
+
+@media (max-width: 700px) {
+  .specialist-profile .specialist-profile__choice--payment .choice-wrapper {
+    padding-left: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .specialist-profile .specialist-profile__choice--payment .choice-wrapper label {
+    font-size: .875rem;
+  }
 }
 
 .specialist-profile .specialist-profile__choice--payment .choice-wrapper label:before {
@@ -16304,8 +16551,30 @@ section.product .product__block-recommend {
   height: 75px;
 }
 
+@media (max-width: 890px) {
+  .specialist-profile .specialist-profile__choice--period .choice-wrapper {
+    border: none;
+    padding: 0;
+    height: auto;
+  }
+}
+
 .specialist-profile .specialist-profile__choice--period p {
   margin-top: 0;
+}
+
+@media (max-width: 890px) {
+  .specialist-profile .specialist-profile__choice--period p {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 890px) {
+  .specialist-profile .specialist-profile__choice--period .checkbox {
+    border: 1px solid #e8e8e8;
+    border-radius: 5px;
+    padding: 20px;
+  }
 }
 
 .specialist-profile .specialist-profile__choice--time .choice-wrapper {
@@ -16348,6 +16617,30 @@ section.product .product__block-recommend {
   height: 95px;
 }
 
+@media (max-width: 991px) {
+  .specialist-profile .company__offer .company__offer-info {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 890px) {
+  .specialist-profile .company__offer h3 {
+    border: none;
+    padding: 0;
+  }
+}
+
+@media (max-width: 890px) {
+  .specialist-profile .company__offer .checkbox {
+    border: 1px solid #e8e8e8;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
 .specialist-profile .company__offer .percent,
 .specialist-profile .company__offer .hours {
   right: -5px;
@@ -16386,5 +16679,11 @@ section.product .product__block-recommend {
   padding: 20px;
   border-radius: 5px;
   width: 425px;
+}
+
+@media (max-width: 991px) {
+  .choice-wrapper {
+    width: 100% !important;
+  }
 }
 /*# sourceMappingURL=style.css.map */
