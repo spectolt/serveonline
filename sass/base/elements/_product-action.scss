@@ -35,7 +35,8 @@
   }
 
   &__duration,
-  &__price {
+  &__price,
+  &__periodicity {
     display: inline-flex;
     align-items: center;
     font-weight: 500;
@@ -67,7 +68,7 @@
   }
 
   &__price {
-    margin-top: 10px;
+    margin: 10px 20px 0 0 ;
     color: $cyan;
 
     strike {
@@ -80,6 +81,16 @@
       width: 14px;
       height: 15px;
       background-image: url("img/icons/price.svg");
+    }
+  }
+
+  &__periodicity {
+    margin-top: 10px;
+
+    &:before {
+      width: 16px;
+      height: 15px;
+      background-image: url("img/icons/calendar.svg");
     }
   }
 

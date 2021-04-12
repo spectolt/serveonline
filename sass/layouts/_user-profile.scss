@@ -1,0 +1,111 @@
+.user-profile {
+  .company__header ul.company__nav {
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    li {
+      margin-right: 20px;
+    }
+  }
+
+  &__price {
+    text-align: center;
+    font-weight: 600;
+
+    span {
+      color: $cyan;
+    }
+  }
+
+  &__reserve {
+    width: 100%;
+  }
+}
+
+.cart {
+  padding: 10px 20px 0;
+  border: 1px solid $lightgray;
+  border-bottom: 0;
+  border-radius: 5px;
+  margin: 0 0 20px;
+
+  &__header {
+    display: flex;
+    padding-bottom: 5px;
+    border-bottom: 1px solid $lightgray;
+  }
+
+  &__about {
+    display: flex;
+    align-items: center;
+
+    h3 {
+      font-weight: 900;
+      margin: 0 20px 0 0;
+    }
+
+    h4 {
+      font-weight: 400;
+      margin: 0;
+    }
+
+    &--time {
+      flex-basis: 33%;
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: flex-start;
+
+    h3, h4 {
+      margin: 0;
+    }
+  }
+
+  &__specialist {
+    display: flex;
+    align-items: center;
+    flex-basis: 33%;
+  }
+
+  &__photo {
+    background-image: url(img/profile.svg);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+
+  &__products {
+    flex-basis: 67%;
+
+    .product-action {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__buttons.company__button-container {
+    button {
+      margin: 0;
+
+      &:nth-of-type(2) {
+        border-radius: 0;
+      }
+
+      &.cyan-text {
+        color: $cyan;
+      }
+
+      &.orange-text {
+        color: $orange;
+      }
+
+      &.red-text {
+        color: $red;
+      }
+    }
+  }
+}
