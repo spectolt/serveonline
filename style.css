@@ -14390,6 +14390,18 @@ section.product .product__block-recommend {
       flex-basis: 8%;
 }
 
+@media (max-width: 880px) {
+  .company__tab .company__inputs-container .input-container--house, .company__tab .company__inputs-container .input-container--apartment {
+    max-width: 90px;
+  }
+}
+
+@media (max-width: 600px) {
+  .company__tab .company__inputs-container .input-container--house, .company__tab .company__inputs-container .input-container--apartment {
+    max-width: 60px;
+  }
+}
+
 @media (max-width: 700px) {
   .company__tab .company__inputs-container .input-container:last-of-type input {
     margin-bottom: 0;

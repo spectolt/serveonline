@@ -862,6 +862,13 @@
 
       .input-container--house, .input-container--apartment {
         flex-basis: 8%;
+        @include breakpoint(880px) {
+          max-width: 90px;
+        }
+
+        @include breakpoint(xs) {
+          max-width: 60px;
+        }
       }
 
       .input-container:last-of-type {
