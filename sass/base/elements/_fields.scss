@@ -547,3 +547,27 @@ select.select-input ~ span.select2-container {
     background-size: 50%;
   }
 }
+
+.input-container--city .input-icon {
+  background: url("./img/icons/city.svg") no-repeat scroll 15px 5px;
+  background-size: 50%;
+
+  @include breakpoint(sm) {
+    background: url("./img/icons/city.svg") no-repeat scroll 11px 6px;
+    background-size: 50%;
+  }
+}
+
+.input-container--password-eye {
+  & > .input-icon {
+    background: url("img/icons/eye-crossed.svg") no-repeat scroll;
+    width: 50px;
+    background-size: 40%;
+    background-position: center;
+    cursor: pointer;
+
+    &--toggled-eye {
+      background-image: url("img/icons/eye.svg");
+    }
+  }
+}

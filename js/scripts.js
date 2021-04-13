@@ -1393,14 +1393,14 @@ function onDocumentReady() {
       }
     });  
 
-  // $(".input-container--password-eye > .input-icon").on("click", function() {
-  //   $(this).toggleClass("input-icon--toggled-eye");
-  //   if ($(this).hasClass("input-icon--toggled-eye")) {
-  //     $(this).siblings("input[type='password']").attr("type", "text");
-  //   } else {
-  //     $(this).siblings("input[type='text']").attr("type", "password");
-  //   }
-  // })
+  $(".input-container--password-eye > .input-icon").not(".js_ignore_mark").on("click", function() {
+    $(this).toggleClass("input-icon--toggled-eye");
+    if ($(this).hasClass("input-icon--toggled-eye")) {
+      $(this).siblings("input[type='password']").attr("type", "text");
+    } else {
+      $(this).siblings("input[type='text']").attr("type", "password");
+    }
+  })
 
   if (
     navigator.userAgent.match(

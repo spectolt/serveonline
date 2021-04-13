@@ -146,8 +146,8 @@ $thisPage = "specialist-profile" ?>
                                 <button class="cyan transparent <?php if ($i == 0) echo "cyan-text";
                                                                 else if ($i == 1) echo "orange-text";
                                                                 else if ($i == 2) echo "red-text" ?>"><?php if ($i == 0) echo "Atliktas";
-                                                                                                                                                                                else if ($i == 1) echo "Atšauktas";
-                                                                                                                                                                                else if ($i == 2) echo "Neatvykote" ?></button>
+                                                                                                        else if ($i == 1) echo "Atšauktas";
+                                                                                                        else if ($i == 2) echo "Neatvykote" ?></button>
                                 <button class="cyan cart__change-time">Keisti laiką</button>
                             </div>
                         </div>
@@ -188,6 +188,82 @@ $thisPage = "specialist-profile" ?>
                         <div class="cart__buttons company__button-container">
                             <button class="cyan">Registruotis</button>
                         </div>
+                    </div>
+                </section>
+                <section class="group__tab company__container hidden" id="bendra-informacija">
+                    <div class="user-profile__inputs-container">
+                        <div class="input-wrapper input-wrapper--user">
+                            <input type="text" name="name" placeholder="Vardas Pavardė">
+                        </div>
+                        <div class="input-wrapper input-wrapper--age">
+                            <span class="input-icon"></span>
+                            <input class="about-datepicker">
+                            <span class="input-arrow"></span>
+                        </div>
+                        <div class="specialist-profile__gender">
+                            <p>Lytis:</p>
+                            <div class="radio">
+                                <input type="radio" name="gender" id="female">
+                                <label for="female">Moteris</label>
+                            </div>
+                            <div class="radio">
+                                <input type="radio" name="gender" id="male">
+                                <label for="male">Vyras</label>
+                            </div>
+                        </div>
+                        <div class="input-wrapper input-wrapper--envelope">
+                            <input type="text" name="email" placeholder="El. paštas">
+                        </div>
+                        <div class="input-wrapper input-wrapper--phone">
+                            <input type="text" name="phone" placeholder="+370 XX XXXXX">
+                        </div>
+                        <div class="input-container input-container--city">
+                            <select class="select-input" data-placeholder="Pasirinkite">
+                                <option></option>
+                                <option>Vilnius</option>
+                            </select>
+                            <span class="input-icon">
+                        </div>
+                    </div>
+                    <h4>Patvirtinimai</h4>
+                    <div class="checkbox">
+                        <input type="checkbox" name="confirmation" id="privacy">
+                        <label for="privacy">Patvirtinu, kad susipažinau su <a href="#">Privatumo politika</a> ir sutinku, kad mano asmens duomenys būtų naudojami joje numatytais duomenų tvarkymo tikslais ir sąlygomis.</label>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" name="confirmation" id="suggestions">
+                        <label for="suggestion">Sutinku gauti pasiūlymus bei informaciją apie naujas paslaugas.</label>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" name="confirmation" id="reminder">
+                        <label for="reminder">Sutinku gauti priminimus apie rezervacijas.</label>
+                    </div>
+                    <div class="company__button-container">
+                        <button class="orange transparent">Atšaukti</button>
+                        <button class="orange">Saugoti</button>
+                    </div>
+                </section>
+                <section class="group__tab company__container hidden" id="prisijungimas">
+                    <div class="user-profile__inputs-container">
+                        <div class="login-details">
+                            <p>Prisijungimo vardas</p>
+                            <div class="input-container input-container--password-eye">
+                                <input type="password" name="login">
+                                <span class="input-icon"></span>
+                            </div>
+                        </div>
+                        <div class="login-details">
+                            <p>Prisijungimo slaptažodis</p>
+                            <div class="input-container input-container--password-eye">
+                                <input type="password" name="login">
+                                <span class="input-icon"></span>
+                            </div>
+                        </div>
+                        <button class="orange small change-login">Keisti prisijungimo duomenis</button>
+                    </div>
+                    <div class="company__button-container">
+                        <button class="orange transparent">Atšaukti</button>
+                        <button class="orange">Saugoti</button>
                     </div>
                 </section>
             </section>
