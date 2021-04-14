@@ -175,83 +175,82 @@ $thisPage = "specialist-profile" ?>
                 <?php require_once("company/services.php") ?>
                 <section class="group__tab timetable hidden" id="darbo-grafikas">
                     <div class="timetable__top">
-                        <div class="timetable__title">
+                        <!-- <div class="timetable__title">
                         <h2>2021 Sausis</h2>
                         <button class="arrow arrow--left"></button>
                         <button class="arrow arrow--right"></button>
+                        </div> -->
+                        <div class="timetable__datepicker-container">
+                            <div class="timetable__datepicker timetable__datepicker--from">
+                                <h3>Nuo</h3>
+                            </div>
+                            <div class="timetable__datepicker timetable__datepicker--until">
+                                <h3>Iki</h3>
+                            </div>
                         </div>
-                        <select>
-                            <option>Kartoti pažymėtą dieną kas dieną</option>
-                            <option>Kartoti pažymėtą dieną kas antrą dieną</option>
-                            <option>Kartoti pažymėtą dieną kas savaitę</option>
-                        </select>
-                        <div class="checkbox">
-                            <input name="exceptions" type="checkbox" id="holidays" />
-                            <label for="holidays">
-                                Išskyrus šventines d.
-                            </label>
-                        </div>
-                        <div class="checkbox">
-                            <input name="exceptions" type="checkbox" id="weekends" />
-                            <label for="weekends">
-                                Išskyrus nedarbo d.
-                            </label>
-                        </div>
-                    </div>
-                    <div class="timetable__datepicker-container">
-                        <div class="timetable__datepicker timetable__datepicker--from">
-                            <h3>Nuo</h3>
-                        </div>
-                        <div class="timetable__datepicker timetable__datepicker--until">
-                            <h3>Iki</h3>
+                        <div class="timetable__choices">
+                            <select>
+                                <option>Kartoti pažymėtą dieną kas dieną</option>
+                                <option>Kartoti pažymėtą dieną kas antrą dieną</option>
+                                <option>Kartoti pažymėtą dieną kas savaitę</option>
+                            </select>
+                            <div class="checkbox">
+                                <input name="exceptions" type="checkbox" id="holidays" />
+                                <label for="holidays">
+                                    Išskyrus šventines d.
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <input name="exceptions" type="checkbox" id="weekends" />
+                                <label for="weekends">
+                                    Išskyrus nedarbo d.
+                                </label>
+                            </div>
                         </div>
                     </div>
                     <div class="company__container">
                         <div class="timetable__container">
                             <?php for ($j = 0; $j < 5; $j++) { ?>
                                 <div class="timetable__week <?php if ($j == 2) echo "selected-week selected-week--from ";
-                                                            if ($j == 4) echo "selected-week selected-week--to " ?>">
+                                                            if ($j == 3) echo "selected-week selected-week--to " ?>">
                                     <?php for ($i = 0; $i < 7; $i++) { ?>
-                                        <div class="timetable__day <?php if ($j == 2 && $i == 0) echo "active-from ";
-                                                                    else if ($j == 4 && $i == 1) echo "active-to ";
-                                                                    if ($j == 0 && $i < 1 || $j == 4 && $i > 4) echo "inactive ";?>">
+                                        <div class="timetable__day <?php if ($j >= 2 && $i >= 0 && $j <= 3 && $i <= 6) echo "active-from ";
+                                                                    if ($j == 0 && $i < 1 || $j == 4 && $i > 4) echo "inactive "; ?>">
                                             <h4><b>Pr</b> 31 <span class="timetable__month-name"><?php if ($j == 0 && $i == 0) echo "GRUODIS";
-                                                                                            else if ($j == 0 && $i == 1) echo "SAUSIS";
-                                                                                            else if ($j == 4 && $i == 5) echo "VASARIS"; ?></span>
+                                                                                                    else if ($j == 0 && $i == 1) echo "SAUSIS";
+                                                                                                    else if ($j == 4 && $i == 5) echo "VASARIS"; ?></span>
                                                 <?php if ($j == 2 && $i == 0) { ?> <span class="timetable__copy">Kopijuoti</span> <?php } ?></h4>
                                             <table class="timetable__table">
-                                                <tbody>
+                                                <tbody class="<?php if ($j == 0 && $i == 2) echo "active"; ?>">
                                                     <tr>
                                                         <td>
                                                             <div class="company__time time-inputs">
-                                                                <input type="number" name="hour" placeholder="00" max="23" length="2">
-                                                                <p>:</p>
-                                                                <input type="number" name="minute" placeholder="00" max="59" length="2">
+                                                                <input type="number" name="hour" placeholder="00" max="23" length="2" <?php if ($j == 0 && $i == 2) echo "value='08'"; else if ($j == 2 && $i == 0) echo "value='00'"; ?>>
+                                                                <p class="<?php if ($j == 0 && $i == 2 || $j == 2 && $i == 0) echo "active"; ?>">:</p>
+                                                                <input type="number" name="minute" placeholder="00" max="59" length="2" <?php if ($j == 0 && $i == 2) echo "value='00'"; else if ($j == 2 && $i == 0) echo "value='00'"; ?>>
                                                             </div>
                                                         </td>
-                                                        <td>-</td>
                                                         <td>
                                                             <div class="company__time time-inputs">
-                                                                <input type="number" name="hour" placeholder="00" max="23" length="2">
-                                                                <p>:</p>
-                                                                <input type="number" name="minute" placeholder="00" max="59" length="2">
+                                                                <input type="number" name="hour" placeholder="00" max="23" length="2" <?php if ($j == 0 && $i == 2) echo "value='12'"; else if ($j == 2 && $i == 0) echo "value='00'"; ?>>
+                                                                <p class="<?php if ($j == 0 && $i == 2 || $j == 2 && $i == 0) echo "active"; ?>">:</p>
+                                                                <input type="number" name="minute" placeholder="00" max="59" length="2" <?php if ($j == 0 && $i == 2) echo "value='00'"; else if ($j == 2 && $i == 0) echo "value='00'"; ?>>
                                                             </div>
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td>
                                                             <div class="company__time time-inputs">
-                                                                <input type="number" name="hour" placeholder="00" max="23" length="2">
-                                                                <p>:</p>
-                                                                <input type="number" name="minute" placeholder="00" max="59" length="2">
+                                                                <input type="number" name="hour" placeholder="00" max="23" length="2" <?php if ($j == 0 && $i == 2) echo "value='13'"; else if ($j == 2 && $i == 0) echo "value='00'"; ?>>
+                                                                <p class="<?php if ($j == 0 && $i == 2 || $j == 2 && $i == 0) echo "active"; ?>">:</p>
+                                                                <input type="number" name="minute" placeholder="00" max="59" length="2" <?php if ($j == 0 && $i == 2) echo "value='00'";  else if ($j == 2 && $i == 0) echo "value='00'";?>>
                                                             </div>
                                                         </td>
-                                                        <td>-</td>
                                                         <td>
                                                             <div class="company__time time-inputs">
-                                                                <input type="number" name="hour" placeholder="00" max="23" length="2">
-                                                                <p>:</p>
-                                                                <input type="number" name="minute" placeholder="00" max="59" length="2">
+                                                                <input type="number" name="hour" placeholder="00" max="23" length="2" <?php if ($j == 0 && $i == 2) echo "value='22'"; else if ($j == 2 && $i == 0) echo "value='00'"; ?>>
+                                                                <p class="<?php if ($j == 0 && $i == 2 || $j == 2 && $i == 0) echo "active"; ?>">:</p>
+                                                                <input type="number" name="minute" placeholder="00" max="59" length="2" <?php if ($j == 0 && $i == 2) echo "value='00'"; else if ($j == 2 && $i == 0) echo "value='00'"; ?>>
                                                             </div>
                                                         </td>
                                                     </tr>

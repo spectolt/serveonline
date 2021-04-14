@@ -32,11 +32,12 @@
     margin-bottom: 20px;
     flex-wrap: wrap;
     justify-content: flex-end;
-    // margin-right: -10px;
+    margin-right: -10px;
     transition: max-height 0.3s ease-in-out, margin-top 0.3s ease-in-out;
 
     @include breakpoint(880px) {
       justify-content: center;
+      margin-right: 0;
     }
 
     @include breakpoint(sm) {
@@ -283,7 +284,8 @@
 
     thead tr {
       position: relative;
-      width: calc(100% - 16px);
+      // width: calc(100% - 16px);
+      width: 100%;
       display: table;
     }
 
@@ -1165,13 +1167,56 @@
 
 .messages-settings {
   .messages__table {
-    .controls__trash {
-      margin: 0 10px 0 0;
-      float: left;
+    // .controls__trash {
+    //   margin: 0 10px 0 0;
+    //   float: left;
+    // }
+    // p {
+    //   width: calc(100% - 90px);
+    //   margin-right: 10px;
+    // }
+
+    td button {
+      margin: 0;
     }
-    p {
-      width: calc(100% - 90px);
-      margin-right: 10px;
+
+    thead th::after,t head th::before, td::after, td::before {
+      bottom: 10px;
+    }
+
+    th, td, p {
+      font-size: 0.75rem;
+    }
+
+    th, td {
+      padding: 8px;
+      &:first-of-type {
+        width: 77px;
+      }
+      &:nth-of-type(2) {
+        width: 110px;
+      }
+      &:nth-of-type(3) {
+        width: 102px;
+      }
+      &:nth-of-type(4) {
+        width: 400px;
+      }
+      &:nth-of-type(5) {
+        width: 66px;
+      }
+      &:nth-of-type(6) {
+        width: 70px;
+      }
+      &:nth-of-type(7) {
+        width: 72px;
+      }
+      &:nth-of-type(8) {
+        width: 140px;
+      }
+      &:last-of-type {
+        width: 97px;
+      }
     }
   }
 }

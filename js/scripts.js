@@ -1474,6 +1474,7 @@ function onDocumentReady() {
       "disable-scrollbars"
     );
     $(".controls__table tbody").addClass("disable-scrollbars");
+    $(".timetable__week").addClass("disable-scrollbars");
   }
 
   $(document).on(
@@ -1546,6 +1547,7 @@ function onDocumentReady() {
               duration: 300,
               complete: function () {
                 clearInterval(interval);
+                changeRowWidth();
               },
             }
           );
@@ -1560,6 +1562,7 @@ function onDocumentReady() {
               duration: 150,
               complete: function () {
                 clearInterval(interval);
+                changeRowWidth();
               },
             }
           );
@@ -1692,9 +1695,17 @@ function onDocumentReady() {
       },
     });
 
-  $(".timetable__datepicker").datepicker({
+  $(".timetable__datepicker").not(".js_ignore_mark").datepicker({
     showButtonPanel: true
   });
+
+  $(".timetable .time-inputs input").not(".js_ignore_mark").on("change", function() {
+    if ($(this).val().length > 0) {
+      $(this).siblings("p").addClass("active");
+    } else {
+      $(this).siblings("p").removeClass("active");
+    }
+  })
 
   moveAction();
   moveOrder();
