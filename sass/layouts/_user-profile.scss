@@ -1,4 +1,13 @@
 .user-profile {
+  .group__tab{
+    margin-top: 40px;
+
+    p{
+      margin-top: 45px;
+      margin-bottom: 40px;
+    }
+  }
+
   .company__header ul.company__nav {
     overflow-x: auto;
 
@@ -14,6 +23,7 @@
   &__price {
     text-align: center;
     font-weight: 600;
+    margin-bottom: 33px;
 
     span {
       color: $cyan;
@@ -22,6 +32,7 @@
 
   &__reserve {
     width: 100%;
+    height: 45px;
   }
 
   &__inputs-container {
@@ -35,6 +46,10 @@
 
     .input-wrapper--age, .input-wrapper--phone {
       flex-basis: 25%;
+
+      .input-arrow{
+        right: 15px;
+      }
     }
 
     .specialist-profile__gender {
@@ -72,12 +87,13 @@
   border: 1px solid $lightgray;
   border-bottom: 0;
   border-radius: 5px;
-  margin: 0 0 20px;
+  margin: 0 0 40px;
 
   &__header {
     display: flex;
-    padding-bottom: 5px;
+padding-bottom: 10px;
     border-bottom: 1px solid $lightgray;
+    margin-bottom: 20px;
   }
 
   &__about {
@@ -96,6 +112,8 @@
 
     &--time {
       flex-basis: 33%;
+      flex-basis: auto;
+      width: 380px;
     }
   }
 
@@ -111,14 +129,23 @@
   &__specialist {
     display: flex;
     align-items: center;
-    flex-basis: 33%;
+    width: 390px;
+    // flex-basis: 33%;
+    // flex-basis: 33%;
   }
 
   &__photo {
     background-image: url(img/profile.svg);
-    width: 100px;
-    height: 100px;
+    width: 72px;
+    height: 72px;
     border-radius: 50%;
+    margin-right: 20px;
+    margin-bottom: 10px;
+  }
+
+  &__name{
+    top: -10px;
+  position: relative;
   }
 
   &__products {
@@ -126,12 +153,29 @@
 
     .product-action {
       margin-bottom: 10px;
+      padding-bottom: 10px;
+      padding-top: 10px;
     }
   }
 
   &__buttons.company__button-container {
+    margin-top: 10px;
+    .cart__trash, .orange{
+      width: 400px;
+      height: 45px;
+    }
+    .cart__change-time{
+      width: 320px;
+      height: 45px;
+    }
+
+    .cart__change-time-register {
+      width: 720px;
+    }
+
     button {
       margin: 0;
+      flex: auto;
 
       &:nth-of-type(2) {
         border-radius: 0;

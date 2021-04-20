@@ -1,10 +1,10 @@
 .warning-popup-container {
-    background-color: rgba(0,0,0, .43);
-    width: 100vw;
-    height: 100vh;
-    z-index: 1000;
-    position: fixed;
-    top: 0;
+  background-color: rgba(0, 0, 0, 0.43);
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  position: fixed;
+  top: 0;
 
   .warning-popup {
     width: 670px;
@@ -81,6 +81,11 @@
       &--delete {
         padding-bottom: 0;
       }
+
+      &--message {
+        padding-top: 20px;
+        padding-bottom: 0;
+      }
     }
 
     &__button-container {
@@ -116,6 +121,104 @@
             display: inline-block;
             width: 16px;
             margin-right: 10px;
+          }
+        }
+      }
+    }
+
+    &__inputs-container {
+      .select2-container {
+        width: 100% !important;
+        margin-bottom: 20px;
+      }
+    }
+
+    &__textarea {
+      width: calc(100% + 80px);
+      margin-left: -40px;
+      border-top: 1px solid $gray;
+
+      @include breakpoint(sm) {
+        width: calc(100% + 60px);
+        margin-left: -30px;
+      }
+
+      textarea {
+        border: none;
+        padding: 20px 40px;
+        height: 200px;
+
+        @include breakpoint(sm) {
+          padding: 20px 30px;
+        }
+      }
+    }
+
+    &__button-container {
+      width: calc(100% + 80px);
+      margin-left: -40px;
+
+      @include breakpoint(sm) {
+        width: calc(100% + 60px);
+        margin-left: -30px;
+      }
+
+      button {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+  
+        @include breakpoint(890px) {
+          font-size: 0.875rem;
+          padding: 5px 5px;
+          height: 35px;
+        }
+  
+        &::before {
+          display: inline-block;
+          height: 20px;
+          margin-right: 20px;
+  
+          @include breakpoint(890px) {
+            margin-right: 5px;
+            height: 16px;
+          }
+        }
+  
+        &:first-of-type {
+          border-radius: 0 0 0 5px;
+          margin-top: 10px;
+  
+          @include breakpoint(sm) {
+            margin-top: 0px;
+          }
+  
+          &::before {
+            width: 15px;
+            content: url("img/icons/restore-orange.svg");
+  
+            @include breakpoint(890px) {
+              width: 12px;
+            }
+          }
+        }
+  
+        &:last-of-type {
+          border-radius: 0 0 5px 0;
+          margin-top: 10px;
+  
+          @include breakpoint(sm) {
+            margin-top: 0px;
+          }
+  
+          &::before {
+            width: 20px;
+            content: url("img/icons/checkmark-white.svg");
+  
+            @include breakpoint(890px) {
+              width: 16px;
+            }
           }
         }
       }

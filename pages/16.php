@@ -9,7 +9,7 @@ $thisPage = "company-profiles"; ?>
             <section class="controls profiles">
                 <div class="controls__header">
                     <h1 class="title">Specialistų profiliai</h1>
-                    <div class="controls__top">
+                    <div class="controls__top controls__top--profiles">
                         <div class="controls__group">
                             <button class="controls__group-btn controls__group-btn--city darkblue small paragraph">Grupuoti miestus</button>
                             <button class="controls__group-btn controls__group-btn--profession darkblue small paragraph">Grupuoti profesijas</button>
@@ -81,7 +81,7 @@ $thisPage = "company-profiles"; ?>
                                         Kalbos
                                     </th>
                                     <th colspan="2">
-                                        Paskutinės valandos pasiūlymas
+                                        Pask. val. pasiūlymas
                                     </th>
                                     <th colspan="3">
                                         Laikai rezervavimui

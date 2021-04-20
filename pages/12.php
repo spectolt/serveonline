@@ -105,7 +105,7 @@ $thisPage = "specialist-profile" ?>
                             </div>
                             <div class="cart__buttons company__button-container">
                                 <button class="cyan transparent cart__trash">Pašalinti</button>
-                                <button class="cyan cart__change-time">Keisti laiką</button>
+                                <button class="cyan cart__change-time-register">Keisti laiką</button>
                             </div>
                         </div>
                     <?php } ?>
@@ -148,7 +148,7 @@ $thisPage = "specialist-profile" ?>
                                                                 else if ($i == 2) echo "red-text" ?>"><?php if ($i == 0) echo "Atliktas";
                                                                                                         else if ($i == 1) echo "Atšauktas";
                                                                                                         else if ($i == 2) echo "Neatvykote" ?></button>
-                                <button class="cyan cart__change-time">Keisti laiką</button>
+                                <button class="cyan cart__change-time-register">Keisti laiką</button>
                             </div>
                         </div>
                     <?php } ?>

@@ -102,6 +102,28 @@ textarea {
     z-index: 1;
   }
 
+  input[type="text"],
+  input[type="email"],
+  input[type="url"],
+  input[type="password"],
+  input[type="search"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="range"],
+  input[type="date"],
+  input[type="month"],
+  input[type="week"],
+  input[type="time"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="color"] {
+    height: 35px;
+    
+    @include breakpoint(sm) {
+      height: 32px;
+    }
+  }
+
   input {
     padding-left: 55px;
   }
@@ -217,10 +239,66 @@ textarea {
 }
 
 .input-container {
+  input[type="text"],
+  input[type="email"],
+  input[type="url"],
+  input[type="password"],
+  input[type="search"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="range"],
+  input[type="date"],
+  input[type="month"],
+  input[type="week"],
+  input[type="time"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="color"] {
+    height: 35px;
+
+    @include breakpoint(sm) {
+      height: 32px;
+    }
+  }
+
   &--language {
     .input-icon {
       background: url("img/icons/translate.svg") no-repeat scroll 14px 6px;
       background-size: 44%;
+    }
+  }
+
+  &--profession .input-icon {
+    background: url(./img/icons/briefcase.svg) no-repeat scroll 15px 5px;
+    background-size: 50%;
+
+    @include breakpoint(sm) {
+      background: url(./img/icons/briefcase.svg) no-repeat scroll 12px 6px;
+      background-size: 50%;
+    }
+  }
+
+  &--city .input-icon {
+    background: url("./img/icons/city.svg") no-repeat scroll 15px 5px;
+    background-size: 50%;
+
+    @include breakpoint(sm) {
+      background: url("./img/icons/city.svg") no-repeat scroll 11px 6px;
+      background-size: 50%;
+    }
+  }
+
+  &--password-eye {
+    & > .input-icon {
+      background: url("img/icons/eye-crossed.svg") no-repeat scroll;
+      width: 50px;
+      background-size: 40%;
+      background-position: center;
+      cursor: pointer;
+
+      &--toggled-eye {
+        background-image: url("img/icons/eye.svg");
+      }
     }
   }
 }
@@ -534,40 +612,6 @@ select.select-input ~ span.select2-container {
 
     &__arrow {
       height: 35px;
-    }
-  }
-}
-
-.input-container--profession .input-icon {
-  background: url(./img/icons/briefcase.svg) no-repeat scroll 15px 5px;
-  background-size: 50%;
-
-  @include breakpoint(sm) {
-    background: url(./img/icons/briefcase.svg) no-repeat scroll 12px 6px;
-    background-size: 50%;
-  }
-}
-
-.input-container--city .input-icon {
-  background: url("./img/icons/city.svg") no-repeat scroll 15px 5px;
-  background-size: 50%;
-
-  @include breakpoint(sm) {
-    background: url("./img/icons/city.svg") no-repeat scroll 11px 6px;
-    background-size: 50%;
-  }
-}
-
-.input-container--password-eye {
-  & > .input-icon {
-    background: url("img/icons/eye-crossed.svg") no-repeat scroll;
-    width: 50px;
-    background-size: 40%;
-    background-position: center;
-    cursor: pointer;
-
-    &--toggled-eye {
-      background-image: url("img/icons/eye.svg");
     }
   }
 }

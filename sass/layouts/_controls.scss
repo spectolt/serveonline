@@ -1166,16 +1166,13 @@
 }
 
 .messages-settings {
-  .messages__table {
-    // .controls__trash {
-    //   margin: 0 10px 0 0;
-    //   float: left;
-    // }
-    // p {
-    //   width: calc(100% - 90px);
-    //   margin-right: 10px;
-    // }
+  .languages {
+    @include breakpoint(sm) {
+      grid-column: auto / span 2;
+    }
+  }
 
+  .messages__table {
     td button {
       margin: 0;
     }
@@ -1422,12 +1419,14 @@
         }
         &:nth-of-type(7) {
           width: 130px;
+          text-align: left;
         }
         &:nth-of-type(8) {
           width: 130px;
         }
         &:nth-of-type(9) {
           width: 63px;
+          text-align: center;
         }
         &:nth-of-type(10) {
           width: 115px;
@@ -1440,33 +1439,48 @@
         }
         &:nth-of-type(13) {
           width: 58px;
+          text-align: center;
         }
         &:nth-of-type(14) {
           width: 54px;
+          text-align: center;
         }
         &:nth-of-type(15) {
           width: 64px;
+          text-align: center;
         }
         &:nth-of-type(16) {
           width: 54px;
+          text-align: center;
         }
       }
 
       th {
         &:nth-of-type(17) {
           width: 130px;
+          padding-left: 0;
+          padding-right: 0;
+          padding-bottom: 6px;
+          height: 26px;
         }
         &:nth-of-type(18) {
           width: 204px;
+          height: 26px;
+          padding-bottom: 6px;
         }
       }
 
       td {
+        &:nth-of-type(7), &:nth-of-type(6) {
+          text-align: left;
+        }
         &:nth-of-type(17), &:nth-of-type(18) {
           width: 65px;
+          text-align: center;
         }
         &:nth-of-type(19), &:nth-of-type(20), &:nth-of-type(21) {
           width: 68px;
+          text-align: center;
         }
       }
     }

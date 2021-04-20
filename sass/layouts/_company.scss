@@ -41,6 +41,14 @@
     &--house, &--apartment {
       input[type="text"] {
         padding: 10px;
+        text-align: center;
+      }
+
+      input:placeholder-shown {
+        padding: 0 2px;
+      }
+      input::placeholder {
+        font-size: .875rem;
       }
     }
 
@@ -52,7 +60,7 @@
   input[type="text"], input[type="password"] {
     padding-left: 50px;
     position: relative;
-    height: 35px;
+    // height: 35px;
 
     @include breakpoint(sm) {
       padding-left: 40px;
@@ -867,7 +875,7 @@
         }
 
         @include breakpoint(xs) {
-          max-width: 60px;
+          max-width: 70px;
         }
       }
 

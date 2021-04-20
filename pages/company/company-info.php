@@ -5,10 +5,10 @@
             <span class="input-icon"></span>
         </div>
         <div class="input-container input-container--house">
-            <input type="text" name="address" placeholder="Namo nr.">
+            <input type="text" name="house" placeholder="Namo nr.">
         </div>
         <div class="input-container input-container--apartment">
-            <input type="text" name="address" placeholder="Buto nr.">
+            <input type="text" name="appartment" placeholder="Buto nr.">
         </div>
         <div class="input-container input-container--city">
             <select class="select-input company__select-city">
