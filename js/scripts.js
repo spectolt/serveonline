@@ -936,7 +936,7 @@ function onDocumentReady() {
     .not(".js_ignore_mark")
     .on("input", function () {
       if ($("input.group-name").length == 0) {
-        $(".company__header h2").html($("input.company-name").val());
+        $(".company__header .company__header-top h2").html($("input.company-name").val());
         if ($("input.company-name").val().length == 0) {
           $(".company__header h2").html("Pavadinimas");
         }
@@ -1683,8 +1683,9 @@ function onDocumentReady() {
       changeMonth: true,
       showButtonPanel: true,
       orientation: "bottom",
+      yearRange: 'c-100:c',
       beforeShow: function (input, inst) {
-        $("#ui-datepicker-div").addClass("ui-datepicker--filters");
+        $("#ui-datepicker-div").addClass("ui-datepicker--age");
         window.setTimeout(function () {
           $("#ui-datepicker-div").position({
             my: "top",
@@ -1693,6 +1694,10 @@ function onDocumentReady() {
           });
         }, 1);
       },
+    }).focus(function() {
+      $("select").select2({
+        minimumResultsForSearch: Infinity
+      });
     });
 
   $(".timetable__datepicker").not(".js_ignore_mark").datepicker({

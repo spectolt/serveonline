@@ -76,6 +76,7 @@
                 </div>
                 <button class="cyan small company__button-order">Galima rezervuoti online</button>
             </div>
+            <?php for ($i = 2; $i < 10; $i++) { ?>
             <div class="services-list__block">
                 <h4><span>Paprastas kirpimas</span> <span class="more-button">Plačiau</span></h4>
                 <p class="more-description hidden">Galvos plovimas, modelinis kirpimas, dieninis sušukavimas.</p>
@@ -107,12 +108,13 @@
                         </div>
                     </div>
                     <div class="checkbox">
-                        <input name="feature" type="checkbox" id="feature-2" class="" value="1" />
-                        <label for="feature-2"></label>
+                        <input name="feature" type="checkbox" id="feature-<?php echo $i ?>" class="" value="1" />
+                        <label for="feature-<?php echo $i ?>"></label>
                     </div>
                 </div>
                 <button class="cyan small company__button-order">Galima rezervuoti online</button>
             </div>
+            <?php } ?>
             <div class="services-list__block services-list__block--choices">
                 <h4><span>Balayage / Ombre dažymas</span> <span class="more-button">Plačiau</span></h4>
                 <span class="product-expand"></span>

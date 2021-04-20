@@ -1309,4 +1309,17 @@ a.ui-button:active,
     border: 1px solid $red;
     border-radius: 50%;
   }
+
+  &--age {
+    width: 300px;
+    padding: 20px;
+
+    .ui-datepicker-current {
+      display: none;
+    }
+
+    .ui-datepicker-next, .ui-datepicker-prev {
+      display: none;
+    }
+  }
 }

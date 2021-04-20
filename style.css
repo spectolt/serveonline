@@ -3239,7 +3239,12 @@ div.services-list__aside {
   margin-right: 20px;
   position: relative;
   margin-bottom: 40px;
-  margin-top: 36px;
+  padding-top: 36px;
+  position: -webkit-sticky;
+  position: sticky;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  top: 0;
 }
 
 @media (max-width: 991px) {
@@ -4211,6 +4216,8 @@ div.services-list__features .inputs__before-text {
   left: -100000px;
   width: 100%;
   z-index: 1051;
+  max-height: 50vh;
+  overflow: auto;
 }
 
 .select2-results {
@@ -8121,6 +8128,19 @@ a.ui-button:active,
 .ui-datepicker td.ui-datepicker-today a {
   border: 1px solid #e54651;
   border-radius: 50%;
+}
+
+.ui-datepicker--age {
+  width: 300px;
+  padding: 20px;
+}
+
+.ui-datepicker--age .ui-datepicker-current {
+  display: none;
+}
+
+.ui-datepicker--age .ui-datepicker-next, .ui-datepicker--age .ui-datepicker-prev {
+  display: none;
 }
 
 /* Slider */

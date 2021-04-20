@@ -9,7 +9,10 @@ div.services-list {
       margin-right: 20px;
       position: relative;
       margin-bottom: 40px;
-      margin-top: 36px;
+      padding-top: 36px;
+      position: sticky;
+      align-self: flex-start;
+      top: 0;
 
       @include breakpoint(l) {
         width: 100%;
