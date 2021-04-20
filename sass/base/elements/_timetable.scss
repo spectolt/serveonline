@@ -17,7 +17,7 @@
   &__top {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    // align-items: flex-start;
 
     @include breakpoint(l) {
       flex-wrap: wrap;
@@ -341,9 +341,44 @@
     }
   }
 
+  &__right {
+    display: flex;
+    flex-direction: column;
+  }
+
   &__choices {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
+
+    h3 {
+      width: 100%;
+    }
+  }
+
+  &__choice {
+    h4 {
+      margin: 0; //pakeisti
+    }
+  }
+
+  &__choice--periodicity {
+    margin-left: 20px; //peržiūrėti pagal dizainą
+    flex: 1 0 auto;
+  }
+
+  &__time-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2px; //peržiūrėti
+
+    .time-inputs {
+      border: 1px solid $darkblue;
+    }
+  }
+
+  &__buttons-container {
+    margin-top: auto;
+    align-self: flex-end;
   }
 }

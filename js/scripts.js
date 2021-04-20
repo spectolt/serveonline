@@ -1701,7 +1701,7 @@ function onDocumentReady() {
     });
 
   $(".timetable__datepicker").not(".js_ignore_mark").datepicker({
-    showButtonPanel: true
+    // showButtonPanel: true
   });
 
   $(".timetable .time-inputs input").not(".js_ignore_mark").on("change", function() {

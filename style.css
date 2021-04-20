@@ -3752,9 +3752,6 @@ div.services-list__features .inputs__before-text {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
 }
 
 @media (max-width: 991px) {
@@ -4116,6 +4113,16 @@ div.services-list__features .inputs__before-text {
   display: none;
 }
 
+.timetable__right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 .timetable__choices {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4125,6 +4132,39 @@ div.services-list__features .inputs__before-text {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+}
+
+.timetable__choices h3 {
+  width: 100%;
+}
+
+.timetable__choice h4 {
+  margin: 0;
+}
+
+.timetable__choice--periodicity {
+  margin-left: 20px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+
+.timetable__time-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 2px;
+}
+
+.timetable__time-grid .time-inputs {
+  border: 1px solid #101b51;
+}
+
+.timetable__buttons-container {
+  margin-top: auto;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 
 .select2-container {

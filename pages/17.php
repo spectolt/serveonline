@@ -191,11 +191,6 @@ $thisPage = "specialist-profile" ?>
                 <?php require_once("company/services.php") ?>
                 <section class="group__tab timetable hidden" id="darbo-grafikas">
                     <div class="timetable__top">
-                        <!-- <div class="timetable__title">
-                        <h2>2021 Sausis</h2>
-                        <button class="arrow arrow--left"></button>
-                        <button class="arrow arrow--right"></button>
-                        </div> -->
                         <div class="timetable__datepicker-container">
                             <div class="timetable__datepicker timetable__datepicker--from">
                                 <h3>Nuo</h3>
@@ -204,23 +199,59 @@ $thisPage = "specialist-profile" ?>
                                 <h3>Iki</h3>
                             </div>
                         </div>
-                        <div class="timetable__choices">
-                            <select>
-                                <option>Kartoti pažymėtą dieną kas dieną</option>
-                                <option>Kartoti pažymėtą dieną kas antrą dieną</option>
-                                <option>Kartoti pažymėtą dieną kas savaitę</option>
-                            </select>
-                            <div class="checkbox">
-                                <input name="exceptions" type="checkbox" id="holidays" />
-                                <label for="holidays">
-                                    Išskyrus šventines d.
-                                </label>
+                        <div class="timetable__right">
+                            <div class="timetable__choices">
+                                <h3>Pažymėtame laikotarpyje sukurti grafiką</h3>
+                                <div class="timetable__choice timetable__choice--time">
+                                    <h4>Laikas</h4>
+                                    <div class="timetable__time-grid">
+                                        <div class="company__time time-inputs">
+                                            <input type="number" name="hour" placeholder="00" max="23" length="2">
+                                            <p>:</p>
+                                            <input type="number" name="minute" placeholder="00" max="59" length="2">
+                                        </div>
+                                        <div class="company__time time-inputs">
+                                            <input type="number" name="hour" placeholder="00" max="23" length="2">
+                                            <p>:</p>
+                                            <input type="number" name="minute" placeholder="00" max="59" length="2">
+                                        </div>
+                                        <div class="company__time time-inputs">
+                                            <input type="number" name="hour" placeholder="00" max="23" length="2">
+                                            <p>:</p>
+                                            <input type="number" name="minute" placeholder="00" max="59" length="2">
+                                        </div>
+                                        <div class="company__time time-inputs">
+                                            <input type="number" name="hour" placeholder="00" max="23" length="2">
+                                            <p>:</p>
+                                            <input type="number" name="minute" placeholder="00" max="59" length="2">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timetable__choice timetable__choice--periodicity">
+                                    <h4>Periodiškumas</h4>
+                                    <select>
+                                        <option>Kartoti pažymėtą dieną kas dieną</option>
+                                        <option>Kartoti pažymėtą dieną kas antrą dieną</option>
+                                        <option>Kartoti pažymėtą dieną kas savaitę</option>
+                                    </select>
+                                    <div class="checkbox">
+                                        <input name="exceptions" type="checkbox" id="holidays" />
+                                        <label for="holidays">
+                                            Išskyrus šventines d.
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input name="exceptions" type="checkbox" id="weekends" />
+                                        <label for="weekends">
+                                            Išskyrus nedarbo d.
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="checkbox">
-                                <input name="exceptions" type="checkbox" id="weekends" />
-                                <label for="weekends">
-                                    Išskyrus nedarbo d.
-                                </label>
+                            <div class="timetable__buttons-container">
+                                <!-- pridėti klases ir ikonas: -->
+                                <button>Ištrinti</button>
+                                <button class="orange transparent">Sugeneruoti</button>
                             </div>
                         </div>
                     </div>
