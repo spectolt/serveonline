@@ -11,7 +11,7 @@ $thisPage = "specialist-profile" ?>
                         <div class="company__header-top">
                             <h2>Vardas Pavardė</h2>
                         </div>
-                        <ul class="company__nav">
+                        <ul class="company__nav company__nav--specialist">
                             <li class="active"><a href="#bendra-informacija">Bendra informacija</a></li>
                             <li><a href="#paslaugos">Paslaugos</a></li>
                             <li><a href="#darbo-grafikas">Darbo grafikas</a></li>
@@ -148,7 +148,7 @@ $thisPage = "specialist-profile" ?>
                                 </select>
                             </div>
                         </div>
-                        <div class="specialist-profile__choice company__offer">
+                        <div class="specialist-profile__choice specialist-profile__choice--last-hour company__offer">
                             <h3>Paskutinės valandos pasiūlymas</h3>
                             <div class="checkbox">
                                 <input name="offer" type="checkbox" id="offer" />
@@ -194,9 +194,11 @@ $thisPage = "specialist-profile" ?>
                         <div class="timetable__datepicker-container">
                             <div class="timetable__datepicker timetable__datepicker--from">
                                 <h3>Nuo</h3>
+                                <input id="timetable-from" class="timetable__date-input">
                             </div>
                             <div class="timetable__datepicker timetable__datepicker--until">
                                 <h3>Iki</h3>
+                                <input id="timetable-until" class="timetable__date-input">
                             </div>
                         </div>
                         <div class="timetable__right">

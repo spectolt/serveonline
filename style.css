@@ -3744,7 +3744,7 @@ div.services-list__features .inputs__before-text {
 
 @media (max-width: 700px) {
   .timetable {
-    width: calc(100vw - (100vw - 100%) - 20px);
+    width: 100%;
   }
 }
 
@@ -3767,14 +3767,6 @@ div.services-list__features .inputs__before-text {
   .timetable__top {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-  }
-}
-
-@media (max-width: 890px) {
-  .timetable__top {
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1;
   }
 }
 
@@ -3896,7 +3888,6 @@ div.services-list__features .inputs__before-text {
 @media (max-width: 890px) {
   .timetable__container {
     padding: 0;
-    overflow: visible;
   }
 }
 
@@ -3910,12 +3901,8 @@ div.services-list__features .inputs__before-text {
 
 @media (max-width: 890px) {
   .timetable__week {
-    display: none;
-    border-top: 1px solid #e8e8e8;
-    border-bottom: 1px solid #e8e8e8;
     padding: 5px 0;
     margin-bottom: 20px;
-    overflow: auto;
   }
 }
 
@@ -4042,7 +4029,20 @@ div.services-list__features .inputs__before-text {
 
 @media (max-width: 890px) {
   .timetable__datepicker-container {
-    display: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.timetable__date-input {
+  display: none;
+}
+
+@media (max-width: 890px) {
+  .timetable__date-input {
+    display: block;
   }
 }
 
@@ -4055,14 +4055,18 @@ div.services-list__features .inputs__before-text {
 
 @media (max-width: 890px) {
   .timetable__datepicker {
-    margin-left: -15px;
     margin-bottom: 20px;
   }
 }
 
 @media (max-width: 890px) {
+  .timetable__datepicker .ui-datepicker {
+    display: none !important;
+  }
+}
+
+@media (max-width: 890px) {
   .timetable__datepicker h3 {
-    position: absolute;
     top: 0;
     left: 15px;
     z-index: 1000;
@@ -9198,6 +9202,7 @@ footer.container {
 .site-main--aside .page-content--company {
   margin: 0 auto;
   max-width: 1200px;
+  width: 100%;
 }
 
 .site-main--aside .page-content--company .page-content__wrapper {
@@ -16770,6 +16775,14 @@ section.product .product__block-recommend {
 }
 
 @media (max-width: 890px) {
+  .specialist-profile .company__header ul.company__nav.company__nav--specialist {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+@media (max-width: 890px) {
   .specialist-profile .company__container {
     padding: 10px 10px 0;
   }
@@ -16778,6 +16791,9 @@ section.product .product__block-recommend {
 @media (max-width: 700px) {
   .specialist-profile .company__header ul.company__nav li {
     margin-right: 30px;
+  }
+  .specialist-profile .company__header ul.company__nav li:last-of-type {
+    margin-right: 0;
   }
 }
 
@@ -16917,8 +16933,20 @@ section.product .product__block-recommend {
   width: 15px;
 }
 
+@media (max-width: 700px) {
+  .specialist-profile__info .select2-selection--single .select2-selection__arrow {
+    width: 10px;
+  }
+}
+
 .specialist-profile__info .select2-selection--single .select2-selection__arrow b {
   right: 15px;
+}
+
+@media (max-width: 700px) {
+  .specialist-profile__info .select2-selection--single .select2-selection__arrow b {
+    right: 10px;
+  }
 }
 
 .specialist-profile__info h3 {
@@ -17099,6 +17127,29 @@ section.product .product__block-recommend {
   .specialist-profile__choice {
     padding: 0;
     margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 991px) {
+  .specialist-profile__choice--time {
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+  }
+  .specialist-profile__choice--payment {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .specialist-profile__choice--period {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .specialist-profile__choice--last-hour {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
   }
 }
 
@@ -17384,6 +17435,29 @@ section.product .product__block-recommend {
   }
 }
 
+.user-profile .company__container--info h4 {
+  margin-bottom: 25px;
+}
+
+.user-profile .company__container--info .checkbox {
+  margin-bottom: 20px;
+}
+
+.user-profile .company__container--login .user-profile__inputs-container p {
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.user-profile .company__container--login .login-details--name {
+  -ms-flex-preferred-size: 29.4%;
+      flex-basis: 29.4%;
+}
+
+.user-profile .company__container--login .login-details--pass {
+  -ms-flex-preferred-size: 21%;
+      flex-basis: 21%;
+}
+
 .user-profile .group__tab {
   margin-top: 40px;
 }
@@ -17429,28 +17503,46 @@ section.product .product__block-recommend {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-bottom: 30px;
 }
 
-.user-profile__inputs-container .input-wrapper--user, .user-profile__inputs-container .input-wrapper--envelope {
+.user-profile__inputs-container .input-wrapper--user,
+.user-profile__inputs-container .input-wrapper--envelope {
   -ms-flex-preferred-size: 40%;
       flex-basis: 40%;
 }
 
-.user-profile__inputs-container .input-wrapper--age, .user-profile__inputs-container .input-wrapper--phone {
-  -ms-flex-preferred-size: 25%;
-      flex-basis: 25%;
+.user-profile__inputs-container .input-wrapper--age,
+.user-profile__inputs-container .input-wrapper--phone {
+  -ms-flex-preferred-size: 17%;
+      flex-basis: 17%;
 }
 
-.user-profile__inputs-container .input-wrapper--age .input-arrow, .user-profile__inputs-container .input-wrapper--phone .input-arrow {
+.user-profile__inputs-container .input-wrapper--age .input-arrow,
+.user-profile__inputs-container .input-wrapper--phone .input-arrow {
   right: 15px;
 }
 
+.user-profile__inputs-container .input-wrapper--age {
+  top: -2px;
+}
+
+.user-profile__inputs-container .input-container--city {
+  -ms-flex-preferred-size: calc(25% - 10px);
+      flex-basis: calc(25% - 10px);
+}
+
 .user-profile__inputs-container .specialist-profile__gender {
-  margin-bottom: 10px;
+  height: 40px;
+}
+
+.user-profile__inputs-container .specialist-profile__gender p {
+  margin-top: 0;
 }
 
 .user-profile__inputs-container .about-datepicker {
   padding-left: 50px;
+  height: 36px;
 }
 
 @media (max-width: 700px) {
@@ -17511,8 +17603,8 @@ section.product .product__block-recommend {
 }
 
 .cart__about--time {
-  -ms-flex-preferred-size: 33%;
-      flex-basis: 33%;
+  -ms-flex-preferred-size: 35.5%;
+      flex-basis: 35.5%;
   -ms-flex-preferred-size: auto;
       flex-basis: auto;
   width: 380px;
@@ -17527,7 +17619,8 @@ section.product .product__block-recommend {
           align-items: flex-start;
 }
 
-.cart__info h3, .cart__info h4 {
+.cart__info h3,
+.cart__info h4 {
   margin: 0;
 }
 
@@ -17539,6 +17632,8 @@ section.product .product__block-recommend {
       -ms-flex-align: center;
           align-items: center;
   width: 390px;
+  -ms-flex-preferred-size: 37%;
+      flex-basis: 37%;
 }
 
 .cart__photo {
@@ -17563,25 +17658,36 @@ section.product .product__block-recommend {
 .cart__products .product-action {
   margin-bottom: 10px;
   padding-bottom: 10px;
-  padding-top: 10px;
+  padding-top: 8px;
+  height: 60px;
+}
+
+.cart .product-action__duration,
+.cart .product-action__price,
+.cart .product-action__periodicity {
+  margin-top: 8px;
 }
 
 .cart__buttons.company__button-container {
   margin-top: 10px;
 }
 
-.cart__buttons.company__button-container .cart__trash, .cart__buttons.company__button-container .orange {
-  width: 400px;
+.cart__buttons.company__button-container .cart__trash,
+.cart__buttons.company__button-container .cart__reserve {
+  -ms-flex-preferred-size: 35.5%;
+      flex-basis: 35.5%;
   height: 45px;
 }
 
 .cart__buttons.company__button-container .cart__change-time {
-  width: 320px;
+  -ms-flex-preferred-size: 27%;
+      flex-basis: 27%;
   height: 45px;
 }
 
 .cart__buttons.company__button-container .cart__change-time-register {
-  width: 720px;
+  -ms-flex-preferred-size: 64%;
+      flex-basis: 64%;
 }
 
 .cart__buttons.company__button-container button {

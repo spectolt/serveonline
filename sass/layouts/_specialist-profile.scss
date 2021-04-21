@@ -1,4 +1,10 @@
 .specialist-profile {
+  .company__header ul.company__nav.company__nav--specialist {
+    @include breakpoint(890px) {
+      justify-content: space-between;
+    }
+  }
+
   .company__container {
     @include breakpoint(890px) {
       padding: 10px 10px 0;
@@ -7,6 +13,10 @@
   .company__header ul.company__nav li {
     @include breakpoint(sm) {
       margin-right: 30px;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
     }
   }
   input[type="text"] {
@@ -117,8 +127,16 @@
 
     .select2-selection--single .select2-selection__arrow {
       width: 15px;
+
+      @include breakpoint(sm) {
+        width: 10px;
+      }
       b {
         right: 15px;
+
+        @include breakpoint(sm) {
+          right: 10px;
+        }
       }
     }
 
@@ -261,6 +279,24 @@
     @include breakpoint(sm) {
       padding: 0;
       margin-bottom: 30px;
+    }
+
+    @include breakpoint(l) {
+      &--time {
+        order: 0;
+      }
+
+      &--payment {
+        order: 1;
+      }
+
+      &--period {
+        order: 2;
+      }
+
+      &--last-hour {
+        order: 3;
+      }
     }
   }
 
@@ -458,7 +494,7 @@
     .hours {
       right: -5px;
       height: 23px;
-      input{
+      input {
         height: 23px;
       }
 

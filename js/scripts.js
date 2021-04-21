@@ -1704,8 +1704,24 @@ function onDocumentReady() {
         });
     });
 
-  $(".timetable__datepicker").not(".js_ignore_mark").datepicker({
+  $(".timetable__datepicker--from").not(".js_ignore_mark").datepicker({
     // showButtonPanel: true
+    altField: "#timetable-from"
+  });
+
+  $(".timetable__datepicker--until").not(".js_ignore_mark").datepicker({
+    // showButtonPanel: true
+    altField: "#timetable-until"
+  });
+
+  $(".timetable__date-input").datepicker();
+
+  $('#timetable-from').change(function(){
+    $('.timetable__datepicker--from').datepicker('setDate', $(this).val());
+  });
+
+  $('#timetable-until').change(function(){
+    $('.timetable__datepicker--until').datepicker('setDate', $(this).val());
   });
 
   $(".timetable .time-inputs input").not(".js_ignore_mark").on("change", function() {
@@ -2324,10 +2340,10 @@ function newSpecialist(button, countAdmin, countSpecialistLabel) {
 }
 
 function timetableLayout() {
-  if (window.matchMedia("(max-width: 890px)").matches) {
-    $(".timetable__datepicker--from").insertBefore(".selected-week--from")
-    $(".timetable__datepicker--until").insertBefore(".selected-week--to")
-  } else {
-    $(".timetable__datepicker--from, .timetable__datepicker--until").appendTo(".timetable__datepicker-container")
-  }
+  // if (window.matchMedia("(max-width: 890px)").matches) {
+  //   $(".timetable__datepicker--from").insertBefore(".selected-week--from")
+  //   $(".timetable__datepicker--until").insertBefore(".selected-week--to")
+  // } else {
+  //   $(".timetable__datepicker--from, .timetable__datepicker--until").appendTo(".timetable__datepicker-container")
+  // }
 }

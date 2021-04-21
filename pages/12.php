@@ -56,7 +56,7 @@ $thisPage = "specialist-profile" ?>
                             <div class="cart__buttons company__button-container">
                                 <button class="cyan transparent cart__trash">Pašalinti</button>
                                 <button class="cyan cart__change-time">Keisti laiką</button>
-                                <button class="orange">Rezervuoti</button>
+                                <button class="orange cart__reserve">Rezervuoti</button>
                             </div>
                         </div>
                     <?php } ?>
@@ -190,7 +190,7 @@ $thisPage = "specialist-profile" ?>
                         </div>
                     </div>
                 </section>
-                <section class="group__tab company__container hidden" id="bendra-informacija">
+                <section class="group__tab company__container hidden company__container--info" id="bendra-informacija">
                     <div class="user-profile__inputs-container">
                         <div class="input-wrapper input-wrapper--user">
                             <input type="text" name="name" placeholder="Vardas Pavardė">
@@ -243,16 +243,16 @@ $thisPage = "specialist-profile" ?>
                         <button class="orange">Saugoti</button>
                     </div>
                 </section>
-                <section class="group__tab company__container hidden" id="prisijungimas">
+                <section class="group__tab company__container company__container--login hidden" id="prisijungimas">
                     <div class="user-profile__inputs-container">
-                        <div class="login-details">
+                        <div class="login-details login-details--name">
                             <p>Prisijungimo vardas</p>
                             <div class="input-container input-container--password-eye">
                                 <input type="password" name="login">
                                 <span class="input-icon"></span>
                             </div>
                         </div>
-                        <div class="login-details">
+                        <div class="login-details login-details--pass">
                             <p>Prisijungimo slaptažodis</p>
                             <div class="input-container input-container--password-eye">
                                 <input type="password" name="login">

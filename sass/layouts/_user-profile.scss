@@ -1,8 +1,32 @@
 .user-profile {
-  .group__tab{
+  .company__container--info {
+    h4 {
+      margin-bottom: 25px;
+    }
+    .checkbox {
+      margin-bottom: 20px;
+    }
+  }
+
+  .company__container--login {
+    .user-profile__inputs-container {
+      p {
+        margin-bottom: 10px;
+        margin-top: 0;
+      }
+    }
+
+    .login-details--name {
+      flex-basis: 29.4%;
+    }
+    .login-details--pass {
+      flex-basis: 21%;
+    }
+  }
+  .group__tab {
     margin-top: 40px;
 
-    p{
+    p {
       margin-top: 45px;
       margin-bottom: 40px;
     }
@@ -39,25 +63,41 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    margin-bottom: 30px;
 
-    .input-wrapper--user, .input-wrapper--envelope {
+    .input-wrapper--user,
+    .input-wrapper--envelope {
       flex-basis: 40%;
     }
 
-    .input-wrapper--age, .input-wrapper--phone {
-      flex-basis: 25%;
+    .input-wrapper--age,
+    .input-wrapper--phone {
+      flex-basis: 17%;
 
-      .input-arrow{
+      .input-arrow {
         right: 15px;
       }
     }
 
+    .input-wrapper--age {
+      top: -2px;
+    }
+
+    .input-container--city {
+      flex-basis: calc(25% - 10px);
+    }
+
     .specialist-profile__gender {
-      margin-bottom: 10px;
+      // margin-bottom: 10px;
+      height: 40px;
+      p {
+        margin-top: 0;
+      }
     }
 
     .about-datepicker {
       padding-left: 50px;
+      height: 36px;
 
       @include breakpoint(sm) {
         padding-left: 40px;
@@ -91,7 +131,7 @@
 
   &__header {
     display: flex;
-padding-bottom: 10px;
+    padding-bottom: 10px;
     border-bottom: 1px solid $lightgray;
     margin-bottom: 20px;
   }
@@ -111,7 +151,7 @@ padding-bottom: 10px;
     }
 
     &--time {
-      flex-basis: 33%;
+      flex-basis: 35.5%;
       flex-basis: auto;
       width: 380px;
     }
@@ -121,7 +161,8 @@ padding-bottom: 10px;
     display: flex;
     align-items: flex-start;
 
-    h3, h4 {
+    h3,
+    h4 {
       margin: 0;
     }
   }
@@ -130,6 +171,7 @@ padding-bottom: 10px;
     display: flex;
     align-items: center;
     width: 390px;
+    flex-basis: 37%;
     // flex-basis: 33%;
     // flex-basis: 33%;
   }
@@ -143,9 +185,9 @@ padding-bottom: 10px;
     margin-bottom: 10px;
   }
 
-  &__name{
+  &__name {
     top: -10px;
-  position: relative;
+    position: relative;
   }
 
   &__products {
@@ -154,23 +196,31 @@ padding-bottom: 10px;
     .product-action {
       margin-bottom: 10px;
       padding-bottom: 10px;
-      padding-top: 10px;
+      padding-top: 8px;
+      height: 60px;
     }
+  }
+
+  .product-action__duration,
+  .product-action__price,
+  .product-action__periodicity {
+    margin-top: 8px;
   }
 
   &__buttons.company__button-container {
     margin-top: 10px;
-    .cart__trash, .orange{
-      width: 400px;
+    .cart__trash,
+    .cart__reserve {
+      flex-basis: 35.5%;
       height: 45px;
     }
-    .cart__change-time{
-      width: 320px;
+    .cart__change-time {
+      flex-basis: 27%;
       height: 45px;
     }
 
     .cart__change-time-register {
-      width: 720px;
+      flex-basis: 64%;
     }
 
     button {
