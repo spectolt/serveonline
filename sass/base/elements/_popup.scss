@@ -59,7 +59,7 @@
     }
 
     &__content {
-      padding: 40px;
+      padding: 20px 30px;
       background-color: $white;
 
       @include breakpoint(sm) {
@@ -130,6 +130,10 @@
       .select2-container {
         width: 100% !important;
         margin-bottom: 20px;
+      }
+
+      .select2-selection--single{
+        border-color: $lightgray;
       }
     }
 
@@ -224,4 +228,9 @@
       }
     }
   }
+}
+
+.select2-container--warning .select2-results__option--selectable{
+  font-weight: bold;
+  font-family: 'Sen', sans-serif;
 }

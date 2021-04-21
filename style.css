@@ -3016,7 +3016,7 @@ table.calendar .calendar__more-times--hidden {
 }
 
 .warning-popup-container .warning-popup__content {
-  padding: 40px;
+  padding: 20px 30px;
   background-color: #fff;
 }
 
@@ -3102,6 +3102,10 @@ table.calendar .calendar__more-times--hidden {
 .warning-popup-container .warning-popup__inputs-container .select2-container {
   width: 100% !important;
   margin-bottom: 20px;
+}
+
+.warning-popup-container .warning-popup__inputs-container .select2-selection--single {
+  border-color: #e8e8e8;
 }
 
 .warning-popup-container .warning-popup__textarea {
@@ -3219,6 +3223,11 @@ table.calendar .calendar__more-times--hidden {
   .warning-popup-container .warning-popup__button-container button:last-of-type::before {
     width: 16px;
   }
+}
+
+.select2-container--warning .select2-results__option--selectable {
+  font-weight: bold;
+  font-family: 'Sen', sans-serif;
 }
 
 div.services-list {
@@ -8171,16 +8180,68 @@ a.ui-button:active,
 }
 
 .ui-datepicker--age {
-  width: 300px;
-  padding: 20px;
+  width: 357px;
+  padding: 20px 5px;
+}
+
+.ui-datepicker--age .select2 {
+  height: 23px;
+  width: 143px !important;
+}
+
+.ui-datepicker--age .select2 .select2-selection--single {
+  height: 23px;
+}
+
+.ui-datepicker--age .select2 .select2-selection--single .select2-selection__rendered {
+  height: 23px;
+  padding-left: 10px;
+  padding-right: 15px;
+  text-align: left;
+  position: relative;
+  top: -5px;
+}
+
+.ui-datepicker--age .select2 .select2-selection--single .select2-selection__arrow b {
+  top: 35%;
+  right: 15px;
+}
+
+.ui-datepicker--age .ui-datepicker th {
+  text-align: left;
+}
+
+.ui-datepicker--age .ui-datepicker-calendar td a {
+  margin: 2px auto;
+}
+
+.ui-datepicker--age .ui-datepicker-buttonpane button {
+  margin-right: 0;
+}
+
+.ui-datepicker--age .ui-datepicker-title {
+  margin: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .ui-datepicker--age .ui-datepicker-current {
   display: none;
 }
 
-.ui-datepicker--age .ui-datepicker-next, .ui-datepicker--age .ui-datepicker-prev {
+.ui-datepicker--age .ui-datepicker-next,
+.ui-datepicker--age .ui-datepicker-prev {
   display: none;
+}
+
+.ui-datepicker--age .ui-datepicker-header {
+  margin-right: 17px;
+  margin-left: 17px;
 }
 
 /* Slider */
@@ -12289,7 +12350,13 @@ section.product .product__block-recommend {
   font-size: 0.75rem;
 }
 
-.messages-settings .messages__table th, .messages-settings .messages__table td {
+.messages-settings .messages__table th {
+  vertical-align: top;
+  padding: 10px 6px;
+}
+
+.messages-settings .messages__table td {
+  vertical-align: middle;
   padding: 8px;
 }
 
@@ -12311,6 +12378,7 @@ section.product .product__block-recommend {
 
 .messages-settings .messages__table th:nth-of-type(5), .messages-settings .messages__table td:nth-of-type(5) {
   width: 66px;
+  text-align: center;
 }
 
 .messages-settings .messages__table th:nth-of-type(6), .messages-settings .messages__table td:nth-of-type(6) {
@@ -12326,7 +12394,7 @@ section.product .product__block-recommend {
 }
 
 .messages-settings .messages__table th:last-of-type, .messages-settings .messages__table td:last-of-type {
-  width: 97px;
+  width: 94px;
 }
 
 .profiles__table th .checkbox input[type="checkbox"]:checked ~ label:before {
@@ -17201,6 +17269,14 @@ section.product .product__block-recommend {
 
 .specialist-profile .specialist-profile__choice--time .choice-wrapper .select2-selection--single .select2-selection__rendered {
   line-height: normal;
+  font-size: 0.875rem;
+  height: 23px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .specialist-profile .specialist-profile__choice--time .select2-container--default {

@@ -185,14 +185,36 @@
                 <div class="site-aside__item <?php if ($thisPage == "messages-settings") echo "site-aside__item--active site-aside__item--open"; ?>">
                     <a href="#">Žinučių nustatymai</a>
                     <div class="site-aside__filters <?php if ($thisPage != "messages-settings") echo "hidden"; ?>">
-                        <p>Sukūrimo data</p>
+                        <p>Sukūrimo data nuo</p>
                         <div class="site-aside__datepicker-container">
                             <input class="site-aside__datepicker" placeholder="Nuo">
                         </div>
-                        <p>Sukūrimo data</p>
+                        <p>Sukūrimo data iki</p>
                         <div class="site-aside__datepicker-container">
                             <input class="site-aside__datepicker" placeholder="Iki">
                         </div>
+                        <p>Žinutės tipas</p>
+                        <select class="js-dropdown-placeholder">
+                            <option selected>Visi</option>
+                            <option>Automatinė notification</option>
+                            <option>Automatinė SMS</option>
+                            <option>Vienkartinė SMS</option>
+                        </select>
+                        <p>Žinutės tema</p>
+                        <select class="js-dropdown-placeholder">
+                            <option selected>Visi</option>
+                            <option>Priminimas</option>
+                            <option>Pasiūlymas</option>
+                            <option>Reklama</option>
+                        </select>
+                        <p>Gavėjas</p>
+                        <select class="js-dropdown-placeholder">
+                            <option selected>Visi</option>
+                            <option>Paslaugų gavėjas</option>
+                            <option>Įmonės administratorius</option>
+                            <option>Specialistas</option>
+                            <option>Darbuotojas</option>
+                        </select>
                     </div>
                 </div>
                 <div class="site-aside__item <?php if ($thisPage == "messages") echo "site-aside__item--active site-aside__item--open"; ?>">

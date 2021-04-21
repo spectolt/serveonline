@@ -1297,6 +1297,10 @@ function onDocumentReady() {
     }
   );
 
+  $(".warning-popup__inputs-container select").select2({
+    dropdownCssClass: "select2-container--warning",
+  })
+
   $(".services-list__features input[name='feature']")
     .not(".js_ignore_mark")
     .on("change", function () {
@@ -1695,9 +1699,9 @@ function onDocumentReady() {
         }, 1);
       },
     }).focus(function() {
-      $("select").select2({
-        minimumResultsForSearch: Infinity
-      });
+        $(".ui-datepicker-year, .ui-datepicker-month").select2({
+          minimumResultsForSearch: Infinity,
+        });
     });
 
   $(".timetable__datepicker").not(".js_ignore_mark").datepicker({

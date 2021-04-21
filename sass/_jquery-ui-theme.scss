@@ -1311,15 +1311,54 @@ a.ui-button:active,
   }
 
   &--age {
-    width: 300px;
-    padding: 20px;
-
+    width: 357px;
+    padding: 20px 5px;
+    .select2 {
+      height: 23px;
+      width: 143px !important;
+      .select2-selection--single {
+        height: 23px;
+        .select2-selection__rendered {
+          height: 23px;
+          padding-left: 10px;
+          padding-right: 15px;
+          text-align: left;
+          position: relative;
+          top: -5px;
+        }
+        .select2-selection__arrow b {
+          top: 35%;
+          right: 15px;
+        }
+      }
+    }
+    .ui-datepicker th {
+      text-align: left;
+    }
+    .ui-datepicker-calendar td a {
+      margin: 2px auto;
+    }
+    .ui-datepicker-buttonpane button {
+      margin-right: 0;
+    }
+    .ui-datepicker-title {
+      margin: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
     .ui-datepicker-current {
       display: none;
     }
 
-    .ui-datepicker-next, .ui-datepicker-prev {
+    .ui-datepicker-next,
+    .ui-datepicker-prev {
       display: none;
+    }
+
+    .ui-datepicker-header {
+      margin-right: 17px;
+      margin-left: 17px;
     }
   }
 }

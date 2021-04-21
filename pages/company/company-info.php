@@ -194,7 +194,7 @@
         </div>
 
         <div class="company__offer">
-            <h3>Paskutinės minutės pasiūlymas</h3>
+            <h3>Paskutinės valandos pasiūlymas</h3>
             <div class="checkbox">
                 <input name="offer" type="checkbox" id="offer" />
                 <label for="offer">

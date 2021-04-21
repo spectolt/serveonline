@@ -1185,8 +1185,17 @@
       font-size: 0.75rem;
     }
 
-    th, td {
+    th {
+      vertical-align: top;
+      padding: 10px 6px;
+    }
+
+    td {
+      vertical-align: middle;
       padding: 8px;
+    }
+
+    th, td {
       &:first-of-type {
         width: 77px;
       }
@@ -1201,6 +1210,8 @@
       }
       &:nth-of-type(5) {
         width: 66px;
+        text-align: center;
+        // vertical-align: middle;
       }
       &:nth-of-type(6) {
         width: 70px;
@@ -1212,7 +1223,7 @@
         width: 140px;
       }
       &:last-of-type {
-        width: 97px;
+        width: 94px;
       }
     }
   }

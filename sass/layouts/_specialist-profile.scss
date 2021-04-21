@@ -406,6 +406,10 @@
         }
         .select2-selection__rendered {
           line-height: normal;
+          font-size: 0.875rem;
+          height: 23px;
+          display: inline-flex;
+          align-items: center;
         }
       }
     }
