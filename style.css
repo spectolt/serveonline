@@ -3225,6 +3225,30 @@ table.calendar .calendar__more-times--hidden {
   }
 }
 
+.warning-popup-container .controls.warning-popup table th:first-of-type, .warning-popup-container .controls.warning-popup table td:first-of-type {
+  width: 20%;
+}
+
+.warning-popup-container .controls.warning-popup table th:nth-of-type(2), .warning-popup-container .controls.warning-popup table td:nth-of-type(2) {
+  width: 40%;
+}
+
+.warning-popup-container .controls.warning-popup table th:nth-of-type(3), .warning-popup-container .controls.warning-popup table td:nth-of-type(3) {
+  width: 20%;
+}
+
+.warning-popup-container .controls.warning-popup table th:last-of-type, .warning-popup-container .controls.warning-popup table td:last-of-type {
+  width: 20%;
+}
+
+.warning-popup-container .controls.warning-popup table td {
+  border: 1px solid #e8e8e8;
+}
+
+.warning-popup-container .controls.warning-popup table tbody {
+  max-height: 200px;
+}
+
 .select2-container--warning .select2-results__option--selectable {
   font-weight: bold;
   font-family: 'Sen', sans-serif;
