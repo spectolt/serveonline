@@ -35,7 +35,7 @@ $thisPage = "specialist-profile" ?>
                             </div>
                             <div class="input-wrapper input-wrapper--age">
                                 <span class="input-icon"></span>
-                                <input class="about-datepicker">
+                                <input class="about-datepicker" readonly>
                                 <span class="datepicker-placeholder">Amžius:</span>
                                 <span class="input-arrow"></span>
                             </div>

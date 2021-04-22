@@ -92,11 +92,29 @@
           padding-left: 10px;
         }
 
-        .select2-selection--single {
-          width: 230px;
-          border-color: $darkblue !important;
+        .warning-popup__inputs-container .select2-container {
+          width: 230px !important;
+          margin-bottom: 10px;
+
           @include breakpoint(sm) {
             width: auto;
+          }
+
+          .select2-selection--single {
+            border-color: $darkblue;
+          }
+
+          .select2-selection__rendered {
+            background-image: url(img/icons/message.svg);
+            background-repeat: no-repeat;
+            background-position: 9px;
+            background-size: 10%;
+            display: block;
+            padding-left: 40px;
+            @include breakpoint(sm) {
+              background-size: 7%;
+              background-position: 9px 7px;
+            }
           }
         }
       }
@@ -244,30 +262,74 @@
   }
 
   .controls.warning-popup {
+
+    .controls__table-container {
+      @include breakpoint(1180px) {
+        width: 100%;
+      }
+    }
+    
     table {
+      th {
+        padding-top: 0;
+        padding-bottom: 0;
+        height: 32px;
+        font-weight: 400;
+        font-size: 0.75rem;
+        width: auto;
+      }
+
       th,
       td {
+        vertical-align: middle;
         &:first-of-type {
-          width: 20%;
+          width: 118px;
         }
         &:nth-of-type(2) {
-          width: 40%;
+          width: 287px;
         }
         &:nth-of-type(3) {
-          width: 20%;
+          width: 110px;
         }
         &:last-of-type {
-          width: 20%;
+          width: 85px;
+          text-align: center;
         }
       }
 
       td {
         border: 1px solid $lightgray;
+        border-bottom: none;
+        font-size: 0.75rem;
+        padding: 10px;
+
+        &:first-of-type {
+          font-weight: bold;
+        }
       }
 
       tbody {
         max-height: 200px;
       }
+
+      .top-arrow::before {
+        bottom: 18px;
+      }
+    }
+
+    .warning-popup__text-message {
+      h3 {
+        margin-top: 30px;
+        margin-bottom: 10px;
+        font-weight: 400;
+      }
+      textarea {
+        border-color: $lightgray;
+        height: 160px;
+      }
+    }
+    .warning-popup__button-container {
+      margin-top: 16px;
     }
   }
 }

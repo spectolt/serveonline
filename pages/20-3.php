@@ -14,7 +14,7 @@
 
 </head>
 
-<div class="warning-popup-container">
+<div class="warning-popup-container hasTable">
     <div class="warning-popup controls">
         <div class="warning-popup__header">
             <h4>Siųsti SMS įmonių administratoriams</h4>

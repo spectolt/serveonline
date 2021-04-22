@@ -425,7 +425,7 @@ function onDocumentReady() {
     });
   }
 
-  if ($("main.hasTable").length > 0) {
+  if ($("main.hasTable").length > 0 || $("div.hasTable").length > 0) {
     $(".search-container__submit")
       .not(".js_ignore_mark")
       .unbind("click")
