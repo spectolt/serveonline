@@ -15,17 +15,6 @@ function onDocumentReady() {
     changeTextWidth();
   };
 
-  // Don't hide the date picker when clicking a date
-  $.datepicker._selectDateOverload = $.datepicker._selectDate;
-  $.datepicker._selectDate = function (id, dateStr) {
-    var target = $(id);
-    var inst = this._getInst(target[0]);
-    inst.inline = true;
-    $.datepicker._selectDateOverload(id, dateStr);
-    inst.inline = false;
-    this._updateDatepicker(inst);
-  };
-
   $("select")
     .not(".js_ignore_mark")
     .select2()
@@ -165,6 +154,17 @@ function onDocumentReady() {
   }
 
   if ($("main.hasUiDatepicker").length > 0) {
+    // Don't hide the date picker when clicking a date
+    $.datepicker._selectDateOverload = $.datepicker._selectDate;
+    $.datepicker._selectDate = function (id, dateStr) {
+      var target = $(id);
+      var inst = this._getInst(target[0]);
+      inst.inline = true;
+      $.datepicker._selectDateOverload(id, dateStr);
+      inst.inline = false;
+      this._updateDatepicker(inst);
+    };
+
     var Event = function (text) {
       this.text = text;
     };
@@ -379,9 +379,9 @@ function onDocumentReady() {
       .querySelector(".js-datepicker:not(.js_ignore_mark)")
       .addEventListener("focus", (e) => {
         e.preventDefault();
-        setTimeout(() => {
-          window.scroll(0, 100);
-        }, 0);
+        // setTimeout(() => {
+        //   window.scroll(0, 100);
+        // }, 0);
       });
 
     $(".product__nav-button--next")
@@ -936,7 +936,9 @@ function onDocumentReady() {
     .not(".js_ignore_mark")
     .on("input", function () {
       if ($("input.group-name").length == 0) {
-        $(".company__header .company__header-top h2").html($("input.company-name").val());
+        $(".company__header .company__header-top h2").html(
+          $("input.company-name").val()
+        );
         if ($("input.company-name").val().length == 0) {
           $(".company__header h2").html("Pavadinimas");
         }
@@ -1077,7 +1079,7 @@ function onDocumentReady() {
   $("button.switch-image")
     .not(".js_ignore_mark")
     .on("click", function () {
-      var disabled = $("#sortable").sortable( "option", "disabled" );
+      var disabled = $("#sortable").sortable("option", "disabled");
       if (disabled) {
         $(this)
           .siblings(".sortable")
@@ -1097,15 +1099,16 @@ function onDocumentReady() {
           });
         $(".sortable").disableSelection();
         // isSortable = false;
-      } 
-      else {
+      } else {
         $(this).siblings(".sortable").sortable("disable");
         // isSortable = true;
       }
     });
 
-  $(document)
-    .on("click", ".company__specialist-activate:not(.js_ignore_mark)", function () {
+  $(document).on(
+    "click",
+    ".company__specialist-activate:not(.js_ignore_mark)",
+    function () {
       if ($(this).html() == "Deaktyvuoti") {
         $(this).html("Aktyvuoti");
         $(this).addClass("transparent");
@@ -1113,10 +1116,13 @@ function onDocumentReady() {
         $(this).html("Deaktyvuoti");
         $(this).removeClass("transparent");
       }
-    });
+    }
+  );
 
-  $(document)
-    .on("click", ".company__button-order:not(.js_ignore_mark)", function () {
+  $(document).on(
+    "click",
+    ".company__button-order:not(.js_ignore_mark)",
+    function () {
       $(this).toggleClass("transparent");
       // $(this).siblings("button").toggleClass("transparent");
       if ($(this).hasClass("transparent")) {
@@ -1124,7 +1130,8 @@ function onDocumentReady() {
       } else {
         $(this).html("Galima rezervuoti online");
       }
-    });
+    }
+  );
 
   $(".more-button")
     .not(".js_ignore_mark")
@@ -1299,7 +1306,7 @@ function onDocumentReady() {
 
   $(".warning-popup__inputs-container select").select2({
     dropdownCssClass: "select2-container--warning",
-  })
+  });
 
   $(".services-list__features input[name='feature']")
     .not(".js_ignore_mark")
@@ -1377,7 +1384,11 @@ function onDocumentReady() {
         timer_id = setTimeout(function () {
           $self.each(function () {
             $(this).siblings(".payment-plan__info").css({ display: "none" });
-            $(this).closest(".payment-plan").siblings().find(".payment-plan__info").css("display", "none")
+            $(this)
+              .closest(".payment-plan")
+              .siblings()
+              .find(".payment-plan__info")
+              .css("display", "none");
           });
         }, 300);
       } else {
@@ -1387,24 +1398,30 @@ function onDocumentReady() {
           .find("input")
           .prop("checked", false);
         // $self
-          // .siblings(".payment-plan__info")
-          // .find("input[data-name='Mini'], input#Mini")
-          // .prop("checked", true);
+        // .siblings(".payment-plan__info")
+        // .find("input[data-name='Mini'], input#Mini")
+        // .prop("checked", true);
         $self.attr("checkstate", "true");
         $self.siblings(".payment-plan__info").css({ display: "block" });
-        $self.closest(".payment-plan").siblings().find(".payment-plan__info").css("display", "none")
+        $self
+          .closest(".payment-plan")
+          .siblings()
+          .find(".payment-plan__info")
+          .css("display", "none");
         $("input[name='plan']:not(:checked)").attr("checkstate", "false");
       }
-    });  
+    });
 
-  $(".input-container--password-eye > .input-icon").not(".js_ignore_mark").on("click", function() {
-    $(this).toggleClass("input-icon--toggled-eye");
-    if ($(this).hasClass("input-icon--toggled-eye")) {
-      $(this).siblings("input[type='password']").attr("type", "text");
-    } else {
-      $(this).siblings("input[type='text']").attr("type", "password");
-    }
-  })
+  $(".input-container--password-eye > .input-icon")
+    .not(".js_ignore_mark")
+    .on("click", function () {
+      $(this).toggleClass("input-icon--toggled-eye");
+      if ($(this).hasClass("input-icon--toggled-eye")) {
+        $(this).siblings("input[type='password']").attr("type", "text");
+      } else {
+        $(this).siblings("input[type='text']").attr("type", "password");
+      }
+    });
 
   if (
     navigator.userAgent.match(
@@ -1418,8 +1435,7 @@ function onDocumentReady() {
     .not(".js_ignore_mark")
     .unbind("click")
     .click(function (e) {
-      if (e.target !== this)
-    return;
+      if (e.target !== this) return;
       if ($(this).hasClass("top-arrow bottom-arrow")) {
         $(this).removeClass("top-arrow");
       } else if ($(this).hasClass("bottom-arrow")) {
@@ -1437,11 +1453,15 @@ function onDocumentReady() {
     newSpecialist($(this), countAdmin);
   });
 
-  $(document).on("click", ".js-create-specialist:not('.js_ignore_mark')", function() {
-    countSpecialist++;
-    countSpecialistLabel = countSpecialist + 1;
-    newSpecialist($(this), countSpecialist, countSpecialistLabel);
-  })
+  $(document).on(
+    "click",
+    ".js-create-specialist:not('.js_ignore_mark')",
+    function () {
+      countSpecialist++;
+      countSpecialistLabel = countSpecialist + 1;
+      newSpecialist($(this), countSpecialist, countSpecialistLabel);
+    }
+  );
 
   // $(".company__login-search")
   //   .not(".js_ignore_mark")
@@ -1630,54 +1650,78 @@ function onDocumentReady() {
       // }
     });
 
-  $("input[name='phone']").not(".js_ignore_mark").on("input", function () {
-    $(this).val(
-      $(this)
-        .val()
-        .replace(/[^\d+]/g, "")
-    );
-  });
+  $("input[name='phone']")
+    .not(".js_ignore_mark")
+    .on("input", function () {
+      $(this).val(
+        $(this)
+          .val()
+          .replace(/[^\d+]/g, "")
+      );
+    });
 
-  $(".controls__button--activate, .controls__button--deactivate").not(".js_ignore_mark").on("click", function() {
-    if ($(this).hasClass("controls__button--activate")) {
-      $(this).html("Deaktyvuoti");
-      $(this).addClass("controls__button--deactivate").removeClass("controls__button--activate")
-    } else {
-      $(this).html("Aktyvuoti");
-      $(this).addClass("controls__button--activate").removeClass("controls__button--deactivate")
+  $(".controls__button--activate, .controls__button--deactivate")
+    .not(".js_ignore_mark")
+    .on("click", function () {
+      if ($(this).hasClass("controls__button--activate")) {
+        $(this).html("Deaktyvuoti");
+        $(this)
+          .addClass("controls__button--deactivate")
+          .removeClass("controls__button--activate");
+      } else {
+        $(this).html("Aktyvuoti");
+        $(this)
+          .addClass("controls__button--activate")
+          .removeClass("controls__button--deactivate");
+      }
+    });
 
-    }
-  });
-
-  $(".controls__group-btn").not(".js_ignore_mark").on("click", function() {
-    $(this).toggleClass("transparent");
-    if($(this).hasClass("controls__group-btn--city")) {
-      $(this).html("Išgrupuoti miestus");
-      if(!$(this).hasClass("transparent")) {
-        $(this).html("Grupuoti miestus")
+  $(".controls__group-btn")
+    .not(".js_ignore_mark")
+    .on("click", function () {
+      $(this).toggleClass("transparent");
+      if ($(this).hasClass("controls__group-btn--city")) {
+        $(this).html("Išgrupuoti miestus");
+        if (!$(this).hasClass("transparent")) {
+          $(this).html("Grupuoti miestus");
+        }
+      } else if ($(this).hasClass("controls__group-btn--company")) {
+        $(this).html("Išgrupuoti įmones");
+        if (!$(this).hasClass("transparent")) {
+          $(this).html("Grupuoti įmones");
+        }
+      } else if ($(this).hasClass("controls__group-btn--profession")) {
+        $(this).html("Išgrupuoti profesijas");
+        if (!$(this).hasClass("transparent")) {
+          $(this).html("Grupuoti profesijas");
+        }
       }
-    } else if($(this).hasClass("controls__group-btn--company")) {
-      $(this).html("Išgrupuoti įmones");
-      if(!$(this).hasClass("transparent")) {
-        $(this).html("Grupuoti įmones")
-      }
-    } else if($(this).hasClass("controls__group-btn--profession")) {
-      $(this).html("Išgrupuoti profesijas");
-      if(!$(this).hasClass("transparent")) {
-        $(this).html("Grupuoti profesijas")
-      }
-    }
-  })
+    });
 
   //if specialist is searched, reveal rights and buttons
-  $(document).on("click", ".company__specialist-search:not(.js_ignore_mark)", function() {
-    var specialist = $(this).closest(".company__specialist");
-    if($(this).siblings("input[name='name']").val().length > 0 && $(this).siblings("input[name='phone']").val().length > 0) {
-      specialist.find(".company__specialist-rights, .company__specialist-buttons, .company__specialist-inputs h4, .company__specialist-title").removeClass("hidden");
-    } else {
-      specialist.find(".company__specialist-rights, .company__specialist-buttons, .company__specialist-inputs h4, .company__specialist-title").addClass("hidden");
+  $(document).on(
+    "click",
+    ".company__specialist-search:not(.js_ignore_mark)",
+    function () {
+      var specialist = $(this).closest(".company__specialist");
+      if (
+        $(this).siblings("input[name='name']").val().length > 0 &&
+        $(this).siblings("input[name='phone']").val().length > 0
+      ) {
+        specialist
+          .find(
+            ".company__specialist-rights, .company__specialist-buttons, .company__specialist-inputs h4, .company__specialist-title"
+          )
+          .removeClass("hidden");
+      } else {
+        specialist
+          .find(
+            ".company__specialist-rights, .company__specialist-buttons, .company__specialist-inputs h4, .company__specialist-title"
+          )
+          .addClass("hidden");
+      }
     }
-  })
+  );
 
   //age datepicker
   $(".about-datepicker")
@@ -1685,9 +1729,8 @@ function onDocumentReady() {
     .datepicker({
       changeYear: true,
       changeMonth: true,
-      showButtonPanel: true,
       orientation: "bottom",
-      yearRange: 'c-100:c',
+      yearRange: "c-100:c",
       beforeShow: function (input, inst) {
         $("#ui-datepicker-div").addClass("ui-datepicker--age");
         window.setTimeout(function () {
@@ -1698,39 +1741,49 @@ function onDocumentReady() {
           });
         }, 1);
       },
-    }).focus(function() {
-        $(".ui-datepicker-year, .ui-datepicker-month").select2({
-          minimumResultsForSearch: Infinity,
-        });
+    })
+    .focus(function () {
+      $(".ui-datepicker-year, .ui-datepicker-month").select2({
+        minimumResultsForSearch: Infinity,
+      });
     });
 
   $(".timetable__datepicker--from").not(".js_ignore_mark").datepicker({
     // showButtonPanel: true
-    altField: "#timetable-from"
+    altField: "#timetable-from",
   });
 
   $(".timetable__datepicker--until").not(".js_ignore_mark").datepicker({
     // showButtonPanel: true
-    altField: "#timetable-until"
+    altField: "#timetable-until",
   });
 
   $(".timetable__date-input").datepicker();
 
-  $('#timetable-from').change(function(){
-    $('.timetable__datepicker--from').datepicker('setDate', $(this).val());
+  $("#timetable-from").change(function () {
+    $(".timetable__datepicker--from").datepicker("setDate", $(this).val());
   });
 
-  $('#timetable-until').change(function(){
-    $('.timetable__datepicker--until').datepicker('setDate', $(this).val());
+  $("#timetable-until").change(function () {
+    $(".timetable__datepicker--until").datepicker("setDate", $(this).val());
   });
 
-  $(".timetable .time-inputs input").not(".js_ignore_mark").on("change", function() {
-    if ($(this).val().length > 0) {
-      $(this).siblings("p").addClass("active");
-    } else {
-      $(this).siblings("p").removeClass("active");
-    }
-  })
+  $(".timetable .time-inputs input")
+    .not(".js_ignore_mark")
+    .on("change", function () {
+      if ($(this).val().length > 0) {
+        $(this).siblings("p").addClass("active");
+      } else {
+        $(this).siblings("p").removeClass("active");
+      }
+    });
+
+  $(".photo-slider").slick({
+    infinite: true,
+    slidesToShow: 1,
+    centerMode: true,
+    variableWidth: true,
+  });
 
   moveAction();
   moveOrder();
@@ -1744,14 +1797,17 @@ function onDocumentReady() {
     changeTextWidth();
   }, 100);
 
-  
-  $(document).on("click", ".payment-plan__mobile label:not(.js_ignore_mark)", function() {
-    $(this).addClass("active");
-    var otherPlans = $(this).closest(".payment-plan__mobile").siblings();
-    otherPlans.find("label").removeClass("active");
-    otherPlans.find("input").prop("checked", false);
-    otherPlans.find(".payment-plan__details").removeClass("toggled");
-  })
+  $(document).on(
+    "click",
+    ".payment-plan__mobile label:not(.js_ignore_mark)",
+    function () {
+      $(this).addClass("active");
+      var otherPlans = $(this).closest(".payment-plan__mobile").siblings();
+      otherPlans.find("label").removeClass("active");
+      otherPlans.find("input").prop("checked", false);
+      otherPlans.find(".payment-plan__details").removeClass("toggled");
+    }
+  );
 }
 
 function hideSelected(value) {
@@ -2128,12 +2184,18 @@ function changeRowWidth() {
   if ($table.hasScrollBar()) {
     $row.css("width", "calc(100% - 8px)");
     if ($table.parent("table.profiles__table--specialists").length > 0) {
-      $table.parent("table").find("thead tr th:last-of-type").css("width", "48px");
+      $table
+        .parent("table")
+        .find("thead tr th:last-of-type")
+        .css("width", "48px");
     }
   } else {
     $row.css("width", "100%");
     if ($table.parent("table.profiles__table--specialists").length > 0) {
-      $table.parent("table").find("thead tr th:last-of-type").css("width", "40px");
+      $table
+        .parent("table")
+        .find("thead tr th:last-of-type")
+        .css("width", "40px");
     }
   }
 }
@@ -2212,7 +2274,9 @@ function openTab() {
 
 function paymentLayout() {
   var index, column, columnChecked, columnDesc, price, headerClone, active;
-  active = $(".payment-plan__info table td.active, .payment-plan__info table .th.active, .payment-plan__info table td.active-last");
+  active = $(
+    ".payment-plan__info table td.active, .payment-plan__info table .th.active, .payment-plan__info table td.active-last"
+  );
   if (!$(".payment-plan__mobile").length) {
     if (window.matchMedia("(max-width: 1050px)").matches) {
       $(".payment-plan__info table").each(function (i) {
@@ -2268,9 +2332,13 @@ function paymentLayout() {
             columnDesc.wrapAll("<div class='payment-plan__details' />");
             price.wrapAll("<div class='payment-plan__price-mobile' />");
 
-            if( active.index() > 0) {
+            if (active.index() > 0) {
               $(".payment-plan__mobile input").prop("checked", false);
-              $(".payment-plan__mobile:nth-of-type("+ active.index() +") label").addClass("active");
+              $(
+                ".payment-plan__mobile:nth-of-type(" +
+                  active.index() +
+                  ") label"
+              ).addClass("active");
             }
           });
       });
@@ -2316,27 +2384,37 @@ function paymentLayout() {
 //   // }
 // }
 
-
-
 function newSpecialist(button, countAdmin, countSpecialistLabel) {
   var newSpecialist = button.closest(".company__specialist").clone();
-    var rights = newSpecialist.find(".company__specialist-rights .checkbox")
-    var specialistLabelFirst = button.closest(".company__specialists").find(".company__specialist").first().find(".company__specialist-info h5").html().split(" ");
-    rights.each(function() {
-      var labelFirst = $(".company__specialist").first().find("label").prop("for");
-      var label = $(this).find("label").prop("for");
-      countLabel = parseInt(labelFirst.split("_")[1]) + countAdmin
-      newLabel = label.split("_")[0] + "_" + countLabel + "_" + label.split("_")[2];
-      $(this).find("label").prop("for", newLabel);
-      $(this).find("input").prop("id", newLabel);
-      $(this).find("input").prop("checked", false);
-    })
-    newSpecialist.appendTo(button.closest(".company__specialists"));
-    newSpecialist.find(".company__specialist-inputs input").val("");
-    newSpecialist.find(".company__specialist-search").trigger("click");
-    newSpecialist.find(".company__specialist-info .company__specialist-number").html(specialistLabelFirst[0] + " " + countSpecialistLabel);
-    newSpecialist.find(".company__specialist-buttons").removeClass("hidden");
-    button.hide();
+  var rights = newSpecialist.find(".company__specialist-rights .checkbox");
+  var specialistLabelFirst = button
+    .closest(".company__specialists")
+    .find(".company__specialist")
+    .first()
+    .find(".company__specialist-info h5")
+    .html()
+    .split(" ");
+  rights.each(function () {
+    var labelFirst = $(".company__specialist")
+      .first()
+      .find("label")
+      .prop("for");
+    var label = $(this).find("label").prop("for");
+    countLabel = parseInt(labelFirst.split("_")[1]) + countAdmin;
+    newLabel =
+      label.split("_")[0] + "_" + countLabel + "_" + label.split("_")[2];
+    $(this).find("label").prop("for", newLabel);
+    $(this).find("input").prop("id", newLabel);
+    $(this).find("input").prop("checked", false);
+  });
+  newSpecialist.appendTo(button.closest(".company__specialists"));
+  newSpecialist.find(".company__specialist-inputs input").val("");
+  newSpecialist.find(".company__specialist-search").trigger("click");
+  newSpecialist
+    .find(".company__specialist-info .company__specialist-number")
+    .html(specialistLabelFirst[0] + " " + countSpecialistLabel);
+  newSpecialist.find(".company__specialist-buttons").removeClass("hidden");
+  button.hide();
 }
 
 function timetableLayout() {

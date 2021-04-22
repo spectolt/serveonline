@@ -1,0 +1,22 @@
+.company-profile {
+    .company__header-top {
+        flex-wrap: wrap;
+    }
+
+    .product {
+        input {
+            padding: 0;
+        }
+    }
+}
+
+.photo-slider {
+    // height: 200px;
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+
+    &__slide {
+
+    }
+}

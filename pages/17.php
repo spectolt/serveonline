@@ -195,10 +195,22 @@ $thisPage = "specialist-profile" ?>
                             <div class="timetable__datepicker timetable__datepicker--from">
                                 <h3>Nuo</h3>
                                 <input id="timetable-from" class="timetable__date-input">
+                                <a class="ui-datepicker-prev ui-corner-all phone phone--back" data-handler="prev" data-event="click" title="<Atgal">
+                                    <span class="ui-icon ui-icon-circle-triangle-w">&lt;Atgal</span>
+                                </a>
+                                <a class="ui-datepicker-next ui-corner-all phone" data-handler="next" data-event="click" title="Pirmyn>">
+                                    <span class="ui-icon ui-icon-circle-triangle-e">Pirmyn&gt;</span>
+                                </a>
                             </div>
                             <div class="timetable__datepicker timetable__datepicker--until">
                                 <h3>Iki</h3>
                                 <input id="timetable-until" class="timetable__date-input">
+                                <a class="ui-datepicker-prev ui-corner-all phone phone--back" data-handler="prev" data-event="click" title="<Atgal">
+                                    <span class="ui-icon ui-icon-circle-triangle-w">&lt;Atgal</span>
+                                </a>
+                                <a class="ui-datepicker-next ui-corner-all phone" data-handler="next" data-event="click" title="Pirmyn>">
+                                    <span class="ui-icon ui-icon-circle-triangle-e">Pirmyn&gt;</span>
+                                </a>
                             </div>
                         </div>
                         <div class="timetable__right">
@@ -252,8 +264,8 @@ $thisPage = "specialist-profile" ?>
                             </div>
                             <div class="timetable__buttons-container">
                                 <!-- pridėti klases ir ikonas: -->
-                                <button>Ištrinti</button>
-                                <button class="orange transparent">Sugeneruoti</button>
+                                <button class="orange transparent delete">Ištrinti</button>
+                                <button class="generate">Sugeneruoti</button>
                             </div>
                         </div>
                     </div>

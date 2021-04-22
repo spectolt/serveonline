@@ -1314,20 +1314,19 @@ a.ui-button:active,
     width: 357px;
     padding: 20px 5px;
     .select2 {
-      height: 23px;
+      height: 33px;
       width: 143px !important;
       .select2-selection--single {
-        height: 23px;
+        height: 33px;
         .select2-selection__rendered {
-          height: 23px;
+          height: 33px;
           padding-left: 10px;
           padding-right: 15px;
           text-align: left;
           position: relative;
-          top: -5px;
         }
         .select2-selection__arrow b {
-          top: 35%;
+          top: 50%;
           right: 15px;
         }
       }
