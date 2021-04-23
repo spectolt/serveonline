@@ -1375,12 +1375,21 @@ input.about-datepicker ~ .input-arrow {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+  -webkit-transition: -webkit-transform .3s ease-in-out;
+  transition: -webkit-transform .3s ease-in-out;
+  transition: transform .3s ease-in-out;
+  transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
 }
 
 @media (max-width: 700px) {
   input.about-datepicker ~ .input-arrow {
     right: 21px;
   }
+}
+
+input.about-datepicker ~ .input-arrow.rotate-arrow {
+  -webkit-transform: translateY(-50%) rotate(180deg);
+          transform: translateY(-50%) rotate(180deg);
 }
 
 .datepicker-placeholder {

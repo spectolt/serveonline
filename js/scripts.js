@@ -1740,13 +1740,21 @@ function onDocumentReady() {
             of: input,
           });
         }, 1);
+        $(this).siblings(".input-arrow").addClass("rotate-arrow");
       },
+      onClose: function(input, inst) {
+        $(this).siblings(".input-arrow").removeClass("rotate-arrow");
+      }
     })
     .focus(function () {
       $(".ui-datepicker-year, .ui-datepicker-month").select2({
         minimumResultsForSearch: Infinity,
       });
     });
+
+  $(".about-datepicker").siblings(".input-arrow").not(".js_ignore_mark").on("click",function() {
+    $(this).siblings(".about-datepicker").datepicker("show");
+  })
 
   $(".timetable__datepicker--from").not(".js_ignore_mark").datepicker({
     // showButtonPanel: true
