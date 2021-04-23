@@ -61,7 +61,7 @@ $thisPage = "specialist-profile" ?>
                         </div>
                     <?php } ?>
                     <h2 class="user-profile__price">Bendra kaina: <span>260,00€</span></h2>
-                    <button class="orange user-profile__reserve">Rezervuoti viską</button>
+                    <button class="orange small user-profile__reserve">Rezervuoti viską</button>
                 </section>
                 <section class="group__tab hidden" id="registracijos">
                     <?php for ($i = 0; $i < 2; $i++) { ?>
@@ -143,18 +143,18 @@ $thisPage = "specialist-profile" ?>
                                 </div>
                             </div>
                             <div class="cart__buttons company__button-container">
-                                <button class="cyan transparent <?php if ($i == 0) echo "cyan-text";
+                                <button class="cyan transparent history__button <?php if ($i == 0) echo "cyan-text";
                                                                 else if ($i == 1) echo "orange-text";
                                                                 else if ($i == 2) echo "red-text" ?>"><?php if ($i == 0) echo "Atliktas";
                                                                                                         else if ($i == 1) echo "Atšauktas";
                                                                                                         else if ($i == 2) echo "Neatvykote" ?></button>
-                                <button class="cyan cart__change-time-register">Keisti laiką</button>
+                                <button class="cyan cart__change-time-register history__button--register">Registruotis vėl</button>
                             </div>
                         </div>
                     <?php } ?>
                 </section>
                 <section class="group__tab hidden" id="rekomendacijos">
-                    <p>Mano specialistai rekomenduoja pas juos registruoti šias paslaugas</p>
+                    <p class="recommendations-p">Mano specialistai rekomenduoja pas juos registruoti šias paslaugas</p>
                     <div class="cart">
                         <div class="cart__header">
                             <div class="cart__about cart__about--time">
@@ -186,7 +186,7 @@ $thisPage = "specialist-profile" ?>
                             </div>
                         </div>
                         <div class="cart__buttons company__button-container">
-                            <button class="cyan">Registruotis</button>
+                            <button class="cyan recommendations">Registruotis</button>
                         </div>
                     </div>
                 </section>
