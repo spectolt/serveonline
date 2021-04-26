@@ -1,0 +1,33 @@
+.read-more {
+  &__text {
+    max-height: 4.75rem;
+    height: 4.75rem;
+    overflow: hidden;
+    transition: max-height .3s ease-in-out, height .3s ease-in-out;
+
+    @include breakpoint(sm) {
+      max-height: 4.5rem;
+      height: 4.5rem;
+    }
+
+    &--visible {
+      max-height: 999px;
+      height: auto;
+    }
+  }
+  &__button {
+    font-weight: 600;
+
+    &::after {
+      content: url(img/icons/angle-down-bold.svg);
+      display: inline-block;
+      width: 12px;
+      margin-left: 10px;
+      transition: transform .3s ease-in-out;
+    }
+
+    &.rotate::after {
+      transform: rotate(180deg);
+    }
+  }
+}

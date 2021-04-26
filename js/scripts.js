@@ -1742,9 +1742,9 @@ function onDocumentReady() {
         }, 1);
         $(this).siblings(".input-arrow").addClass("rotate-arrow");
       },
-      onClose: function(input, inst) {
+      onClose: function (input, inst) {
         $(this).siblings(".input-arrow").removeClass("rotate-arrow");
-      }
+      },
     })
     .focus(function () {
       $(".ui-datepicker-year, .ui-datepicker-month").select2({
@@ -1752,9 +1752,12 @@ function onDocumentReady() {
       });
     });
 
-  $(".about-datepicker").siblings(".input-arrow").not(".js_ignore_mark").on("click",function() {
-    $(this).siblings(".about-datepicker").datepicker("show");
-  })
+  $(".about-datepicker")
+    .siblings(".input-arrow")
+    .not(".js_ignore_mark")
+    .on("click", function () {
+      $(this).siblings(".about-datepicker").datepicker("show");
+    });
 
   $(".timetable__datepicker--from").not(".js_ignore_mark").datepicker({
     // showButtonPanel: true
@@ -1786,12 +1789,24 @@ function onDocumentReady() {
       }
     });
 
-  $(".photo-slider").slick({
+  $(".photo-slider").not(".js_ignore_mark").slick({
     infinite: true,
     slidesToShow: 1,
     centerMode: true,
     variableWidth: true,
   });
+
+  $(".read-more__button")
+    .not(".js_ignore_mark")
+    .on("click", function () {
+      $(this).siblings(".read-more__text").toggleClass("read-more__text--visible");
+      if (!$(this).hasClass("rotate")) {
+        $(this).html("Skaityti mažiau");
+      } else {
+        $(this).html("Skaityti daugiau");
+      }
+      $(this).toggleClass("rotate");
+    });
 
   moveAction();
   moveOrder();

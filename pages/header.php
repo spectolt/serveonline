@@ -74,7 +74,7 @@
                 </ul>
             <?php } else if($thisCat == "company" || $thisCat == "login") { ?>
                 <ul class="site-header__menu site-header__menu--main site-header__menu--company">
-                    <li class="site-header__item site-header__item--back"><a href="#">Atgal</a></li>
+                    <li class="site-header__item back-button"><a href="#">Atgal</a></li>
                 </ul>
             <?php } ?>
         </header>

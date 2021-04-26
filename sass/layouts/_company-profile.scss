@@ -1,22 +1,65 @@
 .company-profile {
-    .company__header-top {
-        flex-wrap: wrap;
+  .company__header-top {
+    flex-wrap: wrap;
+
+    @include breakpoint(880px) {
+      flex-direction: column;
+    }
+  }
+
+  .social-media {
+    position: absolute;
+    bottom: 10px;
+    right: 30px;
+    display: flex;
+
+    @include breakpoint(880px) {
+      flex-direction: column;
+      bottom: 60px;
     }
 
-    .product {
-        input {
-            padding: 0;
-        }
+    &__icon {
+      width: 20px;
+      height: 20px;
+      display: block;
+      margin-right: 10px;
+
+      @include breakpoint(880px) {
+        margin-bottom: 10px;
+        margin-right: 0;
+      }
+
+      &--facebook {
+        background-image: url(img/icons/facebook.svg);
+      }
+
+      &--instagram {
+        background-image: url(img/icons/instagram.svg);
+      }
+
+      &--linkedin {
+        background-image: url(img/icons/linkedin.svg);
+      }
+
+      &--youtube {
+        background-image: url(img/icons/youtube.svg);
+      }
     }
+  }
+
+  .product {
+    input {
+      padding: 0;
+    }
+  }
 }
 
 .photo-slider {
-    // height: 200px;
-    width: 100%;
-    border-radius: 15px;
-    overflow: hidden;
+  // height: 200px;
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
 
-    &__slide {
-
-    }
+  &__slide {
+  }
 }

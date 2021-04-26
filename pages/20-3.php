@@ -28,27 +28,29 @@
                     <option>Reklama</option>
                 </select>
             </div>
-            <div class="controls__table-container">
-            <table class="controls__table">
-                <thead>
-                    <tr>
-                        <th class="bottom-arrow top-arrow">Tema</th>
-                        <th>Žinutės tekstas</th>
-                        <th class="bottom-arrow top-arrow">Sukūrė</th>
-                        <th class="bottom-arrow top-arrow">Data</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php for ($i = 0; $i < 10; $i++) { ?>
-                    <tr>
-                        <td>Priminimas</td>
-                        <td>Tekstas</td>
-                        <td>Vardas Pavardė</td>
-                        <td>2021 12 23 15:30</td>
-                    </tr>
-                    <?php } ?>
-                </tbody>
-            </table>
+            <div class="controls__table-container-wrapper">
+                <div class="controls__table-container">
+                    <table class="controls__table">
+                        <thead>
+                            <tr>
+                                <th class="bottom-arrow top-arrow">Tema</th>
+                                <th>Žinutės tekstas</th>
+                                <th class="bottom-arrow top-arrow">Sukūrė</th>
+                                <th class="bottom-arrow top-arrow">Data</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php for ($i = 0; $i < 10; $i++) { ?>
+                                <tr>
+                                    <td>Priminimas</td>
+                                    <td>Tekstas</td>
+                                    <td>Vardas Pavardė</td>
+                                    <td>2021 12 23 15:30</td>
+                                </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
+                </div>
             </div>
             <div class="warning-popup__text-message">
                 <h3>Pasirinktas tekstas siuntimui</h3>

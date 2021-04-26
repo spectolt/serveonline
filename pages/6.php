@@ -12,26 +12,16 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
 
 <?php require_once('header.php'); ?>
 <main class="site-main site-main--aside hasUiDatepicker">
-    <section class="page-content page-content--company">
+    <?php require_once('product-sidebar.php'); ?>
+    <section class="page-content page-content--sidebar">
         <section class="breadcrumbs">
-            <div class="breadcrumbs__selected">
-                <img src="../img/icons/beauty.svg">
-            </div>
-            <button class="breadcrumbs__change paragraph">Grožio salonai ir kirpyklos</button>
+            <ul class="breadcrumbs__list">
+                <li class="back-button">
+                    <a href="#">Atgal</a>
+                </li>
+            </ul>
             <button class="breadcrumbs__cart"><span>2</span></button>
         </section>
-        <div class="breadcrumbs__more">
-            <ul>
-                <?php for ($y = 0; $y < 6; $y++) { ?>
-                    <li <?php if ($y === 2) { ?> style="display:none" <?php } ?>>
-                        <div class="breadcrumbs__area-img" style="background-color: <?php echo "$colors[$y]" ?>">
-                            <img src=<?php echo "$icons[$y]" ?>>
-                        </div>
-                        <p><?php echo $areas[$y] ?></p>
-                    </li>
-                <?php } ?>
-            </ul>
-        </div>
         <div class="page-content__wrapper">
             <section class="company company-profile">
                 <div class="company__header company__header--main">
@@ -49,13 +39,35 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                                     </div>
                                 </div>
                             </div>
+                            <h2 class="company__header-title">Pavadinimas</h2>
                             <div class="company__header-left">
-                                <h2>Pavadinimas</h2>
                                 <!-- galbūt ir h4 -->
                                 <h3 class="company__header-address">Kalvarijų g. 25, Vilnius</h3>
                                 <p class="company__header-phone">+370 000 00000</p>
                                 <p class="company__header-hours">Atidaryta <span>08:00</span> - <span>20:00</span></p>
+                                <p class="company__header-last-hour">Paskutinės valandos pasiūlymas <span class="percentage"> -10%</span> <span class="time-left"><span class="hours">02</span>:<span class="minutes">02</span>:<span class="seconds">02</span></span> </p>
                             </div>
+                            <div class="company__header-right">
+                                <div class="read-more">
+                                    <p class="read-more__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce volutpat nibh in lorem vulputate sagittis.
+                                        Praesent id libero sit amet felis feugiat auctor at at dui.
+                                        Sed maximus nulla pharetra est condimentum fermentum. Duis hendrerit metus ac mattis pharetra.
+                                        Nunc aliquet dui quis massa lacinia, non mattis enim elementum.
+                                        Suspendisse fermentum mi ut elit congue eleifend. Fusce sed gravida erat.
+                                        Suspendisse dignissim eleifend nisi ut euismod. Pellentesque rhoncus porttitor erat at luctus.
+                                        Sed vulputate sapien quis venenatis bibendum. Integer volutpat luctus odio, ac laoreet odio mattis et.
+                                        Aliquam erat volutpat. Aliquam euismod sollicitudin bibendum. Maecenas ac est tristique, dapibus est a,
+                                        placerat sem.</p>
+                                    <span class="read-more__button">Skaityti daugiau</span>
+                                </div>
+                                <span class="signature">Jūratė</span>
+                            </div>
+                        </div>
+                        <div class="social-media">
+                            <a href="#" class="social-media__icon social-media__icon--facebook"></a>
+                            <a href="#" class="social-media__icon social-media__icon--instagram"></a>
+                            <a href="#" class="social-media__icon social-media__icon--linkedin"></a>
+                            <a href="#" class="social-media__icon social-media__icon--youtube"></a>
                         </div>
                         <ul class="company__nav company__nav--specialist">
                             <li class="active"><a href="#registruokis">Registruokis</a></li>
@@ -65,7 +77,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                         </ul>
                     </div>
                 </div>
-                <section class="group__tab company__container" id="registruokis">
+                <section class="group__tab" id="registruokis">
                     <section class="product">
                         <div class="product__header">
                             <div class="product__nav">
@@ -218,6 +230,150 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                             </div>
                         </div>
                     </section>
+                </section>
+                <section class="group__tab hidden" id="paslaugos">
+                    <h2>Plaukų priežiūra</h2>
+                    <h3>Kirpimai moterims</h3>
+                    <div class="services-list services-list--company-profile">
+                        <div class="services-list__blocks">
+                            <div class="services-list__block">
+                                <h4><span>Paprastas kirpimas</span> <span class="more-button">Plačiau</span></h4>
+                                <p class="more-description hidden">Galvos plovimas, modelinis kirpimas, dieninis sušukavimas.</p>
+                                <div class="product-action">
+                                    <div class="product-action__info">
+                                        <div class="product-action__duration">01:00</div>
+                                        <div class="product-action__price">45€<strike>60€</strike></div>
+                                        <div class="product-action__periodicity">6 sav.</div>
+                                    </div>
+                                    <button class="button cyan transparent small product-action__order">Registruotis</button>
+                                </div>
+                            </div>
+                            <div class="services-list__block services-list__block--choices">
+                                <h4><span>Balayage / Ombre dažymas</span> <span class="more-button">Plačiau</span></h4>
+                                <span class="product-expand"></span>
+                                <p class="more-description hidden">
+                                    Konsultacija. Dažymui atlikti nenaudojamos jokios pagalbinės priemonės. Jų nereikia todėl, kad siekiama išgauti ypatingą sruogų formą, kuri primena natūraliai nušviesėjusias sruogas. Dažai ant plaukų tepami laisvai rankomis, švelniai braukiant per plaukus. Dažniausiai nėra naudojama ir folija, bet yra visokių technikų.
+                                </p>
+                                <p class="more-description hidden">
+                                    Plaukų sruogos dažomos laisvai, dažymo šepetėliu tapšnojant per pasirinktas plaukų sruogas, stengiamasi, kad viršuje jos būtų siauresnės, o į apačią išplatėtų. Dažoma taip, kad krentant plaukų sruogoms, dažytos vietos atrodytų kuo natūraliau - tarsi nubučiuotos saulės. Žinoma, tam, kad būtų tinkamai išgautas natūralus efektas Jums dažymą turėtų atlikti įgudusi plaukų stilistė.
+                                <p class="more-description hidden">
+                                    Plaukų dažymas balayage technika suteikia daugybę privalumų. Plaukai yra daug mažiau pažeidžiami, kadangi šviesinama tik dalis plaukų, bet to, parenkami tonai, kurie nenutolsta per daug nuo Jūsų natūralios plaukų spalvos. Dažniausiai tai būna keliais tonais šviesesni atspalviai. Žinoma, visada yra ir išimčių, kartais parenkamos labai kontrastingos spalvos, bet jos atrodo pakankamai natūraliai dėl pačios dažymo technikos. Dažymui naudojami tik profesionalūs dažai, kurie ne tik padeda išgauti norimą atspalvį, bet ir apsaugo plaukus nuo stipresnių pažeidimų. Plaukai išliks sveikai atrodantys ir gyvybingi.
+                                </p>
+                                <p class="more-description hidden">
+                                    Dažant plaukus balayage technika pas kirpėją lankysitės tikrai daug rečiau - juk priešingai nei pilnu sruogų dažymu nuo šaknų, šiuo atveju nesimatys kiek plaukai nuaugo. Jei Jūsų plaukų galai yra išplonėję, balayage dažymas Jums suteiks apimties. Kadangi šviesesni plaukų galai atrodys pilnesni bei puresni. Balayage technika gražiausiai atrodo ilgaplaukėms, bet puikiai tiks ir toms, kurios turi trumpesnius plaukus.
+                                </p>
+                                <p class="more-description hidden">
+                                    Paslaugos kaina gali keistis pagal sunaudotų dažų kiekį.
+                                </p>
+                                <div class="product-choice hidden">
+                                    <h4>Trumpi plaukai</h4>
+                                    <div class="product-action">
+                                        <div class="product-action__info">
+                                            <div class="product-action__duration">01:00</div>
+                                            <div class="product-action__price">45€<strike>60€</strike></div>
+                                            <div class="product-action__periodicity">6 sav.</div>
+                                        </div>
+                                        <button class="button cyan transparent small product-action__order">Registruotis</button>
+                                    </div>
+                                </div>
+                                <div class="product-choice hidden">
+                                    <h4>Vidutinio ilgio plaukai</h4>
+                                    <div class="product-action">
+                                        <div class="product-action__info">
+                                            <div class="product-action__duration">01:00</div>
+                                            <div class="product-action__price">45€<strike>60€</strike></div>
+                                            <div class="product-action__periodicity">6 sav.</div>
+                                        </div>
+                                        <button class="button cyan transparent small product-action__order">Registruotis</button>
+                                    </div>
+                                </div>
+                                <div class="product-choice hidden">
+                                    <h4>Ilgi plaukai</h4>
+                                    <div class="product-action">
+                                        <div class="product-action__info">
+                                            <div class="product-action__duration">01:00</div>
+                                            <div class="product-action__price">45€<strike>60€</strike></div>
+                                            <div class="product-action__periodicity">6 sav.</div>
+                                        </div>
+                                        <button class="button cyan transparent small product-action__order">Registruotis</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>Plaukų priežiūra</h2>
+                    <h3>Kirpimai moterims</h3>
+                    <div class="services-list services-list--company-profile">
+                        <div class="services-list__blocks">
+                            <div class="services-list__block">
+                                <h4><span>Paprastas kirpimas</span> <span class="more-button">Plačiau</span></h4>
+                                <p class="more-description hidden">Galvos plovimas, modelinis kirpimas, dieninis sušukavimas.</p>
+                                <div class="product-action">
+                                    <div class="product-action__info">
+                                        <div class="product-action__duration">01:00</div>
+                                        <div class="product-action__price">45€<strike>60€</strike></div>
+                                        <div class="product-action__periodicity">6 sav.</div>
+                                    </div>
+                                    <button class="button cyan transparent small product-action__order">Registruotis</button>
+                                </div>
+                            </div>
+                            <div class="services-list__block services-list__block--choices">
+                                <h4><span>Balayage / Ombre dažymas</span> <span class="more-button">Plačiau</span></h4>
+                                <span class="product-expand"></span>
+                                <p class="more-description hidden">
+                                    Konsultacija. Dažymui atlikti nenaudojamos jokios pagalbinės priemonės. Jų nereikia todėl, kad siekiama išgauti ypatingą sruogų formą, kuri primena natūraliai nušviesėjusias sruogas. Dažai ant plaukų tepami laisvai rankomis, švelniai braukiant per plaukus. Dažniausiai nėra naudojama ir folija, bet yra visokių technikų.
+                                </p>
+                                <p class="more-description hidden">
+                                    Plaukų sruogos dažomos laisvai, dažymo šepetėliu tapšnojant per pasirinktas plaukų sruogas, stengiamasi, kad viršuje jos būtų siauresnės, o į apačią išplatėtų. Dažoma taip, kad krentant plaukų sruogoms, dažytos vietos atrodytų kuo natūraliau - tarsi nubučiuotos saulės. Žinoma, tam, kad būtų tinkamai išgautas natūralus efektas Jums dažymą turėtų atlikti įgudusi plaukų stilistė.
+                                <p class="more-description hidden">
+                                    Plaukų dažymas balayage technika suteikia daugybę privalumų. Plaukai yra daug mažiau pažeidžiami, kadangi šviesinama tik dalis plaukų, bet to, parenkami tonai, kurie nenutolsta per daug nuo Jūsų natūralios plaukų spalvos. Dažniausiai tai būna keliais tonais šviesesni atspalviai. Žinoma, visada yra ir išimčių, kartais parenkamos labai kontrastingos spalvos, bet jos atrodo pakankamai natūraliai dėl pačios dažymo technikos. Dažymui naudojami tik profesionalūs dažai, kurie ne tik padeda išgauti norimą atspalvį, bet ir apsaugo plaukus nuo stipresnių pažeidimų. Plaukai išliks sveikai atrodantys ir gyvybingi.
+                                </p>
+                                <p class="more-description hidden">
+                                    Dažant plaukus balayage technika pas kirpėją lankysitės tikrai daug rečiau - juk priešingai nei pilnu sruogų dažymu nuo šaknų, šiuo atveju nesimatys kiek plaukai nuaugo. Jei Jūsų plaukų galai yra išplonėję, balayage dažymas Jums suteiks apimties. Kadangi šviesesni plaukų galai atrodys pilnesni bei puresni. Balayage technika gražiausiai atrodo ilgaplaukėms, bet puikiai tiks ir toms, kurios turi trumpesnius plaukus.
+                                </p>
+                                <p class="more-description hidden">
+                                    Paslaugos kaina gali keistis pagal sunaudotų dažų kiekį.
+                                </p>
+                                <div class="product-choice hidden">
+                                    <h4>Trumpi plaukai</h4>
+                                    <div class="product-action">
+                                        <div class="product-action__info">
+                                            <div class="product-action__duration">01:00</div>
+                                            <div class="product-action__price">45€<strike>60€</strike></div>
+                                            <div class="product-action__periodicity">6 sav.</div>
+                                        </div>
+                                        <button class="button cyan transparent small product-action__order">Registruotis</button>
+                                    </div>
+                                </div>
+                                <div class="product-choice hidden">
+                                    <h4>Vidutinio ilgio plaukai</h4>
+                                    <div class="product-action">
+                                        <div class="product-action__info">
+                                            <div class="product-action__duration">01:00</div>
+                                            <div class="product-action__price">45€<strike>60€</strike></div>
+                                            <div class="product-action__periodicity">6 sav.</div>
+                                        </div>
+                                        <button class="button cyan transparent small product-action__order">Registruotis</button>
+                                    </div>
+                                </div>
+                                <div class="product-choice hidden">
+                                    <h4>Ilgi plaukai</h4>
+                                    <div class="product-action">
+                                        <div class="product-action__info">
+                                            <div class="product-action__duration">01:00</div>
+                                            <div class="product-action__price">45€<strike>60€</strike></div>
+                                            <div class="product-action__periodicity">6 sav.</div>
+                                        </div>
+                                        <button class="button cyan transparent small product-action__order">Registruotis</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="company__button-container">
+                        <button class="orange transparent">Atšaukti</button>
+                        <button class="orange">Saugoti</button>
+                    </div>
                 </section>
             </section>
             <?php require_once('footer-menu.php'); ?>

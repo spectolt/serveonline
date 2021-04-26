@@ -308,6 +308,29 @@
         }
       }
     }
+
+    &-title {
+      width: 100%;
+    }
+
+    &-left {
+      flex-basis: 50%;
+    }
+
+    &-right {
+      flex-basis: 50%;
+
+      @include breakpoint(880px) {
+        padding-right: 60px;
+      }
+
+      .signature {
+        text-align: right;
+        font-family: 'Sacramento', sans-serif;
+        width: 100%;
+        display: inline-block;
+      }
+    }
   }
 
   &__container {
