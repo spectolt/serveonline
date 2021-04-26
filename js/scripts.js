@@ -1724,6 +1724,8 @@ function onDocumentReady() {
   );
 
   //age datepicker
+  var datepickerShow = false;
+
   $(".about-datepicker")
     .not(".js_ignore_mark")
     .datepicker({
@@ -1741,9 +1743,11 @@ function onDocumentReady() {
           });
         }, 1);
         $(this).siblings(".input-arrow").addClass("rotate-arrow");
+        datepickerShow = false;
       },
       onClose: function (input, inst) {
         $(this).siblings(".input-arrow").removeClass("rotate-arrow");
+        datepickerShow = true;
       },
     })
     .focus(function () {
@@ -1756,17 +1760,29 @@ function onDocumentReady() {
     .siblings(".input-arrow")
     .not(".js_ignore_mark")
     .on("click", function () {
-      $(this).siblings(".about-datepicker").datepicker("show");
+      if (datepickerShow == false) {
+        $(this).siblings(".about-datepicker").datepicker("show");
+        datepickerShow = true;
+      } else if (datepickerShow == true) {
+        $(this).siblings(".about-datepicker").datepicker("hide");
+        datepickerShow = false;
+      }
+
+      console.log(datepickerShow)
     });
 
   $(".timetable__datepicker--from").not(".js_ignore_mark").datepicker({
     // showButtonPanel: true
     altField: "#timetable-from",
+    altFormat: "yy M dd",
+    monthNamesShort: ["Sausio", "Vasario", "Kovo", "Balandžio", "Gegužės", "Birželio", "Liepos", "Rugpjūčio", "Rugsėjo", "Spalio", "Lapkričio", "Gruodžio"],
   });
 
   $(".timetable__datepicker--until").not(".js_ignore_mark").datepicker({
     // showButtonPanel: true
     altField: "#timetable-until",
+    altFormat: "yy M dd",
+    monthNamesShort: ["Sausio", "Vasario", "Kovo", "Balandžio", "Gegužės", "Birželio", "Liepos", "Rugpjūčio", "Rugsėjo", "Spalio", "Lapkričio", "Gruodžio"],
   });
 
   $(".timetable__date-input").datepicker();

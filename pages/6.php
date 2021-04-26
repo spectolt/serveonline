@@ -370,9 +370,19 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                             </div>
                         </div>
                     </div>
-                    <div class="company__button-container">
-                        <button class="orange transparent">Atšaukti</button>
-                        <button class="orange">Saugoti</button>
+                </section>
+                <section class="group__tab hidden" id="produktai">
+                    <h2>Mūsų partneriai</h2>
+                    <div class="photo-grid">
+                        <ul class="sortable">
+                            <?php for ($i = 0; $i < 16; $i++) { ?>
+                                <li>
+                                    <div class="photo-grid__item photo-grid__item--logo">
+                                        <img src="../img/matrix.png">
+                                    </div>
+                                </li>
+                            <?php } ?>
+                        </ul>
                     </div>
                 </section>
             </section>
