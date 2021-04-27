@@ -2,6 +2,8 @@
   .company__container--info {
     h4 {
       margin-bottom: 25px;
+      font-weight:400;
+      font-size: 1.25rem;
 
       @include breakpoint(sm) {
         margin-bottom: 15px;
@@ -9,6 +11,7 @@
     }
     .checkbox {
       margin-bottom: 20px;
+      font-size: 0.875rem;
     }
   }
 
@@ -66,14 +69,14 @@
   }
 
   .company__header ul.company__nav {
-    overflow-x: auto;
+    overflow-x: visible;
 
     &::-webkit-scrollbar {
       height: 8px;
     }
 
-    li {
-      margin-right: 15px;
+    @include breakpoint(xl) {
+      overflow-x: auto;
     }
   }
 
@@ -97,12 +100,14 @@
     height: 45px;
     display: flex;
     justify-content: center;
+    font-size: 1.5rem;
+    align-items: center;
 
     &::before{
       margin-right: 20px;
       content: url(img/icons/checkmark-white.svg);
-      width: 20px;
-      height: 20px;
+      width: 30px;
+      height: 30px;
       display: inline-block;
     }
 
@@ -136,7 +141,7 @@
     }
 
     .input-wrapper--phone {
-      flex-basis: 50%;
+      // flex-basis: 50%;
       margin-right: 10px;
     }
 
@@ -315,6 +320,7 @@
     border-radius: 50%;
     margin-right: 20px;
     margin-bottom: 10px;
+    box-shadow: 0px 12px 29px 0px rgba(0, 0, 0, 0.08);
   }
 
   &__name {
@@ -459,6 +465,14 @@
 
       &:nth-of-type(2) {
         border-radius: 0;
+      }
+
+      &:first-of-type {
+        border-bottom-left-radius: 5px;
+      }
+
+      &:last-of-type {
+        border-bottom-right-radius: 5px;
       }
 
       &.cyan-text {

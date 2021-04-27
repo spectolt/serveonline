@@ -1439,7 +1439,7 @@
         }
         &:nth-of-type(7) {
           width: 130px;
-          text-align: left;
+          // text-align: left;
         }
         &:nth-of-type(8) {
           width: 130px;
@@ -1555,6 +1555,7 @@
   }
 
   .controls__top {
+    margin-right: 0;
     @include breakpoint(sm) {
       grid-template-columns: 1fr;
       grid-gap: 10px;

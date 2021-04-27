@@ -1768,22 +1768,52 @@ function onDocumentReady() {
         datepickerShow = false;
       }
 
-      console.log(datepickerShow)
+      console.log(datepickerShow);
     });
 
-  $(".timetable__datepicker--from").not(".js_ignore_mark").datepicker({
-    // showButtonPanel: true
-    altField: "#timetable-from",
-    altFormat: "yy M dd",
-    monthNamesShort: ["Sausio", "Vasario", "Kovo", "Balandžio", "Gegužės", "Birželio", "Liepos", "Rugpjūčio", "Rugsėjo", "Spalio", "Lapkričio", "Gruodžio"],
-  });
+  $(".timetable__datepicker--from")
+    .not(".js_ignore_mark")
+    .datepicker({
+      // showButtonPanel: true
+      altField: "#timetable-from",
+      altFormat: "yy M dd",
+      monthNamesShort: [
+        "Sausio",
+        "Vasario",
+        "Kovo",
+        "Balandžio",
+        "Gegužės",
+        "Birželio",
+        "Liepos",
+        "Rugpjūčio",
+        "Rugsėjo",
+        "Spalio",
+        "Lapkričio",
+        "Gruodžio",
+      ],
+    });
 
-  $(".timetable__datepicker--until").not(".js_ignore_mark").datepicker({
-    // showButtonPanel: true
-    altField: "#timetable-until",
-    altFormat: "yy M dd",
-    monthNamesShort: ["Sausio", "Vasario", "Kovo", "Balandžio", "Gegužės", "Birželio", "Liepos", "Rugpjūčio", "Rugsėjo", "Spalio", "Lapkričio", "Gruodžio"],
-  });
+  $(".timetable__datepicker--until")
+    .not(".js_ignore_mark")
+    .datepicker({
+      // showButtonPanel: true
+      altField: "#timetable-until",
+      altFormat: "yy M dd",
+      monthNamesShort: [
+        "Sausio",
+        "Vasario",
+        "Kovo",
+        "Balandžio",
+        "Gegužės",
+        "Birželio",
+        "Liepos",
+        "Rugpjūčio",
+        "Rugsėjo",
+        "Spalio",
+        "Lapkričio",
+        "Gruodžio",
+      ],
+    });
 
   $(".timetable__date-input").datepicker();
 
@@ -1805,17 +1835,29 @@ function onDocumentReady() {
       }
     });
 
-  $(".photo-slider").not(".js_ignore_mark").slick({
+  $(".photo-slider").not(".js_ignore_mark").not(".slick-initialized").slick({
     infinite: true,
     slidesToShow: 1,
     centerMode: true,
     variableWidth: true,
+    arrows: true,
   });
+
+  $(".product__block-slider")
+    .not(".js_ignore_mark")
+    .not(".slick-initialized")
+    .slick({
+      infinite: true,
+      slidesToShow: 1,
+      arrows: true,
+    });
 
   $(".read-more__button")
     .not(".js_ignore_mark")
     .on("click", function () {
-      $(this).siblings(".read-more__text").toggleClass("read-more__text--visible");
+      $(this)
+        .siblings(".read-more__text")
+        .toggleClass("read-more__text--visible");
       if (!$(this).hasClass("rotate")) {
         $(this).html("Skaityti mažiau");
       } else {
@@ -1824,11 +1866,15 @@ function onDocumentReady() {
       $(this).toggleClass("rotate");
     });
 
-  $(".change-login").not(".js_ignore_mark").on("click", function() {
-    $(this).siblings(".login-details--name, .login-details--old-pass").addClass("hidden");
-    $(this).siblings(".login-details--new-pass").removeClass("hidden");
-    $(this).addClass("hidden");
-  })
+  $(".change-login")
+    .not(".js_ignore_mark")
+    .on("click", function () {
+      $(this)
+        .siblings(".login-details--name, .login-details--old-pass")
+        .addClass("hidden");
+      $(this).siblings(".login-details--new-pass").removeClass("hidden");
+      $(this).addClass("hidden");
+    });
 
   moveAction();
   moveOrder();
@@ -1941,16 +1987,18 @@ function moveAction() {
   $(".product__block-info-actions")
     .not(".js_ignore_mark")
     .each(function () {
-      if (window.matchMedia("(max-width: 600px)").matches) {
-        var calendar = $(this)
-          .closest(".product__block-person")
-          .next(".calendar-container");
-        $(this).insertAfter(calendar);
-      } else {
-        var initial = $(this)
-          .closest(".product__block-top")
-          .find(".product__block-distance");
-        $(this).insertAfter(initial);
+      if ($(this).closest(".product__block--company").length < 1) {
+        if (window.matchMedia("(max-width: 600px)").matches) {
+          var calendar = $(this)
+            .closest(".product__block-person")
+            .next(".calendar-container");
+          $(this).insertAfter(calendar);
+        } else {
+          var initial = $(this)
+            .closest(".product__block-top")
+            .find(".product__block-distance");
+          $(this).insertAfter(initial);
+        }
       }
     });
 }

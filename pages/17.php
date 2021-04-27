@@ -331,8 +331,8 @@ $thisPage = "specialist-profile" ?>
                         </div>
                     </div>
                     <div class="company__button-container company__button-container--timetable">
-                        <button class="orange transparent">Ištrinti grafiką</button>
-                        <button class="orange">Sukurti grafiką</button>
+                        <button class="orange transparent">Atšaukti</button>
+                        <button class="orange">Išsaugoti</button>
                     </div>
                 </section>
             </section>

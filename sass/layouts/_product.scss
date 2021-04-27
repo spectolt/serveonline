@@ -615,6 +615,41 @@ section.product {
           margin: 20px auto 10px auto;
         }
       }
+
+      &--company {
+        h2 {
+          word-spacing: initial;
+          height: 2em;
+        }
+        .product__block-top {
+          flex-wrap: nowrap;
+        }
+        .product__block-photo {
+          border-radius: 5px;
+          width: 300px;
+          overflow: hidden;
+        }
+        .product__block-info {
+          width: auto;
+          flex: 1 0;
+        }
+        .product__block-bottom {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+        }
+        .product__block-last-hour {
+          span {
+            display: inline-block;
+            margin-bottom: 0;
+          }
+        }
+        .product__block-info-actions {
+          flex-direction: column;
+          align-items: flex-end;
+          display: flex;
+        }
+      }
     }
   }
 }

@@ -13,6 +13,11 @@
   .company__container {
     @include breakpoint(890px) {
       padding: 10px 10px 0;
+      border: 1px solid #e8e8e8;
+      border-bottom: none;
+      border-radius: 5px;
+      margin-left: 10px;
+      margin-right: 10px;
     }
   }
   .company__header ul.company__nav li {
@@ -24,6 +29,42 @@
       }
     }
   }
+  .group__tab{
+    @include breakpoint(l){
+      border: 1px solid #e8e8e8;
+      border-bottom: none;
+      border-radius: 5px;
+      margin-top: 40px;
+
+      .timetable__top{
+        padding: 10px;
+        .time-inputs{
+          margin-bottom: 3px;
+        }
+        .timetable__choice--time{
+          margin-bottom: 10px;
+        }
+        .timetable__choice--periodicity{
+          margin-top: 0;
+
+          .select2-container .select2-selection--single{
+            margin-top: 5px;
+            margin-bottom: 10px;
+            b{
+              top: 65%;
+            }
+          }
+        }
+        .checkbox{
+          margin-top: 10px;
+        }
+        .timetable__right .timetable__buttons-container{
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+
   input[type="text"] {
     width: 100%;
     // width: calc(100% - 20px);
@@ -195,7 +236,7 @@
       font-weight: normal;
       @include breakpoint(sm) {
         font-weight: 400;
-        margin-bottom: 0;
+        margin-bottom: 10px;
       }
     }
   }
@@ -340,6 +381,10 @@
   .specialist-profile__choice--payment {
     padding-bottom: 35px;
 
+    @include breakpoint(l){
+      padding-bottom: 30px;
+    }
+
     @include breakpoint(sm) {
       padding-bottom: 0;
 
@@ -382,6 +427,10 @@
 
   .specialist-profile__choice--period {
     width: auto;
+    @include breakpoint(l){
+      margin-bottom: 30px;
+    }
+    
     .choice-wrapper {
       width: 364px;
       height: 75px;
@@ -420,6 +469,9 @@
   }
 
   .specialist-profile__choice--time {
+    @include breakpoint(l){
+      margin-bottom: 30px;
+    }
     @include breakpoint(sm) {
       p {
         font-size: 0.875rem;
@@ -479,6 +531,10 @@
       @include breakpoint(890px) {
         border: none;
         padding: 0;
+        font-size: 1.125rem;
+      }
+      @include breakpoint(sm){
+        font-size: 1rem;
       }
     }
 
@@ -553,6 +609,13 @@
   @include breakpoint(890px) {
     .timetable__datepicker-container {
       width: 100%;
+      padding-bottom: 5px;
+      .phone {
+        left: 322px !important;
+        &--back{
+          left: 256px !important;
+        }
+      }
     }
   }
 }
