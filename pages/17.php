@@ -280,7 +280,6 @@ $thisPage = "specialist-profile" ?>
                                             <h4><b>Pr</b> 31 <span class="timetable__month-name"><?php if ($j == 0 && $i == 0) echo "GRUODIS";
                                                                                                     else if ($j == 0 && $i == 1) echo "SAUSIS";
                                                                                                     else if ($j == 4 && $i == 5) echo "VASARIS"; ?></span>
-                                                <?php if ($j == 2 && $i == 0) { ?> <span class="timetable__copy">Kopijuoti</span> <?php } ?></h4>
                                             <table class="timetable__table">
                                                 <tbody class="<?php if ($j == 0 && $i == 2) echo "active"; ?>">
                                                     <tr>

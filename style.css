@@ -4781,7 +4781,7 @@ div.services-list.services-list--company-profile .services-list__blocks {
 .photo-grid ul li {
   margin-bottom: 20px;
   padding: 1px;
-  width: 23%;
+  width: 24.5%;
   font-size: 4em;
   text-align: center;
   border: 1px solid #e8e8e8;
@@ -18911,6 +18911,39 @@ section.product .product__block-recommend {
 
 .company-profile .product input {
   padding: 0;
+}
+
+.company-profile__about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.company-profile__place-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.company-profile__place-info h4 {
+  margin-right: 20px;
+}
+
+.company-profile__work-hours .day::before {
+  content: "●";
+  display: inline-block;
+}
+
+.company-profile__work-hours .hours {
+  text-align: right;
+}
+
+.company-profile__work-hours .hours--today {
+  color: #e54651;
+  font-weight: 600;
 }
 
 .photo-slider {

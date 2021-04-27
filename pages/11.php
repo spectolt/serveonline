@@ -18,7 +18,6 @@ $thisPage = "service-profiles"; ?>
                             <button class="controls__button controls__button--send darkblue small transparent paragraph" disabled>Siųsti SMS</button>
                             <button class="controls__button controls__button--print darkblue small transparent paragraph" disabled>Spausdinti</button>
                             <button class="controls__button controls__button--trash darkblue small transparent paragraph" disabled>Trinti</button>
-                            <button class="controls__button controls__button--new darkblue small transparent paragraph">Naujas</button>
                         </div>
                     </div>
                 </div>

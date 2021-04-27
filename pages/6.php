@@ -374,7 +374,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                 <section class="group__tab hidden" id="produktai">
                     <h2>Mūsų partneriai</h2>
                     <div class="photo-grid">
-                        <ul class="sortable">
+                        <ul>
                             <?php for ($i = 0; $i < 16; $i++) { ?>
                                 <li>
                                     <div class="photo-grid__item photo-grid__item--logo">
@@ -383,6 +383,63 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                                 </li>
                             <?php } ?>
                         </ul>
+                    </div>
+                </section>
+                <section class="group__tab hidden" id="apie-mus">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et mi egestas, congue dui id, sollicitudin felis.
+                        Suspendisse potenti. Praesent volutpat magna ac felis egestas, sed auctor diam posuere. Etiam vitae suscipit velit.
+                        Curabitur ornare massa at vehicula ornare. Aliquam feugiat tristique commodo. Proin aliquam tempor convallis.
+                        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                        Maecenas lobortis rhoncus ultricies.</p>
+                    <p>Suspendisse lectus sem, eleifend at posuere a, maximus id libero. Integer congue placerat placerat.
+                        Etiam nec arcu id eros pellentesque elementum et vitae felis. Cras dignissim cursus ipsum id aliquet.
+                        Nunc sollicitudin dignissim arcu, blandit consequat mi tempor et. Pellentesque id nibh tristique,
+                        pellentesque tortor mollis, tristique mi. Vivamus accumsan quis libero eget lobortis. Etiam eget mi tempus,
+                        cursus ipsum non, lobortis turpis. Nulla tempus ornare elementum. Suspendisse tempor sagittis mattis.
+                        Fusce tempor elit orci, eu laoreet sapien congue sed. Proin maximus magna libero, in vehicula orci suscipit sed.</p>
+                    <div class="company-profile__about">
+                        <div class="company-profile__work-hours">
+                            <h3>Darbo laikas</h3>
+                            <table>
+                                <tr>
+                                    <td class="day">Pirmadienis</td>
+                                    <td class="hours"><span class="hours__from">08:00</span> - <span class="hours__to">20:00</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="day">Antradienis</td>
+                                    <td class="hours"><span class="hours__from">08:00</span> - <span class="hours__to">20:00</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="day">Trečiadienis</td>
+                                    <td class="hours hours--today"><span class="hours__from">08:00</span> - <span class="hours__to">20:00</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="day">Ketvirtadienis</td>
+                                    <td class="hours"><span class="hours__from">08:00</span> - <span class="hours__to">20:00</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="day">Penktadienis</td>
+                                    <td class="hours"><span class="hours__from">08:00</span> - <span class="hours__to">20:00</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="day">Šeštadienis</td>
+                                    <td class="hours"><span class="hours__from">08:00</span> - <span class="hours__to">20:00</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="day">Sekmadienis</td>
+                                    <td class="hours">Nedirba</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="company-profile__place">
+                            <h3>Mus rasite</h3>
+                            <div class="company-profile__place-info">
+                                <h4>M. Valančiaus g. 23, Kaunas</h4>
+                                <h4 class="distance">15min (5.6km)</h4>
+                                <h4 class="phone">+370 000 00000</h4>
+                            </div>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d18437.91025396692!2d25.250708695385747!3d54.71421878262784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1slt!2slt!4v1619517592895!5m2!1slt!2slt" width="600" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
                     </div>
                 </section>
             </section>

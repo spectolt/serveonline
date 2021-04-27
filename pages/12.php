@@ -248,15 +248,22 @@ $thisPage = "specialist-profile" ?>
                         <div class="login-details login-details--name">
                             <p>Prisijungimo vardas</p>
                             <div class="input-container input-container--password-eye">
-                                <input type="password" name="login">
+                                <input type="password" name="login" value="1234" readonly>
                                 <span class="input-icon"></span>
                             </div>
                         </div>
-                        <div class="login-details login-details--pass">
+                        <div class="login-details login-details--pass login-details--old-pass">
                             <p>Prisijungimo slaptažodis</p>
                             <div class="input-container input-container--password-eye">
-                                <input type="password" name="login">
+                                <input type="password" name="login" value="1234" readonly>
                                 <span class="input-icon"></span>
+                            </div>
+                        </div>
+                        <div class="login-details login-details--pass login-details--new-pass hidden">
+                            <p>Įveskite esamą slaptažodį</p>
+                            <div class="input-container input-container--password-eye">
+                                <input type="password" name="login">
+                                <span class="input-icon input-icon--toggled-eye"></span>
                             </div>
                         </div>
                         <button class="orange small change-login">Keisti prisijungimo duomenis</button>

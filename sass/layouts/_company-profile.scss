@@ -52,6 +52,38 @@
       padding: 0;
     }
   }
+
+  &__about {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__place-info {
+    display: flex;
+
+    h4 {
+      margin-right: 20px;
+    }
+  }
+
+
+
+  &__work-hours {
+    .day {
+      &::before {
+        content: "●";
+        display: inline-block;
+      }
+    }
+    .hours {
+      text-align: right;
+
+      &--today {
+        color: $red;
+        font-weight: 600;
+      }
+    }
+  }
 }
 
 .photo-slider {

@@ -1824,6 +1824,12 @@ function onDocumentReady() {
       $(this).toggleClass("rotate");
     });
 
+  $(".change-login").not(".js_ignore_mark").on("click", function() {
+    $(this).siblings(".login-details--name, .login-details--old-pass").addClass("hidden");
+    $(this).siblings(".login-details--new-pass").removeClass("hidden");
+    $(this).addClass("hidden");
+  })
+
   moveAction();
   moveOrder();
   changePadding();
