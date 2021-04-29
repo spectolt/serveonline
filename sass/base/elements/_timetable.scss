@@ -80,10 +80,14 @@
     padding: 0;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-
+  
     @include breakpoint(l) {
       border: none;
       margin-top: 0;
+    }
+
+    @include breakpoint(890px) {
+      border-bottom: 1px solid $lightgray !important;
     }
 
     @include breakpoint(sm) {
@@ -137,6 +141,10 @@
       padding: 5px 0;
       margin-bottom: 20px;
       // overflow: auto;
+    }
+
+    @include breakpoint(sm) {
+      margin-bottom: 0;
     }
 
     &.selected-week {
@@ -453,10 +461,10 @@
       .phone {
         display: block;
         position: absolute;
-        left: 335px !important;
+        left: 335px;
         &--back {
           position: absolute;
-          left: 250px !important;
+          left: 250px;
         }
       }
     }

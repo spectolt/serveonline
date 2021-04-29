@@ -1876,6 +1876,11 @@ function onDocumentReady() {
       $(this).addClass("hidden");
     });
 
+  $(".warning-popup .controls__table td").not(".js_ignore_mark").on("click", function() {
+    $(this).closest("tr").siblings("tr").removeClass("active");
+    $(this).closest("tr").addClass("active");
+  })
+
   moveAction();
   moveOrder();
   changePadding();

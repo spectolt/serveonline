@@ -43,7 +43,7 @@
                             <?php for ($i = 0; $i < 10; $i++) { ?>
                                 <tr>
                                     <td>Priminimas</td>
-                                    <td>Tekstas</td>
+                                    <td><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed velit sem, laoreet et feugiat sit amet, condimentum sit amet lacus. Nulla sapien nisi, consequat non tempor ac, imperdiet sit amet felis. Donec porta mollis scelerisque. Fusce diam augue, varius et pharetra ac, sagittis id felis. Cras non nulla id urna feugiat sollicitudin. Nunc massa sapien, efficitur ut ex sed, placerat faucibus leo. Etiam et dolor lacus. Aliquam erat volutpat. Nam maximus sapien sit amet magna tempor aliquet. Maecenas rutrum sem hendrerit, semper tellus at, suscipit nisl. Proin blandit, nibh quis faucibus viverra, enim metus blandit massa, eget posuere elit nulla vitae mi. Donec et justo et justo consectetur eleifend. Aenean vel urna libero. Nullam vulputate fermentum ipsum non tristique.</p></td>
                                     <td>Vardas Pavardė</td>
                                     <td>2021 12 23 15:30</td>
                                 </tr>
@@ -57,8 +57,8 @@
                 <textarea placeholder="Žinutė"></textarea>
             </div>
             <div class="warning-popup__button-container">
-                <button class="orange transparent">Atšaukti</button>
-                <button class="orange">Saugoti</button>
+                <button class="orange transparent warning-popup__button">Atšaukti</button>
+                <button class="orange warning-popup__button warning-popup__button--send">Siųsti</button>
             </div>
         </div>
     </div>

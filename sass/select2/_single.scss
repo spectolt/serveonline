@@ -1,8 +1,9 @@
 .select2-selection--single {
   box-sizing: border-box;
-
+  display: flex;
+  align-items: center;
   cursor: pointer;
-  display: block;
+  // display: block;
 
   // height: 28px;
 

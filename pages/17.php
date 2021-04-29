@@ -11,11 +11,13 @@ $thisPage = "specialist-profile" ?>
                         <div class="company__header-top">
                             <h2>Vardas Pavardė</h2>
                         </div>
-                        <ul class="company__nav company__nav--specialist">
-                            <li class="active"><a href="#bendra-informacija">Bendra informacija</a></li>
-                            <li><a href="#paslaugos">Paslaugos</a></li>
-                            <li><a href="#darbo-grafikas">Darbo grafikas</a></li>
-                        </ul>
+                        <div class="company__nav-container">
+                            <ul class="company__nav company__nav--specialist">
+                                <li class="active"><a href="#bendra-informacija">Bendra informacija</a></li>
+                                <li><a href="#paslaugos">Paslaugos</a></li>
+                                <li><a href="#darbo-grafikas">Darbo grafikas</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <section class="group__tab company__container" id="bendra-informacija">
@@ -280,50 +282,50 @@ $thisPage = "specialist-profile" ?>
                                             <h4><b>Pr</b> 31 <span class="timetable__month-name"><?php if ($j == 0 && $i == 0) echo "GRUODIS";
                                                                                                     else if ($j == 0 && $i == 1) echo "SAUSIS";
                                                                                                     else if ($j == 4 && $i == 5) echo "VASARIS"; ?></span>
-                                            <table class="timetable__table">
-                                                <tbody class="<?php if ($j == 0 && $i == 2) echo "active"; ?>">
-                                                    <tr>
-                                                        <td>
-                                                            <div class="company__time time-inputs">
-                                                                <input type="number" name="hour" placeholder="00" max="23" length="2" <?php if ($j == 0 && $i == 2) echo "value='08'";
-                                                                                                                                        else if ($j == 2 && $i == 0) echo "value='00'"; ?>>
-                                                                <p class="<?php if ($j == 0 && $i == 2 || $j == 2 && $i == 0) echo "active"; ?>">:</p>
-                                                                <input type="number" name="minute" placeholder="00" max="59" length="2" <?php if ($j == 0 && $i == 2) echo "value='00'";
-                                                                                                                                        else if ($j == 2 && $i == 0) echo "value='00'"; ?>>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="company__time time-inputs">
-                                                                <input type="number" name="hour" placeholder="00" max="23" length="2" <?php if ($j == 0 && $i == 2) echo "value='12'";
-                                                                                                                                        else if ($j == 2 && $i == 0) echo "value='00'"; ?>>
-                                                                <p class="<?php if ($j == 0 && $i == 2 || $j == 2 && $i == 0) echo "active"; ?>">:</p>
-                                                                <input type="number" name="minute" placeholder="00" max="59" length="2" <?php if ($j == 0 && $i == 2) echo "value='00'";
-                                                                                                                                        else if ($j == 2 && $i == 0) echo "value='00'"; ?>>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="company__time time-inputs">
-                                                                <input type="number" name="hour" placeholder="00" max="23" length="2" <?php if ($j == 0 && $i == 2) echo "value='13'";
-                                                                                                                                        else if ($j == 2 && $i == 0) echo "value='00'"; ?>>
-                                                                <p class="<?php if ($j == 0 && $i == 2 || $j == 2 && $i == 0) echo "active"; ?>">:</p>
-                                                                <input type="number" name="minute" placeholder="00" max="59" length="2" <?php if ($j == 0 && $i == 2) echo "value='00'";
-                                                                                                                                        else if ($j == 2 && $i == 0) echo "value='00'"; ?>>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="company__time time-inputs">
-                                                                <input type="number" name="hour" placeholder="00" max="23" length="2" <?php if ($j == 0 && $i == 2) echo "value='22'";
-                                                                                                                                        else if ($j == 2 && $i == 0) echo "value='00'"; ?>>
-                                                                <p class="<?php if ($j == 0 && $i == 2 || $j == 2 && $i == 0) echo "active"; ?>">:</p>
-                                                                <input type="number" name="minute" placeholder="00" max="59" length="2" <?php if ($j == 0 && $i == 2) echo "value='00'";
-                                                                                                                                        else if ($j == 2 && $i == 0) echo "value='00'"; ?>>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+                                                <table class="timetable__table">
+                                                    <tbody class="<?php if ($j == 0 && $i == 2) echo "active"; ?>">
+                                                        <tr>
+                                                            <td>
+                                                                <div class="company__time time-inputs">
+                                                                    <input type="number" name="hour" placeholder="00" max="23" length="2" <?php if ($j == 0 && $i == 2) echo "value='08'";
+                                                                                                                                            else if ($j == 2 && $i == 0) echo "value='00'"; ?>>
+                                                                    <p class="<?php if ($j == 0 && $i == 2 || $j == 2 && $i == 0) echo "active"; ?>">:</p>
+                                                                    <input type="number" name="minute" placeholder="00" max="59" length="2" <?php if ($j == 0 && $i == 2) echo "value='00'";
+                                                                                                                                            else if ($j == 2 && $i == 0) echo "value='00'"; ?>>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="company__time time-inputs">
+                                                                    <input type="number" name="hour" placeholder="00" max="23" length="2" <?php if ($j == 0 && $i == 2) echo "value='12'";
+                                                                                                                                            else if ($j == 2 && $i == 0) echo "value='00'"; ?>>
+                                                                    <p class="<?php if ($j == 0 && $i == 2 || $j == 2 && $i == 0) echo "active"; ?>">:</p>
+                                                                    <input type="number" name="minute" placeholder="00" max="59" length="2" <?php if ($j == 0 && $i == 2) echo "value='00'";
+                                                                                                                                            else if ($j == 2 && $i == 0) echo "value='00'"; ?>>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="company__time time-inputs">
+                                                                    <input type="number" name="hour" placeholder="00" max="23" length="2" <?php if ($j == 0 && $i == 2) echo "value='13'";
+                                                                                                                                            else if ($j == 2 && $i == 0) echo "value='00'"; ?>>
+                                                                    <p class="<?php if ($j == 0 && $i == 2 || $j == 2 && $i == 0) echo "active"; ?>">:</p>
+                                                                    <input type="number" name="minute" placeholder="00" max="59" length="2" <?php if ($j == 0 && $i == 2) echo "value='00'";
+                                                                                                                                            else if ($j == 2 && $i == 0) echo "value='00'"; ?>>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="company__time time-inputs">
+                                                                    <input type="number" name="hour" placeholder="00" max="23" length="2" <?php if ($j == 0 && $i == 2) echo "value='22'";
+                                                                                                                                            else if ($j == 2 && $i == 0) echo "value='00'"; ?>>
+                                                                    <p class="<?php if ($j == 0 && $i == 2 || $j == 2 && $i == 0) echo "active"; ?>">:</p>
+                                                                    <input type="number" name="minute" placeholder="00" max="59" length="2" <?php if ($j == 0 && $i == 2) echo "value='00'";
+                                                                                                                                            else if ($j == 2 && $i == 0) echo "value='00'"; ?>>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
                                         </div>
                                     <?php } ?>
                                 </div>

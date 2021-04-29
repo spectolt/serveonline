@@ -241,6 +241,10 @@ footer.container {
           margin: 0;
         }
       }
+
+      &.back-button {
+        display: flex;
+      }
     }
   }
 

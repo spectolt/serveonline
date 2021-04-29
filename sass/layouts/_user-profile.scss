@@ -47,6 +47,7 @@
   }
   .group__tab {
     margin-top: 40px;
+    border: none;
 
     p {
       margin-top: 45px;
@@ -69,7 +70,7 @@
   }
 
   .company__header ul.company__nav {
-    overflow-x: visible;
+    overflow-x: auto;
 
     &::-webkit-scrollbar {
       height: 8px;
@@ -109,10 +110,17 @@
       width: 30px;
       height: 30px;
       display: inline-block;
+
+      @include breakpoint(sm){
+        height: 22px;
+        width: 22px;
+        margin-right: 10px;
+      }
     }
 
     @include breakpoint(sm) {
       height: 36px;
+      font-size: 1rem;
     }
   }
 
@@ -181,11 +189,11 @@
     }
 
     .about-datepicker {
-      padding-left: 50px;
+      // padding-left: 50px;
       height: 36px;
 
       @include breakpoint(sm) {
-        padding-left: 40px;
+        // padding-left: 40px;
         height: 32px;
       }
 
@@ -359,7 +367,8 @@
   &__buttons.company__button-container {
     margin-top: 10px;
     .cart__trash,
-    .cart__reserve {
+    .cart__reserve,
+    .cart__cancel {
       flex-basis: 35.5%;
       height: 36px;
 
@@ -378,6 +387,18 @@
         @include breakpoint(sm) {
           height: 15px;
           width: 15px;
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .cart__cancel {
+      &::before {
+        width: 16px;
+        margin-right: 20px;
+        content: url(img/icons/restore-cyan.svg);
+        @include breakpoint(sm) {
+          width: 12px;
           margin-right: 10px;
         }
       }
@@ -433,7 +454,12 @@
 
       &--register {
         &::before {
-          content: none;
+          width: 16px;
+          margin-right: 20px;
+          content: url(img/icons/restore-white.svg);
+          @include breakpoint(sm){
+            width: 12px;
+          }
         }
         @include breakpoint(sm) {
           flex-basis: 35.5%;
@@ -443,7 +469,11 @@
 
     .recommendations {
       &::before {
-        content: none;
+        width: 20px;
+        content: url(img/icons/checkmark-white.svg);
+        @include breakpoint(sm){
+          width: 15px;
+        }
       }
       height: 36px;
       @include breakpoint(sm) {

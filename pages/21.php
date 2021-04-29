@@ -10,11 +10,13 @@
                         <div class="company__header-top">
                             <h2>Pavadinimas</h2>
                         </div>
-                        <ul class="company__nav">
-                            <li class="active"><a href="#imones">Įmonės</a></li>
-                            <li><a href="#imoniu-profiliai">Įmonių profiliai</a></li>
-                            <li><a href="#prisijungimas">Administratoriai ir teisės</a></li>
-                        </ul>
+                        <div class="company__nav-container">
+                            <ul class="company__nav">
+                                <li class="active"><a href="#imones">Įmonės</a></li>
+                                <li><a href="#imoniu-profiliai">Įmonių profiliai</a></li>
+                                <li><a href="#prisijungimas">Administratoriai ir teisės</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <?php require_once("company/main-tab.php") ?>

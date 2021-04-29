@@ -24,9 +24,9 @@
     @include breakpoint(sm) {
       // margin-right: 30px;
 
-      &:last-of-type {
-        margin-right: 0;
-      }
+      // &:last-of-type {
+      //   margin-right: 0;
+      // }
     }
   }
   .group__tab{
@@ -611,9 +611,9 @@
       width: 100%;
       padding-bottom: 5px;
       .phone {
-        left: 322px !important;
+        left: calc(100% - 10px);
         &--back{
-          left: 256px !important;
+          left: calc(100% - 80px);
         }
       }
     }

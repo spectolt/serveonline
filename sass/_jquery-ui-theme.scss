@@ -1318,6 +1318,8 @@ a.ui-button:active,
       width: 143px !important;
       .select2-selection--single {
         height: 33px;
+        display: flex;
+        align-items: center;
         .select2-selection__rendered {
           height: 33px;
           padding-left: 10px;

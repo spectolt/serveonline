@@ -11,14 +11,16 @@ $thisPage = "specialist-profile" ?>
                         <div class="company__header-top">
                             <h2>Vardas Pavardė</h2>
                         </div>
-                        <ul class="company__nav">
-                            <li class="active"><a href="#krepselis">Krepšelis</a></li>
-                            <li><a href="#registracijos">Registracijos</a></li>
-                            <li><a href="#registraciju-istorija">Registracijų istorija</a></li>
-                            <li><a href="#rekomendacijos">Rekomendacijos</a></li>
-                            <li><a href="#bendra-informacija">Bendra informacija</a></li>
-                            <li><a href="#prisijungimas">Prisijungimas</a></li>
-                        </ul>
+                        <div class="company__nav-container">
+                            <ul class="company__nav">
+                                <li class="active"><a href="#krepselis">Krepšelis</a></li>
+                                <li><a href="#registracijos">Rezervacijos</a></li>
+                                <li><a href="#registraciju-istorija">Rezervacijų istorija</a></li>
+                                <li><a href="#rekomendacijos">Rekomendacijos</a></li>
+                                <li><a href="#bendra-informacija">Bendra informacija</a></li>
+                                <li><a href="#prisijungimas">Prisijungimas</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <section class="group__tab" id="krepselis">
@@ -104,7 +106,7 @@ $thisPage = "specialist-profile" ?>
                                 </div>
                             </div>
                             <div class="cart__buttons company__button-container">
-                                <button class="cyan transparent cart__trash">Pašalinti</button>
+                                <button class="cyan transparent cart__cancel">Atšaukti</button>
                                 <button class="cyan cart__change-time-register">Keisti laiką</button>
                             </div>
                         </div>
@@ -143,18 +145,13 @@ $thisPage = "specialist-profile" ?>
                                 </div>
                             </div>
                             <div class="cart__buttons company__button-container">
-                                <button class="cyan transparent history__button <?php if ($i == 0) echo "cyan-text";
-                                                                else if ($i == 1) echo "orange-text";
-                                                                else if ($i == 2) echo "red-text" ?>"><?php if ($i == 0) echo "Atliktas";
-                                                                                                        else if ($i == 1) echo "Atšauktas";
-                                                                                                        else if ($i == 2) echo "Neatvykote" ?></button>
-                                <button class="cyan cart__change-time-register history__button--register">Registruotis vėl</button>
+                                <button class="cyan cart__change-time-register history__button--register">Rezervuoti paslaugas vėl</button>
                             </div>
                         </div>
                     <?php } ?>
                 </section>
                 <section class="group__tab hidden" id="rekomendacijos">
-                    <p class="recommendations-p">Mano specialistai rekomenduoja pas juos registruoti šias paslaugas</p>
+                    <p class="recommendations-p">Jūsų specialistas rekomenduoja pas jį registruoti šias paslaugas</p>
                     <div class="cart">
                         <div class="cart__header">
                             <div class="cart__about cart__about--time">
@@ -186,7 +183,7 @@ $thisPage = "specialist-profile" ?>
                             </div>
                         </div>
                         <div class="cart__buttons company__button-container">
-                            <button class="cyan recommendations">Registruotis</button>
+                            <button class="orange recommendations">Rezervuoti</button>
                         </div>
                     </div>
                 </section>
@@ -198,6 +195,7 @@ $thisPage = "specialist-profile" ?>
                         <div class="input-wrapper input-wrapper--age">
                             <span class="input-icon"></span>
                             <input class="about-datepicker">
+                            <span class="datepicker-placeholder">Amžius:</span>
                             <span class="input-arrow"></span>
                         </div>
                         <div class="specialist-profile__gender">
