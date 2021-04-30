@@ -15446,8 +15446,8 @@ section.product .product__block--company .product__block-info-actions {
   left: 0;
   display: block;
   position: absolute;
-  background-image: -webkit-gradient(linear, left top, right top, color-stop(95%, rgba(255, 255, 255, 0)), to(#f4f4f6));
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 95%, #f4f4f6 100%);
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #f4f4f6), color-stop(1%, rgba(255, 255, 255, 0)), to(#f4f4f6));
+  background-image: linear-gradient(to right, #f4f4f6 0, rgba(255, 255, 255, 0) 1% 95%, #f4f4f6 100%);
   pointer-events: none;
 }
 
@@ -15470,6 +15470,10 @@ section.product .product__block--company .product__block-info-actions {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+}
+
+.company__header .company__nav li:first-of-type {
+  margin-left: 5px;
 }
 
 @media (max-width: 700px) {

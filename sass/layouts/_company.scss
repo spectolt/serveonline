@@ -228,7 +228,7 @@
         left: 0;
         display: block;
         position:absolute;
-        background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 95%, $darkgray 100%);
+        background-image: linear-gradient(to right, $darkgray 0, rgba(255, 255, 255, 0) 1% 95%, $darkgray 100%);
         pointer-events: none;
       }
     }
@@ -248,6 +248,10 @@
         font-size: 1.5rem;
         display: inline-flex;
         align-items: flex-end;
+
+        &:first-of-type {
+          margin-left: 5px;
+        }
 
         // @include breakpoint(xl) {
         //   margin-right: 15px;
