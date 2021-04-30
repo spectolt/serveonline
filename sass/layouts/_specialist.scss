@@ -8,6 +8,10 @@
   &.product {
     width: 100%;
     margin: 0;
+
+    .product__block-like {
+      margin-left: auto;
+    }
   }
 
   .company__header {
@@ -43,7 +47,9 @@
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    overflow: hidden;
+    // overflow: hidden;
+    position: relative;
+    background-size: 100%;
   }
 
   .company__nav {
@@ -54,10 +60,11 @@
     }
   }
 
-  .company__tab {
+  .group__tab {
     width: 100%;
     border: none;
-    display: inline-block;
+    display: block;
+    break-after: always;
   }
 
   .details {
@@ -68,7 +75,29 @@
     padding: 10px;
   }
 
+  .product__search {
+    .ui-autocomplete {
+      width: 140% !important;
+      right: 0 !important;
+      left: auto !important;
+      // display: block !important;
+
+      @include breakpoint(l) {
+        width: 100% !important;
+      }
+
+      .ui-autocomplete-wrapper {
+        max-height: 60vh;
+      }
+
+      .autocomplete-product.active {
+        border: 1px solid $red;
+      }
+    }
+  }
+
   .ui-widget.ui-datepicker {
     position: relative;
+    z-index: 99 !important;
   }
 }

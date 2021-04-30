@@ -7,6 +7,7 @@
 <script src="../js/moment-with-locales.min.js"></script>
 <script src="../js/slick.min.js"></script>
 <script src="../js/autocomplete-header.js"></script>
+<script src="../js/autocomplete-specialist.js"></script>
 <script type="text/javascript" src="../js/scripts.js?v=1.1"></script>
 </body>
 </html>

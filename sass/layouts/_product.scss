@@ -183,7 +183,7 @@ section.product {
         top: 20px;
         right: 31px;
         transform: translateX(50%);
-        background-image: url("img/icons/plus-06.svg");
+        background-image: url("img/icons/plus.svg");
         width: 18px;
         height: 18px;
         padding: 0;
@@ -195,8 +195,8 @@ section.product {
 
       h3 {
         font-size: 1rem;
-        margin: 10px 0 0 30px;
-        display: inline-block;
+        // margin: 10px 0 0 30px;
+        // display: inline-block;
 
         @include breakpoint(xs) {
           margin: 10px auto 0;
@@ -228,25 +228,6 @@ section.product {
 
         @include breakpoint(xs) {
           padding: 10px 10px;
-        }
-
-        &-trash {
-          background-size: contain;
-          background-position: center;
-          background-repeat: no-repeat;
-          background-color: transparent;
-          position: absolute;
-          bottom: 0;
-          right: -24px;
-          transform: translateX(100%);
-          background-image: url("img/icons/trash.svg");
-          width: 19px;
-          height: 22px;
-          padding: 0;
-
-          @include breakpoint(xs) {
-            right: -11px;
-          }
         }
 
         &-title,
@@ -343,6 +324,25 @@ section.product {
 
         &--choice {
           margin: 0;
+        }
+      }
+
+      .product__chosen-trash {
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: transparent;
+        position: absolute;
+        bottom: 0;
+        right: -24px;
+        transform: translateX(100%);
+        background-image: url("img/icons/trash.svg");
+        width: 19px;
+        height: 22px;
+        padding: 0;
+
+        @include breakpoint(xs) {
+          right: -11px;
         }
       }
     }

@@ -9,3 +9,74 @@
 @mixin column-width($numberColumns: 3) {
 	width: map-get($columns, $numberColumns) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
 }
+
+@mixin button-container {
+	width: calc(100% + 42px);
+    display: flex;
+    margin: 0 -21px;
+
+    @include breakpoint(890px) {
+      margin: 0 -11px;
+      width: calc(100% + 22px);
+    }
+
+    button {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include breakpoint(890px) {
+        font-size: 0.875rem;
+        padding: 5px 5px;
+        height: 35px;
+      }
+
+      &::before {
+        display: inline-block;
+        height: 20px;
+        margin-right: 20px;
+
+        @include breakpoint(890px) {
+          margin-right: 5px;
+          height: 16px;
+        }
+      }
+
+      &:first-of-type {
+        border-radius: 0 0 0 5px;
+        margin-top: 10px;
+
+        @include breakpoint(sm) {
+          margin-top: 0px;
+        }
+
+        &::before {
+          width: 15px;
+          content: url("img/icons/restore-orange.svg");
+
+          @include breakpoint(890px) {
+            width: 12px;
+          }
+        }
+      }
+
+      &:last-of-type {
+        border-bottom-right-radius: 5px;
+        margin-top: 10px;
+
+        @include breakpoint(sm) {
+          margin-top: 0px;
+        }
+
+        &::before {
+          width: 20px;
+          content: url("img/icons/checkmark-white.svg");
+
+          @include breakpoint(890px) {
+            width: 16px;
+          }
+        }
+      }
+    }
+}

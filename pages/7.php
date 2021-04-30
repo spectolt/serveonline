@@ -7,10 +7,11 @@
             <section class="company product specialist">
                 <div class="company__header company__header--main">
                     <div class="company__header-content">
-                        <div class="company__header-top">
+                        <div class="company__header-top product__block-top">
                             <div class="specialist__header-left">
-                                <div class="specialist__photo">
-                                    <img src="../img/1.jpg">
+                                <div class="specialist__photo" style="background-image: url(../img/1.jpg)">
+                                    <!-- <img src="../img/1.jpg"> -->
+                                    <div class="product__block-like-status hidden"></div>
                                 </div>
                                 <div class="specialist__name">
                                     <h3>Vardenis</h3>
@@ -26,7 +27,7 @@
                         </ul>
                     </div>
                 </div>
-                <section class="company__tab" id="apie-specialista">
+                <section class="group__tab" id="apie-specialista">
                     <h3>Apie specialistą</h3>
                     <div class="details">
                         <div class="details__item details__item--experience">
@@ -71,10 +72,32 @@
                     </div>
 
                 </section>
-                <section class="company__tab" id="registruokis">
-                    <h4>Rezervuok nemokamai</h4>
+                <section class="group__tab" id="registruokis">
+                    <h3>Rezervuok nemokamai</h3>
                     <div class="product__search input-wrapper">
-                        <input type="text" id="search-product" placeholder="Pasirinkite paslaugą">
+                        <input type="text" id="search-specialist" placeholder="Pasirinkite paslaugą">
+                    </div>
+                    <div class="product__chosen">
+                        <div class="autocomplete-product">
+                            <div class="product-action__info">
+                                <h3>Moterų kirpimas</h3>
+                                <h4>Vidutinio ilgio plaukai</h4>
+                                <div class="product-action__duration">01:00</div>
+                                <div class="product-action__price">45€<strike>60€</strike></div>
+                                <div class="product-action__periodicity">6 sav.</div>
+                            </div>
+                            <button class="product__chosen-trash"></button>
+                        </div>
+                        <div class="autocomplete-product">
+                            <div class="product-action__info">
+                                <h3>Moterų kirpimas</h3>
+                                <div class="product-action__duration">01:00</div>
+                                <div class="product-action__price">45€<strike>60€</strike></div>
+                                <div class="product-action__periodicity">6 sav.</div>
+                            </div>
+                            <button class="product__chosen-trash"></button>
+                        </div>
+                        <button class="product__chosen-add"></button>
                     </div>
                     <div class="specialist__calendar-container">
                         <div class="specialist__datepicker js-datepicker">

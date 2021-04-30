@@ -692,6 +692,7 @@ function onDocumentReady() {
       changePadding();
       paymentLayout();
       timetableLayout();
+      aboutSpecialistLayout();
       var field = $(document.activeElement);
       if (field.is(".hasDatepicker")) {
         field.datepicker("hide").datepicker("show");
@@ -1881,15 +1882,13 @@ function onDocumentReady() {
     $(this).closest("tr").addClass("active");
   })
 
-  // if ()
-  // $(".specialist #apie-specialista")
-
   moveAction();
   moveOrder();
   changePadding();
   openTab();
   paymentLayout();
   timetableLayout();
+  aboutSpecialistLayout();
   // tableWidths($(".profiles table"));
 
   setTimeout(function () {
@@ -2525,4 +2524,12 @@ function timetableLayout() {
   // } else {
   //   $(".timetable__datepicker--from, .timetable__datepicker--until").appendTo(".timetable__datepicker-container")
   // }
+}
+
+function aboutSpecialistLayout() {
+  if (window.matchMedia("(max-width: 991px)").matches) {
+    $(".specialist #apie-specialista").addClass("hidden");
+  } else {
+    $(".specialist #apie-specialista").removeClass("hidden");
+  }
 }
