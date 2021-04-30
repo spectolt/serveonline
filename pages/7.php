@@ -1,7 +1,7 @@
 <?php $thisCat = "company"; ?>
 
 <?php require_once('header.php'); ?>
-<main class="site-main site-main--aside hasUiAutocomplete">
+<main class="site-main site-main--aside hasUiAutocomplete hasUiDatepicker">
     <section class="page-content page-content--company">
         <div class="page-content__wrapper">
             <section class="company product specialist">
@@ -64,6 +64,92 @@
                                 </div>
                             </div>
                         </div>
+                        <h4>Vasco by I.C.O.N.</h4>
+                        <p class="specialis__address-street">M. Valančiaus g. 38, Kaunas</p>
+                        <p class="specialis__address-distance">15 min (5,6 km)</p>
+                        <p class="specialis__address-phone">+370 000 00000</p>
+                    </div>
+
+                </section>
+                <section class="company__tab" id="registruokis">
+                    <h4>Rezervuok nemokamai</h4>
+                    <div class="product__search input-wrapper">
+                        <input type="text" id="search-product" placeholder="Pasirinkite paslaugą">
+                    </div>
+                    <div class="specialist__calendar-container">
+                        <div class="specialist__datepicker js-datepicker">
+
+                        </div>
+                    </div>
+                    <table class="calendar disable-scrollbars disable-scrollbars::-webkit-scrollbar">
+                        <thead>
+                            <tr>
+                                <th class="today">Pr<small>Lap30</small></th>
+                                <th>An<small>Gru01</small></th>
+                                <th class="active">Tr<small>Gru02</small></th>
+                                <th>Kt<small>Gru03</small></th>
+                                <th>Pn<small>Gru04</small></th>
+                                <th>Še<small>Gru05</small></th>
+                                <th>Se<small>Gru06</small></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php for ($i = 0; $i < 4; $i++) { ?>
+                                <tr>
+                                    <td><?php if ($i === 3) { ?><p class="calendar__more-button">DAR</p><?php } else { ?> <p>09:15</p> <?php } ?></td>
+                                    <td>
+                                        <p></p>
+                                    </td>
+                                    <td class="calendar__selected-day">
+                                        <p>09:15</p>
+                                    </td>
+                                    <td>
+                                        <p>09:15</p>
+                                    </td>
+                                    <td>
+                                        <p>09:15</p>
+                                    </td>
+                                    <td>
+                                        <p>09:15</p>
+                                    </td>
+                                    <td>
+                                        <p>09:15</p>
+                                    </td>
+                                </tr>
+                        </tbody>
+                    <?php } ?>
+
+                    <?php for ($i = 0; $i < 3; $i++) { ?>
+                        <tbody class="calendar__more-times calendar__more-times--hidden">
+                            <tr>
+                                <td>
+                                    <p>09:15</p>
+                                </td>
+                                <td>
+                                    <p></p>
+                                </td>
+                                <td class="calendar__selected-day">
+                                    <p>09:15</p>
+                                </td>
+                                <td>
+                                    <p>08:15</p>
+                                </td>
+                                <td>
+                                    <p>11:15</p>
+                                </td>
+                                <td>
+                                    <p>12:15</p>
+                                </td>
+                                <td>
+                                    <p>13:15</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    <?php } ?>
+
+                    </table>
+                    <div class="company__button-container">
+                        <button>Saugoti krepšelyje</button>
                     </div>
                 </section>
             </section>

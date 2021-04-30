@@ -768,7 +768,7 @@
       }
 
       &:last-of-type {
-        border-radius: 0 0 5px 0;
+        border-bottom-right-radius: 5px;
         margin-top: 10px;
 
         @include breakpoint(sm) {

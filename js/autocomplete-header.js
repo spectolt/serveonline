@@ -174,25 +174,25 @@ if ($("main.hasUiAutocomplete").length > 0) {
             .find(".autocomplete-product-title")
             .contents()
             .get(0).nodeValue;
-          $("<div class='product-header-chosen'>")
+          $("<div class='product-chosen'>")
             .append(
               "<h3>" +
                 title +
                 "</h3><h4>" +
                 subtitle +
-                "</h4><button class='product-header-chosen__trash'></button>"
+                "</h4><button class='product-chosen__trash'></button>"
             )
-            .appendTo(".product__search--header");
+            .appendTo(".product__search");
         } else {
           title = $(this).find(".autocomplete-product-title").contents().get(0)
             .nodeValue;
-          $("<div class='product-header-chosen'>")
+          $("<div class='product-chosen'>")
             .append(
               "<h3>" +
                 title +
-                "</h3><button class='product-header-chosen__trash'></button>"
+                "</h3><button class='product-chosen__trash'></button>"
             )
-            .appendTo(".product__search--header");
+            .appendTo(".product__search");
         }
       }
     })

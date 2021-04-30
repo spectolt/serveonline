@@ -273,8 +273,8 @@
 
     &--time {
       flex-basis: 35.5%;
-      flex-basis: auto;
-      width: 380px;
+      // flex-basis: auto;
+      // width: 380px;
 
       @include breakpoint(sm) {
         flex-basis: 100%;
@@ -355,6 +355,22 @@
         padding-left: 10px;
         padding-right: 10px;
       }
+    }
+  }
+
+  &__status {
+    margin-left: auto;
+    
+    &.cyan-text {
+      color: $cyan;
+    }
+
+    &.orange-text {
+      color: $orange;
+    }
+
+    &.red-text {
+      color: $red;
     }
   }
 
@@ -484,6 +500,7 @@
     button {
       margin: 0;
       flex: auto;
+      border-radius: 0;
 
       @include breakpoint(sm) {
         height: 35px;
@@ -503,18 +520,6 @@
 
       &:last-of-type {
         border-bottom-right-radius: 5px;
-      }
-
-      &.cyan-text {
-        color: $cyan;
-      }
-
-      &.orange-text {
-        color: $orange;
-      }
-
-      &.red-text {
-        color: $red;
       }
     }
   }

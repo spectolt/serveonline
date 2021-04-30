@@ -124,6 +124,13 @@ $thisPage = "specialist-profile" ?>
                                     <h3>East Islan Spa centras</h3>
                                     <h4>M. Valančiaus g. 23, Kaunas</h4>
                                 </div>
+                                <?php if ($i == 0) { ?>
+                                    <span class="cart__status cyan-text">Atliktas</span>
+                                <?php } else if ($i == 1) { ?>
+                                    <span class="cart__status orange-text">Atšauktas</span>
+                                <?php } else if ($i == 2) { ?>
+                                    <span class="cart__status red-text">Neatvykote</span>
+                                <?php } ?>
                             </div>
                             <div class="cart__info">
                                 <div class="cart__specialist">

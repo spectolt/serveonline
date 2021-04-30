@@ -169,14 +169,14 @@ function onDocumentReady() {
       this.text = text;
     };
     var eventDates = {};
-    eventDates[new Date("12/31/2020")] = new Event("Event01");
+    eventDates[new Date("05/20/2021")] = new Event("Event01");
     eventDates[new Date("01/12/2021")] = new Event("Event02");
     eventDates[new Date("01/28/2021")] = new Event("Event02");
 
     var availableDates = {};
-    availableDates[new Date("01/05/2021")] = new Date("01/05/2021");
-    availableDates[new Date("01/12/2021")] = new Date("01/12/2021");
-    availableDates[new Date("01/13/2021")] = new Date("01/13/2021");
+    availableDates[new Date("05/05/2021")] = new Date("05/05/2021");
+    availableDates[new Date("05/12/2021")] = new Date("05/12/2021");
+    availableDates[new Date("05/13/2021")] = new Date("05/13/2021");
 
     $(".js-datepicker")
       .not(".js_ignore_mark")
@@ -1880,6 +1880,9 @@ function onDocumentReady() {
     $(this).closest("tr").siblings("tr").removeClass("active");
     $(this).closest("tr").addClass("active");
   })
+
+  // if ()
+  // $(".specialist #apie-specialista")
 
   moveAction();
   moveOrder();

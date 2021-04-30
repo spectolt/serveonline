@@ -9,7 +9,7 @@
   min-height: 0;
   height: 72.8px;
   position: relative;
-  z-index: 101;
+  z-index: 1001;
 
   @include breakpoint(l) {
     height: 112.2px;
