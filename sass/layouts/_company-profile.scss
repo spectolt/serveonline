@@ -1,4 +1,295 @@
 .company-profile {
+  .company__header {
+    padding-top: 10px;
+
+    &--main {
+      @include breakpoint(sm) {
+        left: -10px !important;
+      }
+    }
+
+    .photo-slider {
+      left: -30px;
+      // min-width: 1200px;
+      @include breakpoint(sm) {
+        left: 0;
+      }
+      .slick-list {
+        @include breakpoint(sm) {
+          overflow: initial;
+        }
+      }
+      &__slide-content {
+        margin-right: 10px;
+
+        @include breakpoint(sm) {
+          height: 215px;
+        }
+      }
+    }
+    h2 {
+      margin-top: 30px;
+      margin-left: 3px;
+    }
+    &-content {
+      margin: 0;
+      max-width: inherit;
+      .company__header-left {
+        flex-basis: 49%;
+        margin-left: 10px;
+        margin-bottom: 45px;
+
+        @include breakpoint(sm) {
+          margin-bottom: 10px;
+        }
+
+        .company__header-phone {
+          margin-bottom: 15px;
+          font-size: 1.125rem;
+          font-weight: 500;
+
+          @include breakpoint(sm) {
+            margin-top: 10px;
+            font-size: 0.875rem;
+            margin-bottom: 10px;
+          }
+
+          &:before {
+            content: url(img/icons/telefonas-2.svg);
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+            margin-right: 15px;
+            top: 6px;
+            left: 2px;
+            position: relative;
+
+            @include breakpoint(sm) {
+              height: 18px;
+              width: 18px;
+              top: 4px;
+              margin-right: 10px;
+            }
+          }
+        }
+        .company__header-hours {
+          font-size: 1.125rem;
+          font-weight: 500;
+
+          @include breakpoint(sm) {
+            margin-top: 10px;
+            font-size: 0.875rem;
+            margin-bottom: 15px;
+          }
+
+          &:before {
+            content: url(img/icons/laikrodis-2.svg);
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+            margin-right: 15px;
+            top: 6px;
+            left: 2px;
+            position: relative;
+
+            @include breakpoint(sm) {
+              height: 18px;
+              width: 18px;
+              top: 4px;
+              margin-right: 10px;
+            }
+          }
+        }
+        .company__header-last-hour {
+          font-size: 1.125rem;
+          color: $red;
+          font-weight: 900;
+          @include breakpoint(sm) {
+            font-weight: 500;
+            font-size: 0.8125rem;
+            margin-bottom: 0;
+          }
+        }
+        .company__header-address {
+          color: $orange;
+          font-weight: 800;
+          font-size: 1.5rem;
+
+          @include breakpoint(sm) {
+            font-size: 1rem;
+          }
+        }
+      }
+      .company__header-right {
+        padding-right: 25px;
+        @include breakpoint(1080px) {
+          margin-bottom: 20px;
+        }
+        @include breakpoint(880px) {
+          padding-right: 40px;
+        }
+
+        .read-more__text {
+          margin-bottom: 10px;
+          font-size: 1.125rem;
+          text-align: justify;
+
+          @include breakpoint(sm) {
+            font-weight: 400;
+            font-size: 0.75rem;
+            margin-left: 10px;
+            width: 295px;
+            margin-bottom: 0;
+          }
+        }
+        .read-more__button {
+          font-weight: 900;
+          font-size: 0.875rem;
+
+          @include breakpoint(sm) {
+            margin-left: 10px;
+            font-size: 0.6875rem;
+            font-weight: 700;
+          }
+        }
+        .signature {
+          font-size: 2.8125rem;
+
+          @include breakpoint(sm) {
+            font-size: 1.47375rem;
+          }
+        }
+      }
+      .company__nav {
+        margin-left: 10px;
+
+        @include breakpoint(sm) {
+          margin-left: 0;
+          left: -8px;
+        }
+      }
+      .social-media {
+        margin-right: 25px;
+        @include breakpoint(880px) {
+          margin-right: 1px;
+        }
+        @include breakpoint(sm) {
+          right: 19px;
+        }
+        &__icon {
+          width: 25px;
+          height: 25px;
+        }
+      }
+      .company__header-title {
+        margin-bottom: 20px;
+        font-weight: 800;
+
+        @include breakpoint(sm) {
+          margin-left: 10px;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+  .group__tab {
+    margin-left: 60px;
+    margin-top: 40px;
+
+    @include breakpoint(sm) {
+      margin-top: 30px;
+      margin-bottom: 30px;
+      margin-left: 0;
+    }
+
+    .product__header {
+      @include breakpoint(sm) {
+        margin-bottom: 30px;
+      }
+    }
+
+    .product__block {
+      @include breakpoint(sm) {
+        padding-top: 20px;
+        .calendar__next-time {
+          font-size: 0.875rem;
+        }
+      }
+
+      &-photo {
+        box-shadow: 0 12px 29px 0px rgba(0, 0, 0, 0.08);
+        margin-right: 15px;
+
+        @include breakpoint(sm) {
+          margin-left: 10px;
+          width: 110px;
+          height: 110px;
+          padding-bottom: 0;
+        }
+      }
+      &-info {
+        h2 {
+          font-size: 1.625rem;
+          @include breakpoint(sm) {
+            font-size: 1.25rem;
+          }
+        }
+        p {
+          font-weight: 700;
+        }
+        a {
+          font-weight: 400;
+          &:before {
+            width: 16px;
+            height: 22px;
+            background-image: url(img/icons/marker.svg);
+          }
+        }
+        &-actions {
+          margin-top: 20px;
+        }
+      }
+      &-recommend {
+        font-size: 1.25rem;
+        @include breakpoint(sm) {
+          font-size: 0.875rem;
+          width: 220px;
+        }
+      }
+      &-top {
+        margin-bottom: 20px;
+        @include breakpoint(sm) {
+          margin-bottom: 0;
+        }
+        .product__block-person {
+          @include breakpoint(970px) {
+            width: 100%;
+            margin-bottom: 30px;
+          }
+        }
+        table {
+          @include breakpoint(sm) {
+            margin-top: 0;
+          }
+        }
+      }
+      &-action {
+        padding-bottom: 10px;
+
+        @include breakpoint(sm) {
+          padding: 10px;
+        }
+        h4 {
+          font-size: 1.125rem;
+
+          @include breakpoint(sm) {
+            font-size: 1rem;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
   .company__header-top {
     flex-wrap: wrap;
 
@@ -66,8 +357,6 @@
     }
   }
 
-
-
   &__work-hours {
     .day {
       &::before {
@@ -81,6 +370,223 @@
       &--today {
         color: $red;
         font-weight: 600;
+      }
+    }
+  }
+
+  #paslaugos {
+    margin-top: 60px;
+
+    @include breakpoint(sm) {
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-weight: 700;
+      margin-top: 60px;
+      margin-bottom: 15px;
+
+      @include breakpoint(sm) {
+        margin-top: 30px;
+        margin-bottom: 10px;
+        margin-left: 10px;
+      }
+    }
+    h3 {
+      font-weight: 400;
+      font-size: 1.5rem;
+
+      @include breakpoint(sm) {
+        font-size: 1rem;
+        margin-left: 10px;
+      }
+    }
+
+    .services-list__blocks {
+      @include breakpoint(sm) {
+        padding: 0;
+        margin-top: 0;
+      }
+    }
+
+    .services-list__block {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      margin-right: 60px;
+      margin-bottom: 20px;
+
+      @include breakpoint(sm) {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+
+      &--choices {
+        padding-bottom: 1px;
+        h4 {
+          span {
+            margin-bottom: 10px;
+          }
+        }
+      }
+
+      .product-action {
+        padding: 0;
+
+        &__info {
+          @include breakpoint(xs) {
+            width: 100%;
+          }
+        }
+
+        &__duration,
+        &__price,
+        &__periodicity {
+          margin-top: 0;
+        }
+      }
+      h4 {
+        font-size: 1.125rem;
+
+        @include breakpoint(sm) {
+          font-size: 1rem;
+        }
+      }
+      .more-description {
+        font-size: 0.875rem;
+
+        @include breakpoint(sm) {
+          font-size: 0.75rem;
+        }
+      }
+      .product-choice {
+        @include breakpoint(sm) {
+          padding: 10px;
+        }
+
+        h4 {
+          font-size: 1rem;
+          margin-bottom: 5px;
+        }
+      }
+      .product-choice:nth-of-type(2n-1) {
+        .product-action {
+          background-color: #fbfbfc;
+        }
+      }
+    }
+  }
+  #produktai {
+    margin-top: 50px;
+
+    @include breakpoint(sm) {
+      margin-top: 30px;
+    }
+
+    h2 {
+      font-weight: 700;
+      margin-bottom: 40px;
+      margin-left: 20px;
+
+      @include breakpoint(sm) {
+        font-weight: 400;
+        font-size: 1.125rem;
+        margin-bottom: 20px;
+        margin-left: 10px;
+      }
+    }
+
+    .photo-grid {
+      ul {
+        margin-right: 130px;
+        width: auto;
+
+        @include breakpoint(sm) {
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+
+        li {
+          margin-bottom: 10px;
+
+          @include breakpoint(sm) {
+            width: calc(50% - 2px);
+            margin-bottom: 5px;
+          }
+        }
+      }
+    }
+
+    #apie-mus {
+      margin-top: 60px;
+      p {
+        margin-right: 160px;
+      }
+      .company-profile__about {
+        margin-top: 60px;
+        justify-content: initial;
+        .company-profile__work-hours {
+          width: 20%;
+          .day {
+            &::before {
+              margin-right: 10px;
+            }
+          }
+          table {
+            font-size: 0.875rem;
+            tr:last-child {
+              .day::before {
+                color: $orange;
+              }
+            }
+          }
+        }
+        .company-profile__place {
+          width: 60%;
+          margin-left: 60px;
+          h3 {
+            margin-bottom: 0;
+          }
+          iframe {
+            min-width: 100%;
+          }
+          .company-profile__place-info {
+            h4 {
+              margin-top: 10px;
+              &:first-of-type {
+                text-decoration: underline;
+              }
+            }
+            .distance {
+              margin-top: 5px;
+              &::before {
+                content: url(img/icons/veliavos-kelias-2.svg);
+                width: 20px;
+                height: 20px;
+                display: inline-block;
+                margin-right: 10px;
+                top: 6px;
+                left: 2px;
+                position: relative;
+              }
+            }
+            .phone {
+              margin-top: 5px;
+              font-family: "Roboto", sans-serif;
+              font-weight: 500;
+              &::before {
+                content: url(img/icons/telefonas-2.svg);
+                width: 20px;
+                height: 20px;
+                display: inline-block;
+                margin-right: 10px;
+                top: 6px;
+                left: 2px;
+                position: relative;
+              }
+            }
+          }
+        }
       }
     }
   }

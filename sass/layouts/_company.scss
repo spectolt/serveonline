@@ -228,7 +228,7 @@
         left: 0;
         display: block;
         position:absolute;
-        background-image: linear-gradient(to right, $darkgray 0, rgba(255, 255, 255, 0) 1% 95%, $darkgray 100%);
+        background-image: linear-gradient(to right, $darkgray 0, rgba(255, 255, 255, 0) 1% 99%, $darkgray 100%);
         pointer-events: none;
       }
     }
@@ -735,6 +735,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      border-radius: 0;
 
       @include breakpoint(890px) {
         font-size: 0.875rem;
@@ -772,6 +773,7 @@
       }
 
       &:last-of-type {
+        // border-radius: 0;
         border-bottom-right-radius: 5px;
         margin-top: 10px;
 

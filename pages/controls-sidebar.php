@@ -249,7 +249,7 @@
                 <div class="site-aside__item <?php if ($thisPage == "areas") echo "site-aside__item--active"; ?>">
                     <a href="#">Sritys</a>
                 </div>
-                <div class="site-aside__item">
+                <div class="site-aside__item <?php if ($thisPage == "general-controls") echo "site-aside__item--active"; ?>">
                     <a href="#">Bendri nustatymai</a>
                 </div>
             </div>

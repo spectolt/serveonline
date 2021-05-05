@@ -60,6 +60,11 @@ $thisPage = "specialist-profile" ?>
                                 <button class="cyan cart__change-time">Keisti laiką</button>
                                 <button class="orange cart__reserve">Rezervuoti</button>
                             </div>
+                            <div class="confirm-overlay">
+                                <div class="confirm-overlay__item">
+                                    <h4>Laukiama patvirtinimo</h4>
+                                </div>
+                            </div>
                         </div>
                     <?php } ?>
                     <h2 class="user-profile__price">Bendra kaina: <span>260,00€</span></h2>
@@ -68,10 +73,16 @@ $thisPage = "specialist-profile" ?>
                 <section class="group__tab hidden" id="registracijos">
                     <?php for ($i = 0; $i < 2; $i++) { ?>
                         <div class="cart">
-                            <div class="cart__header">
-                                <div class="cart__about cart__about--time">
-                                    <h3>17:30</h3>
-                                    <h4>2020 Vasario 4, ketvirtadienis</h4>
+                            <div class="cart__header cart__header--reservations">
+                                <div class="cart__about cart__about--time cart__about--time-reservations">
+                                    <div class="cart__time cart__time--old">
+                                        <h3>19:20</h3>
+                                        <h4>2020 Vasario 3, trečiadienis</h4>
+                                    </div>
+                                    <div class="cart__time cart__time--current">
+                                        <h3>17:30</h3>
+                                        <h4>2020 Vasario 4, ketvirtadienis</h4>
+                                    </div>
                                 </div>
                                 <div class="cart__about cart__about--company">
                                     <h3>East Islan Spa centras</h3>
@@ -106,7 +117,7 @@ $thisPage = "specialist-profile" ?>
                                 </div>
                             </div>
                             <div class="cart__buttons company__button-container">
-                                <button class="cyan transparent cart__cancel">Atšaukti</button>
+                                <button class="cyan transparent cart__cancel">Atšaukti rezervaciją</button>
                                 <button class="cyan cart__change-time-register">Keisti laiką</button>
                             </div>
                         </div>
@@ -152,7 +163,7 @@ $thisPage = "specialist-profile" ?>
                                 </div>
                             </div>
                             <div class="cart__buttons company__button-container">
-                                <button class="cyan cart__change-time-register history__button--register">Rezervuoti paslaugas vėl</button>
+                                <button class="orange cart__change-time-register history__button--register">Rezervuoti paslaugas vėl</button>
                             </div>
                         </div>
                     <?php } ?>
@@ -243,7 +254,7 @@ $thisPage = "specialist-profile" ?>
                         <input type="checkbox" name="confirmation" id="reminder">
                         <label for="reminder">Sutinku gauti priminimus apie rezervacijas.</label>
                     </div>
-                    <div class="company__button-container">
+                    <div class="cart__buttons company__button-container">
                         <button class="orange transparent">Atšaukti</button>
                         <button class="orange">Saugoti</button>
                     </div>
@@ -273,7 +284,7 @@ $thisPage = "specialist-profile" ?>
                         </div>
                         <button class="orange small change-login">Keisti prisijungimo duomenis</button>
                     </div>
-                    <div class="company__button-container">
+                    <div class="cart__buttons company__button-container">
                         <button class="orange transparent">Atšaukti</button>
                         <button class="orange">Saugoti</button>
                     </div>

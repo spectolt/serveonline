@@ -1882,6 +1882,10 @@ function onDocumentReady() {
     $(this).closest("tr").addClass("active");
   })
 
+  $(".cart__reserve").not(".js_ignore_mark").on("click", function() {
+    $(this).closest(".cart").find(".confirm-overlay").fadeIn(300);
+  })
+
   moveAction();
   moveOrder();
   changePadding();
@@ -2370,6 +2374,7 @@ function openTab() {
       }
     });
   });
+  tableHeight();
 }
 
 function paymentLayout() {

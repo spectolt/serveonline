@@ -604,6 +604,12 @@ footer.container {
         }
       }
 
+      &--general {
+        .page-content__wrapper {
+          padding: 0 40px;
+        }
+      }
+
       &--company {
         margin: 0 auto;
         max-width: 1200px;

@@ -1663,6 +1663,14 @@
   }
 }
 
+.general {
+  .company__header {
+    width: calc(100% + 80px);
+    left: -40px;
+    margin-left: 0;
+  }
+}
+
 .expand-button {
   width: 30px;
   height: 30px;
