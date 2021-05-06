@@ -1878,8 +1878,10 @@ function onDocumentReady() {
     });
 
   $(".warning-popup .controls__table td").not(".js_ignore_mark").on("click", function() {
-    $(this).closest("tr").siblings("tr").removeClass("active");
-    $(this).closest("tr").addClass("active");
+    var activeRow = $(this).closest("tr");
+    activeRow.siblings("tr").removeClass("active");
+    activeRow.addClass("active");
+    $(".warning-popup__text-message textarea").val(activeRow.find("td .text").html());
   })
 
   $(".cart__reserve").not(".js_ignore_mark").on("click", function() {

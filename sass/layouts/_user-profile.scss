@@ -29,7 +29,11 @@
     }
 
     .login-details--name {
-      flex-basis: 29.4%;
+      flex-basis: 24.5%;
+
+      @include breakpoint(1190px){
+        flex-basis: 40%;
+      }
 
       @include breakpoint(sm) {
         flex-basis: 100%;
@@ -37,17 +41,34 @@
       }
     }
     .login-details--pass {
-      flex-basis: 21%;
+      flex-basis: 24.5%;
+
+        @include breakpoint(1190px){
+        flex-basis: 40%;
+      }
 
       @include breakpoint(sm) {
         flex-basis: 100%;
         margin-bottom: 15px;
       }
     }
+    #pass-info{
+      font-size: 0.875rem;
+      font-family: 'Sen', sans-serif;
+      flex-basis: 35%;
+      margin-top: 25px;
+      margin-bottom: 0;
+      @include breakpoint(1040px){
+        flex-basis: 100%;
+      }
+      @include breakpoint(sm){
+        margin-top: 0;
+      }
+    }
   }
   .group__tab {
     margin-top: 40px;
-    border: none;
+    // border: none;
 
     p {
       margin-top: 45px;

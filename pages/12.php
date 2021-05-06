@@ -262,19 +262,20 @@ $thisPage = "specialist-profile" ?>
                 <section class="group__tab company__container company__container--login hidden" id="prisijungimas">
                     <div class="user-profile__inputs-container">
                         <div class="login-details login-details--name">
-                            <p>Prisijungimo vardas</p>
+                            <p>Dabartinis slaptažodis</p>
                             <div class="input-container input-container--password-eye">
-                                <input type="password" name="login" value="1234" readonly>
+                                <input type="password" name="login" placeholder="Įveskite dabartinį slaptažodį">
                                 <span class="input-icon"></span>
                             </div>
                         </div>
                         <div class="login-details login-details--pass login-details--old-pass">
-                            <p>Prisijungimo slaptažodis</p>
+                            <p class="password--info">Naujas slaptažodis</p> 
                             <div class="input-container input-container--password-eye">
-                                <input type="password" name="login" value="1234" readonly>
+                                <input type="password" name="login">
                                 <span class="input-icon"></span>
                             </div>
                         </div>
+                        <p class="password--info"  id="pass-info">Slaptažodis, ne mažiau 8 simbolių, kuriuos sudaro: skaičiai, raidės, bent viena didžioji raidė</p>
                         <div class="login-details login-details--pass login-details--new-pass hidden">
                             <p>Įveskite esamą slaptažodį</p>
                             <div class="input-container input-container--password-eye">
@@ -282,11 +283,11 @@ $thisPage = "specialist-profile" ?>
                                 <span class="input-icon input-icon--toggled-eye"></span>
                             </div>
                         </div>
-                        <button class="orange small change-login">Keisti prisijungimo duomenis</button>
+                        <!-- <button class="orange small change-login">Keisti prisijungimo duomenis</button> -->
                     </div>
                     <div class="cart__buttons company__button-container">
                         <button class="orange transparent">Atšaukti</button>
-                        <button class="orange">Saugoti</button>
+                        <button class="orange">Keisti slaptažodį</button>
                     </div>
                 </section>
             </section>

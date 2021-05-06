@@ -516,74 +516,74 @@
         }
       }
     }
+  }
 
-    #apie-mus {
+  #apie-mus {
+    margin-top: 60px;
+    p {
+      margin-right: 160px;
+    }
+    .company-profile__about {
       margin-top: 60px;
-      p {
-        margin-right: 160px;
-      }
-      .company-profile__about {
-        margin-top: 60px;
-        justify-content: initial;
-        .company-profile__work-hours {
-          width: 20%;
-          .day {
-            &::before {
-              margin-right: 10px;
-            }
+      justify-content: initial;
+      .company-profile__work-hours {
+        width: 20%;
+        .day {
+          &::before {
+            margin-right: 10px;
           }
-          table {
-            font-size: 0.875rem;
-            tr:last-child {
-              .day::before {
-                color: $orange;
-              }
+        }
+        table {
+          font-size: 0.875rem;
+          tr:last-child {
+            .day::before {
+              color: $orange;
             }
           }
         }
-        .company-profile__place {
-          width: 60%;
-          margin-left: 60px;
-          h3 {
-            margin-bottom: 0;
-          }
-          iframe {
-            min-width: 100%;
-          }
-          .company-profile__place-info {
-            h4 {
-              margin-top: 10px;
-              &:first-of-type {
-                text-decoration: underline;
-              }
+      }
+      .company-profile__place {
+        width: 60%;
+        margin-left: 60px;
+        h3 {
+          margin-bottom: 0;
+        }
+        iframe {
+          min-width: 100%;
+        }
+        .company-profile__place-info {
+          h4 {
+            margin-top: 10px;
+            &:first-of-type {
+              text-decoration: underline;
             }
-            .distance {
-              margin-top: 5px;
-              &::before {
-                content: url(img/icons/veliavos-kelias-2.svg);
-                width: 20px;
-                height: 20px;
-                display: inline-block;
-                margin-right: 10px;
-                top: 6px;
-                left: 2px;
-                position: relative;
-              }
+          }
+          .distance {
+            margin-top: 5px;
+            &::before {
+              content: url(img/icons/veliavos-kelias-2.svg);
+              width: 20px;
+              height: 20px;
+              display: inline-block;
+              margin-right: 10px;
+              top: 6px;
+              left: 2px;
+              position: relative;
             }
-            .phone {
-              margin-top: 5px;
-              font-family: "Roboto", sans-serif;
-              font-weight: 500;
-              &::before {
-                content: url(img/icons/telefonas-2.svg);
-                width: 20px;
-                height: 20px;
-                display: inline-block;
-                margin-right: 10px;
-                top: 6px;
-                left: 2px;
-                position: relative;
-              }
+          }
+          .phone {
+            margin-top: 5px;
+            font-family: "Roboto", sans-serif;
+            font-weight: 500;
+            &::before {
+              content: url(img/icons/telefonas-2.svg);
+              width: 20px;
+              height: 20px;
+              display: inline-block;
+              margin-right: 10px;
+              top: 6px;
+              left: 2px;
+              position: relative;
             }
           }
         }

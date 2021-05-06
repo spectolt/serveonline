@@ -19013,8 +19013,15 @@ section.product .product__block--company .product__block-info-actions {
 }
 
 .user-profile .company__container--login .login-details--name {
-  -ms-flex-preferred-size: 29.4%;
-      flex-basis: 29.4%;
+  -ms-flex-preferred-size: 24.5%;
+      flex-basis: 24.5%;
+}
+
+@media (max-width: 1190px) {
+  .user-profile .company__container--login .login-details--name {
+    -ms-flex-preferred-size: 40%;
+        flex-basis: 40%;
+  }
 }
 
 @media (max-width: 700px) {
@@ -19026,8 +19033,15 @@ section.product .product__block--company .product__block-info-actions {
 }
 
 .user-profile .company__container--login .login-details--pass {
-  -ms-flex-preferred-size: 21%;
-      flex-basis: 21%;
+  -ms-flex-preferred-size: 24.5%;
+      flex-basis: 24.5%;
+}
+
+@media (max-width: 1190px) {
+  .user-profile .company__container--login .login-details--pass {
+    -ms-flex-preferred-size: 40%;
+        flex-basis: 40%;
+  }
 }
 
 @media (max-width: 700px) {
@@ -19038,9 +19052,30 @@ section.product .product__block--company .product__block-info-actions {
   }
 }
 
+.user-profile .company__container--login #pass-info {
+  font-size: 0.875rem;
+  font-family: 'Sen', sans-serif;
+  -ms-flex-preferred-size: 35%;
+      flex-basis: 35%;
+  margin-top: 25px;
+  margin-bottom: 0;
+}
+
+@media (max-width: 1040px) {
+  .user-profile .company__container--login #pass-info {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .user-profile .company__container--login #pass-info {
+    margin-top: 0;
+  }
+}
+
 .user-profile .group__tab {
   margin-top: 40px;
-  border: none;
 }
 
 .user-profile .group__tab p {
@@ -19902,63 +19937,63 @@ section.product .product__block--company .product__block-info-actions {
   }
 }
 
-.company-profile #produktai #apie-mus {
+.company-profile #apie-mus {
   margin-top: 60px;
 }
 
-.company-profile #produktai #apie-mus p {
+.company-profile #apie-mus p {
   margin-right: 160px;
 }
 
-.company-profile #produktai #apie-mus .company-profile__about {
+.company-profile #apie-mus .company-profile__about {
   margin-top: 60px;
   -webkit-box-pack: initial;
       -ms-flex-pack: initial;
           justify-content: initial;
 }
 
-.company-profile #produktai #apie-mus .company-profile__about .company-profile__work-hours {
+.company-profile #apie-mus .company-profile__about .company-profile__work-hours {
   width: 20%;
 }
 
-.company-profile #produktai #apie-mus .company-profile__about .company-profile__work-hours .day::before {
+.company-profile #apie-mus .company-profile__about .company-profile__work-hours .day::before {
   margin-right: 10px;
 }
 
-.company-profile #produktai #apie-mus .company-profile__about .company-profile__work-hours table {
+.company-profile #apie-mus .company-profile__about .company-profile__work-hours table {
   font-size: 0.875rem;
 }
 
-.company-profile #produktai #apie-mus .company-profile__about .company-profile__work-hours table tr:last-child .day::before {
+.company-profile #apie-mus .company-profile__about .company-profile__work-hours table tr:last-child .day::before {
   color: #ff9954;
 }
 
-.company-profile #produktai #apie-mus .company-profile__about .company-profile__place {
+.company-profile #apie-mus .company-profile__about .company-profile__place {
   width: 60%;
   margin-left: 60px;
 }
 
-.company-profile #produktai #apie-mus .company-profile__about .company-profile__place h3 {
+.company-profile #apie-mus .company-profile__about .company-profile__place h3 {
   margin-bottom: 0;
 }
 
-.company-profile #produktai #apie-mus .company-profile__about .company-profile__place iframe {
+.company-profile #apie-mus .company-profile__about .company-profile__place iframe {
   min-width: 100%;
 }
 
-.company-profile #produktai #apie-mus .company-profile__about .company-profile__place .company-profile__place-info h4 {
+.company-profile #apie-mus .company-profile__about .company-profile__place .company-profile__place-info h4 {
   margin-top: 10px;
 }
 
-.company-profile #produktai #apie-mus .company-profile__about .company-profile__place .company-profile__place-info h4:first-of-type {
+.company-profile #apie-mus .company-profile__about .company-profile__place .company-profile__place-info h4:first-of-type {
   text-decoration: underline;
 }
 
-.company-profile #produktai #apie-mus .company-profile__about .company-profile__place .company-profile__place-info .distance {
+.company-profile #apie-mus .company-profile__about .company-profile__place .company-profile__place-info .distance {
   margin-top: 5px;
 }
 
-.company-profile #produktai #apie-mus .company-profile__about .company-profile__place .company-profile__place-info .distance::before {
+.company-profile #apie-mus .company-profile__about .company-profile__place .company-profile__place-info .distance::before {
   content: url(img/icons/veliavos-kelias-2.svg);
   width: 20px;
   height: 20px;
@@ -19969,13 +20004,13 @@ section.product .product__block--company .product__block-info-actions {
   position: relative;
 }
 
-.company-profile #produktai #apie-mus .company-profile__about .company-profile__place .company-profile__place-info .phone {
+.company-profile #apie-mus .company-profile__about .company-profile__place .company-profile__place-info .phone {
   margin-top: 5px;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
 }
 
-.company-profile #produktai #apie-mus .company-profile__about .company-profile__place .company-profile__place-info .phone::before {
+.company-profile #apie-mus .company-profile__about .company-profile__place .company-profile__place-info .phone::before {
   content: url(img/icons/telefonas-2.svg);
   width: 20px;
   height: 20px;
