@@ -706,6 +706,17 @@ function onDocumentReady() {
           "px";
       }
       $(".select2-results").css("width", dropdownWidth);
+
+      $(".services-list__aside .radio input[name='service[]']:checked")
+        .not(".js_ignore_mark")
+        .each(function () {
+          if (window.matchMedia("(max-width: 991px)").matches) {
+            $(".services-list__blocks").insertAfter($(this).closest(".radio"));
+          }
+        });
+      if (window.matchMedia("(min-width: 992px)").matches) {
+        $(".services-list__blocks").insertAfter(".services-list__aside");
+      }
     }, 100);
   });
 
@@ -1877,16 +1888,22 @@ function onDocumentReady() {
       $(this).addClass("hidden");
     });
 
-  $(".warning-popup .controls__table td").not(".js_ignore_mark").on("click", function() {
-    var activeRow = $(this).closest("tr");
-    activeRow.siblings("tr").removeClass("active");
-    activeRow.addClass("active");
-    $(".warning-popup__text-message textarea").val(activeRow.find("td .text").html());
-  })
+  $(".warning-popup .controls__table td")
+    .not(".js_ignore_mark")
+    .on("click", function () {
+      var activeRow = $(this).closest("tr");
+      activeRow.siblings("tr").removeClass("active");
+      activeRow.addClass("active");
+      $(".warning-popup__text-message textarea").val(
+        activeRow.find("td .text").html()
+      );
+    });
 
-  $(".cart__reserve").not(".js_ignore_mark").on("click", function() {
-    $(this).closest(".cart").find(".confirm-overlay").fadeIn(300);
-  })
+  $(".cart__reserve")
+    .not(".js_ignore_mark")
+    .on("click", function () {
+      $(this).closest(".cart").find(".confirm-overlay").fadeIn(300);
+    });
 
   moveAction();
   moveOrder();

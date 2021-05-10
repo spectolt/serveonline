@@ -39,6 +39,12 @@
         flex-basis: 100%;
         margin-bottom: 15px;
       }
+
+      .input-icon{
+        background: url(img/icons/lock.svg) no-repeat scroll;
+        top: 5px;
+        left: 16px;
+      }
     }
     .login-details--pass {
       flex-basis: 24.5%;

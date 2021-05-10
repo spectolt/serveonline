@@ -271,18 +271,18 @@ $thisPage = "specialist-profile" ?>
                         <div class="login-details login-details--pass login-details--old-pass">
                             <p class="password--info">Naujas slaptažodis</p> 
                             <div class="input-container input-container--password-eye">
-                                <input type="password" name="login">
+                                <input type="password" name="login" value="1234">
                                 <span class="input-icon"></span>
                             </div>
                         </div>
                         <p class="password--info"  id="pass-info">Slaptažodis, ne mažiau 8 simbolių, kuriuos sudaro: skaičiai, raidės, bent viena didžioji raidė</p>
-                        <div class="login-details login-details--pass login-details--new-pass hidden">
+                        <!-- <div class="login-details login-details--pass login-details--new-pass hidden">
                             <p>Įveskite esamą slaptažodį</p>
                             <div class="input-container input-container--password-eye">
                                 <input type="password" name="login">
                                 <span class="input-icon input-icon--toggled-eye"></span>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- <button class="orange small change-login">Keisti prisijungimo duomenis</button> -->
                     </div>
                     <div class="cart__buttons company__button-container">

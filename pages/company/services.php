@@ -38,7 +38,7 @@
             <?php } ?>
         </div>
         <div class="services-list__blocks hidden">
-            <h4 class="services-list__notice">Sužymėkite paslaugas atliekamos Jūsų įstaigoje ir jos atsiras <b>Serve Professionals</b> sistemoje</h4>
+            <div class="services-list__notice"></div>
             <div class="services-list__block">
                 <h4><span>Paprastas kirpimas</span> <span class="more-button">Plačiau</span></h4>
                 <p class="more-description hidden">Galvos plovimas, modelinis kirpimas, dieninis sušukavimas.</p>

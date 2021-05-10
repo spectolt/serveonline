@@ -127,10 +127,12 @@
     flex-direction: column;
     padding: 30px;
     overflow: auto;
+    height: 370px;
 
     @include breakpoint(l) {
       padding: 0;
       // overflow: visible;
+      height: 450px;
     }
 
     @include breakpoint(sm) {

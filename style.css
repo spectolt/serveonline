@@ -184,7 +184,7 @@ button,
 }
 
 *:focus {
-  outline: none;
+  outline: thin dotted;
 }
 
 /**
@@ -590,7 +590,8 @@ input[type="reset"]:active,
 input[type="reset"]:focus,
 input[type="submit"]:active,
 input[type="submit"]:focus {
-  border-color: #aaa #bbb #bbb;
+  border-color: #aaa;
+  outline: thin dotted;
 }
 
 .button.orange,
@@ -3438,7 +3439,7 @@ div.services-list__aside {
   width: 200px;
   margin-right: 20px;
   margin-bottom: 40px;
-  padding-top: 36px;
+  padding-top: 16px;
   position: -webkit-sticky;
   position: sticky;
   -ms-flex-item-align: start;
@@ -3452,6 +3453,7 @@ div.services-list__aside {
     margin-right: 0;
     margin-top: 0;
     position: relative;
+    padding-top: 0;
   }
 }
 
@@ -3467,6 +3469,13 @@ div.services-list__aside .checkbox label {
 div.services-list__aside label {
   padding-top: 5px;
   padding-bottom: 5px;
+}
+
+@media (max-width: 991px) {
+  div.services-list__aside label {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 }
 
 div.services-list__aside label:before, div.services-list__aside label:after {
@@ -3490,19 +3499,32 @@ div.services-list__aside .checkbox-wrapper.toggled .checkbox-children {
 div.services-list__aside .checkbox-children label {
   font-size: 0.875rem;
   width: calc(100% + 20px);
-  padding-left: 70px;
+  padding-left: 60px;
 }
 
 div.services-list__aside .checkbox-children label:before {
-  left: 50px;
+  left: 40px;
 }
 
 div.services-list__aside .checkbox-children label:after {
-  left: 54px;
+  left: 44px;
+}
+
+@media (max-width: 991px) {
+  div.services-list__aside .checkbox-children > .radio {
+    z-index: 1;
+  }
 }
 
 div.services-list__aside .checkbox-children > .radio input:checked + label {
   background-color: #f4f4f6;
+}
+
+@media (max-width: 991px) {
+  div.services-list__aside .checkbox-children > .radio input:checked + label {
+    -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.19);
+            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.19);
+  }
 }
 
 div.services-list input {
@@ -3521,23 +3543,42 @@ div.services-list__blocks {
   div.services-list__blocks {
     width: 100%;
     padding: 0 20px;
-    margin-top: 20px;
+    height: 100vh;
+    overflow: auto;
+  }
+  div.services-list__blocks::-webkit-scrollbar {
+    width: 8px;
+    border-width: 2px;
+  }
+  div.services-list__blocks::-webkit-scrollbar-thumb {
+    border-width: 2px;
   }
 }
 
-div.services-list__blocks h4.services-list__notice {
+div.services-list__blocks .services-list__notice {
   color: #e54651;
   font-weight: 400;
   margin-top: 0;
+  margin: 0;
+  padding: 20px 0 0;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: #fff;
+  width: calc(100% + 2px);
+  margin-left: -1px;
+  -webkit-box-shadow: 0 2px rgba(0, 0, 0, 0.19);
+          box-shadow: 0 2px rgba(0, 0, 0, 0.19);
 }
 
 @media (max-width: 991px) {
-  div.services-list__blocks h4.services-list__notice {
+  div.services-list__blocks .services-list__notice {
     display: none;
   }
 }
 
-div.services-list__blocks h4.services-list__notice b {
+div.services-list__blocks .services-list__notice b {
   text-transform: uppercase;
 }
 
@@ -4092,11 +4133,13 @@ div.services-list.services-list--company-profile .services-list__blocks {
           flex-direction: column;
   padding: 30px;
   overflow: auto;
+  height: 370px;
 }
 
 @media (max-width: 991px) {
   .timetable__container {
     padding: 0;
+    height: 450px;
   }
 }
 
@@ -16253,6 +16296,10 @@ section.product .product__block--company .product__block-info-actions {
   }
 }
 
+.company__tab#paslaugos {
+  padding-top: 20px;
+}
+
 .company__tab .company__info {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -19030,6 +19077,12 @@ section.product .product__block--company .product__block-info-actions {
         flex-basis: 100%;
     margin-bottom: 15px;
   }
+}
+
+.user-profile .company__container--login .login-details--name .input-icon {
+  background: url(img/icons/lock.svg) no-repeat scroll;
+  top: 5px;
+  left: 16px;
 }
 
 .user-profile .company__container--login .login-details--pass {
