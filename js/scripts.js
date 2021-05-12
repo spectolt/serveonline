@@ -1905,6 +1905,67 @@ function onDocumentReady() {
       $(this).closest(".cart").find(".confirm-overlay").fadeIn(300);
     });
 
+  // var slider = document.querySelector(".company__nav");
+  // sliderInit(slider);
+
+  // const sliders = $(".company__nav");
+  // console.log(sliders)
+
+  // const preventClick = (e) => {
+  //   e.preventDefault();
+  //   e.stopImmediatePropagation();
+  // }
+  // let isDown = false;
+  // let isDragged = false;
+  // let startX;
+  // let scrollLeft;
+
+  // slider.addEventListener("mousedown", e => {
+  //   isDown = true;
+  //   slider.classList.add("active");
+  //   startX = e.pageX - slider.offsetLeft;
+  //   scrollLeft = slider.scrollLeft;
+  // });
+  // slider.addEventListener("mouseleave", () => {
+  //   isDown = false;
+  //   slider.classList.remove("active");
+  // });
+  // slider.addEventListener("mouseup", (e) => {
+  //   isDown = false;
+  //   const elements = document.querySelectorAll("a");
+  //   if(isDragged){
+  //       for(let i = 0; i<elements.length; i++){
+  //             elements[i].addEventListener("click", preventClick);
+  //       }
+  //   }
+  //   else{
+  //       for(let i = 0; i<elements.length; i++){
+  //             elements[i].removeEventListener("click", preventClick);
+  //       }
+  //   }
+  //   slider.classList.remove("active");
+  //   isDragged =  false;
+  // });
+  // slider.addEventListener("mousemove", e => {
+  //   if (!isDown) return;
+  //   isDragged =  true;
+  //   e.preventDefault();
+  //   const x = e.pageX - slider.offsetLeft;
+  //   const walk = (x - startX) * 2;
+  //   slider.scrollLeft = scrollLeft - walk;
+  //   console.log(walk);
+  // });
+
+  slider = document.querySelector(".company__nav");
+  if($(".company__header--company .company__nav").length > 0) {
+    slider2 = document.querySelector(".company__header--company .company__nav");
+    sliderInit(slider2)
+  }
+
+  sliderInit(slider)
+  sliderInit(document.querySelector(".timetable__container"))
+  
+
   moveAction();
   moveOrder();
   changePadding();
@@ -1929,6 +1990,40 @@ function onDocumentReady() {
       otherPlans.find(".payment-plan__details").removeClass("toggled");
     }
   );
+}
+
+function sliderInit(slider) {
+  var mouseDown = false;
+  var startX, scrollLeft, scrollTop;
+
+  var startDragging = function (e) {
+    mouseDown = true;
+    startX = e.pageX - slider.offsetLeft;
+    startY = e.pageY - slider.offsetTop;
+    scrollLeft = slider.scrollLeft;
+    scrollTop = slider.scrollTop;
+  };
+  var stopDragging = function (event) {
+    mouseDown = false;
+  };
+
+  slider.addEventListener("mousemove", (e) => {
+    e.preventDefault();
+    if (!mouseDown) {
+      return;
+    }
+    const x = e.pageX - slider.offsetLeft;
+    const y = e.pageY - slider.offsetTop;
+    const scrollX = x - startX;
+    const scrollY = y - startY;
+    slider.scrollLeft = scrollLeft - scrollX;
+    slider.scrollTop = scrollTop - scrollY;
+  });
+
+  // Add the event listeners
+  slider.addEventListener("mousedown", startDragging, false);
+  slider.addEventListener("mouseup", stopDragging, false);
+  slider.addEventListener("mouseleave", stopDragging, false);
 }
 
 function hideSelected(value) {
@@ -2394,6 +2489,8 @@ function openTab() {
     });
   });
   tableHeight();
+  // sliderNav = document.querySelector(".company__nav");
+  // sliderInit(sliderNav);
 }
 
 function paymentLayout() {

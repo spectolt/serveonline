@@ -239,6 +239,7 @@
       padding: 0;
       position: relative;
       white-space: nowrap;
+      overflow-x: hidden;
 
       li {
         list-style: none;
@@ -316,11 +317,11 @@
       ul.company__nav {
         justify-content: space-between;
         padding-top: 40px;
-
+        
         @include breakpoint(sm) {
           // margin-top: 40px;
           // padding: 10px 0;
-          overflow-y: auto;
+          overflow-x: hidden;
           padding-left: 10px;
           padding-right: 10px;
 
@@ -853,6 +854,10 @@
     @include breakpoint(sm) {
       margin-top: 20px;
     }
+
+    &#paslaugos {
+      padding-top: 0;
+    }
   }
 
   &__tab {
@@ -866,7 +871,7 @@
     }
 
     &#paslaugos {
-      padding-top: 20px;
+      padding: 20px 20px 0;
     }
 
     .company__info {

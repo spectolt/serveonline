@@ -31,13 +31,13 @@ div.services-list {
     }
 
     label {
-      padding-top: 5px;
-      padding-bottom: 5px;
+      padding-top: 10px;
+      padding-bottom: 10px;
 
-      @include breakpoint(l) {
-        padding-top: 10px;
-        padding-bottom: 10px;
-      }
+      // @include breakpoint(l) {
+      //   padding-top: 10px;
+      //   padding-bottom: 10px;
+      // }
 
       &:before,
       &:after {
@@ -66,6 +66,18 @@ div.services-list {
 
       &:after {
         left: 44px;
+      }
+
+      @include breakpoint(l) {
+        padding-left: 50px;
+
+        &:before {
+          left: 30px;
+        }
+  
+        &:after {
+          left: 34px;
+        }
       }
     }
 

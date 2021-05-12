@@ -3467,15 +3467,8 @@ div.services-list__aside .checkbox label {
 }
 
 div.services-list__aside label {
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-
-@media (max-width: 991px) {
-  div.services-list__aside label {
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 div.services-list__aside label:before, div.services-list__aside label:after {
@@ -3508,6 +3501,18 @@ div.services-list__aside .checkbox-children label:before {
 
 div.services-list__aside .checkbox-children label:after {
   left: 44px;
+}
+
+@media (max-width: 991px) {
+  div.services-list__aside .checkbox-children label {
+    padding-left: 50px;
+  }
+  div.services-list__aside .checkbox-children label:before {
+    left: 30px;
+  }
+  div.services-list__aside .checkbox-children label:after {
+    left: 34px;
+  }
 }
 
 @media (max-width: 991px) {
@@ -4132,7 +4137,7 @@ div.services-list.services-list--company-profile .services-list__blocks {
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 30px;
-  overflow: auto;
+  overflow: hidden;
   height: 370px;
 }
 
@@ -15606,6 +15611,7 @@ section.product .product__block--company .product__block-info-actions {
   padding: 0;
   position: relative;
   white-space: nowrap;
+  overflow-x: hidden;
 }
 
 .company__header .company__nav li {
@@ -15693,7 +15699,7 @@ section.product .product__block--company .product__block-info-actions {
 
 @media (max-width: 700px) {
   .company__header--company ul.company__nav {
-    overflow-y: auto;
+    overflow-x: hidden;
     padding-left: 10px;
     padding-right: 10px;
   }
@@ -16283,6 +16289,10 @@ section.product .product__block--company .product__block-info-actions {
   }
 }
 
+.company .group__tab#paslaugos {
+  padding-top: 0;
+}
+
 .company__tab {
   border: 1px solid #e8e8e8;
   border-radius: 0 0 5px 5px;
@@ -16297,7 +16307,7 @@ section.product .product__block--company .product__block-info-actions {
 }
 
 .company__tab#paslaugos {
-  padding-top: 20px;
+  padding: 20px 20px 0;
 }
 
 .company__tab .company__info {
@@ -19150,7 +19160,7 @@ section.product .product__block--company .product__block-info-actions {
 }
 
 .user-profile .company__header ul.company__nav {
-  overflow-x: auto;
+  overflow-x: hidden;
 }
 
 .user-profile .company__header ul.company__nav::-webkit-scrollbar {
@@ -19159,7 +19169,7 @@ section.product .product__block--company .product__block-info-actions {
 
 @media (max-width: 1180px) {
   .user-profile .company__header ul.company__nav {
-    overflow-x: auto;
+    overflow-x: hidden;
   }
 }
 

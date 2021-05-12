@@ -97,14 +97,14 @@
   }
 
   .company__header ul.company__nav {
-    overflow-x: auto;
+    overflow-x: hidden;
 
     &::-webkit-scrollbar {
       height: 8px;
     }
 
     @include breakpoint(xl) {
-      overflow-x: auto;
+      overflow-x: hidden;
     }
   }
 
