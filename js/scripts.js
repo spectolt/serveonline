@@ -521,6 +521,8 @@ function onDocumentReady() {
           .first()
           .prop("checked", true);
       }
+
+      gotoTopPosition(document, window);
     });
 
   $(".site-header .site-header__item--search, .search-container__close")
@@ -720,6 +722,7 @@ function onDocumentReady() {
         .each(function () {
           if (window.matchMedia("(max-width: 991px)").matches) {
             $(".services-list__blocks").insertAfter($(this).closest(".radio"));
+            // gotoTopPosition(document, window);
           }
         });
       if (window.matchMedia("(min-width: 992px)").matches) {
@@ -1271,6 +1274,8 @@ function onDocumentReady() {
       if (window.matchMedia("(max-width: 991px)").matches) {
         $(".services-list__blocks").insertAfter($(this).closest(".radio"));
       }
+
+      gotoTopPosition(document, window);
     });
 
   $("input[type='number']")
@@ -1928,6 +1933,21 @@ function onDocumentReady() {
 
   sliderInit(document.querySelector(".timetable__container"));
 
+  $(".checkbox-children .radio label").not(".js_ignore_mark").on("click", function() {
+    if ($(this).siblings("input:checked").length > 0) {
+      $(this).siblings("input").on('click', function () {
+        $(this).prop('checked', false);
+        $(this).closest(".radio").siblings(".services-list__blocks").addClass("hidden");
+      });
+    } else {
+      $(this).siblings("input").on('click', function () {
+        $(this).prop('checked', true);
+        $(this).closest(".radio").siblings(".services-list__blocks").removeClass("hidden");
+      });
+    }
+    gotoTopPosition(document, window);
+  })
+
   moveAction();
   moveOrder();
   changePadding();
@@ -2450,11 +2470,14 @@ function openTab() {
           }
         });
       }
+      gotoTopPosition(document, window);
+      tableHeight();
+
+      if ($("body").height() < $(window).height()) {
+        $(".site-header").addClass("site-header--show");
+      }
     });
   });
-  tableHeight();
-  // sliderNav = document.querySelector(".company__nav");
-  // sliderInit(sliderNav);
 }
 
 function paymentLayout() {

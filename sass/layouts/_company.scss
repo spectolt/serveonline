@@ -806,7 +806,7 @@
     border: 1px solid $cyan;
     border-radius: 0 0 5px 5px;
 
-    @include breakpoint(sm) {
+    @include breakpoint(l) {
       width: calc(100% + 22px);
       margin-left: -11px;
     }

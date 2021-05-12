@@ -124,7 +124,7 @@ $thisPage = "specialist-profile" ?>
                     <?php } ?>
                 </section>
                 <section class="group__tab hidden" id="registraciju-istorija">
-                    <?php for ($i = 0; $i < 3; $i++) { ?>
+                    <?php for ($i = 0; $i < 4; $i++) { ?>
                         <div class="cart">
                             <div class="cart__header">
                                 <div class="cart__about cart__about--time">
@@ -138,9 +138,11 @@ $thisPage = "specialist-profile" ?>
                                 <?php if ($i == 0) { ?>
                                     <span class="cart__status cyan-text">Atliktas</span>
                                 <?php } else if ($i == 1) { ?>
-                                    <span class="cart__status orange-text">Atšauktas</span>
+                                    <span class="cart__status orange-text">Atšaukėte</span>
                                 <?php } else if ($i == 2) { ?>
                                     <span class="cart__status red-text">Neatvykote</span>
+                                <?php } else if ($i == 3) { ?>
+                                    <span class="cart__status black-text">Nepatvirtintas</span>
                                 <?php } ?>
                             </div>
                             <div class="cart__info">

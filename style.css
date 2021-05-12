@@ -1313,7 +1313,7 @@ textarea {
 
 .checkbox-wrapper.toggled .checkbox-children {
   margin: 0 0 20px 25px;
-  max-height: 999px;
+  max-height: 9999px;
   height: auto;
   -webkit-transition: max;
   transition: max;
@@ -5232,6 +5232,10 @@ div.services-list.services-list--company-profile .services-list__blocks {
 
 .cart .cart__status.red-text {
   color: #e54651;
+}
+
+.cart .cart__status.black-text {
+  color: #000;
 }
 
 .cart .cart .product-action__duration,
@@ -16224,7 +16228,7 @@ section.product .product__block--company .product__block-info-actions {
   border-radius: 0 0 5px 5px;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 991px) {
   .company__button-order {
     width: calc(100% + 22px);
     margin-left: -11px;

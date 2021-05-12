@@ -37,7 +37,7 @@
                 </div>
             <?php } ?>
         </div>
-        <div class="services-list__blocks hidden">
+        <div class="services-list__blocks hidden disable-scrollbars">
             <div class="services-list__notice"></div>
             <div class="services-list__block">
                 <h4><span>Paprastas kirpimas</span> <span class="more-button">Plačiau</span></h4>

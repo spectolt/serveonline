@@ -35,14 +35,16 @@
                     </div>
                     <div class="company__header company__header--company">
                         <h2>Grožio salonas 1</h2>
-                        <ul class="company__nav">
-                            <li class="active"><a href="#imones-bendra-informacija">Bendra informacija</a></li>
-                            <li><a href="#nuotraukos">Nuotraukos</a></li>
-                            <li><a href="#produktai">Produktai</a></li>
-                            <li><a href="#specialistai">Specialistai</a></li>
-                            <li><a href="#paslaugos">Paslaugos</a></li>
-                            <li><a href="#mokejimo-planai">Mokėjimo planai</a></li>
-                        </ul>
+                        <div class="company__nav-container">
+                            <ul class="company__nav">
+                                <li class="active"><a href="#imones-bendra-informacija">Bendra informacija</a></li>
+                                <li><a href="#nuotraukos">Nuotraukos</a></li>
+                                <li><a href="#produktai">Produktai</a></li>
+                                <li><a href="#specialistai">Specialistai</a></li>
+                                <li><a href="#paslaugos">Paslaugos</a></li>
+                                <li><a href="#mokejimo-planai">Mokėjimo planai</a></li>
+                            </ul>
+                        </div>
                     </div>
                     <?php require_once("company/company-info.php") ?>
                     <section class="company__tab hidden" id="nuotraukos">
