@@ -497,8 +497,9 @@ textarea {
   &.toggled {
     .checkbox-children {
       margin: 0 0 20px 25px;
-      max-height: 9999px;
+      max-height: 999px;
       height: auto;
+      transition: max;
     }
   }
 
@@ -524,7 +525,7 @@ textarea {
   }
 
   .checkbox-children {
-    height: 0;
+    // height: 0;
     max-height: 0px;
     overflow: hidden;
     transition: max-height 0.3s ease-in-out, height 0.3s ease-in-out,
