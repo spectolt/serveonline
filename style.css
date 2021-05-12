@@ -4138,7 +4138,7 @@ div.services-list.services-list--company-profile .services-list__blocks {
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 30px;
-  overflow: hidden;
+  overflow: auto;
   height: 370px;
 }
 
