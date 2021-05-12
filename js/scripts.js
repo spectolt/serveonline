@@ -1916,8 +1916,16 @@ function onDocumentReady() {
   slider = document.querySelector(".company__nav");
   slider2 = document.querySelector(".company__header--company .company__nav");
 
-  sliderInit(slider);
-  sliderInit(slider2);
+  if (
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    )
+  ) {
+  } else {
+    sliderInit(slider);
+    sliderInit(slider2);
+  }
+
   sliderInit(document.querySelector(".timetable__container"));
 
   moveAction();
