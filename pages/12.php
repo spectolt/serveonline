@@ -13,7 +13,7 @@ $thisPage = "specialist-profile" ?>
                         </div>
                         <div class="company__nav-container">
                             <ul class="company__nav">
-                                <li class="active"><a href="#krepselis">Krepšelis</a></li>
+                                <li class="active"><a href="#krepselis">Mano krepšelis</a></li>
                                 <li><a href="#registracijos">Rezervacijos</a></li>
                                 <li><a href="#registraciju-istorija">Rezervacijų istorija</a></li>
                                 <li><a href="#rekomendacijos">Rekomendacijos</a></li>

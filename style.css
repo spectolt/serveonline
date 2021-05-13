@@ -183,10 +183,6 @@ button,
   -webkit-appearance: button;
 }
 
-*:focus {
-  outline: thin dotted;
-}
-
 /**
  * Remove the inner border and padding in Firefox.
  */
@@ -544,10 +540,6 @@ a {
 
 a:hover, a:focus, a:active {
   color: #101b51;
-}
-
-a:focus {
-  outline: thin dotted;
 }
 
 a:hover, a:active {
@@ -1338,8 +1330,8 @@ textarea {
 .checkbox-wrapper .checkbox-children {
   max-height: 0px;
   overflow: hidden;
-  -webkit-transition: max-height 0.3s ease-in-out, height 0.3s ease-in-out, margin 0.3s ease-in-out;
-  transition: max-height 0.3s ease-in-out, height 0.3s ease-in-out, margin 0.3s ease-in-out;
+  -webkit-transition: max-height 0.3s ease-in-out, height 0.3s ease-in-out, margin 0.3s ease-in-out;
+  transition: max-height 0.3s ease-in-out, height 0.3s ease-in-out, margin 0.3s ease-in-out;
 }
 
 select {
@@ -3439,6 +3431,7 @@ div.services-list {
 div.services-list__aside {
   width: 200px;
   margin-right: 20px;
+  padding-left: 10px;
   margin-bottom: 40px;
   padding-top: 16px;
   position: -webkit-sticky;
@@ -3450,11 +3443,13 @@ div.services-list__aside {
 
 @media (max-width: 991px) {
   div.services-list__aside {
-    width: 100%;
+    width: calc(100% + 10px);
     margin-right: 0;
     margin-top: 0;
     position: relative;
     padding-top: 0;
+    margin-bottom: 20px;
+    margin-left: -10px;
   }
 }
 
@@ -5105,6 +5100,7 @@ div.services-list.services-list--company-profile .services-list__blocks {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  grid-gap: 10px;
 }
 
 .cart .cart__about--time-reservations .cart__time {
@@ -5171,6 +5167,7 @@ div.services-list.services-list--company-profile .services-list__blocks {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
     margin-bottom: 10px;
+    width: 100%;
   }
 }
 
@@ -9880,6 +9877,7 @@ body {
   scroll-behavior: smooth;
   cursor: default;
   width: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -15507,9 +15505,19 @@ section.product .product__block--company .product__block-info-actions {
           box-shadow: 0 3px 3px -2px rgba(0, 0, 0, 0.49);
 }
 
+@media (max-width: 1200px) {
+  .company__header {
+    width: calc(100% + 2 * 40px);
+    left: 0;
+    margin-left: -40px;
+  }
+}
+
 @media (max-width: 700px) {
   .company__header {
     padding: 30px 20px 0;
+    width: calc(100% + 2 * 10px);
+    margin-left: -10px;
   }
 }
 
@@ -15521,10 +15529,6 @@ section.product .product__block--company .product__block-info-actions {
 
 .company__header::-webkit-scrollbar {
   height: 8px;
-}
-
-.company__header li {
-  margin-right: 30px;
 }
 
 .company__header-content {
@@ -15645,6 +15649,10 @@ section.product .product__block--company .product__block-info-actions {
   margin-left: 5px;
 }
 
+.company__header .company__nav li:last-of-type {
+  margin-right: 5px;
+}
+
 @media (max-width: 700px) {
   .company__header .company__nav li {
     font-size: 0.875rem;
@@ -15671,12 +15679,6 @@ section.product .product__block--company .product__block-info-actions {
   border-bottom: none;
   margin-left: 0;
   overflow: auto;
-}
-
-@media (max-width: 1200px) {
-  .company__header--company {
-    width: calc(100vw - 80px);
-  }
 }
 
 @media (max-width: 700px) {
@@ -16313,7 +16315,7 @@ section.product .product__block--company .product__block-info-actions {
 }
 
 .company__tab#paslaugos {
-  padding: 20px 20px 0;
+  padding: 20px 10px 0;
 }
 
 .company__tab .company__info {
@@ -18807,7 +18809,7 @@ section.product .product__block--company .product__block-info-actions {
 }
 
 .specialist-profile .specialist-profile__choice--payment .choice-wrapper label:after {
-  left: calc(100% - 19px);
+  left: calc(100% - 13px);
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -19263,6 +19265,13 @@ section.product .product__block--company .product__block-info-actions {
 
 .user-profile__inputs-container .input-wrapper--phone {
   margin-right: 10px;
+}
+
+@media (max-width: 700px) {
+  .user-profile__inputs-container .input-wrapper--phone {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+  }
 }
 
 .user-profile__inputs-container .input-wrapper--age {

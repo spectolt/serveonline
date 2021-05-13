@@ -178,6 +178,10 @@
     .input-wrapper--phone {
       // flex-basis: 50%;
       margin-right: 10px;
+
+      @include breakpoint(sm) {
+        flex-basis: 50%;
+      }
     }
 
     .input-wrapper--age {

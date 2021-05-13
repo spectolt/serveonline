@@ -58,6 +58,7 @@
       &--time-reservations {
         flex-direction: column;
         align-items: flex-start;
+        grid-gap: 10px;
 
         .cart__time {
           display: flex;
@@ -105,6 +106,7 @@
       @include breakpoint(sm) {
         flex-basis: 100%;
         margin-bottom: 10px;
+        width: 100%;
       }
     }
 

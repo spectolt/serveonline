@@ -502,7 +502,8 @@ function onDocumentReady() {
       var wrapper = $(this).closest(".checkbox-wrapper");
       if (wrapper.hasClass("toggled")) {
         wrapper.removeClass("toggled");
-        wrapper.find(".radio input").prop("checked", false)
+        wrapper.find(".radio input").prop("checked", false);
+        wrapper.find(".services-list__blocks").addClass("hidden")
       }
     })
 
@@ -1948,6 +1949,15 @@ function onDocumentReady() {
     gotoTopPosition(document, window);
   })
 
+  $(".company__nav li a").not(".js_ignore_mark").on("click", function() {
+    if($(this).offset().left + $(this).width() > $(this).closest(".company__nav").width()) {
+      $(this).closest(".company__nav").scrollLeft($(this).closest(".company__nav").scrollLeft() + $(this).width())
+    } 
+    else if ($(this).offset().left < $(this).closest(".company__nav").offset().left) {
+      $(this).closest(".company__nav").scrollLeft($(this).closest(".company__nav").scrollLeft() - $(this).width())
+    }
+  })
+
   moveAction();
   moveOrder();
   changePadding();
@@ -1976,6 +1986,7 @@ function onDocumentReady() {
 
 function sliderInit(slider) {
   if ($(slider).length > 0) {
+    lastPos = 0;
     var mouseDown = false;
     var startX, scrollLeft, scrollTop;
 
@@ -1999,8 +2010,12 @@ function sliderInit(slider) {
       const y = e.pageY - slider.offsetTop;
       const scrollX = x - startX;
       const scrollY = y - startY;
-      slider.scrollLeft = scrollLeft - scrollX;
-      slider.scrollTop = scrollTop - scrollY;
+      // if (scrollX > lastPos + 10 || scrollX < lastPos - 10) {
+        slider.scrollLeft = scrollLeft - scrollX;
+      // } else {
+        slider.scrollTop = scrollTop - scrollY;
+      // }
+      lastPos = slider.scrollLeft;
     });
 
     // Add the event listeners
