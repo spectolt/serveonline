@@ -15610,8 +15610,8 @@ section.product .product__block--company .product__block-info-actions {
   left: 0;
   display: block;
   position: absolute;
-  background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #f4f4f6), color-stop(1%, rgba(255, 255, 255, 0)), to(#f4f4f6));
-  background-image: linear-gradient(to right, #f4f4f6 0, rgba(255, 255, 255, 0) 1% 99%, #f4f4f6 100%);
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #f4f4f6), color-stop(2%, rgba(255, 255, 255, 0)), to(#f4f4f6));
+  background-image: linear-gradient(to right, #f4f4f6 0, rgba(255, 255, 255, 0) 2% 98%, #f4f4f6 100%);
   pointer-events: none;
 }
 
