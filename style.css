@@ -4811,50 +4811,6 @@ div.services-list.services-list--company-profile .services-list__blocks {
   background-image: url("img/icons/cloud-orange.svg");
 }
 
-.photo-grid button.switch-image {
-  margin: 0 0 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-@media (max-width: 750px) {
-  .photo-grid button.switch-image {
-    margin: 10px auto 0;
-    font-size: 0.875rem;
-    width: 100%;
-    text-align: center;
-  }
-}
-
-.photo-grid button.switch-image::before {
-  content: "";
-  display: inline-block;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: transparent;
-  position: relative;
-  bottom: 0;
-  width: 22px;
-  height: 20px;
-  padding: 0;
-  margin-left: auto;
-  margin-right: 10px;
-  background-image: url("img/icons/switch-orange.svg");
-}
-
-@media (max-width: 750px) {
-  .photo-grid button.switch-image::before {
-    width: 18px;
-    height: 16px;
-    margin-left: 0;
-  }
-}
-
 .photo-grid ul {
   list-style-type: none;
   margin: 0;
@@ -16807,6 +16763,10 @@ section.product .product__block--company .product__block-info-actions {
     height: 16px;
     margin-left: 0;
   }
+}
+
+.company__tab .company__photos button.switch-image--toggled::before {
+  background-image: url("img/icons/switch-white.svg");
 }
 
 .company__tab .company__photos ul {

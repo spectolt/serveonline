@@ -1310,6 +1310,12 @@
             margin-left: 0;
           }
         }
+
+        &--toggled {
+          &::before {
+            background-image: url("img/icons/switch-white.svg");
+          }
+        }
       }
       ul {
         list-style-type: none;

@@ -1099,16 +1099,11 @@ function onDocumentReady() {
       }
     });
 
-  // var isSortable;
-  $("button.switch-image")
-    .not(".js_ignore_mark")
-    .on("click", function () {
-      var disabled = $("#sortable").sortable("option", "disabled");
-      if (disabled) {
-        $(this)
-          .siblings(".sortable")
+  // var isSortable = false;
+  $(".sortable")
           .sortable({
             tolerance: "pointer",
+            disabled: true,
             helper: "clone",
             sort: function (event, ui) {
               var $target = $(event.target);
@@ -1121,11 +1116,19 @@ function onDocumentReady() {
               }
             },
           });
+  $("button.switch-image")
+    .not(".js_ignore_mark")
+    .on("click", function () {
+      var disabled = $(this).siblings(".sortable").sortable("option", "disabled");
+      console.log(disabled)
+      $(this).toggleClass("switch-image--toggled transparent");
+      if (disabled) {
+        $(this).siblings(".sortable").sortable("enable");
         $(".sortable").disableSelection();
-        // isSortable = false;
+        // isSortable = true;
       } else {
         $(this).siblings(".sortable").sortable("disable");
-        // isSortable = true;
+        // isSortable = false;
       }
     });
 
