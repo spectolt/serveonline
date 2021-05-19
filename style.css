@@ -1330,8 +1330,8 @@ textarea {
 .checkbox-wrapper .checkbox-children {
   max-height: 0px;
   overflow: hidden;
-  -webkit-transition: max-height 0.3s ease-in-out, height 0.3s ease-in-out, margin 0.3s ease-in-out;
-  transition: max-height 0.3s ease-in-out, height 0.3s ease-in-out, margin 0.3s ease-in-out;
+  -webkit-transition: max-height 0.3s ease-in-out, height 0.3s ease-in-out, margin 0.3s ease-in-out;
+  transition: max-height 0.3s ease-in-out, height 0.3s ease-in-out, margin 0.3s ease-in-out;
 }
 
 select {
@@ -3488,7 +3488,7 @@ div.services-list__aside .checkbox-wrapper.toggled .checkbox-children {
 div.services-list__aside .checkbox-children label {
   font-size: 0.875rem;
   width: calc(100% + 20px);
-  padding-left: 60px;
+  padding-left: 65px;
 }
 
 div.services-list__aside .checkbox-children label:before {
@@ -3501,7 +3501,7 @@ div.services-list__aside .checkbox-children label:after {
 
 @media (max-width: 991px) {
   div.services-list__aside .checkbox-children label {
-    padding-left: 50px;
+    padding-left: 55px;
   }
   div.services-list__aside .checkbox-children label:before {
     left: 30px;
@@ -15772,7 +15772,7 @@ section.product .product__block--company .product__block-info-actions {
           box-sizing: border-box;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 880px) {
   .company__inputs-container {
     padding: 10px;
   }
@@ -15788,6 +15788,10 @@ section.product .product__block--company .product__block-info-actions {
     padding-left: 40px;
     height: 32px;
   }
+}
+
+.company__inputs-container select.select-input ~ span.select2-container .select2-selection__rendered {
+  padding-left: 50px;
 }
 
 .company__buttons {
@@ -16053,7 +16057,7 @@ section.product .product__block--company .product__block-info-actions {
   color: #101b51;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 880px) {
   .company__companies .company__inputs-companies input,
   .company__companies .company__inputs-companies .select2-container {
     width: 100%;
@@ -16067,7 +16071,7 @@ section.product .product__block--company .product__block-info-actions {
   width: 55% !important;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 880px) {
   .company__companies .company__inputs-companies .select2-container {
     width: 100% !important;
     margin-bottom: 0;
@@ -16093,6 +16097,7 @@ section.product .product__block--company .product__block-info-actions {
       -ms-flex-align: center;
           align-items: center;
   line-height: normal;
+  width: 100%;
 }
 
 .company__companies .company__inputs-companies .select2-container .select2-selection__arrow {
@@ -16665,7 +16670,7 @@ section.product .product__block--company .product__block-info-actions {
   display: flex;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 880px) {
   .company__tab .company__photos-button-container {
     margin: 0 auto;
     width: 100%;
@@ -16688,7 +16693,7 @@ section.product .product__block--company .product__block-info-actions {
   margin-right: 20px;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 880px) {
   .company__tab .company__photos button {
     margin-right: 5px;
     font-size: 0.875rem;
@@ -16715,7 +16720,7 @@ section.product .product__block--company .product__block-info-actions {
           align-items: center;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 880px) {
   .company__tab .company__photos button.upload-image, .company__tab .company__photos button.archive-image {
     padding: 8px 5px;
     width: 100%;
@@ -16738,7 +16743,7 @@ section.product .product__block--company .product__block-info-actions {
   margin-right: 10px;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 880px) {
   .company__tab .company__photos button.upload-image:before, .company__tab .company__photos button.archive-image:before {
     width: 18px;
     height: 16px;
@@ -16770,7 +16775,7 @@ section.product .product__block--company .product__block-info-actions {
           align-items: center;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 880px) {
   .company__tab .company__photos button.switch-image {
     margin: 10px auto 0;
     font-size: 0.875rem;
@@ -16796,7 +16801,7 @@ section.product .product__block--company .product__block-info-actions {
   background-image: url("img/icons/switch-orange.svg");
 }
 
-@media (max-width: 750px) {
+@media (max-width: 880px) {
   .company__tab .company__photos button.switch-image::before {
     width: 18px;
     height: 16px;
@@ -17022,7 +17027,6 @@ section.product .product__block--company .product__block-info-actions {
 @media (max-width: 700px) {
   .company__tab .company__payment-inputs {
     font-size: 1rem;
-    margin-bottom: 20px;
   }
 }
 
@@ -17107,6 +17111,7 @@ section.product .product__block--company .product__block-info-actions {
 
 .company__tab .company__payment .payment-plan {
   margin-bottom: 10px;
+  position: relative;
 }
 
 .company__tab .company__payment .payment-plan input {
@@ -18242,12 +18247,6 @@ section.product .product__block--company .product__block-info-actions {
   display: inline-block;
 }
 
-@media (max-width: 700px) {
-  .select-icons {
-    margin-bottom: 5px;
-  }
-}
-
 .time-inputs {
   background-color: #fff;
   display: -webkit-box;
@@ -18393,11 +18392,9 @@ section.product .product__block--company .product__block-info-actions {
   margin-bottom: 10px;
 }
 
-@media (max-width: 700px) {
-  .specialist-profile .input-wrapper--age .select2-container,
-  .specialist-profile .input-wrapper--experience .select2-container {
-    width: 100% !important;
-  }
+.specialist-profile .input-wrapper--age .select2-container,
+.specialist-profile .input-wrapper--experience .select2-container {
+  width: 100% !important;
 }
 
 @media (max-width: 700px) {
@@ -19238,13 +19235,20 @@ section.product .product__block--company .product__block-info-actions {
   margin-bottom: 30px;
 }
 
+@media (max-width: 991px) {
+  .user-profile__inputs-container .input-wrapper {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
 .user-profile__inputs-container .input-wrapper--user,
 .user-profile__inputs-container .input-wrapper--envelope {
   -ms-flex-preferred-size: 50.3%;
       flex-basis: 50.3%;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 991px) {
   .user-profile__inputs-container .input-wrapper--user,
   .user-profile__inputs-container .input-wrapper--envelope {
     -ms-flex-preferred-size: 100%;
@@ -19267,10 +19271,11 @@ section.product .product__block--company .product__block-info-actions {
   margin-right: 10px;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 991px) {
   .user-profile__inputs-container .input-wrapper--phone {
-    -ms-flex-preferred-size: 50%;
-        flex-basis: 50%;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    margin-right: 0;
   }
 }
 
@@ -19278,7 +19283,7 @@ section.product .product__block--company .product__block-info-actions {
   top: -2px;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 991px) {
   .user-profile__inputs-container .input-wrapper--age {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
@@ -19288,6 +19293,14 @@ section.product .product__block--company .product__block-info-actions {
 .user-profile__inputs-container .input-container--city {
   -ms-flex-preferred-size: calc(25% - 10px);
       flex-basis: calc(25% - 10px);
+}
+
+@media (max-width: 991px) {
+  .user-profile__inputs-container .input-container--city {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    margin: 0;
+  }
 }
 
 .user-profile__inputs-container .input-container--city .select2-selection--single .select2-selection__arrow b {

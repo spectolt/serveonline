@@ -61,7 +61,7 @@ div.services-list {
     .checkbox-children label {
       font-size: 0.875rem;
       width: calc(100% + 20px);
-      padding-left: 60px;
+      padding-left: 65px;
 
       &:before {
         left: 40px;
@@ -72,7 +72,7 @@ div.services-list {
       }
 
       @include breakpoint(l) {
-        padding-left: 50px;
+        padding-left: 55px;
 
         &:before {
           left: 30px;

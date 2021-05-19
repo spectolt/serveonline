@@ -157,11 +157,18 @@
     align-items: center;
     margin-bottom: 30px;
 
+    .input-wrapper {
+      @include breakpoint(l) {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+    }
+
     .input-wrapper--user,
     .input-wrapper--envelope {
       flex-basis: 50.3%;
 
-      @include breakpoint(sm) {
+      @include breakpoint(l) {
         flex-basis: 100%;
       }
     }
@@ -179,21 +186,27 @@
       // flex-basis: 50%;
       margin-right: 10px;
 
-      @include breakpoint(sm) {
-        flex-basis: 50%;
+      @include breakpoint(l) {
+        flex-basis: 100%;
+        margin-right: 0;
       }
     }
 
     .input-wrapper--age {
       top: -2px;
 
-      @include breakpoint(sm) {
+      @include breakpoint(l) {
         flex-basis: 100%;
       }
     }
 
     .input-container--city {
       flex-basis: calc(25% - 10px);
+
+      @include breakpoint(l) {
+        flex-basis: 100%;
+        margin: 0;
+      }
 
       .select2-selection--single .select2-selection__arrow b {
         right: 10px;
