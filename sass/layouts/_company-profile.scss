@@ -520,14 +520,47 @@
 
   #apie-mus {
     margin-top: 60px;
+
+    @include breakpoint(sm){
+      margin-top: 30px;
+    }
     p {
       margin-right: 160px;
+
+      @include breakpoint(sm){
+        margin-left: 10px;
+        margin-right: 0px;
+        font-size: 0.875rem;
+      }
     }
     .company-profile__about {
       margin-top: 60px;
       justify-content: initial;
+
+      @include breakpoint(1470px){
+        flex-direction: column;
+      }
+
+      @include breakpoint(sm){
+        margin-top: 40px;
+        flex-direction: column;
+      }
+
       .company-profile__work-hours {
         width: 20%;
+
+        @include breakpoint(1470px){
+          width: 50%;
+        }
+
+        @include breakpoint(sm){
+          width: 62%;
+          margin-left: 10px;
+          h3{
+            font-weight: 500;
+          }
+        }
+
         .day {
           &::before {
             margin-right: 10px;
@@ -545,15 +578,31 @@
       .company-profile__place {
         width: 60%;
         margin-left: 60px;
+
+        @include breakpoint(sm){
+          margin-left: 10px;
+          font-weight: 500;
+        }
+
         h3 {
           margin-bottom: 0;
         }
         iframe {
           min-width: 100%;
+
+          @include breakpoint(sm){
+            margin-top: 10px;
+          }
         }
         .company-profile__place-info {
           h4 {
             margin-top: 10px;
+
+            @include breakpoint(sm){
+              margin-top: 15px;
+              margin-bottom: 0;
+            }
+
             &:first-of-type {
               text-decoration: underline;
             }
@@ -569,12 +618,23 @@
               top: 6px;
               left: 2px;
               position: relative;
+
+              @include breakpoint(sm){
+                width: 15px;
+                height: 15px;
+                top: 4px;
+              }
             }
           }
           .phone {
             margin-top: 5px;
             font-family: "Roboto", sans-serif;
             font-weight: 500;
+
+            @include breakpoint(sm){
+              font-size: 0.875rem;
+            }
+            
             &::before {
               content: url(img/icons/telefonas-2.svg);
               width: 20px;
@@ -584,8 +644,30 @@
               top: 6px;
               left: 2px;
               position: relative;
+
+              @include breakpoint(sm){
+                width: 17px;
+                height: 17px;
+                top: 4px;
+              }
             }
           }
+
+          @include breakpoint(sm){
+            margin-left: 10px;
+            flex-direction: column;
+          }
+        }
+
+        @include breakpoint(1470px){
+          margin-left: 0;
+          width: 100%;
+        }
+
+        @include breakpoint(sm){
+          margin-left: 0;
+          width: 100%;
+          margin-top: 10px;
         }
       }
     }

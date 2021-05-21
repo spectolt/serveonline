@@ -35,7 +35,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                 <?php } ?>
             </ul>
         </div>
-        <div class="page-content__wrapper">
+        <div class="page-content__wrapper page-content__wrapper--register">
             <section class="product">
                 <div class="product__header">
                     <h1 class="title">Registruokis</h1>

@@ -1,0 +1,222 @@
+.page-content__wrapper--register {
+  padding-top: 50px;
+  margin-left: 100px;
+
+  @include breakpoint(sm) {
+    margin-left: 0;
+    padding-top: 40px;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .product__header {
+    margin-bottom: 55px;
+
+    @include breakpoint(sm) {
+      margin-bottom: 25px;
+    }
+    h1 {
+      @include breakpoint(sm) {
+        font-size: 1.5rem;
+      }
+    }
+    .product__nav {
+      width: 335px;
+
+      @include breakpoint(sm) {
+        width: 277px;
+      }
+    }
+  }
+
+  .product__block--company {
+    @include breakpoint(sm) {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+  }
+
+  .product__block-top {
+    width: 100%;
+
+    @include breakpoint(sm) {
+      flex-direction: column;
+    }
+
+    .product__block-photo {
+      @include breakpoint(sm) {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .product__block-like-status{
+        left: 10px;
+        top: 10px;
+        @include breakpoint(sm){
+          left: 5px;
+          top: 5px;
+        }
+      }
+    }
+
+    .product__block-info {
+      h2 {
+        font-size: 1.625rem;
+        font-weight: 800;
+
+        @include breakpoint(sm) {
+          font-size: 1.5rem;
+        }
+      }
+      .product__block-address {
+        justify-content: space-between;
+        &:before {
+          width: 0;
+          height: 0;
+          background-image: none;
+        }
+        a {
+          position: relative;
+          left: -65px;
+          font-family: "Sen", sans-serif;
+          font-weight: bold;
+          font-size: 1.125rem;
+
+          @include breakpoint(sm) {
+            left: 0;
+            font-size: 1rem;
+          }
+        }
+        .product__block-distance {
+          font-size: 1rem;
+          &::before {
+            background-image: url(img/icons/veliavos-kelias-2.svg);
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            margin-right: 10px;
+            left: 2px;
+            position: relative;
+
+            @include breakpoint(sm) {
+              width: 15px;
+              height: 16px;
+            }
+          }
+        }
+
+        @include breakpoint(sm) {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+      .product__block-bottom {
+        .product__block-info-phone {
+          @include breakpoint(sm) {
+            font-size: 0.875rem;
+            font-weight: 500;
+          }
+
+          &:before {
+            content: url(img/icons/telefonas-2.svg);
+            width: 19px;
+            height: 19px;
+            display: inline-block;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            top: 4px;
+            position: relative;
+
+            @include breakpoint(sm) {
+              width: 17px;
+              height: 18px;
+              margin-right: 10px;
+              margin-bottom: 10px;
+            }
+          }
+        }
+        .product__block-info-hours {
+          @include breakpoint(sm) {
+            font-size: 0.875rem;
+            font-weight: 500;
+          }
+
+          &:before {
+            content: url(img/icons/laikrodis-2.svg);
+            width: 19px;
+            height: 19px;
+            display: inline-block;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            top: 4px;
+            position: relative;
+
+            @include breakpoint(sm) {
+              width: 17px;
+              height: 17px;
+              margin-right: 10px;
+            }
+          }
+        }
+        .product__block-last-hour {
+          color: $red;
+          font-weight: 500;
+
+          @include breakpoint(sm) {
+            font-size: 0.875rem;
+          }
+
+          .time-left {
+            color: white;
+            background-color: #e54651;
+            padding: 0px 8px;
+            border-radius: 20px;
+            font-size: 1rem;
+          }
+        }
+        .product__block-info-actions {
+          .product__block-like--active {
+            height: 35px;
+            width: 95px;
+            margin-bottom: 18px;
+
+            @include breakpoint(sm) {
+              margin-bottom: 0;
+              margin-left: 0;
+              margin-right: 20px;
+            }
+          }
+          .product__block-like--greyed-out {
+            height: 35px;
+            width: 95px;
+            margin-bottom: 18px;
+
+            @include breakpoint(sm) {
+              margin-bottom: 0;
+              margin-left: 0;
+              margin-right: 20px;
+            }
+          }
+          .product__block-more {
+            height: 35px;
+            width: 95px;
+          }
+
+          @include breakpoint(sm) {
+            margin-top: 20px;
+            flex-direction: unset;
+          }
+        }
+
+        @include breakpoint(sm) {
+          flex-direction: column;
+          align-items: baseline;
+        }
+      }
+
+      @include breakpoint(sm) {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -42,7 +42,7 @@
                             <h4>Grynais ir kortele</h4>
                             <p>Atsiskaitymas vietoje</p>
                         </div>
-                        <div class="details__item details__item--payment">
+                        <div class="details__item details__item--last-hour">
                             <h4>-10% <span>02:02:05</span></h4>
                             <p>Paskutinės valandos pasiūlymas</p>
                         </div>
@@ -103,8 +103,8 @@
                         <div class="specialist__datepicker js-datepicker">
 
                         </div>
-                    </div>
-                    <table class="calendar disable-scrollbars disable-scrollbars::-webkit-scrollbar">
+                        <hr>
+                        <table class="calendar disable-scrollbars disable-scrollbars::-webkit-scrollbar">
                         <thead>
                             <tr>
                                 <th class="today">Pr<small>Lap30</small></th>
@@ -171,6 +171,7 @@
                     <?php } ?>
 
                     </table>
+                    </div>
                     <div class="company__button-container">
                         <button>Saugoti krepšelyje</button>
                     </div>
