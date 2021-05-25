@@ -255,7 +255,7 @@ function onDocumentReady() {
             }
           }, 1);
         },
-      });
+      }).datepicker("setDate", new Date());
 
     $(".product__nav-input")
       .not(".js_ignore_mark")
@@ -1991,6 +1991,26 @@ function onDocumentReady() {
           );
       }
     });
+
+  $(".statistics__datepicker").not(".js_ignore_mark").datepicker({
+    showButtonPanel: true,
+    dateFormat: "yy M dd",
+    monthNamesShort: [
+      "Sausio",
+      "Vasario",
+      "Kovo",
+      "Balandžio",
+      "Gegužės",
+      "Birželio",
+      "Liepos",
+      "Rugpjūčio",
+      "Rugsėjo",
+      "Spalio",
+      "Lapkričio",
+      "Gruodžio",
+    ],
+
+  }).datepicker("setDate", new Date())
 
   moveAction();
   moveOrder();
