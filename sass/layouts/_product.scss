@@ -354,6 +354,10 @@ section.product {
       padding: 40px 0;
       border-top: 1px solid $lightgray;
 
+      @include breakpoint(sm){
+        padding-top: 20px;
+      }
+
       &-top {
         display: flex;
         align-items: flex-start;
@@ -626,7 +630,7 @@ section.product {
         }
         .product__block-photo {
           border-radius: 5px;
-          width: 300px;
+          width: 100%;
           overflow: hidden;
         }
         .product__block-info {

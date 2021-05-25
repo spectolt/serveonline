@@ -1495,6 +1495,8 @@
         @include breakpoint(sm) {
           font-size: 1rem;
           // margin-bottom: 20px;
+          height: 37px; 
+           margin-bottom: 15px;
         }
 
         input {

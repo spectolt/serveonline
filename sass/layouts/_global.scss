@@ -641,11 +641,16 @@ footer.container {
       &--sidebar {
         width: calc(100vw - 300px);
         $_padding: 40px;
+        $_padding-sm: 20px;
 
         .page-content__wrapper {
           width: 100%;
           padding: 0 $_padding;
           margin: 0;
+
+          @include breakpoint(sm) {
+            padding: 0 $_padding-sm;
+          }
         }
 
         .company__header--main {
@@ -655,6 +660,10 @@ footer.container {
 
           @include breakpoint(xl) {
             width: 100vw;
+          }
+
+          @include breakpoint(sm) {
+            left: -$_padding-sm;
           }
         }
       }

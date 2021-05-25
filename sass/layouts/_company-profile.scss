@@ -2,11 +2,11 @@
   .company__header {
     padding-top: 10px;
 
-    &--main {
-      @include breakpoint(sm) {
-        left: -10px !important;
-      }
-    }
+    // &--main {
+    //   @include breakpoint(sm) {
+    //     left: -10px !important;
+    //   }
+    // }
 
     .photo-slider {
       left: -30px;
@@ -672,6 +672,12 @@
       }
     }
   }
+
+  // table.calendar {
+  //   @include breakpoint(sm) {
+  //     width: calc(100% - 40px);
+  //   }
+  // }
 }
 
 .photo-slider {

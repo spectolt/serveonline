@@ -184,6 +184,14 @@
               margin-bottom: 0;
               margin-left: 0;
               margin-right: 20px;
+              height: 28px;
+              width: 78px;
+              font-size: 0.875rem;
+              padding-left: 30px;
+              padding-left: 30px;
+              &:before{
+                left: 7px;
+              }
             }
           }
           .product__block-like--greyed-out {
@@ -195,11 +203,24 @@
               margin-bottom: 0;
               margin-left: 0;
               margin-right: 20px;
+              height: 28px;
+              width: 78px;
+              font-size: 0.875rem;
+              padding-left: 30px;
+              &:before{
+                left: 7px;
+              }
             }
           }
           .product__block-more {
             height: 35px;
             width: 95px;
+            
+            @include breakpoint(sm){
+              height: 28px;
+              width: 70px;
+              font-size: 0.875rem;
+            }
           }
 
           @include breakpoint(sm) {

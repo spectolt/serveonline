@@ -55,7 +55,72 @@
                             </select>
                         </div>
                 </div>
-                    <div class="site-aside__item"><a href="#">Rezervacijos</a></div>
+                <div class="site-aside__item <?php if ($thisPage == "reservations") echo "site-aside__item--active site-aside__item--open"; ?>">
+                        <a href="#">Rezervacijos</a>
+                        <div class="site-aside__filters <?php if ($thisPage != "reservations") echo "hidden"; ?>">
+                            <p>Rezervacijos data nuo</p>
+                            <div class="site-aside__datepicker-container">
+                                <input class="site-aside__datepicker" placeholder="Nuo">
+                            </div>
+                            <p>Rezervacijos data iki</p>
+                            <div class="site-aside__datepicker-container">
+                                <input class="site-aside__datepicker" placeholder="Iki">
+                            </div>
+                            <p>Sritis</p>
+                            <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
+                                <option>Visi</option>
+                                <option>Klinikos ir estetinė medicina</option>
+                                <option>Odontologijos klinikos</option>
+                                <option>Veterinarijos klinikos</option>
+                                <option>Grožio salonai ir kirpyklos</option>
+                                <option>SPA ir masažo salonai</option>
+                                <option>Sportas ir reabilitacija</option>
+                            </select>
+                            <p>Šalis</p>
+                            <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
+                                <option>Lietuva</option>
+                                <option>Latvija</option>
+                            </select>
+                            <p>Pasl. gavėjo miestas</p>
+                            <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
+                                <option></option>
+                                <option>Visi</option>
+                                <option>Vilnius</option>
+                                <option>Kaunas</option>
+                                <option>Klaipėda</option>
+                            </select>
+                            <p>Specialisto gavėjo miestas</p>
+                            <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
+                                <option></option>
+                                <option>Visi</option>
+                                <option>Vilnius</option>
+                                <option>Kaunas</option>
+                                <option>Klaipėda</option>
+                            </select>
+                            <p>Paslauga</p>
+                            <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
+                                <option></option>
+                                <option>Visi</option>
+                                <option>Visų pl. dažymas ir modeliavimas</option>
+                                <option>Visų pl. dažymas ir modeliavimas</option>
+                                <option>Visų pl. dažymas ir modeliavimas</option>
+                            </select>
+                            <p>Pasl. gavėjo tipas (G/N)</p>
+                            <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
+                                <option></option>
+                                <option>Grįžęs klientas</option>
+                                <option>Naujas klientas</option>
+                            </select>
+                            <p>Būsena (P/A)</p>
+                            <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
+                                <option></option>
+                                <option>Patvirtintas</option>
+                                <option>Atšauktas</option>
+                                <option>Neatvyko</option>
+                                <option>Redaguotas</option>
+                            </select>
+                        </div>
+                    </div>
                     <div class="site-aside__item"><a href="#">Turi MANO sąrašą</a></div>
                     <div class="site-aside__item"><a href="#">Neturi MANO sąrašo</a></div>
             </div>

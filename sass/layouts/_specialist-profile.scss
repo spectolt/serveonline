@@ -78,6 +78,12 @@
     flex-basis: calc(30% - 20px);
     margin-right: 20px;
     // height: 35px;
+
+    @include breakpoint(890px){
+      .select2-selection__rendered.select2-selection__rendered{
+        padding-left: 50px;
+      }
+    }
   }
 
   .input-wrapper--age,
@@ -85,6 +91,10 @@
     flex-basis: calc(30% - 20px);
     margin-bottom: 10px;
     // height: 35px;
+
+    @include breakpoint(745px){
+      flex-basis: calc(32% - 20px);
+    }
 
     .select2-container {
       // @include breakpoint(sm) {
@@ -131,6 +141,16 @@
     }
 
     &--language {
+      @include breakpoint(1050px) {
+        flex-basis: calc(45% - 20px);
+        margin-right: 20px;
+      }
+
+      @include breakpoint(800px) {
+        flex-basis: calc(50% - 20px);
+        margin-right: 20px;
+      }
+
       @include breakpoint(sm) {
         flex-basis: calc(50% - 10px);
         margin-right: 10px;
