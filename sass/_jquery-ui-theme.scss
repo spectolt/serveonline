@@ -1275,9 +1275,15 @@ a.ui-button:active,
 }
 
 .product-expand {
+  padding: 0 10px 10px;
   position: absolute;
   right: 20px;
   top: 15px;
+  display: block;
+  cursor: pointer;
+
+  &::before {
+    content:"";
   display: block;
   width: 15px;
   height: 9px;
@@ -1286,7 +1292,11 @@ a.ui-button:active,
   background-repeat: no-repeat;
   background-image: url("img/icons/angle-down-bold.svg");
   transition: transform 0.3s ease-in-out;
-  cursor: pointer;
+  }
+
+  &.rotate::before {
+    transform: rotate(180deg);
+  }
 }
 
 .ui-datepicker {

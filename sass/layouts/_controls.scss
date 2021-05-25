@@ -1937,6 +1937,257 @@
   }
 }
 
+.report{
+  .controls__top{
+    @include breakpoint(880px){
+      justify-content: flex-end;
+    }
+    @include breakpoint(sm){
+      grid-template-columns: 1fr;
+      grid-gap: 10px;
+    }
+  }
+  .controls__buttons-container{
+    margin-right: 10px;
+    @include breakpoint(sm){
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 10px;
+      button{
+        width: 100%;
+      }
+    }
+    @include breakpoint(510px){
+      display: block;
+      .controls__button--pdf{
+        margin-bottom: 10px;
+      }
+    }
+  }
+  .controls__button--pdf::before {
+    background: url(img/icons/laiskas.svg) no-repeat center;
+    width: 20px;
+    height: 20px;
+    left: 9px;
+    top: 5px;
+  }
+
+  .controls__table{
+    th{
+      font-family: 'Roboto', sans-serif;
+    }
+    th{
+      vertical-align: middle;
+      padding-left: 10px;
+      &:first-of-type{
+        width: 27px;
+      } 
+      &:nth-of-type(2){
+        width: 206px;
+      }
+      &:nth-of-type(3){
+        width: 119px;
+      }
+      &:nth-of-type(4){
+        width: 113px;
+      }
+      &:nth-of-type(5){
+        width: 178px;
+      }
+      &:nth-of-type(6){
+        width: 141px;
+      }
+      &:nth-of-type(7){
+        width: 83px;
+      }
+      &:nth-of-type(8){
+        width: 102px;
+        text-align: left;
+      }
+      &:nth-of-type(9){
+        width: 100px;
+        text-align: left;
+      }
+      &:nth-of-type(10){
+        width: 101px;
+        text-align: left;
+      }
+      &:nth-of-type(11){
+        width: 63px;
+        text-align: left;
+      }
+      &:nth-of-type(12){
+        width: 81px;
+        text-align: left;
+      }
+      &:nth-of-type(13){
+        width: 110px;
+        text-align: left;
+      }
+      &:nth-of-type(14){
+        width: 79px;
+        text-align: left;
+      }
+      &:nth-of-type(15){
+        width: 78px;
+        text-align: left;
+      }
+      &:nth-of-type(16){
+        width: 89px;
+        text-align: left;
+      }
+      &:nth-of-type(17){
+        width: 85px;
+        text-align: left;
+      }
+      &:nth-of-type(18){
+        width: 64px;
+        text-align: left;
+      }
+      &:nth-of-type(19){
+        width: 58px;
+        text-align: left;
+      }
+      &:nth-of-type(20){
+        width: 44px;
+        text-align: left;
+      }
+      &:nth-of-type(21){
+        width: 62px;
+        text-align: left;
+      }
+      &:nth-of-type(22){
+        width: 95px;
+        text-align: left;
+      }
+      &:last-of-type{
+        width: 90px !important;
+        text-align: center;
+      }
+    }
+    td{
+      height: 31px;
+      vertical-align: middle;
+      &:first-of-type{
+        width: 27px;
+      } 
+      &:nth-of-type(2){
+        width: 206px;
+        text-align: left;
+      }
+      &:nth-of-type(3){
+        width: 119px;
+        text-align: left;
+      }
+      &:nth-of-type(4){
+        width: 113px;
+      }
+      &:nth-of-type(5){
+        width: 178px;
+      }
+      &:nth-of-type(6){
+        width: 141px;
+      }
+      &:nth-of-type(7){
+        width: 83px;
+      }
+      &:nth-of-type(8){
+        width: 52px;
+        text-align: center;
+      }
+      &:nth-of-type(9){
+        width: 49px;
+        text-align: center;
+      }
+      &:nth-of-type(10){
+        width: 52px;
+        text-align: center;
+      }
+      &:nth-of-type(11){
+        width: 49px;
+        text-align: center;
+      }
+      &:nth-of-type(12){
+        width: 52px;
+        text-align: center;
+      }
+      &:nth-of-type(13){
+        width: 49px;
+        text-align: center;
+      }
+      &:nth-of-type(14){
+        width: 63px;
+        text-align: center;
+      }
+      &:nth-of-type(15){
+        width: 81px;
+        text-align: center;
+      }
+      &:nth-of-type(16){
+        width: 110px;
+        text-align: center;
+      }
+      &:nth-of-type(17){
+        width: 79px;
+        text-align: center;
+      }
+      &:nth-of-type(18){
+        width: 78px;
+        text-align: center;
+      }
+      &:nth-of-type(19){
+        width: 89px;
+        text-align: center;
+      }
+      &:nth-of-type(20){
+        width: 85px;
+        text-align: center;
+      }
+      &:nth-of-type(21){
+        width: 64px;
+        text-align: center;
+      }
+      &:nth-of-type(22){
+        width: 58px;
+        text-align: center;
+      }
+      &:nth-of-type(23){
+        width: 44px;
+        text-align: center;
+      }
+      &:nth-of-type(24){
+        width: 62px;
+        text-align: center;
+      }
+      &:nth-of-type(25){
+        width: 95px;
+        text-align: center;
+      }
+      &:last-of-type{
+        width: 82px;
+        text-align: center;
+      }
+      .checkbox{
+        label{
+          &:before{
+            left: -5px;
+          }
+          &:after{
+            left: -1px;
+          }
+        }
+      }
+      
+    }
+    .left-arrow{
+      &:before{
+        top: 58%;
+        left: 82%;
+      }
+    }
+  }
+}
+
 .expand-button {
   width: 30px;
   height: 30px;

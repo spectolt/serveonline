@@ -1170,6 +1170,9 @@ function onDocumentReady() {
       } else {
         $(this).html("Plačiau");
       }
+      if( $(this).parent().siblings(".product-choice.hidden").length > 0 && $(this).parent().siblings(".more-description.hidden").length > 0 ) {
+        $(this).parent().siblings(".product-expand").trigger("click");
+      }
       $(this).parent().siblings(".more-description").toggleClass("hidden");
     });
 
@@ -1227,7 +1230,7 @@ function onDocumentReady() {
     });
 
   $(document).on("click", ".product-expand:not(.js_ignore_mark)", function () {
-    $(this).toggleClass("rotate-arrow");
+    $(this).toggleClass("rotate");
     $(this).siblings(".product-choice").toggleClass("hidden");
   });
 

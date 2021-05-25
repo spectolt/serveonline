@@ -184,7 +184,39 @@
             </div>
             <div class="site-aside__block">
                 <h3>Ataskaitos</h3>
-                    <div class="site-aside__item"><a href="#">Veiklos ataskaita</a></div>
+                <div class="site-aside__item <?php if ($thisPage == "report") echo "site-aside__item--active site-aside__item--open"; ?>">
+                        <a href="#">Veiklos ataskaita specialistui</a>
+                        <div class="site-aside__filters <?php if ($thisPage != "report") echo "hidden"; ?>">
+                            <p>Data</p>
+                            <div class="site-aside__datepicker-container">
+                                <input class="site-aside__datepicker" placeholder="Nuo">
+                            </div>
+                            <p>Data</p>
+                            <div class="site-aside__datepicker-container">
+                                <input class="site-aside__datepicker" placeholder="Iki">
+                            </div>
+                            <p>Sritis</p>
+                            <select data-placeholder="Pasirinkite" >
+                                <option>Visi</option>
+                                <option>Klinikos ir estetinė medicina</option>
+                                <option>Odontologijos klinikos</option>
+                                <option>Veterinarijos klinikos</option>
+                                <option>Grožio salonai ir kirpyklos</option>
+                                <option>SPA ir masažo salonai</option>
+                                <option>Sportas ir reabilitacija</option>
+                            </select>
+                            <p>Šalis</p>
+                            <select data-placeholder="Pasirinkite" >
+                                <option>Lietuva</option>
+                            </select>
+                            <p>Miestas</p>
+                            <select data-placeholder="Pasirinkite" >
+                                <option></option>
+                                <option>Visi</option>
+                                <option>Vilnius</option>
+                            </select>
+                        </div>
+                    </div>
                     <div class="site-aside__item"><a href="#">Paslaugų teikėjų mokėjimai</a></div>
             </div>
             <div class="site-aside__block">
