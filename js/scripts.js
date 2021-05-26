@@ -255,7 +255,8 @@ function onDocumentReady() {
             }
           }, 1);
         },
-      }).datepicker("setDate", new Date());
+      })
+      .datepicker("setDate", new Date());
 
     $(".product__nav-input")
       .not(".js_ignore_mark")
@@ -1170,7 +1171,10 @@ function onDocumentReady() {
       } else {
         $(this).html("Plačiau");
       }
-      if( $(this).parent().siblings(".product-choice.hidden").length > 0 && $(this).parent().siblings(".more-description.hidden").length > 0 ) {
+      if (
+        $(this).parent().siblings(".product-choice.hidden").length > 0 &&
+        $(this).parent().siblings(".more-description.hidden").length > 0
+      ) {
         $(this).parent().siblings(".product-expand").trigger("click");
       }
       $(this).parent().siblings(".more-description").toggleClass("hidden");
@@ -1992,25 +1996,220 @@ function onDocumentReady() {
       }
     });
 
-  $(".statistics__datepicker").not(".js_ignore_mark").datepicker({
-    showButtonPanel: true,
-    dateFormat: "yy M dd",
-    monthNamesShort: [
-      "Sausio",
-      "Vasario",
-      "Kovo",
-      "Balandžio",
-      "Gegužės",
-      "Birželio",
-      "Liepos",
-      "Rugpjūčio",
-      "Rugsėjo",
-      "Spalio",
-      "Lapkričio",
-      "Gruodžio",
-    ],
+  $(".statistics__datepicker")
+    .not(".js_ignore_mark")
+    .datepicker({
+      showButtonPanel: true,
+      dateFormat: "yy M dd",
+      monthNamesShort: [
+        "Sausio",
+        "Vasario",
+        "Kovo",
+        "Balandžio",
+        "Gegužės",
+        "Birželio",
+        "Liepos",
+        "Rugpjūčio",
+        "Rugsėjo",
+        "Spalio",
+        "Lapkričio",
+        "Gruodžio",
+      ],
+    })
+    .datepicker("setDate", new Date());
 
-  }).datepicker("setDate", new Date())
+  var clientsChart = [
+    {
+      x: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      y: [10, 20, 30, 30, 30, 25, 10, 20, 30, 30, 30, 25],
+      type: "bar",
+      displayModeBar: false,
+      showlegend: false,
+    },
+  ];
+
+  var config = {
+    responsive: true,
+    displayModeBar: false,
+    margin: { t: 0, l: 0, r: 0, b: 0 },
+    showlegend: false,
+  };
+
+  clientsPlot = document.querySelector(".stat-grid__client-plot");
+  Plotly.newPlot(clientsPlot, clientsChart, config);
+
+  // var donut1 = [
+  //   {
+  //     values: [105, 155],
+  //     labels: ["Sugrįžę klientai", "Vienkartiniai klientai"],
+  //     type: "pie",
+  //     textinfo: "label+value",
+  //     textposition: "outside",
+  //     automargin: true,
+  //     hole: .6,
+  //   },
+  // ];
+
+  clients1 = document.querySelector(".stat-grid__client-donut--comeback");
+  // var clientDonut1 = Plotly.newPlot(clients1, donut1, config);
+
+  // var donut2 = [
+  //   {
+  //     values: [20, 40, 60, 40],
+  //     labels: ["Vilnius", "Kaunas", "Klaipėda", "Panevėžys"],
+  //     type: "pie",
+  //     textinfo: "label+value",
+  //     textposition: "outside",
+  //     automargin: true,
+  //     hole: .6,
+  //   },
+  // ];
+
+  // clients2 = document.querySelector(".stat-grid__client-donut--cities");
+  // var clientDonut2 = Plotly.newPlot(clients2, donut2, config);
+
+  var donutData = [
+    {
+      domain: {column: 0},
+      values: [105, 155],
+      labels: ["Sugrįžę<br>klientai", "Vienkartiniai<br>klientai"],
+      type: "pie",
+      textinfo: "label+value",
+      textposition: "outside",
+      automargin: true,
+      hole: .6,
+    },
+    {
+      domain: {column: 1},
+      values: [20, 40, 60, 40],
+      labels: ["Vilnius", "Kaunas", "Klaipėda", "Panevėžys"],
+      type: "pie",
+      textinfo: "label+value",
+      textposition: "outside",
+      automargin: true,
+      hole: .6,
+    },
+    {
+      domain: {column: 2},
+      values: [60, 200],
+      labels: ["Vyrai", "Moterys"],
+      type: "pie",
+      textinfo: "label+value",
+      textposition: "outside",
+      automargin: true,
+      hole: .6,
+    }
+  ]
+
+  var donutLayout = {
+    annotations: [
+      {
+        font: {
+          size: 20
+        },
+        showarrow: false,
+        text: '260',
+        x: 0.135,
+        y: 0.5
+      },
+      {
+        font: {
+          size: 20
+        },
+        showarrow: false,
+        text: '260',
+        x: 0.5,
+        y: 0.5
+      },
+      {
+        font: {
+          size: 20
+        },
+        showarrow: false,
+        text: '260',
+        x: 0.87,
+        y: 0.5
+      }
+    ],
+    height: 200,
+    // width: 600,
+    showlegend: false,
+    margin: {"t": 0, "b": 0, "l": 0, "r": 0},
+    grid: {rows: 1, columns: 3}
+  }
+
+  Plotly.newPlot(clients1, donutData, donutLayout, config);
+
+  // var donut1 = document
+  //   .querySelector(".stat-grid__client-donut--comeback")
+  //   .getContext("2d");
+
+  // var dataClientsAll = {
+  //   labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+  //   datasets: [
+  //     {
+  //       data: [10, 20, 30, 30, 30, 25, 10, 20, 30, 30, 30, 25],
+  //       backgroundColor: "rgb(255, 99, 132)",
+  //       borderColor: "rgb(255, 99, 132)",
+  //     },
+  //   ],
+  // };
+
+  // var dataClients1 = {
+  //   labels: ["Sugrįžę klientai", "Vienkartiniai klientai"],
+  //   datasets: [
+  //     {
+  //       data: [155, 205],
+  //     },
+  //   ],
+  // };
+
+  // var configBar = {
+  //   type: "bar",
+  //   data: dataClientsAll,
+  //   options: {
+  //     responsive: true,
+  //     maintainAspectRatio: false,
+  //     scales: {
+  //       x: {
+  //         display: false,
+  //       },
+  //       y: {
+  //         display: false,
+  //       },
+  //     },
+  //     plugins: {
+  //       legend: {
+  //         display: false,
+  //       },
+  //     },
+  //   },
+  // };
+
+  // var config1 = {
+  //   type: "doughnut",
+  //   data: dataClients1,
+  //   options: {
+  //     responsive: true,
+  //     maintainAspectRatio: false,
+  //     scales: {
+  //       x: {
+  //         display: false,
+  //       },
+  //       y: {
+  //         display: false,
+  //       },
+  //     },
+  //     plugins: {
+  //       legend: {
+  //         display: false,
+  //       },
+  //     },
+  //   },
+  // };
+
+  // var clientsAllPlot = new Chart(clientsPlot, configBar);
+  // var clients1Plot = new Chart(donut1, config1);
 
   moveAction();
   moveOrder();

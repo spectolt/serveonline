@@ -22149,4 +22149,118 @@ section.product .product__block--company .product__block-info-actions {
   display: -ms-flexbox;
   display: flex;
 }
+
+.statistics .stat-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: 200px 200px 200px 300px;
+      grid-template-rows: 200px 200px 200px 300px;
+  grid-gap: 20px;
+}
+
+.statistics .stat-grid hr {
+  margin: 0;
+}
+
+.statistics .stat-grid h3 {
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.statistics .stat-grid__item {
+  background-color: #f4f4f6;
+}
+
+.statistics .stat-grid__item .up,
+.statistics .stat-grid__item .down {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.statistics .stat-grid__item .up::before,
+.statistics .stat-grid__item .down::before {
+  content: url("img/icons/arrow-up-white.svg");
+  display: block;
+  width: 10px;
+}
+
+.statistics .stat-grid__item .down::before {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.statistics .stat-grid__top {
+  height: 50%;
+  padding: 20px;
+}
+
+.statistics .stat-grid__top .right-align {
+  float: right;
+}
+
+.statistics .stat-grid__bottom {
+  padding: 20px;
+}
+
+.statistics .stat-grid__clients--all {
+  grid-column: span 2;
+}
+
+.statistics .stat-grid__clients--all .stat-grid__top {
+  position: relative;
+  padding: 40px 20px 0;
+}
+
+.statistics .stat-grid__clients--all .stat-grid__bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.statistics .stat-grid__clients--unique {
+  grid-column: span 4;
+}
+
+.statistics .stat-grid__clients--unique .stat-grid__bottom {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.statistics .stat-grid .modebar-container {
+  display: none !important;
+}
+
+.statistics .stat-grid .main-svg {
+  background-color: transparent !important;
+}
+
+.statistics .stat-grid .js-plotly-plot,
+.statistics .stat-grid .plot-container {
+  height: 60px;
+}
+
+.statistics .stat-grid__client-donut.js-plotly-plot,
+.statistics .stat-grid__client-donut .plot-container {
+  height: 200px;
+}
+
+.statistics .stat-grid__client-donut.js-plotly-plot {
+  width: 100%;
+}
 /*# sourceMappingURL=style.css.map */

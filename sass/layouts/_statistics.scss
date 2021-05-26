@@ -22,4 +22,108 @@
   &__date {
     display: flex;
   }
+
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 200px 200px 200px 300px;
+    grid-gap: 20px;
+
+    hr {
+      margin: 0;
+    }
+
+    h3 {
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__item {
+      background-color: $darkgray;
+
+      .up,
+      .down {
+        display: flex;
+        &::before {
+          content: url("img/icons/arrow-up-white.svg");
+          display: block;
+          width: 10px;
+        }
+      }
+
+      .down {
+        &::before {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    &__top {
+      height: 50%;
+      padding: 20px;
+
+      .right-align {
+        float: right;
+      }
+    }
+
+    &__bottom {
+      padding: 20px;
+    }
+
+    &__clients {
+      &--all {
+        grid-column: span 2;
+
+        .stat-grid__top {
+          // height: 100px;
+          position: relative;
+          padding: 40px 20px 0;
+        }
+
+        .stat-grid__bottom {
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+
+      &--unique {
+        grid-column: span 4;
+
+        .stat-grid__bottom {
+          height: 100%;
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+    }
+
+    .modebar-container {
+      display: none !important;
+    }
+
+    .main-svg {
+      background-color: transparent !important;
+    }
+
+    .js-plotly-plot,
+    .plot-container {
+      height: 60px;
+    }
+
+    &__client-donut {
+      &.js-plotly-plot,
+      .plot-container {
+        height: 200px;
+      }
+
+      &.js-plotly-plot {
+        width: 100%;
+      }
+
+      &--comeback {
+      }
+    }
+  }
 }
