@@ -630,8 +630,12 @@ section.product {
         }
         .product__block-photo {
           border-radius: 5px;
-          width: 100%;
+          width: 300px;
           overflow: hidden;
+
+          @include breakpoint(sm) {
+            width: 100%;
+          }
         }
         .product__block-info {
           width: auto;

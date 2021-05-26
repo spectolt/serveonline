@@ -12491,8 +12491,14 @@ section.product .product__block--company .product__block-top {
 
 section.product .product__block--company .product__block-photo {
   border-radius: 5px;
-  width: 100%;
+  width: 300px;
   overflow: hidden;
+}
+
+@media (max-width: 700px) {
+  section.product .product__block--company .product__block-photo {
+    width: 100%;
+  }
 }
 
 section.product .product__block--company .product__block-info {
