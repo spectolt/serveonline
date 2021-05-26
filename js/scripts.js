@@ -2036,37 +2036,11 @@ function onDocumentReady() {
   };
 
   clientsPlot = document.querySelector(".stat-grid__client-plot");
-  Plotly.newPlot(clientsPlot, clientsChart, config);
+  if (clientsPlot) {
+    Plotly.newPlot(clientsPlot, clientsChart, config);
+  }
 
-  // var donut1 = [
-  //   {
-  //     values: [105, 155],
-  //     labels: ["Sugrįžę klientai", "Vienkartiniai klientai"],
-  //     type: "pie",
-  //     textinfo: "label+value",
-  //     textposition: "outside",
-  //     automargin: true,
-  //     hole: .6,
-  //   },
-  // ];
-
-  clients1 = document.querySelector(".stat-grid__client-donut--comeback");
-  // var clientDonut1 = Plotly.newPlot(clients1, donut1, config);
-
-  // var donut2 = [
-  //   {
-  //     values: [20, 40, 60, 40],
-  //     labels: ["Vilnius", "Kaunas", "Klaipėda", "Panevėžys"],
-  //     type: "pie",
-  //     textinfo: "label+value",
-  //     textposition: "outside",
-  //     automargin: true,
-  //     hole: .6,
-  //   },
-  // ];
-
-  // clients2 = document.querySelector(".stat-grid__client-donut--cities");
-  // var clientDonut2 = Plotly.newPlot(clients2, donut2, config);
+  clients = document.querySelector(".stat-grid__client-donut");
 
   var donutData = [
     {
@@ -2138,78 +2112,9 @@ function onDocumentReady() {
     grid: {rows: 1, columns: 3}
   }
 
-  Plotly.newPlot(clients1, donutData, donutLayout, config);
-
-  // var donut1 = document
-  //   .querySelector(".stat-grid__client-donut--comeback")
-  //   .getContext("2d");
-
-  // var dataClientsAll = {
-  //   labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-  //   datasets: [
-  //     {
-  //       data: [10, 20, 30, 30, 30, 25, 10, 20, 30, 30, 30, 25],
-  //       backgroundColor: "rgb(255, 99, 132)",
-  //       borderColor: "rgb(255, 99, 132)",
-  //     },
-  //   ],
-  // };
-
-  // var dataClients1 = {
-  //   labels: ["Sugrįžę klientai", "Vienkartiniai klientai"],
-  //   datasets: [
-  //     {
-  //       data: [155, 205],
-  //     },
-  //   ],
-  // };
-
-  // var configBar = {
-  //   type: "bar",
-  //   data: dataClientsAll,
-  //   options: {
-  //     responsive: true,
-  //     maintainAspectRatio: false,
-  //     scales: {
-  //       x: {
-  //         display: false,
-  //       },
-  //       y: {
-  //         display: false,
-  //       },
-  //     },
-  //     plugins: {
-  //       legend: {
-  //         display: false,
-  //       },
-  //     },
-  //   },
-  // };
-
-  // var config1 = {
-  //   type: "doughnut",
-  //   data: dataClients1,
-  //   options: {
-  //     responsive: true,
-  //     maintainAspectRatio: false,
-  //     scales: {
-  //       x: {
-  //         display: false,
-  //       },
-  //       y: {
-  //         display: false,
-  //       },
-  //     },
-  //     plugins: {
-  //       legend: {
-  //         display: false,
-  //       },
-  //     },
-  //   },
-  // };
-
-  // var clientsAllPlot = new Chart(clientsPlot, configBar);
-  // var clients1Plot = new Chart(donut1, config1);
+  if (clients) {
+    Plotly.newPlot(clients, donutData, donutLayout, config);
+  }
 
   moveAction();
   moveOrder();
