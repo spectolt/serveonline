@@ -28,6 +28,10 @@ $thisPage = "reservations"; ?>
                             <thead>
                                 <tr>
                                     <th>
+                                        Registracijos data,
+                                        laikas
+                                    </th>
+                                    <th>
                                         Užsakymo
                                         <br>
                                         būsena
@@ -42,11 +46,7 @@ $thisPage = "reservations"; ?>
                                         <br>
                                         (6879)
                                     </th>
-                                    <th>
-                                        Miestas
-                                        <br>
-                                        (67)
-                                    </th>
+                                   
                                     <th>
                                         Specialistas
                                         <br>
@@ -63,14 +63,16 @@ $thisPage = "reservations"; ?>
                                         (19897)
                                     </th>
                                     <th>
+                                        Miestas
+                                        <br>
+                                        (67)
+                                    </th>
+                                    <th>
                                         Paslauga
                                         <br>
                                         (9897)
                                     </th>
-                                    <th>
-                                        Registracijos data,
-                                        laikas
-                                    </th>
+                                    
                                     <th>
                                         Suma
                                         <br>
@@ -79,26 +81,22 @@ $thisPage = "reservations"; ?>
                                     <th>
                                         G/N
                                     </th>
-                                    <th>
-                                        Būsena
-                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php for ($y = 0; $y < 15; $y++) { ?>
                                     <tr>
+                                        <td>2020 02 20 12:20</td>
                                         <td>Patvirtintas</td>
                                         <td>234567</td>
                                         <td>Vardas<br>Pavardė</td>
-                                        <td>Vilnius</td>
                                         <td>Vardas<br>Pavardė</td>
                                         <td>UAB "Brožio meistrų grupė"</td>
                                         <td>Grožio salonas 1</td>
+                                        <td>Vilnius</td>
                                         <td>Modelinis kirpimas, plovimas, fenavimas, dažymas sruogelėmis, atspalvio suteikimas</td>
-                                        <td>2020 02 20 12:20</td>
                                         <td>123.45</td>
                                         <td>G</td>
-                                        <td class="left-arrow">P</td>
                                     </tr>
                                 <?php } ?>
                             </tbody>

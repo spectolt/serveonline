@@ -55,15 +55,15 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                             <div class="product__block-top">
                                 <div class="product__block-photo">
                                     <div class="product__block-slider">
-                                        <img src="../img/Layer-2.png">
-                                        <img src="../img/Layer-2.png">
+                                        <img src="../img/photo-2.png">
+                                        <img src="../img/photo-1.png">
                                     </div>
                                     <div class="product__block-like-status hidden"></div>
                                 </div>
                                 <div class="product__block-info">
-                                    <h2>Grožio salonas Jos Kaprizai</h2>
+                                    <h2>Grožio salonas Jos Kaprizai Grožio salonas Jos Kaprizai</h2>
                                     <div class="product__block-address">
-                                        <a href="#">M. Valančiaus g. 23, Kaunas</a><br />
+                                        <a href="#">M. Valančiaus g. 23 M. Valančiaus g. 23, Kaunas</a><br />
                                         <div class="product__block-distance"><b>15 min</b> (5,6 km)</div>
                                     </div>
                                     <div class="product__block-bottom">

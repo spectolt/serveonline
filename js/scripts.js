@@ -1235,6 +1235,9 @@ function onDocumentReady() {
 
   $(document).on("click", ".product-expand:not(.js_ignore_mark)", function () {
     $(this).toggleClass("rotate");
+    if($(this).siblings(".more-description.hidden") = 0) {
+      $(this).siblings().find(".more-button").trigger("click");
+    }
     $(this).siblings(".product-choice").toggleClass("hidden");
   });
 
@@ -1876,9 +1879,19 @@ function onDocumentReady() {
   $(".photo-slider").not(".js_ignore_mark").not(".slick-initialized").slick({
     infinite: true,
     slidesToShow: 1,
-    centerMode: true,
+    centerMode: false,
     variableWidth: true,
     arrows: true,
+    responsive: [
+      {
+        breakpoint: 700,
+        settings: {
+          centerMode: true,
+          centerPadding: '40px',
+          slidesToShow: 1
+        }
+      },
+    ]
   });
 
   $(".product__block-slider")

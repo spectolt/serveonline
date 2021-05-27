@@ -111,7 +111,7 @@
                                 <option>Grįžęs klientas</option>
                                 <option>Naujas klientas</option>
                             </select>
-                            <p>Būsena (P/A)</p>
+                            <p>Užsakymo būsena</p>
                             <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
                                 <option></option>
                                 <option>Patvirtintas</option>

@@ -77,10 +77,11 @@
         }
         a {
           position: relative;
-          left: -65px;
+          // left: -65px;
           font-family: "Sen", sans-serif;
           font-weight: bold;
           font-size: 1.125rem;
+          flex-basis: 70%;
 
           @include breakpoint(sm) {
             left: 0;
@@ -220,6 +221,10 @@
               height: 28px;
               width: 70px;
               font-size: 0.875rem;
+            }
+
+            &:hover {
+              background-color: $orange;
             }
           }
 

@@ -508,6 +508,12 @@ section.product {
         }
       }
 
+      &-address {
+        &::before {
+          content: none;
+        }
+      }
+
       &-distance {
         &:before {
           display: none;
@@ -623,7 +629,7 @@ section.product {
       &--company {
         h2 {
           word-spacing: initial;
-          height: 2em;
+          height: 2.3em;
         }
         .product__block-top {
           flex-wrap: nowrap;

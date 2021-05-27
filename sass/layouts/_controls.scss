@@ -1862,6 +1862,7 @@
       grid-gap: 10px;
       button {
         width: 100%;
+        text-align: center;
       }
     }
   }
@@ -1873,16 +1874,16 @@
     td {
       vertical-align: middle;
       &:first-of-type {
-        width: 91px;
+        width: 89px;
       }
       &:nth-of-type(2) {
-        width: 74px;
+        width: 91px;
       }
       &:nth-of-type(3) {
-        width: 113px;
+        width: 74px;
       }
       &:nth-of-type(4) {
-        width: 85px;
+        width: 113px;
       }
       &:nth-of-type(5) {
         width: 114px;
@@ -1894,16 +1895,13 @@
         width: 140px;
       }
       &:nth-of-type(8) {
-        width: 247px;
+        width: 85px;
       }
       &:nth-of-type(9) {
-        width: 89px;
+        width: 247px;
       }
       &:nth-of-type(10) {
         width: 103px;
-      }
-      &:nth-of-type(11) {
-        width: 40px;
       }
       &:last-of-type {
         width: 65px;
@@ -1916,16 +1914,12 @@
       &:nth-of-type(7) {
         text-align: left;
       }
-      &:nth-of-type(9),
+      &:first-of-type,
       &:nth-of-type(11) {
         text-align: center;
       }
       &:nth-of-type(10) {
         text-align: right;
-      }
-      &:last-of-type {
-        width: 75px;
-        text-align: center;
       }
     }
     .left-arrow {

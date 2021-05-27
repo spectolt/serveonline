@@ -30,12 +30,17 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                             <div class="photo-slider">
                                 <div class="photo-slider__slide">
                                     <div class="photo-slider__slide-content">
-                                        <img src="../img/Layer-2.png">
+                                        <img src="../img/photo-1.png">
                                     </div>
                                 </div>
                                 <div class="photo-slider__slide">
                                     <div class="photo-slider__slide-content">
-                                        <img src="../img/Layer-2.png">
+                                        <img src="../img/photo-2.png">
+                                    </div>
+                                </div>
+                                <div class="photo-slider__slide">
+                                    <div class="photo-slider__slide-content">
+                                        <img src="../img/photo-3.png">
                                     </div>
                                 </div>
                             </div>
@@ -104,7 +109,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                                                 <p>Klinika “Lazerinė praktika”<br />
                                                     <a href="#">M. Valančiaus g. 23, Kaunas</a><br />
                                                 </p>
-                                                <div class="product__block-distance"><b>15 min</b> (5,6 km)</div>
+                                                <div class="product__block-distance distance"><b>15 min</b> (5,6 km)</div>
 
                                                 <div class="product__block-info-actions">
                                                     <button class="button small orange product__block-more">Plačiau</button>
