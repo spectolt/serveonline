@@ -440,7 +440,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                             <h3>Mus rasite</h3>
                             <div class="company-profile__place-info">
                                 <h4>M. Valančiaus g. 23, Kaunas</h4>
-                                <h4 class="distance">15min (5.6km)</h4>
+                                <h4 class="distance"><span class="orange">15min</span> (5.6km)</h4>
                                 <h4 class="phone">+370 000 00000</h4>
                             </div>
                             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d18437.91025396692!2d25.250708695385747!3d54.71421878262784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1slt!2slt!4v1619517592895!5m2!1slt!2slt" width="600" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>

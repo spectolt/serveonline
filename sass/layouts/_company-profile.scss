@@ -483,6 +483,7 @@
     .services-list__blocks {
       @include breakpoint(l) {
         height: 100%;
+        padding: 0;
       }
 
       @include breakpoint(sm) {
@@ -667,7 +668,9 @@
 
         h3 {
           margin-bottom: 0;
+          font-weight: 400;
         }
+
         iframe {
           min-width: 100%;
 
@@ -708,7 +711,12 @@
                 top: 4px;
               }
             }
+
             b {
+              color: $orange;
+            }
+
+            .orange {
               color: $orange;
             }
           }

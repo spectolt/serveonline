@@ -1235,10 +1235,10 @@ function onDocumentReady() {
 
   $(document).on("click", ".product-expand:not(.js_ignore_mark)", function () {
     $(this).toggleClass("rotate");
-    if($(this).siblings(".more-description.hidden") = 0) {
+    $(this).siblings(".product-choice").toggleClass("hidden");
+    if($(this).siblings(".more-description.hidden").length == 0) {
       $(this).siblings().find(".more-button").trigger("click");
     }
-    $(this).siblings(".product-choice").toggleClass("hidden");
   });
 
   $(".number-up")

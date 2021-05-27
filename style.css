@@ -20634,6 +20634,7 @@ section.product .product__block--company .product__block-info-actions {
 @media (max-width: 991px) {
   .company-profile #paslaugos .services-list__blocks {
     height: 100%;
+    padding: 0;
   }
 }
 
@@ -20850,6 +20851,7 @@ section.product .product__block--company .product__block-info-actions {
 
 .company-profile #apie-mus .company-profile__about .company-profile__place h3 {
   margin-bottom: 0;
+  font-weight: 400;
 }
 
 .company-profile #apie-mus .company-profile__about .company-profile__place iframe {
@@ -20902,6 +20904,10 @@ section.product .product__block--company .product__block-info-actions {
 }
 
 .company-profile #apie-mus .company-profile__about .company-profile__place .company-profile__place-info .distance b {
+  color: #ff9954;
+}
+
+.company-profile #apie-mus .company-profile__about .company-profile__place .company-profile__place-info .distance .orange {
   color: #ff9954;
 }
 
