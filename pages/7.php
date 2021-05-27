@@ -56,12 +56,12 @@
                         <div class="photo-slider">
                             <div class="photo-slider__slide">
                                 <div class="photo-slider__slide-content">
-                                    <img src="../img/Layer-2.png">
+                                    <img src="../img/photo-2.png">
                                 </div>
                             </div>
                             <div class="photo-slider__slide">
                                 <div class="photo-slider__slide-content">
-                                    <img src="../img/Layer-2.png">
+                                    <img src="../img/photo-1.png">
                                 </div>
                             </div>
                         </div>
@@ -73,107 +73,109 @@
 
                 </section>
                 <section class="group__tab" id="registruokis">
-                    <h3>Rezervuok nemokamai</h3>
-                    <div class="product__search input-wrapper">
-                        <input type="text" id="search-specialist" placeholder="Pasirinkite paslaugą">
-                    </div>
-                    <div class="product__chosen">
-                        <div class="autocomplete-product">
-                            <div class="product-action__info">
-                                <h3>Moterų kirpimas</h3>
-                                <h4>Vidutinio ilgio plaukai</h4>
-                                <div class="product-action__duration">01:00</div>
-                                <div class="product-action__price">45€<strike>60€</strike></div>
-                                <div class="product-action__periodicity">6 sav.</div>
+                    <div class="sticky">
+                        <h3>Rezervuok nemokamai</h3>
+                        <div class="product__search input-wrapper">
+                            <input type="text" id="search-specialist" placeholder="Pasirinkite paslaugą">
+                        </div>
+                        <div class="product__chosen">
+                            <div class="autocomplete-product">
+                                <div class="product-action__info">
+                                    <h3>Moterų kirpimas</h3>
+                                    <h4>Vidutinio ilgio plaukai</h4>
+                                    <div class="product-action__duration">01:00</div>
+                                    <div class="product-action__price">45€<strike>60€</strike></div>
+                                    <div class="product-action__periodicity">6 sav.</div>
+                                </div>
+                                <button class="product__chosen-trash"></button>
                             </div>
-                            <button class="product__chosen-trash"></button>
-                        </div>
-                        <div class="autocomplete-product">
-                            <div class="product-action__info">
-                                <h3>Moterų kirpimas</h3>
-                                <div class="product-action__duration">01:00</div>
-                                <div class="product-action__price">45€<strike>60€</strike></div>
-                                <div class="product-action__periodicity">6 sav.</div>
+                            <div class="autocomplete-product">
+                                <div class="product-action__info">
+                                    <h3>Moterų kirpimas</h3>
+                                    <div class="product-action__duration">01:00</div>
+                                    <div class="product-action__price">45€<strike>60€</strike></div>
+                                    <div class="product-action__periodicity">6 sav.</div>
+                                </div>
+                                <button class="product__chosen-trash"></button>
                             </div>
-                            <button class="product__chosen-trash"></button>
+                            <button class="product__chosen-add"></button>
                         </div>
-                        <button class="product__chosen-add"></button>
-                    </div>
-                    <div class="specialist__calendar-container">
-                        <div class="specialist__datepicker js-datepicker">
+                        <div class="specialist__calendar-container">
+                            <div class="specialist__datepicker js-datepicker">
 
+                            </div>
+                            <hr>
+                            <table class="calendar disable-scrollbars disable-scrollbars::-webkit-scrollbar">
+                                <thead>
+                                    <tr>
+                                        <th class="today">Pr<small>Lap30</small></th>
+                                        <th>An<small>Gru01</small></th>
+                                        <th class="active">Tr<small>Gru02</small></th>
+                                        <th>Kt<small>Gru03</small></th>
+                                        <th>Pn<small>Gru04</small></th>
+                                        <th>Še<small>Gru05</small></th>
+                                        <th>Se<small>Gru06</small></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php for ($i = 0; $i < 4; $i++) { ?>
+                                        <tr>
+                                            <td><?php if ($i === 3) { ?><p class="calendar__more-button">DAR</p><?php } else { ?> <p>09:15</p> <?php } ?></td>
+                                            <td>
+                                                <p></p>
+                                            </td>
+                                            <td class="calendar__selected-day">
+                                                <p>09:15</p>
+                                            </td>
+                                            <td>
+                                                <p>09:15</p>
+                                            </td>
+                                            <td>
+                                                <p>09:15</p>
+                                            </td>
+                                            <td>
+                                                <p>09:15</p>
+                                            </td>
+                                            <td>
+                                                <p>09:15</p>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            <?php } ?>
+
+                            <?php for ($i = 0; $i < 3; $i++) { ?>
+                                <tbody class="calendar__more-times calendar__more-times--hidden">
+                                    <tr>
+                                        <td>
+                                            <p>09:15</p>
+                                        </td>
+                                        <td>
+                                            <p></p>
+                                        </td>
+                                        <td class="calendar__selected-day">
+                                            <p>09:15</p>
+                                        </td>
+                                        <td>
+                                            <p>08:15</p>
+                                        </td>
+                                        <td>
+                                            <p>11:15</p>
+                                        </td>
+                                        <td>
+                                            <p>12:15</p>
+                                        </td>
+                                        <td>
+                                            <p>13:15</p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            <?php } ?>
+
+                            </table>
                         </div>
-                        <hr>
-                        <table class="calendar disable-scrollbars disable-scrollbars::-webkit-scrollbar">
-                        <thead>
-                            <tr>
-                                <th class="today">Pr<small>Lap30</small></th>
-                                <th>An<small>Gru01</small></th>
-                                <th class="active">Tr<small>Gru02</small></th>
-                                <th>Kt<small>Gru03</small></th>
-                                <th>Pn<small>Gru04</small></th>
-                                <th>Še<small>Gru05</small></th>
-                                <th>Se<small>Gru06</small></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php for ($i = 0; $i < 4; $i++) { ?>
-                                <tr>
-                                    <td><?php if ($i === 3) { ?><p class="calendar__more-button">DAR</p><?php } else { ?> <p>09:15</p> <?php } ?></td>
-                                    <td>
-                                        <p></p>
-                                    </td>
-                                    <td class="calendar__selected-day">
-                                        <p>09:15</p>
-                                    </td>
-                                    <td>
-                                        <p>09:15</p>
-                                    </td>
-                                    <td>
-                                        <p>09:15</p>
-                                    </td>
-                                    <td>
-                                        <p>09:15</p>
-                                    </td>
-                                    <td>
-                                        <p>09:15</p>
-                                    </td>
-                                </tr>
-                        </tbody>
-                    <?php } ?>
-
-                    <?php for ($i = 0; $i < 3; $i++) { ?>
-                        <tbody class="calendar__more-times calendar__more-times--hidden">
-                            <tr>
-                                <td>
-                                    <p>09:15</p>
-                                </td>
-                                <td>
-                                    <p></p>
-                                </td>
-                                <td class="calendar__selected-day">
-                                    <p>09:15</p>
-                                </td>
-                                <td>
-                                    <p>08:15</p>
-                                </td>
-                                <td>
-                                    <p>11:15</p>
-                                </td>
-                                <td>
-                                    <p>12:15</p>
-                                </td>
-                                <td>
-                                    <p>13:15</p>
-                                </td>
-                            </tr>
-                        </tbody>
-                    <?php } ?>
-
-                    </table>
-                    </div>
-                    <div class="company__button-container">
-                        <button>Saugoti krepšelyje</button>
+                        <div class="company__button-container">
+                            <button>Saugoti krepšelyje</button>
+                        </div>
                     </div>
                 </section>
             </section>

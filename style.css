@@ -20974,14 +20974,23 @@ section.product .product__block--company .product__block-info-actions {
 }
 
 .specialist {
-  -webkit-column-count: 2;
-          column-count: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-height: 1600px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 @media (max-width: 991px) {
   .specialist {
     -webkit-column-count: 1;
             column-count: 1;
+    display: block;
   }
 }
 
@@ -21074,6 +21083,8 @@ section.product .product__block--company .product__block-info-actions {
   width: 140% !important;
   right: 0 !important;
   left: auto !important;
+  z-index: 9999;
+  background-color: #fff;
 }
 
 @media (max-width: 991px) {
@@ -21096,7 +21107,15 @@ section.product .product__block--company .product__block-info-actions {
 }
 
 .specialist .company__header.company__header {
-  padding-right: 0;
+  width: 50%;
+}
+
+@media (max-width: 991px) {
+  .specialist .company__header.company__header {
+    width: calc(100% + 80px);
+    margin-left: -40px;
+    left: 0;
+  }
 }
 
 @media (max-width: 700px) {
@@ -21182,6 +21201,13 @@ section.product .product__block--company .product__block-info-actions {
 .specialist #apie-specialista {
   margin-top: 35px;
   margin-right: 30px;
+  width: 50%;
+}
+
+@media (max-width: 991px) {
+  .specialist #apie-specialista {
+    width: 100%;
+  }
 }
 
 @media (max-width: 700px) {
@@ -21552,6 +21578,18 @@ section.product .product__block--company .product__block-info-actions {
 
 .specialist #registruokis {
   margin-left: 30px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 50%;
+}
+
+@media (max-width: 991px) {
+  .specialist #registruokis {
+    margin-left: 0;
+    width: 100%;
+    position: relative;
+  }
 }
 
 @media (max-width: 700px) {
@@ -21664,9 +21702,11 @@ section.product .product__block--company .product__block-info-actions {
   width: 11px;
   height: 7px;
   background-repeat: no-repeat;
-  position: relative;
-  top: -38px;
-  right: -520px;
+  position: absolute;
+  right: 0;
+  left: auto;
+  z-index: 999;
+  top: 50%;
 }
 
 .specialist #registruokis .input-wrapper input {
@@ -21865,6 +21905,10 @@ section.product .product__block--company .product__block-info-actions {
     font-size: 1rem;
     margin-bottom: 5px;
   }
+}
+
+.specialist #registruokis .specialist__calendar-container .ui-datepicker-inline td span {
+  margin: 0 auto;
 }
 
 .specialist #registruokis .company__button-container, .specialist #registruokis .cart-container .cart__buttons, .cart-container .specialist #registruokis .cart__buttons {
