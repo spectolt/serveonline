@@ -16231,6 +16231,9 @@ section.product .product__block--company .product__block-info-actions {
 
 .company__header .company__nav-container {
   position: relative;
+  left: -10px;
+  right: -10px;
+  width: calc(100% + 10px);
 }
 
 .company__header .company__nav-container::after {
@@ -16278,11 +16281,11 @@ section.product .product__block--company .product__block-info-actions {
 }
 
 .company__header .company__nav li:first-of-type {
-  margin-left: 5px;
+  margin-left: 15px;
 }
 
 .company__header .company__nav li:last-of-type {
-  margin-right: 5px;
+  margin-right: 15px;
 }
 
 @media (max-width: 700px) {
