@@ -216,6 +216,7 @@
           .product__block-more {
             height: 35px;
             width: 95px;
+            transition: background-color .3s ease-in-out;
             
             @include breakpoint(sm){
               height: 28px;

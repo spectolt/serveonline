@@ -2,7 +2,7 @@ section.product {
   margin: 0 0 30px 0;
   width: 850px;
 
-  @include breakpoint(xs) {
+  @include breakpoint(900px) {
     width: 100%;
   }
 
@@ -13,7 +13,7 @@ section.product {
       justify-content: space-between;
       margin-bottom: 40px;
 
-      @include breakpoint(xs) {
+      @include breakpoint(900px) {
         flex-direction: column;
         margin-bottom: 20px;
       }
@@ -22,7 +22,7 @@ section.product {
         margin: 0;
         line-height: 1;
 
-        @include breakpoint(xs) {
+        @include breakpoint(900px) {
           margin-bottom: 20px;
         }
       }
@@ -35,7 +35,7 @@ section.product {
       justify-content: space-between;
       width: 370px;
 
-      @include breakpoint(xs) {
+      @include breakpoint(900px) {
         width: 90%;
       }
 
@@ -77,7 +77,7 @@ section.product {
         text-align: left;
         max-width: 20ch;
 
-        @include breakpoint(xs) {
+        @include breakpoint(900px) {
           font-size: 1.125rem;
         }
 
@@ -105,12 +105,12 @@ section.product {
           background-size: contain;
           cursor: pointer;
 
-          @include breakpoint(xs) {
+          @include breakpoint(900px) {
             margin-right: 10px;
             height: 28px;
           }
 
-          @include breakpoint(xs) {
+          @include breakpoint(900px) {
             margin-right: 4px;
             height: 18px;
           }
@@ -122,7 +122,7 @@ section.product {
         margin-bottom: 10px;
         justify-content: space-between;
 
-        @include breakpoint(xs) {
+        @include breakpoint(900px) {
           display: none;
         }
 
@@ -170,7 +170,7 @@ section.product {
       position: relative;
       display: none;
 
-      @include breakpoint(xs) {
+      @include breakpoint(900px) {
         padding: 20px 40px 20px 5px;
       }
 
@@ -188,7 +188,7 @@ section.product {
         height: 18px;
         padding: 0;
 
-        @include breakpoint(xs) {
+        @include breakpoint(900px) {
           right: 20px;
         }
       }
@@ -198,7 +198,7 @@ section.product {
         // margin: 10px 0 0 30px;
         // display: inline-block;
 
-        @include breakpoint(xs) {
+        @include breakpoint(900px) {
           margin: 10px auto 0;
           text-align: center;
           width: calc(100% + 30px);
@@ -226,7 +226,7 @@ section.product {
         padding: 10px 20px;
         margin-bottom: 10px;
 
-        @include breakpoint(xs) {
+        @include breakpoint(900px) {
           padding: 10px 10px;
         }
 
@@ -244,7 +244,7 @@ section.product {
           font-size: 1.125rem;
           margin-bottom: 5px;
 
-          @include breakpoint(xs) {
+          @include breakpoint(900px) {
             font-size: 0.875rem;
           }
         }
@@ -266,7 +266,7 @@ section.product {
           padding: 0;
           font-size: .875rem;
 
-          @include breakpoint(xs) {
+          @include breakpoint(900px) {
             margin-left: 10px;
           }
         }
@@ -281,7 +281,7 @@ section.product {
         &-duration {
           font-weight: 400;
 
-          @include breakpoint(xs) {
+          @include breakpoint(900px) {
             font-size: 0.875rem;
           }
 
@@ -298,7 +298,7 @@ section.product {
             position: relative;
             top: 2px;
 
-            @include breakpoint(xs) {
+            @include breakpoint(900px) {
               margin-right: 5px;
             }
           }
@@ -308,7 +308,7 @@ section.product {
             margin-left: 20px;
             color: $red;
 
-            @include breakpoint (xs) {
+            @include breakpoint (900px) {
               margin-left: 5px;
               padding-right: 0;
               font-family: 'Roboto', sans-serif;
@@ -341,7 +341,7 @@ section.product {
         height: 22px;
         padding: 0;
 
-        @include breakpoint(xs) {
+        @include breakpoint(900px) {
           right: -11px;
         }
       }
@@ -370,7 +370,7 @@ section.product {
         // width: 47%;
         width: 55%;
 
-        @include breakpoint(xs) {
+        @include breakpoint(900px) {
           width: 100%;
         }
       }
@@ -419,7 +419,7 @@ section.product {
         box-shadow: 0px 12px 29px 0px rgba(0, 0, 0, 0.35);
         margin-right: 20px;
 
-        @include breakpoint(xs) {
+        @include breakpoint(900px) {
           //max-width: 100%;
           //height: auto;
           // max-height: 160px;
@@ -441,12 +441,12 @@ section.product {
         line-height: 28px;
         // width: 23.5%;
 
-        @include breakpoint(xs) {
+        @include breakpoint(900px) {
           font-size: 0.875rem;
           line-height: 1.5;
         }
 
-        @include breakpoint(xxs) {
+        @include breakpoint(x900px) {
           font-size: .75rem;
         }
 
@@ -456,7 +456,7 @@ section.product {
           word-spacing: 999999px;
           margin: 0;
 
-          @include breakpoint(xxs) {
+          @include breakpoint(x900px) {
             font-size: 1rem;
           }
         }
@@ -465,7 +465,7 @@ section.product {
           display: block;
           margin-bottom: 10px;
 
-          @include breakpoint(xs) {
+          @include breakpoint(900px) {
             margin-bottom: 0;
           }
         }
@@ -482,11 +482,11 @@ section.product {
         &-actions {
           margin-top: 10px;
 
-          @include breakpoint(xs) {
+          @include breakpoint(900px) {
             margin: 20px auto;
           }
 
-          @include breakpoint(xs) {
+          @include breakpoint(900px) {
             margin: 20px auto 0;
           }
         }
@@ -560,7 +560,7 @@ section.product {
         margin-left: 20px;
         padding-left: 40px;
 
-        @include breakpoint(xs) {
+        @include breakpoint(900px) {
           //margin-left: 0px;
         }
 
@@ -620,7 +620,7 @@ section.product {
         width: 100%;
         margin: 20px 0 10px 0;
 
-        @include breakpoint(xs) {
+        @include breakpoint(900px) {
           text-align: center;
           margin: 20px auto 10px auto;
         }

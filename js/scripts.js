@@ -241,7 +241,7 @@ function onDocumentReady() {
           var offsetHeight = $(".product__list").offset();
           var offsetLeft = $(this).closest(".product__nav").offset();
           window.setTimeout(function () {
-            if (window.matchMedia("(max-width: 600px)").matches) {
+            if (window.matchMedia("(max-width: 900px)").matches) {
               $(inst.dpDiv).css({
                 left: "50%",
                 transform: "translateX(-50%)",
@@ -389,7 +389,7 @@ function onDocumentReady() {
       .not(".js_ignore_mark")
       .on("click", function () {
         var date = $(".product__nav-input").datepicker("getDate");
-        if (window.matchMedia("(max-width: 600px)").matches) {
+        if (window.matchMedia("(max-width: 900px)").matches) {
           date.setDate(date.getDate() + 1);
         } else {
           date.setDate(date.getDate() + 7);
@@ -405,7 +405,7 @@ function onDocumentReady() {
       .not(".js_ignore_mark")
       .on("click", function () {
         var date = $(".product__nav-input").datepicker("getDate");
-        if (window.matchMedia("(max-width: 600px)").matches) {
+        if (window.matchMedia("(max-width: 900px)").matches) {
           date.setDate(date.getDate() - 1);
         } else {
           date.setDate(date.getDate() - 7);
@@ -2269,7 +2269,7 @@ function changePadding() {
   } else if (window.matchMedia("(max-width: 500px)").matches) {
     timePadding = (windowWidth - 5.5 * timeWidth - margin) / 5;
     $(".calendar td").css("padding-right", timePadding);
-  } else if (window.matchMedia("(max-width: 600px)").matches) {
+  } else if (window.matchMedia("(max-width: 900px)").matches) {
     timePadding = (windowWidth - 6.5 * timeWidth - margin) / 6;
     $(".calendar td").css("padding-right", timePadding);
   } else {
@@ -2283,7 +2283,7 @@ function moveAction() {
     .not(".js_ignore_mark")
     .each(function () {
       if ($(this).closest(".product__block--company").length < 1) {
-        if (window.matchMedia("(max-width: 600px)").matches) {
+        if (window.matchMedia("(max-width: 700px)").matches) {
           var calendar = $(this)
             .closest(".product__block-person")
             .next(".calendar-container");
@@ -2302,7 +2302,7 @@ function moveOrder() {
   $(".product-action__order")
     .not(".js_ignore_mark")
     .each(function () {
-      if (window.matchMedia("(max-width: 600px)").matches) {
+      if (window.matchMedia("(max-width: 700px)").matches) {
         var actionInfo = $(this).prev(".product-action__info");
         $(actionInfo).append($(this));
       } else {

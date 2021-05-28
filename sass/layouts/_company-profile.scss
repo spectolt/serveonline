@@ -13,10 +13,11 @@
     }
 
     .photo-slider {
-      left: -35px;
+      left: -20px;
       // min-width: 1200px;
       min-width: calc(100vw - 325px);
       height: 400px;
+      transform: translateZ(0);
 
       @include breakpoint(xl) {
         min-width: calc(100vw - 20px);
@@ -61,7 +62,69 @@
         height: 100%;
       }
 
-      div { transition: none; }
+      div {
+        transition: none;
+      }
+
+      .slick-arrow {
+        background-color: $darkblue;
+        opacity: .8;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        transition: .3s opacity ease-in-out;
+
+        @include breakpoint(sm) {
+          font-size: 0;
+        }
+
+        &::before {
+          content: url("img/icons/angle-down-white-bold.svg");
+          display: block;
+          background: transparent;
+          margin: auto;
+
+          @include breakpoint(sm) {
+            width: 20px;
+            height: inherit;
+          }
+        }
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+      .slick-prev {
+        left: 20px;
+
+        &::before {
+          transform: rotate(90deg);
+          left: -3px;
+
+          @include breakpoint(sm) {
+            left: -8px;
+          }
+        }
+      }
+
+      .slick-next {
+        right: 20px;
+
+        &::before {
+          transform: rotate(-90deg);
+          left: 3px;
+
+          @include breakpoint(sm) {
+            left: 8px;
+          }
+        }
+      }
     }
 
     h2 {
@@ -80,12 +143,14 @@
         @include breakpoint(sm) {
           margin-bottom: 10px;
           width: 100%;
+          margin-left: 10px;
         }
 
         .company__header-phone {
-          margin-bottom: 15px;
+          margin-bottom: 10px;
           font-size: 1.125rem;
           font-weight: 500;
+          margin-top: 0;
 
           @include breakpoint(sm) {
             margin-top: 5px;
@@ -114,6 +179,8 @@
         .company__header-hours {
           font-size: 1.125rem;
           font-weight: 500;
+          margin-top: 10px;
+          margin-bottom: 15px;
 
           @include breakpoint(sm) {
             margin-top: 5px;
@@ -143,6 +210,7 @@
           font-size: 1.125rem;
           color: $red;
           font-weight: 900;
+          margin-top: 15px;
 
           @include breakpoint(xl) {
             margin-bottom: 20px;
@@ -222,6 +290,9 @@
           font-size: 2.8125rem;
           margin-top: 15px;
           margin-bottom: 20px;
+          margin-top: 0;
+          position: relative;
+          top: -15px;
 
           @include breakpoint(xl) {
             margin-bottom: 0;
@@ -229,6 +300,8 @@
 
           @include breakpoint(sm) {
             font-size: 1.47375rem;
+            position: unset;
+            top: unset;
           }
         }
       }
@@ -236,7 +309,7 @@
         // margin-left: 10px;
 
         @include breakpoint(sm) {
-          margin-left: 0;
+          margin-left: 20px;
           left: -8px;
         }
       }
@@ -248,7 +321,7 @@
         }
         @include breakpoint(sm) {
           right: 19px;
-          bottom: 40px;
+          bottom: 50px;
         }
 
         &__icon {
@@ -280,6 +353,8 @@
     }
 
     .product__header {
+      justify-content: flex-end;
+
       @include breakpoint(sm) {
         margin-bottom: 30px;
       }
@@ -339,8 +414,9 @@
           margin-bottom: 0;
         }
         .product__block-person {
-          @include breakpoint(970px) {
-            width: 100%;
+
+          @include breakpoint(900px) {
+            // width: 100%;
             margin-bottom: 30px;
           }
         }
@@ -383,7 +459,7 @@
 
     @include breakpoint(880px) {
       flex-direction: column;
-      bottom: 60px;
+      bottom: 115px;
     }
 
     &__icon {
@@ -393,7 +469,7 @@
       margin-right: 10px;
 
       @include breakpoint(880px) {
-        margin-bottom: 10px;
+        margin-bottom: 5px;
         margin-right: 0;
       }
 
@@ -452,7 +528,7 @@
   }
 
   #paslaugos {
-    margin-top: 45px;
+    margin-top: 50px;
 
     @include breakpoint(sm) {
       margin-top: 30px;
@@ -463,6 +539,7 @@
       font-weight: 700;
       margin-top: 25px;
       margin-bottom: 15px;
+      font-size: 1.5rem;
 
       @include breakpoint(sm) {
         margin-top: 30px;
@@ -472,7 +549,7 @@
     }
     h3 {
       font-weight: 400;
-      font-size: 1.5rem;
+      font-size: 1.125rem;
 
       @include breakpoint(sm) {
         font-size: 1rem;
@@ -568,13 +645,15 @@
     h2 {
       font-weight: 700;
       margin-bottom: 40px;
+      font-size: 1.5rem;
       // margin-left: 20px;
 
       @include breakpoint(sm) {
         font-weight: 400;
         font-size: 1.125rem;
-        margin-bottom: 20px;
-        margin-left: 10px;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        // margin-left: 10px;
       }
     }
 
@@ -583,10 +662,10 @@
         // margin-right: 130px;
         width: auto;
 
-        @include breakpoint(sm) {
-          margin-left: 10px;
-          margin-right: 10px;
-        }
+        // @include breakpoint(sm) {
+        //   margin-left: 10px;
+        //   margin-right: 10px;
+        // }
 
         li {
           margin-bottom: 10px;
@@ -606,11 +685,17 @@
     @include breakpoint(sm) {
       margin-top: 30px;
     }
+
+    h3{
+      font-size: 1.125rem;
+      font-weight: 400;
+    }
+
     p {
       // margin-right: 160px;
 
       @include breakpoint(sm) {
-        margin-left: 10px;
+        // margin-left: 10px;
         margin-right: 0px;
         font-size: 0.875rem;
       }
@@ -637,7 +722,7 @@
 
         @include breakpoint(sm) {
           width: 62%;
-          margin-left: 10px;
+          // margin-left: 10px;
           h3 {
             font-weight: 500;
           }
@@ -669,6 +754,7 @@
         h3 {
           margin-bottom: 0;
           font-weight: 400;
+          font-size: 1.125rem;
         }
 
         iframe {
@@ -748,7 +834,7 @@
           }
 
           @include breakpoint(sm) {
-            margin-left: 10px;
+            // margin-left: 10px;
             flex-direction: column;
           }
         }

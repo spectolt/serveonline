@@ -383,8 +383,9 @@
       .signature {
         text-align: right;
         font-family: 'Sacramento', sans-serif;
-        width: 100%;
+        // width: 100%;
         display: inline-block;
+        float: right;
       }
     }
   }
