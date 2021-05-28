@@ -169,14 +169,14 @@ function onDocumentReady() {
       this.text = text;
     };
     var eventDates = {};
-    eventDates[new Date("05/20/2021")] = new Event("Event01");
-    eventDates[new Date("01/12/2021")] = new Event("Event02");
-    eventDates[new Date("01/28/2021")] = new Event("Event02");
+    eventDates[new Date("06/20/2021")] = new Event("Event01");
+    eventDates[new Date("06/12/2021")] = new Event("Event02");
+    eventDates[new Date("06/28/2021")] = new Event("Event02");
 
     var availableDates = {};
-    availableDates[new Date("05/05/2021")] = new Date("05/05/2021");
-    availableDates[new Date("05/12/2021")] = new Date("05/12/2021");
-    availableDates[new Date("05/13/2021")] = new Date("05/13/2021");
+    availableDates[new Date("06/05/2021")] = new Date("06/05/2021");
+    availableDates[new Date("06/12/2021")] = new Date("06/12/2021");
+    availableDates[new Date("06/13/2021")] = new Date("06/13/2021");
 
     $(".js-datepicker")
       .not(".js_ignore_mark")

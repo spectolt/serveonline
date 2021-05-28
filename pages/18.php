@@ -93,12 +93,12 @@ $thisPage = "report"; ?>
                                     </th>
                                 </tr>
                                 <tr>
-                                    <th>vnt.</th>
-                                    <th>€</th>
-                                    <th>vnt.</th>
-                                    <th>€</th>
-                                    <th>vnt.</th>
-                                    <th>€</th>
+                                    <th class="bottom-arrow top-arrow">vnt.</th>
+                                    <th class="bottom-arrow top-arrow">€</th>
+                                    <th class="bottom-arrow top-arrow">vnt.</th>
+                                    <th class="bottom-arrow top-arrow">€</th>
+                                    <th class="bottom-arrow top-arrow">vnt.</th>
+                                    <th class="bottom-arrow top-arrow">€</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -137,35 +137,36 @@ $thisPage = "report"; ?>
                                     </tr>
                                 <?php } ?>
                             </tbody>
-                            <!-- <tfoot>
+                            <tfoot>
                                 <tr>
                                     <td></td>
+                                    <td>9999924</td>
                                     <td></td>
+                                    <td>9999924</td>
+                                    <td>9999924</td>
                                     <td></td>
+                                    <td>9999924</td>
+                                    <td>9999924</td>
+                                    <td>9999924</td>
+                                    <td>9999924</td>
+                                    <td>9999924</td>
+                                    <td>9999924</td>
+                                    <td>9999924</td>
+                                    <td>9999924</td>
+                                    <td>9999924</td>
+                                    <td>9999924</td>
+                                    <td>9999924</td>
                                     <td></td>
+                                    <td>9999924</td>
                                     <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>9999924</td>
+                                    <td>9999924</td>
+                                    <td>9999924</td>
+                                    <td>9999924</td>
+                                    <td>9999924</td>
                                     <td></td>
                                 </tr>
-                            </tfoot> -->
+                            </tfoot>
                         </table>
                         <!-- </div> -->
                     </div>

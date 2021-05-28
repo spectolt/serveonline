@@ -13,7 +13,7 @@
     }
 
     .photo-slider {
-      left: -20px;
+      left: -35px;
       // min-width: 1200px;
       min-width: calc(100vw - 325px);
       height: 400px;
@@ -64,66 +64,6 @@
 
       div {
         transition: none;
-      }
-
-      .slick-arrow {
-        background-color: $darkblue;
-        opacity: .8;
-        z-index: 2;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0;
-        width: 35px;
-        height: 35px;
-        border-radius: 50%;
-        transition: .3s opacity ease-in-out;
-
-        @include breakpoint(sm) {
-          font-size: 0;
-        }
-
-        &::before {
-          content: url("img/icons/angle-down-white-bold.svg");
-          display: block;
-          background: transparent;
-          margin: auto;
-
-          @include breakpoint(sm) {
-            width: 20px;
-            height: inherit;
-          }
-        }
-
-        &:hover {
-          opacity: 1;
-        }
-      }
-
-      .slick-prev {
-        left: 20px;
-
-        &::before {
-          transform: rotate(90deg);
-          left: -3px;
-
-          @include breakpoint(sm) {
-            left: -8px;
-          }
-        }
-      }
-
-      .slick-next {
-        right: 20px;
-
-        &::before {
-          transform: rotate(-90deg);
-          left: 3px;
-
-          @include breakpoint(sm) {
-            left: 8px;
-          }
-        }
       }
     }
 
@@ -866,6 +806,64 @@
   border-radius: 15px;
   overflow: hidden;
 
-  &__slide {
+  .slick-arrow {
+    background-color: $darkblue;
+    opacity: .8;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    transition: .3s opacity ease-in-out;
+
+    @include breakpoint(sm) {
+      font-size: 0;
+    }
+
+    &::before {
+      content: url("img/icons/angle-down-white-bold.svg");
+      display: block;
+      background: transparent;
+      margin: auto;
+      width: 18px;
+
+      @include breakpoint(sm) {
+        width: 20px;
+        height: inherit;
+      }
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .slick-prev {
+    left: 20px;
+
+    &::before {
+      transform: rotate(90deg);
+      left: -3px;
+
+      @include breakpoint(sm) {
+        left: -8px;
+      }
+    }
+  }
+
+  .slick-next {
+    right: 20px;
+
+    &::before {
+      transform: rotate(-90deg);
+      left: 3px;
+
+      @include breakpoint(sm) {
+        left: 8px;
+      }
+    }
   }
 }

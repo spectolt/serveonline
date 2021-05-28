@@ -11,8 +11,8 @@ $thisPage = "reservations"; ?>
                     <h1 class="title">Rezervacijos</h1>
                     <div class="controls__top controls__top--profiles">
                         <div class="controls__group">
-                            <button class="controls__group-btn controls__group-btn--recipient darkblue small paragraph">Grupuoti pagal psl. gavėjus</button>
-                            <button class="controls__group-btn controls__group-btn--recipient darkblue small paragraph">Grupuoti pagal specialistus</button>
+                            <button class="controls__group-btn controls__group-btn--recipient darkblue small paragraph">Grupuoti psl. gavėjus</button>
+                            <button class="controls__group-btn controls__group-btn--recipient darkblue small paragraph">Grupuoti specialistus</button>
                         </div>
                         <div class="controls__buttons-container">
                             <button class="controls__button controls__button--print darkblue small transparent paragraph">Spausdinti</button>
@@ -27,59 +27,47 @@ $thisPage = "reservations"; ?>
                         <table class="controls__table profiles__table">
                             <thead>
                                 <tr>
-                                    <th>
+                                    <th class="bottom-arrow top-arrow">
                                         Registracijos data,
                                         laikas
                                     </th>
-                                    <th>
+                                    <th class="bottom-arrow top-arrow">
                                         Užsakymo
                                         <br>
                                         būsena
                                     </th>
-                                    <th>
+                                    <th class="bottom-arrow top-arrow">
                                         Užsakymo
                                         <br>
                                         Nr.
                                     </th>
-                                    <th>
+                                    <th class="bottom-arrow top-arrow">
                                         Paslaugų gavėjas
-                                        <br>
-                                        (6879)
                                     </th>
-                                   
-                                    <th>
+
+                                    <th class="bottom-arrow top-arrow">
                                         Specialistas
-                                        <br>
-                                        (19897)
                                     </th>
-                                    <th>
+                                    <th class="bottom-arrow top-arrow">
                                         Įmonių grupė
-                                        <br>
-                                        (19897)
                                     </th>
-                                    <th>
+                                    <th class="bottom-arrow top-arrow">
                                         Įmonė / Filialas
-                                        <br>
-                                        (19897)
                                     </th>
-                                    <th>
+                                    <th class="bottom-arrow top-arrow">
                                         Miestas
-                                        <br>
-                                        (67)
                                     </th>
-                                    <th>
+                                    <th class="bottom-arrow top-arrow">
                                         Paslauga
-                                        <br>
-                                        (9897)
                                     </th>
-                                    
-                                    <th>
+
+                                    <th class="bottom-arrow top-arrow">
                                         Suma
-                                        <br>
-                                        (99 000 000,00)
+                                    </th>
+                                    <th class="bottom-arrow top-arrow">
+                                        G/N
                                     </th>
                                     <th>
-                                        G/N
                                     </th>
                                 </tr>
                             </thead>
@@ -97,25 +85,26 @@ $thisPage = "reservations"; ?>
                                         <td>Modelinis kirpimas, plovimas, fenavimas, dažymas sruogelėmis, atspalvio suteikimas</td>
                                         <td>123.45</td>
                                         <td>G</td>
+                                        <td class="left-arrow"></td>
                                     </tr>
                                 <?php } ?>
                             </tbody>
-                            <!-- <tfoot>
+                            <tfoot>
                                 <tr>
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>9999999</td>
+                                    <td>9999999</td>
+                                    <td>9999999</td>
+                                    <td>9999999</td>
+                                    <td>9999999</td>
+                                    <td>9999999</td>
+                                    <td>9999999</td>
+                                    <td>9999999</td>
                                     <td></td>
                                 </tr>
-                            </tfoot> -->
+                            </tfoot>
                         </table>
                         <!-- </div> -->
                     </div>

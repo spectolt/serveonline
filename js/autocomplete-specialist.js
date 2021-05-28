@@ -21,8 +21,9 @@ if ($("main.hasUiAutocomplete").length > 0) {
       select: function (event, ui) {
         $("input#search-specialist").attr("rel", ui.item.label);
         // $("#ui-id-2").css("display", "none");
+        // $(input).parent().removeClass("rotate");
       },
-      open: function () {
+      open: function (event, ui) {
         $(".ui-autocomplete-wrapper").prepend("<p class='product__text'>Pažymėkite vieną ar kelias paslaugas <br/> Jūsų buvusios rezervacijos paryškintos</p>")
         $('.ui-autocomplete').append('<li><button class="product__choose-marked">Rinktis pažymėtas paslaugas</button></li>');
 
@@ -43,6 +44,7 @@ if ($("main.hasUiAutocomplete").length > 0) {
         $("div.autocomplete-product").addClass("ui-menu-item-wrapper");
         $(".ui-autocomplete-choose").removeClass("ui-menu-item");
         $(".ui-autocomplete-choose-text").removeClass("ui-menu-item-wrapper");
+        $(input).parent().addClass("rotate");
       },
       close: function (event, ui) {
         // $("#ui-id-1").show();
@@ -132,7 +134,7 @@ if ($("main.hasUiAutocomplete").length > 0) {
     $("#ui-id-1")
       .children()
       .wrapAll("<div class='ui-autocomplete-wrapper'></div>");
-  };
+  }
 
   $("#search-specialist").on("focus", function () {
     $(this).autocomplete("search", "");
@@ -159,6 +161,7 @@ if ($("main.hasUiAutocomplete").length > 0) {
     //if you click on anything except the search box or results, close menu
     if (!$(event.target).closest(".product__search, .ui-autocomplete, .autocomplete-product").length) {
       $(".ui-autocomplete").css("display", "none");
+      $(input).parent().removeClass("rotate");
       // $("input#search-specialist").val("");
       // $(".search-panel input").val("");
     } else {

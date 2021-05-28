@@ -635,9 +635,10 @@ section.product {
           flex-wrap: nowrap;
         }
         .product__block-photo {
-          border-radius: 5px;
+          border-radius: 10px;
           width: 300px;
           overflow: hidden;
+          transform: translateZ(0);
 
           @include breakpoint(sm) {
             width: 100%;

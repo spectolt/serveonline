@@ -161,7 +161,7 @@
         }
         .product__block-last-hour {
           color: $red;
-          font-weight: 500;
+          font-weight: 400;
 
           @include breakpoint(sm) {
             font-size: 0.875rem;

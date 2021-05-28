@@ -1870,6 +1870,23 @@
     th {
       font-family: "Roboto", sans-serif;
     }
+
+    .top-arrow{
+      &:first-of-type{
+        &:before,
+        &:after{
+          left: 90%;
+        }
+      }
+      
+      &:nth-of-type(2){
+        &:before,
+        &:after{
+          left: 90%;
+        }
+      }
+    }
+
     th,
     td {
       vertical-align: middle;
@@ -1903,8 +1920,11 @@
       &:nth-of-type(10) {
         width: 103px;
       }
-      &:last-of-type {
+      &:nth-of-type(11) {
         width: 65px;
+      }
+      &:last-of-type {
+        min-width: 40px;
       }
     }
     td {
@@ -1949,6 +1969,7 @@
       grid-gap: 10px;
       button{
         width: 100%;
+        text-align: center;
       }
     }
     @include breakpoint(510px){
@@ -1967,12 +1988,42 @@
   }
 
   .controls__table{
-    th{
-      font-family: 'Roboto', sans-serif;
+    // th{
+    //   font-family: 'Roboto', sans-serif;
+    // }
+    .top-arrow{
+      &:nth-of-type(2){
+        &:before, &:after{
+          left: 96%;
+        }
+      }
     }
+
+    tr{
+      &:last-of-type{
+        .top-arrow{
+          &:first-of-type,
+          &:nth-of-type(2){
+            &:before, &:after{
+              left: 85%;
+            }
+          }
+          &:nth-of-type(3),
+          &:nth-of-type(4),
+          &:nth-of-type(5),
+          &:last-of-type{
+            &:before, &:after{
+              left: 77%;
+            }
+          }
+        }
+      }
+    }
+
     th{
-      vertical-align: middle;
+      // vertical-align: middle;
       padding-left: 10px;
+
       &:first-of-type{
         width: 27px;
       } 
@@ -2177,6 +2228,14 @@
       &:before{
         top: 58%;
         left: 82%;
+      }
+    }
+
+    tfoot{
+      td{
+        &:nth-of-type(2){
+          text-align: center;
+        }
       }
     }
   }

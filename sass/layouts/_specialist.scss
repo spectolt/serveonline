@@ -113,11 +113,13 @@
   .company__header.company__header {
     // padding-right: 0;
     width: 50%;
+    padding-right: 0;
     
     @include breakpoint(l) {
       width: calc(100% + 80px);
       margin-left: -40px;
       left: 0;
+      padding-right: 20px;
     }
 
     @include breakpoint(sm) {
@@ -204,17 +206,25 @@
     }
 
     h3 {
-      font-size: 2.25rem;
-      margin-bottom: 15px;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
 
       @include breakpoint(sm) {
         display: none;
       }
     }
+
     h4 {
       margin-top: 40px;
       margin-bottom: 20px;
       font-size: 1.5rem;
+
+      &:first-of-type{
+        margin-bottom: 10px;
+      }
+      &:nth-of-type(2){
+        margin-bottom: 5px;
+      }
 
       @include breakpoint(sm) {
         margin-top: 30px;
@@ -431,6 +441,7 @@
       h4 {
         margin-top: 20px;
         font-weight: 800;
+        margin-bottom: 0;
 
         @include breakpoint(sm) {
           font-size: 1.25rem;
@@ -440,6 +451,10 @@
         margin-top: 10px;
         margin-bottom: 10px;
         font-weight: 700;
+
+        &:first-of-type{
+          margin-top: 0;
+        }
 
         @include breakpoint(sm) {
           margin-left: 10px;
@@ -502,12 +517,25 @@
         }
       }
       .slick-slider {
+        .photo-slider__slide-content{
+          margin-right: 3px;
+        }
+
         img {
           height: 222px;
+        }
+
+        .slick-prev {
+          left: 10px;
+        }
+
+        .slick-next {
+          right: 10px;
         }
       }
     }
   }
+
   #registruokis {
     margin-left: 30px;
     position: sticky;
@@ -595,8 +623,8 @@
     }
 
     h3 {
-      font-size: 2.25rem;
-      margin-bottom: 20px;
+      font-size: 1.5rem;
+      margin-bottom: 5px;
 
       @include breakpoint(sm) {
         font-size: 1.5rem;
@@ -604,11 +632,10 @@
       }
     }
     .input-wrapper {
-      margin-bottom: 0;
+      margin-bottom: 20px;
 
       &:before {
         content: "";
-
         display: inline-block;
         margin-right: 15px;
         background-image: url(img/icons/briefcase.svg);
@@ -639,7 +666,13 @@
         left: auto;
         z-index: 999;
         top: 50%;
+        transition: .3s transform ease-in-out;
       }
+
+      &.rotate::after {
+        transform: rotate(180deg);
+      }
+
       input {
         padding-left: 60px;
         height: 53px;
@@ -729,6 +762,9 @@
     .product__choose-marked {
       width: 100%;
       border-radius: 0px 0px 5px 5px;
+      font-family: 'Sen', sans-serif;
+      font-weight: 700;
+      font-size: 1.5rem;
 
       @include breakpoint(sm) {
         font-size: 0.875rem;
@@ -755,11 +791,16 @@
       .ui-datepicker-inline {
         box-shadow: none;
         width: 100%;
-        padding: 20px 100px;
+        padding: 20px 75px;
 
         @include breakpoint(sm) {
           padding-left: 0;
           padding-right: 0;
+        }
+
+        .ui-datepicker-header{
+          margin-left: 10px;
+          margin-right: 10px;
         }
 
         .ui-datepicker-buttonpane {
