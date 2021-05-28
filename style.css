@@ -20086,7 +20086,11 @@ section.product .product__block--company .product__block-info-actions {
 }
 
 .company-profile .company__header {
-  padding-top: 5px;
+  padding-top: 3px;
+}
+
+.company-profile .company__header h2 {
+  font-size: 3.25rem;
 }
 
 .company-profile .company__header .company__nav li:first-of-type {
@@ -20096,7 +20100,7 @@ section.product .product__block--company .product__block-info-actions {
 .company-profile .company__header .photo-slider {
   left: -35px;
   min-width: calc(100vw - 325px);
-  height: 400px;
+  height: 360px;
   -webkit-transform: translateZ(0);
           transform: translateZ(0);
 }
@@ -20188,7 +20192,7 @@ section.product .product__block--company .product__block-info-actions {
 }
 
 .company-profile .company__header-content .company__header-left .company__header-phone {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   font-size: 1.125rem;
   font-weight: 500;
   margin-top: 0;
@@ -20225,8 +20229,8 @@ section.product .product__block--company .product__block-info-actions {
 .company-profile .company__header-content .company__header-left .company__header-hours {
   font-size: 1.125rem;
   font-weight: 500;
-  margin-top: 10px;
-  margin-bottom: 15px;
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
 
 @media (max-width: 700px) {
@@ -20262,6 +20266,7 @@ section.product .product__block--company .product__block-info-actions {
   color: #e54651;
   font-weight: 900;
   margin-top: 15px;
+  margin-bottom: 0;
 }
 
 @media (max-width: 1180px) {
@@ -20303,7 +20308,7 @@ section.product .product__block--company .product__block-info-actions {
 .company-profile .company__header-content .company__header-left .company__header-address {
   color: #ff9954;
   font-weight: 800;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 @media (max-width: 700px) {
@@ -20358,7 +20363,6 @@ section.product .product__block--company .product__block-info-actions {
 .company-profile .company__header-content .company__header-right .signature {
   font-size: 2.8125rem;
   margin-top: 15px;
-  margin-bottom: 20px;
   margin-top: 0;
   position: relative;
   top: -15px;
@@ -20404,7 +20408,7 @@ section.product .product__block--company .product__block-info-actions {
 }
 
 .company-profile .company__header-content .company__header-title {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-weight: 800;
   margin-top: 20px;
 }
