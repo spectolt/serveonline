@@ -25,7 +25,7 @@
     width: 100%;
     left: 0;
     margin-left: 0;
-    padding: 60px 20px 0 0;
+    padding: 45px 20px 0 0;
     display: inline-block;
 
     @include breakpoint(l) {
@@ -126,6 +126,9 @@
       padding-top: 20px;
       padding-right: 20px;
       padding-left: 20px;
+      width: 100vw;
+      left: 50%;
+      margin-left: -50vw;
     }
 
     .specialist__header-left {
@@ -516,6 +519,40 @@
           }
         }
       }
+
+      .specialist__address-slider {
+        position: relative;
+      }
+      
+      .photo-slider {
+        position: relative;
+      }
+
+      .photo-slider__heart {
+        position: absolute;
+          left: 10px;
+          top: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          border: 1px solid $red;
+          background-color: $white;
+
+          &:before {
+            content: "";
+            width: 15.4px;
+            height: 13.4px;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url("img/icons/heart.svg");
+            display: block;
+          }
+      }
+
       .slick-slider {
         .photo-slider__slide-content{
           margin-right: 3px;
@@ -653,8 +690,7 @@
         }
       }
 
-      &:after {
-        content: "";
+      .input-icon {
         display: inline-block;
         margin-right: 15px;
         background-image: url(img/icons/angle-down-bold.svg);
@@ -667,10 +703,12 @@
         z-index: 999;
         top: 50%;
         transition: .3s transform ease-in-out;
-      }
-
-      &.rotate::after {
-        transform: rotate(180deg);
+        padding: 5px;
+        transform: translateY(-50%);
+      
+        &.rotate-arrow {
+          transform: translateY(-50%) rotate(180deg);
+        }
       }
 
       input {
@@ -776,6 +814,8 @@
       border: 1px solid #e8e8e8;
       border-bottom: none;
       padding-bottom: 20px;
+      border-radius: 5px;
+
       hr {
         border-top: 1px solid #e8e8e8;
         background-color: white;

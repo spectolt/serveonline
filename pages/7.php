@@ -53,17 +53,20 @@
                     </div>
                     <h4>Adresas</h4>
                     <div class="specialist__address">
-                        <div class="photo-slider">
-                            <div class="photo-slider__slide">
-                                <div class="photo-slider__slide-content">
-                                    <img src="../img/photo-2.png">
+                        <div class="specialist__address-slider">
+                            <div class="photo-slider">
+                                <div class="photo-slider__slide">
+                                    <div class="photo-slider__slide-content">
+                                        <img src="../img/photo-2.png">
+                                    </div>
+                                </div>
+                                <div class="photo-slider__slide">
+                                    <div class="photo-slider__slide-content">
+                                        <img src="../img/photo-1.png">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="photo-slider__slide">
-                                <div class="photo-slider__slide-content">
-                                    <img src="../img/photo-1.png">
-                                </div>
-                            </div>
+                            <span class="photo-slider__heart"></span>
                         </div>
                         <h4>Vasco by I.C.O.N.</h4>
                         <p class="specialis__address-street">M. Valančiaus g. 38, Kaunas</p>
@@ -77,6 +80,7 @@
                         <h3>Rezervuok nemokamai</h3>
                         <div class="product__search input-wrapper">
                             <input type="text" id="search-specialist" placeholder="Pasirinkite paslaugą">
+                            <span class="input-icon"></span>
                         </div>
                         <div class="product__chosen">
                             <div class="autocomplete-product">

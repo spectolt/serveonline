@@ -1886,7 +1886,7 @@ function onDocumentReady() {
       {
         breakpoint: 700,
         settings: {
-          centerMode: true,
+          // centerMode: true,
           centerPadding: '40px',
           slidesToShow: 1
         }
@@ -2127,6 +2127,10 @@ function onDocumentReady() {
 
   if (clients) {
     Plotly.newPlot(clients, donutData, donutLayout, config);
+  }
+
+  if ($(".specialist__datepicker")) {
+    $(".specialist__datepicker .ui-datepicker-today").not(".js_ignore_mark").trigger("click");
   }
 
   moveAction();

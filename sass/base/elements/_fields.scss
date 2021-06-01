@@ -28,6 +28,7 @@ textarea {
 
   &:focus {
     color: $color__text-input-focus;
+    outline: none !important;
   }
 
   &::-webkit-input-placeholder {

@@ -2,7 +2,7 @@
   padding-top: 50px;
   margin-left: 100px;
 
-  @include breakpoint(sm) {
+  @include breakpoint(880px) {
     margin-left: 0;
     padding-top: 40px;
     padding-right: 10px;
@@ -12,25 +12,25 @@
   .product__header {
     margin-bottom: 55px;
 
-    @include breakpoint(sm) {
+    @include breakpoint(880px) {
       margin-bottom: 25px;
     }
     h1 {
-      @include breakpoint(sm) {
+      @include breakpoint(880px) {
         font-size: 1.5rem;
       }
     }
     .product__nav {
       width: 335px;
 
-      @include breakpoint(sm) {
+      @include breakpoint(880px) {
         width: 277px;
       }
     }
   }
 
   .product__block--company {
-    @include breakpoint(sm) {
+    @include breakpoint(880px) {
       padding-top: 20px;
       padding-bottom: 20px;
     }
@@ -39,20 +39,25 @@
   .product__block-top {
     width: 100%;
 
-    @include breakpoint(sm) {
+    @include breakpoint(880px) {
       flex-direction: column;
     }
 
     .product__block-photo {
-      @include breakpoint(sm) {
+      height: 200px;
+      @include breakpoint(880px) {
         width: 100%;
         margin-bottom: 20px;
+      }
+
+      @include breakpoint(900px){
+        padding-bottom: unset;
       }
 
       .product__block-like-status{
         left: 10px;
         top: 10px;
-        @include breakpoint(sm){
+        @include breakpoint(880px){
           left: 5px;
           top: 5px;
         }
@@ -61,11 +66,14 @@
 
     .product__block-info {
       h2 {
-        font-size: 1.625rem;
+        font-size: 1.5rem;
         font-weight: 800;
+        margin-bottom: 50px;
+        height: unset;
 
-        @include breakpoint(sm) {
-          font-size: 1.5rem;
+        @include breakpoint(880px) {
+          // font-size: 1.5rem;
+          margin-bottom: 15px;
         }
       }
       .product__block-address {
@@ -83,7 +91,7 @@
           font-size: 1.125rem;
           flex-basis: 70%;
 
-          @include breakpoint(sm) {
+          @include breakpoint(880px) {
             left: 0;
             font-size: 1rem;
           }
@@ -99,21 +107,21 @@
             left: 2px;
             position: relative;
 
-            @include breakpoint(sm) {
+            @include breakpoint(880px) {
               width: 15px;
               height: 16px;
             }
           }
         }
 
-        @include breakpoint(sm) {
+        @include breakpoint(880px) {
           flex-direction: column;
           align-items: flex-start;
         }
       }
       .product__block-bottom {
         .product__block-info-phone {
-          @include breakpoint(sm) {
+          @include breakpoint(880px) {
             font-size: 0.875rem;
             font-weight: 500;
           }
@@ -128,7 +136,7 @@
             top: 4px;
             position: relative;
 
-            @include breakpoint(sm) {
+            @include breakpoint(880px) {
               width: 17px;
               height: 18px;
               margin-right: 10px;
@@ -137,7 +145,7 @@
           }
         }
         .product__block-info-hours {
-          @include breakpoint(sm) {
+          @include breakpoint(880px) {
             font-size: 0.875rem;
             font-weight: 500;
           }
@@ -152,7 +160,7 @@
             top: 4px;
             position: relative;
 
-            @include breakpoint(sm) {
+            @include breakpoint(880px) {
               width: 17px;
               height: 17px;
               margin-right: 10px;
@@ -163,7 +171,7 @@
           color: $red;
           font-weight: 400;
 
-          @include breakpoint(sm) {
+          @include breakpoint(880px) {
             font-size: 0.875rem;
           }
 
@@ -181,7 +189,7 @@
             width: 95px;
             margin-bottom: 18px;
 
-            @include breakpoint(sm) {
+            @include breakpoint(880px) {
               margin-bottom: 0;
               margin-left: 0;
               margin-right: 20px;
@@ -200,7 +208,7 @@
             width: 95px;
             margin-bottom: 18px;
 
-            @include breakpoint(sm) {
+            @include breakpoint(880px) {
               margin-bottom: 0;
               margin-left: 0;
               margin-right: 20px;
@@ -218,7 +226,7 @@
             width: 95px;
             transition: background-color .3s ease-in-out;
             
-            @include breakpoint(sm){
+            @include breakpoint(880px){
               height: 28px;
               width: 70px;
               font-size: 0.875rem;
@@ -229,19 +237,25 @@
             }
           }
 
-          @include breakpoint(sm) {
+          @include breakpoint(880px) {
             margin-top: 20px;
             flex-direction: unset;
           }
         }
 
-        @include breakpoint(sm) {
+        @include breakpoint(880px) {
           flex-direction: column;
           align-items: baseline;
         }
       }
 
-      @include breakpoint(sm) {
+      @include breakpoint(880px) {
+        width: 100%;
+      }
+    }
+
+    .product__block-info.product__block-info {
+      @include breakpoint(880px) {
         width: 100%;
       }
     }

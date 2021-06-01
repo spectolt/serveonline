@@ -58,12 +58,12 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                                         <img src="../img/photo-2.png">
                                         <img src="../img/photo-1.png">
                                     </div>
-                                    <div class="product__block-like-status hidden"></div>
+                                    <div class="product__block-like-status <?php if($y != 0) echo "hidden"?>"></div>
                                 </div>
                                 <div class="product__block-info">
-                                    <h2>Grožio salonas Jos Kaprizai Grožio salonas Jos Kaprizai</h2>
+                                    <h2>Grožio salonas Jos Kaprizai</h2>
                                     <div class="product__block-address">
-                                        <a href="#">M. Valančiaus g. 23 M. Valančiaus g. 23, Kaunas</a><br />
+                                        <a href="#">Dariaus ir Girėno g. 23, Klaipėda</a><br />
                                         <div class="product__block-distance"><b>15 min</b> (5,6 km)</div>
                                     </div>
                                     <div class="product__block-bottom">
@@ -73,7 +73,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                                             <p class="product__block-last-hour">Paskutinės valandos pasiūlymas <span class="percentage"> -10%</span> <span class="time-left"><span class="hours">02</span>:<span class="minutes">02</span>:<span class="seconds">02</span></span> </p></p>
                                         </div>
                                         <div class="product__block-info-actions">
-                                            <button class="button small gray transparent product__block-like product__block-like--active">Mano</button>
+                                            <button class="button small gray transparent product__block-like <?php if ($y != 0) echo "product__block-like--active"; else echo "product__block-like--greyed-out" ?>">Mano</button>
                                             <button class="button small darkblue product__block-more">Plačiau</button>
                                         </div>
                                     </div>

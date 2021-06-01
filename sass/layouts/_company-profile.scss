@@ -22,6 +22,7 @@
       min-width: calc(100vw - 325px);
       height: 360px;
       transform: translateZ(0);
+      position: relative;
 
       @include breakpoint(xl) {
         min-width: calc(100vw - 20px);
@@ -60,10 +61,18 @@
 
       &__slide-content {
         height: 100%;
+
+        @include breakpoint(sm) {
+          max-width: 100vw;
+        }
       }
 
       img {
         height: 100%;
+
+        @include breakpoint(sm) {
+          height: auto;
+        }
       }
 
       div {
@@ -82,12 +91,14 @@
       .company__header-left {
         flex-basis: 49%;
         // margin-left: 10px;
-        margin-bottom: 0;
+        // margin-bottom: 0;
+        margin-bottom: 35px;
 
         @include breakpoint(sm) {
           margin-bottom: 10px;
           width: 100%;
           margin-left: 10px;
+          margin-top: 10px;
         }
 
         .company__header-phone {
@@ -153,8 +164,8 @@
         .company__header-last-hour {
           font-size: 1.125rem;
           color: $red;
-          font-weight: 900;
-          margin-top: 15px;
+          font-weight: 400;
+          margin-top: 19px;
           margin-bottom: 0;
 
           @include breakpoint(xl) {
@@ -188,10 +199,10 @@
         .company__header-address {
           color: $orange;
           font-weight: 800;
-          font-size: 1.25rem;
+          font-size: 1.5rem;
 
           @include breakpoint(sm) {
-            font-size: 1rem;
+            font-size: 0.9375rem;
             margin-bottom: 0;
           }
         }
@@ -207,9 +218,14 @@
           padding-right: 40px;
         }
 
+        @include breakpoint(sm){
+          width: 100%;
+          margin-bottom: 0;
+        }
+
         .read-more__text {
-          margin-bottom: 10px;
-          font-size: 1.125rem;
+          margin-bottom: 17px;
+          font-size: 1rem;
           text-align: justify;
           margin-top: 0;
 
@@ -218,7 +234,9 @@
             font-size: 0.75rem;
             margin-left: 10px;
             width: 295px;
-            margin-bottom: 0;
+            margin-bottom: 5px;
+            width: 100%;
+            padding-right: 20px;
           }
         }
         .read-more__button {
@@ -232,7 +250,7 @@
           }
         }
         .signature {
-          font-size: 2.8125rem;
+          font-size: 2.25rem;
           margin-top: 15px;
           // margin-bottom: 20px;
           margin-top: 0;
@@ -245,8 +263,9 @@
 
           @include breakpoint(sm) {
             font-size: 1.47375rem;
-            position: unset;
-            top: unset;
+            //position: unset;
+            top: -14px;
+            padding-right: 15px;
           }
         }
       }
@@ -266,7 +285,7 @@
         }
         @include breakpoint(sm) {
           right: 19px;
-          bottom: 50px;
+          bottom: 39px;
         }
 
         &__icon {
@@ -275,14 +294,16 @@
         }
       }
       .company__header-title {
-        margin-bottom: 10px;
+        margin-bottom: 15px;
         font-weight: 800;
-        margin-top: 20px;
+        margin-top: 10px;
+        font-size: 3rem;
 
         @include breakpoint(sm) {
           margin-left: 10px;
-          margin-top: 20px;
+          margin-top: 10px;
           margin-bottom: 0px;
+          font-size: 1.25rem;
         }
       }
     }
@@ -292,7 +313,7 @@
     margin-top: 45px;
 
     @include breakpoint(sm) {
-      margin-top: 30px;
+      margin-top: 18px;
       margin-bottom: 30px;
       margin-left: 0;
     }
@@ -398,7 +419,7 @@
 
   .social-media {
     position: absolute;
-    bottom: 15px;
+    bottom: 13px;
     right: 30px;
     display: flex;
 
@@ -414,7 +435,7 @@
       margin-right: 10px;
 
       @include breakpoint(880px) {
-        margin-bottom: 5px;
+        margin-bottom: 3px;
         margin-right: 0;
       }
 
@@ -476,7 +497,7 @@
     margin-top: 50px;
 
     @include breakpoint(sm) {
-      margin-top: 30px;
+      margin-top: 15px;
       margin-bottom: 20px;
     }
 
@@ -487,9 +508,10 @@
       font-size: 1.5rem;
 
       @include breakpoint(sm) {
-        margin-top: 30px;
+        margin-top: 15px;
         margin-bottom: 10px;
         margin-left: 10px;
+        font-size: 1.125rem;
       }
     }
     h3 {
@@ -541,6 +563,11 @@
           @include breakpoint(xs) {
             width: 100%;
           }
+          @include breakpoint(sm){
+            .product-action__order{
+              margin-left: auto;
+            }
+          }
         }
 
         &__duration,
@@ -584,7 +611,7 @@
     margin-top: 45px;
 
     @include breakpoint(sm) {
-      margin-top: 30px;
+      margin-top: 15px;
     }
 
     h2 {
@@ -594,9 +621,9 @@
       // margin-left: 20px;
 
       @include breakpoint(sm) {
-        font-weight: 400;
+        font-weight: 700;
         font-size: 1.125rem;
-        margin-top: 30px;
+        margin-top: 15px;
         margin-bottom: 10px;
         // margin-left: 10px;
       }
@@ -628,7 +655,7 @@
     margin-top: 50px;
 
     @include breakpoint(sm) {
-      margin-top: 30px;
+      margin-top: 15px;
     }
 
     h3{
