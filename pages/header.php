@@ -14,7 +14,7 @@
 
 </head>
 
-<body class="<?php if ($thisCat == "company") echo "margin-small"?>">
+<body class="<?php if ($thisPage == "specialist") echo "margin-none"?>">
     <div id="page">
         <?php if ($thisCat != "company" && $thisCat != "controls" && $thisCat != "login") { ?>
             <div class="search-container">

@@ -6,3 +6,8 @@ body.margin-small {
 	margin-top: 58.8px;
 	height: calc(100% - 58.8px);
 }
+
+body.margin-none {
+	margin-top: 0;
+	height: 100%;
+}

@@ -642,6 +642,8 @@ section.product {
 
           @include breakpoint(880px) {
             width: calc(100vw - 40px);
+            max-width: 100%;
+            margin-right: 0;
           }
         }
         .product__block-info {

@@ -286,6 +286,17 @@ footer.container {
     background-repeat: no-repeat;
     display: inline-block;
     vertical-align: sub;
+
+    @include breakpoint(xs) {
+      width: 17px;
+      height: 20px;
+    }
+  }
+
+  a {
+    @include breakpoint(xs) {
+      font-size: .75rem;
+    }
   }
 }
 
@@ -323,7 +334,7 @@ footer.container {
       &--toggled {
         visibility: visible;
         // background-color: $white;
-        z-index: 102;
+        z-index: 1002;
 
         @include breakpoint(xxl) {
           z-index: 1;

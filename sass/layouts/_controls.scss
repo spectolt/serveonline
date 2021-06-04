@@ -1869,6 +1869,7 @@
   .controls__table {
     th {
       font-family: "Sen", sans-serif;
+      padding-top: 10px;
     }
 
     .top-arrow{
@@ -1887,9 +1888,13 @@
       }
     }
 
-    th,
     td {
       vertical-align: middle;
+    }
+
+    th,
+    td {
+      // vertical-align: middle;
       &:first-of-type {
         width: 89px;
       }

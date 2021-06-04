@@ -1,6 +1,6 @@
 var isVisible = false;
 if ($("main.hasUiAutocomplete").length > 0) {
-  var input = $("#search-specialist")
+  var input = $("#search-specialist").not(".js_ignore_mark")
   input
     .autocomplete({
       minLength: 0,
@@ -26,6 +26,7 @@ if ($("main.hasUiAutocomplete").length > 0) {
       open: function (event, ui) {
         $(".ui-autocomplete-wrapper").prepend("<p class='product__text'>Pažymėkite vieną ar kelias paslaugas <br/> Jūsų buvusios rezervacijos paryškintos</p>")
         $('.ui-autocomplete').append('<li><button class="product__choose-marked">Rinktis pažymėtas paslaugas</button></li>');
+        $('.ui-autocomplete').css("top", "+=1")
 
         if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
           $(".ui-autocomplete").off("menufocus hover mouseover");
@@ -95,6 +96,9 @@ if ($("main.hasUiAutocomplete").length > 0) {
               "<button class='autocomplete-product-button'>Plačiau</button></span><span class='autocomplete-product-desc paragraph hidden'>" +
               item.about +
               "</span>" +
+              '<div class="product-action"><div class="product-action__info"><div class="product-action__duration">01:00</div>'+
+              '<div class="product-action__price">45€<strike>60€</strike></div><div class="product-action__periodicity">6 sav.</div>'+
+              '</div></div>' +
               "</label></div></div>"
           )
           .appendTo(ul);
@@ -113,19 +117,31 @@ if ($("main.hasUiAutocomplete").length > 0) {
               item.index +
               "'><span class='autocomplete-product-title'>" +
               item.choice1title +
-              "</span></label></div></div><div class='autocomplete-product autocomplete-product--choice product-choice hidden'><div class='checkbox'><input type='checkbox' class='autocomplete-product-input' id='item-" +
+              "</span>" +
+              '<div class="product-action"><div class="product-action__info"><div class="product-action__duration">01:00</div>'+
+              '<div class="product-action__price">45€<strike>60€</strike></div><div class="product-action__periodicity">6 sav.</div>'+
+              '</div></div>' +
+              "</label></div></div><div class='autocomplete-product autocomplete-product--choice product-choice hidden'><div class='checkbox'><input type='checkbox' class='autocomplete-product-input' id='item-" +
               item.index +
               "'><label class='autocomplete-product-checkbox' for='item-" +
               item.index +
               "'><span class='autocomplete-product-title'>" +
               item.choice2title +
-              "</span></label></div></div><div class='autocomplete-product autocomplete-product--choice product-choice hidden'><div class='checkbox'><input type='checkbox' class='autocomplete-product-input' id='item-" +
+              "</span>" +
+              '<div class="product-action"><div class="product-action__info"><div class="product-action__duration">01:00</div>'+
+              '<div class="product-action__price">45€<strike>60€</strike></div><div class="product-action__periodicity">6 sav.</div>'+
+              '</div></div>' +
+              "</label></div></div><div class='autocomplete-product autocomplete-product--choice product-choice hidden'><div class='checkbox'><input type='checkbox' class='autocomplete-product-input' id='item-" +
               item.index +
               "'><label class='autocomplete-product-checkbox' for='item-" +
               item.index +
               "'><span class='autocomplete-product-title'>" +
               item.choice3title +
-              "</span></label>" +
+              "</span>" +
+              '<div class="product-action"><div class="product-action__info"><div class="product-action__duration">01:00</div>'+
+              '<div class="product-action__price">45€<strike>60€</strike></div><div class="product-action__periodicity">6 sav.</div>'+
+              '</div></div>' +
+              "</label>" +
               "</div></div>"
           )
           .appendTo(ul);
@@ -136,6 +152,10 @@ if ($("main.hasUiAutocomplete").length > 0) {
       .children()
       .wrapAll("<div class='ui-autocomplete-wrapper'></div>");
   }
+
+  // $(input).on("click", function() {
+    $(input).prop("readonly", "readonly")
+  // })
 
   $("#search-specialist").on("focus", function () {
     $(this).autocomplete("search", "");
@@ -219,6 +239,7 @@ if ($("main.hasUiAutocomplete").length > 0) {
       // }
     })
     .on("click", ".autocomplete-product-button", function (e) {
+      $(this).toggleClass("rotate-arr");
       return false;
     });
 
@@ -257,15 +278,15 @@ if ($("main.hasUiAutocomplete").length > 0) {
 
   // })
 
-  var input = $("#search-specialist");
-  if (!navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
-    $(document).on("click", ".ui-autocomplete-wrapper", function (e) {
-      input.prop("readonly", true);
-    });
-    $(document).on("click", "#search-specialist", function () {
-      input.prop("readonly", false);
-    });
-  }
+  // var input = $("#search-specialist");
+  // if (!navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+  //   $(document).on("click", ".ui-autocomplete-wrapper", function (e) {
+  //     input.prop("readonly", true);
+  //   });
+  //   $(document).on("click", "#search-specialist", function () {
+  //     input.prop("readonly", false);
+  //   });
+  // }
 
   $("main").scroll(function () {
     if ($(".ui-autocomplete").is(":visible")) {

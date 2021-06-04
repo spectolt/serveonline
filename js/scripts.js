@@ -245,6 +245,7 @@ function onDocumentReady() {
               $(inst.dpDiv).css({
                 left: "50%",
                 transform: "translateX(-50%)",
+                top: "+=10px",
               });
             } else {
               $(inst.dpDiv).css({
@@ -376,13 +377,18 @@ function onDocumentReady() {
       });
 
     //prevent ios from scrolling to input
-    document
-      .querySelector(".js-datepicker:not(.js_ignore_mark)")
-      .addEventListener("focus", (e) => {
+    $(".js-datepicker")
+      .not(".js_ignore_mark")
+      .on("focus", function (e) {
+        $("html, body").animate(
+          {
+            scrollTop: $(this).offset().top - 20,
+          },
+          300
+        );
+        // return true;
         e.preventDefault();
-        // setTimeout(() => {
-        //   window.scroll(0, 100);
-        // }, 0);
+        return false;
       });
 
     $(".product__nav-button--next")
@@ -1236,7 +1242,7 @@ function onDocumentReady() {
   $(document).on("click", ".product-expand:not(.js_ignore_mark)", function () {
     $(this).toggleClass("rotate");
     $(this).siblings(".product-choice").toggleClass("hidden");
-    if($(this).siblings(".more-description.hidden").length == 0) {
+    if ($(this).siblings(".more-description.hidden").length == 0) {
       $(this).siblings().find(".more-button").trigger("click");
     }
   });
@@ -1876,23 +1882,26 @@ function onDocumentReady() {
       }
     });
 
-  $(".photo-slider").not(".js_ignore_mark").not(".slick-initialized").slick({
-    infinite: true,
-    slidesToShow: 1,
-    centerMode: false,
-    variableWidth: true,
-    arrows: true,
-    responsive: [
-      {
-        breakpoint: 700,
-        settings: {
-          // centerMode: true,
-          centerPadding: '40px',
-          slidesToShow: 1
-        }
-      },
-    ]
-  });
+  $(".photo-slider")
+    .not(".js_ignore_mark")
+    .not(".slick-initialized")
+    .slick({
+      infinite: true,
+      slidesToShow: 1,
+      centerMode: false,
+      variableWidth: true,
+      arrows: true,
+      responsive: [
+        {
+          breakpoint: 700,
+          settings: {
+            // centerMode: true,
+            centerPadding: "40px",
+            slidesToShow: 1,
+          },
+        },
+      ],
+    });
 
   $(".product__block-slider")
     .not(".js_ignore_mark")
@@ -1958,6 +1967,7 @@ function onDocumentReady() {
   }
 
   sliderInit(document.querySelector(".timetable__container"));
+  sliderInit(document.querySelector(".details__item--languages h4"));
 
   $(".checkbox-children .radio label")
     .not(".js_ignore_mark")
@@ -2057,81 +2067,91 @@ function onDocumentReady() {
 
   var donutData = [
     {
-      domain: {column: 0},
+      domain: { column: 0 },
       values: [105, 155],
       labels: ["Sugrįžę<br>klientai", "Vienkartiniai<br>klientai"],
       type: "pie",
       textinfo: "label+value",
       textposition: "outside",
       automargin: true,
-      hole: .6,
+      hole: 0.6,
     },
     {
-      domain: {column: 1},
+      domain: { column: 1 },
       values: [20, 40, 60, 40],
       labels: ["Vilnius", "Kaunas", "Klaipėda", "Panevėžys"],
       type: "pie",
       textinfo: "label+value",
       textposition: "outside",
       automargin: true,
-      hole: .6,
+      hole: 0.6,
     },
     {
-      domain: {column: 2},
+      domain: { column: 2 },
       values: [60, 200],
       labels: ["Vyrai", "Moterys"],
       type: "pie",
       textinfo: "label+value",
       textposition: "outside",
       automargin: true,
-      hole: .6,
-    }
-  ]
+      hole: 0.6,
+    },
+  ];
 
   var donutLayout = {
     annotations: [
       {
         font: {
-          size: 20
+          size: 20,
         },
         showarrow: false,
-        text: '260',
+        text: "260",
         x: 0.135,
-        y: 0.5
+        y: 0.5,
       },
       {
         font: {
-          size: 20
+          size: 20,
         },
         showarrow: false,
-        text: '260',
+        text: "260",
         x: 0.5,
-        y: 0.5
+        y: 0.5,
       },
       {
         font: {
-          size: 20
+          size: 20,
         },
         showarrow: false,
-        text: '260',
+        text: "260",
         x: 0.87,
-        y: 0.5
-      }
+        y: 0.5,
+      },
     ],
     height: 200,
     // width: 600,
     showlegend: false,
-    margin: {"t": 0, "b": 0, "l": 0, "r": 0},
-    grid: {rows: 1, columns: 3}
-  }
+    margin: { t: 0, b: 0, l: 0, r: 0 },
+    grid: { rows: 1, columns: 3 },
+  };
 
   if (clients) {
     Plotly.newPlot(clients, donutData, donutLayout, config);
   }
 
   if ($(".specialist__datepicker")) {
-    $(".specialist__datepicker .ui-datepicker-today").not(".js_ignore_mark").trigger("click");
+    $(".specialist__datepicker .ui-datepicker-today")
+      .not(".js_ignore_mark")
+      .trigger("click");
   }
+
+  $(".specialist #registruokis").not(".js_ignore_mark").on("click",function() {
+    $(this).siblings(".specialist__overlay").removeClass("hidden");
+  })
+
+  $(".specialist__overlay").not(".js_ignore_mark").on("click", function() {
+    $(this).addClass("hidden");
+  })
 
   moveAction();
   moveOrder();
@@ -2259,26 +2279,28 @@ function getTextWidth(el) {
 }
 
 function changePadding() {
-  var windowWidth = $(window).width();
-  var timeWidth = $(".calendar td").width();
-  var timePadding;
-  var margin =
-    ($("div.page-content__wrapper").innerWidth() -
-      $("div.page-content__wrapper").width()) /
-    2;
+  if (!$("section.specialist")) {
+    var windowWidth = $(window).width();
+    var timeWidth = $(".calendar td").width();
+    var timePadding;
+    var margin =
+      ($("div.page-content__wrapper").innerWidth() -
+        $("div.page-content__wrapper").width()) /
+      2;
 
-  if (window.matchMedia("(max-width: 420px)").matches) {
-    timePadding = (windowWidth - 4.5 * timeWidth - margin) / 4;
-    $(".calendar td").css("padding-right", timePadding);
-  } else if (window.matchMedia("(max-width: 500px)").matches) {
-    timePadding = (windowWidth - 5.5 * timeWidth - margin) / 5;
-    $(".calendar td").css("padding-right", timePadding);
-  } else if (window.matchMedia("(max-width: 900px)").matches) {
-    timePadding = (windowWidth - 6.5 * timeWidth - margin) / 6;
-    $(".calendar td").css("padding-right", timePadding);
-  } else {
-    $(".calendar td").css("padding-right", 10);
-    $(".calendar td:last-of-type").css("padding-right", 0);
+    if (window.matchMedia("(max-width: 420px)").matches) {
+      timePadding = (windowWidth - 4.5 * timeWidth - margin) / 4;
+      $(".calendar td").css("padding-right", timePadding);
+    } else if (window.matchMedia("(max-width: 500px)").matches) {
+      timePadding = (windowWidth - 5.5 * timeWidth - margin) / 5;
+      $(".calendar td").css("padding-right", timePadding);
+    } else if (window.matchMedia("(max-width: 900px)").matches) {
+      timePadding = (windowWidth - 6.5 * timeWidth - margin) / 6;
+      $(".calendar td").css("padding-right", timePadding);
+    } else {
+      $(".calendar td").css("padding-right", 10);
+      $(".calendar td:last-of-type").css("padding-right", 0);
+    }
   }
 }
 
@@ -2388,7 +2410,9 @@ function hasScrolled() {
   // This is necessary so you never see what is "behind" the navbar.
   if (st > lastScrollTop && st > navbarHeight) {
     // Scroll Down
-    $(".site-header").removeClass("site-header--show");
+    if(!$("section.specialist") && window.matchMedia("(max-width: 991px)").matches) {
+      $(".site-header").removeClass("site-header--show");
+    }
 
     $(".controls__table tbody")
       .not(".js_ignore_mark")
@@ -2459,13 +2483,19 @@ function gotoTopPosition(el, element, scrollBtn, pixels, yPos = "bottom") {
         $(el).height() - $(el).scrollTop() - $(window).height()
       );
       if (distanceFromBottom <= footer.outerHeight()) {
-        if(yPos == "bottom") {
-          scrollBtn.css(yPos, footer.outerHeight() - distanceFromBottom + pixels);
+        if (yPos == "bottom") {
+          scrollBtn.css(
+            yPos,
+            footer.outerHeight() - distanceFromBottom + pixels
+          );
         } else {
-          scrollBtn.css(yPos, - footer.outerHeight() + pixels + distanceFromBottom);
+          scrollBtn.css(
+            yPos,
+            -footer.outerHeight() + pixels + distanceFromBottom
+          );
         }
       } else if (distanceFromBottom <= 0) {
-        if(yPos == "bottom") {
+        if (yPos == "bottom") {
           scrollBtn.css(yPos, footer.outerHeight() + pixels);
         } else {
           scrollBtn.css(yPos, pixels);

@@ -1,4 +1,5 @@
-<?php $thisCat = "company"; ?>
+<?php $thisCat = "company";
+$thisPage = "specialist" ?>
 
 <?php require_once('header.php'); ?>
 <main class="site-main site-main--aside hasUiAutocomplete hasUiDatepicker">
@@ -35,7 +36,11 @@
                             <p>Darbo patirtis</p>
                         </div>
                         <div class="details__item details__item--languages">
-                            <h4>Lietuvių | Anglų | Rusų</h4>
+                            <div class="details__languages">
+                                <div class="details__languages-list">
+                                    <h4>Lietuviškai | Angliškai | Rusiškai | Latviškai</h4>
+                                </div>
+                            </div>
                             <p>Kalba</p>
                         </div>
                         <div class="details__item details__item--payment">
@@ -75,9 +80,10 @@
                     </div>
 
                 </section>
+                <div class="specialist__overlay hidden"></div>
                 <section class="group__tab" id="registruokis">
                     <div class="sticky">
-                        <h3>Rezervuok nemokamai</h3>
+                        <h3 class="register-title">Rezervuok nemokamai</h3>
                         <div class="product__search input-wrapper">
                             <input type="text" id="search-specialist" placeholder="Pasirinkite paslaugą">
                             <span class="input-icon"></span>
@@ -122,9 +128,9 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php for ($i = 0; $i < 4; $i++) { ?>
+                                    <?php for ($i = 0; $i < 7; $i++) { ?>
                                         <tr>
-                                            <td><?php if ($i === 3) { ?><p class="calendar__more-button">DAR</p><?php } else { ?> <p>09:15</p> <?php } ?></td>
+                                            <td><p>09:15</p></td>
                                             <td>
                                                 <p></p>
                                             </td>
@@ -144,34 +150,6 @@
                                                 <p>09:15</p>
                                             </td>
                                         </tr>
-                                </tbody>
-                            <?php } ?>
-
-                            <?php for ($i = 0; $i < 3; $i++) { ?>
-                                <tbody class="calendar__more-times calendar__more-times--hidden">
-                                    <tr>
-                                        <td>
-                                            <p>09:15</p>
-                                        </td>
-                                        <td>
-                                            <p></p>
-                                        </td>
-                                        <td class="calendar__selected-day">
-                                            <p>09:15</p>
-                                        </td>
-                                        <td>
-                                            <p>08:15</p>
-                                        </td>
-                                        <td>
-                                            <p>11:15</p>
-                                        </td>
-                                        <td>
-                                            <p>12:15</p>
-                                        </td>
-                                        <td>
-                                            <p>13:15</p>
-                                        </td>
-                                    </tr>
                                 </tbody>
                             <?php } ?>
 
