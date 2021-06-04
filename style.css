@@ -21191,6 +21191,9 @@ section.product .product__block--company .slick-track {
   max-height: 2000px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
 }
 
 @media (max-width: 991px) {
