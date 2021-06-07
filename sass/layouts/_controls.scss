@@ -349,6 +349,7 @@
 
       tr {
         display: table;
+        table-layout: fixed;
       }
 
       td {
@@ -357,6 +358,7 @@
         text-align: center;
         padding: 5px;
         border-left: 1px solid $washedblue;
+        word-break: break-all;
       }
     }
   }
@@ -1961,6 +1963,7 @@
     @include breakpoint(880px){
       justify-content: flex-end;
     }
+
     @include breakpoint(sm){
       grid-template-columns: 1fr;
       grid-gap: 10px;
@@ -1968,15 +1971,18 @@
   }
   .controls__buttons-container{
     margin-right: 10px;
+
     @include breakpoint(sm){
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-gap: 10px;
+
       button{
         width: 100%;
         text-align: center;
       }
     }
+
     @include breakpoint(510px){
       display: block;
       .controls__button--pdf{
@@ -2051,15 +2057,15 @@
         width: 83px;
       }
       &:nth-of-type(8){
-        width: 102px;
+        width: 122px;
         text-align: left;
       }
       &:nth-of-type(9){
-        width: 100px;
+        width: 120px;
         text-align: left;
       }
       &:nth-of-type(10){
-        width: 101px;
+        width: 121px;
         text-align: left;
       }
       &:nth-of-type(11){
@@ -2067,15 +2073,15 @@
         text-align: left;
       }
       &:nth-of-type(12){
-        width: 81px;
+        width: 91px;
         text-align: left;
       }
       &:nth-of-type(13){
-        width: 110px;
+        width: 120px;
         text-align: left;
       }
       &:nth-of-type(14){
-        width: 79px;
+        width: 89px;
         text-align: left;
       }
       &:nth-of-type(15){
@@ -2142,27 +2148,27 @@
         width: 83px;
       }
       &:nth-of-type(8){
-        width: 52px;
+        width: 62px;
         text-align: center;
       }
       &:nth-of-type(9){
-        width: 49px;
+        width: 59px;
         text-align: center;
       }
       &:nth-of-type(10){
-        width: 52px;
+        width: 62px;
         text-align: center;
       }
       &:nth-of-type(11){
-        width: 49px;
+        width: 59px;
         text-align: center;
       }
       &:nth-of-type(12){
-        width: 52px;
+        width: 62px;
         text-align: center;
       }
       &:nth-of-type(13){
-        width: 49px;
+        width: 59px;
         text-align: center;
       }
       &:nth-of-type(14){
@@ -2170,15 +2176,15 @@
         text-align: center;
       }
       &:nth-of-type(15){
-        width: 81px;
+        width: 91px;
         text-align: center;
       }
       &:nth-of-type(16){
-        width: 110px;
+        width: 120px;
         text-align: center;
       }
       &:nth-of-type(17){
-        width: 79px;
+        width: 89px;
         text-align: center;
       }
       &:nth-of-type(18){

@@ -24,8 +24,8 @@ if ($("main.hasUiAutocomplete").length > 0) {
         // $(input).parent().removeClass("rotate");
       },
       open: function (event, ui) {
-        $(".ui-autocomplete-wrapper").prepend("<p class='product__text'>Pažymėkite vieną ar kelias paslaugas <br/> Jūsų buvusios rezervacijos paryškintos</p>")
-        $('.ui-autocomplete').append('<li><button class="product__choose-marked">Rinktis pažymėtas paslaugas</button></li>');
+        $(".ui-autocomplete-wrapper").prepend("<div class='product__notice'><p class='product__text'>Jūsų buvusios rezervacijos paryškintos</p><button class='product__close'></button></div>")
+        // $('.ui-autocomplete').append('<li><button class="product__choose-marked">Rinktis pažymėtas paslaugas</button></li>');
         $('.ui-autocomplete').css("top", "+=1")
 
         if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
@@ -180,14 +180,19 @@ if ($("main.hasUiAutocomplete").length > 0) {
 
   $(document).click(function (event) {
     //if you click on anything except the search box or results, close menu
-    if (!$(event.target).closest(".product__search, .ui-autocomplete, .autocomplete-product").length) {
+    if (!$(event.target).closest(".product__search, .ui-autocomplete, .autocomplete-product").length || $(event.target).closest(".product__close").length) {
       $(".ui-autocomplete").css("display", "none");
       $(input).parent().find(".input-icon").removeClass("rotate-arrow");
       $("input#search-specialist").data('is_open',false);
+      $(".specialist__overlay").addClass("hidden");
+      $(".specialist__calendar-container").removeClass("overlay");
       // $("input#search-specialist").val("");
       // $(".search-panel input").val("");
     } else {
-      // $(".ui-autocomplete").css("display", "block");
+      $(".ui-autocomplete").css("display", "block");
+      $(input).parent().find(".input-icon").addClass("rotate-arrow");
+      $(".specialist__overlay").removeClass("hidden");
+      $(".specialist__calendar-container").addClass("overlay");
     }
   });
 
@@ -298,6 +303,10 @@ if ($("main.hasUiAutocomplete").length > 0) {
     }
   });
 
+  // $(input).on("click", function() {
+
+  // })
+
   $(".product__search .input-icon").not(".js_ignore_mark").on("click", function (){
     if ($("input#search-specialist").siblings(".ui-autocomplete").is(":visible")) {
       $(".ui-autocomplete").css("display", "none");
@@ -305,5 +314,18 @@ if ($("main.hasUiAutocomplete").length > 0) {
     } else {
       $(this).closest(".product__search").find("input").autocomplete("search", "")
     }
+  })
+
+  // $(document).on("click", ".product__close:not('.js_ignore_mark')", function() {
+  //   $(this).closest(".ui-autocomplete").css("display", "none");
+  //   $(input).parent().find(".input-icon").removeClass("rotate-arrow");
+  //   // $(input).autocomplete('close');
+  //   $(".specialist__overlay").addClass("hidden");
+  //   $(".specialist__calendar-container").removeClass("overlay");
+  // })
+
+  $(document).on("change", ".autocomplete-product-input:not('.js_ignore_mark')", function() {
+    $(".product__chosen").show();
+    $(this).closest(".ui-menu-item").addClass("hidden");
   })
 }

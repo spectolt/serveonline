@@ -26,22 +26,22 @@ $thisPage = "report"; ?>
                                     <th class="bottom-arrow top-arrow" rowspan="2">
                                     </th>
                                     <th class="bottom-arrow top-arrow" rowspan="2">
-                                        Specialistas<br>(19897)
+                                        Specialistas
                                     </th>
                                     <th class="bottom-arrow top-arrow" rowspan="2">
-                                        Sritis<br>(6)
+                                        Sritis
                                     </th>
                                     <th class="bottom-arrow top-arrow" rowspan="2">
-                                        Įmonių grupė<br>(267)
+                                        Įmonių grupė
                                     </th>
                                     <th class="bottom-arrow top-arrow" rowspan="2">
-                                        Įmonė<br>(267)
+                                        Įmonė
                                     </th>
                                     <th class="bottom-arrow top-arrow" rowspan="2">
-                                        Profesija<br>(987)
+                                        Profesija
                                     </th>
                                     <th class="bottom-arrow top-arrow" rowspan="2">
-                                        Miestas<br>(67)
+                                        Miestas
                                     </th>
                                     <th colspan="2">
                                         Grįžusių klientų registracijų
@@ -56,10 +56,10 @@ $thisPage = "report"; ?>
                                         Profilio<br>peržiūrų
                                     </th>
                                     <th class="bottom-arrow top-arrow" rowspan="2">
-                                        Nepavyko<br>Registruotis
+                                        Nepavyko<br>registruotis
                                     </th>
                                     <th class="bottom-arrow top-arrow" rowspan="2">
-                                        Pasinaudojo<br>Rekomendacijom
+                                        Pasinaudojo<br>rekomendacijom
                                     </th>
                                     <th class="bottom-arrow top-arrow" rowspan="2">
                                         Atšaukė<br>registraciją

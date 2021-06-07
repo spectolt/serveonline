@@ -218,6 +218,10 @@ function onDocumentReady() {
           $(".product__nav-input").datepicker("setDate", getDate);
           $(this).datepicker("setDate", getDate2);
           $(this).blur();
+
+          if($(".specialist__overlay")) {
+            $(".specialist__overlay").removeClass("hidden");
+          }
         },
 
         beforeShowDay: function (date) {
@@ -2143,14 +2147,20 @@ function onDocumentReady() {
     $(".specialist__datepicker .ui-datepicker-today")
       .not(".js_ignore_mark")
       .trigger("click");
+    $(".specialist__overlay").addClass("hidden");
   }
 
-  $(".specialist #registruokis").not(".js_ignore_mark").on("click",function() {
+  $(".specialist #registruokis").not(".js_ignore_mark").on("click", function() {
     $(this).siblings(".specialist__overlay").removeClass("hidden");
   })
 
   $(".specialist__overlay").not(".js_ignore_mark").on("click", function() {
     $(this).addClass("hidden");
+    $(".specialist__calendar-container").removeClass("overlay");
+  })
+
+  $("#search-specialist").not(".js_ignore_mark").on("focus", function() {
+    $(".specialist__calendar-container").addClass("overlay");
   })
 
   moveAction();

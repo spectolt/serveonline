@@ -35,6 +35,10 @@ $thisPage = "specialist" ?>
                             <h4>19 metų</h4>
                             <p>Darbo patirtis</p>
                         </div>
+                        <div class="details__item details__item--payment">
+                            <h4>Grynais ir kortele</h4>
+                            <p>Atsiskaitymas vietoje</p>
+                        </div>
                         <div class="details__item details__item--languages">
                             <div class="details__languages">
                                 <div class="details__languages-list">
@@ -42,10 +46,6 @@ $thisPage = "specialist" ?>
                                 </div>
                             </div>
                             <p>Kalba</p>
-                        </div>
-                        <div class="details__item details__item--payment">
-                            <h4>Grynais ir kortele</h4>
-                            <p>Atsiskaitymas vietoje</p>
                         </div>
                         <div class="details__item details__item--last-hour">
                             <h4>-10% <span>02:02:05</span></h4>
@@ -74,9 +74,9 @@ $thisPage = "specialist" ?>
                             <span class="photo-slider__heart"></span>
                         </div>
                         <h4>Vasco by I.C.O.N.</h4>
-                        <p class="specialis__address-street">M. Valančiaus g. 38, Kaunas</p>
-                        <p class="specialis__address-distance">15 min (5,6 km)</p>
-                        <p class="specialis__address-phone">+370 000 00000</p>
+                        <p class="specialist__address-street">M. Valančiaus g. 38, Kaunas</p>
+                        <p class="specialist__address-distance"><span class="time">15 min</span> (5,6 km)</p>
+                        <p class="specialist__address-phone">+370 000 00000</p>
                     </div>
 
                 </section>
@@ -84,10 +84,6 @@ $thisPage = "specialist" ?>
                 <section class="group__tab" id="registruokis">
                     <div class="sticky">
                         <h3 class="register-title">Rezervuok nemokamai</h3>
-                        <div class="product__search input-wrapper">
-                            <input type="text" id="search-specialist" placeholder="Pasirinkite paslaugą">
-                            <span class="input-icon"></span>
-                        </div>
                         <div class="product__chosen">
                             <div class="autocomplete-product">
                                 <div class="product-action__info">
@@ -109,6 +105,10 @@ $thisPage = "specialist" ?>
                                 <button class="product__chosen-trash"></button>
                             </div>
                             <button class="product__chosen-add"></button>
+                        </div>
+                        <div class="product__search input-wrapper">
+                            <input type="text" id="search-specialist" placeholder="Pasirinkite paslaugą">
+                            <span class="input-icon"></span>
                         </div>
                         <div class="specialist__calendar-container">
                             <div class="specialist__datepicker js-datepicker">
