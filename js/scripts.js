@@ -219,7 +219,7 @@ function onDocumentReady() {
           $(this).datepicker("setDate", getDate2);
           $(this).blur();
 
-          if($(".specialist__overlay")) {
+          if ($(".specialist__overlay")) {
             $(".specialist__overlay").removeClass("hidden");
           }
         },
@@ -2052,6 +2052,10 @@ function onDocumentReady() {
       type: "bar",
       displayModeBar: false,
       showlegend: false,
+      marker: {
+        color: "#101b51",
+      },
+      hoverinfo: "none",
     },
   ];
 
@@ -2060,6 +2064,8 @@ function onDocumentReady() {
     displayModeBar: false,
     margin: { t: 0, l: 0, r: 0, b: 0 },
     showlegend: false,
+    yaxis: { fixedrange: true,  showgrid: false, },
+    xaxis: { fixedrange: true },
   };
 
   clientsPlot = document.querySelector(".stat-grid__client-plot");
@@ -2067,11 +2073,8 @@ function onDocumentReady() {
     Plotly.newPlot(clientsPlot, clientsChart, config);
   }
 
-  clients = document.querySelector(".stat-grid__client-donut");
-
-  var donutData = [
+  var donutData1 = [
     {
-      domain: { column: 0 },
       values: [105, 155],
       labels: ["Sugrįžę<br>klientai", "Vienkartiniai<br>klientai"],
       type: "pie",
@@ -2079,17 +2082,43 @@ function onDocumentReady() {
       textposition: "outside",
       automargin: true,
       hole: 0.6,
+      hoverinfo: 'none',
+      marker: {
+        colors: [
+          '#5055be',
+          '#c0c2e8',
+          '#101b51',
+          '#ff9954',
+          '#ffb35b'
+        ]
+      }
     },
-    {
+  ];
+
+  var donutData2 = [
+        {
       domain: { column: 1 },
-      values: [20, 40, 60, 40],
-      labels: ["Vilnius", "Kaunas", "Klaipėda", "Panevėžys"],
+      values: [20, 40, 60, 20, 20],
+      labels: ["Vilnius", "Kaunas", "Klaipėda", "Panevėžys", "Kiti"],
       type: "pie",
       textinfo: "label+value",
       textposition: "outside",
       automargin: true,
       hole: 0.6,
+      hoverinfo: 'none',
+      marker: {
+        colors: [
+          '#5055be',
+          '#c0c2e8',
+          '#101b51',
+          '#ff9954',
+          '#ffb35b'
+        ]
+      }
     },
+  ];
+
+  donutData3 = [
     {
       domain: { column: 2 },
       values: [60, 200],
@@ -2099,8 +2128,18 @@ function onDocumentReady() {
       textposition: "outside",
       automargin: true,
       hole: 0.6,
+      hoverinfo: 'none',
+      marker: {
+        colors: [
+          '#5055be',
+          '#c0c2e8',
+          '#101b51',
+          '#ff9954',
+          '#ffb35b'
+        ]
+      }
     },
-  ];
+  ]
 
   var donutLayout = {
     annotations: [
@@ -2110,37 +2149,30 @@ function onDocumentReady() {
         },
         showarrow: false,
         text: "260",
-        x: 0.135,
-        y: 0.5,
-      },
-      {
-        font: {
-          size: 20,
-        },
-        showarrow: false,
-        text: "260",
         x: 0.5,
         y: 0.5,
       },
-      {
-        font: {
-          size: 20,
-        },
-        showarrow: false,
-        text: "260",
-        x: 0.87,
-        y: 0.5,
-      },
     ],
-    height: 200,
-    // width: 600,
     showlegend: false,
     margin: { t: 0, b: 0, l: 0, r: 0 },
-    grid: { rows: 1, columns: 3 },
+    font: {
+      family: 'Roboto',
+      size: 16,
+      color: '#040404'
+    },
+    horizontalspacing: 10,
+    verticalspacing: 10,
   };
 
-  if (clients) {
-    Plotly.newPlot(clients, donutData, donutLayout, config);
+  clients1 = document.querySelector(".stat-grid__client-donut--comeback");
+  clients2 = document.querySelector(".stat-grid__client-donut--cities");
+  clients3 = document.querySelector(".stat-grid__client-donut--gender");
+
+
+  if (clients1) {
+    Plotly.newPlot(clients1, donutData1, donutLayout, config);
+    Plotly.newPlot(clients2, donutData2, donutLayout, config);
+    Plotly.newPlot(clients3, donutData3, donutLayout, config);
   }
 
   if ($(".specialist__datepicker")) {
@@ -2150,21 +2182,27 @@ function onDocumentReady() {
     $(".specialist__overlay").addClass("hidden");
   }
 
-  $(".specialist #registruokis").not(".js_ignore_mark").on("click", function() {
-    $(".specialist__overlay").removeClass("hidden");
-  })
+  $(".specialist #registruokis")
+    .not(".js_ignore_mark")
+    .on("click", function () {
+      $(".specialist__overlay").removeClass("hidden");
+    });
 
-  $(".specialist__overlay").not(".js_ignore_mark").on("click", function() {
-    // if (!$(this).hasClass("hidden")) {
+  $(".specialist__overlay")
+    .not(".js_ignore_mark")
+    .on("click", function () {
+      // if (!$(this).hasClass("hidden")) {
       $(this).addClass("hidden");
-      console.log("w")
-    // }
-    $(".specialist__calendar-container").removeClass("overlay");
-  })
+      console.log("w");
+      // }
+      $(".specialist__calendar-container").removeClass("overlay");
+    });
 
-  $("#search-specialist").not(".js_ignore_mark").on("focus", function() {
-    $(".specialist__calendar-container").addClass("overlay");
-  })
+  $("#search-specialist")
+    .not(".js_ignore_mark")
+    .on("focus", function () {
+      $(".specialist__calendar-container").addClass("overlay");
+    });
 
   moveAction();
   moveOrder();
@@ -2423,7 +2461,10 @@ function hasScrolled() {
   // This is necessary so you never see what is "behind" the navbar.
   if (st > lastScrollTop && st > navbarHeight) {
     // Scroll Down
-    if(!$("section.specialist") && window.matchMedia("(max-width: 991px)").matches) {
+    if (
+      !$("section.specialist") &&
+      window.matchMedia("(max-width: 991px)").matches
+    ) {
       $(".site-header").removeClass("site-header--show");
     }
 

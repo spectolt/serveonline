@@ -41,20 +41,37 @@
 
     &__item {
       background-color: $darkgray;
+      border-radius: 5px;
+      box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
 
       .up,
       .down {
         display: flex;
-        &::before {
-          content: url("img/icons/arrow-up-white.svg");
+        &::after {
           display: block;
-          width: 10px;
+          width: 7px;
+          margin-left: 10px;
+        }
+      }
+      
+      .up {
+        &::after {
+          content: url("img/icons/arrow-up-cyan.svg");
         }
       }
 
       .down {
-        &::before {
+        &::after {
+          content: url("img/icons/arrow-up-red.svg");
           transform: rotate(180deg);
+        }
+      }
+
+      &.center-align {
+        .stat-grid__top {
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
       }
     }
@@ -66,15 +83,49 @@
       .right-align {
         float: right;
       }
+
+      h3 {
+        font-size: 1.875rem;
+        align-items: center;
+
+        span {
+          font-size: 1.125rem;
+          margin-left: 10px;
+        }
+      }
     }
 
     &__bottom {
       padding: 20px;
+
+      h3 {
+        font-family: 'Roboto', sans-serif;
+
+        span {
+          margin-left: 10px;
+        }
+      }
+    }
+
+    &__bottom-right {
+      h3 {
+        font-size: 1.875rem;
+        align-items: center;
+
+        span {
+          font-size: 1.125rem;
+        }
+      }
     }
 
     &__clients {
       &--all {
         grid-column: span 2;
+        background-color: #ffb35b;
+
+        hr {
+          background-color: #e3af66;
+        }
 
         .stat-grid__top {
           // height: 100px;
@@ -85,6 +136,7 @@
         .stat-grid__bottom {
           display: flex;
           justify-content: space-between;
+          padding: 15px 20px;
         }
       }
 
@@ -95,6 +147,23 @@
           height: 100%;
           display: flex;
           justify-content: space-between;
+        }
+      }
+
+      &--comeback {
+        background-color: #c0c2e8;
+
+        hr {
+          background-color: #8c98e0;
+        }
+      }
+
+      &--new {
+        background-color: #5055be;
+        color: $white;
+
+        hr {
+          background-color: #293684;
         }
       }
     }
@@ -113,17 +182,20 @@
     }
 
     &__client-donut {
+      width: 30%;
+      
       &.js-plotly-plot,
       .plot-container {
         height: 200px;
       }
 
-      &.js-plotly-plot {
-        width: 100%;
-      }
+      // &.js-plotly-plot {
+      //   width: 100%;
+      // }
 
-      &--comeback {
-      }
+      // &--comeback {
+        
+      // }
     }
   }
 }

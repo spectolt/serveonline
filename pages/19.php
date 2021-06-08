@@ -102,18 +102,18 @@
                             <h3><b>Atšaukė registraciją</b></h3>
                         </div>
                     </div>
-                    <div class="stat-grid__item">
+                    <div class="stat-grid__item center-align">
                         <div class="stat-grid__top">
-                            <h3 class="center-align">3</h3>
+                            <h3>3</h3>
                         </div>
                         <hr>
                         <div class="stat-grid__bottom">
                             <h3>Pažymėjo<b>Mano</b></h3>
                         </div>
                     </div>
-                    <div class="stat-grid__item">
+                    <div class="stat-grid__item center-align">
                         <div class="stat-grid__top">
-                            <h3 class="center-align">38 d.</h3>
+                            <h3>38 d.</h3>
                         </div>
                         <hr>
                         <div class="stat-grid__bottom">
@@ -121,9 +121,9 @@
                             <h3>Vidutiniškai</h3>
                         </div>
                     </div>
-                    <div class="stat-grid__item">
+                    <div class="stat-grid__item center-align">
                         <div class="stat-grid__top">
-                            <h3 class="center-align">38</h3>
+                            <h3>38</h3>
                         </div>
                         <hr>
                         <div class="stat-grid__bottom">
@@ -131,9 +131,9 @@
                             <h3>per paskutinius 12 mėn.</h3>
                         </div>
                     </div>
-                    <div class="stat-grid__item">
+                    <div class="stat-grid__item center-align">
                         <div class="stat-grid__top">
-                            <h3 class="center-align">38 €</h3>
+                            <h3>38 €</h3>
                         </div>
                         <hr>
                         <div class="stat-grid__bottom">
