@@ -91,6 +91,7 @@ $thisPage = "report"; ?>
                                     <th class="bottom-arrow top-arrow" rowspan="2">
                                         Unikalių<br>klientų
                                     </th>
+                                    <th></th>
                                 </tr>
                                 <tr>
                                     <th class="bottom-arrow top-arrow">vnt.</th>
@@ -102,7 +103,7 @@ $thisPage = "report"; ?>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php for ($y = 0; $y < 2; $y++) { ?>
+                                <?php for ($y = 0; $y < 22; $y++) { ?>
                                     <tr>
                                         <td>
                                             <div class="checkbox"><input name="select_all" type="checkbox" id="select_<?php echo $y ?>" />
@@ -133,7 +134,8 @@ $thisPage = "report"; ?>
                                         <td>0</td>
                                         <td>0</td>
                                         <td>0</td>
-                                        <td class="left-arrow">0</td>
+                                        <td>0</td>
+                                        <td class="left-arrow"></td>
                                     </tr>
                                 <?php } ?>
                             </tbody>
@@ -164,6 +166,7 @@ $thisPage = "report"; ?>
                                     <td>9999924</td>
                                     <td>9999924</td>
                                     <td>9999924</td>
+                                    <td></td>
                                     <td></td>
                                 </tr>
                             </tfoot>

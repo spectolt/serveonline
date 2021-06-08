@@ -2151,11 +2151,14 @@ function onDocumentReady() {
   }
 
   $(".specialist #registruokis").not(".js_ignore_mark").on("click", function() {
-    $(this).siblings(".specialist__overlay").removeClass("hidden");
+    $(".specialist__overlay").removeClass("hidden");
   })
 
   $(".specialist__overlay").not(".js_ignore_mark").on("click", function() {
-    $(this).addClass("hidden");
+    // if (!$(this).hasClass("hidden")) {
+      $(this).addClass("hidden");
+      console.log("w")
+    // }
     $(".specialist__calendar-container").removeClass("overlay");
   })
 

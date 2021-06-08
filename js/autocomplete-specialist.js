@@ -1,6 +1,6 @@
 var isVisible = false;
 if ($("main.hasUiAutocomplete").length > 0) {
-  var input = $("#search-specialist").not(".js_ignore_mark")
+  var input = $("#search-specialist").not(".js_ignore_mark");
   input
     .autocomplete({
       minLength: 0,
@@ -24,15 +24,17 @@ if ($("main.hasUiAutocomplete").length > 0) {
         // $(input).parent().removeClass("rotate");
       },
       open: function (event, ui) {
-        $(".ui-autocomplete-wrapper").prepend("<div class='product__notice'><p class='product__text'>Jūsų buvusios rezervacijos paryškintos</p><button class='product__close'></button></div>")
+        $(".ui-autocomplete-wrapper").prepend(
+          "<div class='product__notice'><p class='product__text'>Jūsų buvusios rezervacijos paryškintos</p><button class='product__close'></button></div>"
+        );
         // $('.ui-autocomplete').append('<li><button class="product__choose-marked">Rinktis pažymėtas paslaugas</button></li>');
-        $('.ui-autocomplete').css("top", "+=1")
+        $(".ui-autocomplete").css("top", "+=1");
 
         if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
           $(".ui-autocomplete").off("menufocus hover mouseover");
         }
-        
-        $("input#search-specialist").data('is_open',true);
+
+        // $("input#search-specialist").data("is_open", true);
         $("input#search-specialist").attr("rel", 0);
 
         //overriding default classes after putting in wrapper
@@ -46,7 +48,12 @@ if ($("main.hasUiAutocomplete").length > 0) {
         $("div.autocomplete-product").addClass("ui-menu-item-wrapper");
         $(".ui-autocomplete-choose").removeClass("ui-menu-item");
         $(".ui-autocomplete-choose-text").removeClass("ui-menu-item-wrapper");
+
         $(input).parent().find(".input-icon").addClass("rotate-arrow");
+
+        var wrapper = $(".specialist .ui-autocomplete-wrapper")
+        var wrapperHeight = $(window).height() - wrapper.offset().top
+        $(wrapper).css("max-height", wrapperHeight)
       },
       close: function (event, ui) {
         // $("#ui-id-1").show();
@@ -96,9 +103,9 @@ if ($("main.hasUiAutocomplete").length > 0) {
               "<button class='autocomplete-product-button'>Plačiau</button></span><span class='autocomplete-product-desc paragraph hidden'>" +
               item.about +
               "</span>" +
-              '<div class="product-action"><div class="product-action__info"><div class="product-action__duration">01:00</div>'+
-              '<div class="product-action__price">45€<strike>60€</strike></div><div class="product-action__periodicity">6 sav.</div>'+
-              '</div></div>' +
+              '<div class="product-action"><div class="product-action__info"><div class="product-action__duration">01:00</div>' +
+              '<div class="product-action__price">45€<strike>60€</strike></div><div class="product-action__periodicity">6 sav.</div>' +
+              "</div></div>" +
               "</label></div></div>"
           )
           .appendTo(ul);
@@ -118,9 +125,9 @@ if ($("main.hasUiAutocomplete").length > 0) {
               "'><span class='autocomplete-product-title'>" +
               item.choice1title +
               "</span>" +
-              '<div class="product-action"><div class="product-action__info"><div class="product-action__duration">01:00</div>'+
-              '<div class="product-action__price">45€<strike>60€</strike></div><div class="product-action__periodicity">6 sav.</div>'+
-              '</div></div>' +
+              '<div class="product-action"><div class="product-action__info"><div class="product-action__duration">01:00</div>' +
+              '<div class="product-action__price">45€<strike>60€</strike></div><div class="product-action__periodicity">6 sav.</div>' +
+              "</div></div>" +
               "</label></div></div><div class='autocomplete-product autocomplete-product--choice product-choice hidden'><div class='checkbox'><input type='checkbox' class='autocomplete-product-input' id='item-" +
               item.index +
               "'><label class='autocomplete-product-checkbox' for='item-" +
@@ -128,9 +135,9 @@ if ($("main.hasUiAutocomplete").length > 0) {
               "'><span class='autocomplete-product-title'>" +
               item.choice2title +
               "</span>" +
-              '<div class="product-action"><div class="product-action__info"><div class="product-action__duration">01:00</div>'+
-              '<div class="product-action__price">45€<strike>60€</strike></div><div class="product-action__periodicity">6 sav.</div>'+
-              '</div></div>' +
+              '<div class="product-action"><div class="product-action__info"><div class="product-action__duration">01:00</div>' +
+              '<div class="product-action__price">45€<strike>60€</strike></div><div class="product-action__periodicity">6 sav.</div>' +
+              "</div></div>" +
               "</label></div></div><div class='autocomplete-product autocomplete-product--choice product-choice hidden'><div class='checkbox'><input type='checkbox' class='autocomplete-product-input' id='item-" +
               item.index +
               "'><label class='autocomplete-product-checkbox' for='item-" +
@@ -138,9 +145,9 @@ if ($("main.hasUiAutocomplete").length > 0) {
               "'><span class='autocomplete-product-title'>" +
               item.choice3title +
               "</span>" +
-              '<div class="product-action"><div class="product-action__info"><div class="product-action__duration">01:00</div>'+
-              '<div class="product-action__price">45€<strike>60€</strike></div><div class="product-action__periodicity">6 sav.</div>'+
-              '</div></div>' +
+              '<div class="product-action"><div class="product-action__info"><div class="product-action__duration">01:00</div>' +
+              '<div class="product-action__price">45€<strike>60€</strike></div><div class="product-action__periodicity">6 sav.</div>' +
+              "</div></div>" +
               "</label>" +
               "</div></div>"
           )
@@ -151,15 +158,15 @@ if ($("main.hasUiAutocomplete").length > 0) {
     $("#ui-id-1")
       .children()
       .wrapAll("<div class='ui-autocomplete-wrapper'></div>");
-  }
+  };
 
   // $(input).on("click", function() {
-    $(input).prop("readonly", "readonly")
+  $(input).prop("readonly", "readonly");
   // })
 
-  $("#search-specialist").on("focus", function () {
+  $("#search-specialist").on("click", function () {
     $(this).autocomplete("search", "");
-  })
+  });
   // $("#search-specialist").on("focusout", function(event) {
   //   $(".ui-autocomplete").hide();
   // })
@@ -180,17 +187,28 @@ if ($("main.hasUiAutocomplete").length > 0) {
 
   $(document).click(function (event) {
     //if you click on anything except the search box or results, close menu
-    if (!$(event.target).closest(".product__search, .ui-autocomplete, .autocomplete-product").length || $(event.target).closest(".product__close").length) {
+    if (
+      !$(event.target).closest(
+        ".product__search, .ui-autocomplete, .autocomplete-product"
+      ).length ||
+      $(event.target).closest(".product__close").length
+      // || $(event.target).closest(".product__search .input-icon.rotate-arrow")
+      //   .length
+      || $(event.target).closest(".autocomplete-product-checkbox").length
+    ) {
       $(".ui-autocomplete").css("display", "none");
       $(input).parent().find(".input-icon").removeClass("rotate-arrow");
-      $("input#search-specialist").data('is_open',false);
-      $(".specialist__overlay").addClass("hidden");
+      // $("input#search-specialist").data("is_open", false);
+      if (!$(".specialist__overlay.hidden").length > 0) {
+        $(".specialist__overlay").addClass("hidden");
+      }
       $(".specialist__calendar-container").removeClass("overlay");
       // $("input#search-specialist").val("");
       // $(".search-panel input").val("");
     } else {
+      $(input).siblings(".input-icon").addClass("rotate-arrow");
+      // $(input).autocomplete("search", "");
       $(".ui-autocomplete").css("display", "block");
-      $(input).parent().find(".input-icon").addClass("rotate-arrow");
       $(".specialist__overlay").removeClass("hidden");
       $(".specialist__calendar-container").addClass("overlay");
     }
@@ -199,48 +217,54 @@ if ($("main.hasUiAutocomplete").length > 0) {
   //make product search checkboxes work and choose product
   $(document)
     .on("click", ".autocomplete-product-checkbox", function (e) {
+      $(".product__chosen").show();
+      $(this).closest(".ui-menu-item").remove();
+
+      // $(".ui-autocomplete").css("display", "none");
+      // $(input).parent().find(".input-icon").removeClass("rotate-arrow");
+
       var checkBoxes = $(this).closest(".checkbox").find("input");
       checkBoxes.prop("checked", !checkBoxes.prop("checked"));
       document.activeElement.blur();
 
       var title, subtitle;
       // if (checkBoxes.is(":checked")) {
-        // $(".ui-autocomplete, #search-specialist, .ui-autocomplete-wrapper").css(
-        //   "display",
-        //   "none"
-        // );
-        // $(".search-container__submit span").html("Valyti");
-        // $(".search-container__submit").addClass("change-search-icon");
-        // if (checkBoxes.parents(".autocomplete-product--choice").length) {
-        //   title = $(this)
-        //     .closest(".autocomplete-product--choices")
-        //     .find(".autocomplete-product-title")
-        //     .contents()
-        //     .get(0).nodeValue;
-        //   subtitle = $(this)
-        //     .find(".autocomplete-product-title")
-        //     .contents()
-        //     .get(0).nodeValue;
-        //   $("<div class='product-chosen'>")
-        //     .append(
-        //       "<h3>" +
-        //         title +
-        //         "</h3><h4>" +
-        //         subtitle +
-        //         "</h4><button class='product-chosen__trash'></button>"
-        //     )
-        //     .appendTo(".product__search");
-        // } else {
-        //   title = $(this).find(".autocomplete-product-title").contents().get(0)
-        //     .nodeValue;
-        //   $("<div class='product-chosen'>")
-        //     .append(
-        //       "<h3>" +
-        //         title +
-        //         "</h3><button class='product-chosen__trash'></button>"
-        //     )
-        //     .appendTo(".product__search");
-        // }
+      // $(".ui-autocomplete, #search-specialist, .ui-autocomplete-wrapper").css(
+      //   "display",
+      //   "none"
+      // );
+      // $(".search-container__submit span").html("Valyti");
+      // $(".search-container__submit").addClass("change-search-icon");
+      // if (checkBoxes.parents(".autocomplete-product--choice").length) {
+      //   title = $(this)
+      //     .closest(".autocomplete-product--choices")
+      //     .find(".autocomplete-product-title")
+      //     .contents()
+      //     .get(0).nodeValue;
+      //   subtitle = $(this)
+      //     .find(".autocomplete-product-title")
+      //     .contents()
+      //     .get(0).nodeValue;
+      //   $("<div class='product-chosen'>")
+      //     .append(
+      //       "<h3>" +
+      //         title +
+      //         "</h3><h4>" +
+      //         subtitle +
+      //         "</h4><button class='product-chosen__trash'></button>"
+      //     )
+      //     .appendTo(".product__search");
+      // } else {
+      //   title = $(this).find(".autocomplete-product-title").contents().get(0)
+      //     .nodeValue;
+      //   $("<div class='product-chosen'>")
+      //     .append(
+      //       "<h3>" +
+      //         title +
+      //         "</h3><button class='product-chosen__trash'></button>"
+      //     )
+      //     .appendTo(".product__search");
+      // }
       // }
     })
     .on("click", ".autocomplete-product-button", function (e) {
@@ -257,19 +281,19 @@ if ($("main.hasUiAutocomplete").length > 0) {
     if ($(".product__chosen .autocomplete-product").length == 0) {
       $(".product__chosen").remove();
       $("#search-specialist").parent().show();
-    // $("input#search-specialist").val("");
-    } 
+      // $("input#search-specialist").val("");
+    }
   });
 
-  $(document).on("click", ".product__choose-marked", function (e) {
-    // if($(".product__chosen .autocomplete-product").length) {
-    input.parent().hide();
-    $(".product__chosen").show();
-    // }
-  });
-  
+  // $(document).on("click", ".product__choose-marked", function (e) {
+  //   // if($(".product__chosen .autocomplete-product").length) {
+  //   input.parent().hide();
+  //   $(".product__chosen").show();
+  //   // }
+  // });
+
   $(".product__chosen-add").on("click", function () {
-    var container = $(".ui-autocomplete");
+    // var container = $(".ui-autocomplete");
     input.parent().show();
     // input.parent().css({height: "0", visibility: "hidden", marginBottom: "0"});
     // input.autocomplete("search", "");
@@ -307,25 +331,24 @@ if ($("main.hasUiAutocomplete").length > 0) {
 
   // })
 
-  $(".product__search .input-icon").not(".js_ignore_mark").on("click", function (){
-    if ($("input#search-specialist").siblings(".ui-autocomplete").is(":visible")) {
-      $(".ui-autocomplete").css("display", "none");
-      $(input).parent().find(".input-icon").removeClass("rotate-arrow");
-    } else {
-      $(this).closest(".product__search").find("input").autocomplete("search", "")
-    }
-  })
-
-  // $(document).on("click", ".product__close:not('.js_ignore_mark')", function() {
-  //   $(this).closest(".ui-autocomplete").css("display", "none");
-  //   $(input).parent().find(".input-icon").removeClass("rotate-arrow");
-  //   // $(input).autocomplete('close');
-  //   $(".specialist__overlay").addClass("hidden");
-  //   $(".specialist__calendar-container").removeClass("overlay");
+  // $(".product__search .input-icon").not(".js_ignore_mark").on("click", function (){
+  //   if ($("input#search-specialist").siblings(".ui-autocomplete").is(":visible")) {
+  //     $(".ui-autocomplete").css("display", "none");
+  //     $(input).parent().find(".input-icon").removeClass("rotate-arrow");
+  //   } else {
+  //     $(this).closest(".product__search").find("input").autocomplete("search", "")
+  //   }
   // })
 
-  $(document).on("change", ".autocomplete-product-input:not('.js_ignore_mark')", function() {
-    $(".product__chosen").show();
-    $(this).closest(".ui-menu-item").addClass("hidden");
-  })
+  // $(document).on("click", ".product__close:not('.js_ignore_mark')", function() {
+  //   $(".product__search .input-icon").trigger("click");
+  // })
+
+  // $(document).on(
+  //   "click",
+  //   ".autocomplete-product-checkbox:not('.js_ignore_mark')",
+  //   function (e) {
+      
+  //   }
+  // );
 }
