@@ -21359,7 +21359,7 @@ section.product .product__block--company .slick-track {
 }
 
 .specialist .product__search .ui-autocomplete .autocomplete-product--choices:hover > .autocomplete-product:hover {
-  background-color: #d7d7d9;
+  background-color: #e2e3e5;
 }
 
 .specialist .ui-widget.ui-datepicker {
@@ -21978,7 +21978,6 @@ section.product .product__block--company .slick-track {
   border: 1px solid #e8e8e8;
   padding-left: 10px;
   padding-right: 40px;
-  margin-bottom: 20px;
   background-color: #fff;
 }
 
@@ -22032,6 +22031,60 @@ section.product .product__block--company .slick-track {
   }
 }
 
+.specialist #registruokis .product__chosen-final {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.specialist #registruokis .product__chosen-duration {
+  font-weight: 400;
+}
+
+@media (max-width: 900px) {
+  .specialist #registruokis .product__chosen-duration {
+    font-size: 0.875rem;
+  }
+}
+
+.specialist #registruokis .product__chosen-duration:before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  background-image: url("img/icons/clock.svg");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: inline-block;
+  margin-right: 10px;
+  position: relative;
+  top: 2px;
+}
+
+@media (max-width: 900px) {
+  .specialist #registruokis .product__chosen-duration:before {
+    margin-right: 5px;
+  }
+}
+
+.specialist #registruokis .product__chosen-duration--final {
+  display: inline-block;
+  margin-left: 20px;
+  color: #e54651;
+  font-family: "Roboto", sans-serif;
+}
+
+@media (max-width: 900px) {
+  .specialist #registruokis .product__chosen-duration--final {
+    margin-left: 5px;
+    padding-right: 0;
+  }
+  .specialist #registruokis .product__chosen-duration--final:before {
+    width: 12px;
+    height: 12px;
+    top: 1px;
+  }
+}
+
 .specialist #registruokis h3 {
   font-size: 1.5rem;
   margin-bottom: 5px;
@@ -22074,6 +22127,10 @@ section.product .product__block--company .slick-track {
     left: 9px;
     top: 17px;
   }
+}
+
+.specialist #registruokis .input-wrapper.hidden-icon::before {
+  display: none;
 }
 
 .specialist #registruokis .input-wrapper .input-icon {

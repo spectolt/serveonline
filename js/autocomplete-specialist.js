@@ -8,7 +8,7 @@ if ($("main.hasUiAutocomplete").length > 0) {
       menudocking: {
         menucorner: "right bottom",
         inputcorner: "right bottom",
-        collision: "none",
+        // collision: "none",
       },
       source: function (request, response) {
         $.ajax({
@@ -20,21 +20,17 @@ if ($("main.hasUiAutocomplete").length > 0) {
       },
       select: function (event, ui) {
         $("input#search-specialist").attr("rel", ui.item.label);
-        // $("#ui-id-2").css("display", "none");
-        // $(input).parent().removeClass("rotate");
       },
       open: function (event, ui) {
         $(".ui-autocomplete-wrapper").prepend(
           "<div class='product__notice'><p class='product__text'>Jūsų buvusios rezervacijos paryškintos</p><button class='product__close'></button></div>"
         );
-        // $('.ui-autocomplete').append('<li><button class="product__choose-marked">Rinktis pažymėtas paslaugas</button></li>');
         $(".ui-autocomplete").css("top", "+=1");
 
         if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
           $(".ui-autocomplete").off("menufocus hover mouseover");
         }
 
-        // $("input#search-specialist").data("is_open", true);
         $("input#search-specialist").attr("rel", 0);
 
         //overriding default classes after putting in wrapper
@@ -54,20 +50,18 @@ if ($("main.hasUiAutocomplete").length > 0) {
         var wrapper = $(".specialist .ui-autocomplete-wrapper")
         var wrapperHeight = $(window).height() - wrapper.offset().top
         $(wrapper).css("max-height", wrapperHeight)
+
+        if($(".product__chosen").is(":visible")) {
+          $(".specialist .ui-autocomplete").css("top", "0")
+        }
       },
       close: function (event, ui) {
-        // $("#ui-id-1").show();
         if (!$(".ui-autocomplete").is(":visible")) {
           $(".ui-autocomplete").show();
         }
       },
       select: function (event, ui) {
         event.preventDefault();
-        // $("input#search-product").val(ui.item.title);
-        // $("#project").val(ui.item.label);
-        // $("#project-id").val(ui.item.value);
-        // $("#project-description").html(ui.item.desc);
-        // $("#project-icon").attr("src", "images/" + ui.item.icon);
 
         return false;
       },
@@ -160,29 +154,22 @@ if ($("main.hasUiAutocomplete").length > 0) {
       .wrapAll("<div class='ui-autocomplete-wrapper'></div>");
   };
 
-  // $(input).on("click", function() {
   $(input).prop("readonly", "readonly");
-  // })
 
   $("#search-specialist").on("click", function () {
     $(this).autocomplete("search", "");
   });
-  // $("#search-specialist").on("focusout", function(event) {
-  //   $(".ui-autocomplete").hide();
-  // })
 
   $(document).on("click", ".autocomplete-product-button", function () {
     var description = $(this)
       .closest(".autocomplete-product")
       .find(".autocomplete-product-desc");
     description.toggleClass("hidden");
-    // console.log(description);
     $(this).html($(this).html() == "Uždaryti" ? "Plačiau" : "Uždaryti");
   });
 
   $(document).on("click", ".product-expand", function () {
     $(this).siblings(" .autocomplete-product-duration").toggleClass("hidden");
-    // $(this).toggleClass("rotate-arrow");
   });
 
   $(document).click(function (event) {
@@ -194,20 +181,16 @@ if ($("main.hasUiAutocomplete").length > 0) {
       $(event.target).closest(".product__close").length
       // || $(event.target).closest(".product__search .input-icon.rotate-arrow")
       //   .length
-      || $(event.target).closest(".autocomplete-product-checkbox").length
+      // || $(event.target).closest(".autocomplete-product-checkbox").length
     ) {
       $(".ui-autocomplete").css("display", "none");
       $(input).parent().find(".input-icon").removeClass("rotate-arrow");
-      // $("input#search-specialist").data("is_open", false);
       if (!$(".specialist__overlay.hidden").length > 0) {
         $(".specialist__overlay").addClass("hidden");
       }
       $(".specialist__calendar-container").removeClass("overlay");
-      // $("input#search-specialist").val("");
-      // $(".search-panel input").val("");
     } else {
       $(input).siblings(".input-icon").addClass("rotate-arrow");
-      // $(input).autocomplete("search", "");
       $(".ui-autocomplete").css("display", "block");
       $(".specialist__overlay").removeClass("hidden");
       $(".specialist__calendar-container").addClass("overlay");
@@ -219,136 +202,49 @@ if ($("main.hasUiAutocomplete").length > 0) {
     .on("click", ".autocomplete-product-checkbox", function (e) {
       $(".product__chosen").show();
       $(this).closest(".ui-menu-item").remove();
-
-      // $(".ui-autocomplete").css("display", "none");
-      // $(input).parent().find(".input-icon").removeClass("rotate-arrow");
+      $(input).css({"visibility": "hidden", "height": "0", "padding": "0", "margin": "0"});
+      $(input).parent().addClass("hidden-icon");
+      $(input).siblings(":not('.ui-autocomplete')").hide();
 
       var checkBoxes = $(this).closest(".checkbox").find("input");
       checkBoxes.prop("checked", !checkBoxes.prop("checked"));
       document.activeElement.blur();
 
-      var title, subtitle;
-      // if (checkBoxes.is(":checked")) {
-      // $(".ui-autocomplete, #search-specialist, .ui-autocomplete-wrapper").css(
-      //   "display",
-      //   "none"
-      // );
-      // $(".search-container__submit span").html("Valyti");
-      // $(".search-container__submit").addClass("change-search-icon");
-      // if (checkBoxes.parents(".autocomplete-product--choice").length) {
-      //   title = $(this)
-      //     .closest(".autocomplete-product--choices")
-      //     .find(".autocomplete-product-title")
-      //     .contents()
-      //     .get(0).nodeValue;
-      //   subtitle = $(this)
-      //     .find(".autocomplete-product-title")
-      //     .contents()
-      //     .get(0).nodeValue;
-      //   $("<div class='product-chosen'>")
-      //     .append(
-      //       "<h3>" +
-      //         title +
-      //         "</h3><h4>" +
-      //         subtitle +
-      //         "</h4><button class='product-chosen__trash'></button>"
-      //     )
-      //     .appendTo(".product__search");
-      // } else {
-      //   title = $(this).find(".autocomplete-product-title").contents().get(0)
-      //     .nodeValue;
-      //   $("<div class='product-chosen'>")
-      //     .append(
-      //       "<h3>" +
-      //         title +
-      //         "</h3><button class='product-chosen__trash'></button>"
-      //     )
-      //     .appendTo(".product__search");
-      // }
-      // }
+      //autocomplete wrapper height and position
+      $(".specialist .ui-autocomplete").css("top", "0")
+      var wrapper = $(".specialist .ui-autocomplete-wrapper")
+      var wrapperHeight = $(window).height() - $(wrapper).offset().top;
+      wrapper.css("height", wrapperHeight)
     })
     .on("click", ".autocomplete-product-button", function (e) {
       $(this).toggleClass("rotate-arr");
       return false;
     });
 
+  //remove product and restore input if no products left
   $(document).on("click", ".product__chosen-trash", function () {
     $(this).closest(".autocomplete-product").remove();
-    // $("input#search-specialist").focus();
-    // $(".search-container__submit span").html("Ieškoti");
-    // $(".search-container__submit").removeClass("change-search-icon");
-    // console.log($(".product__chosen .autocomplete-product").length)
     if ($(".product__chosen .autocomplete-product").length == 0) {
       $(".product__chosen").remove();
-      $("#search-specialist").parent().show();
-      // $("input#search-specialist").val("");
+      input.css({"visibility": "visible", "height": "", "padding": "", "margin": ""});
+      input.siblings(":not('.ui-autocomplete')").show();
+      $(input).parent().removeClass("hidden-icon");
     }
   });
 
-  // $(document).on("click", ".product__choose-marked", function (e) {
-  //   // if($(".product__chosen .autocomplete-product").length) {
-  //   input.parent().hide();
-  //   $(".product__chosen").show();
-  //   // }
-  // });
-
+  //show autocomplete list on add button
   $(".product__chosen-add").on("click", function () {
-    // var container = $(".ui-autocomplete");
-    input.parent().show();
-    // input.parent().css({height: "0", visibility: "hidden", marginBottom: "0"});
-    // input.autocomplete("search", "");
-    // container.insertAfter(".product__chosen");
-    // container.css({display: "block", position: "static"});
+    input.autocomplete("search","")
   });
 
-  // $(document).on("click", ".product__choose-marked", function() {
-  //   $(this).closest(".ui-autocomplete").siblings("input#search-specialist").remove();
-  //   $(this).closest(".ui-autocomplete").remove();
 
-  // })
-
-  // var input = $("#search-specialist");
-  // if (!navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
-  //   $(document).on("click", ".ui-autocomplete-wrapper", function (e) {
-  //     input.prop("readonly", true);
-  //   });
-  //   $(document).on("click", "#search-specialist", function () {
-  //     input.prop("readonly", false);
-  //   });
-  // }
-
-  $("main").scroll(function () {
-    if ($(".ui-autocomplete").is(":visible")) {
-      if ($(this).scrollTop() > 100) {
-        $("input#search-specialist").blur();
-        $(".ui-autocomplete").css("display", "none");
-        $("input#search-specialist").val("");
-      }
-    }
-  });
-
-  // $(input).on("click", function() {
-
-  // })
-
-  // $(".product__search .input-icon").not(".js_ignore_mark").on("click", function (){
-  //   if ($("input#search-specialist").siblings(".ui-autocomplete").is(":visible")) {
-  //     $(".ui-autocomplete").css("display", "none");
-  //     $(input).parent().find(".input-icon").removeClass("rotate-arrow");
-  //   } else {
-  //     $(this).closest(".product__search").find("input").autocomplete("search", "")
+  // $("main").scroll(function () {
+  //   if ($(".ui-autocomplete").is(":visible")) {
+  //     if ($(this).scrollTop() > 100) {
+  //       $("input#search-specialist").blur();
+  //       $(".ui-autocomplete").css("display", "none");
+  //       $("input#search-specialist").val("");
+  //     }
   //   }
-  // })
-
-  // $(document).on("click", ".product__close:not('.js_ignore_mark')", function() {
-  //   $(".product__search .input-icon").trigger("click");
-  // })
-
-  // $(document).on(
-  //   "click",
-  //   ".autocomplete-product-checkbox:not('.js_ignore_mark')",
-  //   function (e) {
-      
-  //   }
-  // );
+  // });
 }
