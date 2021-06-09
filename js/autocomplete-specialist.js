@@ -47,12 +47,13 @@ if ($("main.hasUiAutocomplete").length > 0) {
 
         $(input).parent().find(".input-icon").addClass("rotate-arrow");
 
-        var wrapper = $(".specialist .ui-autocomplete-wrapper")
-        var wrapperHeight = $(window).height() - wrapper.offset().top
-        $(wrapper).css("max-height", wrapperHeight)
+        var wrapper = $(".specialist .ui-autocomplete-wrapper");
+        var wrapperHeight =
+          $(window).height() - wrapper[0].getBoundingClientRect().top;
+        $(wrapper).css("max-height", wrapperHeight);
 
-        if($(".product__chosen").is(":visible")) {
-          $(".specialist .ui-autocomplete").css("top", "0")
+        if ($(".product__chosen").is(":visible")) {
+          $(".specialist .ui-autocomplete").css("top", "0");
         }
       },
       close: function (event, ui) {
@@ -185,9 +186,9 @@ if ($("main.hasUiAutocomplete").length > 0) {
     ) {
       $(".ui-autocomplete").css("display", "none");
       $(input).parent().find(".input-icon").removeClass("rotate-arrow");
-      if (!$(".specialist__overlay.hidden").length > 0) {
-        $(".specialist__overlay").addClass("hidden");
-      }
+      // if ($(".specialist__overlay.hidden").length == 0) {
+      //   $(".specialist__overlay").addClass("hidden");
+      // }
       $(".specialist__calendar-container").removeClass("overlay");
     } else {
       $(input).siblings(".input-icon").addClass("rotate-arrow");
@@ -202,7 +203,12 @@ if ($("main.hasUiAutocomplete").length > 0) {
     .on("click", ".autocomplete-product-checkbox", function (e) {
       $(".product__chosen").show();
       $(this).closest(".ui-menu-item").remove();
-      $(input).css({"visibility": "hidden", "height": "0", "padding": "0", "margin": "0"});
+      $(input).css({
+        visibility: "hidden",
+        height: "0",
+        padding: "0",
+        margin: "0",
+      });
       $(input).parent().addClass("hidden-icon");
       $(input).siblings(":not('.ui-autocomplete')").hide();
 
@@ -211,10 +217,11 @@ if ($("main.hasUiAutocomplete").length > 0) {
       document.activeElement.blur();
 
       //autocomplete wrapper height and position
-      $(".specialist .ui-autocomplete").css("top", "0")
-      var wrapper = $(".specialist .ui-autocomplete-wrapper")
-      var wrapperHeight = $(window).height() - $(wrapper).offset().top;
-      wrapper.css("height", wrapperHeight)
+      $(".specialist .ui-autocomplete").css("top", "0");
+      var wrapper = $(".specialist .ui-autocomplete-wrapper");
+      var wrapperHeight =
+        $(window).height() - wrapper[0].getBoundingClientRect().top;
+      wrapper.css("height", wrapperHeight);
     })
     .on("click", ".autocomplete-product-button", function (e) {
       $(this).toggleClass("rotate-arr");
@@ -224,19 +231,29 @@ if ($("main.hasUiAutocomplete").length > 0) {
   //remove product and restore input if no products left
   $(document).on("click", ".product__chosen-trash", function () {
     $(this).closest(".autocomplete-product").remove();
+    var wrapper = $(".specialist .ui-autocomplete-wrapper");
+    var wrapperHeight =
+      $(window).height() - wrapper[0].getBoundingClientRect().top;
+    wrapper.css("height", wrapperHeight);
+
     if ($(".product__chosen .autocomplete-product").length == 0) {
       $(".product__chosen").remove();
-      input.css({"visibility": "visible", "height": "", "padding": "", "margin": ""});
+      input.css({ visibility: "visible", height: "", padding: "", margin: "" });
       input.siblings(":not('.ui-autocomplete')").show();
       $(input).parent().removeClass("hidden-icon");
+
+      if (window.matchMedia("(max-width: 700px)").matches) {
+        $(".specialist .ui-autocomplete").css({ top: "34px" });
+      } else {
+        $(".specialist .ui-autocomplete").css({ top: "54px" });
+      }
     }
   });
 
   //show autocomplete list on add button
   $(".product__chosen-add").on("click", function () {
-    input.autocomplete("search","")
+    input.autocomplete("search", "");
   });
-
 
   // $("main").scroll(function () {
   //   if ($(".ui-autocomplete").is(":visible")) {

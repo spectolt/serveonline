@@ -22297,10 +22297,11 @@ section.product .product__block--company .slick-track {
   width: calc(100% + 40px);
 }
 
-@media (max-width: 700px) {
+@media (max-width: 600px) {
   .specialist #registruokis .ui-autocomplete-wrapper .ui-menu-item .product-choice {
     left: -10px;
     width: calc(100% + 20px);
+    padding-bottom: 13px;
   }
 }
 
@@ -22567,6 +22568,11 @@ section.product .product__block--company .slick-track {
 .specialist table.calendar {
   margin: auto;
   margin-top: 25px;
+}
+
+.specialist table.calendar td p.active {
+  background-color: #ff9954;
+  color: #101b51;
 }
 
 @media (max-width: 900px) {

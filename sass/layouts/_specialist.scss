@@ -1002,9 +1002,10 @@
           left: -20px;
           width: calc(100% + 40px);
 
-          @include breakpoint(sm) {
+          @include breakpoint(xs) {
             left: -10px;
             width: calc(100% + 20px);
+            padding-bottom: 13px;
           }
         }
 
@@ -1264,6 +1265,11 @@
   table.calendar {
     margin: auto;
     margin-top: 25px;
+
+    td p.active {
+      background-color: $orange;
+      color: $darkblue;
+    }
 
     @include breakpoint(900px) {
       display: table;

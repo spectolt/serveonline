@@ -15,6 +15,7 @@ function onDocumentReady() {
     changeTextWidth();
   };
 
+  //rotate arrows of select containers
   $("select")
     .not(".js_ignore_mark")
     .select2()
@@ -31,6 +32,7 @@ function onDocumentReady() {
         .removeClass("rotate");
     });
 
+  //search container search select initialization
   var dropdownWidth;
   var searchValue;
   $(".search-panel__select")
@@ -108,6 +110,7 @@ function onDocumentReady() {
     });
 
   if ($("main.hasUiAutocomplete").length > 0) {
+    //submit button
     $(".search-container__submit")
       .not(".js_ignore_mark")
       .unbind("click")
@@ -137,6 +140,7 @@ function onDocumentReady() {
         }
       });
 
+    //submit on enter
     $("input#search, input#search-product")
       .not(".js_ignore_mark")
       .on("keydown", function search(e) {
@@ -165,6 +169,7 @@ function onDocumentReady() {
       this._updateDatepicker(inst);
     };
 
+    //event dates
     var Event = function (text) {
       this.text = text;
     };
@@ -1514,32 +1519,6 @@ function onDocumentReady() {
     }
   );
 
-  // $(".company__login-search")
-  //   .not(".js_ignore_mark")
-  //   .each(function () {
-  //     var id = $(this).closest(".company__admin").attr("id");
-  //     $(this).autocomplete({
-  //       source: ["Saulė Braškinienė", "Romas Dimša", "Ramunė Varnaliauskienė"],
-  //       appendTo: "#" + id + " .company__login-left",
-  //       select: function (event, ui) {
-  //         event.stopPropagation();
-  //         $(this)
-  //           .closest(".company__login-left")
-  //           .find(".company__login-photo")
-  //           .css("background-image", "url('../img/1.jpg')");
-  //       },
-  //     });
-  //   });
-
-  // $(".company__header--company").on("scroll", function () {
-  //   // .css('top', $(window).scrollTop());
-  //   $(this)
-  //     .find("h2")
-  //     .css({
-  //       left: $(this).scrollLeft(), //Use it later
-  //     });
-  // });
-
   if (
     /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
       navigator.userAgent
@@ -2045,6 +2024,7 @@ function onDocumentReady() {
     })
     .datepicker("setDate", new Date());
 
+    //statistics charts
   var clientsChart = [
     {
       x: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
@@ -2182,27 +2162,30 @@ function onDocumentReady() {
     $(".specialist__overlay").addClass("hidden");
   }
 
+  //add or remove overlay on click
+  $(".specialist__overlay")
+    .not(".js_ignore_mark")
+    .on("click", function () {
+      $(this).addClass("hidden");
+      $(".specialist__calendar-container").removeClass("overlay");
+    });
   $(".specialist #registruokis")
     .not(".js_ignore_mark")
     .on("click", function () {
       $(".specialist__overlay").removeClass("hidden");
     });
-
-  $(".specialist__overlay")
-    .not(".js_ignore_mark")
-    .on("click", function () {
-      // if (!$(this).hasClass("hidden")) {
-      $(this).addClass("hidden");
-      console.log("w");
-      // }
-      $(".specialist__calendar-container").removeClass("overlay");
-    });
-
   $("#search-specialist")
     .not(".js_ignore_mark")
     .on("focus", function () {
       $(".specialist__calendar-container").addClass("overlay");
     });
+
+  //add active class to calendar in specialist page
+  $(".specialist .calendar td p").not(".js_ignore_mark").on("click", function() {
+    if ($(".product__chosen").is(":visible")) {
+      $(this).addClass("active");
+    }
+  })
 
   moveAction();
   moveOrder();
