@@ -24,8 +24,8 @@
                 <div class="stat-grid">
                     <div class="stat-grid__item stat-grid__clients stat-grid__clients--comeback">
                         <div class="stat-grid__top">
-                            <h3>68 <span class="up">0.6%</span></h3>
-                            <h3>1200€ <span class="down">0.6%</span></h3>
+                            <h2>68 <span class="up">0.6%</span></h2>
+                            <h2>1200€ <span class="down">0.6%</span></h2>
                         </div>
                         <hr>
                         <div class="stat-grid__bottom">
@@ -35,8 +35,8 @@
                     </div>
                     <div class="stat-grid__item stat-grid__clients stat-grid__clients--new">
                         <div class="stat-grid__top">
-                            <h3>168 <span class="up">0.6%</span></h3>
-                            <h3>1000€ <span class="down">0.6%</span></h3>
+                            <h2>168 <span class="up">0.6%</span></h2>
+                            <h2>1000€ <span class="down">0.6%</span></h2>
                         </div>
                         <hr>
                         <div class="stat-grid__bottom">
@@ -55,14 +55,14 @@
                                 <h3>registracijų</h3>
                             </div>
                             <div class="stat-grid__bottom-right">
-                                <h3>168 <span class="up">0.6%</span></h3>
-                                <h3>1000€ <span class="down">0.6%</span></h3>
+                                <h2>168 <span class="up">0.6%</span></h2>
+                                <h2>1000€ <span class="down">0.6%</span></h2>
                             </div>
                         </div>
                     </div>
                     <div class="stat-grid__item">
                         <div class="stat-grid__top">
-                            <h3>2000</h3>
+                            <h2>2000</h2>
                             <h3 class="right-align"><span class="up">0.6%</span></h3>
                         </div>
                         <hr>
@@ -73,7 +73,7 @@
                     </div>
                     <div class="stat-grid__item">
                         <div class="stat-grid__top">
-                            <h3>13</h3>
+                            <h2>13</h2>
                             <h3 class="right-align"><span class="up">0.6%</span></h3>
                         </div>
                         <hr>
@@ -84,7 +84,7 @@
                     </div>
                     <div class="stat-grid__item">
                         <div class="stat-grid__top">
-                            <h3>13</h3>
+                            <h2>13</h2>
                             <h3 class="right-align"><span class="up">0.6%</span></h3>
                         </div>
                         <hr>
@@ -94,7 +94,7 @@
                     </div>
                     <div class="stat-grid__item">
                         <div class="stat-grid__top">
-                            <h3>34</h3>
+                            <h2>34</h2>
                             <h3 class="right-align"><span class="up">0.6%</span></h3>
                         </div>
                         <hr>
@@ -104,16 +104,16 @@
                     </div>
                     <div class="stat-grid__item center-align">
                         <div class="stat-grid__top">
-                            <h3>3</h3>
+                            <h2>3</h2>
                         </div>
                         <hr>
                         <div class="stat-grid__bottom">
-                            <h3>Pažymėjo<b>Mano</b></h3>
+                            <h3>Pažymėjo <b>Mano</b></h3>
                         </div>
                     </div>
                     <div class="stat-grid__item center-align">
                         <div class="stat-grid__top">
-                            <h3>38 d.</h3>
+                            <h2>38 d.</h2>
                         </div>
                         <hr>
                         <div class="stat-grid__bottom">
@@ -123,7 +123,7 @@
                     </div>
                     <div class="stat-grid__item center-align">
                         <div class="stat-grid__top">
-                            <h3>38</h3>
+                            <h2>38</h2>
                         </div>
                         <hr>
                         <div class="stat-grid__bottom">
@@ -133,7 +133,7 @@
                     </div>
                     <div class="stat-grid__item center-align">
                         <div class="stat-grid__top">
-                            <h3>38 €</h3>
+                            <h2>38 €</h2>
                         </div>
                         <hr>
                         <div class="stat-grid__bottom">
@@ -142,12 +142,13 @@
                         </div>
                     </div>
                     <div class="stat-grid__item stat-grid__clients stat-grid__clients--unique">
-                        <h3>Unikalių klientų nuo: <span>2021 05 24</span></h3>
+                        <h3 class="centered">Unikalių klientų nuo: <span>2021 05 24</span></h3>
                         <hr>
                         <div class="stat-grid__bottom">
-                            <div class="stat-grid__client-donut stat-grid__client-donut--comeback"></div>
+                            <!-- <div class="stat-grid__client-donut stat-grid__client-donut--comeback"></div>
                             <div class="stat-grid__client-donut stat-grid__client-donut--cities"></div>
-                            <div class="stat-grid__client-donut stat-grid__client-donut--gender"></div>
+                            <div class="stat-grid__client-donut stat-grid__client-donut--gender"></div> -->
+                            <div class="stat-grid__client-donut stat-grid__client-donut--test"></div>
                         </div>
                     </div>
                 </div>

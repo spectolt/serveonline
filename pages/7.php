@@ -105,7 +105,7 @@ $thisPage = "specialist" ?>
                                 <button class="product__chosen-trash"></button>
                             </div>
                             <button class="product__chosen-add"></button>
-                            <h4 class="product__chosen-final">Bendra reikiama paslaugų trukmė <span class="product__chosen-duration product__chosen-duration--final">01:30</span></h4>
+                            <h4 class="product__chosen-final">Trukmė bendrai <span class="product__chosen-duration product__chosen-duration--final">01:30</span></h4>
                         </div>
                         <div class="product__search input-wrapper">
                             <input type="text" id="search-specialist" placeholder="Pasirinkite paslaugą">

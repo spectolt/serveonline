@@ -2024,7 +2024,7 @@ function onDocumentReady() {
     })
     .datepicker("setDate", new Date());
 
-    //statistics charts
+  //statistics charts
   var clientsChart = [
     {
       x: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
@@ -2035,7 +2035,7 @@ function onDocumentReady() {
       marker: {
         color: "#101b51",
       },
-      hoverinfo: "none",
+      // hoverinfo: "none",
     },
   ];
 
@@ -2043,8 +2043,8 @@ function onDocumentReady() {
     responsive: true,
     displayModeBar: false,
     margin: { t: 0, l: 0, r: 0, b: 0 },
-    showlegend: false,
-    yaxis: { fixedrange: true,  showgrid: false, },
+    showlegend: true,
+    yaxis: { fixedrange: true, showgrid: false },
     xaxis: { fixedrange: true },
   };
 
@@ -2053,8 +2053,189 @@ function onDocumentReady() {
     Plotly.newPlot(clientsPlot, clientsChart, config);
   }
 
-  var donutData1 = [
+  // var donutData1 = [
+  //   {
+  //     values: [105, 155],
+  //     labels: ["Sugrįžę<br>klientai", "Vienkartiniai<br>klientai"],
+  //     type: "pie",
+  //     textinfo: "none",
+  //     textposition: "outside",
+  //     automargin: true,
+  //     hole: 0.6,
+  //     // hoverinfo: 'none',
+  //     hoverinfo: "label+value",
+  //     marker: {
+  //       colors: [
+  //         '#5055be',
+  //         '#c0c2e8',
+  //         '#101b51',
+  //         '#ff9954',
+  //         '#ffb35b'
+  //       ]
+  //     }
+  //   },
+  // ];
+
+  // var donutData2 = [
+  //       {
+  //     domain: { column: 1 },
+  //     values: [20, 40, 60, 20, 20],
+  //     labels: ["Vilnius", "Kaunas", "Klaipėda", "Panevėžys", "Kiti"],
+  //     type: "pie",
+  //     textinfo: "none",
+  //     // textposition: "outside",
+  //     automargin: true,
+  //     hole: 0.6,
+  //     // hoverinfo: 'none',
+  //     hoverinfo: "label+value",
+  //     marker: {
+  //       colors: [
+  //         '#5055be',
+  //         '#c0c2e8',
+  //         '#101b51',
+  //         '#ff9954',
+  //         '#ffb35b'
+  //       ]
+  //     }
+  //   },
+  // ];
+
+  // donutData3 = [
+  //   {
+  //     domain: { column: 2 },
+  //     values: [60, 200],
+  //     labels: ["Vyrai", "Moterys"],
+  //     type: "pie",
+  //     textinfo: "none",
+  //     hoverinfo: "label+value",
+  //     // textposition: "outside",
+  //     automargin: true,
+  //     hole: 0.6,
+  //     // hoverinfo: 'none',
+  //     marker: {
+  //       colors: [
+  //         '#5055be',
+  //         '#c0c2e8',
+  //         '#101b51',
+  //         '#ff9954',
+  //         '#ffb35b'
+  //       ]
+  //     }
+  //   },
+  // ]
+
+  // var donutLayout = {
+  //   annotations: [
+  //     {
+  //       font: {
+  //         size: 20,
+  //         family: 'Roboto',
+  //       },
+  //       showarrow: false,
+  //       text: "260",
+  //       x: 0.5,
+  //       y: 0.5,
+  //     },
+  //   ],
+  //   showlegend: true,
+  //   margin: { t: 0, b: 0, l: 0, r: 0 },
+  //   font: {
+  //     family: 'Roboto',
+  //     size: 16,
+  //     color: '#040404'
+  //   },
+  //   hoverlabel: {
+  //     bgcolor: 'inherit',
+  //     bordercolor: 'white',
+  //     font: {
+  //       family: 'Roboto',
+  //       size: 16
+  //     }
+  //   },
+  //   horizontalspacing: 10,
+  //   verticalspacing: 10,
+  // };
+
+  // clients1 = document.querySelector(".stat-grid__client-donut--comeback");
+  // clients2 = document.querySelector(".stat-grid__client-donut--cities");
+  // clients3 = document.querySelector(".stat-grid__client-donut--gender");
+
+  clients4 = document.querySelector(".stat-grid__client-donut--test");
+
+  // if (clients1) {
+  //   Plotly.newPlot(clients1, donutData1, donutLayout, config);
+  //   Plotly.newPlot(clients2, donutData2, donutLayout, config);
+  //   Plotly.newPlot(clients3, donutData3, donutLayout, config);
+  // }
+
+  function getDomain(i) {
+    var N = 3;
+    var spacing = 0.15;
+
+    return [
+      (1 / N) * i + (i === 0 ? 0 : spacing / 2),
+      (1 / N) * (i + 1) - (i === N - 1 ? 0 : spacing / 2),
+    ];
+  }
+  $(window).resize(function () {
+    var donutData4 = [
+      {
+        domain: { x: donutGridX(0), y: donutGridY(0) },
+        values: [105, 155],
+        labels: ["Sugrįžę<br>klientai", "Vienkartiniai<br>klientai"],
+        type: "pie",
+        textinfo: "label+value",
+        textposition: "outside",
+        automargin: true,
+        hole: 0.6,
+        hoverinfo: "none",
+        automargin: true,
+        // hoverinfo: "label+value",
+        marker: {
+          colors: ["#5055be", "#c0c2e8", "#101b51", "#ff9954", "#ffb35b"],
+          line: [],
+        },
+      },
+      {
+        domain: { x: donutGridX(1), y: donutGridY(1) },
+        values: [20, 40, 60, 20, 20],
+        labels: ["Vilnius", "Kaunas", "Klaipėda", "Panevėžys", "Kiti"],
+        type: "pie",
+        textinfo: "label+value",
+        textposition: "outside",
+        automargin: true,
+        hole: 0.6,
+        hoverinfo: "none",
+        automargin: true,
+        xaxis: "x2",
+        yaxis: "y2",
+        // hoverinfo: "label+value",
+        marker: {
+          colors: ["#5055be", "#c0c2e8", "#101b51", "#ff9954", "#ffb35b"],
+        },
+      },
+      {
+        domain: { x: donutGridX(2), y: donutGridY(2) },
+        values: [60, 200],
+        labels: ["Vyrai", "Moterys"],
+        type: "pie",
+        textinfo: "label+value",
+        hoverinfo: "label+value",
+        textposition: "outside",
+        automargin: true,
+        hole: 0.6,
+        automargin: true,
+        // hoverinfo: 'none',
+        marker: {
+          colors: ["#5055be", "#c0c2e8", "#101b51", "#ff9954", "#ffb35b"],
+        },
+      },
+    ];
+  })
+
+  var donutData4 = [
     {
+      domain: { x: donutGridX(0), y: donutGridY(0) },
       values: [105, 155],
       labels: ["Sugrįžę<br>klientai", "Vienkartiniai<br>klientai"],
       type: "pie",
@@ -2062,22 +2243,16 @@ function onDocumentReady() {
       textposition: "outside",
       automargin: true,
       hole: 0.6,
-      hoverinfo: 'none',
+      hoverinfo: "none",
+      automargin: true,
+      // hoverinfo: "label+value",
       marker: {
-        colors: [
-          '#5055be',
-          '#c0c2e8',
-          '#101b51',
-          '#ff9954',
-          '#ffb35b'
-        ]
-      }
+        colors: ["#5055be", "#c0c2e8", "#101b51", "#ff9954", "#ffb35b"],
+        line: [],
+      },
     },
-  ];
-
-  var donutData2 = [
-        {
-      domain: { column: 1 },
+    {
+      domain: { x: donutGridX(1), y: donutGridY(1) },
       values: [20, 40, 60, 20, 20],
       labels: ["Vilnius", "Kaunas", "Klaipėda", "Panevėžys", "Kiti"],
       type: "pie",
@@ -2085,74 +2260,169 @@ function onDocumentReady() {
       textposition: "outside",
       automargin: true,
       hole: 0.6,
-      hoverinfo: 'none',
+      hoverinfo: "none",
+      automargin: true,
+      xaxis: "x2",
+      yaxis: "y2",
+      // hoverinfo: "label+value",
       marker: {
-        colors: [
-          '#5055be',
-          '#c0c2e8',
-          '#101b51',
-          '#ff9954',
-          '#ffb35b'
-        ]
-      }
+        colors: ["#5055be", "#c0c2e8", "#101b51", "#ff9954", "#ffb35b"],
+      },
     },
-  ];
-
-  donutData3 = [
     {
-      domain: { column: 2 },
+      domain: { x: donutGridX(2), y: donutGridY(2) },
       values: [60, 200],
       labels: ["Vyrai", "Moterys"],
       type: "pie",
       textinfo: "label+value",
+      hoverinfo: "label+value",
       textposition: "outside",
       automargin: true,
       hole: 0.6,
-      hoverinfo: 'none',
+      automargin: true,
+      // hoverinfo: 'none',
       marker: {
-        colors: [
-          '#5055be',
-          '#c0c2e8',
-          '#101b51',
-          '#ff9954',
-          '#ffb35b'
-        ]
-      }
+        colors: ["#5055be", "#c0c2e8", "#101b51", "#ff9954", "#ffb35b"],
+      },
     },
-  ]
+  ];
 
-  var donutLayout = {
+  function donutGridX(i) {
+    var N = 3;
+    $(window).resize(function () {
+      if (window.matchMedia("(min-width: 992px)").matches) {
+        return [(i * 1) / N, ((i + 1) * 1) / N];
+      } else if (window.matchMedia("(min-width: 700px) and (max-width: 991px)").matches) {
+        if (i == 0) {
+          return [0, 0.5];
+        } else if (i == 2) {
+          return [0, 1];
+        } else {
+          return [0.5, 1];
+        }
+      } else if (window.matchMedia("(max-width: 700px)").matches) {
+        return [0, 1];
+      }
+    })
+    if (window.matchMedia("(min-width: 992px)").matches) {
+      return [(i * 1) / N, ((i + 1) * 1) / N];
+    } else if (window.matchMedia("(min-width: 700px) and (max-width: 991px)").matches) {
+      if (i == 0) {
+        return [0, 0.5];
+      } else if (i == 2) {
+        return [0, 1];
+      } else {
+        return [0.5, 1];
+      }
+    } else if (window.matchMedia("(max-width: 700px)").matches) {
+      return [0, 1];
+    }
+    
+  }
+
+  function donutGridY(i) {
+    var N = 3;
+    $(window).resize(function () {
+      if (window.matchMedia("(max-width: 700px)").matches) {
+        if (i == 0) {
+          return [0.74, 1]
+        } else if (i == 1) {
+          return [0.37, 0.63]
+        } else {
+          return [0, 0.26]
+        }
+      } else if (window.matchMedia("(min-width: 700px) and (max-width: 991px)").matches) {
+        if (i < 2) {
+          return [0.55, 1];
+        } else {
+          return [0, 0.45];
+        }
+      } else {
+        return [0, 0]
+      }
+    })
+    if (window.matchMedia("(max-width: 700px)").matches) {
+      if (i == 0) {
+        return [0.74, 1]
+      } else if (i == 1) {
+        return [0.37, 0.63]
+      } else {
+        return [0, 0.26]
+      }
+    } else if (window.matchMedia("(min-width: 700px) and (max-width: 991px)").matches) {
+      if (i < 2) {
+        return [0.55, 1];
+      } else {
+        return [0, 0.45];
+      }
+    } else {
+      return [0, 0]
+    }
+    
+  }
+
+  var donutLayout2 = {
     annotations: [
       {
         font: {
           size: 20,
+          family: "Roboto",
+        },
+        showarrow: false,
+        text: "260",
+        x: 0.166,
+        y: 0.5,
+        xanchor: "center",
+      },
+      {
+        font: {
+          size: 20,
+          family: "Roboto",
         },
         showarrow: false,
         text: "260",
         x: 0.5,
         y: 0.5,
+        xanchor: "center",
+      },
+      {
+        font: {
+          size: 20,
+          family: "Roboto",
+        },
+        showarrow: false,
+        text: "260",
+        x: 0.834,
+        y: 0.5,
+        xanchor: "center",
       },
     ],
     showlegend: false,
     margin: { t: 0, b: 0, l: 0, r: 0 },
     font: {
-      family: 'Roboto',
+      family: "Roboto",
       size: 16,
-      color: '#040404'
+      color: "#040404",
+    },
+    hoverlabel: {
+      bgcolor: "inherit",
+      bordercolor: "white",
+      font: {
+        family: "Roboto",
+        size: 16,
+      },
     },
     horizontalspacing: 10,
     verticalspacing: 10,
+    // grid: { rows: 1, columns: 3, pattern: "independent" },
   };
 
-  clients1 = document.querySelector(".stat-grid__client-donut--comeback");
-  clients2 = document.querySelector(".stat-grid__client-donut--cities");
-  clients3 = document.querySelector(".stat-grid__client-donut--gender");
-
-
-  if (clients1) {
-    Plotly.newPlot(clients1, donutData1, donutLayout, config);
-    Plotly.newPlot(clients2, donutData2, donutLayout, config);
-    Plotly.newPlot(clients3, donutData3, donutLayout, config);
+  if (clients4) {
+    Plotly.newPlot(clients4, donutData4, donutLayout2, config);
+    $(window).resize(function () {
+      Plotly.purge(clients4)
+      Plotly.newPlot(clients4, donutData4, donutLayout2, config);
+    })
   }
 
   if ($(".specialist__datepicker")) {
@@ -2181,11 +2451,13 @@ function onDocumentReady() {
     });
 
   //add active class to calendar in specialist page
-  $(".specialist .calendar td p").not(".js_ignore_mark").on("click", function() {
-    if ($(".product__chosen").is(":visible")) {
-      $(this).addClass("active");
-    }
-  })
+  $(".specialist .calendar td p")
+    .not(".js_ignore_mark")
+    .on("click", function () {
+      if ($(".product__chosen").is(":visible")) {
+        $(this).addClass("active");
+      }
+    });
 
   moveAction();
   moveOrder();

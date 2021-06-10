@@ -26,17 +26,33 @@
   .stat-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 200px 200px 200px 300px;
+    grid-template-rows: 200px 200px 200px 1fr;
     grid-gap: 20px;
+
+    @include breakpoint(l) {
+      grid-template-columns: repeat(2, 1fr);
+    }
 
     hr {
       margin: 0;
     }
 
-    h3 {
+    h2 {
       margin: 0;
       display: flex;
       justify-content: space-between;
+
+      &.centered {
+        justify-content: center;
+      }
+    }
+
+    h3 {
+      margin: 0;
+
+      &.centered {
+        text-align: center;
+      }
     }
 
     &__item {
@@ -84,13 +100,15 @@
         float: right;
       }
 
-      h3 {
+      h2 {
         font-size: 1.875rem;
         align-items: center;
+        font-weight: 600;
 
         span {
           font-size: 1.125rem;
           margin-left: 10px;
+          font-weight: 400;
         }
       }
     }
@@ -108,12 +126,16 @@
     }
 
     &__bottom-right {
-      h3 {
+      h2 {
         font-size: 1.875rem;
         align-items: center;
+        font-weight: 600;
+        justify-content: flex-end;
 
         span {
           font-size: 1.125rem;
+          font-weight: 400;
+          margin-left: 10px;
         }
       }
     }
@@ -143,10 +165,24 @@
       &--unique {
         grid-column: span 4;
 
+        @include breakpoint(l) {
+          grid-column: span 2;
+        }
+
+        h3 {
+          font-size: 1.25rem;
+          margin: 20px 0;
+
+          span {
+            font-size: 1.5rem;
+          }
+        }
+
         .stat-grid__bottom {
           height: 100%;
           display: flex;
           justify-content: space-between;
+          padding: 0;
         }
       }
 
@@ -187,6 +223,18 @@
       &.js-plotly-plot,
       .plot-container {
         height: 200px;
+
+        @include breakpoint(l) {
+          height: 400px;
+        }
+
+        @include breakpoint(sm) {
+          height: 600px;
+        }
+      }
+
+      &--test {
+        width: 100%;
       }
 
       // &.js-plotly-plot {
@@ -196,6 +244,56 @@
       // &--comeback {
         
       // }
+    }
+
+    .pielayer {
+      g.trace {
+        &:first-of-type {
+          transform: translateX(-70px);
+
+          @include breakpoint(sm) {
+            transform: none;
+          }
+        }
+
+        &:last-of-type {
+          transform: translateX(70px);
+
+          @include breakpoint(l) {
+            transform: none;
+          }
+        }
+
+        &:nth-of-type(2) {
+          @include breakpoint(l) {
+            transform: translateX(70px);
+          }
+
+          @include breakpoint(sm) {
+            transform: none;
+          }
+        }
+      }
+    }
+
+    .infolayer {
+      .annotation {
+        &[data-index="0"] {
+          transform: translateX(-70px);
+        }
+
+        &:last-of-type {
+          transform: translateX(70px);
+        }
+      }
+    }
+
+    .slicetext {
+      tspan {
+        &:last-of-type {
+          font-weight: 600;
+        }
+      }
     }
   }
 }

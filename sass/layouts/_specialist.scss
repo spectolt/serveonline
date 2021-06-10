@@ -102,7 +102,7 @@
       // display: block !important;
       z-index: 9999;
       background-color: $white;
-      box-shadow: none;
+      box-shadow: 0 5px 10px 3px rgba(0, 0, 0, 0.19);
       overflow: hidden;
 
       @include breakpoint(l) {
@@ -769,8 +769,12 @@
       }
 
       &-final {
-        text-align: center;
+        text-align: left;
         margin-bottom: 0;
+
+        @include breakpoint(sm) {
+          margin-bottom: 20px;
+        }
       }
 
       &-duration {
@@ -850,7 +854,7 @@
 
         @include breakpoint(sm) {
           width: 18px;
-          height: 17px;
+          height: 18px;
           left: 9px;
           top: 17px;
         }
@@ -1081,6 +1085,10 @@
 
       .product-expand {
         right: 10px;
+
+        @include breakpoint(sm) {
+          right: 0;
+        }
       }
 
       &::-webkit-scrollbar {

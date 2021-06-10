@@ -19,7 +19,7 @@ if ($("main.hasUiAutocomplete").length > 0) {
         });
       },
       select: function (event, ui) {
-        $("input#search-specialist").attr("rel", ui.item.label);
+        // $("input#search-specialist").attr("rel", ui.item.label);
       },
       open: function (event, ui) {
         $(".ui-autocomplete-wrapper").prepend(
@@ -57,14 +57,14 @@ if ($("main.hasUiAutocomplete").length > 0) {
         }
       },
       close: function (event, ui) {
-        if (!$(".ui-autocomplete").is(":visible")) {
-          $(".ui-autocomplete").show();
-        }
+        // if (!$(".ui-autocomplete").is(":visible")) {
+        //   $(".ui-autocomplete").show();
+        // }
       },
       select: function (event, ui) {
-        event.preventDefault();
+        // event.preventDefault();
 
-        return false;
+        // return false;
       },
     })
     .autocomplete("instance")._renderMenu = function (ul, items) {
@@ -191,10 +191,10 @@ if ($("main.hasUiAutocomplete").length > 0) {
       // }
       $(".specialist__calendar-container").removeClass("overlay");
     } else {
-      $(input).siblings(".input-icon").addClass("rotate-arrow");
-      $(".ui-autocomplete").css("display", "block");
-      $(".specialist__overlay").removeClass("hidden");
-      $(".specialist__calendar-container").addClass("overlay");
+      // $(input).siblings(".input-icon").addClass("rotate-arrow");
+      // $(".ui-autocomplete").css("display", "block");
+      // $(".specialist__overlay").removeClass("hidden");
+      $(".specialist__calendar-container").removeClass("overlay");
     }
   });
 
@@ -210,7 +210,8 @@ if ($("main.hasUiAutocomplete").length > 0) {
         margin: "0",
       });
       $(input).parent().addClass("hidden-icon");
-      $(input).siblings(":not('.ui-autocomplete')").hide();
+      $(input).parent().css("height", "0");
+      $(input).siblings().hide();
 
       var checkBoxes = $(this).closest(".checkbox").find("input");
       checkBoxes.prop("checked", !checkBoxes.prop("checked"));
@@ -240,6 +241,7 @@ if ($("main.hasUiAutocomplete").length > 0) {
       $(".product__chosen").remove();
       input.css({ visibility: "visible", height: "", padding: "", margin: "" });
       input.siblings(":not('.ui-autocomplete')").show();
+      input.parent().css("height", "")
       $(input).parent().removeClass("hidden-icon");
 
       if (window.matchMedia("(max-width: 700px)").matches) {
