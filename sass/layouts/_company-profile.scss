@@ -617,11 +617,14 @@
           margin-bottom: 5px;
         }
       }
-      .product-choice:nth-of-type(2n-1) {
-        .product-action {
-          background-color: #fbfbfc;
-        }
+      .product-action {
+        background-color: transparent;
       }
+      // .product-choice:nth-of-type(2n-1) {
+      //   .product-action {
+      //     background-color: #fbfbfc;
+      //   }
+      // }
     }
   }
   #produktai {

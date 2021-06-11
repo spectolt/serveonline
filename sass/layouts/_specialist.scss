@@ -728,10 +728,10 @@
         h3 {
           font-size: 1rem;
           margin-bottom: 10px;
+          text-align: left;
 
           @include breakpoint(sm) {
             font-size: 0.875rem;
-            text-align: left;
           }
         }
         h4 {
@@ -771,6 +771,11 @@
       &-final {
         text-align: left;
         margin-bottom: 0;
+        margin-left: 20px;
+
+        @include breakpoint(l) {
+          margin-left: 10px;
+        }
 
         @include breakpoint(sm) {
           margin-bottom: 20px;
@@ -1016,7 +1021,6 @@
         .autocomplete-product-checkbox,
         .autocomplete-product-title--main {
           font-family: "Sen", sans-serif;
-          font-size: 1.125rem;
 
           @include breakpoint(sm) {
             font-size: 1rem;
@@ -1040,9 +1044,14 @@
 
         .autocomplete-product-title {
           margin-right: 45px;
+          font-size: 1rem;
 
           @include breakpoint(sm) {
             margin-right: 35px;
+          }
+
+          &--main {
+            font-size: 1.125rem;
           }
         }
 

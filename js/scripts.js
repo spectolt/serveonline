@@ -2035,7 +2035,7 @@ function onDocumentReady() {
       marker: {
         color: "#101b51",
       },
-      // hoverinfo: "none",
+      hoverinfo: "none",
     },
   ];
 
@@ -2046,11 +2046,19 @@ function onDocumentReady() {
     showlegend: true,
     yaxis: { fixedrange: true, showgrid: false },
     xaxis: { fixedrange: true },
+    autosize: true,
   };
 
   clientsPlot = document.querySelector(".stat-grid__client-plot");
   if (clientsPlot) {
     Plotly.newPlot(clientsPlot, clientsChart, config);
+
+    window.onresize = function () {
+      Plotly.relayout(clientsPlot, {
+        "xaxis.autorange": true,
+        "yaxis.autorange": true,
+      });
+    };
   }
 
   // var donutData1 = [
@@ -2100,29 +2108,23 @@ function onDocumentReady() {
   //   },
   // ];
 
-  // donutData3 = [
-  //   {
-  //     domain: { column: 2 },
-  //     values: [60, 200],
-  //     labels: ["Vyrai", "Moterys"],
-  //     type: "pie",
-  //     textinfo: "none",
-  //     hoverinfo: "label+value",
-  //     // textposition: "outside",
-  //     automargin: true,
-  //     hole: 0.6,
-  //     // hoverinfo: 'none',
-  //     marker: {
-  //       colors: [
-  //         '#5055be',
-  //         '#c0c2e8',
-  //         '#101b51',
-  //         '#ff9954',
-  //         '#ffb35b'
-  //       ]
-  //     }
-  //   },
-  // ]
+  donutData3 = [
+    {
+      domain: { column: 2 },
+      values: [60, 200],
+      labels: ["Vyrai", "Moterys"],
+      type: "pie",
+      textinfo: "none",
+      hoverinfo: "label+value",
+      // textposition: "outside",
+      automargin: true,
+      hole: 0.6,
+      // hoverinfo: 'none',
+      marker: {
+        colors: ["#5055be", "#c0c2e8", "#101b51", "#ff9954", "#ffb35b"],
+      },
+    },
+  ];
 
   // var donutLayout = {
   //   annotations: [
@@ -2177,63 +2179,10 @@ function onDocumentReady() {
       (1 / N) * (i + 1) - (i === N - 1 ? 0 : spacing / 2),
     ];
   }
-  $(window).resize(function () {
-    var donutData4 = [
-      {
-        domain: { x: donutGridX(0), y: donutGridY(0) },
-        values: [105, 155],
-        labels: ["Sugrįžę<br>klientai", "Vienkartiniai<br>klientai"],
-        type: "pie",
-        textinfo: "label+value",
-        textposition: "outside",
-        automargin: true,
-        hole: 0.6,
-        hoverinfo: "none",
-        automargin: true,
-        // hoverinfo: "label+value",
-        marker: {
-          colors: ["#5055be", "#c0c2e8", "#101b51", "#ff9954", "#ffb35b"],
-          line: [],
-        },
-      },
-      {
-        domain: { x: donutGridX(1), y: donutGridY(1) },
-        values: [20, 40, 60, 20, 20],
-        labels: ["Vilnius", "Kaunas", "Klaipėda", "Panevėžys", "Kiti"],
-        type: "pie",
-        textinfo: "label+value",
-        textposition: "outside",
-        automargin: true,
-        hole: 0.6,
-        hoverinfo: "none",
-        automargin: true,
-        xaxis: "x2",
-        yaxis: "y2",
-        // hoverinfo: "label+value",
-        marker: {
-          colors: ["#5055be", "#c0c2e8", "#101b51", "#ff9954", "#ffb35b"],
-        },
-      },
-      {
-        domain: { x: donutGridX(2), y: donutGridY(2) },
-        values: [60, 200],
-        labels: ["Vyrai", "Moterys"],
-        type: "pie",
-        textinfo: "label+value",
-        hoverinfo: "label+value",
-        textposition: "outside",
-        automargin: true,
-        hole: 0.6,
-        automargin: true,
-        // hoverinfo: 'none',
-        marker: {
-          colors: ["#5055be", "#c0c2e8", "#101b51", "#ff9954", "#ffb35b"],
-        },
-      },
-    ];
-  })
 
-  var donutData4 = [
+  var donutData4, donutLayout2;
+
+  donutData4 = [
     {
       domain: { x: donutGridX(0), y: donutGridY(0) },
       values: [105, 155],
@@ -2287,81 +2236,7 @@ function onDocumentReady() {
     },
   ];
 
-  function donutGridX(i) {
-    var N = 3;
-    $(window).resize(function () {
-      if (window.matchMedia("(min-width: 992px)").matches) {
-        return [(i * 1) / N, ((i + 1) * 1) / N];
-      } else if (window.matchMedia("(min-width: 700px) and (max-width: 991px)").matches) {
-        if (i == 0) {
-          return [0, 0.5];
-        } else if (i == 2) {
-          return [0, 1];
-        } else {
-          return [0.5, 1];
-        }
-      } else if (window.matchMedia("(max-width: 700px)").matches) {
-        return [0, 1];
-      }
-    })
-    if (window.matchMedia("(min-width: 992px)").matches) {
-      return [(i * 1) / N, ((i + 1) * 1) / N];
-    } else if (window.matchMedia("(min-width: 700px) and (max-width: 991px)").matches) {
-      if (i == 0) {
-        return [0, 0.5];
-      } else if (i == 2) {
-        return [0, 1];
-      } else {
-        return [0.5, 1];
-      }
-    } else if (window.matchMedia("(max-width: 700px)").matches) {
-      return [0, 1];
-    }
-    
-  }
-
-  function donutGridY(i) {
-    var N = 3;
-    $(window).resize(function () {
-      if (window.matchMedia("(max-width: 700px)").matches) {
-        if (i == 0) {
-          return [0.74, 1]
-        } else if (i == 1) {
-          return [0.37, 0.63]
-        } else {
-          return [0, 0.26]
-        }
-      } else if (window.matchMedia("(min-width: 700px) and (max-width: 991px)").matches) {
-        if (i < 2) {
-          return [0.55, 1];
-        } else {
-          return [0, 0.45];
-        }
-      } else {
-        return [0, 0]
-      }
-    })
-    if (window.matchMedia("(max-width: 700px)").matches) {
-      if (i == 0) {
-        return [0.74, 1]
-      } else if (i == 1) {
-        return [0.37, 0.63]
-      } else {
-        return [0, 0.26]
-      }
-    } else if (window.matchMedia("(min-width: 700px) and (max-width: 991px)").matches) {
-      if (i < 2) {
-        return [0.55, 1];
-      } else {
-        return [0, 0.45];
-      }
-    } else {
-      return [0, 0]
-    }
-    
-  }
-
-  var donutLayout2 = {
+  donutLayout2 = {
     annotations: [
       {
         font: {
@@ -2370,8 +2245,8 @@ function onDocumentReady() {
         },
         showarrow: false,
         text: "260",
-        x: 0.166,
-        y: 0.5,
+        x: labelX(0),
+        y: labelY(0),
         xanchor: "center",
       },
       {
@@ -2381,8 +2256,8 @@ function onDocumentReady() {
         },
         showarrow: false,
         text: "260",
-        x: 0.5,
-        y: 0.5,
+        x: labelX(1),
+        y: labelY(1),
         xanchor: "center",
       },
       {
@@ -2392,8 +2267,8 @@ function onDocumentReady() {
         },
         showarrow: false,
         text: "260",
-        x: 0.834,
-        y: 0.5,
+        x: labelX(2),
+        y: labelY(2),
         xanchor: "center",
       },
     ],
@@ -2417,12 +2292,206 @@ function onDocumentReady() {
     // grid: { rows: 1, columns: 3, pattern: "independent" },
   };
 
+  $(window).on("resize", function () {
+    clearTimeout(timer_id);
+    timer_id = setTimeout(function () {
+      donutData4 = [
+        {
+          domain: { x: donutGridX(0), y: donutGridY(0) },
+          values: [105, 155],
+          labels: ["Sugrįžę<br>klientai", "Vienkartiniai<br>klientai"],
+          type: "pie",
+          textinfo: "label+value",
+          textposition: "outside",
+          automargin: true,
+          hole: 0.6,
+          hoverinfo: "none",
+          automargin: true,
+          // hoverinfo: "label+value",
+          marker: {
+            colors: ["#5055be", "#c0c2e8", "#101b51", "#ff9954", "#ffb35b"],
+            line: [],
+          },
+        },
+        {
+          domain: { x: donutGridX(1), y: donutGridY(1) },
+          values: [20, 40, 60, 20, 20],
+          labels: ["Vilnius", "Kaunas", "Klaipėda", "Panevėžys", "Kiti"],
+          type: "pie",
+          textinfo: "label+value",
+          textposition: "outside",
+          automargin: true,
+          hole: 0.6,
+          hoverinfo: "none",
+          automargin: true,
+          xaxis: "x2",
+          yaxis: "y2",
+          // hoverinfo: "label+value",
+          marker: {
+            colors: ["#5055be", "#c0c2e8", "#101b51", "#ff9954", "#ffb35b"],
+          },
+        },
+        {
+          domain: { x: donutGridX(2), y: donutGridY(2) },
+          values: [60, 200],
+          labels: ["Vyrai", "Moterys"],
+          type: "pie",
+          textinfo: "label+value",
+          hoverinfo: "label+value",
+          textposition: "outside",
+          automargin: true,
+          hole: 0.6,
+          automargin: true,
+          // hoverinfo: 'none',
+          marker: {
+            colors: ["#5055be", "#c0c2e8", "#101b51", "#ff9954", "#ffb35b"],
+          },
+        },
+      ];
+      donutLayout2 = {
+        annotations: [
+          {
+            font: {
+              size: 20,
+              family: "Roboto",
+            },
+            showarrow: false,
+            text: "260",
+            x: labelX(0),
+            y: labelY(0),
+            xanchor: "center",
+          },
+          {
+            font: {
+              size: 20,
+              family: "Roboto",
+            },
+            showarrow: false,
+            text: "260",
+            x: labelX(1),
+            y: labelY(1),
+            xanchor: "center",
+          },
+          {
+            font: {
+              size: 20,
+              family: "Roboto",
+            },
+            showarrow: false,
+            text: "260",
+            x: labelX(2),
+            y: labelY(2),
+            xanchor: "center",
+          },
+        ],
+        showlegend: false,
+        margin: { t: 0, b: 0, l: 0, r: 0 },
+        font: {
+          family: "Roboto",
+          size: 16,
+          color: "#040404",
+        },
+        hoverlabel: {
+          bgcolor: "inherit",
+          bordercolor: "white",
+          font: {
+            family: "Roboto",
+            size: 16,
+          },
+        },
+        horizontalspacing: 10,
+        verticalspacing: 10,
+        // grid: { rows: 1, columns: 3, pattern: "independent" },
+      };
+      Plotly.purge(clients4);
+      Plotly.newPlot(clients4, donutData4, donutLayout2, config);
+    }, 100);
+  });
+
+  function donutGridX(i) {
+    var N = 3;
+    if (window.matchMedia("(min-width: 992px)").matches) {
+      return [(i * 1) / N, ((i + 1) * 1) / N];
+    } else if (
+      window.matchMedia("(min-width: 701px) and (max-width: 991px)").matches
+    ) {
+      if (i == 0) {
+        return [0, 0.5];
+      } else if (i == 2) {
+        return [0, 1];
+      } else {
+        return [0.5, 1];
+      }
+    } else if (window.matchMedia("(max-width: 700px)").matches) {
+      return [0, 1];
+    }
+  }
+
+  function donutGridY(i) {
+    var N = 3;
+    if (window.matchMedia("(max-width: 700px)").matches) {
+      if (i == 0) {
+        return [0.74, 1];
+      } else if (i == 1) {
+        return [0.37, 0.63];
+      } else {
+        return [0, 0.26];
+      }
+    } else if (
+      window.matchMedia("(min-width: 701px) and (max-width: 991px)").matches
+    ) {
+      if (i < 2) {
+        return [0.55, 1];
+      } else {
+        return [0, 0.45];
+      }
+    } else {
+      return [0, 0];
+    }
+  }
+
+  function labelX(i) {
+    if(window.matchMedia("(min-width: 991px)").matches) {
+      if (i == 0) {
+        return 0.166;
+      } else if (i == 1) {
+        return 0.5;
+      } else {
+        return 0.834;
+      }
+    } else if (window.matchMedia("(min-width: 701px) and (max-width: 991px)").matches) {
+      if (i == 0) {
+        return 0.25;
+      } else if (i == 2) {
+        return 0.75;
+      } 
+    } else {
+      return 0.5;
+    }
+  }
+
+  function labelY(i) {
+    if(window.matchMedia("(min-width: 991px)").matches) {
+      return 0.5;
+    } else if (window.matchMedia("(min-width: 701px) and (max-width: 991px)").matches) {
+      if (i == 0 || i == 2) {
+        return 0.815;
+      } else if (i == 1) {
+        return 0.185;
+      }
+    } else {
+      if (i == 0) {
+        return 0.105;
+      } else if (i == 1) {
+        return 0.5;
+      } else {
+        return 0.895;
+      }
+    }
+  }
+
   if (clients4) {
     Plotly.newPlot(clients4, donutData4, donutLayout2, config);
-    $(window).resize(function () {
-      Plotly.purge(clients4)
-      Plotly.newPlot(clients4, donutData4, donutLayout2, config);
-    })
   }
 
   if ($(".specialist__datepicker")) {
@@ -2717,8 +2786,8 @@ function hasScrolled() {
   if (st > lastScrollTop && st > navbarHeight) {
     // Scroll Down
     if (
-      !$("section.specialist") &&
-      window.matchMedia("(max-width: 991px)").matches
+      !$("section.specialist")
+      // window.matchMedia("(max-width: 991px)").matches
     ) {
       $(".site-header").removeClass("site-header--show");
     }

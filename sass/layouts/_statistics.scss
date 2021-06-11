@@ -7,6 +7,10 @@
 
   &__header {
     padding-top: 60px;
+
+    @include breakpoint(sm){
+      padding-top: 30px;
+    }
   }
 
   &__photo {
@@ -16,11 +20,97 @@
     background-size: 100%;
     border-radius: 50%;
     box-shadow: 0 12px 29px 0px rgba(0, 0, 0, 0.15);
-    margin: 0 20px;
+    margin: 0 40px 0 20px;
+
+    @include breakpoint(sm){
+      margin: 0 10px;
+      width: 110px;
+      height: 110px;
+    }
+  }
+
+  &__name{
+    h2{
+      font-size: 3rem;
+      font-weight: 700;
+      margin-top: 0px;
+      margin-bottom: 15px;
+
+      @include breakpoint(sm){
+        font-size: 1.5rem;
+        margin-bottom: 0;
+      }
+    }
+
+    h3{
+      font-weight: 400;
+      font-size: 1.875rem;
+      margin-top: 15px;
+      margin-bottom: 15px;
+
+      @include breakpoint(sm){
+        font-size: 1.125rem;
+        font-weight: 700;
+        margin-top: 0;
+        margin-bottom: 0px;
+      }
+    }
+
+    p{
+      font-family: 'Sen', sans-serif;
+      font-weight: 400;
+      font-size: 1.125rem;
+      margin-bottom: 15px;
+
+      @include breakpoint(sm){
+        font-size: 0.9375rem;
+        margin-bottom: 8px;
+        margin-top: 8px;
+      }
+    }
   }
 
   &__date {
     display: flex;
+    margin-left: 234px;
+    margin-bottom: 10px;
+
+    @include breakpoint(845px){
+      margin-left: 0px;
+      margin-bottom: 8px;
+    }
+
+    p{
+      font-family: 'Sen', sans-serif;
+      font-weight: 400;
+      font-size: 1.125rem;
+      margin-top: 10px;
+      @include breakpoint(sm){
+        font-size: 0.9375rem;
+        margin-top: 30px;
+      }
+    }
+    .statistics__day--from{
+      margin-right: 7px;
+    }
+
+    input
+    {
+      font-weight: 700;
+      font-size: 1.125rem;
+      background: url(./img/icons/calendar.svg) no-repeat scroll 150px 2px;
+      background-size: 10%;
+      border: none;
+      margin-left: 15px;
+
+      @include breakpoint(sm){
+        font-size: 0.9375rem;
+        margin-left: 0px;
+        background: url(./img/icons/calendar.svg) no-repeat scroll 120px 2px;
+        background-size: 12%;
+        width: 145px;
+      }
+    }
   }
 
   .stat-grid {
@@ -31,6 +121,11 @@
 
     @include breakpoint(l) {
       grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint(sm){
+      grid-gap: 6px;
+      //grid-template-rows: 150px 200px 200px 1fr;
     }
 
     hr {
@@ -118,6 +213,16 @@
 
       h3 {
         font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+        font-size: 1rem;
+
+        @include breakpoint(sm){
+          font-size: 0.875rem;
+        }
+
+        b{
+          font-size: 1.125rem;
+        }
 
         span {
           margin-left: 10px;
@@ -280,10 +385,18 @@
       .annotation {
         &[data-index="0"] {
           transform: translateX(-70px);
+
+          @include breakpoint(sm) {
+            transform: none;
+          }
         }
 
         &:last-of-type {
           transform: translateX(70px);
+
+          @include breakpoint(sm) {
+            transform: none;
+          }
         }
       }
     }

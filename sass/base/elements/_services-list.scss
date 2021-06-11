@@ -216,6 +216,7 @@ div.services-list {
     width: calc(100% + 40px);
     margin-left: -20px;
     padding: 10px 20px;
+    transition: background-color 0.3s ease-in-out;
 
     @include breakpoint(l) {
       width: calc(100% + 20px);
@@ -226,8 +227,12 @@ div.services-list {
       font-size: 1rem;
     }
 
-    &:nth-of-type(2n-1) {
-      background-color: #fbfbfc;
+    // &:nth-of-type(2n-1) {
+    //   background-color: #fbfbfc;
+    // }
+
+    &:hover {
+      background-color: #e2e3e5;
     }
 
     .company__features {
