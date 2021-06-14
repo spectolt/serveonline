@@ -46,7 +46,6 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                             </div>
                             <h2 class="company__header-title">Grožio salonas Jos ir Jo Kapriziukai</h2>
                             <div class="company__header-left">
-                                <!-- galbūt ir h4 -->
                                 <h3 class="company__header-address">Kalvarijų g. 25, Vilnius</h3>
                                 <p class="company__header-phone">+370 000 00000</p>
                                 <p class="company__header-hours">Atidaryta <span>08:00</span> - <span>20:00</span></p>

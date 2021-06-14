@@ -339,7 +339,6 @@ textarea {
       display: inline-block;
       width: 10px;
       height: 10px;
-      // background-color: $darkblue;
       background-image: url("img/icons/check.svg");
       background-size: 100%;
       background-position: center;
@@ -351,20 +350,16 @@ textarea {
   }
 
   input[type="checkbox"] {
-    // display: none;
     position: absolute;
     top: 0;
     left: 0;
     opacity: 0;
-    // visibility: hidden;
 
     &:checked {
       ~ label {
-        // color: $green;
 
         &:before {
           background-color: $darkblue;
-          // border-color: $green;
         }
 
         &:after {
@@ -385,11 +380,6 @@ textarea {
 
       &:checked {
         ~ label {
-          // color: $green;
-
-          &:before {
-            // border-color: $green;
-          }
 
           &:after {
             opacity: 1;
@@ -435,7 +425,6 @@ textarea {
       display: inline-block;
       width: 8px;
       height: 8px;
-      // background-color: $darkblue;
       background: $white;
       border-radius: 50%;
       opacity: 0;
@@ -445,20 +434,16 @@ textarea {
   }
 
   input[type="radio"] {
-    // display: none;
     position: absolute;
     top: 0;
     left: 0;
     opacity: 0;
-    // visibility: hidden;
 
     &:checked {
       ~ label {
-        // color: $green;
 
         &:before {
           background-color: $darkblue;
-          // border-color: $green;
         }
 
         &:after {
@@ -479,11 +464,6 @@ textarea {
 
       &:checked {
         ~ label {
-          // color: $green;
-
-          &:before {
-            // border-color: $green;
-          }
 
           &:after {
             opacity: 1;
@@ -526,7 +506,6 @@ textarea {
   }
 
   .checkbox-children {
-    // height: 0;
     max-height: 0px;
     overflow: hidden;
     transition: max-height 0.3s ease-in-out, height 0.3s ease-in-out,
@@ -547,7 +526,6 @@ input.about-datepicker {
 
   @include breakpoint(890px) {
     flex-basis: 100%;
-    // margin-bottom: 15px;
   }
 
   @include breakpoint(sm) {
@@ -589,10 +567,8 @@ input.about-datepicker {
 }
 
 select.select-input ~ span.select2-container {
-  // flex-basis: calc(30% - 20px);
   height: 35px;
   width: 100% !important;
-  // margin-right: 20px;
 
   @include breakpoint(890px) {
     flex-basis: 100%;

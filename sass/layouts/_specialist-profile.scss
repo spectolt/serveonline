@@ -20,15 +20,7 @@
       margin-right: 10px;
     }
   }
-  .company__header ul.company__nav li {
-    @include breakpoint(sm) {
-      // margin-right: 30px;
 
-      // &:last-of-type {
-      //   margin-right: 0;
-      // }
-    }
-  }
   .group__tab{
     @include breakpoint(l){
       border: 1px solid #e8e8e8;
@@ -67,7 +59,6 @@
 
   input[type="text"] {
     width: 100%;
-    // width: calc(100% - 20px);
 
     @include breakpoint(sm) {
       height: 32px;
@@ -77,7 +68,6 @@
   .input-container--profession {
     flex-basis: calc(30% - 20px);
     margin-right: 20px;
-    // height: 35px;
 
     @include breakpoint(890px){
       .select2-selection__rendered.select2-selection__rendered{
@@ -90,16 +80,13 @@
   .input-wrapper--experience {
     flex-basis: calc(30% - 20px);
     margin-bottom: 10px;
-    // height: 35px;
 
     @include breakpoint(745px){
       flex-basis: calc(32% - 20px);
     }
 
     .select2-container {
-      // @include breakpoint(sm) {
         width: 100% !important;
-      // }
     }
 
     .select2-container .select2-selection--single {
@@ -531,7 +518,6 @@
     }
     .select2-container--default {
       height: 23px;
-      // margin-bottom: 20px;
     }
   }
 
@@ -567,13 +553,7 @@
         margin-bottom: 0;
       }
     }
-    // .percent:before {
-    //   top: 4px !important;
-    // }
-    // .percent:after,
-    // .hours::after {
-    //   top: 3px !important;
-    // }
+
     .percent,
     .hours {
       right: -5px;
@@ -581,10 +561,6 @@
       input {
         height: 23px;
       }
-
-      // &:after {
-      //   top: 3px;
-      // }
     }
   }
 

@@ -52,11 +52,9 @@ $thisPage = "specialist-profile" ?>
                             <p>Veiklos administravimo kontaktai</p>
                             <div class="input-wrapper input-wrapper--envelope">
                                 <input type="text" name="email" placeholder="Elektroninis paštas">
-                                <!-- <span class="input-icon"></span> -->
                             </div>
                             <div class="input-wrapper input-wrapper--phone">
                                 <input type="text" name="phone" placeholder="+370 XXXXXXXX">
-                                <!-- <span class="input-icon"></span> -->
                             </div>
                             <p>Kalbos, kuriomis galite bendrauti</p>
                             <?php for ($i = 0; $i < 4; $i++) { ?>
@@ -265,7 +263,6 @@ $thisPage = "specialist-profile" ?>
                                 </div>
                             </div>
                             <div class="timetable__buttons-container">
-                                <!-- pridėti klases ir ikonas: -->
                                 <button class="orange transparent delete">Ištrinti</button>
                                 <button class="generate">Sugeneruoti</button>
                             </div>

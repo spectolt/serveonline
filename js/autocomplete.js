@@ -6,10 +6,6 @@ $("#search")
     source: function (request, response) {
       $.ajax({
         url: "https://5fc0bc01cb4d020016fe5d12.mockapi.io/products",
-        // dataType: "jsonp",
-        // data: {
-        //     term: request.term
-        // },
         success: function (data) {
           response(data);
         },

@@ -1,10 +1,8 @@
 section {
   &.login {
-    // max-width: 1040px;
     margin: 0 auto 40px;
 
     @include breakpoint(sm) {
-      // margin: 30px auto 40px;
       margin: 30px auto 30px;
     }
 
@@ -15,12 +13,10 @@ section {
         justify-content: space-between;
         @include breakpoint(800px) {
           display: block;
-          // margin-top: 90px;
         }
 
         &--column {
           flex-direction: column;
-          // width: 48%;
 
           .login__block {
             width: 100%;
@@ -70,7 +66,6 @@ section {
 
       &__form {
         display: flex;
-        // flex-direction: column;
         justify-content: space-between;
         flex-wrap: wrap;
       }
@@ -110,7 +105,6 @@ section {
       }
 
       &__checkboxes {
-        // margin: 25px 0 40px 0;
         margin: 0 0 40px 0;
 
         @include breakpoint(sm){

@@ -74,7 +74,6 @@
   }
   .group__tab {
     margin-top: 40px;
-    // border: none;
 
     p {
       margin-top: 45px;
@@ -89,22 +88,13 @@
       @include breakpoint(sm) {
         margin-top: 20px;
         margin-bottom: 20px;
-        // padding-left: 55px;
-        // padding-right: 55px;
-        // color: $red;
       }
     }
   }
 
   .company__header ul.company__nav {
-    // overflow-x: hidden;
-
     &::-webkit-scrollbar {
       height: 8px;
-    }
-
-    @include breakpoint(xl) {
-      // overflow-x: hidden;
     }
   }
 
@@ -183,7 +173,6 @@
     }
 
     .input-wrapper--phone {
-      // flex-basis: 50%;
       margin-right: 20px;
 
       @include breakpoint(l) {
@@ -214,7 +203,6 @@
     }
 
     .specialist-profile__gender {
-      // margin-bottom: 10px;
       height: 40px;
       @include breakpoint(sm) {
         margin-top: 10px;
@@ -233,11 +221,9 @@
     }
 
     .about-datepicker {
-      // padding-left: 50px;
       height: 36px;
 
       @include breakpoint(sm) {
-        // padding-left: 40px;
         height: 32px;
       }
 

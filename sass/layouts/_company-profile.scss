@@ -2,12 +2,6 @@
   .company__header {
     padding-top: 3px;
 
-    // &--main {
-    //   @include breakpoint(sm) {
-    //     left: -10px !important;
-    //   }
-    // }
-
     h2 {
       font-size: 3.25rem;
     }
@@ -18,7 +12,6 @@
 
     .photo-slider {
       left: -35px;
-      // min-width: 1200px;
       min-width: calc(100vw - 325px);
       height: 360px;
       transform: translateZ(0);
@@ -82,7 +75,6 @@
 
     h2 {
       margin-top: 30px;
-      // margin-left: 3px;
     }
     &-content {
       margin: 0;
@@ -90,8 +82,6 @@
 
       .company__header-left {
         flex-basis: 49%;
-        // margin-left: 10px;
-        // margin-bottom: 0;
         margin-bottom: 35px;
 
         @include breakpoint(880px) {
@@ -99,7 +89,6 @@
         }
 
         @include breakpoint(sm) {
-          // margin-bottom: 20px;
           width: 100%;
           margin-left: 10px;
           margin-top: 10px;
@@ -181,7 +170,6 @@
           }
 
           @include breakpoint(sm) {
-            // font-weight: 500;
             font-size: 0.8125rem;
             margin-bottom: 0;
             margin-top: 10px;
@@ -203,7 +191,6 @@
             position: relative;
 
             @include breakpoint(sm) {
-              // float: right;
               margin-right: 10px;
               margin-left: auto;
             }
@@ -225,8 +212,6 @@
         }
       }
       .company__header-right {
-        // padding-right: 25px;
-
         @include breakpoint(1080px) {
           margin-bottom: 20px;
         }
@@ -269,7 +254,6 @@
         .signature {
           font-size: 2.25rem;
           margin-top: 15px;
-          // margin-bottom: 20px;
           margin-top: 0;
           position: relative;
           top: -15px;
@@ -280,23 +264,19 @@
 
           @include breakpoint(sm) {
             font-size: 1.47375rem;
-            //position: unset;
             top: -14px;
             padding-right: 15px;
           }
         }
       }
       .company__nav {
-        // margin-left: 10px;
-
         @include breakpoint(sm) {
           margin-left: 20px;
           left: -8px;
         }
       }
-      .social-media {
-        // margin-right: 25px;
 
+      .social-media {
         @include breakpoint(880px) {
           margin-right: 1px;
         }
@@ -326,7 +306,6 @@
     }
   }
   .group__tab {
-    // margin-left: 60px;
     margin-top: 45px;
 
     @include breakpoint(sm) {
@@ -399,7 +378,6 @@
         .product__block-person {
 
           @include breakpoint(900px) {
-            // width: 100%;
             margin-bottom: 30px;
           }
         }
@@ -511,10 +489,8 @@
   }
 
   #paslaugos {
-    // margin-top: 50px;
 
     @include breakpoint(sm) {
-      // margin-top: 15px;
       margin-bottom: 20px;
     }
 
@@ -527,7 +503,6 @@
       @include breakpoint(sm) {
         margin-top: 15px;
         margin-bottom: 10px;
-        // margin-left: 10px;
         font-size: 1.125rem;
       }
     }
@@ -537,7 +512,6 @@
 
       @include breakpoint(sm) {
         font-size: 1rem;
-        // margin-left: 10px;
       }
     }
 
@@ -556,7 +530,6 @@
     .services-list__block {
       padding-top: 10px;
       padding-bottom: 10px;
-      // margin-right: 60px;
       margin-bottom: 20px;
 
       @include breakpoint(sm) {
@@ -620,44 +593,26 @@
       .product-action {
         background-color: transparent;
       }
-      // .product-choice:nth-of-type(2n-1) {
-      //   .product-action {
-      //     background-color: #fbfbfc;
-      //   }
-      // }
     }
   }
   #produktai {
-    // margin-top: 45px;
-
-    @include breakpoint(sm) {
-      // margin-top: 15px;
-    }
 
     h2 {
       font-weight: 700;
       margin-bottom: 40px;
       font-size: 1.5rem;
-      // margin-left: 20px;
 
       @include breakpoint(sm) {
         font-weight: 700;
         font-size: 1.125rem;
         margin-top: 15px;
         margin-bottom: 10px;
-        // margin-left: 10px;
       }
     }
 
     .photo-grid {
       ul {
-        // margin-right: 130px;
         width: auto;
-
-        // @include breakpoint(sm) {
-        //   margin-left: 10px;
-        //   margin-right: 10px;
-        // }
 
         li {
           margin-bottom: 10px;
@@ -672,22 +627,13 @@
   }
 
   #apie-mus {
-    // margin-top: 50px;
-
-    @include breakpoint(sm) {
-      // margin-top: 15px;
-    }
-
     h3{
       font-size: 1.125rem;
       font-weight: 400;
     }
 
     p {
-      // margin-right: 160px;
-
       @include breakpoint(sm) {
-        // margin-left: 10px;
         margin-right: 0px;
         font-size: 0.875rem;
       }
@@ -714,7 +660,6 @@
 
         @include breakpoint(sm) {
           width: 62%;
-          // margin-left: 10px;
           h3 {
             font-weight: 500;
           }
@@ -826,7 +771,6 @@
           }
 
           @include breakpoint(sm) {
-            // margin-left: 10px;
             flex-direction: column;
           }
         }
@@ -844,16 +788,9 @@
       }
     }
   }
-
-  // table.calendar {
-  //   @include breakpoint(sm) {
-  //     width: calc(100% - 40px);
-  //   }
-  // }
 }
 
 .photo-slider {
-  // height: 200px;
   width: 100%;
   border-radius: 15px;
   overflow: hidden;

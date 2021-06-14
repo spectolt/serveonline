@@ -145,9 +145,6 @@
                         <h3 class="centered">Unikalių klientų nuo: <span>2021 05 24</span></h3>
                         <hr>
                         <div class="stat-grid__bottom">
-                            <!-- <div class="stat-grid__client-donut stat-grid__client-donut--comeback"></div>
-                            <div class="stat-grid__client-donut stat-grid__client-donut--cities"></div>
-                            <div class="stat-grid__client-donut stat-grid__client-donut--gender"></div> -->
                             <div class="stat-grid__client-donut stat-grid__client-donut--test"></div>
                         </div>
                     </div>

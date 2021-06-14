@@ -1,5 +1,4 @@
 .specialist {
-  // column-count: 2;
   display: flex;
   flex-direction: column;
   max-height: 2000px;
@@ -53,7 +52,6 @@
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    // overflow: hidden;
     position: relative;
     background-size: 100%;
   }
@@ -66,8 +64,6 @@
     }
 
     @include breakpoint(l) {
-      // justify-content: space-between;
-
       li:first-of-type {
         margin-left: 0;
       }
@@ -99,7 +95,6 @@
       width: 140% !important;
       right: 0 !important;
       left: auto !important;
-      // display: block !important;
       z-index: 9999;
       background-color: $white;
       box-shadow: 0 5px 10px 3px rgba(0, 0, 0, 0.19);
@@ -118,7 +113,6 @@
       }
 
       .autocomplete-product.active {
-        // padding-left: 15px;
         &::before {
           content: "";
           border-left: 2.5px solid $color__controls-sidebar-text;
@@ -169,10 +163,8 @@
 
 .specialist {
   .company__header.company__header {
-    // padding-right: 0;
     width: 50%;
     padding-right: 0;
-    // margin-top: 60px;
 
     @include breakpoint(l) {
       width: calc(100% + 80px);
@@ -355,7 +347,6 @@
 
       &__item--languages {
         grid-column: span 2;
-        // max-width: 300px;
         .details__languages {
           white-space: nowrap;
 
@@ -387,7 +378,6 @@
             right: 0;
             width: calc(100% - 50px);
             display: inline-block;
-            // max-width: 265px;
           }
 
           h4 {
@@ -395,7 +385,6 @@
             margin: 0;
             font-size: 1.125rem;
             display: inline-block;
-            // max-width: 265px;
             overflow-x: hidden;
             padding: 0 5px;
             width: 100%;
@@ -419,7 +408,6 @@
         }
       }
       &__item--payment {
-        // margin-top: 13px;
         margin-right: 30px;
         h4 {
           font-family: "Roboto", sans-serif;
@@ -477,7 +465,6 @@
         }
       }
       &__item--last-hour {
-        // margin-top: 13px;
         grid-column: span 2;
         h4 {
           font-family: "Roboto", sans-serif;
@@ -698,30 +685,10 @@
       margin-bottom: 30px;
     }
 
-    // .sticky {
-    //   position: fixed;
-    //   width: inherit;
-    //   max-width: 522px;
-    //   top: 105px;
-    //   left: calc(50vw + 30px);
-
-    //   @include breakpoint(xl) {
-    //     width: calc(50vw - 70px);
-    //     max-width: none;
-    //   }
-
-    //   @include breakpoint(l) {
-    //     position: static;
-    //     width: 100%;
-    //     left: 0;
-    //   }
-    // }
-
     .product__chosen {
       border: 1px solid $lightgray;
       padding-left: 10px;
       padding-right: 40px;
-      // margin-bottom: 20px;
       background-color: $white;
 
       .product-action__info {
@@ -924,19 +891,16 @@
       }
 
       .product__text {
-        // float: right;
         text-align: justify;
         color: #aeb1bd;
         font-family: "Sen", sans-serif;
         font-size: 0.875rem;
         margin: 0;
         line-height: 1;
-        // display: inline-block;
         margin-right: 10px;
 
         @include breakpoint(sm) {
           font-size: 0.75rem;
-          // float: right;
         }
       }
 
@@ -1028,11 +992,6 @@
 
           .paragraph {
             margin-right: 0;
-            // text-align: justify;
-
-            @include breakpoint(sm) {
-              // margin-right: 30px;
-            }
           }
         }
 
@@ -1164,9 +1123,6 @@
         margin-right: 20px;
 
         @include breakpoint(sm) {
-          // margin-top: 0;
-          // margin-left: 10px;
-          // margin-right: 10px;
           margin: 0;
         }
       }
@@ -1192,10 +1148,6 @@
 
         .ui-datepicker-header {
           margin: 0 10px;
-
-          // @include breakpoint(sm) {
-          //   margin: 0;
-          // }
         }
 
         .ui-datepicker-buttonpane {
@@ -1219,7 +1171,6 @@
             }
           }
           .ui-datepicker-close {
-            // margin-left: 1px;
             float: none;
             margin-left: 20px;
 
@@ -1246,16 +1197,6 @@
             margin: 0 auto;
           }
         }
-
-        // tr {
-        //   td:first-of-type .ui-state-default {
-        //     margin-left: 0;
-        //   }
-
-        //   td:last-of-type .ui-state-default {
-        //     margin-right: 0;
-        //   }
-        // }
       }
     }
     .company__button-container {
@@ -1294,9 +1235,6 @@
       overflow-x: scroll;
       width: 355px;
       position: relative;
-      // margin-right: -20px;
-      // margin-top: 30px;
-      // margin: 0 10px;
 
       th {
         display: table-cell;

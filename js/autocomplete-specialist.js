@@ -18,9 +18,6 @@ if ($("main.hasUiAutocomplete").length > 0) {
           },
         });
       },
-      select: function (event, ui) {
-        // $("input#search-specialist").attr("rel", ui.item.label);
-      },
       open: function (event, ui) {
         $(".ui-autocomplete-wrapper").prepend(
           "<div class='product__notice'><p class='product__text'>Jūsų buvusios rezervacijos paryškintos</p><button class='product__close'></button></div>"
@@ -186,14 +183,8 @@ if ($("main.hasUiAutocomplete").length > 0) {
     ) {
       $(".ui-autocomplete").css("display", "none");
       $(input).parent().find(".input-icon").removeClass("rotate-arrow");
-      // if ($(".specialist__overlay.hidden").length == 0) {
-      //   $(".specialist__overlay").addClass("hidden");
-      // }
       $(".specialist__calendar-container").removeClass("overlay");
     } else {
-      // $(input).siblings(".input-icon").addClass("rotate-arrow");
-      // $(".ui-autocomplete").css("display", "block");
-      // $(".specialist__overlay").removeClass("hidden");
       $(".specialist__calendar-container").removeClass("overlay");
     }
   });
@@ -256,14 +247,4 @@ if ($("main.hasUiAutocomplete").length > 0) {
   $(".product__chosen-add").on("click", function () {
     input.autocomplete("search", "");
   });
-
-  // $("main").scroll(function () {
-  //   if ($(".ui-autocomplete").is(":visible")) {
-  //     if ($(this).scrollTop() > 100) {
-  //       $("input#search-specialist").blur();
-  //       $(".ui-autocomplete").css("display", "none");
-  //       $("input#search-specialist").val("");
-  //     }
-  //   }
-  // });
 }

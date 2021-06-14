@@ -6,13 +6,9 @@
 
   &__header {
     position: relative;
-    // transition: all 3s ease-in-out;
     max-height: 300px;
 
     &--hidden {
-      // height: 0;
-      // max-height: 0;
-      // transition: all 3s ease-in-out;
       overflow: hidden;
     }
   }
@@ -47,35 +43,15 @@
       grid-gap: 10px;
     }
 
-    @include breakpoint(xs) {
-      // margin-right: -20px;
-      // flex-wrap: nowrap;
-      // margin-left: -10px;
-      // white-space: nowrap;
-    }
-
     &.controls__top--services {
       @include breakpoint(520px) {
         justify-content: flex-end;
-        // width: calc(100% + 10px);
         flex-wrap: wrap;
-        // margin-left: 20px;
-        // margin-right: -10px;
       }
 
       .controls__print {
         @include breakpoint(sm) {
           grid-column-start: 2;
-        }
-
-        @include breakpoint(520px) {
-          // width: 104.7px;
-          // width: calc(50% - 10px);
-          // justify-content: center;
-
-          // &::before {
-          //   left: 30px;
-          // }
         }
       }
 
@@ -94,7 +70,6 @@
 
   &__buttons-cancel-save {
     display: flex;
-    // flex-wrap: wrap;
     justify-content: flex-end;
     width: 100%;
 
@@ -132,7 +107,6 @@
 
     &:before {
       content: "";
-      // width: 18px;
       width: 50px;
       height: 18px;
       background-size: contain;
@@ -141,21 +115,14 @@
       display: block;
       position: absolute;
       left: 0;
-      // margin-right: 10px;
 
       @include breakpoint(sm) {
-        // margin-right: 5px;
         width: 40px;
       }
     }
   }
 
-  // button:last-of-type {
-  //   margin-right: 0;
-  // }
-
   &__restore {
-    //margin-left: auto;
     margin-right: 10px;
 
     &:before {
@@ -212,26 +179,14 @@
     position: relative;
   }
 
-  // &__table-border {
-  //   // border: 1px solid $lightgray;
-  //   border-radius: 5px;
-  //   // margin-bottom: 1px;
-  //   width: 100%;
-  //   height: 100%;
-  // }
 
   &__table-container {
     display: flex;
     border: 1px solid #eee;
     border-top: none;
-    // border-radius: 5px;
-    //width: calc(100vw - #{"min(54px, 5.1vw)"} - #{"min(100px, 6.9vw)"} - 300px);
     overflow-x: auto;
     width: 100%;
-    // min-height: 280px;
-    // align-items: stretch;
     overflow-y: hidden;
-    // position: relative;
     border-radius: 5px;
 
     @include breakpoint(xl) {
@@ -264,7 +219,6 @@
   &__table {
     border-spacing: 0;
     border-collapse: collapse;
-    //height: 35px;
     margin-bottom: 0;
 
     tr:first-child th:first-child {
@@ -284,7 +238,6 @@
 
     thead tr {
       position: relative;
-      // width: calc(100% - 16px);
       width: 100%;
       display: table;
     }
@@ -303,7 +256,6 @@
     }
 
     tr {
-      // height: 100%;
       width: 100%;
     }
 
@@ -315,10 +267,6 @@
       &:first-of-type {
         padding-left: 10px;
       }
-
-      // &:last-of-type {
-      //   padding-right: 20px;
-      // }
 
       button {
         width: 35px;
@@ -341,11 +289,8 @@
     }
 
     tfoot {
-      // margin-top: 10px;
-      // border-left: 1px solid $washedblue;
       z-index: 2;
       background-color: $darkblue;
-      // border-top: 1px solid $darkblue;
 
       tr {
         display: table;
@@ -385,14 +330,9 @@
     border-collapse: collapse;
   }
 
-  // tbody tr {
-  //   height: 35px;
-  // }
-
   tbody::-webkit-scrollbar {
     width: 8px;
     bottom: 1px;
-    // height: 100%;
   }
 
   tbody::-webkit-scrollbar-thumb {
@@ -422,15 +362,6 @@
     align-items: center;
     margin: auto 0;
     background-color: $white;
-
-    // &--title {
-    //   font-weight: 600;
-    // }
-
-    // &--menu {
-    //   background-color: $darkblue;
-    //   color: $white;
-    // }
 
     p {
       margin: 0;
@@ -532,7 +463,6 @@
     position: relative;
     &::after,
     &::before {
-      // content: url("img/icons/angle-down-white.svg");
       content: "";
       position: absolute;
       bottom: 12px;
@@ -645,7 +575,6 @@
 .areas {
   &__table {
     width: 84%;
-    // min-width: 420px;
 
     thead,
     tbody tr {
@@ -762,7 +691,6 @@
     &--menu {
       width: 16%;
       table-layout: fixed;
-      // min-width: 380px;
       min-width: 200px;
 
       thead {
@@ -772,14 +700,6 @@
       tbody {
         position: relative;
       }
-      // tbody:after {
-      //   content: "";
-      //   height: 100%;
-      //   position: absolute;
-      //   left: 40%;
-      //   top: 0;
-      //   border-left: 1px solid #eee;
-      // }
 
       tr:first-child th:last-child {
         border-top-left-radius: 0px;
@@ -859,20 +779,17 @@
     transition: max-height 0.3s ease-in-out, margin-top 0.3s ease-in-out;
 
     @include breakpoint(880px) {
-      // grid-template-columns: repeat(3, 1fr);
       position: relative;
       margin-bottom: 10px;
       justify-content: space-between;
     }
 
     @include breakpoint(sm) {
-      // margin-left: -10px;
       margin-right: -10px;
     }
 
     .services__area-div {
       min-width: 43px;
-      //max-width: 120px;
       margin-bottom: 10px;
       margin-right: 20px;
 
@@ -926,14 +843,8 @@
   }
 
   .controls__table-container {
-    // width: calc(100% + 10px);
     overflow-x: hidden;
     border-bottom: none;
-    // display: block;
-
-    // @include breakpoint(xl) {
-    //   width: calc(100vw - min(40px, 2.8vw) - min(40px, 2.8vw));
-    // }
 
     @include breakpoint(880px) {
       overflow-x: auto;
@@ -942,7 +853,6 @@
 
   &__table {
     min-width: 185px;
-    // width: calc(100% + 2px);
     display: inline-block;
     justify-content: flex-start;
 
@@ -1092,8 +1002,6 @@
   }
 
   .controls__item-content {
-    // max-height: 0;
-    // visibility: hidden;
     font-size: 0.875rem;
     background-color: $white;
     font-weight: 400;
@@ -1216,7 +1124,6 @@
       }
       &:nth-of-type(4) {
         min-width: 400px;
-        // width: calc(100% - 77px - 110px - 102px - 66px - 70px - 78px - 140px - 94px);
         width: 400px;
 
         p {
@@ -1226,7 +1133,6 @@
       &:nth-of-type(5) {
         width: 66px;
         text-align: center;
-        // vertical-align: middle;
       }
       &:nth-of-type(6) {
         width: 70px;
@@ -1246,9 +1152,6 @@
 }
 
 .profiles {
-  .controls__table-container {
-    // border: none;
-  }
 
   &__table {
     th .checkbox input[type="checkbox"]:checked ~ label:before {
@@ -1308,7 +1211,6 @@
       &:nth-of-type(12) {
         min-width: 74px;
         width: 74px;
-        // width: calc(100% - 1200px);
         word-break: break-all;
       }
       &:nth-of-type(13) {
@@ -1411,9 +1313,6 @@
           border-bottom-left-radius: 5px;
           border-left: none;
         }
-        // &:last-of-type {
-        //   border-bottom-right-radius: 5px;
-        // }
       }
     }
 
@@ -1447,7 +1346,6 @@
         }
         &:nth-of-type(7) {
           width: 130px;
-          // text-align: left;
         }
         &:nth-of-type(8) {
           width: 130px;
@@ -1519,8 +1417,6 @@
   }
 
   .controls__group {
-    // position: relative;
-    // left: 0px;
     margin-right: 10px;
 
     button {
@@ -1536,7 +1432,6 @@
 
     @include breakpoint(1470px) {
       position: relative;
-      // width: 100%;
     }
 
     @include breakpoint(sm) {
@@ -1546,11 +1441,6 @@
   }
 
   .controls__buttons-container {
-    // margin-right: 10px;
-
-    // @include breakpoint(sm) {
-    //   margin-right: 0;
-    // }
 
     button {
       height: 35px;
@@ -1896,7 +1786,6 @@
 
     th,
     td {
-      // vertical-align: middle;
       &:first-of-type {
         width: 89px;
       }
@@ -1999,9 +1888,6 @@
   }
 
   .controls__table{
-    // th{
-    //   font-family: 'Roboto', sans-serif;
-    // }
     .top-arrow{
       &:nth-of-type(2){
         &:before, &:after{
@@ -2036,7 +1922,6 @@
     }
 
     th{
-      // vertical-align: middle;
       padding-left: 10px;
 
       &:first-of-type{
@@ -2062,63 +1947,48 @@
       }
       &:nth-of-type(8){
         width: 122px;
-        // text-align: left;
       }
       &:nth-of-type(9){
         width: 120px;
-        // text-align: left;
       }
       &:nth-of-type(10){
         width: 121px;
-        // text-align: left;
       }
       &:nth-of-type(11){
         width: 63px;
-        // text-align: left;
       }
       &:nth-of-type(12){
         width: 91px;
-        // text-align: left;
       }
       &:nth-of-type(13){
         width: 120px;
-        // text-align: left;
       }
       &:nth-of-type(14){
         width: 89px;
-        // text-align: left;
       }
       &:nth-of-type(15){
         width: 78px;
-        // text-align: left;
       }
       &:nth-of-type(16){
         width: 89px;
-        // text-align: left;
       }
       &:nth-of-type(17){
         width: 85px;
-        // text-align: left;
       }
       &:nth-of-type(18){
         width: 64px;
-        // text-align: left;
       }
       &:nth-of-type(19){
         width: 58px;
-        // text-align: left;
       }
       &:nth-of-type(20){
         width: 44px;
-        // text-align: left;
       }
       &:nth-of-type(21){
         width: 62px;
-        // text-align: left;
       }
       &:nth-of-type(22){
         width: 95px;
-        // text-align: left;
       }
       &:nth-of-type(23){
         width: 90px !important;
@@ -2496,9 +2366,6 @@
       &:nth-of-type(22){
         width: 95px;
       }
-      // &:last-of-type{
-      //   width: 68px !important;
-      // }
     }
     .checkbox{
       label{
@@ -2593,9 +2460,6 @@
     td{
       height: 31px;
       text-align: left;
-      // &:last-of-type{
-      //   width: 62px !important;
-      // }
     }
     .checkbox{
       label{

@@ -7,7 +7,6 @@
   }
 
   @include breakpoint(sm) {
-    // width: calc(100vw - (100vw - 100%) - 20px);
     width: 100%;
   }
 
@@ -27,15 +26,9 @@
   &__top {
     display: flex;
     justify-content: space-between;
-    // align-items: flex-start;
 
     @include breakpoint(l) {
       flex-wrap: wrap;
-    }
-
-    @include breakpoint(l) {
-      // order: 1;
-      // margin-top: 30px;
     }
 
     .timetable__title {
@@ -131,7 +124,6 @@
 
     @include breakpoint(l) {
       padding: 0;
-      // overflow: visible;
       height: 450px;
     }
 
@@ -146,12 +138,8 @@
     grid-gap: 5px;
 
     @include breakpoint(l) {
-      // display: none;
-      // border-top: 1px solid $lightgray;
-      // border-bottom: 1px solid $lightgray;
       padding: 5px 0;
       margin-bottom: 20px;
-      // overflow: auto;
     }
 
     @include breakpoint(sm) {
@@ -277,11 +265,9 @@
 
   &__datepicker-container {
     display: flex;
-    // margin-top: 30px;
     justify-content: space-between;
 
     @include breakpoint(l) {
-      // display: none;
       flex-direction: column;
     }
   }
@@ -299,7 +285,6 @@
     display: flex;
 
     @include breakpoint(l) {
-      // margin-left: -15px;
       margin-bottom: 20px;
     }
 
@@ -312,7 +297,6 @@
     h3 {
       font-weight: 900;
       @include breakpoint(l) {
-        // position: absolute;
         top: 0;
         left: 15px;
         z-index: 1000;
@@ -371,10 +355,6 @@
 
     &--until {
       .ui-datepicker.ui-widget {
-        // .ui-state-active {
-        //   background-color: $orange;
-        // }
-
         .ui-datepicker-current {
           display: none;
         }
@@ -401,7 +381,7 @@
 
   &__choice {
     h4 {
-      margin: 0; //pakeisti
+      margin: 0;
     }
 
     &--time {
@@ -411,14 +391,13 @@
   }
 
   &__choice--periodicity {
-    // margin-left: 20px; //peržiūrėti pagal dizainą
     flex: 1 0 auto;
   }
 
   &__time-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 2px; //peržiūrėti
+    grid-gap: 2px; 
 
     .time-inputs {
       border: 1px solid $darkblue;
@@ -452,11 +431,9 @@
       }
       #timetable-from {
         margin-left: 30px;
-        // width: 290px;
       }
       #timetable-until {
         margin-left: 38px;
-        // width: 290px;
       }
 
       .timetable__date-input {
@@ -523,7 +500,6 @@
         }
       }
       .timetable__choice--periodicity {
-        // margin-left: 50px;
         @include breakpoint(l) {
           margin-left: 0px;
           margin-top: 20px;

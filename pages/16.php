@@ -26,7 +26,6 @@ $thisPage = "company-profiles"; ?>
                 <div class="controls__table-container-wrapper">
                     <button class="expand-button"></button>
                     <div class="controls__table-container">
-                        <!-- <div class="controls__table-border"> -->
                         <table class="controls__table profiles__table profiles__table--specialists">
                             <thead>
                                 <tr>
@@ -156,7 +155,6 @@ $thisPage = "company-profiles"; ?>
                                 </tr>
                             </tfoot>
                         </table>
-                        <!-- </div> -->
                     </div>
                 </div>
                 <div class="pagination">

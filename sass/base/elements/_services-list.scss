@@ -8,7 +8,6 @@ div.services-list {
     width: 200px;
     margin-right: 20px;
     padding-left: 10px;
-    // position: relative;
     margin-bottom: 40px;
     padding-top: 16px;
     position: sticky;
@@ -37,11 +36,6 @@ div.services-list {
       padding-top: 10px;
       padding-bottom: 10px;
 
-      // @include breakpoint(l) {
-      //   padding-top: 10px;
-      //   padding-bottom: 10px;
-      // }
-
       &:before,
       &:after {
         top: 50%;
@@ -52,6 +46,7 @@ div.services-list {
     .checkbox-wrapper.toggled .checkbox-children {
       margin-left: -20px;
       margin-bottom: 0px;
+
       @include breakpoint(l) {
         margin-left: -10px;
         width: calc(100% + 20px);
@@ -114,7 +109,6 @@ div.services-list {
     @include breakpoint(l) {
       width: 100%;
       padding: 0 20px;
-      // margin-top: 20px;
       height: 100vh;
       overflow: auto;
 
@@ -132,8 +126,6 @@ div.services-list {
       color: $red;
       font-weight: 400;
       margin-top: 0;
-      // height: 10px;
-      // background-color: yellow;
       margin: 0;
       padding: 20px 0 0;
       position: sticky;
@@ -226,10 +218,6 @@ div.services-list {
     h4 {
       font-size: 1rem;
     }
-
-    // &:nth-of-type(2n-1) {
-    //   background-color: #fbfbfc;
-    // }
 
     &:hover {
       background-color: #e2e3e5;
@@ -402,7 +390,6 @@ div.services-list {
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        // margin-right: 5px;
         display: block;
         top: 2px;
         width: 22px;

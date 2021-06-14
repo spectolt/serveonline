@@ -11,7 +11,6 @@ $thisPage = "specialist" ?>
                         <div class="company__header-top product__block-top">
                             <div class="specialist__header-left">
                                 <div class="specialist__photo" style="background-image: url(../img/1.jpg)">
-                                    <!-- <img src="../img/1.jpg"> -->
                                     <div class="product__block-like-status hidden"></div>
                                 </div>
                                 <div class="specialist__name">

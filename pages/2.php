@@ -45,17 +45,6 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                     <div class="input-wrapper input-wrapper--half input-wrapper--city">
                         <input type="text" name="city" placeholder="Miestas" />
                     </div>
-                    <!-- <div class="login__gender">
-                        <p>Lytis:</p>
-                        <div class="radio">
-                            <input name="gender" type="radio" id="gender-female" class="" />
-                            <label for="gender-female">Moteris</label>
-                        </div>
-                        <div class="radio">
-                            <input name="gender" type="radio" id="gender-male" class="" />
-                            <label for="gender-male">Vyras</label>
-                        </div>
-                    </div> -->
                     <div class="input-wrapper input-wrapper--half input-wrapper--lock">
                         <input type="password" name="password" placeholder="Slaptažodis" />
                     </div>

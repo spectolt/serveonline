@@ -46,8 +46,7 @@
 
       &--time {
         flex-basis: 35.5%;
-        // flex-basis: auto;
-        // width: 380px;
+
 
         @include breakpoint(sm) {
           flex-basis: 100%;
@@ -100,8 +99,6 @@
       align-items: center;
       width: 390px;
       flex-basis: 37%;
-      // flex-basis: 33%;
-      // flex-basis: 33%;
 
       @include breakpoint(sm) {
         flex-basis: 100%;
@@ -315,7 +312,6 @@
         }
 
         &:last-of-type {
-          // border-radius: 0;
           border-bottom-right-radius: 5px;
         }
       }

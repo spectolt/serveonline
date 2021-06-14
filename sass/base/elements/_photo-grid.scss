@@ -84,41 +84,6 @@
     }
   }
 
-  // button.switch-image {
-  //   margin: 0 0 0 auto;
-  //   display: flex;
-  //   align-items: center;
-
-  //   @include breakpoint(880px) {
-  //     margin: 10px auto 0;
-  //     font-size: 0.875rem;
-  //     width: 100%;
-  //     text-align: center;
-  //   }
-
-  //   &::before {
-  //     content: "";
-  //     display: inline-block;
-  //     background-size: contain;
-  //     background-position: center;
-  //     background-repeat: no-repeat;
-  //     background-color: transparent;
-  //     position: relative;
-  //     bottom: 0;
-  //     width: 22px;
-  //     height: 20px;
-  //     padding: 0;
-  //     margin-left: auto;
-  //     margin-right: 10px;
-  //     background-image: url("img/icons/switch-orange.svg");
-
-  //     @include breakpoint(750px) {
-  //       width: 18px;
-  //       height: 16px;
-  //       margin-left: 0;
-  //     }
-  //   }
-  // }
   ul {
     list-style-type: none;
     margin: 0;
@@ -133,7 +98,6 @@
     li {
       margin-bottom: 20px;
       padding: 1px;
-      // float: left;
       width: 24.5%;
       font-size: 4em;
       text-align: center;
@@ -155,7 +119,6 @@
       &:after {
         content: "";
         background-color: $darkgray;
-        // background-image: url("img/icons/camera-white.svg");
         background-repeat: no-repeat;
         background-position: center;
         background-size: 30%;

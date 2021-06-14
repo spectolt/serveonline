@@ -14,7 +14,6 @@
         &--items {
           order: 0;
           flex: 0;
-          // margin-right: 30px;
           padding: 0;
 
           @include breakpoint(sm) {
@@ -28,10 +27,8 @@
 }
 
 .main-screen {
-  // min-height: -webkit-fill-available;
   background-color: $color__background-homepage;
   min-height: calc(100vh - 70px);
-  //min-height: 630px;
   padding: 100px 20px 0;
   display: flex;
   justify-content: space-between;
@@ -131,11 +128,9 @@
     }
 
     .main-screen__area {
-      //width: 16.6%;
       width: 100%;
       text-align: center;
       min-width: 50px;
-      //margin-right: 15px;
       justify-self: center;
 
       @include breakpoint(l) {
@@ -165,10 +160,6 @@
         &:not(:hover) {
           background-color: $darkgray !important;
         }
-
-        // &:hover {
-        //   background-color: $darkgray !important;
-        // }
 
         img {
           max-width: 100%;
@@ -242,10 +233,8 @@
       position: relative;
       display: block;
       width: 100%;
-     // height: 100%;
       display: flex;
       bottom: 0;
-      // flex: 0 1 auto;
       flex-grow: 1;
       overflow: hidden;
     }
@@ -258,11 +247,9 @@
       vertical-align: bottom;
       position: absolute;
       bottom: 0;
-      //height: 100%;
 
       @include breakpoint(l) {
         max-width:100%;
-        // max-height:200%;
         height: 200%;
         top: 0;
         min-height: 0;
@@ -282,10 +269,6 @@
   display: flex;
   flex-direction: column;
   position: relative;
-
-  // @media screen and (max-width:400px) {
-  //   min-height: 100vh;
-  // }
 
   &__slides-container {
     height: 100%;
@@ -314,7 +297,6 @@
     }
 
     &-content {
-      //padding: 0 100px;
       padding: 20px 0 0;
       display: flex;
       flex-direction: row;
@@ -346,7 +328,6 @@
 
       img {
         max-height: 575px;
-        // width: 100%;
         max-width: 100%;
         display: block;
         margin: auto;
@@ -363,7 +344,6 @@
     }
 
     @media screen and (max-width:767px) {
-      //width: calc(100vw - 30px);
       margin-top: 20px;
       position: relative;
     }
@@ -388,15 +368,6 @@
   &__list {
     margin: 0;
     padding: 0 0 0 5px;
-    // font-size: 1rem;
-
-    // @include breakpoint(l) {
-    //   font-size: 1.3125rem;
-    // }
-
-    // @media (max-width: 767px) {
-    //   font-size: 1rem;
-    // }
 
     li {
       color: white;
@@ -409,7 +380,6 @@
 
       &:before {
         content: "⬤";
-        // position: absolute;
         position: relative;
         margin-left: -32px;
     margin-right: 22px;
@@ -417,9 +387,6 @@
         vertical-align: middle;
         color: $orange;
         line-height: 20px;
-        // left: 0;
-        // top: 50%;
-        // transform: translateY(-50%);
       }
     }
   }

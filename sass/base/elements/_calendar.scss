@@ -20,8 +20,7 @@ table.calendar {
         left: 0;
         bottom: -2px;
         max-width: 250px;
-        //height  : 1px;
-        width: 44px; /* or 100px */
+        width: 44px;
         border-bottom: 2px solid #e9636c;
         margin: 0 auto;
         padding: 4px 0px;
@@ -42,16 +41,6 @@ table.calendar {
     display: block;
     font-size: 12px;
   }
-
-  // tbody {
-  //     tr {
-  //         &:last-child {
-  //             td {
-  //                 padding-bottom: 0;
-  //             }
-  //         }
-  //     }
-  // }
 
   @include breakpoint(900px) {
     display: flex;

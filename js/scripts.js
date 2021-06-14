@@ -124,9 +124,6 @@ function onDocumentReady() {
           if ($(this).find("span").html() == "Ieškoti") {
             $(this).find("span").html("Valyti");
             $(this).addClass("change-search-icon");
-            // if (!$("main.hasTable").length > 0) {
-            //   $(".search-clean").css("display", "flex");
-            // }
           } else {
             $(this).find("span").html("Ieškoti");
             $(".product-header-chosen").fadeOut(300);
@@ -395,7 +392,6 @@ function onDocumentReady() {
           },
           300
         );
-        // return true;
         e.preventDefault();
         return false;
       });
@@ -448,9 +444,6 @@ function onDocumentReady() {
       .click(function (e) {
         if ($(this).find("span").html() == "Valyti") {
           $(".search-panel__select").val("").trigger("change");
-          // $(
-          //   ".search-container__select .select2-selection__choice__remove"
-          // ).trigger("click");
           $(this).find("span").html("Ieškoti");
           $(this).removeClass("change-search-icon");
           $(".search-panel input").val("");
@@ -460,7 +453,6 @@ function onDocumentReady() {
           $(this).removeClass("change-search-icon");
         } else {
           e.preventDefault();
-          // $(".search-container__select .select2-search__field").val("");
           if (
             $(".search-panel__select").val() &&
             $(".search-panel input").length
@@ -470,20 +462,6 @@ function onDocumentReady() {
           } else {
             $(".search-panel__select").select2("open");
           }
-
-          // if (
-          //   !$(
-          //     ".search-container__select .select2-selection__rendered"
-          //   ).children().length
-          // ) {
-          //   $(".search-panel__select").select2("open");
-          //   $(this).find("span").html("Ieškoti");
-          //   $(this).removeClass("change-search-icon");
-          // } else {
-          //   $(".search-container__submit").find("span").html("Valyti");
-          //   $(".search-container__submit").addClass("change-search-icon");
-          //   $(".search-panel__select").select2("close");
-          // }
         }
       });
 
@@ -584,7 +562,6 @@ function onDocumentReady() {
           '<span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span>'
         ).appendTo(".select2-selection--multiple");
 
-        // $(".search-container--controls .select2-search__field").prop("disabled", true);
         $(".search-container--controls .select2-search__field").addClass(
           "hide-disabled-gray"
         );
@@ -740,7 +717,6 @@ function onDocumentReady() {
         .each(function () {
           if (window.matchMedia("(max-width: 991px)").matches) {
             $(".services-list__blocks").insertAfter($(this).closest(".radio"));
-            // gotoTopPosition(document, window);
           }
         });
       if (window.matchMedia("(min-width: 992px)").matches) {
@@ -879,7 +855,6 @@ function onDocumentReady() {
               .nodeValue
         );
       }
-      // }
       if ($(this).closest(".services__table")) {
         $(this)
           .closest(".services__table")
@@ -890,7 +865,6 @@ function onDocumentReady() {
 
       if ($(this).closest(".services__table")) {
         $(".areas__table--menu tbody").removeClass("hidden");
-        // $(".areas__table--main tbody tr td").removeClass("hidden-visibility");
       }
     });
 
@@ -1116,7 +1090,6 @@ function onDocumentReady() {
       }
     });
 
-  // var isSortable = false;
   $(".sortable").sortable({
     tolerance: "pointer",
     disabled: true,
@@ -1143,10 +1116,8 @@ function onDocumentReady() {
       if (disabled) {
         $(this).siblings(".sortable").sortable("enable");
         $(".sortable").disableSelection();
-        // isSortable = true;
       } else {
         $(this).siblings(".sortable").sortable("disable");
-        // isSortable = false;
       }
     });
 
@@ -1169,7 +1140,6 @@ function onDocumentReady() {
     ".company__button-order:not(.js_ignore_mark)",
     function () {
       $(this).toggleClass("transparent");
-      // $(this).siblings("button").toggleClass("transparent");
       if ($(this).hasClass("transparent")) {
         $(this).html("Galima rezervuoti tik telefonu arba atvykus į vietą");
       } else {
@@ -1242,10 +1212,6 @@ function onDocumentReady() {
       ) {
         $(this).val($(this).siblings("input[name='before-discount']").val());
       }
-      // var lastChar = $(this).val().substr(-1);
-      // if (lastChar == "€") {
-      //   $(this).prop('selectionStart', 2)
-      // }
     });
 
   $(document).on("click", ".product-expand:not(.js_ignore_mark)", function () {
@@ -1267,13 +1233,6 @@ function onDocumentReady() {
     .on("click", function () {
       $(this).parent().siblings("input")[0].stepDown();
     });
-
-  // $(".payment-plan th:empty").on("click", function () {
-  //   var checkbox = $(this)
-  //     .closest(".payment-plan")
-  //     .find("input[type='radio']");
-  //   checkbox.prop("checked", false);
-  // });
 
   //default plan selected
   $(".payment-plan__info")
@@ -1453,10 +1412,6 @@ function onDocumentReady() {
           .siblings(".payment-plan__info")
           .find("input")
           .prop("checked", false);
-        // $self
-        // .siblings(".payment-plan__info")
-        // .find("input[data-name='Mini'], input#Mini")
-        // .prop("checked", true);
         $self.attr("checkstate", "true");
         $self.siblings(".payment-plan__info").css({ display: "block" });
         $self
@@ -1536,14 +1491,10 @@ function onDocumentReady() {
     ".payment-plan__more:not(.js_ignore_mark)",
     function () {
       $(".payment-plan__details").removeClass("toggled");
-      // $(this).closest(".payment-plan__mobile").find(".payment-plan__details").addClass("toggled");
-      // $(this).closest(".payment-plan__mobile").find(".payment-plan__details").addClass("toggled");
-      // $(this).closest(".payment-plan__mobile").siblings().find(".payment-plan__details").removeClass("toggled");
       $(".payment-plan__more")
         .html("Plačiau")
         .removeClass("toggled")
         .addClass("untoggled");
-      // $(this).html("Uždaryti").removeClass("untoggled").addClass("toggled");
       if (
         $(this)
           .closest(".payment-plan__details-label")
@@ -1583,12 +1534,7 @@ function onDocumentReady() {
 
   $(".expand-button")
     .not(".js_ignore_mark")
-    // .unbind("click")
     .on("click", function () {
-      // $(this)
-      //   .closest(".controls")
-      //   .find("tbody")
-      //   .css({ transition: "height .3s ease-in-out" });
       var interval = setInterval(tableHeight, 0);
       if (!$(this).hasClass("rotate-arr")) {
         $(this)
@@ -1662,22 +1608,6 @@ function onDocumentReady() {
           $(this).find("input").blur();
         }
       }
-      // else if(e.type == "focusout") {
-      //   if (
-      //     !$(
-      //       ".search-container__select .select2-selection__rendered"
-      //     ).children().length
-      //   ) {
-      //     $(".search-panel__select").select2("open");
-      //   } else if (
-      //     $(".search-container__select .select2-selection__rendered").children()
-      //       .length
-      //   ) {
-      //     $(".search-container__submit").find("span").html("Valyti");
-      //     $(".search-container__submit").addClass("change-search-icon");
-      //     $(this).find("input").blur();
-      //   }
-      // }
     });
 
   $("input[name='phone']")
@@ -1804,7 +1734,6 @@ function onDocumentReady() {
   $(".timetable__datepicker--from")
     .not(".js_ignore_mark")
     .datepicker({
-      // showButtonPanel: true
       altField: "#timetable-from",
       altFormat: "yy M dd",
       monthNamesShort: [
@@ -1826,7 +1755,6 @@ function onDocumentReady() {
   $(".timetable__datepicker--until")
     .not(".js_ignore_mark")
     .datepicker({
-      // showButtonPanel: true
       altField: "#timetable-until",
       altFormat: "yy M dd",
       monthNamesShort: [
@@ -1878,7 +1806,6 @@ function onDocumentReady() {
         {
           breakpoint: 700,
           settings: {
-            // centerMode: true,
             centerPadding: "40px",
             slidesToShow: 1,
           },
@@ -2116,10 +2043,8 @@ function onDocumentReady() {
       type: "pie",
       textinfo: "none",
       hoverinfo: "label+value",
-      // textposition: "outside",
       automargin: true,
       hole: 0.6,
-      // hoverinfo: 'none',
       marker: {
         colors: ["#5055be", "#c0c2e8", "#101b51", "#ff9954", "#ffb35b"],
       },
@@ -2218,7 +2143,6 @@ function onDocumentReady() {
       automargin: true,
       xaxis: "x2",
       yaxis: "y2",
-      // hoverinfo: "label+value",
       marker: {
         colors: ["#5055be", "#c0c2e8", "#101b51", "#ff9954", "#ffb35b"],
         line: {
@@ -2234,7 +2158,6 @@ function onDocumentReady() {
       type: "pie",
       textinfo: "label+value",
       texttemplate: "%{label}<br><b>%{value}</b>",
-      // hoverinfo: "label+value",
       textposition: "outside",
       automargin: true,
       hole: 0.7,
@@ -2303,7 +2226,6 @@ function onDocumentReady() {
     },
     horizontalspacing: 10,
     verticalspacing: 10,
-    // grid: { rows: 1, columns: 3, pattern: "independent" },
   };
 
   $(window).on("resize", function () {
@@ -2322,7 +2244,6 @@ function onDocumentReady() {
           hole: 0.7,
           hoverinfo: "none",
           automargin: true,
-          // hoverinfo: "label+value",
           marker: {
             colors: ["#5055be", "#c0c2e8", "#101b51", "#ff9954", "#ffb35b"],
             line: {
@@ -2345,7 +2266,6 @@ function onDocumentReady() {
           automargin: true,
           xaxis: "x2",
           yaxis: "y2",
-          // hoverinfo: "label+value",
           marker: {
             colors: ["#5055be", "#c0c2e8", "#101b51", "#ff9954", "#ffb35b"],
             line: {
@@ -2361,7 +2281,6 @@ function onDocumentReady() {
           type: "pie",
           textinfo: "label+value",
           texttemplate: "%{label}<br><b>%{value}</b>",
-          // hoverinfo: "label+value",
           textposition: "outside",
           automargin: true,
           hole: 0.7,
@@ -2429,7 +2348,6 @@ function onDocumentReady() {
         },
         horizontalspacing: 10,
         verticalspacing: 10,
-        // grid: { rows: 1, columns: 3, pattern: "independent" },
       };
       Plotly.purge(clients4);
       Plotly.newPlot(clients4, donutData4, donutLayout2, config);
@@ -2563,7 +2481,6 @@ function onDocumentReady() {
   paymentLayout();
   timetableLayout();
   aboutSpecialistLayout();
-  // tableWidths($(".profiles table"));
 
   setTimeout(function () {
     changeTextWidth();
@@ -2608,11 +2525,8 @@ function sliderInit(slider) {
       const y = e.pageY - slider.offsetTop;
       const scrollX = x - startX;
       const scrollY = y - startY;
-      // if (scrollX > lastPos + 10 || scrollX < lastPos - 10) {
       slider.scrollLeft = scrollLeft - scrollX;
-      // } else {
       slider.scrollTop = scrollTop - scrollY;
-      // }
       lastPos = slider.scrollLeft;
     });
 
@@ -2815,7 +2729,6 @@ function hasScrolled() {
     // Scroll Down
     if (
       !$("section.specialist")
-      // window.matchMedia("(max-width: 991px)").matches
     ) {
       $(".site-header").removeClass("site-header--show");
     }
@@ -3149,14 +3062,6 @@ function paymentLayout() {
               .nextAll(columnDesc)
               .addBack()
               .wrapAll("<div class='payment-plan__mobile' />");
-            // $(
-            //   "<input type='radio' name='plan-details"+i+"' id=" +
-            //     $(this).html() +
-            //     i +
-            //     " data-name =" +
-            //     $(this).html() +
-            //     ">"
-            // ).prependTo(headerClone.closest(".payment-plan__mobile"));
             $(headerClone)
               .nextUntil(columnDesc)
               .addBack()
@@ -3205,26 +3110,6 @@ function paymentLayout() {
   }
 }
 
-// function tableWidths($table) {
-//   var indexes = [];
-//   var widths = [];
-//   $table.find("thead th").each(function () {
-//     indexes.push($(this).index());
-//     widths.push($(this).outerWidth());
-//   });
-//   $table.find("tbody tr, tfoot tr").each(function () {
-//     $(this)
-//       .find("td")
-//       .each(function (i) {
-//         $(this).css("width", widths[i]);
-//       });
-//   });
-
-//   // if ($table.hasScrollBar()) {
-//   //   $table.find("tfoot tr").css("width", "calc(100% - 8px)");
-//   // }
-// }
-
 function newSpecialist(button, countAdmin, countSpecialistLabel) {
   var newSpecialist = button.closest(".company__specialist").clone();
   var rights = newSpecialist.find(".company__specialist-rights .checkbox");
@@ -3256,15 +3141,6 @@ function newSpecialist(button, countAdmin, countSpecialistLabel) {
     .html(specialistLabelFirst[0] + " " + countSpecialistLabel);
   newSpecialist.find(".company__specialist-buttons").removeClass("hidden");
   button.hide();
-}
-
-function timetableLayout() {
-  // if (window.matchMedia("(max-width: 890px)").matches) {
-  //   $(".timetable__datepicker--from").insertBefore(".selected-week--from")
-  //   $(".timetable__datepicker--until").insertBefore(".selected-week--to")
-  // } else {
-  //   $(".timetable__datepicker--from, .timetable__datepicker--until").appendTo(".timetable__datepicker-container")
-  // }
 }
 
 function aboutSpecialistLayout() {

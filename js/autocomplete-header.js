@@ -45,12 +45,6 @@ if ($("main.hasUiAutocomplete").length > 0) {
       },
       select: function (event, ui) {
         event.preventDefault();
-        // $("input#search-product").val(ui.item.title);
-        // $("#project").val(ui.item.label);
-        // $("#project-id").val(ui.item.value);
-        // $("#project-description").html(ui.item.desc);
-        // $("#project-icon").attr("src", "images/" + ui.item.icon);
-
         return false;
       },
     })
@@ -137,7 +131,6 @@ if ($("main.hasUiAutocomplete").length > 0) {
 
   $(document).on("click", ".product-expand", function () {
     $(this).siblings(" .autocomplete-product-duration").toggleClass("hidden");
-    // $(this).toggleClass("rotate-arrow");
   });
 
   $(document).click(function (event) {
@@ -256,7 +249,6 @@ if ($("main.hasUiAutocomplete").length > 0) {
     position: { my: "left top", at: "left bottom" },
     close: function (event, ui) {
       if (window.matchMedia("(min-width: 700px)").matches) {
-        // $(".ui-autocomplete").show();
         $("#ui-id-2").show();
       }
     },
