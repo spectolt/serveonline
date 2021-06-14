@@ -15058,6 +15058,285 @@ section.product .product__block--company .slick-track {
   text-align: center;
 }
 
+@media (max-width: 880px) {
+  .company-report .controls__top {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+}
+
+@media (max-width: 700px) {
+  .company-report .controls__top {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    grid-gap: 10px;
+  }
+}
+
+.company-report .controls__buttons-container {
+  margin-right: 10px;
+}
+
+@media (max-width: 700px) {
+  .company-report .controls__buttons-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+  }
+  .company-report .controls__buttons-container button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 510px) {
+  .company-report .controls__buttons-container {
+    display: block;
+  }
+  .company-report .controls__buttons-container .controls__button--pdf {
+    margin-bottom: 10px;
+  }
+}
+
+.company-report .controls__button--pdf::before {
+  background: url(img/icons/laiskas.svg) no-repeat center;
+  width: 20px;
+  height: 20px;
+  left: 9px;
+  top: 5px;
+}
+
+.company-report tbody {
+  overflow-y: auto;
+}
+
+.company-report .controls__table tr:nth-of-type(2) th:first-of-type:before, .company-report .controls__table tr:nth-of-type(2) th:first-of-type:after,
+.company-report .controls__table tr:nth-of-type(2) th:nth-of-type(2):before,
+.company-report .controls__table tr:nth-of-type(2) th:nth-of-type(2):after {
+  left: 81%;
+}
+
+.company-report .controls__table tr:nth-of-type(2) th:nth-of-type(3):before, .company-report .controls__table tr:nth-of-type(2) th:nth-of-type(3):after,
+.company-report .controls__table tr:nth-of-type(2) th:nth-of-type(4):before,
+.company-report .controls__table tr:nth-of-type(2) th:nth-of-type(4):after {
+  left: 73%;
+}
+
+.company-report .controls__table tr:nth-of-type(2) th:nth-of-type(4):before, .company-report .controls__table tr:nth-of-type(2) th:nth-of-type(4):after,
+.company-report .controls__table tr:nth-of-type(2) th:last-of-type:before,
+.company-report .controls__table tr:nth-of-type(2) th:last-of-type:after {
+  left: 73%;
+}
+
+.company-report .controls__table th {
+  font-family: 'Roboto', sans-serif;
+}
+
+.company-report .controls__table th, .company-report .controls__table td {
+  vertical-align: middle;
+  padding-left: 10px;
+}
+
+.company-report .controls__table th:first-of-type, .company-report .controls__table td:first-of-type {
+  width: 27px;
+}
+
+.company-report .controls__table th:nth-of-type(2), .company-report .controls__table td:nth-of-type(2) {
+  width: 169px;
+}
+
+.company-report .controls__table th:nth-of-type(2):before, .company-report .controls__table th:nth-of-type(2):after, .company-report .controls__table td:nth-of-type(2):before, .company-report .controls__table td:nth-of-type(2):after {
+  left: 93%;
+}
+
+.company-report .controls__table th:nth-of-type(3), .company-report .controls__table td:nth-of-type(3) {
+  width: 201px;
+}
+
+.company-report .controls__table th:nth-of-type(4), .company-report .controls__table td:nth-of-type(4) {
+  width: 205px;
+}
+
+.company-report .controls__table th:nth-of-type(5), .company-report .controls__table td:nth-of-type(5) {
+  width: 102px;
+}
+
+.company-report .controls__table th:nth-of-type(6), .company-report .controls__table td:nth-of-type(6) {
+  width: 100px;
+}
+
+.company-report .controls__table th:nth-of-type(7), .company-report .controls__table td:nth-of-type(7) {
+  width: 101px;
+}
+
+.company-report .controls__table th:nth-of-type(8), .company-report .controls__table td:nth-of-type(8) {
+  width: 63px;
+}
+
+.company-report .controls__table th:nth-of-type(9), .company-report .controls__table td:nth-of-type(9) {
+  width: 81px;
+}
+
+.company-report .controls__table th:nth-of-type(10), .company-report .controls__table td:nth-of-type(10) {
+  width: 110px;
+}
+
+.company-report .controls__table th:nth-of-type(11), .company-report .controls__table td:nth-of-type(11) {
+  width: 79px;
+}
+
+.company-report .controls__table th:nth-of-type(12), .company-report .controls__table td:nth-of-type(12) {
+  width: 78px;
+}
+
+.company-report .controls__table th:nth-of-type(13), .company-report .controls__table td:nth-of-type(13) {
+  width: 89px;
+}
+
+.company-report .controls__table th:nth-of-type(14), .company-report .controls__table td:nth-of-type(14) {
+  width: 85px;
+}
+
+.company-report .controls__table th:nth-of-type(15), .company-report .controls__table td:nth-of-type(15) {
+  width: 64px;
+}
+
+.company-report .controls__table th:nth-of-type(16), .company-report .controls__table td:nth-of-type(16) {
+  width: 58px;
+}
+
+.company-report .controls__table th:nth-of-type(17), .company-report .controls__table td:nth-of-type(17) {
+  width: 44px;
+}
+
+.company-report .controls__table th:nth-of-type(18), .company-report .controls__table td:nth-of-type(18) {
+  width: 62px;
+}
+
+.company-report .controls__table th:nth-of-type(19), .company-report .controls__table td:nth-of-type(19) {
+  width: 95px;
+}
+
+.company-report .controls__table th:last-of-type, .company-report .controls__table td:last-of-type {
+  width: 77px !important;
+}
+
+.company-report .controls__table td {
+  height: 31px;
+  text-align: center;
+}
+
+.company-report .controls__table td:first-of-type {
+  width: 27px;
+}
+
+.company-report .controls__table td:nth-of-type(2) {
+  width: 169px;
+  text-align: left;
+}
+
+.company-report .controls__table td:nth-of-type(3) {
+  width: 201px;
+  text-align: left;
+}
+
+.company-report .controls__table td:nth-of-type(4) {
+  width: 205px;
+  text-align: left;
+}
+
+.company-report .controls__table td:nth-of-type(5) {
+  width: 50px;
+}
+
+.company-report .controls__table td:nth-of-type(6) {
+  width: 51px;
+}
+
+.company-report .controls__table td:nth-of-type(7) {
+  width: 50px;
+}
+
+.company-report .controls__table td:nth-of-type(8) {
+  width: 51px;
+}
+
+.company-report .controls__table td:nth-of-type(9) {
+  width: 50px;
+}
+
+.company-report .controls__table td:nth-of-type(10) {
+  width: 51px;
+}
+
+.company-report .controls__table td:nth-of-type(11) {
+  width: 63px;
+}
+
+.company-report .controls__table td:nth-of-type(12) {
+  width: 81px;
+}
+
+.company-report .controls__table td:nth-of-type(13) {
+  width: 110px;
+}
+
+.company-report .controls__table td:nth-of-type(14) {
+  width: 79px;
+}
+
+.company-report .controls__table td:nth-of-type(15) {
+  width: 78px;
+}
+
+.company-report .controls__table td:nth-of-type(16) {
+  width: 89px;
+}
+
+.company-report .controls__table td:nth-of-type(17) {
+  width: 85px;
+}
+
+.company-report .controls__table td:nth-of-type(18) {
+  width: 64px;
+}
+
+.company-report .controls__table td:nth-of-type(19) {
+  width: 58px;
+}
+
+.company-report .controls__table td:nth-of-type(20) {
+  width: 44px;
+}
+
+.company-report .controls__table td:nth-of-type(21) {
+  width: 62px;
+}
+
+.company-report .controls__table td:nth-of-type(22) {
+  width: 95px;
+}
+
+.company-report .controls__table td:last-of-type {
+  width: 68px !important;
+}
+
+.company-report .controls__table .checkbox label:before {
+  left: -5px;
+}
+
+.company-report .controls__table .checkbox label:after {
+  left: -1px;
+}
+
+.company-report .controls__table .left-arrow:before {
+  top: 58%;
+  left: 82%;
+}
+
 .expand-button {
   width: 30px;
   height: 30px;

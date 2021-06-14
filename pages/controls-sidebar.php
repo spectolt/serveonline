@@ -178,7 +178,41 @@
                             </select>
                         </div>
                     </div>
-                    <div class="site-aside__item"><a href="#">Ataskaita įmonei</a></div>
+                    <div class="site-aside__item <?php if ($thisPage == "company-report") echo "site-aside__item--active site-aside__item--open"; ?>">
+                        <a href="#">Ataskaita įmonei</a>
+                        <div class="site-aside__filters <?php if ($thisPage != "company-report") echo "hidden"; ?>">
+                            <p>Data</p>
+                            <div class="site-aside__datepicker-container">
+                                <input class="site-aside__datepicker" placeholder="Nuo">
+                            </div>
+                            <p>Data</p>
+                            <div class="site-aside__datepicker-container">
+                                <input class="site-aside__datepicker" placeholder="Iki">
+                            </div>
+                            <p>Sritis</p>
+                            <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
+                                <option></option>
+                                <option>Visi</option>
+                                <option>Klinikos ir estetinė medicina</option>
+                                <option>Odontologijos klinikos</option>
+                                <option>Veterinarijos klinikos</option>
+                                <option>Grožio salonai ir kirpyklos</option>
+                                <option>SPA ir masažo salonai</option>
+                                <option>Sportas ir reabilitacija</option>
+                            </select>
+                            <p>Šalis</p>
+                            <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
+                                <option>Lietuva</option>
+                                <option>Visi</option>
+                            </select>
+                            <p>Miestas</p>
+                            <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
+                                <option></option>
+                                <option>Visi</option>
+                                <option>Vilnius</option>
+                            </select>
+                        </div>
+                    </div>
                     <div class="site-aside__item"><a href="#">Yra MANO sąraše</a></div>
                     <div class="site-aside__item"><a href="#">Nėra MANO sąraše</a></div>
             </div>
