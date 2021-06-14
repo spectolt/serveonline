@@ -152,6 +152,26 @@
                         </div>
                     </div>
                 </div>
+                <h2>TOP klientų dešimtukas</h2>
+                <?php for ($i = 0; $i < 10; $i++) { ?>
+                    <div class="statistics__client">
+                        <div class="statistics__client-item">
+                            <h2>Vardas Pavarde</h2>
+                        </div>
+                        <div class="statistics__client-item">
+                            <h3>Registracijų<br><span>bendrai</span></h3>
+                            <h2 class="number">5</h2>
+                        </div>
+                        <div class="statistics__client-item">
+                            <h3>Periodiškumas<br><span>dienomis</span></h3>
+                            <h2 class="number">37</h2>
+                        </div>
+                        <div class="statistics__client-item">
+                            <h3>Registracijų <br>suma</h3>
+                            <h2 class="number">10 000 €</h2>
+                        </div>
+                    </div>
+                <?php } ?>
             </section>
             <?php require_once('footer-menu.php'); ?>
         </div>

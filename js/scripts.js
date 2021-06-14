@@ -2191,7 +2191,7 @@ function onDocumentReady() {
       textinfo: "label+value",
       textposition: "outside",
       automargin: true,
-      hole: 0.6,
+      hole: 0.7,
       hoverinfo: "none",
       automargin: true,
       // hoverinfo: "label+value",
@@ -2208,7 +2208,7 @@ function onDocumentReady() {
       textinfo: "label+value",
       textposition: "outside",
       automargin: true,
-      hole: 0.6,
+      hole: 0.7,
       hoverinfo: "none",
       automargin: true,
       xaxis: "x2",
@@ -2227,7 +2227,7 @@ function onDocumentReady() {
       hoverinfo: "label+value",
       textposition: "outside",
       automargin: true,
-      hole: 0.6,
+      hole: 0.7,
       automargin: true,
       // hoverinfo: 'none',
       marker: {
@@ -2241,10 +2241,10 @@ function onDocumentReady() {
       {
         font: {
           size: 20,
-          family: "Roboto",
+          family: "Sen",
         },
         showarrow: false,
-        text: "260",
+        text: "<b>260</b>",
         x: labelX(0),
         y: labelY(0),
         xanchor: "center",
@@ -2252,10 +2252,10 @@ function onDocumentReady() {
       {
         font: {
           size: 20,
-          family: "Roboto",
+          family: "Sen",
         },
         showarrow: false,
-        text: "260",
+        text: "<b>260</b>",
         x: labelX(1),
         y: labelY(1),
         xanchor: "center",
@@ -2263,10 +2263,10 @@ function onDocumentReady() {
       {
         font: {
           size: 20,
-          family: "Roboto",
+          family: "Sen",
         },
         showarrow: false,
-        text: "260",
+        text: "<b>260</b>",
         x: labelX(2),
         y: labelY(2),
         xanchor: "center",
@@ -2353,10 +2353,10 @@ function onDocumentReady() {
           {
             font: {
               size: 20,
-              family: "Roboto",
+              family: "Sen",
             },
             showarrow: false,
-            text: "260",
+            text: "<b>260</b>",
             x: labelX(0),
             y: labelY(0),
             xanchor: "center",
@@ -2364,10 +2364,10 @@ function onDocumentReady() {
           {
             font: {
               size: 20,
-              family: "Roboto",
+              family: "Sen",
             },
             showarrow: false,
-            text: "260",
+            text: "<b>260</b>",
             x: labelX(1),
             y: labelY(1),
             xanchor: "center",
@@ -2375,10 +2375,10 @@ function onDocumentReady() {
           {
             font: {
               size: 20,
-              family: "Roboto",
+              family: "Sen",
             },
             showarrow: false,
-            text: "260",
+            text: "<b>260</b>",
             x: labelX(2),
             y: labelY(2),
             xanchor: "center",

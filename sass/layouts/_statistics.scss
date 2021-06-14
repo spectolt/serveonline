@@ -1,5 +1,6 @@
 .statistics {
   max-width: 1200px;
+  color: #323131;
 
   &__top {
     display: flex;
@@ -405,6 +406,71 @@
       tspan {
         &:last-of-type {
           font-weight: 600;
+        }
+      }
+    }
+  }
+
+  &__client {
+    display: grid;
+    // grid-template-rows: 1fr;
+    grid-template-columns: 28% 21% 24% 27%;
+    background-color: $darkgray;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+    margin-bottom: 20px;
+    // padding: 10px;
+
+    @include breakpoint(l) {
+      grid-template-columns: 35% 65%;
+    }
+
+    @include breakpoint(xs) {
+      grid-template-columns: 30% 70%;
+    }
+
+    &-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-left: 1px solid #e7e7e7;
+      padding: 20px;
+
+      @include breakpoint(l) {
+        padding: 0 10px;
+
+        br {
+          display: none;
+        }
+      }
+
+      &:first-of-type {
+        border: none;
+
+        @include breakpoint(l) {
+          grid-area: 1 / 1 / 4 / 2;
+        }
+      }
+    }
+
+    h2 {
+      margin: 0;
+      font-family: "Sen", sans-serif;
+      font-weight: 600;
+      font-size: 1.5rem;
+
+      @include breakpoint(xs) {
+        font-size: 1.125rem;
+      }
+    }
+
+    h3 {
+      margin: 0;
+
+      span {
+        font-weight: 400;
+
+        @include breakpoint(l) {
+          margin-left: 5px;
         }
       }
     }

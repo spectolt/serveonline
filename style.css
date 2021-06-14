@@ -23269,6 +23269,7 @@ section.product .product__block--company .slick-track {
 
 .statistics {
   max-width: 1200px;
+  color: #323131;
 }
 
 .statistics__top {
@@ -23736,5 +23737,94 @@ section.product .product__block--company .slick-track {
 
 .statistics .stat-grid .slicetext tspan:last-of-type {
   font-weight: 600;
+}
+
+.statistics__client {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 28% 21% 24% 27%;
+      grid-template-columns: 28% 21% 24% 27%;
+  background-color: #f4f4f6;
+  -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+  margin-bottom: 20px;
+}
+
+@media (max-width: 991px) {
+  .statistics__client {
+    -ms-grid-columns: 35% 65%;
+        grid-template-columns: 35% 65%;
+  }
+}
+
+@media (max-width: 600px) {
+  .statistics__client {
+    -ms-grid-columns: 30% 70%;
+        grid-template-columns: 30% 70%;
+  }
+}
+
+.statistics__client-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-left: 1px solid #e7e7e7;
+  padding: 20px;
+}
+
+@media (max-width: 991px) {
+  .statistics__client-item {
+    padding: 0 10px;
+  }
+  .statistics__client-item br {
+    display: none;
+  }
+}
+
+.statistics__client-item:first-of-type {
+  border: none;
+}
+
+@media (max-width: 991px) {
+  .statistics__client-item:first-of-type {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-area: 1 / 1 / 4 / 2;
+  }
+}
+
+.statistics__client h2 {
+  margin: 0;
+  font-family: "Sen", sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .statistics__client h2 {
+    font-size: 1.125rem;
+  }
+}
+
+.statistics__client h3 {
+  margin: 0;
+}
+
+.statistics__client h3 span {
+  font-weight: 400;
+}
+
+@media (max-width: 991px) {
+  .statistics__client h3 span {
+    margin-left: 5px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
