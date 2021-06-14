@@ -270,6 +270,7 @@
 
       &--unique {
         grid-column: span 4;
+        $_padding: 20px;
 
         @include breakpoint(l) {
           grid-column: span 2;
@@ -288,7 +289,7 @@
           height: 100%;
           display: flex;
           justify-content: space-between;
-          padding: 0;
+          padding: $_padding;
         }
       }
 
@@ -324,10 +325,9 @@
     }
 
     &__client-donut {
-      width: 30%;
+      width: 100%;
       
-      &.js-plotly-plot,
-      .plot-container {
+      &.js-plotly-plot {
         height: 200px;
 
         @include breakpoint(l) {
@@ -339,9 +339,9 @@
         }
       }
 
-      &--test {
-        width: 100%;
-      }
+      // &--test {
+      //   width: 100%;
+      // }
 
       // &.js-plotly-plot {
       //   width: 100%;
@@ -402,13 +402,13 @@
       }
     }
 
-    .slicetext {
-      tspan {
-        &:last-of-type {
-          font-weight: 600;
-        }
-      }
-    }
+    // .slicetext {
+    //   tspan {
+    //     &:last-of-type {
+    //       // font-weight: 600;
+    //     }
+    //   }
+    // }
   }
 
   &__client {

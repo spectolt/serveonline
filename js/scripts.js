@@ -2189,6 +2189,7 @@ function onDocumentReady() {
       labels: ["Sugrįžę<br>klientai", "Vienkartiniai<br>klientai"],
       type: "pie",
       textinfo: "label+value",
+      texttemplate: "%{label}<br><b>%{value}</b>",
       textposition: "outside",
       automargin: true,
       hole: 0.7,
@@ -2197,7 +2198,10 @@ function onDocumentReady() {
       // hoverinfo: "label+value",
       marker: {
         colors: ["#5055be", "#c0c2e8", "#101b51", "#ff9954", "#ffb35b"],
-        line: [],
+        line: {
+          color: '#f4f4f6',
+          width: 1
+        },
       },
     },
     {
@@ -2206,6 +2210,7 @@ function onDocumentReady() {
       labels: ["Vilnius", "Kaunas", "Klaipėda", "Panevėžys", "Kiti"],
       type: "pie",
       textinfo: "label+value",
+      texttemplate: "%{label}<br><b>%{value}</b>",
       textposition: "outside",
       automargin: true,
       hole: 0.7,
@@ -2216,6 +2221,10 @@ function onDocumentReady() {
       // hoverinfo: "label+value",
       marker: {
         colors: ["#5055be", "#c0c2e8", "#101b51", "#ff9954", "#ffb35b"],
+        line: {
+          color: '#f4f4f6',
+          width: 1
+        },
       },
     },
     {
@@ -2224,14 +2233,19 @@ function onDocumentReady() {
       labels: ["Vyrai", "Moterys"],
       type: "pie",
       textinfo: "label+value",
-      hoverinfo: "label+value",
+      texttemplate: "%{label}<br><b>%{value}</b>",
+      // hoverinfo: "label+value",
       textposition: "outside",
       automargin: true,
       hole: 0.7,
       automargin: true,
-      // hoverinfo: 'none',
+      hoverinfo: 'none',
       marker: {
-        colors: ["#5055be", "#c0c2e8", "#101b51", "#ff9954", "#ffb35b"],
+        colors: ["#101b51", "#ffb35b", "#c0c2e8"],
+        line: {
+          color: '#f4f4f6',
+          width: 1
+        },
       },
     },
   ];
@@ -2302,15 +2316,19 @@ function onDocumentReady() {
           labels: ["Sugrįžę<br>klientai", "Vienkartiniai<br>klientai"],
           type: "pie",
           textinfo: "label+value",
+          texttemplate: "%{label}<br><b>%{value}</b>",
           textposition: "outside",
           automargin: true,
-          hole: 0.6,
+          hole: 0.7,
           hoverinfo: "none",
           automargin: true,
           // hoverinfo: "label+value",
           marker: {
             colors: ["#5055be", "#c0c2e8", "#101b51", "#ff9954", "#ffb35b"],
-            line: [],
+            line: {
+              color: '#f4f4f6',
+              width: 1
+            },
           },
         },
         {
@@ -2319,9 +2337,10 @@ function onDocumentReady() {
           labels: ["Vilnius", "Kaunas", "Klaipėda", "Panevėžys", "Kiti"],
           type: "pie",
           textinfo: "label+value",
+          texttemplate: "%{label}<br><b>%{value}</b>",
           textposition: "outside",
           automargin: true,
-          hole: 0.6,
+          hole: 0.7,
           hoverinfo: "none",
           automargin: true,
           xaxis: "x2",
@@ -2329,6 +2348,10 @@ function onDocumentReady() {
           // hoverinfo: "label+value",
           marker: {
             colors: ["#5055be", "#c0c2e8", "#101b51", "#ff9954", "#ffb35b"],
+            line: {
+              color: '#f4f4f6',
+              width: 1
+            },
           },
         },
         {
@@ -2337,14 +2360,19 @@ function onDocumentReady() {
           labels: ["Vyrai", "Moterys"],
           type: "pie",
           textinfo: "label+value",
-          hoverinfo: "label+value",
+          texttemplate: "%{label}<br><b>%{value}</b>",
+          // hoverinfo: "label+value",
           textposition: "outside",
           automargin: true,
-          hole: 0.6,
+          hole: 0.7,
           automargin: true,
-          // hoverinfo: 'none',
+          hoverinfo: 'none',
           marker: {
-            colors: ["#5055be", "#c0c2e8", "#101b51", "#ff9954", "#ffb35b"],
+            colors: ["#101b51", "#ffb35b", "#c0c2e8"],
+            line: {
+              color: '#f4f4f6',
+              width: 1
+            },
           },
         },
       ];

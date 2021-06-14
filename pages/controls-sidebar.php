@@ -255,8 +255,32 @@
             </div>
             <div class="site-aside__block">
                 <h3>Nustatymai</h3>
-                <div class="site-aside__item">
+                <div class="site-aside__item <?php if ($thisPage == "employee-profiles") echo "site-aside__item--active site-aside__item--open"; ?>">
                     <a href="#">Darbuotojų profiliai</a>
+                    <div class="site-aside__filters <?php if ($thisPage != "employee-profiles") echo "hidden"; ?>">
+                        <p>Įdarbinimo data</p>
+                        <div class="site-aside__datepicker-container">
+                            <input class="site-aside__datepicker" placeholder="Nuo">
+                        </div>
+                        <p>Įdarbinimo data</p>
+                        <div class="site-aside__datepicker-container">
+                            <input class="site-aside__datepicker" placeholder="Iki">
+                        </div>
+                        <p>Išdarbinimo data</p>
+                        <div class="site-aside__datepicker-container">
+                            <input class="site-aside__datepicker" placeholder="Nuo">
+                        </div>
+                        <p>Išdarbinimo data</p>
+                        <div class="site-aside__datepicker-container">
+                            <input class="site-aside__datepicker" placeholder="Iki">
+                        </div>
+                        <p>Būsena (A/N)</p>
+                        <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
+                            <option></option>
+                            <option>Aktyvus</option>
+                            <option>Neaktyvus</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="site-aside__item <?php if ($thisPage == "messages-sent") echo "site-aside__item--active site-aside__item--open"; ?>">
                     <a href="#">Išsiųstos SMS</a>

@@ -19,7 +19,6 @@ $thisPage = "company-report"; ?>
                 <div class="controls__table-container-wrapper">
                     <button class="expand-button"></button>
                     <div class="controls__table-container">
-                        <!-- <div class="controls__table-border"> -->
                         <table class="controls__table profiles__table profiles__table--specialists">
                             <thead>
                                 <tr>
@@ -82,6 +81,7 @@ $thisPage = "company-report"; ?>
                                     <th class="bottom-arrow top-arrow" rowspan="2">
                                         Unikalių<br>klientų
                                     </th>
+                                    <th rowspan="2"></th>
                                 </tr>
                                 <tr>
                                     <th class="bottom-arrow top-arrow">vnt.</th>
@@ -121,7 +121,8 @@ $thisPage = "company-report"; ?>
                                         <td>0</td>
                                         <td>0</td>
                                         <td>0</td>
-                                        <td class="left-arrow">0</td>
+                                        <td>0</td>
+                                        <td class="left-arrow"></td>
                                     </tr>
                                 <?php } ?>
                             </tbody>
@@ -154,7 +155,6 @@ $thisPage = "company-report"; ?>
                                 </tr>
                             </tfoot>
                         </table>
-                        <!-- </div> -->
                     </div>
                 </div>
                 <div class="pagination">

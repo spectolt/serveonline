@@ -15220,8 +15220,12 @@ section.product .product__block--company .slick-track {
   width: 95px;
 }
 
+.company-report .controls__table th:nth-of-type(20), .company-report .controls__table td:nth-of-type(20) {
+  width: 77px;
+}
+
 .company-report .controls__table th:last-of-type, .company-report .controls__table td:last-of-type {
-  width: 77px !important;
+  width: 40px;
 }
 
 .company-report .controls__table td {
@@ -15320,10 +15324,6 @@ section.product .product__block--company .slick-track {
   width: 95px;
 }
 
-.company-report .controls__table td:last-of-type {
-  width: 68px !important;
-}
-
 .company-report .controls__table .checkbox label:before {
   left: -5px;
 }
@@ -15334,6 +15334,105 @@ section.product .product__block--company .slick-track {
 
 .company-report .controls__table .left-arrow:before {
   top: 58%;
+  left: 82%;
+}
+
+.employee-profiles .controls__top {
+  margin-right: 0;
+}
+
+@media (max-width: 700px) {
+  .employee-profiles .controls__top {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    grid-gap: 10px;
+  }
+}
+
+.employee-profiles .controls__group .controls__button--new:before,
+.employee-profiles .controls__buttons-container .controls__button--new:before {
+  background: url(img/icons/nauja-paskyra.svg) no-repeat center;
+  background-size: 50%;
+  top: 0px;
+}
+
+@media (max-width: 700px) {
+  .employee-profiles .controls__group,
+  .employee-profiles .controls__buttons-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+  }
+  .employee-profiles .controls__group button,
+  .employee-profiles .controls__buttons-container button {
+    margin: 0;
+    height: 32px;
+    text-align: center;
+  }
+}
+
+.employee-profiles tbody {
+  overflow-y: auto;
+}
+
+.employee-profiles .controls__table th {
+  font-family: 'Roboto', sans-serif;
+}
+
+.employee-profiles .controls__table th, .employee-profiles .controls__table td {
+  vertical-align: middle;
+  padding-left: 10px;
+}
+
+.employee-profiles .controls__table th:first-of-type, .employee-profiles .controls__table td:first-of-type {
+  width: 27px;
+}
+
+.employee-profiles .controls__table th:nth-of-type(2), .employee-profiles .controls__table td:nth-of-type(2) {
+  width: 82px;
+}
+
+.employee-profiles .controls__table th:nth-of-type(2):before, .employee-profiles .controls__table th:nth-of-type(2):after, .employee-profiles .controls__table td:nth-of-type(2):before, .employee-profiles .controls__table td:nth-of-type(2):after {
+  left: 87%;
+}
+
+.employee-profiles .controls__table th:nth-of-type(3), .employee-profiles .controls__table td:nth-of-type(3) {
+  width: 82px;
+}
+
+.employee-profiles .controls__table th:nth-of-type(4), .employee-profiles .controls__table td:nth-of-type(4) {
+  width: 345px;
+}
+
+.employee-profiles .controls__table th:nth-of-type(5), .employee-profiles .controls__table td:nth-of-type(5) {
+  width: 112px;
+}
+
+.employee-profiles .controls__table th:nth-of-type(6), .employee-profiles .controls__table td:nth-of-type(6) {
+  width: 513px;
+}
+
+.employee-profiles .controls__table th:last-of-type, .employee-profiles .controls__table td:last-of-type {
+  width: 70px !important;
+}
+
+.employee-profiles .controls__table td {
+  height: 31px;
+  text-align: left;
+}
+
+.employee-profiles .controls__table .checkbox label:before {
+  left: -5px;
+}
+
+.employee-profiles .controls__table .checkbox label:after {
+  left: -1px;
+}
+
+.employee-profiles .controls__table .left-arrow:before {
+  top: 69%;
   left: 82%;
 }
 
@@ -23613,7 +23712,7 @@ section.product .product__block--company .slick-track {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 0;
+  padding: 20px;
 }
 
 .statistics .stat-grid__clients--comeback {
@@ -23647,30 +23746,23 @@ section.product .product__block--company .slick-track {
 }
 
 .statistics .stat-grid__client-donut {
-  width: 30%;
+  width: 100%;
 }
 
-.statistics .stat-grid__client-donut.js-plotly-plot,
-.statistics .stat-grid__client-donut .plot-container {
+.statistics .stat-grid__client-donut.js-plotly-plot {
   height: 200px;
 }
 
 @media (max-width: 991px) {
-  .statistics .stat-grid__client-donut.js-plotly-plot,
-  .statistics .stat-grid__client-donut .plot-container {
+  .statistics .stat-grid__client-donut.js-plotly-plot {
     height: 400px;
   }
 }
 
 @media (max-width: 700px) {
-  .statistics .stat-grid__client-donut.js-plotly-plot,
-  .statistics .stat-grid__client-donut .plot-container {
+  .statistics .stat-grid__client-donut.js-plotly-plot {
     height: 600px;
   }
-}
-
-.statistics .stat-grid__client-donut--test {
-  width: 100%;
 }
 
 .statistics .stat-grid .pielayer g.trace:first-of-type {
@@ -23733,10 +23825,6 @@ section.product .product__block--company .slick-track {
     -webkit-transform: none;
             transform: none;
   }
-}
-
-.statistics .stat-grid .slicetext tspan:last-of-type {
-  font-weight: 600;
 }
 
 .statistics__client {
