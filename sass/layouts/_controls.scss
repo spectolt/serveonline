@@ -2452,15 +2452,19 @@
       &:nth-of-type(6){
         width: 513px;
       }  
-      &:last-of-type{
-        width: 70px !important;
+      &:nth-of-type(7){
+        width: 70px;
       } 
+      &:last-of-type {
+        width: 40px;
+      }
     }
 
     td{
       height: 31px;
       text-align: left;
     }
+
     .checkbox{
       label{
         &:before{
@@ -2471,6 +2475,7 @@
         }
       }
     }
+
     .left-arrow{
       &:before{
         top: 69%;

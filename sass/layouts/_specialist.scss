@@ -616,6 +616,7 @@
 
       .photo-slider {
         position: relative;
+        transform: translateZ(0);
       }
 
       .photo-slider__heart {
@@ -698,7 +699,8 @@
           text-align: left;
 
           @include breakpoint(sm) {
-            font-size: 0.875rem;
+            // font-size: 1rem;
+            padding-left: 0;
           }
         }
         h4 {
@@ -706,7 +708,7 @@
           font-family: "Sen", sans-serif;
 
           @include breakpoint(sm) {
-            padding-left: 10px;
+            padding-left: 0;
           }
         }
 
@@ -717,7 +719,7 @@
             margin-top: 0;
           }
           .product-action__duration {
-            padding-left: 10px;
+            padding-left: 0;
           }
         }
       }
@@ -866,6 +868,7 @@
         padding-left: 60px;
         height: 53px;
         border: 1px solid $lightgray;
+        cursor: pointer;
 
         @include breakpoint(sm) {
           height: 34px;

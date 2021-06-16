@@ -1,6 +1,7 @@
-$(document).ready(onDocumentReady);
+$(document).ready(onDocumentReady, changeTextWidth());
 
-function onDocumentReady() {
+
+function onDocumentReady(callback) {
   //today button sets the date
   $.datepicker._gotoToday = function (id) {
     var inst = this._getInst($(id)[0]);
@@ -386,12 +387,21 @@ function onDocumentReady() {
     $(".js-datepicker")
       .not(".js_ignore_mark")
       .on("focus", function (e) {
+        if (window.matchMedia("(min-width: 701px)").matches) {
         $("html, body").animate(
           {
             scrollTop: $(this).offset().top - 20,
           },
           300
         );
+        } else {
+          $("html, body").animate(
+            {
+              scrollTop: $(this).offset().top - 120,
+            },
+            300
+          );
+        }
         e.preventDefault();
         return false;
       });
@@ -696,7 +706,7 @@ function onDocumentReady() {
       changeTextWidth();
       changePadding();
       paymentLayout();
-      timetableLayout();
+      // timetableLayout();
       aboutSpecialistLayout();
       var field = $(document.activeElement);
       if (field.is(".hasDatepicker")) {
@@ -1385,6 +1395,8 @@ function onDocumentReady() {
       }
     });
 
+    var timer_id2;
+
   $(".payment-plan__info").css("display", "none");
   $("input[name='plan'], ~ label, .payment-plan th:empty")
     .not(".js_ignore_mark")
@@ -1395,8 +1407,8 @@ function onDocumentReady() {
         $self.each(function () {
           $self.attr("checkstate", "false");
         });
-        clearTimeout(timer_id);
-        timer_id = setTimeout(function () {
+        clearTimeout(timer_id2);
+        timer_id2 = setTimeout(function () {
           $self.each(function () {
             $(this).siblings(".payment-plan__info").css({ display: "none" });
             $(this)
@@ -2228,9 +2240,10 @@ function onDocumentReady() {
     verticalspacing: 10,
   };
 
+  var timer_id3;
   $(window).on("resize", function () {
-    clearTimeout(timer_id);
-    timer_id = setTimeout(function () {
+    clearTimeout(timer_id3);
+    timer_id3 = setTimeout(function () {
       donutData4 = [
         {
           domain: { x: donutGridX(0), y: donutGridY(0) },
@@ -2349,8 +2362,10 @@ function onDocumentReady() {
         horizontalspacing: 10,
         verticalspacing: 10,
       };
-      Plotly.purge(clients4);
-      Plotly.newPlot(clients4, donutData4, donutLayout2, config);
+      if (clients4) {
+        Plotly.purge(clients4);
+        Plotly.newPlot(clients4, donutData4, donutLayout2, config);
+      }
     }, 100);
   });
 
@@ -2479,7 +2494,7 @@ function onDocumentReady() {
   changePadding();
   openTab();
   paymentLayout();
-  timetableLayout();
+  // timetableLayout();
   aboutSpecialistLayout();
 
   setTimeout(function () {
@@ -2497,6 +2512,8 @@ function onDocumentReady() {
       otherPlans.find(".payment-plan__details").removeClass("toggled");
     }
   );
+
+  // callback();
 }
 
 function sliderInit(slider) {
@@ -2596,7 +2613,7 @@ function getTextWidth(el) {
 }
 
 function changePadding() {
-  if (!$("section.specialist")) {
+  if (!$("section.specialist").length) {
     var windowWidth = $(window).width();
     var timeWidth = $(".calendar td").width();
     var timePadding;
@@ -3143,10 +3160,17 @@ function newSpecialist(button, countAdmin, countSpecialistLabel) {
   button.hide();
 }
 
+var isResized = false;
 function aboutSpecialistLayout() {
   if (window.matchMedia("(max-width: 991px)").matches) {
-    $(".specialist #apie-specialista").addClass("hidden");
+    if (!isResized) {
+      $(".company__nav a[href='#registruokis']").trigger("click");
+      $(".specialist #apie-specialista").addClass("hidden");
+    }
+    isResized = true;
   } else {
     $(".specialist #apie-specialista").removeClass("hidden");
+    $(".specialist #registruokis").removeClass("hidden");
+    isResized = false;
   }
 }

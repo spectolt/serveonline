@@ -1,4 +1,5 @@
-var isVisible = false;
+var isOpen = false;
+
 if ($("main.hasUiAutocomplete").length > 0) {
   var input = $("#search-specialist").not(".js_ignore_mark");
   input
@@ -52,11 +53,15 @@ if ($("main.hasUiAutocomplete").length > 0) {
         if ($(".product__chosen").is(":visible")) {
           $(".specialist .ui-autocomplete").css("top", "0");
         }
+
+        isOpen = true;
       },
       close: function (event, ui) {
         // if (!$(".ui-autocomplete").is(":visible")) {
         //   $(".ui-autocomplete").show();
         // }
+        $(input).parent().find(".input-icon").removeClass("rotate-arrow");
+        isOpen = false;
       },
       select: function (event, ui) {
         // event.preventDefault();
@@ -154,8 +159,14 @@ if ($("main.hasUiAutocomplete").length > 0) {
 
   $(input).prop("readonly", "readonly");
 
-  $("#search-specialist").on("click", function () {
-    $(this).autocomplete("search", "");
+  $(input).on("click", function () {
+    if (!isOpen) {
+      $(this).autocomplete("search", "");
+      // isOpen = true;
+    } else {
+      $(this).autocomplete("close");
+      // isOpen = false;
+    }
   });
 
   $(document).on("click", ".autocomplete-product-button", function () {

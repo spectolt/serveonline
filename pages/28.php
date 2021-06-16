@@ -47,6 +47,7 @@ $thisPage = "employee-profiles"; ?>
                                     <th class="bottom-arrow top-arrow" rowspan="2">
                                         Būsena<br>(A/N)
                                     </th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -62,7 +63,8 @@ $thisPage = "employee-profiles"; ?>
                                         <td>Vardenis Pavardenis</td>
                                         <td>+370 000 00000</td>
                                         <td>vardasilgas.pavardeilgalabai@gmail.com</td>
-                                        <td class="left-arrow">A</td>
+                                        <td>A</td>
+                                        <td class="left-arrow"></td>
                                     </tr>
                                 <?php } ?>
                             </tbody>
@@ -72,6 +74,7 @@ $thisPage = "employee-profiles"; ?>
                                     <td></td>
                                     <td></td>
                                     <td>999999</td>
+                                    <td></td>
                                     <td></td>
                                     <td></td>
                                     <td></td>

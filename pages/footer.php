@@ -1,6 +1,6 @@
 
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script src="../js/jquery-ui.min.js"></script>
 <script src="../js/jquery.ui.touch-punch.min.js"></script>
 <script type="text/javascript" src="../js/plotly-2.0.0.min.js" charset="utf-8"></script>
 <script src="../js/datepicker-lt.js"></script>

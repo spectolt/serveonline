@@ -9,7 +9,7 @@
   &__header {
     padding-top: 60px;
 
-    @include breakpoint(sm){
+    @include breakpoint(sm) {
       padding-top: 30px;
     }
   }
@@ -23,48 +23,54 @@
     box-shadow: 0 12px 29px 0px rgba(0, 0, 0, 0.15);
     margin: 0 40px 0 20px;
 
-    @include breakpoint(sm){
+    @include breakpoint(sm) {
       margin: 0 10px;
       width: 110px;
       height: 110px;
     }
   }
 
-  &__name{
-    h2{
-      font-size: 3rem;
+  &__name {
+    margin-top: 15px;
+
+    @include breakpoint(sm) {
+      margin-top: 5px;
+    }
+
+    h2 {
+      font-size: 1.875rem;
       font-weight: 700;
       margin-top: 0px;
-      margin-bottom: 15px;
+      margin-bottom: 0;
 
-      @include breakpoint(sm){
-        font-size: 1.5rem;
+      @include breakpoint(sm) {
+        font-size: 1.125rem;
         margin-bottom: 0;
       }
     }
 
-    h3{
+    h3 {
+      font-size: 0.875rem;
       font-weight: 400;
-      font-size: 1.875rem;
-      margin-top: 15px;
-      margin-bottom: 15px;
+      margin-top: 0;
+      margin-bottom: 20px;
 
-      @include breakpoint(sm){
+      @include breakpoint(sm) {
         font-size: 1.125rem;
         font-weight: 700;
-        margin-top: 0;
         margin-bottom: 0px;
       }
     }
 
-    p{
-      font-family: 'Sen', sans-serif;
+    p {
+      font-family: "Sen", sans-serif;
       font-weight: 400;
-      font-size: 1.125rem;
-      margin-bottom: 15px;
+      font-size: 1rem;
+      margin-bottom: 0px;
+      margin-top: 5px;
 
-      @include breakpoint(sm){
-        font-size: 0.9375rem;
+      @include breakpoint(sm) {
+        font-size: 0.75rem;
         margin-bottom: 8px;
         margin-top: 8px;
       }
@@ -73,43 +79,52 @@
 
   &__date {
     display: flex;
-    margin-left: 234px;
-    margin-bottom: 10px;
+    margin-left: 235px;
+    margin-bottom: 0px;
+    top: -35px;
+    position: relative;
 
-    @include breakpoint(845px){
-      margin-left: 0px;
-      margin-bottom: 8px;
+    @include breakpoint(890px) {
+      margin-left: 7px;
+      margin-bottom: 15px;
+      position: unset;
+      top: 0;
+      margin-top: 10px;
     }
 
-    p{
-      font-family: 'Sen', sans-serif;
+    p {
+      font-family: "Sen", sans-serif;
       font-weight: 400;
       font-size: 1.125rem;
       margin-top: 10px;
-      @include breakpoint(sm){
+      @include breakpoint(sm) {
         font-size: 0.9375rem;
-        margin-top: 30px;
+        // margin-top: 30px;
       }
     }
-    .statistics__day--from{
-      margin-right: 7px;
+    .statistics__day--from {
+      // margin-right: 7px;
+      margin-bottom: 0;
     }
 
-    input
-    {
+    .statistics__day--to{
+      margin-bottom: 0;
+    }
+
+    input {
       font-weight: 700;
       font-size: 1.125rem;
-      background: url(./img/icons/calendar.svg) no-repeat scroll 150px 2px;
+      background: url(./img/icons/calendar.svg) no-repeat scroll 150px 0;
       background-size: 10%;
       border: none;
       margin-left: 15px;
 
-      @include breakpoint(sm){
+      @include breakpoint(sm) {
         font-size: 0.9375rem;
         margin-left: 0px;
-        background: url(./img/icons/calendar.svg) no-repeat scroll 120px 2px;
+        background: url(./img/icons/calendar.svg) no-repeat scroll 120px 0;
         background-size: 12%;
-        width: 145px;
+        width: 144px;
       }
     }
   }
@@ -124,7 +139,7 @@
       grid-template-columns: repeat(2, 1fr);
     }
 
-    @include breakpoint(sm){
+    @include breakpoint(sm) {
       grid-gap: 6px;
     }
 
@@ -164,7 +179,7 @@
           margin-left: 10px;
         }
       }
-      
+
       .up {
         &::after {
           content: url("img/icons/arrow-up-cyan.svg");
@@ -212,15 +227,15 @@
       padding: 20px;
 
       h3 {
-        font-family: 'Roboto', sans-serif;
+        font-family: "Roboto", sans-serif;
         font-weight: 400;
         font-size: 1rem;
 
-        @include breakpoint(sm){
+        @include breakpoint(sm) {
           font-size: 0.875rem;
         }
 
-        b{
+        b {
           font-size: 1.125rem;
         }
 
@@ -324,7 +339,7 @@
 
     &__client-donut {
       width: 100%;
-      
+
       &.js-plotly-plot {
         height: 200px;
 
