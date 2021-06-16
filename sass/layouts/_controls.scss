@@ -523,9 +523,9 @@
       left: 0;
       top: 1px;
 
-      @include breakpoint(sm) {
-        width: 40px;
-      }
+      // @include breakpoint(sm) {
+      //   width: 40px;
+      // }
     }
 
     &--trash {
@@ -2454,6 +2454,7 @@
       }  
       &:nth-of-type(7){
         width: 70px;
+        text-align: center;
       } 
       &:last-of-type {
         width: 40px;
@@ -2478,8 +2479,9 @@
 
     .left-arrow{
       &:before{
-        top: 69%;
-        left: 82%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-90deg);
       }
     }
   }

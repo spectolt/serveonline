@@ -3,118 +3,149 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	font-family: 'Sen', sans-serif;
-	font-weight: 600;
-	border: 0;
-	border-radius: 5px;
-	background: $color__background-button;
-	color: $white;
-	line-height: 1;
-	padding: 12px;
-	display: inline-block;
-	cursor: pointer;
+  font-family: "Sen", sans-serif;
+  font-weight: 600;
+  border: 0;
+  border-radius: 5px;
+  background: $color__background-button;
+  color: $white;
+  line-height: 1;
+  padding: 12px;
+  display: inline-block;
+  cursor: pointer;
 
-	&:hover {
-		border-color: $color__border-button-hover;
-	}
+  &:hover {
+    border-color: $color__border-button-hover;
+  }
 
-	&:active,
-	&:focus {
-		border-color: $color__border-button-focus;
-		outline: thin dotted;
-	}
+  &:active,
+  &:focus {
+    border-color: $color__border-button-focus;
+    outline: thin dotted;
+  }
 
-	&.orange {
-		border: 1px solid $orange;
-		background: $orange;
+  &.orange {
+    border: 1px solid $orange;
+    background: $orange;
 
-		&.transparent {
-			background: transparent;
-			color: $orange;
-		}
-	}
+    &.transparent {
+      background: transparent;
+      color: $orange;
+    }
+  }
 
-	&.blue {
-		background: $blue;
+  &.blue {
+    background: $blue;
 
-		&.transparent {
-			background: transparent;
-			color: $blue;
-			border: 1px solid $blue;
-		}
-	}
+    &.transparent {
+      background: transparent;
+      color: $blue;
+      border: 1px solid $blue;
+    }
+  }
 
-	&.darkblue {
-		background: $darkblue;
+  &.darkblue {
+    background: $darkblue;
 
-		&.transparent {
-			background: transparent;
-			color: $darkblue;
-			border: 1px solid $darkblue;
-		}
-	}
+    &.transparent {
+      background: transparent;
+      color: $darkblue;
+      border: 1px solid $darkblue;
+    }
+  }
 
-	&.cyan {
-		background: $cyan;
+  &.cyan {
+    background: $cyan;
 
-		&.transparent {
-			background: transparent;
-			color: $cyan;
-			border: 1px solid $cyan;
-		}
+    &.transparent {
+      background: transparent;
+      color: $cyan;
+      border: 1px solid $cyan;
+    }
 
-		&.white {
-			background: $white;
-			color: $cyan;
-			border: 1px solid $blue;
-		}
-	}
+    &.white {
+      background: $white;
+      color: $cyan;
+      border: 1px solid $blue;
+    }
+  }
 
-	&.gray {
-		border: 1px solid $gray;
-		color: $gray;
+  &.gray {
+    border: 1px solid $gray;
+    color: $gray;
 
-		&.transparent {
-			background: transparent;
-		}
-	}
+    &.transparent {
+      background: transparent;
+    }
+  }
 
-	&.small {
-		padding: 8px 10px;
-	}
+  &.small {
+    padding: 8px 10px;
+  }
 
-	&:disabled {
-		// background-color: $darkgray !important;
-		color: $gray-disabled !important;
-		border: 1px solid $gray-disabled !important;
+  &:disabled {
+    // background-color: $darkgray !important;
+    color: $gray-disabled !important;
+    border: 1px solid $gray-disabled !important;
 
-		&::before,
-		&::after {
-			filter: grayscale(100) !important;
-			opacity: .2 !important;
-		}
-	}
+    &::before,
+    &::after {
+      filter: grayscale(100) !important;
+      opacity: 0.2 !important;
+    }
+  }
+
+  &.button--icon {
+    position: relative;
+    padding-left: 40px;
+
+    &::before {
+      content: "";
+      width: 40px;
+      height: 100%;
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 1px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  &.button--send {
+    &::before {
+      background-image: url("img/icons/send.svg");
+      background-size: 50%;
+    }
+  }
+
+  &.button--print {
+    &::before {
+      background-image: url("img/icons/printer.svg");
+      background-size: 50%;
+    }
+  }
 }
 
 .arrow {
-	background-color: transparent;
-	padding: 5px;
-	width: 20px;
-	display: flex;
-	align-items: center;
+  background-color: transparent;
+  padding: 5px;
+  width: 20px;
+  display: flex;
+  align-items: center;
 
-	&:before {
-		content: url("img/icons/angle-down-bold.svg");
-		display: block;
-		width: 100%;
-		position: relative;
-	}
+  &:before {
+    content: url("img/icons/angle-down-bold.svg");
+    display: block;
+    width: 100%;
+    position: relative;
+  }
 
-	&.arrow--left::before {
-		transform: rotate(90deg);
-	}
+  &.arrow--left::before {
+    transform: rotate(90deg);
+  }
 
-	&.arrow--right::before {
-		transform: rotate(-90deg);
-	}
+  &.arrow--right::before {
+    transform: rotate(-90deg);
+  }
 }
