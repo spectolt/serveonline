@@ -252,7 +252,7 @@ function onDocumentReady(callback) {
               $(inst.dpDiv).css({
                 left: "50%",
                 transform: "translateX(-50%)",
-                top: "+=10px",
+                top: $(".js-datepicker").offset().top + $(".js-datepicker").height() + 10,
               });
             } else {
               $(inst.dpDiv).css({
