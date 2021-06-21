@@ -697,9 +697,20 @@
       box-shadow: 0 12px 29px 0px rgba(0, 0, 0, 0.15);
     }
 
+    #{$_this}__client-item {
+      &:first-of-type {
+        grid-area: auto;
+      }
+    }
+
     #{$_this}__client {
       grid-template-columns: repeat(3, 1fr);
       width: calc(100% - #{$_photo} - #{$_margin});
+
+      @include breakpoint(l) {
+        grid-template-columns: 100%;
+        margin-bottom: 0;
+      }
     }
   }
 }

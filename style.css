@@ -23989,9 +23989,21 @@ section.product .product__block--company .slick-track {
           box-shadow: 0 12px 29px 0px rgba(0, 0, 0, 0.15);
 }
 
+.statistics--company .statistics__client-item:first-of-type {
+  grid-area: auto;
+}
+
 .statistics--company .statistics__client {
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
   width: calc(100% - 83px - 20px);
+}
+
+@media (max-width: 991px) {
+  .statistics--company .statistics__client {
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+    margin-bottom: 0;
+  }
 }
 /*# sourceMappingURL=style.css.map */
