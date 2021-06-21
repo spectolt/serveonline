@@ -14418,57 +14418,57 @@ section.product .product__block--company .slick-track {
 
 .reservations .controls__table th:first-of-type,
 .reservations .controls__table td:first-of-type {
-  width: 91px;
+  width: 89px;
 }
 
 .reservations .controls__table th:nth-of-type(2),
 .reservations .controls__table td:nth-of-type(2) {
-  width: 74px;
+  width: 58px;
 }
 
 .reservations .controls__table th:nth-of-type(3),
 .reservations .controls__table td:nth-of-type(3) {
-  width: 113px;
+  width: 58px;
 }
 
 .reservations .controls__table th:nth-of-type(4),
 .reservations .controls__table td:nth-of-type(4) {
-  width: 114px;
+  width: 91px;
 }
 
 .reservations .controls__table th:nth-of-type(5),
 .reservations .controls__table td:nth-of-type(5) {
-  width: 147px;
+  width: 74px;
 }
 
 .reservations .controls__table th:nth-of-type(6),
 .reservations .controls__table td:nth-of-type(6) {
-  width: 140px;
+  width: 113px;
 }
 
 .reservations .controls__table th:nth-of-type(7),
 .reservations .controls__table td:nth-of-type(7) {
-  width: 85px;
+  width: 114px;
 }
 
 .reservations .controls__table th:nth-of-type(8),
 .reservations .controls__table td:nth-of-type(8) {
-  width: 247px;
+  width: 147px;
 }
 
 .reservations .controls__table th:nth-of-type(9),
 .reservations .controls__table td:nth-of-type(9) {
-  width: 89px;
+  width: 140px;
 }
 
 .reservations .controls__table th:nth-of-type(10),
 .reservations .controls__table td:nth-of-type(10) {
-  width: 58px;
+  width: 85px;
 }
 
 .reservations .controls__table th:nth-of-type(11),
 .reservations .controls__table td:nth-of-type(11) {
-  width: 58px;
+  width: 247px;
 }
 
 .reservations .controls__table th:nth-of-type(12),
@@ -14490,11 +14490,11 @@ section.product .product__block--company .slick-track {
   text-align: left;
 }
 
-.reservations .controls__table td:first-of-type, .reservations .controls__table td:nth-of-type(9), .reservations .controls__table td:nth-of-type(10), .reservations .controls__table td:nth-of-type(11), .reservations .controls__table td:nth-of-type(13) {
+.reservations .controls__table td:first-of-type, .reservations .controls__table td:nth-of-type(2), .reservations .controls__table td:nth-of-type(3), .reservations .controls__table td:nth-of-type(4), .reservations .controls__table td:nth-of-type(13) {
   text-align: center;
 }
 
-.reservations .controls__table td:nth-of-type(10), .reservations .controls__table td:nth-of-type(11) {
+.reservations .controls__table td:nth-of-type(2), .reservations .controls__table td:nth-of-type(3) {
   font-size: 1rem;
 }
 
@@ -23290,11 +23290,17 @@ section.product .product__block--company .slick-track {
 
 @media (max-width: 890px) {
   .statistics__date {
-    margin-left: 7px;
+    margin-left: 0;
     margin-bottom: 15px;
     position: unset;
     top: 0;
     margin-top: 10px;
+  }
+}
+
+@media (max-width: 700px) {
+  .statistics__date {
+    margin-left: -8px;
   }
 }
 
@@ -23319,18 +23325,18 @@ section.product .product__block--company .slick-track {
   }
 }
 
+@media (max-width: 700px) {
+  .statistics__date .statistics__day {
+    margin-left: 8px;
+  }
+}
+
 .statistics__date .statistics__day--from {
   margin-bottom: 0;
 }
 
 .statistics__date .statistics__day--to {
   margin-bottom: 0;
-}
-
-@media (max-width: 700px) {
-  .statistics__date .statistics__day--to {
-    margin-left: 8px;
-  }
 }
 
 .statistics__date input {
@@ -23856,6 +23862,10 @@ section.product .product__block--company .slick-track {
   }
 }
 
+.statistics__client-item .number {
+  color: #000;
+}
+
 .statistics__client h2 {
   margin: 0;
   font-family: "Sen", sans-serif;
@@ -24013,10 +24023,6 @@ section.product .product__block--company .slick-track {
   .statistics--company .statistics__client-item {
     border-left: none;
   }
-}
-
-.statistics--company .statistics__client-item .number {
-  color: #000;
 }
 
 .statistics--company .statistics__client {
