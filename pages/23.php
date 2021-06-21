@@ -4,20 +4,12 @@
 <main class="site-main site-main--aside">
     <section class="page-content page-content--company hasUiDatepicker">
         <div class="page-content__wrapper">
-            <section class="statistics">
+            <section class="statistics statistics--company">
                 <div class="statistics__header">
                     <div class="statistics__top">
-                        <div class="statistics__photo" style="background-image: url(../img/1.jpg)">
-                        </div>
                         <div class="statistics__name">
-                            <div class="statistics__name-top">
-                                <h2>Vardas Pavarde</h2>
-                                <h3>Plaukų stilistas</h3>
-                            </div>
-                            <div class="statistics__name-bottom">
-                                <p>UAB grožio salonas</p>
-                                <p>Vilnius, Naugarduko g. 24-1</p>
-                            </div>
+                            <h2>UAB Grožio salonas</h2>
+                            <p>Vilnius, Naugarduko g. 24-1</p>
                         </div>
                     </div>
                     <div class="statistics__date">
@@ -26,6 +18,22 @@
                     </div>
                 </div>
                 <div class="stat-grid">
+                    <div class="stat-grid__item stat-grid__clients stat-grid__clients--all">
+                        <div class="stat-grid__top">
+                            <div class="stat-grid__client-plot"></div>
+                        </div>
+                        <hr>
+                        <div class="stat-grid__bottom">
+                            <div class="stat-grid__bottom-left">
+                                <h3><b>Bendrai klientų</b></h3>
+                                <h3>registracijų</h3>
+                            </div>
+                            <div class="stat-grid__bottom-right">
+                                <h2>168 <span class="up">0.6%</span></h2>
+                                <h2>1000€ <span class="down">0.6%</span></h2>
+                            </div>
+                        </div>
+                    </div>
                     <div class="stat-grid__item stat-grid__clients stat-grid__clients--comeback">
                         <div class="stat-grid__top">
                             <h2>68 <span class="up">0.6%</span></h2>
@@ -48,22 +56,7 @@
                             <h3>registracijų</h3>
                         </div>
                     </div>
-                    <div class="stat-grid__item stat-grid__clients stat-grid__clients--all">
-                        <div class="stat-grid__top">
-                            <div class="stat-grid__client-plot"></div>
-                        </div>
-                        <hr>
-                        <div class="stat-grid__bottom">
-                            <div class="stat-grid__bottom-left">
-                                <h3><b>Bendrai klientų</b></h3>
-                                <h3>registracijų</h3>
-                            </div>
-                            <div class="stat-grid__bottom-right">
-                                <h2>168 <span class="up">0.6%</span></h2>
-                                <h2>1000€ <span class="down">0.6%</span></h2>
-                            </div>
-                        </div>
-                    </div>
+
                     <div class="stat-grid__item">
                         <div class="stat-grid__top">
                             <h2>2000</h2>
@@ -72,7 +65,7 @@
                         <hr>
                         <div class="stat-grid__bottom">
                             <h3><b>Profilio peržiūrų</b></h3>
-                            <h3>specialisto</h3>
+                            <h3>Įmonės</h3>
                         </div>
                     </div>
                     <div class="stat-grid__item">
@@ -82,7 +75,7 @@
                         </div>
                         <hr>
                         <div class="stat-grid__bottom">
-                            <h3><b>Nepavyko registruotis</b></h3>
+                            <h3><b>Atmestos registracijos</b></h3>
                             <h3>Iš krepselio</h3>
                         </div>
                     </div>
@@ -135,9 +128,10 @@
                             <h3>per paskutinius 12 mėn.</h3>
                         </div>
                     </div>
-                    <div class="stat-grid__item center-align">
+                    <div class="stat-grid__item">
                         <div class="stat-grid__top">
                             <h2>38 €</h2>
+                            <h3 class="right-align"><span class="up">0.6%</span></h3>
                         </div>
                         <hr>
                         <div class="stat-grid__bottom">
@@ -153,23 +147,23 @@
                         </div>
                     </div>
                 </div>
-                <h2 class="statistics__client-heading">TOP klientų dešimtukas</h2>
                 <?php for ($i = 0; $i < 10; $i++) { ?>
-                    <div class="statistics__client">
-                        <div class="statistics__client-item">
-                            <h2>Vardas Pavarde</h2>
+                    <div class="statistics__list-item">
+                        <div class="statistics__client-photo" style="background-image: url(../img/1.jpg)">
                         </div>
-                        <div class="statistics__client-item">
-                            <h3>Registracijų<br><span>bendrai</span></h3>
-                            <h2 class="number">5</h2>
-                        </div>
-                        <div class="statistics__client-item">
-                            <h3>Periodiškumas<br><span>dienomis</span></h3>
-                            <h2 class="number">37</h2>
-                        </div>
-                        <div class="statistics__client-item">
-                            <h3>Registracijų <br>suma</h3>
-                            <h2 class="number">10 000 €</h2>
+                        <div class="statistics__client">
+                            <div class="statistics__client-item">
+                                <h3>Grįžusių klientų<br><span>registracijų</span></h3>
+                                <h2 class="number">5</h2>
+                            </div>
+                            <div class="statistics__client-item">
+                                <h3>Naujų klientų<br><span>registracijų</span></h3>
+                                <h2 class="number">37</h2>
+                            </div>
+                            <div class="statistics__client-item">
+                                <h3>Bendrai kleintų <br><span>registracijų</span></h3>
+                                <h2 class="number">37</h2>
+                            </div>
                         </div>
                     </div>
                 <?php } ?>

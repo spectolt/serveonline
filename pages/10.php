@@ -1,201 +1,126 @@
+<?php $thisCat = "login";
+$thisPage = "login"; ?>
+
 <?php require_once('header.php'); ?>
+<main class="site-main container container--cart-login">
+    <section class="login-cart">
+        <section class="login login--column">
+            <div class="login__blocks login__blocks--column">
+                <div class="login__block">
+                    <h2 class="title">Prisijungti</h2>
+                    <form class="login__form">
+                        <div class="input-wrapper input-wrapper--envelope">
+                            <input type="email" name="email" placeholder="El. paštas" />
+                        </div>
+                        <div class="input-wrapper input-wrapper--eye">
+                            <input type="password" name="password" placeholder="Slaptažodis" />
+                        </div>
+                        <div class="input-wrapper login__forgot">
+                            <a href="#" class="">Pamiršai slaptažodį?</a>
+                        </div>
 
-
-<main class="site-main site-main--aside">    
-    <?php require_once('product-sidebar.php'); ?>
-    <div class="page-content">        
-        <section class="breadcrumbs">
-            <a href="#" class="breadcrumbs__change">Pakeisti</a>
-            <span class="breadcrumbs__location">GROŽIO SALONAI</span>
-            <button class="breadcrumbs__cart"><span>2</span></button>
+                        <div class="login__button-container">
+                            <button class="button orange login__button--half login__button--submit">Prisijungti</button>
+                            <button class="button blue login__button--half login__button--fb">Prisijungti per <div class="login__button-fb"></div></button>
+                        </div>
+                    </form>
+                </div>
+                <div class="login__block login__block--register">
+                    <h2 class="title">Registruotis pirmą kartą</h2>
+                    <form class="login__form">
+                        <div class="input-wrapper input-wrapper--user">
+                            <input type="text" name="name" placeholder="Vardas Pavardė" />
+                        </div>
+                        <div class="input-wrapper input-wrapper--envelope">
+                            <input type="email" name="email" placeholder="El. paštas" />
+                        </div>
+                        <div class="input-wrapper input-wrapper--half input-wrapper--phone">
+                            <input type="tel" name="phone" placeholder="+370 XXXXXXXX" />
+                        </div>
+                        <div class="input-wrapper input-wrapper--half input-wrapper--city">
+                            <input type="text" name="city" placeholder="Miestas" />
+                        </div>
+                        <div class="input-wrapper input-wrapper--half input-wrapper--lock">
+                            <input type="password" name="password" placeholder="Slaptažodis" />
+                        </div>
+                        <div class="input-wrapper input-wrapper--half input-wrapper--lock">
+                            <input type="password" name="password2" placeholder="Pakartokite slaptažodį" />
+                        </div>
+                        <label class="login__passwords">Slaptažodis, ne mažiau 8 simbolių, kuriuos sudaro: skaičiai, raidės, bent viena didžioji raidė.</label>
+                        <div class="login__checkboxes">
+                            <div class="checkbox">
+                                <input name="privacy_policy" type="checkbox" id="privacy_policy" class="" value="1" required />
+                                <label for="privacy_policy">Patvirtinu, kad susipažinau su <a href="#">Privatumo politika</a> ir sutinku, kad mano asmens duomenys būtų naudojami joje numatytais duomenų tvarkymo tikslais ir sąlygomis.</label>
+                            </div>
+                            <div class="checkbox">
+                                <input name="newsletter" type="checkbox" id="newsletter" class="" value="1" required />
+                                <label for="newsletter">Sutinku gauti pasiūlymus bei informaciją apie naujas paslaugas.</label>
+                            </div>
+                            <div class="checkbox">
+                                <input name="sms" type="checkbox" id="sms" class="" value="1" required />
+                                <label for="sms">Sutinku gauti priminimus apie rezervacijas.</label>
+                            </div>
+                            <p>Užpildydami šią formą, sutinkate su mūsų <a href="#">Naudojimosi taisyklėmis</a>.</p>
+                        </div>
+                        <button class="button orange small login__button login__button--register">Registruotis</button>
+                    </form>
+                </div>
+            </div>
         </section>
-        
-        <div class="page-content__wrapper">            
-            <section class="venue">
-                <h1 class="title">Vasco by I.C.O.N.</h1>
-                <div class="venue__slider">
-                    <img src="http://placehold.it/830x300"/>
-                    <img src="http://placehold.it/830x300"/>
-                </div>
-                <div class="venue__info">
-                    <a href="#">Kalvarijų g. 125, Vilnius, 08221</a>
-                    <a href="#">+370 684 98756</a>
-                </div>
-                <div class="venue__description">
-                    <p>Visą gyvenimą domėjausi stiliumi ir mada, norėjau kurti ir savo kūryba džiuginti žmones. Mano močiutė ir mama buvo prijaučiančios šiai profesijai, todėl nuo pat mažų dienų atsirado potraukis kurti ir stilizuoti žmogaus išvaizda dirbant su plaukais. Būdamas abiturientas nusprendžiau studijuoti Vilniaus kolegijoje – šukuosenų dizaino specialybės, ir įgyti šukuosenų dizaino, bei, apskritai, bendro įvaizdžio stilisto aukštąjį išsilavinimą.Sėkmingai baigęs Vilniaus kolegiją toliau tobulinau žinias tiek Lietuvoje, tiek kaimyninėse šalyse. Dirbdamas supratau, kad forma, tekstūra ir faktūra turi didelę įtaką žmonių stiliuje ir kirpimai, dažymai yra kūryba bei menas, todėl į savo darbą žiūriu atsakingai ir jį atlieku labai kruopščiai. Mano darbas dėl šių priežasčių gali užtrukti ilgiau nei įprastai, bet man kokybė yra svarbesnė už kiekybę.</p>
-                    <button class="venue__description-more">Skaityti daugiau</button>
-                </div>
-                <div class="venue__footer">
-                    <a class="venue__work-hours" href="#">Šiuo metu dirba : 08:00 - 20:00</a>
-                    <a class="venue__deals" href="#">Yra paskutinės minutės pasiūlymai</a>
-                </div>
-            </section>
-
-            <section class="product" data-nav-section>
-                <div class="product__header">
-                    <h1 class="title">Registruokis</h1>
-                    <div class="product__nav">
-                        <input type="text" name="date" class="product__nav-input" />
-                        <button class="product__nav-button product__nav-button--prev"></button>
-                        <div class="product__nav-current">2021 Sausio 10</div>
-                        <button class="product__nav-button product__nav-button--next"></button>
+        <section class="cart-container">
+            <h2>Pasirinktos paslaugos</h2>
+            <?php for ($i = 0; $i < 2; $i++) { ?>
+                <div class="cart cart--login">
+                    <div class="cart__header">
+                        <div class="cart__about cart__about--time">
+                            <h3>17:30</h3>
+                            <h4>2020 Vasario 4, ketvirtadienis</h4>
+                        </div>
+                        <div class="cart__about cart__about--company">
+                            <h3>East Islan Spa centras</h3>
+                        </div>
                     </div>
-                </div>
-                <div class="product__search input-wrapper input-wrapper--briefcase">
-                    <input type="text" name="search" id="search" placeholder="Įveskite kelis paslaugos pavadinimo simbolius paieškai" />
-                </div>
-                <div class="product__list">
-                    <?php for($y=0;$y<5;$y++) { ?>
-                        <div class="product__block">
-                            <div class="product__block-top">
-                                <div class="product__block-person">
-                                    <div class="product__block-photo" style="background-image: url('http://placehold.it/180x180')">
-                                        <?php if($y===1) { ?><div class="product__block-like-status"></div><?php } ?>
-                                    </div>                    
-                                    <div class="product__block-info">
-                                        <h2>Ramunė Varnaliauskienė</h2>
-                                        <span>Dermatologė</span>
-                                        <p>Klinika “Lazerinė praktika”<br/>
-                                        <a href="#">M. Valančiaus g. 23</a><br/></p>
-                                        <div class="product__block-distance"><b>15 min</b> (5,6 km) Kaunas</div>
-                                        
-                                        <div class="product__block-info-actions">
-                                            <button class="button small orange product__block-more">Plačiau</button>
-                                            <button class="button small gray transparent product__block-like <?php if($y!==1) { ?>product__block-like--active<?php } ?>">Mano</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <table class="calendar">
-                                    <thead>
-                                        <tr>
-                                            <th class="active">Pr<small>Sau10</small></th>
-                                            <th>An<small>Sau10</small></th>
-                                            <th>Tr<small>Sau10</small></th>
-                                            <th>Kt<small>Sau10</small></th>
-                                            <th>Pn<small>Sau10</small></th>
-                                            <th>Še<small>Sau10</small></th>
-                                            <th>Se<small>Sau10</small></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php for($i=0;$i<4;$i++) { ?>
-                                        <tr>
-                                            <td><p>09:15</p></td>
-                                            <td><p></p></td>
-                                            <td><p class="active">09:15</p></td>
-                                            <td><p>09:15</p></td>
-                                            <td><p>09:15</p></td>
-                                            <td><p>09:15</p></td>
-                                            <td><p>09:15</p></td>
-                                        </tr>
-                                        <?php } ?>
-                                    </tbody>
-                                </table>
+                    <div class="cart__info">
+                        <div class="cart__specialist">
+                            <div class="cart__photo"></div>
+                            <div class="cart__name">
+                                <h3>Vardas Pavardė</h3>
+                                <h4>Pareigos</h4>
                             </div>
-                            <?php if($y === 0) { ?>
-                            <h3 class="product__block-recommend">Specialistas Jums rekomenduoja užsiregistruoti šiai procedūrai</h3>
-                            <div class="product-action product__block-action">                        
+                        </div>
+                        <div class="cart__products">
+                            <div class="product-action product__block-action">
                                 <div class="product-action__info">
-                                    <h4>Greitasis odos atjauninimas lazeriu</h4>    
-                                    <div class="product-action__duration">1 val</div>
-                                    <div class="product-action__price">45€<strike>60€</strike></div>
+                                    <h4>Visų pl. dažymas ir kirpimas</h4>
+                                    <div class="product-action__duration">01:00</div>
+                                    <div class="product-action__price">45€</div>
+                                    <div class="product-action__periodicity">6 sav.</div>
                                 </div>
-                                <button class="button cyan transparent small product-action__order">Užsakyti</button>
+                            </div>
+                            <?php if ($i == 1) { ?>
+                                <div class="product-action product__block-action">
+                                <div class="product-action__info">
+                                    <h4>Visų pl. dažymas ir kirpimas</h4>
+                                    <div class="product-action__duration">01:00</div>
+                                    <div class="product-action__price">45€</div>
+                                    <div class="product-action__periodicity">6 sav.</div>
+                                </div>
                             </div>
                             <?php } ?>
                         </div>
-                    <?php } ?>
-                </div>
-            </section>
-
-            <section class="venue-info">
-                <h2 class="venue-info__title">Paslaugos</h2>
-                <?php for($y=0;$y<3;$y++) { ?>  
-                    <h3 class="venue-info__subtitle">Plaukų priežiūra</h3>
-                    <div class="venue-info__list"  data-nav-section>
-                        <?php for($i=0;$i<10;$i++) { ?>      
-                        <div class="product-action product__block-action">                        
-                            <div class="product-action__info">
-                                <h4>Greitasis odos atjauninimas lazeriu</h4>  
-                                <p>Visų pl. dažymas viena spalva, galvos plovimas, modelinis kirpimas, dieninis sušukavimas, dieninis sušukavimas,dieninis sušukavimas,Visų pl. dažymas viena spalva, galvos plovimas, modelinis kirpimas, dieninis sušukavimas, dieninis sušukavimas,dieninis sušukavimas,Visų pl. dažymas viena spalva, galvos plovimas, modelinis kirpimas, dieninis sušukavimas, dieninis sušukavimas,dieninis sušukavimas.</p>  
-                                <div class="product-action__duration">1 val</div>
-                                <div class="product-action__price">45€<strike>60€</strike></div>
-                            </div>
-                            <button class="button cyan transparent small product-action__order">Užsakyti</button>
-                        </div>
-                        <?php } ?>
-                    </div>
-                <?php } ?>
-            </section>
-
-            <section class="venue-info venue-info--partners"  data-nav-section>
-                <h2 class="venue-info__title">Produktai</h2>
-                <h3 class="venue-info__subtitle">Mūsų partneriai</h3>
-                <div class="venue-info__partners">
-                    <div class="venue-info__partner"><img src="http://placehold.it/160x55" /></div>
-                    <div class="venue-info__partner"><img src="http://placehold.it/160x55" /></div>
-                    <div class="venue-info__partner"><img src="http://placehold.it/160x55" /></div>
-                    <div class="venue-info__partner"><img src="http://placehold.it/160x55" /></div>
-                    <div class="venue-info__partner"><img src="http://placehold.it/160x55" /></div>
-                    <div class="venue-info__partner"><img src="http://placehold.it/160x55" /></div>
-                </div>
-            </section>
-
-            <section class="venue-info venue-info--about"  data-nav-section>
-                <h2 class="venue-info__title">Apie mus</h2>
-                <div class="venue-info__description">„Vasco by I.C.O.N. Grožio Studija“, įkurta 2010 metais, yra subūrusi kūrybingus, profesionalius ir darbščius meistrus. 
-Čia dirbantys plaukų stilistai ir kosmetologai puikiai išmano savo darbą, dėl to vis didėja nuolatinių ir naujų klientų ratas.
-
-Grožio salono meistrai nuolat tobulinasi įvairiuose seminaruose ir konkursuose. Jie sutinka kiekvieną klientą maloniai, 
-atsakingai, ypatingą dėmesį skirdami atlieka savo darbą, ir individualiai jums pritaiko informatyvią konsultaciją.
-Mūsų grožio salonuose yra dažoma tik su ECOTECH dažais, kurie iš 90% natūralių ingredientų. Šie dažai yra aliejinio 
-pagrindo be amoniako ir parabenų. EHOTECH COLOR dažai suteikia švelnų poveikį ne tik plaukui, bet ir galvos odai. 
-
-Puikiai uždažo žilus plaukus. I.C.O.N. ECOTECH dažai pagaminti naudojant unikalią technologiją, kuri padeda pakeisti 
-plaukų spalvą, nekenkiant nei plaukų struktūrai, nei mus supančiai aplinkai.
-
-Vasco by I.C.O.N. grožio studijoje yra teikiamos įvairiausios plaukų SPA procedūros.
-Visi I.C.O.N. produktai atitinka aukščiausius kosmetikos gamybai keliamus reikalavimus.</div>
-                <div class="venue-info__map">
-                    <h3 class="venue-info__map-title">Mus rasite</h3>
-                    <div class="venue-info__map-wrapper">
-                        <img src="http://placehold.it/570x230" />
-                    </div>
-                    <div class="venue-info__map-info">
-                        <a href="#">Kalvarijų g. 125, Vilnius, 08221</a>
-                        <a href="#">+370 684 98756</a>
                     </div>
                 </div>
-                <div class="work-hours venue-info__work-hours">
-                    <h3 class="work-hours__title">Darbo laikas</h3>
-                    <ul>
-                        <?php for($i=0;$i<7;$i++){ ?>
-                        <li><span>Pirmadienis</span><span <?php if($i===0) { ?> class="work-hours__date--red"<?php } ?>>8:00 - 20:00</span></li>
-                        <?php }?>
-                    </ul>
-                </div>
-            </section>
-            <?php require_once('footer-menu.php'); ?> 
-            <div class="sliding-menu-wrapper">
-            <div class="sliding-menu">
-                <h4>TURINYS</h4>
-                <ul>
-                    <li><a href="javascript:void(0);">Registuokis</a></li>
-                    <li>
-                        <a href="javascript:void(0);">Paslaugos</a>
-                        <ul>
-                            <?php for($i=0;$i<3;$i++) { ?>   
-                                <li><a href="javascript:void(0);">Plaukų priežiūra</a></li>
-                            <?php } ?>
-                        </ul>
-                    </li>
-                    <li><a href="javascript:void(0);">Produktai</a></li>
-                    <li><a href="javascript:void(0);">Apie mus</a></li>
-                </ul>
-            </div></div>
-        </div>
-               
-    </div>
+            <?php } ?>
+            <h3>Bendra kaina: <span>260,00 €</span></h3>
+            <div class="cart__buttons">
+                <button class="orange transparent">Atsisakyti</button>
+                <button class="orange">Rezervuoti</button>
+            </div>
+        </section>
+    </section>
+    <?php require_once('footer-menu.php'); ?>
 </main>
-<div id="test"></div>
-<?php require_once('footer.php'); ?>
+
+<?php
+require_once('footer.php');
+?>

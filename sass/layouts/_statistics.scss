@@ -1,70 +1,98 @@
 .statistics {
+  $_this: &;
+
   max-width: 1200px;
   color: #323131;
 
   &__top {
     display: flex;
+    color: $darkblue;
+
+    @include breakpoint(xxs) {
+      justify-content: space-between;
+    }
   }
 
   &__header {
     padding-top: 60px;
 
-    @include breakpoint(sm){
+    @include breakpoint(sm) {
       padding-top: 30px;
     }
   }
 
   &__photo {
     background-image: url(../img/1.jpg);
-    width: 175px;
-    height: 175px;
+    max-width: 175px;
+    max-height: 175px;
     background-size: 100%;
     border-radius: 50%;
     box-shadow: 0 12px 29px 0px rgba(0, 0, 0, 0.15);
     margin: 0 40px 0 20px;
+    width: 100%;
+      height: 100%;
 
-    @include breakpoint(sm){
+    @include breakpoint(sm) {
       margin: 0 10px;
-      width: 110px;
-      height: 110px;
+      max-width: 110px;
+      max-height: 110px;
+    }
+
+    &::after {
+      content: "";
+      padding-bottom: 100%;
+      display: block;
     }
   }
 
-  &__name{
-    h2{
-      font-size: 3rem;
+  &__name {
+    margin-top: 15px;
+
+    @include breakpoint(sm) {
+      margin-top: 5px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    @include breakpoint(xxs) {
+      margin-right: 10px;
+    }
+
+    h2 {
+      font-size: 1.875rem;
       font-weight: 700;
       margin-top: 0px;
-      margin-bottom: 15px;
+      margin-bottom: 0;
 
-      @include breakpoint(sm){
-        font-size: 1.5rem;
+      @include breakpoint(sm) {
+        font-size: 1.125rem;
         margin-bottom: 0;
       }
     }
 
-    h3{
+    h3 {
+      font-size: 0.875rem;
       font-weight: 400;
-      font-size: 1.875rem;
-      margin-top: 15px;
-      margin-bottom: 15px;
+      margin-top: 0;
+      margin-bottom: 20px;
 
-      @include breakpoint(sm){
-        font-size: 1.125rem;
-        font-weight: 700;
-        margin-top: 0;
+      @include breakpoint(sm) {
+        font-size: 0.75rem;
+        // font-weight: 700;
         margin-bottom: 0px;
       }
     }
 
-    p{
-      font-family: 'Sen', sans-serif;
+    p {
+      font-family: "Sen", sans-serif;
       font-weight: 400;
-      font-size: 1.125rem;
-      margin-bottom: 15px;
+      font-size: 1rem;
+      margin-bottom: 0px;
+      margin-top: 5px;
 
-      @include breakpoint(sm){
-        font-size: 0.9375rem;
+      @include breakpoint(sm) {
+        font-size: 0.75rem;
         margin-bottom: 8px;
         margin-top: 8px;
       }
@@ -73,43 +101,53 @@
 
   &__date {
     display: flex;
-    margin-left: 234px;
-    margin-bottom: 10px;
+    margin-left: 235px;
+    margin-bottom: 0px;
+    top: -35px;
+    position: relative;
+    color: $darkblue;
 
-    @include breakpoint(845px){
-      margin-left: 0px;
-      margin-bottom: 8px;
+    @include breakpoint(890px) {
+      margin-left: 7px;
+      margin-bottom: 15px;
+      position: unset;
+      top: 0;
+      margin-top: 10px;
     }
 
-    p{
-      font-family: 'Sen', sans-serif;
+    p {
+      font-family: "Sen", sans-serif;
       font-weight: 400;
       font-size: 1.125rem;
       margin-top: 10px;
-      @include breakpoint(sm){
+      @include breakpoint(sm) {
         font-size: 0.9375rem;
-        margin-top: 30px;
+        // margin-top: 30px;
       }
     }
-    .statistics__day--from{
-      margin-right: 7px;
+    .statistics__day--from {
+      // margin-right: 7px;
+      margin-bottom: 0;
     }
 
-    input
-    {
+    .statistics__day--to {
+      margin-bottom: 0;
+    }
+
+    input {
       font-weight: 700;
       font-size: 1.125rem;
-      background: url(./img/icons/calendar.svg) no-repeat scroll 150px 2px;
+      background: url(./img/icons/calendar.svg) no-repeat scroll 150px 0;
       background-size: 10%;
       border: none;
       margin-left: 15px;
 
-      @include breakpoint(sm){
+      @include breakpoint(sm) {
         font-size: 0.9375rem;
         margin-left: 0px;
-        background: url(./img/icons/calendar.svg) no-repeat scroll 120px 2px;
+        background: url(./img/icons/calendar.svg) no-repeat scroll 120px 0;
         background-size: 12%;
-        width: 145px;
+        width: 144px;
       }
     }
   }
@@ -117,19 +155,23 @@
   .stat-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 200px 200px 200px 1fr;
+    // grid-template-rows: 200px 200px 200px 1fr;
+    grid-template-rows: repeat(3, 190px) auto;
     grid-gap: 20px;
 
     @include breakpoint(l) {
       grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(6, 1fr) auto;
     }
 
-    @include breakpoint(sm){
+    @include breakpoint(sm) {
       grid-gap: 6px;
+      grid-template-rows: 150px 150px repeat(4, 145px) auto;
     }
 
     hr {
       margin: 0;
+      background-color: #eeeeee;
     }
 
     h2 {
@@ -154,17 +196,28 @@
       background-color: $darkgray;
       border-radius: 5px;
       box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+      color: $black;
+
+      span {
+        color: #323131;
+      }
 
       .up,
       .down {
         display: flex;
+        font-weight: 400;
+
         &::after {
           display: block;
           width: 7px;
           margin-left: 10px;
+
+          @include breakpoint(sm) {
+            width: 6px;
+          }
         }
       }
-      
+
       .up {
         &::after {
           content: url("img/icons/arrow-up-cyan.svg");
@@ -189,10 +242,19 @@
 
     &__top {
       height: 50%;
-      padding: 20px;
+      padding: 15px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      @include breakpoint(sm) {
+        padding: 5px 10px;
+        height: 45%;
+      }
 
       .right-align {
         float: right;
+        align-self: flex-end;
       }
 
       h2 {
@@ -200,28 +262,54 @@
         align-items: center;
         font-weight: 600;
 
+        @include breakpoint(sm) {
+          font-size: 1.5rem;
+        }
+
         span {
           font-size: 1.125rem;
           margin-left: 10px;
           font-weight: 400;
+
+          @include breakpoint(sm) {
+            font-size: 0.9375rem;
+            margin-left: 5px;
+          }
         }
       }
     }
 
     &__bottom {
       padding: 20px;
+      color: #323131;
+
+      @include breakpoint(sm) {
+        padding: 10px 0 10px 10px;
+      }
 
       h3 {
-        font-family: 'Roboto', sans-serif;
+        font-family: "Roboto", sans-serif;
         font-weight: 400;
         font-size: 1rem;
 
-        @include breakpoint(sm){
+        @include breakpoint(sm) {
           font-size: 0.875rem;
         }
 
-        b{
+        & + h3 {
+          margin-top: 10px;
+
+          @include breakpoint(sm) {
+            margin-top: 0;
+          }
+        }
+
+        b {
           font-size: 1.125rem;
+
+          @include breakpoint(sm) {
+            font-size: 1rem;
+          }
         }
 
         span {
@@ -236,16 +324,31 @@
         align-items: center;
         font-weight: 600;
         justify-content: flex-end;
+        color: $black;
+
+        @include breakpoint(sm) {
+          font-size: 1.5rem;
+        }
 
         span {
           font-size: 1.125rem;
           font-weight: 400;
           margin-left: 10px;
+
+          @include breakpoint(sm) {
+            font-size: .875rem;
+          }
         }
       }
     }
 
     &__clients {
+      .stat-grid__top {
+        @include breakpoint(sm) {
+          height: 55%;
+        }
+      }
+
       &--all {
         grid-column: span 2;
         background-color: #ffb35b;
@@ -256,13 +359,17 @@
 
         .stat-grid__top {
           position: relative;
-          padding: 40px 20px 0;
+          padding: 30px 20px 0;
         }
 
         .stat-grid__bottom {
           display: flex;
           justify-content: space-between;
           padding: 15px 20px;
+
+          @include breakpoint(sm) {
+            padding: 5px 10px;
+          }
         }
       }
 
@@ -303,6 +410,14 @@
         background-color: #5055be;
         color: $white;
 
+        .stat-grid__bottom {
+          color: $white;
+        }
+
+        span {
+          color: $white;
+        }
+
         hr {
           background-color: #293684;
         }
@@ -319,12 +434,12 @@
 
     .js-plotly-plot,
     .plot-container {
-      height: 60px;
+      height: 100%;
     }
 
     &__client-donut {
       width: 100%;
-      
+
       &.js-plotly-plot {
         height: 200px;
 
@@ -389,6 +504,16 @@
     }
   }
 
+  &__client-heading {
+    font-size: 1.5rem;
+    color: $darkblue;
+
+    @include breakpoint(sm) {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+  }
+
   &__client {
     display: grid;
     grid-template-columns: 28% 21% 24% 27%;
@@ -434,13 +559,17 @@
       font-weight: 600;
       font-size: 1.5rem;
 
-      @include breakpoint(xs) {
-        font-size: 1.125rem;
+      @include breakpoint(sm) {
+        font-size: 0.75rem;
       }
     }
 
     h3 {
       margin: 0;
+
+      @include breakpoint(sm) {
+        font-size: 0.75rem;
+      }
 
       span {
         font-weight: 400;
@@ -448,6 +577,77 @@
         @include breakpoint(l) {
           margin-left: 5px;
         }
+
+        @include breakpoint(sm) {
+          font-size: 0.625rem;
+        }
+      }
+    }
+  }
+
+  &__button-container {
+    margin-bottom: 40px;
+    width: calc(100% + 10px);
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+
+    button {
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+  }
+
+  &--company {
+    $_photo: 83px;
+    $_margin: 20px;
+
+    @include breakpoint(l) {
+      $_photo: 85.5px;
+      $_margin: 10px;
+    }
+
+    #{$_this}__header {
+      margin-bottom: 30px;
+    }
+
+    #{$_this}__date {
+      top: 0;
+      margin-left: 0;
+      margin-top: 20px;
+    }
+
+    // #{$_this}__list-item {
+    //   display: flex;
+    // }
+
+    #{$_this}__list-item {
+      display: flex;
+      margin-top: 20px;
+    }
+
+    #{$_this}__client-photo {
+      width: $_photo;
+      height: $_photo;
+      border-radius: 50%;
+      background-size: 100%;
+      margin-right: $_margin;
+      box-shadow: 0 12px 29px 0px rgba(0, 0, 0, 0.15);
+    }
+
+    #{$_this}__client {
+      grid-template-columns: repeat(3, 1fr);
+      width: calc(100% - #{$_photo} - #{$_margin});
+
+      @include breakpoint(l) {
+        grid-template-columns: 100%;
+        margin-bottom: 0;
+      }
+    }
+
+    #{$_this}__button-container {
+      @include breakpoint(l) {
+        margin-top: 20px;
       }
     }
   }

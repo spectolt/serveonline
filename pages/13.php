@@ -24,12 +24,8 @@ $thisPage = "reservations"; ?>
                     <button class="expand-button"></button>
                     <div class="controls__table-container">
                         <table class="controls__table profiles__table">
-                            <thead>
+                        <thead>
                                 <tr>
-                                    <th class="bottom-arrow top-arrow">
-                                        Registracijos data,
-                                        laikas
-                                    </th>
                                     <th class="bottom-arrow top-arrow">
                                         Užsakymo
                                         <br>
@@ -59,7 +55,15 @@ $thisPage = "reservations"; ?>
                                     <th class="bottom-arrow top-arrow">
                                         Paslauga
                                     </th>
-
+                                    <th class="bottom-arrow top-arrow">
+                                        Data
+                                    </th>
+                                    <th class="bottom-arrow top-arrow">
+                                        Laikas nuo
+                                    </th>
+                                    <th class="bottom-arrow top-arrow">
+                                        Laikas nuo
+                                    </th>
                                     <th class="bottom-arrow top-arrow">
                                         Suma
                                     </th>
@@ -73,7 +77,6 @@ $thisPage = "reservations"; ?>
                             <tbody>
                                 <?php for ($y = 0; $y < 15; $y++) { ?>
                                     <tr>
-                                        <td>2020 02 20 12:20</td>
                                         <td>Patvirtintas</td>
                                         <td>234567</td>
                                         <td>Vardas<br>Pavardė</td>
@@ -82,6 +85,9 @@ $thisPage = "reservations"; ?>
                                         <td>Grožio salonas 1</td>
                                         <td>Vilnius</td>
                                         <td>Modelinis kirpimas, plovimas, fenavimas, dažymas sruogelėmis, atspalvio suteikimas</td>
+                                        <td>2020 02 20</td>
+                                        <td>12:20</td>
+                                        <td>12:20</td>
                                         <td>123.45</td>
                                         <td>G</td>
                                         <td class="left-arrow"></td>
@@ -92,13 +98,15 @@ $thisPage = "reservations"; ?>
                                 <tr>
                                     <td></td>
                                     <td></td>
+                                    <td>9999999</td>
+                                    <td>9999999</td>
+                                    <td>9999999</td>
+                                    <td>9999999</td>
+                                    <td>9999999</td>
+                                    <td>9999999</td>
                                     <td></td>
-                                    <td>9999999</td>
-                                    <td>9999999</td>
-                                    <td>9999999</td>
-                                    <td>9999999</td>
-                                    <td>9999999</td>
-                                    <td>9999999</td>
+                                    <td></td>
+                                    <td></td>
                                     <td>9999999</td>
                                     <td>9999999</td>
                                     <td></td>

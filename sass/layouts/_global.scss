@@ -240,7 +240,7 @@ footer.container {
 
   &--company {
     .site-header__logo {
-      @include breakpoint(sm) {
+      @include breakpoint(l) {
         margin: 0 auto 0 0;
       }
     }

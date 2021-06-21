@@ -74,7 +74,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                             <a href="#" class="social-media__icon social-media__icon--youtube"></a>
                         </div>
                         <ul class="company__nav company__nav--specialist">
-                            <li class="active"><a href="#registruokis">Registruokis</a></li>
+                            <li class="active"><a href="#registruokis">Registracija</a></li>
                             <li><a href="#paslaugos">Paslaugos</a></li>
                             <li><a href="#produktai">Produktai</a></li>
                             <li><a href="#apie-mus">Apie mus</a></li>
