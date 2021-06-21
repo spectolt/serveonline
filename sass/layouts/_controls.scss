@@ -523,9 +523,9 @@
       left: 0;
       top: 1px;
 
-      @include breakpoint(sm) {
-        width: 40px;
-      }
+      // @include breakpoint(sm) {
+      //   width: 40px;
+      // }
     }
 
     &--trash {
@@ -2469,15 +2469,20 @@
       &:nth-of-type(6){
         width: 513px;
       }  
-      &:last-of-type{
-        width: 70px !important;
+      &:nth-of-type(7){
+        width: 70px;
+        text-align: center;
       } 
+      &:last-of-type {
+        width: 40px;
+      }
     }
 
     td{
       height: 31px;
       text-align: left;
     }
+
     .checkbox{
       label{
         &:before{
@@ -2488,10 +2493,12 @@
         }
       }
     }
+
     .left-arrow{
       &:before{
-        top: 69%;
-        left: 82%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-90deg);
       }
     }
   }

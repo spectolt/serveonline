@@ -651,4 +651,55 @@
       }
     }
   }
+
+  &__button-container {
+    margin-bottom: 40px;
+    width: calc(100% + 10px);
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+
+    button {
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+  }
+
+  &--company {
+    $_photo: 83px;
+    $_margin: 20px;
+
+    #{$_this}__header {
+      margin-bottom: 30px;
+    }
+
+    #{$_this}__date {
+      top: 0;
+      margin-left: 0;
+      margin-top: 20px;
+    }
+
+    // #{$_this}__list-item {
+    //   display: flex;
+    // }
+
+    #{$_this}__list-item {
+      display: flex;
+      margin-top: 20px;
+    }
+
+    #{$_this}__client-photo {
+      width: 83px;
+      height: 83px;
+      border-radius: 50%;
+      background-size: 100%;
+      margin-right: 20px;
+      box-shadow: 0 12px 29px 0px rgba(0, 0, 0, 0.15);
+    }
+
+    #{$_this}__client {
+      grid-template-columns: repeat(3, 1fr);
+      width: calc(100% - #{$_photo} - #{$_margin});
+    }
+  }
 }
