@@ -83,7 +83,7 @@
                         <hr>
                         <div class="stat-grid__bottom">
                             <h3><b>Nepavyko registruotis</b></h3>
-                            <h3>Iš krepselio</h3>
+                            <h3>Iš krepšelio</h3>
                         </div>
                     </div>
                     <div class="stat-grid__item">
@@ -93,7 +93,7 @@
                         </div>
                         <hr>
                         <div class="stat-grid__bottom">
-                            <h3><b>Pasinaudojo <br> rekomendacija</b></h3>
+                            <h3><b>Pasinaudojo rekomendacija</b></h3>
                         </div>
                     </div>
                     <div class="stat-grid__item">
@@ -106,7 +106,7 @@
                             <h3><b>Atšaukė registraciją</b></h3>
                         </div>
                     </div>
-                    <div class="stat-grid__item center-align">
+                    <div class="stat-grid__item">
                         <div class="stat-grid__top">
                             <h2>3</h2>
                         </div>
@@ -115,7 +115,7 @@
                             <h3>Pažymėjo <b>Mano</b></h3>
                         </div>
                     </div>
-                    <div class="stat-grid__item center-align">
+                    <div class="stat-grid__item">
                         <div class="stat-grid__top">
                             <h2>38 d.</h2>
                         </div>
@@ -125,7 +125,7 @@
                             <h3>Vidutiniškai</h3>
                         </div>
                     </div>
-                    <div class="stat-grid__item center-align">
+                    <div class="stat-grid__item">
                         <div class="stat-grid__top">
                             <h2>38</h2>
                         </div>
@@ -135,7 +135,7 @@
                             <h3>per paskutinius 12 mėn.</h3>
                         </div>
                     </div>
-                    <div class="stat-grid__item center-align">
+                    <div class="stat-grid__item">
                         <div class="stat-grid__top">
                             <h2>38 €</h2>
                         </div>

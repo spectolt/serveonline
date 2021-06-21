@@ -9,7 +9,8 @@
     color: $darkblue;
 
     @include breakpoint(xxs) {
-      justify-content: space-between;
+      // justify-content: space-between;
+      justify-content: unset;
     }
   }
 
@@ -30,10 +31,10 @@
     box-shadow: 0 12px 29px 0px rgba(0, 0, 0, 0.15);
     margin: 0 40px 0 20px;
     width: 100%;
-      height: 100%;
+    height: 100%;
 
     @include breakpoint(sm) {
-      margin: 0 10px;
+      margin: 0 20px 0 10px;
       max-width: 110px;
       max-height: 110px;
     }
@@ -106,6 +107,7 @@
     top: -35px;
     position: relative;
     color: $darkblue;
+    flex-wrap: wrap;
 
     @include breakpoint(890px) {
       margin-left: 7px;
@@ -113,6 +115,10 @@
       position: unset;
       top: 0;
       margin-top: 10px;
+    }
+
+    @include breakpoint(xxs) {
+      justify-content: space-between;
     }
 
     p {
@@ -132,6 +138,10 @@
 
     .statistics__day--to {
       margin-bottom: 0;
+
+      @include breakpoint(sm) {
+        margin-left: 8px;
+      }
     }
 
     input {
@@ -248,7 +258,7 @@
       justify-content: space-between;
 
       @include breakpoint(sm) {
-        padding: 5px 10px;
+        padding: 13px 8px;
         height: 45%;
       }
 
@@ -336,7 +346,7 @@
           margin-left: 10px;
 
           @include breakpoint(sm) {
-            font-size: .875rem;
+            font-size: 0.875rem;
           }
         }
       }
@@ -701,6 +711,14 @@
       &:first-of-type {
         grid-area: auto;
       }
+
+      @include breakpoint(l) {
+        border-left: none;
+      }
+
+      .number{
+        color: $black; 
+       }
     }
 
     #{$_this}__client {
@@ -710,6 +728,7 @@
       @include breakpoint(l) {
         grid-template-columns: 100%;
         margin-bottom: 0;
+        padding: 10px;
       }
     }
   }
