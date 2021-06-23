@@ -602,7 +602,7 @@
     }
   }
 
-  @include breakpoint(890px) {
+  @include breakpoint(l) {
     .timetable__datepicker-container {
       width: 100%;
       padding-bottom: 5px;
@@ -610,6 +610,16 @@
         left: calc(100% - 10px);
         &--back{
           left: calc(100% - 80px);
+        }
+      }
+    }
+  }
+
+  @include breakpoint(360px) {
+    .timetable__datepicker-container {
+      .phone {
+        &--back {
+          left: calc(100% - 40px);
         }
       }
     }

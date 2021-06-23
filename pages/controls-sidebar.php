@@ -126,7 +126,73 @@
             </div>
             <div class="site-aside__block">
                 <h3>Specialistai</h3>
-                    <div class="site-aside__item"><a href="#">Specialistų profiliai</a></div>
+                <div class="site-aside__item <?php if ($thisPage == "specialist-profiles") echo "site-aside__item--active site-aside__item--open"; ?>">
+                        <a href="#">Specialistų profiliai</a>
+                        <div class="site-aside__filters <?php if ($thisPage != "specialist-profiles") echo "hidden"; ?>">
+                            <p>Registracijos data nuo</p>
+                            <div class="site-aside__datepicker-container">
+                                <input class="site-aside__datepicker" placeholder="Nuo">
+                            </div>
+                            <p>Registracijos data iki</p>
+                            <div class="site-aside__datepicker-container">
+                                <input class="site-aside__datepicker" placeholder="Iki">
+                            </div>
+                            <p>Sritis</p>
+                            <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
+                                <option></option>
+                                <option>Visi</option>
+                                <option>Klinikos ir estetinė medicina</option>
+                                <option>Odontologijos klinikos</option>
+                                <option>Veterinarijos klinikos</option>
+                                <option>Grožio salonai ir kirpyklos</option>
+                                <option>SPA ir masažo salonai</option>
+                                <option>Sportas ir reabilitacija</option>
+                            </select>
+                            <p>Šalis</p>
+                            <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
+                                <option></option>
+                                <option>Visi</option>
+                                <option>Lietuva</option>
+                            </select>
+                            <p>Specialisto miestas</p>
+                            <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
+                                <option></option>
+                                <option>Visi</option>
+                                <option>Vilnius</option>
+                                <option>Kaunas</option>
+                                <option>Klaipėda</option>
+                            </select>
+                            <p>Paskutinės val. pasiūlymas</p>
+                            <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
+                                <option></option>
+                                <option>Visi</option>
+                                <option>Nuolaida nustatyta</option>
+                                <option>Iki darbo pabaigos likus nustatyta</option>
+                            </select>
+                            <p>Laikai rezervavimui</p>
+                            <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
+                                <option></option>
+                                <option>Visi</option>
+                                <option>Pirmoje dienos pusėje yra</option>
+                                <option>Antroje dienos pusėje yra</option>
+                                <option>Leisti registruotis likus yra</option>
+                            </select>
+                            <p>Pažymėti/Nepažymėti</p>
+                            <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
+                                <option></option>
+                                <option>Visi</option>
+                                <option>Pažymėti</option>
+                                <option>Nepažymėti</option>
+                            </select>
+                            <p>Aktyvūs/Neaktyvūs</p>
+                            <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
+                                <option></option>
+                                <option>Visi</option>
+                                <option>Aktyvūs</option>
+                                <option>Neaktyvūs</option>
+                            </select>
+                        </div>
+                    </div>
                     <div class="site-aside__item"><a href="#">Ataskaita specialistui</a></div>
                     <div class="site-aside__item <?php if ($thisPage == "company-profiles") echo "site-aside__item--active site-aside__item--open"; ?>">
                         <a href="#">Įmonių profiliai</a>

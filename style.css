@@ -19928,7 +19928,7 @@ section.product .product__block--company .slick-track {
   margin-bottom: 10px;
 }
 
-@media (max-width: 890px) {
+@media (max-width: 991px) {
   .specialist-profile .timetable__datepicker-container {
     width: 100%;
     padding-bottom: 5px;
@@ -19938,6 +19938,12 @@ section.product .product__block--company .slick-track {
   }
   .specialist-profile .timetable__datepicker-container .phone--back {
     left: calc(100% - 80px);
+  }
+}
+
+@media (max-width: 360px) {
+  .specialist-profile .timetable__datepicker-container .phone--back {
+    left: calc(100% - 40px);
   }
 }
 
@@ -23385,6 +23391,16 @@ section.product .product__block--company .slick-track {
   }
 }
 
+.statistics .stat-grid .align-left {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+.statistics .stat-grid .align-left .smaller {
+  margin-top: 5px;
+}
+
 .statistics .stat-grid hr {
   margin: 0;
   background-color: #eeeeee;
@@ -23842,6 +23858,12 @@ section.product .product__block--company .slick-track {
 @media (max-width: 991px) {
   .statistics__client-item {
     padding: 0 10px;
+  }
+  .statistics__client-item:nth-of-type(2) {
+    padding: 10px 10px 0;
+  }
+  .statistics__client-item:last-of-type {
+    padding: 0 10px 10px;
   }
   .statistics__client-item br {
     display: none;

@@ -117,7 +117,7 @@
                     </div>
                     <div class="stat-grid__item">
                         <div class="stat-grid__top">
-                            <h2>38 d.</h2>
+                        <h2 class="align-left">38<span class="smaller">d.</span></h2>
                         </div>
                         <hr>
                         <div class="stat-grid__bottom">
@@ -137,7 +137,7 @@
                     </div>
                     <div class="stat-grid__item">
                         <div class="stat-grid__top">
-                            <h2>38 €</h2>
+                        <h2 class="align-left">38<span class="smaller">€</span></h2>
                         </div>
                         <hr>
                         <div class="stat-grid__bottom">

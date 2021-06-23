@@ -1,5 +1,5 @@
 <?php $thisCat = "controls";
-$thisPage = "company-profiles"; ?>
+$thisPage = "specialist-profiles"; ?>
 
 <?php require_once ('header.php'); ?>
 
