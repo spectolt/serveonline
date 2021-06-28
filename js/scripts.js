@@ -1,6 +1,5 @@
 $(document).ready(onDocumentReady, changeTextWidth());
 
-
 function onDocumentReady(callback) {
   //today button sets the date
   $.datepicker._gotoToday = function (id) {
@@ -252,8 +251,12 @@ function onDocumentReady(callback) {
               $(inst.dpDiv).css({
                 left: "50%",
                 transform: "translateX(-50%)",
-                top: $(".js-datepicker").offset().top + $(".js-datepicker").height() + 10,
+                top:
+                  $(".js-datepicker").offset().top +
+                  $(".js-datepicker").height() +
+                  10,
               });
+              alert("w");
             } else {
               $(inst.dpDiv).css({
                 top: offsetHeight.top + "px",
@@ -388,12 +391,12 @@ function onDocumentReady(callback) {
       .not(".js_ignore_mark")
       .on("focus", function (e) {
         if (window.matchMedia("(min-width: 701px)").matches) {
-        $("html, body").animate(
-          {
-            scrollTop: $(this).offset().top - 20,
-          },
-          300
-        );
+          $("html, body").animate(
+            {
+              scrollTop: $(this).offset().top - 20,
+            },
+            300
+          );
         } else {
           $("html, body").animate(
             {
@@ -1395,7 +1398,7 @@ function onDocumentReady(callback) {
       }
     });
 
-    var timer_id2;
+  var timer_id2;
 
   $(".payment-plan__info").css("display", "none");
   $("input[name='plan'], ~ label, .payment-plan th:empty")
@@ -1960,6 +1963,25 @@ function onDocumentReady(callback) {
         "Lapkričio",
         "Gruodžio",
       ],
+      beforeShow: function (input, inst) {
+        if (window.matchMedia("(max-width: 991px)").matches) {
+          window.setTimeout(function () {
+            inst.dpDiv.css({
+              top: $(".statistics__datepicker"),
+              left: "50%",
+              transform: "translate(-50%, 10px)",
+            });
+          }, 1);
+        } else {
+          window.setTimeout(function () {
+            $("#ui-datepicker-div").position({
+              my: "top",
+              at: "bottom",
+              of: input,
+            });
+          }, 1);
+        }
+      },
     })
     .datepicker("setDate", new Date());
 
@@ -2136,8 +2158,8 @@ function onDocumentReady(callback) {
       marker: {
         colors: ["#5055be", "#c0c2e8", "#101b51", "#ff9954", "#ffb35b"],
         line: {
-          color: '#f4f4f6',
-          width: 1
+          color: "#f4f4f6",
+          width: 1,
         },
       },
     },
@@ -2158,8 +2180,8 @@ function onDocumentReady(callback) {
       marker: {
         colors: ["#5055be", "#c0c2e8", "#101b51", "#ff9954", "#ffb35b"],
         line: {
-          color: '#f4f4f6',
-          width: 1
+          color: "#f4f4f6",
+          width: 1,
         },
       },
     },
@@ -2174,12 +2196,12 @@ function onDocumentReady(callback) {
       automargin: true,
       hole: 0.7,
       automargin: true,
-      hoverinfo: 'none',
+      hoverinfo: "none",
       marker: {
         colors: ["#101b51", "#ffb35b", "#c0c2e8"],
         line: {
-          color: '#f4f4f6',
-          width: 1
+          color: "#f4f4f6",
+          width: 1,
         },
       },
     },
@@ -2260,8 +2282,8 @@ function onDocumentReady(callback) {
           marker: {
             colors: ["#5055be", "#c0c2e8", "#101b51", "#ff9954", "#ffb35b"],
             line: {
-              color: '#f4f4f6',
-              width: 1
+              color: "#f4f4f6",
+              width: 1,
             },
           },
         },
@@ -2282,8 +2304,8 @@ function onDocumentReady(callback) {
           marker: {
             colors: ["#5055be", "#c0c2e8", "#101b51", "#ff9954", "#ffb35b"],
             line: {
-              color: '#f4f4f6',
-              width: 1
+              color: "#f4f4f6",
+              width: 1,
             },
           },
         },
@@ -2298,12 +2320,12 @@ function onDocumentReady(callback) {
           automargin: true,
           hole: 0.7,
           automargin: true,
-          hoverinfo: 'none',
+          hoverinfo: "none",
           marker: {
             colors: ["#101b51", "#ffb35b", "#c0c2e8"],
             line: {
-              color: '#f4f4f6',
-              width: 1
+              color: "#f4f4f6",
+              width: 1,
             },
           },
         },
@@ -2412,7 +2434,7 @@ function onDocumentReady(callback) {
   }
 
   function labelX(i) {
-    if(window.matchMedia("(min-width: 991px)").matches) {
+    if (window.matchMedia("(min-width: 991px)").matches) {
       if (i == 0) {
         return 0.166;
       } else if (i == 1) {
@@ -2420,21 +2442,25 @@ function onDocumentReady(callback) {
       } else {
         return 0.834;
       }
-    } else if (window.matchMedia("(min-width: 701px) and (max-width: 991px)").matches) {
+    } else if (
+      window.matchMedia("(min-width: 701px) and (max-width: 991px)").matches
+    ) {
       if (i == 0) {
         return 0.25;
       } else if (i == 2) {
         return 0.75;
-      } 
+      }
     } else {
       return 0.5;
     }
   }
 
   function labelY(i) {
-    if(window.matchMedia("(min-width: 991px)").matches) {
+    if (window.matchMedia("(min-width: 991px)").matches) {
       return 0.5;
-    } else if (window.matchMedia("(min-width: 701px) and (max-width: 991px)").matches) {
+    } else if (
+      window.matchMedia("(min-width: 701px) and (max-width: 991px)").matches
+    ) {
       if (i == 0 || i == 2) {
         return 0.815;
       } else if (i == 1) {
@@ -2744,9 +2770,7 @@ function hasScrolled() {
   // This is necessary so you never see what is "behind" the navbar.
   if (st > lastScrollTop && st > navbarHeight) {
     // Scroll Down
-    if (
-      !$("section.specialist")
-    ) {
+    if (!$("section.specialist")) {
       $(".site-header").removeClass("site-header--show");
     }
 
