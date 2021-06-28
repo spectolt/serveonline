@@ -179,7 +179,6 @@
     position: relative;
   }
 
-
   &__table-container {
     display: flex;
     border: 1px solid #eee;
@@ -1093,6 +1092,22 @@
 }
 
 .messages-settings {
+  .controls__top {
+    .controls__delete,
+    .controls__cancel {
+      @include breakpoint(sm) {
+        margin: 0;
+        max-width: none;
+        width: 100%;
+      }
+    }
+    button {
+      @include breakpoint(sm) {
+        justify-content: center;
+      }
+    }
+  }
+
   .languages {
     @include breakpoint(sm) {
       grid-column: auto / span 2;
@@ -1117,7 +1132,7 @@
     }
 
     th {
-      vertical-align: top;
+      vertical-align: middle;
       padding: 10px 6px;
       font-weight: 400;
     }
@@ -1125,50 +1140,59 @@
     td {
       vertical-align: middle;
       padding: 8px;
+
+      &:last-of-type {
+        width: 123px;
+      }
+
+      .checkbox {
+        label {
+          &:before {
+            top: -7px;
+          }
+        }
+      }
     }
 
     th,
     td {
       &:first-of-type {
-        width: 77px;
+        width: 32px;
       }
       &:nth-of-type(2) {
-        width: 110px;
+        width: 78px;
       }
       &:nth-of-type(3) {
-        width: 102px;
+        width: 106px;
       }
       &:nth-of-type(4) {
-        min-width: 400px;
-        width: 400px;
-
-        p {
-          min-width: 384px;
-        }
+        width: 160px;
       }
       &:nth-of-type(5) {
-        width: 66px;
+        width: 112px;
         text-align: center;
       }
       &:nth-of-type(6) {
-        width: 70px;
+        width: 367px;
       }
       &:nth-of-type(7) {
-        width: 78px;
+        width: 77px;
         text-align: center;
       }
       &:nth-of-type(8) {
-        width: 140px;
+        width: 74px;
+      }
+      &:nth-of-type(9) {
+        width: 86px;
       }
       &:last-of-type {
-        width: 94px;
+        width: 131px;
       }
     }
   }
 }
 
 .profiles {
-
   &__table {
     th .checkbox input[type="checkbox"]:checked ~ label:before {
       background-color: rgba(255, 255, 255, 0.49);
@@ -1457,7 +1481,6 @@
   }
 
   .controls__buttons-container {
-
     button {
       height: 35px;
 
@@ -1780,17 +1803,17 @@
       padding-top: 10px;
     }
 
-    .top-arrow{
-      &:first-of-type{
+    .top-arrow {
+      &:first-of-type {
         &:before,
-        &:after{
+        &:after {
           left: 90%;
         }
       }
-      
-      &:nth-of-type(2){
+
+      &:nth-of-type(2) {
         &:before,
-        &:after{
+        &:after {
           left: 90%;
         }
       }
@@ -1862,7 +1885,7 @@
       }
 
       &:nth-of-type(2),
-      &:nth-of-type(3){
+      &:nth-of-type(3) {
         font-size: 1rem;
       }
 
@@ -1880,34 +1903,34 @@
   }
 }
 
-.report{
-  .controls__top{
-    @include breakpoint(880px){
+.report {
+  .controls__top {
+    @include breakpoint(880px) {
       justify-content: flex-end;
     }
 
-    @include breakpoint(sm){
+    @include breakpoint(sm) {
       grid-template-columns: 1fr;
       grid-gap: 10px;
     }
   }
-  .controls__buttons-container{
+  .controls__buttons-container {
     margin-right: 10px;
 
-    @include breakpoint(sm){
+    @include breakpoint(sm) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-gap: 10px;
 
-      button{
+      button {
         width: 100%;
         text-align: center;
       }
     }
 
-    @include breakpoint(510px){
+    @include breakpoint(510px) {
       display: block;
-      .controls__button--pdf{
+      .controls__button--pdf {
         margin-bottom: 10px;
       }
     }
@@ -1920,29 +1943,32 @@
     top: 5px;
   }
 
-  .controls__table{
-    .top-arrow{
-      &:nth-of-type(2){
-        &:before, &:after{
+  .controls__table {
+    .top-arrow {
+      &:nth-of-type(2) {
+        &:before,
+        &:after {
           left: 96%;
         }
       }
     }
 
-    tr{
-      &:last-of-type{
-        .top-arrow{
+    tr {
+      &:last-of-type {
+        .top-arrow {
           &:first-of-type,
-          &:nth-of-type(2){
-            &:before, &:after{
+          &:nth-of-type(2) {
+            &:before,
+            &:after {
               left: 85%;
             }
           }
           &:nth-of-type(3),
           &:nth-of-type(4),
           &:nth-of-type(5),
-          &:last-of-type{
-            &:before, &:after{
+          &:last-of-type {
+            &:before,
+            &:after {
               left: 77%;
             }
           }
@@ -1954,76 +1980,76 @@
       overflow-y: auto;
     }
 
-    th{
+    th {
       padding-left: 10px;
 
-      &:first-of-type{
+      &:first-of-type {
         width: 27px;
-      } 
-      &:nth-of-type(2){
+      }
+      &:nth-of-type(2) {
         width: 206px;
       }
-      &:nth-of-type(3){
+      &:nth-of-type(3) {
         width: 119px;
       }
-      &:nth-of-type(4){
+      &:nth-of-type(4) {
         width: 113px;
       }
-      &:nth-of-type(5){
+      &:nth-of-type(5) {
         width: 178px;
       }
-      &:nth-of-type(6){
+      &:nth-of-type(6) {
         width: 141px;
       }
-      &:nth-of-type(7){
+      &:nth-of-type(7) {
         width: 83px;
       }
-      &:nth-of-type(8){
+      &:nth-of-type(8) {
         width: 122px;
       }
-      &:nth-of-type(9){
+      &:nth-of-type(9) {
         width: 120px;
       }
-      &:nth-of-type(10){
+      &:nth-of-type(10) {
         width: 121px;
       }
-      &:nth-of-type(11){
+      &:nth-of-type(11) {
         width: 63px;
       }
-      &:nth-of-type(12){
+      &:nth-of-type(12) {
         width: 91px;
       }
-      &:nth-of-type(13){
+      &:nth-of-type(13) {
         width: 120px;
       }
-      &:nth-of-type(14){
+      &:nth-of-type(14) {
         width: 89px;
       }
-      &:nth-of-type(15){
+      &:nth-of-type(15) {
         width: 78px;
       }
-      &:nth-of-type(16){
+      &:nth-of-type(16) {
         width: 89px;
       }
-      &:nth-of-type(17){
+      &:nth-of-type(17) {
         width: 85px;
       }
-      &:nth-of-type(18){
+      &:nth-of-type(18) {
         width: 64px;
       }
-      &:nth-of-type(19){
+      &:nth-of-type(19) {
         width: 58px;
       }
-      &:nth-of-type(20){
+      &:nth-of-type(20) {
         width: 44px;
       }
-      &:nth-of-type(21){
+      &:nth-of-type(21) {
         width: 62px;
       }
-      &:nth-of-type(22){
+      &:nth-of-type(22) {
         width: 95px;
       }
-      &:nth-of-type(23){
+      &:nth-of-type(23) {
         width: 90px !important;
         text-align: center;
       }
@@ -2031,134 +2057,133 @@
         width: 40px;
       }
     }
-    td{
+    td {
       height: 31px;
       vertical-align: middle;
-      &:first-of-type{
+      &:first-of-type {
         width: 27px;
-      } 
-      &:nth-of-type(2){
+      }
+      &:nth-of-type(2) {
         width: 206px;
         text-align: left;
       }
-      &:nth-of-type(3){
+      &:nth-of-type(3) {
         width: 119px;
         text-align: left;
       }
-      &:nth-of-type(4){
+      &:nth-of-type(4) {
         width: 113px;
       }
-      &:nth-of-type(5){
+      &:nth-of-type(5) {
         width: 178px;
       }
-      &:nth-of-type(6){
+      &:nth-of-type(6) {
         width: 141px;
       }
-      &:nth-of-type(7){
+      &:nth-of-type(7) {
         width: 83px;
       }
-      &:nth-of-type(8){
+      &:nth-of-type(8) {
         width: 62px;
         text-align: center;
       }
-      &:nth-of-type(9){
+      &:nth-of-type(9) {
         width: 59px;
         text-align: center;
       }
-      &:nth-of-type(10){
+      &:nth-of-type(10) {
         width: 62px;
         text-align: center;
       }
-      &:nth-of-type(11){
+      &:nth-of-type(11) {
         width: 59px;
         text-align: center;
       }
-      &:nth-of-type(12){
+      &:nth-of-type(12) {
         width: 62px;
         text-align: center;
       }
-      &:nth-of-type(13){
+      &:nth-of-type(13) {
         width: 59px;
         text-align: center;
       }
-      &:nth-of-type(14){
+      &:nth-of-type(14) {
         width: 63px;
         text-align: center;
       }
-      &:nth-of-type(15){
+      &:nth-of-type(15) {
         width: 91px;
         text-align: center;
       }
-      &:nth-of-type(16){
+      &:nth-of-type(16) {
         width: 120px;
         text-align: center;
       }
-      &:nth-of-type(17){
+      &:nth-of-type(17) {
         width: 89px;
         text-align: center;
       }
-      &:nth-of-type(18){
+      &:nth-of-type(18) {
         width: 78px;
         text-align: center;
       }
-      &:nth-of-type(19){
+      &:nth-of-type(19) {
         width: 89px;
         text-align: center;
       }
-      &:nth-of-type(20){
+      &:nth-of-type(20) {
         width: 85px;
         text-align: center;
       }
-      &:nth-of-type(21){
+      &:nth-of-type(21) {
         width: 64px;
         text-align: center;
       }
-      &:nth-of-type(22){
+      &:nth-of-type(22) {
         width: 58px;
         text-align: center;
       }
-      &:nth-of-type(23){
+      &:nth-of-type(23) {
         width: 44px;
         text-align: center;
       }
-      &:nth-of-type(24){
+      &:nth-of-type(24) {
         width: 62px;
         text-align: center;
       }
-      &:nth-of-type(25){
+      &:nth-of-type(25) {
         width: 95px;
         text-align: center;
       }
-      &:nth-of-type(26){
+      &:nth-of-type(26) {
         width: 90px;
         text-align: center;
       }
       &:last-of-type {
         width: 40px;
       }
-      .checkbox{
-        label{
-          &:before{
+      .checkbox {
+        label {
+          &:before {
             left: -5px;
           }
-          &:after{
+          &:after {
             left: -1px;
           }
         }
       }
-      
     }
-    .left-arrow{
-      &:before{
+    .left-arrow {
+      &:before {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%) rotate(-90deg);
       }
     }
 
-    tfoot{
-      td{
-        &:nth-of-type(2){
+    tfoot {
+      td {
+        &:nth-of-type(2) {
           text-align: center;
         }
       }
@@ -2166,30 +2191,30 @@
   }
 }
 
-.company-report{
-  .controls__top{
-    @include breakpoint(880px){
+.company-report {
+  .controls__top {
+    @include breakpoint(880px) {
       justify-content: flex-end;
     }
-    @include breakpoint(sm){
+    @include breakpoint(sm) {
       grid-template-columns: 1fr;
       grid-gap: 10px;
     }
   }
-  .controls__buttons-container{
+  .controls__buttons-container {
     margin-right: 10px;
-    @include breakpoint(sm){
+    @include breakpoint(sm) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-gap: 10px;
-      button{
+      button {
         width: 100%;
         text-align: center;
       }
     }
-    @include breakpoint(510px){
+    @include breakpoint(510px) {
       display: block;
-      .controls__button--pdf{
+      .controls__button--pdf {
         margin-bottom: 10px;
       }
     }
@@ -2206,212 +2231,216 @@
     overflow-y: auto;
   }
 
-  .controls__table{
-    
-    tr:nth-of-type(2){
+  .controls__table {
+    tr:nth-of-type(2) {
       th:first-of-type,
-      th:nth-of-type(2){
-        &:before, &:after{
+      th:nth-of-type(2) {
+        &:before,
+        &:after {
           left: 81%;
-        } 
+        }
       }
 
       th:nth-of-type(3),
-      th:nth-of-type(4){
-        &:before, &:after{
+      th:nth-of-type(4) {
+        &:before,
+        &:after {
           left: 73%;
-        } 
+        }
       }
 
       th:nth-of-type(4),
-      th:last-of-type{
-        &:before, &:after{
+      th:last-of-type {
+        &:before,
+        &:after {
           left: 73%;
-        } 
+        }
       }
     }
 
-    th{
-      font-family: 'Roboto', sans-serif;
+    th {
+      font-family: "Roboto", sans-serif;
     }
 
-    th, td{
+    th,
+    td {
       vertical-align: middle;
       padding-left: 10px;
 
-      &:first-of-type{
+      &:first-of-type {
         width: 27px;
-      } 
+      }
 
-      &:nth-of-type(2){
+      &:nth-of-type(2) {
         width: 169px;
-        &:before, &:after{
+        &:before,
+        &:after {
           left: 93%;
         }
-      } 
+      }
 
-      &:nth-of-type(3){
+      &:nth-of-type(3) {
         width: 201px;
-      } 
+      }
 
-      &:nth-of-type(4){
+      &:nth-of-type(4) {
         width: 205px;
-      } 
+      }
 
-      &:nth-of-type(5){
+      &:nth-of-type(5) {
         width: 102px;
-      } 
+      }
 
-      &:nth-of-type(6){
+      &:nth-of-type(6) {
         width: 100px;
-      } 
+      }
 
-      &:nth-of-type(7){
+      &:nth-of-type(7) {
         width: 101px;
-      } 
+      }
 
-      &:nth-of-type(8){
+      &:nth-of-type(8) {
         width: 63px;
-      } 
+      }
 
-      &:nth-of-type(9){
+      &:nth-of-type(9) {
         width: 81px;
       }
 
-      &:nth-of-type(10){
+      &:nth-of-type(10) {
         width: 110px;
-      } 
+      }
 
-      &:nth-of-type(11){
+      &:nth-of-type(11) {
         width: 79px;
-      } 
+      }
 
-      &:nth-of-type(12){
+      &:nth-of-type(12) {
         width: 78px;
       }
-      
-      &:nth-of-type(13){
+
+      &:nth-of-type(13) {
         width: 89px;
-      } 
+      }
 
-      &:nth-of-type(14){
+      &:nth-of-type(14) {
         width: 85px;
-      } 
+      }
 
-      &:nth-of-type(15){
+      &:nth-of-type(15) {
         width: 64px;
       }
 
-      &:nth-of-type(16){
+      &:nth-of-type(16) {
         width: 58px;
-      } 
+      }
 
-      &:nth-of-type(17){
+      &:nth-of-type(17) {
         width: 44px;
-      } 
+      }
 
-      &:nth-of-type(18){
+      &:nth-of-type(18) {
         width: 62px;
-      } 
+      }
 
-      &:nth-of-type(19){
+      &:nth-of-type(19) {
         width: 95px;
-      } 
+      }
 
-      &:nth-of-type(20){
+      &:nth-of-type(20) {
         width: 77px;
-      } 
+      }
 
       &:last-of-type {
         width: 40px;
       }
     }
 
-    td{
+    td {
       height: 31px;
       text-align: center;
-      &:first-of-type{
+      &:first-of-type {
         width: 27px;
       }
-      &:nth-of-type(2){
+      &:nth-of-type(2) {
         width: 169px;
         text-align: left;
       }
-      &:nth-of-type(3){
+      &:nth-of-type(3) {
         width: 201px;
         text-align: left;
       }
-      &:nth-of-type(4){
+      &:nth-of-type(4) {
         width: 205px;
         text-align: left;
       }
-      &:nth-of-type(5){
+      &:nth-of-type(5) {
         width: 50px;
       }
-      &:nth-of-type(6){
+      &:nth-of-type(6) {
         width: 51px;
       }
-      &:nth-of-type(7){
+      &:nth-of-type(7) {
         width: 50px;
       }
-      &:nth-of-type(8){
+      &:nth-of-type(8) {
         width: 51px;
       }
-      &:nth-of-type(9){
+      &:nth-of-type(9) {
         width: 50px;
       }
-      &:nth-of-type(10){
+      &:nth-of-type(10) {
         width: 51px;
       }
-      &:nth-of-type(11){
+      &:nth-of-type(11) {
         width: 63px;
       }
-      &:nth-of-type(12){
+      &:nth-of-type(12) {
         width: 81px;
       }
-      &:nth-of-type(13){
+      &:nth-of-type(13) {
         width: 110px;
       }
-      &:nth-of-type(14){
+      &:nth-of-type(14) {
         width: 79px;
       }
-      &:nth-of-type(15){
+      &:nth-of-type(15) {
         width: 78px;
       }
-      &:nth-of-type(16){
+      &:nth-of-type(16) {
         width: 89px;
       }
-      &:nth-of-type(17){
+      &:nth-of-type(17) {
         width: 85px;
       }
-      &:nth-of-type(18){
+      &:nth-of-type(18) {
         width: 64px;
       }
-      &:nth-of-type(19){
+      &:nth-of-type(19) {
         width: 58px;
       }
-      &:nth-of-type(20){
+      &:nth-of-type(20) {
         width: 44px;
       }
-      &:nth-of-type(21){
+      &:nth-of-type(21) {
         width: 62px;
       }
-      &:nth-of-type(22){
+      &:nth-of-type(22) {
         width: 95px;
       }
     }
-    .checkbox{
-      label{
-        &:before{
+    .checkbox {
+      label {
+        &:before {
           left: -5px;
         }
-        &:after{
+        &:after {
           left: -1px;
         }
       }
     }
-    .left-arrow{
-      &:before{
+    .left-arrow {
+      &:before {
         top: 58%;
         left: 82%;
       }
@@ -2419,8 +2448,7 @@
   }
 }
 
-
-.employee-profiles{
+.employee-profiles {
   .controls__top {
     margin-right: 0;
     @include breakpoint(sm) {
@@ -2430,16 +2458,16 @@
   }
   .controls__group,
   .controls__buttons-container {
-    .controls__button{
-      &--new{
-        &:before{
+    .controls__button {
+      &--new {
+        &:before {
           background: url(img/icons/nauja-paskyra.svg) no-repeat center;
           background-size: 50%;
           top: 0px;
         }
       }
     }
-    
+
     @include breakpoint(sm) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -2457,61 +2485,63 @@
     overflow-y: auto;
   }
 
-  .controls__table{
-    th{
-      font-family: 'Roboto', sans-serif;
+  .controls__table {
+    th {
+      font-family: "Roboto", sans-serif;
     }
-    th, td{
+    th,
+    td {
       vertical-align: middle;
       padding-left: 10px;
-      &:first-of-type{
+      &:first-of-type {
         width: 27px;
-      } 
-      &:nth-of-type(2){
+      }
+      &:nth-of-type(2) {
         width: 82px;
-        &:before, &:after{
+        &:before,
+        &:after {
           left: 87%;
         }
-      } 
-      &:nth-of-type(3){
+      }
+      &:nth-of-type(3) {
         width: 82px;
-      } 
-      &:nth-of-type(4){
+      }
+      &:nth-of-type(4) {
         width: 345px;
-      } 
-      &:nth-of-type(5){
+      }
+      &:nth-of-type(5) {
         width: 112px;
-      } 
-      &:nth-of-type(6){
+      }
+      &:nth-of-type(6) {
         width: 513px;
-      }  
-      &:nth-of-type(7){
+      }
+      &:nth-of-type(7) {
         width: 70px;
         text-align: center;
-      } 
+      }
       &:last-of-type {
         width: 40px;
       }
     }
 
-    td{
+    td {
       height: 31px;
       text-align: left;
     }
 
-    .checkbox{
-      label{
-        &:before{
+    .checkbox {
+      label {
+        &:before {
           left: -5px;
         }
-        &:after{
+        &:after {
           left: -1px;
         }
       }
     }
 
-    .left-arrow{
-      &:before{
+    .left-arrow {
+      &:before {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%) rotate(-90deg);

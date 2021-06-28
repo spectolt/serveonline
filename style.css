@@ -13663,6 +13663,23 @@ section.product .product__block--company .slick-track {
 }
 
 @media (max-width: 700px) {
+  .messages-settings .controls__top .controls__delete,
+  .messages-settings .controls__top .controls__cancel {
+    margin: 0;
+    max-width: none;
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .messages-settings .controls__top button {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media (max-width: 700px) {
   .messages-settings .languages {
     grid-column: auto / span 2;
   }
@@ -13685,7 +13702,7 @@ section.product .product__block--company .slick-track {
 }
 
 .messages-settings .messages__table th {
-  vertical-align: top;
+  vertical-align: middle;
   padding: 10px 6px;
   font-weight: 400;
 }
@@ -13695,57 +13712,64 @@ section.product .product__block--company .slick-track {
   padding: 8px;
 }
 
+.messages-settings .messages__table td:last-of-type {
+  width: 123px;
+}
+
+.messages-settings .messages__table td .checkbox label:before {
+  top: -7px;
+}
+
 .messages-settings .messages__table th:first-of-type,
 .messages-settings .messages__table td:first-of-type {
-  width: 77px;
+  width: 32px;
 }
 
 .messages-settings .messages__table th:nth-of-type(2),
 .messages-settings .messages__table td:nth-of-type(2) {
-  width: 110px;
+  width: 78px;
 }
 
 .messages-settings .messages__table th:nth-of-type(3),
 .messages-settings .messages__table td:nth-of-type(3) {
-  width: 102px;
+  width: 106px;
 }
 
 .messages-settings .messages__table th:nth-of-type(4),
 .messages-settings .messages__table td:nth-of-type(4) {
-  min-width: 400px;
-  width: 400px;
-}
-
-.messages-settings .messages__table th:nth-of-type(4) p,
-.messages-settings .messages__table td:nth-of-type(4) p {
-  min-width: 384px;
+  width: 160px;
 }
 
 .messages-settings .messages__table th:nth-of-type(5),
 .messages-settings .messages__table td:nth-of-type(5) {
-  width: 66px;
+  width: 112px;
   text-align: center;
 }
 
 .messages-settings .messages__table th:nth-of-type(6),
 .messages-settings .messages__table td:nth-of-type(6) {
-  width: 70px;
+  width: 367px;
 }
 
 .messages-settings .messages__table th:nth-of-type(7),
 .messages-settings .messages__table td:nth-of-type(7) {
-  width: 78px;
+  width: 77px;
   text-align: center;
 }
 
 .messages-settings .messages__table th:nth-of-type(8),
 .messages-settings .messages__table td:nth-of-type(8) {
-  width: 140px;
+  width: 74px;
+}
+
+.messages-settings .messages__table th:nth-of-type(9),
+.messages-settings .messages__table td:nth-of-type(9) {
+  width: 86px;
 }
 
 .messages-settings .messages__table th:last-of-type,
 .messages-settings .messages__table td:last-of-type {
-  width: 94px;
+  width: 131px;
 }
 
 .profiles__table th .checkbox input[type="checkbox"]:checked ~ label:before {
@@ -14952,99 +14976,123 @@ section.product .product__block--company .slick-track {
 }
 
 .company-report .controls__table th {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
-.company-report .controls__table th, .company-report .controls__table td {
+.company-report .controls__table th,
+.company-report .controls__table td {
   vertical-align: middle;
   padding-left: 10px;
 }
 
-.company-report .controls__table th:first-of-type, .company-report .controls__table td:first-of-type {
+.company-report .controls__table th:first-of-type,
+.company-report .controls__table td:first-of-type {
   width: 27px;
 }
 
-.company-report .controls__table th:nth-of-type(2), .company-report .controls__table td:nth-of-type(2) {
+.company-report .controls__table th:nth-of-type(2),
+.company-report .controls__table td:nth-of-type(2) {
   width: 169px;
 }
 
-.company-report .controls__table th:nth-of-type(2):before, .company-report .controls__table th:nth-of-type(2):after, .company-report .controls__table td:nth-of-type(2):before, .company-report .controls__table td:nth-of-type(2):after {
+.company-report .controls__table th:nth-of-type(2):before, .company-report .controls__table th:nth-of-type(2):after,
+.company-report .controls__table td:nth-of-type(2):before,
+.company-report .controls__table td:nth-of-type(2):after {
   left: 93%;
 }
 
-.company-report .controls__table th:nth-of-type(3), .company-report .controls__table td:nth-of-type(3) {
+.company-report .controls__table th:nth-of-type(3),
+.company-report .controls__table td:nth-of-type(3) {
   width: 201px;
 }
 
-.company-report .controls__table th:nth-of-type(4), .company-report .controls__table td:nth-of-type(4) {
+.company-report .controls__table th:nth-of-type(4),
+.company-report .controls__table td:nth-of-type(4) {
   width: 205px;
 }
 
-.company-report .controls__table th:nth-of-type(5), .company-report .controls__table td:nth-of-type(5) {
+.company-report .controls__table th:nth-of-type(5),
+.company-report .controls__table td:nth-of-type(5) {
   width: 102px;
 }
 
-.company-report .controls__table th:nth-of-type(6), .company-report .controls__table td:nth-of-type(6) {
+.company-report .controls__table th:nth-of-type(6),
+.company-report .controls__table td:nth-of-type(6) {
   width: 100px;
 }
 
-.company-report .controls__table th:nth-of-type(7), .company-report .controls__table td:nth-of-type(7) {
+.company-report .controls__table th:nth-of-type(7),
+.company-report .controls__table td:nth-of-type(7) {
   width: 101px;
 }
 
-.company-report .controls__table th:nth-of-type(8), .company-report .controls__table td:nth-of-type(8) {
+.company-report .controls__table th:nth-of-type(8),
+.company-report .controls__table td:nth-of-type(8) {
   width: 63px;
 }
 
-.company-report .controls__table th:nth-of-type(9), .company-report .controls__table td:nth-of-type(9) {
+.company-report .controls__table th:nth-of-type(9),
+.company-report .controls__table td:nth-of-type(9) {
   width: 81px;
 }
 
-.company-report .controls__table th:nth-of-type(10), .company-report .controls__table td:nth-of-type(10) {
+.company-report .controls__table th:nth-of-type(10),
+.company-report .controls__table td:nth-of-type(10) {
   width: 110px;
 }
 
-.company-report .controls__table th:nth-of-type(11), .company-report .controls__table td:nth-of-type(11) {
+.company-report .controls__table th:nth-of-type(11),
+.company-report .controls__table td:nth-of-type(11) {
   width: 79px;
 }
 
-.company-report .controls__table th:nth-of-type(12), .company-report .controls__table td:nth-of-type(12) {
+.company-report .controls__table th:nth-of-type(12),
+.company-report .controls__table td:nth-of-type(12) {
   width: 78px;
 }
 
-.company-report .controls__table th:nth-of-type(13), .company-report .controls__table td:nth-of-type(13) {
+.company-report .controls__table th:nth-of-type(13),
+.company-report .controls__table td:nth-of-type(13) {
   width: 89px;
 }
 
-.company-report .controls__table th:nth-of-type(14), .company-report .controls__table td:nth-of-type(14) {
+.company-report .controls__table th:nth-of-type(14),
+.company-report .controls__table td:nth-of-type(14) {
   width: 85px;
 }
 
-.company-report .controls__table th:nth-of-type(15), .company-report .controls__table td:nth-of-type(15) {
+.company-report .controls__table th:nth-of-type(15),
+.company-report .controls__table td:nth-of-type(15) {
   width: 64px;
 }
 
-.company-report .controls__table th:nth-of-type(16), .company-report .controls__table td:nth-of-type(16) {
+.company-report .controls__table th:nth-of-type(16),
+.company-report .controls__table td:nth-of-type(16) {
   width: 58px;
 }
 
-.company-report .controls__table th:nth-of-type(17), .company-report .controls__table td:nth-of-type(17) {
+.company-report .controls__table th:nth-of-type(17),
+.company-report .controls__table td:nth-of-type(17) {
   width: 44px;
 }
 
-.company-report .controls__table th:nth-of-type(18), .company-report .controls__table td:nth-of-type(18) {
+.company-report .controls__table th:nth-of-type(18),
+.company-report .controls__table td:nth-of-type(18) {
   width: 62px;
 }
 
-.company-report .controls__table th:nth-of-type(19), .company-report .controls__table td:nth-of-type(19) {
+.company-report .controls__table th:nth-of-type(19),
+.company-report .controls__table td:nth-of-type(19) {
   width: 95px;
 }
 
-.company-report .controls__table th:nth-of-type(20), .company-report .controls__table td:nth-of-type(20) {
+.company-report .controls__table th:nth-of-type(20),
+.company-report .controls__table td:nth-of-type(20) {
   width: 77px;
 }
 
-.company-report .controls__table th:last-of-type, .company-report .controls__table td:last-of-type {
+.company-report .controls__table th:last-of-type,
+.company-report .controls__table td:last-of-type {
   width: 40px;
 }
 
@@ -15198,48 +15246,59 @@ section.product .product__block--company .slick-track {
 }
 
 .employee-profiles .controls__table th {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
-.employee-profiles .controls__table th, .employee-profiles .controls__table td {
+.employee-profiles .controls__table th,
+.employee-profiles .controls__table td {
   vertical-align: middle;
   padding-left: 10px;
 }
 
-.employee-profiles .controls__table th:first-of-type, .employee-profiles .controls__table td:first-of-type {
+.employee-profiles .controls__table th:first-of-type,
+.employee-profiles .controls__table td:first-of-type {
   width: 27px;
 }
 
-.employee-profiles .controls__table th:nth-of-type(2), .employee-profiles .controls__table td:nth-of-type(2) {
+.employee-profiles .controls__table th:nth-of-type(2),
+.employee-profiles .controls__table td:nth-of-type(2) {
   width: 82px;
 }
 
-.employee-profiles .controls__table th:nth-of-type(2):before, .employee-profiles .controls__table th:nth-of-type(2):after, .employee-profiles .controls__table td:nth-of-type(2):before, .employee-profiles .controls__table td:nth-of-type(2):after {
+.employee-profiles .controls__table th:nth-of-type(2):before, .employee-profiles .controls__table th:nth-of-type(2):after,
+.employee-profiles .controls__table td:nth-of-type(2):before,
+.employee-profiles .controls__table td:nth-of-type(2):after {
   left: 87%;
 }
 
-.employee-profiles .controls__table th:nth-of-type(3), .employee-profiles .controls__table td:nth-of-type(3) {
+.employee-profiles .controls__table th:nth-of-type(3),
+.employee-profiles .controls__table td:nth-of-type(3) {
   width: 82px;
 }
 
-.employee-profiles .controls__table th:nth-of-type(4), .employee-profiles .controls__table td:nth-of-type(4) {
+.employee-profiles .controls__table th:nth-of-type(4),
+.employee-profiles .controls__table td:nth-of-type(4) {
   width: 345px;
 }
 
-.employee-profiles .controls__table th:nth-of-type(5), .employee-profiles .controls__table td:nth-of-type(5) {
+.employee-profiles .controls__table th:nth-of-type(5),
+.employee-profiles .controls__table td:nth-of-type(5) {
   width: 112px;
 }
 
-.employee-profiles .controls__table th:nth-of-type(6), .employee-profiles .controls__table td:nth-of-type(6) {
+.employee-profiles .controls__table th:nth-of-type(6),
+.employee-profiles .controls__table td:nth-of-type(6) {
   width: 513px;
 }
 
-.employee-profiles .controls__table th:nth-of-type(7), .employee-profiles .controls__table td:nth-of-type(7) {
+.employee-profiles .controls__table th:nth-of-type(7),
+.employee-profiles .controls__table td:nth-of-type(7) {
   width: 70px;
   text-align: center;
 }
 
-.employee-profiles .controls__table th:last-of-type, .employee-profiles .controls__table td:last-of-type {
+.employee-profiles .controls__table th:last-of-type,
+.employee-profiles .controls__table td:last-of-type {
   width: 40px;
 }
 
