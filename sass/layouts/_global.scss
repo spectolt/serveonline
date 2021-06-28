@@ -29,6 +29,11 @@ body {
 body {
   margin-top: 70px;
   height: calc(100% - 70px);
+
+  @include breakpoint(l) {
+    margin-top: 63px;
+    height: calc(100% - 63px);
+  }
 }
 
 main.container,

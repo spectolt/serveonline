@@ -1,32 +1,44 @@
+<?php $thisCat = "about";
+$thisPage = "about-us"; ?>
+
 <?php require_once('header.php'); ?>
-
-<section class="breadcrumbs">
-    <a href="#" class="breadcrumbs__change">Pakeisti</a>
-    <span class="breadcrumbs__location">Grožio salonai | Vilnius</span>
-    <button class="breadcrumbs__cart"></button>
-</section>
-
-<main class="site-main container">
-    <section class="page-content">
-        <div class="page-content__wrapper">
-            <h1 class="title">Apie mus</h1>
+<main class="site-main about-us">
+    <section class="opportunities">
+        <div class="background">
+            <div class="backdrop"></div>
+            <div class="circle circle--1"></div>
+            <div class="circle circle--2"></div>
+            <div class="circle circle--3"></div>
+            <div class="overlay"></div>
         </div>
-        <aside class="page-content__sidebar">
+        <div class="opportunities__content">
+            <h1>Galimybės verslui</h1>
+            <h3>Valdyk savo verslą išmaniai, patogiai ir saugiai!</h3>
+            <p>Rezervacijos internetu padeda efektyviau parduoti savo paslaugas:</p>
             <ul>
-                <li>
-                    <a href="#">TURINYS</a>
-                    <ul>
-                        <li><a href="#">Artimiausi užsakymai</a></li>
-                        <li><a href="#">Artimiausi užsakymai</a></li>
-                        <li><a href="#">Artimiausi užsakymai</a></li>
-                    </ul>
-                </li>
+                <li>išlaidos mažėja;</li>
+                <li>pajamos auga.</li>
             </ul>
-        </aside>
+            <button class="darkblue">Prisijunk ir išbandyk!</button>
+        </div>
+        <div class="opportunities__photo">
+            <img src="../img/specialistė-kirpėja-2.png">
+        </div>
     </section>
+    <section class="solutions">
+    <div class="background">
+            <div class="circle circle--4"></div>
+            <div class="overlay"></div>
+        </div>
+        <div class="solutions__content">
+            <h2>Sprendimai</h2>
+            <p>Potencialūs paslaugų pirkėjai – vienoje SERVE ONLINE platformoje. <br>
+                Paprasta įsidiegti į savo svetainę, socialinius tinklus – </br>
+                gera stebėti didėjančius pardavimus. </p>
+        </div>
+
+    </section>
+    <?php require_once('footer-menu-homepage.php'); ?>
 </main>
 
-<?php 
-require_once('footer-menu.php'); 
-require_once('footer.php'); 
-?>
+<?php require_once('footer.php'); ?>

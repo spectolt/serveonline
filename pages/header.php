@@ -16,7 +16,7 @@
 
 <body class="<?php if ($thisPage == "specialist") echo "margin-none"?>">
     <div id="page">
-        <?php if ($thisCat != "company" && $thisCat != "controls" && $thisCat != "login") { ?>
+        <?php if ($thisCat != "company" && $thisCat != "controls" && $thisCat != "login" && $thisCat != "about") { ?>
             <div class="search-container">
                 <form class="search-panel">
                     <input type="text" name="search" placeholder="Specialistas, įstaiga, įmonių grupė..." />
@@ -54,11 +54,11 @@
             </div>
         <?php } ?>
         <header class="site-header site-header--show <?php if ($thisCat == "company" || $thisCat == "login") echo "site-header--company"?>">
-            <?php if ($thisCat != "company" && $thisCat != "login") { ?>
+            <?php if ($thisCat != "company" && $thisCat != "login" && $thisCat != "about") { ?>
                 <button class="site-header__hamburger"></button>
             <?php } ?>
             <img src="../img/logo.svg" class="site-header__logo" alt="" />
-            <?php if ($thisCat != "company" && $thisCat !="login") { ?>
+            <?php if ($thisCat != "company" && $thisCat !="login" && $thisCat != "about") { ?>
                 <ul class="site-header__menu site-header__menu--items">
                     <li class="site-header__item paragraph <?php if ($thisCat == "services") echo "site-header__item--active"; ?>"><a href="#">Specialistai</a></li>
                     <li class="site-header__item paragraph"><a href="#">Įstaigos</a></li>
@@ -72,7 +72,7 @@
                 <ul class="site-header__menu site-header__menu--main">
                     <li class="site-header__item site-header__item--search"><a href="#"></a></li>
                 </ul>
-            <?php } else if($thisCat == "company" || $thisCat == "login") { ?>
+            <?php } else if($thisCat == "company" || $thisCat == "login" || $thisCat == "about") { ?>
                 <ul class="site-header__menu site-header__menu--main site-header__menu--company">
                     <li class="site-header__item back-button"><a href="#">Atgal</a></li>
                 </ul>
