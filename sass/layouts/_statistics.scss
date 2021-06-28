@@ -119,11 +119,11 @@
 
     @include breakpoint(sm) {
       margin-left: -8px;
-    }
-
-    @include breakpoint(xxs) {
       justify-content: space-between;
     }
+
+    // @include breakpoint(xxs) {
+    // }
 
     p {
       font-family: "Sen", sans-serif;
@@ -162,9 +162,10 @@
       @include breakpoint(sm) {
         font-size: 0.9375rem;
         margin-left: 0px;
-        background: url(./img/icons/calendar.svg) no-repeat scroll 120px 0;
+        background: url(./img/icons/calendar.svg) no-repeat scroll;
         background-size: 12%;
         width: 144px;
+        background-position: right center;
       }
     }
   }
@@ -191,6 +192,7 @@
 
       .smaller{
         margin-top: 5px;
+        margin-left: 0;
       }
     }
 
@@ -225,6 +227,7 @@
 
       span {
         color: #323131;
+        -webkit-text-fill-color: #323131;
       }
 
       .up,

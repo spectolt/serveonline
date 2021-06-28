@@ -1742,8 +1742,6 @@ function onDocumentReady(callback) {
         $(this).siblings(".about-datepicker").datepicker("hide");
         datepickerShow = false;
       }
-
-      console.log(datepickerShow);
     });
 
   $(".timetable__datepicker--from")
@@ -1964,23 +1962,23 @@ function onDocumentReady(callback) {
         "Gruodžio",
       ],
       beforeShow: function (input, inst) {
-        if (window.matchMedia("(max-width: 991px)").matches) {
+        // if (window.matchMedia("(max-width: 991px)").matches) {
+        //   window.setTimeout(function () {
+        //     inst.dpDiv.css({
+        //       top: $(".statistics__datepicker"),
+        //       left: "50%",
+        //       transform: "translate(-50%, 10px)",
+        //     });
+        //   }, 1);
+        // } else {
           window.setTimeout(function () {
-            inst.dpDiv.css({
-              top: $(".statistics__datepicker"),
-              left: "50%",
-              transform: "translate(-50%, 10px)",
-            });
-          }, 1);
-        } else {
-          window.setTimeout(function () {
-            $("#ui-datepicker-div").position({
+            $(inst.dpDiv).position({
               my: "top",
               at: "bottom",
               of: input,
             });
           }, 1);
-        }
+        // }
       },
     })
     .datepicker("setDate", new Date());

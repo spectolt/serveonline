@@ -768,6 +768,30 @@ input[type="submit"].button--print::before {
   background-size: 50%;
 }
 
+.button.button--search,
+button.button--search,
+input[type="button"].button--search,
+input[type="reset"].button--search,
+input[type="submit"].button--search {
+  border-radius: 15px;
+  padding-left: 35px;
+  position: relative;
+  height: 35px;
+  float: right;
+  margin-right: 0;
+}
+
+.button.button--search::before,
+button.button--search::before,
+input[type="button"].button--search::before,
+input[type="reset"].button--search::before,
+input[type="submit"].button--search::before {
+  content: url("./img/icons/search-white.svg");
+  position: absolute;
+  width: 16px;
+  left: 10px;
+}
+
 .arrow {
   background-color: transparent;
   padding: 5px;
@@ -4541,7 +4565,7 @@ div.services-list.services-list--company-profile .services-list__blocks {
   .timetable .timetable__datepicker #timetable-from,
   .timetable .timetable__datepicker #timetable-until {
     background-image: url(img/icons/calendar.svg);
-    background-position: left bottom;
+    background-position: left center;
     background-repeat: no-repeat;
     background-size: 22px 22px;
     border: none;
@@ -9521,7 +9545,15 @@ a.ui-button:active,
 }
 
 .ui-datepicker {
-  z-index: 999 !important;
+  z-index: 1000 !important;
+}
+
+@media (max-width: 700px) {
+  .ui-datepicker {
+    left: 50% !important;
+    -webkit-transform: translateX(-50%) !important;
+            transform: translateX(-50%) !important;
+  }
 }
 
 .ui-datepicker .ui-state-active,
@@ -12805,6 +12837,14 @@ section.product .product__block--company .slick-track {
   word-break: break-all;
 }
 
+.controls__table tr:hover {
+  background-color: #e3e3e8 !important;
+}
+
+.controls__table tr:hover.fixed-row {
+  background-color: inherit;
+}
+
 .controls thead,
 .controls tbody tr,
 .controls tfoot {
@@ -13095,6 +13135,10 @@ section.product .product__block--company .slick-track {
 
 .areas__table tbody tr {
   height: 35px;
+}
+
+.areas__table tbody tr:hover {
+  background-color: inherit;
 }
 
 .areas__table tr:first-child th:last-child {
@@ -13456,6 +13500,10 @@ section.product .product__block--company .slick-track {
 
 .services__table tr {
   height: auto;
+}
+
+.services__table tr:hover {
+  background-color: inherit;
 }
 
 .services__table td {
@@ -23307,11 +23355,6 @@ section.product .product__block--company .slick-track {
 @media (max-width: 700px) {
   .statistics__date {
     margin-left: -8px;
-  }
-}
-
-@media (max-width: 400px) {
-  .statistics__date {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -23358,9 +23401,10 @@ section.product .product__block--company .slick-track {
   .statistics__date input {
     font-size: 0.9375rem;
     margin-left: 0px;
-    background: url(./img/icons/calendar.svg) no-repeat scroll 120px 0;
+    background: url(./img/icons/calendar.svg) no-repeat scroll;
     background-size: 12%;
     width: 144px;
+    background-position: right center;
   }
 }
 
@@ -23399,6 +23443,7 @@ section.product .product__block--company .slick-track {
 
 .statistics .stat-grid .align-left .smaller {
   margin-top: 5px;
+  margin-left: 0;
 }
 
 .statistics .stat-grid hr {
@@ -23440,6 +23485,7 @@ section.product .product__block--company .slick-track {
 
 .statistics .stat-grid__item span {
   color: #323131;
+  -webkit-text-fill-color: #323131;
 }
 
 .statistics .stat-grid__item .up,
@@ -24060,5 +24106,54 @@ section.product .product__block--company .slick-track {
     margin-bottom: 0;
     padding: 10px;
   }
+}
+
+.specialist-rights .company__header {
+  padding: 30px 40px;
+}
+
+@media (max-width: 700px) {
+  .specialist-rights .company__header {
+    padding: 20px 10px;
+  }
+}
+
+.specialist-rights__inputs-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.specialist-rights__inputs-container .input-wrapper {
+  width: auto;
+  margin: 0 20px 0 0;
+}
+
+.specialist-rights__inputs-container .input-wrapper input {
+  padding: 10px;
+  border: 1px solid #e8e8e8;
+}
+
+.specialist-rights__inputs-container .company__trash {
+  margin-left: 20px;
+}
+
+.specialist-rights__section {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+}
+
+.specialist-rights__section h2, .specialist-rights__section h3 {
+  width: 100%;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-column: 1 / span 4;
+}
+
+.specialist-rights__section--settings .specialist-rights__checkbox-container--workers {
+  grid-row: span 2;
 }
 /*# sourceMappingURL=style.css.map */

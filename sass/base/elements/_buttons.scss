@@ -125,6 +125,22 @@ input[type="submit"] {
       background-size: 50%;
     }
   }
+
+  &.button--search {
+    border-radius: 15px;
+          padding-left: 35px;
+          position: relative;
+          height: 35px;
+          float: right;
+          margin-right: 0;
+
+          &::before {
+            content: url("./img/icons/search-white.svg");
+            position: absolute;
+            width: 16px;
+            left: 10px;
+          }
+  }
 }
 
 .arrow {

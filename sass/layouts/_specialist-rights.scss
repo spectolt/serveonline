@@ -1,0 +1,44 @@
+.specialist-rights {
+  .company__header {
+    padding: 30px 40px;
+
+    @include breakpoint(sm) {
+      padding: 20px 10px;
+    }
+  }
+
+  &__inputs-container {
+    display: flex;
+    margin-bottom: 15px;
+
+    .input-wrapper {
+      width: auto;
+      margin: 0 20px 0 0;
+
+      input {
+        padding: 10px;
+        border: 1px solid $lightgray;
+      }
+    }
+
+    .company__trash {
+      margin-left: 20px;
+    }
+  }
+
+  &__section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    h2, h3 {
+      width: 100%;
+      grid-column: 1 / span 4;
+    }
+
+    &--settings {
+      .specialist-rights__checkbox-container--workers {
+        grid-row: span 2;
+      }
+    }
+  }
+}

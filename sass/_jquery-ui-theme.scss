@@ -1300,7 +1300,12 @@ a.ui-button:active,
 }
 
 .ui-datepicker {
-  z-index: 999 !important;
+  z-index: 1000 !important;
+
+  @include breakpoint(sm) {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
 
   .ui-state-active,
   .ui-widget-content .ui-state-active,

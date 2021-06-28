@@ -306,6 +306,14 @@
         word-break: break-all;
       }
     }
+
+    tr:hover {
+      background-color: #e3e3e8 !important;
+
+      &.fixed-row {
+        background-color: inherit;
+      }
+    }
   }
 
   thead,
@@ -598,6 +606,10 @@
 
     tbody tr {
       height: 35px;
+
+      &:hover {
+        background-color: inherit;
+      }
     }
 
     tr:first-child th:last-child {
@@ -915,6 +927,10 @@
 
     tr {
       height: auto;
+
+      &:hover {
+        background-color: inherit;
+      }
     }
 
     td {

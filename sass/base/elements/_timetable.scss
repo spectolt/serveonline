@@ -419,19 +419,22 @@
 
     @include breakpoint(l) {
       flex-direction: initial;
+
       #timetable-from,
       #timetable-until {
         background-image: url(img/icons/calendar.svg);
-        background-position: left bottom;
+        background-position: left center;
         background-repeat: no-repeat;
         background-size: 22px 22px;
         border: none;
         padding-left: 30px;
         font-weight: 700;
       }
+
       #timetable-from {
         margin-left: 30px;
       }
+      
       #timetable-until {
         margin-left: 38px;
       }
