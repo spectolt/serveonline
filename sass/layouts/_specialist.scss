@@ -1101,7 +1101,7 @@
 
       &::after {
         content: "";
-        background-color: rgba(0, 0, 0, 0.15);
+        background-color: rgba(16, 27, 81, 0.15);
         width: 100%;
         height: calc(100% + 44px);
         position: absolute;
@@ -1286,6 +1286,6 @@
     left: 0;
     position: fixed;
     z-index: 0;
-    background-color: rgba(0, 0, 0, 0.15);
+    background-color: rgba(16, 27, 81, 0.15);
   }
 }

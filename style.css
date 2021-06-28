@@ -3059,7 +3059,7 @@ table.calendar .calendar__more-times--hidden {
 }
 
 .warning-popup-container {
-  background-color: rgba(0, 0, 0, 0.43);
+  background-color: rgba(16, 27, 81, 0.2);
   width: 100vw;
   height: 100vh;
   z-index: 1000;
@@ -10299,7 +10299,7 @@ footer.container {
     visibility: hidden;
     width: 100%;
     z-index: -1;
-    background-color: rgba(0, 0, 0, 0.49);
+    background-color: rgba(16, 27, 81, 0.2);
   }
 }
 
@@ -22722,7 +22722,7 @@ section.product .product__block--company .slick-track {
 
 .specialist #registruokis .specialist__calendar-container::after {
   content: "";
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(16, 27, 81, 0.15);
   width: 100%;
   height: calc(100% + 44px);
   position: absolute;
@@ -22927,7 +22927,7 @@ section.product .product__block--company .slick-track {
   left: 0;
   position: fixed;
   z-index: 0;
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(16, 27, 81, 0.15);
 }
 
 .page-content__wrapper--register {
