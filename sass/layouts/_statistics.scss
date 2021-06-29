@@ -160,12 +160,14 @@
       margin-left: 15px;
 
       @include breakpoint(sm) {
-        font-size: 0.9375rem;
+        font-size: 1rem;
         margin-left: 0px;
         background: url(./img/icons/calendar.svg) no-repeat scroll;
         background-size: 12%;
-        width: 144px;
+        width: 148px;
         background-position: right center;
+        padding: 0;
+        margin-left: 4px;
       }
     }
   }
@@ -649,6 +651,10 @@
 
     #{$_this}__header {
       margin-bottom: 30px;
+
+      @include breakpoint(sm) {
+        margin-bottom: 20px;
+      }
     }
 
     #{$_this}__date {
@@ -738,6 +744,8 @@
     }
 
     #{$_this}__client-item {
+      padding: 0;
+      
       &:first-of-type {
         grid-area: auto;
       }

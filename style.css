@@ -3203,7 +3203,6 @@ table.calendar .calendar__more-times--hidden {
 
 @media (max-width: 700px) {
   .warning-popup-container .warning-popup__content--message .warning-popup__inputs-container .select2-container .select2-selection__rendered {
-    background-size: 7%;
     background-position: 9px 7px;
   }
 }
@@ -3465,9 +3464,9 @@ table.calendar .calendar__more-times--hidden {
 }
 
 .warning-popup-container .controls.warning-popup table p {
-  font-size: .75rem;
+  font-size: 0.75rem;
   font-weight: 400;
-  font-family: 'Roboto',sans-serif;
+  font-family: "Roboto", sans-serif;
   height: 2.5em;
   overflow: hidden;
 }
@@ -3481,6 +3480,15 @@ table.calendar .calendar__more-times--hidden {
 .warning-popup-container .controls.warning-popup .warning-popup__text-message textarea {
   border-color: #e8e8e8;
   height: 160px;
+}
+
+.warning-popup-container .controls.warning-popup .warning-popup__text-message textarea::-webkit-scrollbar {
+  width: 8px !important;
+  border-width: 2px;
+}
+
+.warning-popup-container .controls.warning-popup .warning-popup__text-message textarea::-webkit-scrollbar-thumb {
+  border-width: 2px;
 }
 
 .warning-popup-container .controls.warning-popup .warning-popup__button-container {
@@ -6423,7 +6431,7 @@ button.ui-button::-moz-focus-inner {
   position: absolute;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 400px) {
   .ui-datepicker {
     width: calc(100vw - 30px);
   }
@@ -9548,7 +9556,7 @@ a.ui-button:active,
   z-index: 1000 !important;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 400px) {
   .ui-datepicker {
     left: 50% !important;
     -webkit-transform: translateX(-50%) !important;
@@ -10504,6 +10512,10 @@ footer.container {
   border-radius: 5px;
   border: 1px solid #8d92a3;
   width: 100%;
+}
+
+.site-main--aside .site-aside-container .site-aside--controls .site-aside__item .select2-container {
+  width: 100% !important;
 }
 
 .site-main--aside .site-aside-container .site-aside--controls .site-aside__item .select2-selection__rendered {
@@ -12575,6 +12587,16 @@ section.product .product__block--company .slick-track {
   }
 }
 
+.controls__group-btn {
+  height: 35px;
+}
+
+@media (max-width: 600px) {
+  .controls__group-btn {
+    height: 30px;
+  }
+}
+
 .controls button.controls__restore,
 .controls button.controls__save,
 .controls button.controls__print,
@@ -12777,6 +12799,10 @@ section.product .product__block--company .slick-track {
   display: table;
 }
 
+.controls__table thead tr th[colspan] {
+  cursor: initial;
+}
+
 .controls__table th {
   border-left: 1px solid #454e78;
   background-color: #101b51;
@@ -12784,6 +12810,7 @@ section.product .product__block--company .slick-track {
   height: 60px;
   font-family: "Sen", sans-serif;
   padding: 10px;
+  cursor: col-resize;
 }
 
 @media (max-width: 600px) {
@@ -12849,7 +12876,11 @@ section.product .product__block--company .slick-track {
 }
 
 .controls__table tr:hover.fixed-row {
-  background-color: inherit;
+  background-color: inherit !important;
+}
+
+.controls__table tfoot tr:hover {
+  background-color: inherit !important;
 }
 
 .controls thead,
@@ -13329,6 +13360,9 @@ section.product .product__block--company .slick-track {
   outline: none;
   white-space: nowrap;
   -webkit-user-select: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
   cursor: pointer;
   text-shadow: 1px 1px #fff;
   font-weight: 700;
@@ -14474,7 +14508,6 @@ section.product .product__block--company .slick-track {
   }
   .reservations .controls__buttons-container button {
     width: 100%;
-    text-align: center;
   }
 }
 
@@ -14615,19 +14648,10 @@ section.product .product__block--company .slick-track {
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
+    margin-right: 0;
   }
   .report .controls__buttons-container button {
     width: 100%;
-    text-align: center;
-  }
-}
-
-@media (max-width: 510px) {
-  .report .controls__buttons-container {
-    display: block;
-  }
-  .report .controls__buttons-container .controls__button--pdf {
-    margin-bottom: 10px;
   }
 }
 
@@ -14936,19 +14960,10 @@ section.product .product__block--company .slick-track {
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
+    margin-right: 0;
   }
   .company-report .controls__buttons-container button {
     width: 100%;
-    text-align: center;
-  }
-}
-
-@media (max-width: 510px) {
-  .company-report .controls__buttons-container {
-    display: block;
-  }
-  .company-report .controls__buttons-container .controls__button--pdf {
-    margin-bottom: 10px;
   }
 }
 
@@ -20176,6 +20191,7 @@ section.product .product__block--company .slick-track {
 
 .user-profile .group__tab {
   margin-top: 40px;
+  border: none;
 }
 
 .user-profile .group__tab p {
@@ -20876,7 +20892,6 @@ section.product .product__block--company .slick-track {
 @media (max-width: 700px) {
   .company-profile .group__tab .product__block-recommend {
     font-size: 0.875rem;
-    width: 220px;
   }
 }
 
@@ -22789,7 +22804,7 @@ section.product .product__block--company .slick-track {
 }
 
 .specialist #registruokis .specialist__calendar-container .ui-datepicker-inline .ui-datepicker-header {
-  margin: 0 10px;
+  margin: 0 10px 20px;
 }
 
 .specialist #registruokis .specialist__calendar-container .ui-datepicker-inline .ui-datepicker-buttonpane {
@@ -23465,12 +23480,14 @@ section.product .product__block--company .slick-track {
 
 @media (max-width: 700px) {
   .statistics__date input {
-    font-size: 0.9375rem;
+    font-size: 1rem;
     margin-left: 0px;
     background: url(./img/icons/calendar.svg) no-repeat scroll;
     background-size: 12%;
-    width: 144px;
+    width: 148px;
     background-position: right center;
+    padding: 0;
+    margin-left: 4px;
   }
 }
 
@@ -24061,6 +24078,12 @@ section.product .product__block--company .slick-track {
   margin-bottom: 30px;
 }
 
+@media (max-width: 700px) {
+  .statistics--company .statistics__header {
+    margin-bottom: 20px;
+  }
+}
+
 .statistics--company .statistics__date {
   top: 0;
   margin-left: 0;
@@ -24147,6 +24170,10 @@ section.product .product__block--company .slick-track {
   margin-right: 20px;
   -webkit-box-shadow: 0 12px 29px 0px rgba(0, 0, 0, 0.15);
           box-shadow: 0 12px 29px 0px rgba(0, 0, 0, 0.15);
+}
+
+.statistics--company .statistics__client-item {
+  padding: 0;
 }
 
 .statistics--company .statistics__client-item:first-of-type {

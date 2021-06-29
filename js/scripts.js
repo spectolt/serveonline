@@ -173,12 +173,12 @@ function onDocumentReady(callback) {
     var eventDates = {};
     eventDates[new Date("06/20/2021")] = new Event("Event01");
     eventDates[new Date("06/12/2021")] = new Event("Event02");
-    eventDates[new Date("06/28/2021")] = new Event("Event02");
+    eventDates[new Date("07/28/2021")] = new Event("Event02");
 
     var availableDates = {};
     availableDates[new Date("06/05/2021")] = new Date("06/05/2021");
     availableDates[new Date("06/12/2021")] = new Date("06/12/2021");
-    availableDates[new Date("06/13/2021")] = new Date("06/13/2021");
+    availableDates[new Date("07/13/2021")] = new Date("06/13/2021");
 
     $(".js-datepicker")
       .not(".js_ignore_mark")
@@ -256,7 +256,6 @@ function onDocumentReady(callback) {
                   $(".js-datepicker").height() +
                   10,
               });
-              alert("w");
             } else {
               $(inst.dpDiv).css({
                 top: offsetHeight.top + "px",
@@ -1462,12 +1461,14 @@ function onDocumentReady(callback) {
     .unbind("click")
     .click(function (e) {
       if (e.target !== this) return;
-      if ($(this).hasClass("top-arrow bottom-arrow")) {
-        $(this).removeClass("top-arrow");
-      } else if ($(this).hasClass("bottom-arrow")) {
-        $(this).removeClass("bottom-arrow").addClass("top-arrow");
-      } else if ($(this).hasClass("top-arrow")) {
-        $(this).addClass("bottom-arrow");
+      if (!isDragging) {
+        if ($(this).hasClass("top-arrow bottom-arrow")) {
+          $(this).removeClass("top-arrow");
+        } else if ($(this).hasClass("bottom-arrow")) {
+          $(this).removeClass("bottom-arrow").addClass("top-arrow");
+        } else if ($(this).hasClass("top-arrow")) {
+          $(this).addClass("bottom-arrow");
+        }
       }
     });
 
@@ -1971,17 +1972,37 @@ function onDocumentReady(callback) {
         //     });
         //   }, 1);
         // } else {
-          window.setTimeout(function () {
-            $(inst.dpDiv).position({
-              my: "top",
-              at: "bottom",
-              of: input,
-            });
-          }, 1);
+        window.setTimeout(function () {
+          $(inst.dpDiv).position({
+            my: "top",
+            at: "bottom",
+            of: input,
+            collision: "none",
+          });
+        }, 1);
         // }
       },
     })
-    .datepicker("setDate", new Date());
+    .datepicker("setDate", new Date())
+    .on("focus", function () {
+      if (window.matchMedia("(min-width: 701px)").matches) {
+        $("html, body").animate(
+          {
+            scrollTop: $(this).offset().top - 40,
+          },
+          300
+        );
+      } else {
+        $("html, body").animate(
+          {
+            scrollTop: $(this).offset().top - 80,
+          },
+          300
+        );
+      }
+      e.preventDefault();
+      return false;
+    });
 
   //statistics charts
   var clientsChart = [
@@ -2513,6 +2534,120 @@ function onDocumentReady(callback) {
       }
     });
 
+  //resize table column width on table header drag
+  var pressed = false;
+  var isDragging = false;
+  var start;
+  var tableCell;
+  var startX, startWidth, startWidthAbove, resizedTh;
+  var hasThAbove = false;
+
+  $(".controls__table th").on("mousedown touchstart", function (e) {
+    start = $(this);
+    tableCell = [];
+    pressed = true;
+    startX = e.pageX;
+    startWidth = $(this).width();
+    $(start).addClass("resizing");
+
+    if (
+      !$(this).closest(".controls__table").find("thead tr:nth-of-type(2)")
+        .length
+    ) {
+      $(this)
+        .closest(".controls__table")
+        .find("td")
+        .each(function () {
+          if ($(this).offset().left == $(start).offset().left) {
+            tableCell.push($(this));
+          }
+        });
+    } else {
+
+      //check if has th above
+      if (start.closest("tr").index() == 0) {
+        hasThAbove = false;
+      } else {
+        hasThAbove = true;
+      }
+
+      if (hasThAbove) {
+        $(".controls__table thead tr:nth-of-type(2) th").each(function () {
+          if ($(this).hasClass("resizing")) {
+            resizedTh = $(this);
+            $(this)
+              .closest(".controls__table")
+              .find("td")
+              .each(function () {
+                if (startX >= $(this).offset().left && startX <= $(this).offset().left + $(this).width()) {
+                  tableCell.push($(this));
+                }
+              });
+          }
+        });
+        $(".controls__table thead tr:nth-of-type(1) th").each(function() {
+          console.log($(this))
+          if (resizedTh.offset().left >= $(this).offset().left && resizedTh.offset().left <= $(this).offset().left + $(this).width()) {
+            startWidthAbove = $(this).width();
+          }
+        })
+      } else {
+        $(".controls__table thead tr:first-of-type th").each(function () {
+          if ($(this).hasClass("resizing")) {
+            resizedTh = $(this);
+            console.log(resizedTh);
+            $(this)
+              .closest(".controls__table")
+              .find("td")
+              .each(function () {
+                if ($(this).offset().left == $(resizedTh).offset().left) {
+                  tableCell.push($(this));
+                }
+              });
+          }
+        });
+      }
+    }
+    // }
+    // else {
+    //   tableCell = $(this)
+    //     .closest(".controls__table")
+    //     .find("td:nth-of-type(" + index + ")");
+    //   console.log(tableCell);
+    // }
+    isDragging = false;
+  });
+
+  $(document).on("mousemove touchmove", function (e) {
+    if (pressed) {
+      isDragging = true;
+      if (!hasThAbove) {
+        $(start).css({ width: startWidth + (e.pageX - startX) });
+        $(tableCell).each(function () {
+          $(this).css({ width: startWidth + (e.pageX - startX) });
+        });
+      } else {
+        $(".controls__table thead tr:first-of-type th").each(function() {
+          if ($(this).offset().left == $(start).offset().left) {
+            $(this).css({ width: startWidthAbove + (e.pageX - startX) });
+          }
+        })
+        $(tableCell).each(function () {
+          $(this).css({ width: startWidth + (e.pageX - startX)/2 });
+
+          $(this).next().css({ width: startWidth + (e.pageX - startX)/2 });
+        });
+      }
+    }
+  });
+
+  $(document).on("mouseup touchend", function () {
+    if (pressed) {
+      $(start).removeClass("resizing");
+      pressed = false;
+    }
+  });
+
   moveAction();
   moveOrder();
   changePadding();
@@ -2968,7 +3103,12 @@ function changeRowWidth() {
   var $row = $(
     ".controls__table-container thead tr, .controls__table-container tfoot tr"
   );
-  if ($table.hasScrollBar()) {
+  if (
+    $table.hasScrollBar() &&
+    !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    )
+  ) {
     $row.css("width", "calc(100% - 8px)");
     if ($table.parent("table.profiles__table--specialists").length > 0) {
       $table

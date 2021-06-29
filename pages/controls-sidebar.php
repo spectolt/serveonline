@@ -98,7 +98,7 @@
                                 <option>Klaipėda</option>
                             </select>
                             <p>Paslauga</p>
-                            <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
+                            <select data-placeholder="Pasirinkite">
                                 <option></option>
                                 <option>Visi</option>
                                 <option>Visų pl. dažymas ir modeliavimas</option>

@@ -367,7 +367,7 @@
         font-size: 1.25rem;
         @include breakpoint(sm) {
           font-size: 0.875rem;
-          width: 220px;
+          // width: 220px;
         }
       }
       &-top {

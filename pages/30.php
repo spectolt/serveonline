@@ -16,14 +16,14 @@ $thisPage = "messages-sent"; ?>
                         <thead>
                             <tr>
                                 <th></th>
-                                <th>Sukūrimo data</th>
-                                <th>Gavėjo tipas</th>
-                                <th>Žinutės tipas</th>
-                                <th>Tel. numeris</th>
-                                <th>SMS tekstas (19897)</th>
-                                <th>Siuntimo data</th>
-                                <th>Būsena</th>
-                                <th>Būsenos data</th>
+                                <th class="top-arrow bottom-arrow">Sukūrimo data</th>
+                                <th class="top-arrow bottom-arrow">Gavėjo tipas</th>
+                                <th class="top-arrow bottom-arrow">Žinutės tipas</th>
+                                <th class="top-arrow bottom-arrow">Tel. numeris</th>
+                                <th class="top-arrow bottom-arrow">SMS tekstas (19897)</th>
+                                <th class="top-arrow bottom-arrow">Siuntimo data</th>
+                                <th class="top-arrow bottom-arrow">Būsena</th>
+                                <th class="top-arrow bottom-arrow">Būsenos data</th>
                                 <th>Siuntimo klaida</th>
                             </tr>
                         </thead>

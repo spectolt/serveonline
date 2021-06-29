@@ -111,8 +111,9 @@
             background-size: 10%;
             display: block;
             padding-left: 40px;
+
             @include breakpoint(sm) {
-              background-size: 7%;
+              // background-size: 7%;
               background-position: 9px 7px;
             }
           }
@@ -268,13 +269,12 @@
   }
 
   .controls.warning-popup {
-
     .controls__table-container {
       @include breakpoint(1180px) {
         width: 100%;
       }
     }
-    
+
     table {
       th {
         padding-top: 0;
@@ -340,9 +340,9 @@
       }
 
       p {
-        font-size: .75rem;
+        font-size: 0.75rem;
         font-weight: 400;
-        font-family: 'Roboto',sans-serif;
+        font-family: "Roboto", sans-serif;
         height: 2.5em;
         overflow: hidden;
       }
@@ -357,6 +357,15 @@
       textarea {
         border-color: $lightgray;
         height: 160px;
+
+        &::-webkit-scrollbar {
+          width: 8px !important;
+          border-width: 2px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          border-width: 2px;
+        }
       }
     }
     .warning-popup__button-container {

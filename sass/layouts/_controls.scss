@@ -78,6 +78,14 @@
     }
   }
 
+  &__group-btn {
+    height: 35px;
+
+    @include breakpoint(xs) {
+      height: 30px;
+    }
+  }
+
   button.controls__restore,
   button.controls__save,
   button.controls__print,
@@ -239,6 +247,10 @@
       position: relative;
       width: 100%;
       display: table;
+
+      th[colspan] {
+        cursor: initial;
+      }
     }
 
     th {
@@ -248,6 +260,7 @@
       height: 60px;
       font-family: "Sen", sans-serif;
       padding: 10px;
+      cursor: col-resize;
 
       @include breakpoint(xs) {
         height: 54px;
@@ -310,8 +323,12 @@
       background-color: #e3e3e8 !important;
 
       &.fixed-row {
-        background-color: inherit;
+        background-color: inherit !important;
       }
+    }
+
+    tfoot tr:hover {
+      background-color: inherit !important;
     }
   }
 
@@ -765,6 +782,7 @@
     outline: none;
     white-space: nowrap;
     -webkit-user-select: none;
+    user-select: none;
     cursor: pointer;
     text-shadow: 1px 1px #fff;
     font-weight: 700;
@@ -1793,7 +1811,7 @@
       grid-gap: 10px;
       button {
         width: 100%;
-        text-align: center;
+        // text-align: center;
       }
     }
   }
@@ -1921,19 +1939,20 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-gap: 10px;
+      margin-right: 0;
 
       button {
         width: 100%;
-        text-align: center;
+        // text-align: center;
       }
     }
 
-    @include breakpoint(510px) {
-      display: block;
-      .controls__button--pdf {
-        margin-bottom: 10px;
-      }
-    }
+    // @include breakpoint(510px) {
+    //   display: block;
+    //   .controls__button--pdf {
+    //     margin-bottom: 10px;
+    //   }
+    // }
   }
   .controls__button--pdf::before {
     background: url(img/icons/laiskas.svg) no-repeat center;
@@ -2203,20 +2222,23 @@
   }
   .controls__buttons-container {
     margin-right: 10px;
+
     @include breakpoint(sm) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-gap: 10px;
+      margin-right: 0;
+      
       button {
         width: 100%;
-        text-align: center;
+        // text-align: center;
       }
     }
     @include breakpoint(510px) {
-      display: block;
-      .controls__button--pdf {
-        margin-bottom: 10px;
-      }
+      // display: block;
+      // .controls__button--pdf {
+      //   margin-bottom: 10px;
+      // }
     }
   }
   .controls__button--pdf::before {

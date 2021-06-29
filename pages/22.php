@@ -11,7 +11,7 @@ $thisPage = "company-report"; ?>
                     <h1 class="title">Ataskaita įmonei</h1>
                     <div class="controls__top controls__top--company-report">
                         <div class="controls__buttons-container">
-                            <button class="controls__button controls__button--pdf darkblue small transparent paragraph">Siųsti PDF ataskaitą el. paštu</button>
+                            <button class="controls__button controls__button--pdf darkblue small transparent paragraph">Siųsti PDF ataskaitą el.p.</button>
                             <button class="controls__button controls__button--print darkblue small transparent paragraph">Spausdinti</button>
                         </div>
                     </div>

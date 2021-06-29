@@ -1302,7 +1302,7 @@ a.ui-button:active,
 .ui-datepicker {
   z-index: 1000 !important;
 
-  @include breakpoint(sm) {
+  @include breakpoint(xxs) {
     left: 50% !important;
     transform: translateX(-50%) !important;
   }

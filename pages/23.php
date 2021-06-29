@@ -75,7 +75,7 @@
                         </div>
                         <hr>
                         <div class="stat-grid__bottom">
-                            <h3><b>Atmestos registracijos</b></h3>
+                            <h3><b>Nepavyko registruotis</b></h3>
                             <h3>Iš krepšelio</h3>
                         </div>
                     </div>
