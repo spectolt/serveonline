@@ -18,7 +18,7 @@
     padding-top: 60px;
 
     @include breakpoint(sm) {
-      padding-top: 30px;
+      padding-top: 25px;
     }
   }
 
@@ -34,7 +34,7 @@
     height: 100%;
 
     @include breakpoint(sm) {
-      margin: 0 20px 0 10px;
+      margin: 0 20px 0 5px;
       max-width: 110px;
       max-height: 110px;
     }
@@ -138,7 +138,7 @@
 
     .statistics__day {
       @include breakpoint(sm) {
-        margin-left: 8px;
+        margin-left: 11px;
       }
     }
 
@@ -149,22 +149,28 @@
 
     .statistics__day--to {
       margin-bottom: 0;
+
+      @include breakpoint(430px) {
+        input{
+          margin-left: 12px;
+        }
+      }
     }
 
     input {
       font-weight: 700;
       font-size: 1.125rem;
-      background: url(./img/icons/calendar.svg) no-repeat scroll 150px 0;
+      background: url(./img/icons/calendar.svg) no-repeat scroll 163px 0;
       background-size: 10%;
       border: none;
       margin-left: 15px;
 
       @include breakpoint(sm) {
         font-size: 1rem;
-        margin-left: 0px;
+        margin-left: 4px;
         background: url(./img/icons/calendar.svg) no-repeat scroll;
         background-size: 12%;
-        width: 148px;
+        width: 165px;
         background-position: right center;
         padding: 0;
         margin-left: 4px;
@@ -653,7 +659,16 @@
       margin-bottom: 30px;
 
       @include breakpoint(sm) {
-        margin-bottom: 20px;
+        margin-bottom: 15px;
+      }
+    }
+
+    #{$_this}__name{
+      @include breakpoint(sm){
+        margin-left: 5px;
+        p{
+          margin-top: 0;
+        }
       }
     }
 
@@ -717,12 +732,31 @@
 
     #{$_this}__header {
       margin-bottom: 30px;
+
+      @include breakpoint(sm){
+        padding-top: 17px;
+      }
     }
 
     #{$_this}__date {
       top: 0;
       margin-left: 0;
       margin-top: 20px;
+
+      @include breakpoint(sm){
+        margin-top: 9px;
+        #{$_this}__day{
+          margin-left: 3px;
+        }
+      }
+
+      @include breakpoint(430px) {
+        #{$_this}__day--to{
+          input{
+            margin-left: 12px;
+          }
+        }
+      }
     }
 
     // #{$_this}__list-item {
@@ -744,7 +778,7 @@
     }
 
     #{$_this}__client-item {
-      padding: 0;
+      padding: 20px;
       
       &:first-of-type {
         grid-area: auto;
@@ -752,6 +786,7 @@
 
       @include breakpoint(l) {
         border-left: none;
+        padding: 0;
       }
     }
 

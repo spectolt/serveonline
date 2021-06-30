@@ -194,7 +194,7 @@ $thisPage = "specialist-profile" ?>
                         <div class="timetable__datepicker-container">
                             <div class="timetable__datepicker timetable__datepicker--from">
                                 <h3>Nuo</h3>
-                                <input id="timetable-from" class="timetable__date-input">
+                                <input id="timetable-from" class="timetable__date-input" readonly>
                                 <a class="ui-datepicker-prev ui-corner-all phone phone--back" data-handler="prev" data-event="click" title="<Atgal">
                                     <span class="ui-icon ui-icon-circle-triangle-w">&lt;Atgal</span>
                                 </a>
@@ -204,7 +204,7 @@ $thisPage = "specialist-profile" ?>
                             </div>
                             <div class="timetable__datepicker timetable__datepicker--until">
                                 <h3>Iki</h3>
-                                <input id="timetable-until" class="timetable__date-input">
+                                <input id="timetable-until" class="timetable__date-input" readonly>
                                 <a class="ui-datepicker-prev ui-corner-all phone phone--back" data-handler="prev" data-event="click" title="<Atgal">
                                     <span class="ui-icon ui-icon-circle-triangle-w">&lt;Atgal</span>
                                 </a>

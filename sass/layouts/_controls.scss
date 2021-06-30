@@ -1959,7 +1959,8 @@
     width: 20px;
     height: 20px;
     left: 9px;
-    top: 5px;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .controls__table {
@@ -2246,7 +2247,8 @@
     width: 20px;
     height: 20px;
     left: 9px;
-    top: 5px;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   tbody {
@@ -2498,7 +2500,7 @@
       button {
         margin: 0;
         height: 32px;
-        text-align: center;
+        text-align: left;
       }
     }
   }

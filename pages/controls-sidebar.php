@@ -296,7 +296,7 @@
                                 <input class="site-aside__datepicker" placeholder="Iki">
                             </div>
                             <p>Sritis</p>
-                            <select data-placeholder="Pasirinkite" >
+                            <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
                                 <option>Visi</option>
                                 <option>Klinikos ir estetinė medicina</option>
                                 <option>Odontologijos klinikos</option>
@@ -306,11 +306,11 @@
                                 <option>Sportas ir reabilitacija</option>
                             </select>
                             <p>Šalis</p>
-                            <select data-placeholder="Pasirinkite" >
+                            <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
                                 <option>Lietuva</option>
                             </select>
                             <p>Miestas</p>
-                            <select data-placeholder="Pasirinkite" >
+                            <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
                                 <option></option>
                                 <option>Visi</option>
                                 <option>Vilnius</option>

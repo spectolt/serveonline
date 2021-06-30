@@ -18,22 +18,6 @@
                     </div>
                 </div>
                 <div class="stat-grid">
-                    <div class="stat-grid__item stat-grid__clients stat-grid__clients--all">
-                        <div class="stat-grid__top">
-                            <div class="stat-grid__client-plot"></div>
-                        </div>
-                        <hr>
-                        <div class="stat-grid__bottom">
-                            <div class="stat-grid__bottom-left">
-                                <h3><b>Bendrai klientų</b></h3>
-                                <h3>registracijų</h3>
-                            </div>
-                            <div class="stat-grid__bottom-right">
-                                <h2>168 <span class="up">0.6%</span></h2>
-                                <h2>1000€ <span class="down">0.6%</span></h2>
-                            </div>
-                        </div>
-                    </div>
                     <div class="stat-grid__item stat-grid__clients stat-grid__clients--comeback">
                         <div class="stat-grid__top">
                             <h2>68 <span class="up">0.6%</span></h2>
@@ -56,7 +40,22 @@
                             <h3>registracijų</h3>
                         </div>
                     </div>
-
+                    <div class="stat-grid__item stat-grid__clients stat-grid__clients--all">
+                        <div class="stat-grid__top">
+                            <div class="stat-grid__client-plot"></div>
+                        </div>
+                        <hr>
+                        <div class="stat-grid__bottom">
+                            <div class="stat-grid__bottom-left">
+                                <h3><b>Bendrai klientų</b></h3>
+                                <h3>registracijų</h3>
+                            </div>
+                            <div class="stat-grid__bottom-right">
+                                <h2>168 <span class="up">0.6%</span></h2>
+                                <h2>1000€ <span class="down">0.6%</span></h2>
+                            </div>
+                        </div>
+                    </div>
                     <div class="stat-grid__item">
                         <div class="stat-grid__top">
                             <h2>2000</h2>

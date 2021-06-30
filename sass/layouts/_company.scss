@@ -389,6 +389,10 @@
 
     select.select-input ~ span.select2-container .select2-selection__rendered {
       padding-left: 50px;
+
+      @include breakpoint(sm){
+        padding-left: 40px;
+      }
     }
   }
 

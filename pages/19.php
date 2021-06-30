@@ -1,8 +1,8 @@
 <?php $thisCat = "company"; ?>
 
 <?php require_once('header.php'); ?>
-<main class="site-main site-main--aside">
-    <section class="page-content page-content--company hasUiDatepicker">
+<main class="site-main site-main--aside hasUiDatepicker">
+    <section class="page-content page-content--company">
         <div class="page-content__wrapper">
             <section class="statistics">
                 <div class="statistics__header">
@@ -21,8 +21,8 @@
                         </div>
                     </div>
                     <div class="statistics__date">
-                        <p class="statistics__day statistics__day--from">Nuo <input class="statistics__datepicker"></p>
-                        <p class="statistics__day statistics__day--to">Iki <input class="statistics__datepicker"></p>
+                        <p class="statistics__day statistics__day--from">Nuo <input class="statistics__datepicker" readonly></p>
+                        <p class="statistics__day statistics__day--to">Iki <input class="statistics__datepicker" readonly></p>
                     </div>
                 </div>
                 <div class="stat-grid">

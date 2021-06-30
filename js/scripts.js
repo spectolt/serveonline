@@ -1,6 +1,7 @@
 $(document).ready(onDocumentReady, changeTextWidth());
 
 function onDocumentReady(callback) {
+  var dpTop;
   //today button sets the date
   $.datepicker._gotoToday = function (id) {
     var inst = this._getInst($(id)[0]);
@@ -171,13 +172,13 @@ function onDocumentReady(callback) {
       this.text = text;
     };
     var eventDates = {};
-    eventDates[new Date("06/20/2021")] = new Event("Event01");
-    eventDates[new Date("06/12/2021")] = new Event("Event02");
+    eventDates[new Date("07/20/2021")] = new Event("Event01");
+    eventDates[new Date("07/12/2021")] = new Event("Event02");
     eventDates[new Date("07/28/2021")] = new Event("Event02");
 
     var availableDates = {};
-    availableDates[new Date("06/05/2021")] = new Date("06/05/2021");
-    availableDates[new Date("06/12/2021")] = new Date("06/12/2021");
+    availableDates[new Date("07/05/2021")] = new Date("06/05/2021");
+    availableDates[new Date("07/12/2021")] = new Date("06/12/2021");
     availableDates[new Date("07/13/2021")] = new Date("06/13/2021");
 
     $(".js-datepicker")
@@ -247,6 +248,9 @@ function onDocumentReady(callback) {
           var offsetHeight = $(".product__list").offset();
           var offsetLeft = $(this).closest(".product__nav").offset();
           window.setTimeout(function () {
+            dpTop = $("#ui-datepicker-div").offset().top;
+            console.log(dpTop);
+
             if (window.matchMedia("(max-width: 900px)").matches) {
               $(inst.dpDiv).css({
                 left: "50%",
@@ -264,6 +268,15 @@ function onDocumentReady(callback) {
               });
             }
           }, 1);
+          $(
+            '<div class="ui-widget-overlay" style="width: 2000px; height: 2000px; z-index: 1000; left:0; top:0; position :fixed"></div>'
+          ).insertBefore("#ui-datepicker-div");
+          setTimeout(function () {
+            $("#ui-datepicker-div").css("z-index", 199999);
+          }, 2);
+        },
+        onClose: function (dateText, inst) {
+          $(".ui-widget-overlay").remove();
         },
       })
       .datepicker("setDate", new Date());
@@ -320,6 +333,7 @@ function onDocumentReady(callback) {
           }
         },
         beforeShow: function () {
+          dpTop = $("#ui-datepicker-div").offset().top;
           var position = $(this).closest(".product__nav");
 
           window.setTimeout(function () {
@@ -329,6 +343,16 @@ function onDocumentReady(callback) {
               of: position,
             });
           }, 1);
+
+          $(
+            '<div class="ui-widget-overlay" style="width: 2000px; height: 2000px; z-index: 1000; left:0; top:0; position :fixed"></div>'
+          ).insertBefore("#ui-datepicker-div");
+          setTimeout(function () {
+            $("#ui-datepicker-div").css("z-index", 199999);
+          }, 2);
+        },
+        onClose: function (dateText, inst) {
+          $(".ui-widget-overlay").remove();
         },
       })
       .datepicker("setDate", "+0");
@@ -437,14 +461,20 @@ function onDocumentReady(callback) {
 
         changeTextWidth();
       });
-
     $(window).scroll(function () {
       if (
         $(this).scrollTop() >
         $("#ui-datepicker-div").not(".js_ignore_mark").offset().top +
           $("#ui-datepicker-div").not(".js_ignore_mark").height()
       ) {
-        $(".product__nav-input").not(".js_ignore_mark").datepicker("hide");
+        $(".hasDatepicker").not(".js_ignore_mark").datepicker("hide");
+      } else {
+        $(".hasDatepicker")
+          .not(".js_ignore_mark")
+          .on("click", function () {
+            $(this).datepicker("show");
+          });
+        // $(".hasDatepicker").datepicker("show");
       }
     });
   }
@@ -926,6 +956,7 @@ function onDocumentReady(callback) {
       orientation: "bottom",
       appendTo: ".site-aside__datepicker-container",
       beforeShow: function (input, inst) {
+        dpTop = $("#ui-datepicker-div").offset().top;
         $("#ui-datepicker-div").addClass("ui-datepicker--filters");
         window.setTimeout(function () {
           $("#ui-datepicker-div").position({
@@ -1671,6 +1702,16 @@ function onDocumentReady(callback) {
         if (!$(this).hasClass("transparent")) {
           $(this).html("Grupuoti profesijas");
         }
+      } else if ($(this).hasClass("controls__group-btn--recipient")) {
+        $(this).html("Išgrupuoti psl. gavėjus");
+        if (!$(this).hasClass("transparent")) {
+          $(this).html("Grupuoti psl. gavėjus");
+        }
+      } else if ($(this).hasClass("controls__group-btn--specialist")) {
+        $(this).html("Išgrupuoti specialistus");
+        if (!$(this).hasClass("transparent")) {
+          $(this).html("Grupuoti specialistus");
+        }
       }
     });
 
@@ -1710,6 +1751,7 @@ function onDocumentReady(callback) {
       orientation: "bottom",
       yearRange: "c-100:c",
       beforeShow: function (input, inst) {
+        dpTop = $("#ui-datepicker-div").offset().top;
         $("#ui-datepicker-div").addClass("ui-datepicker--age");
         window.setTimeout(function () {
           $("#ui-datepicker-div").position({
@@ -1720,10 +1762,17 @@ function onDocumentReady(callback) {
         }, 1);
         $(this).siblings(".input-arrow").addClass("rotate-arrow");
         datepickerShow = false;
+        $(
+          '<div class="ui-widget-overlay" style="width: 2000px; height: 2000px; z-index: 1000; left:0; top:0; position :fixed"></div>'
+        ).insertBefore("#ui-datepicker-div");
+        setTimeout(function () {
+          $("#ui-datepicker-div").css("z-index", 199999);
+        }, 2);
       },
       onClose: function (input, inst) {
         $(this).siblings(".input-arrow").removeClass("rotate-arrow");
         datepickerShow = true;
+        $(".ui-widget-overlay").remove();
       },
     })
     .focus(function () {
@@ -1764,6 +1813,19 @@ function onDocumentReady(callback) {
         "Lapkričio",
         "Gruodžio",
       ],
+      beforeShow:function() {
+        $(
+          '<div class="ui-widget-overlay" style="width: 2000px; height: 2000px; z-index: 1000; left:0; top:0; position :fixed"></div>'
+        ).insertBefore("#ui-datepicker-div");
+        setTimeout(function () {
+          $("#ui-datepicker-div").css("z-index", 199999);
+        }, 2);
+      },
+      onClose: function (input, inst) {
+        $(this).siblings(".input-arrow").removeClass("rotate-arrow");
+        datepickerShow = true;
+        $(".ui-widget-overlay").remove();
+      },
     });
 
   $(".timetable__datepicker--until")
@@ -1785,6 +1847,19 @@ function onDocumentReady(callback) {
         "Lapkričio",
         "Gruodžio",
       ],
+      beforeShow:function() {
+        $(
+          '<div class="ui-widget-overlay" style="width: 2000px; height: 2000px; z-index: 1000; left:0; top:0; position :fixed"></div>'
+        ).insertBefore("#ui-datepicker-div");
+        setTimeout(function () {
+          $("#ui-datepicker-div").css("z-index", 199999);
+        }, 2);
+      },
+      onClose: function (input, inst) {
+        $(this).siblings(".input-arrow").removeClass("rotate-arrow");
+        datepickerShow = true;
+        $(".ui-widget-overlay").remove();
+      },
     });
 
   $(".timetable__date-input").datepicker();
@@ -1981,10 +2056,20 @@ function onDocumentReady(callback) {
           });
         }, 1);
         // }
+
+        $(
+          '<div class="ui-widget-overlay" style="width: 2000px; height: 2000px; z-index: 1000; left:0; top:0; position :fixed"></div>'
+        ).insertBefore("#ui-datepicker-div");
+        setTimeout(function () {
+          $("#ui-datepicker-div").css("z-index", 199999);
+        }, 2);
+      },
+      onClose: function (dateText, inst) {
+        $(".ui-widget-overlay").remove();
       },
     })
     .datepicker("setDate", new Date())
-    .on("focus", function () {
+    .on("focus", function (e) {
       if (window.matchMedia("(min-width: 701px)").matches) {
         $("html, body").animate(
           {
@@ -2003,6 +2088,14 @@ function onDocumentReady(callback) {
       e.preventDefault();
       return false;
     });
+
+  $(document).on(
+    "click",
+    ".ui-datepicker-close:not('.js_ignore_mark')",
+    function () {
+      $(".ui-datepicker").hide();
+    }
+  );
 
   //statistics charts
   var clientsChart = [
@@ -2563,7 +2656,6 @@ function onDocumentReady(callback) {
           }
         });
     } else {
-
       //check if has th above
       if (start.closest("tr").index() == 0) {
         hasThAbove = false;
@@ -2579,23 +2671,27 @@ function onDocumentReady(callback) {
               .closest(".controls__table")
               .find("td")
               .each(function () {
-                if (startX >= $(this).offset().left && startX <= $(this).offset().left + $(this).width()) {
+                if (
+                  startX >= $(this).offset().left &&
+                  startX <= $(this).offset().left + $(this).width()
+                ) {
                   tableCell.push($(this));
                 }
               });
           }
         });
-        $(".controls__table thead tr:nth-of-type(1) th").each(function() {
-          console.log($(this))
-          if (resizedTh.offset().left >= $(this).offset().left && resizedTh.offset().left <= $(this).offset().left + $(this).width()) {
+        $(".controls__table thead tr:nth-of-type(1) th").each(function () {
+          if (
+            resizedTh.offset().left >= $(this).offset().left &&
+            resizedTh.offset().left <= $(this).offset().left + $(this).width()
+          ) {
             startWidthAbove = $(this).width();
           }
-        })
+        });
       } else {
         $(".controls__table thead tr:first-of-type th").each(function () {
           if ($(this).hasClass("resizing")) {
             resizedTh = $(this);
-            console.log(resizedTh);
             $(this)
               .closest(".controls__table")
               .find("td")
@@ -2627,15 +2723,19 @@ function onDocumentReady(callback) {
           $(this).css({ width: startWidth + (e.pageX - startX) });
         });
       } else {
-        $(".controls__table thead tr:first-of-type th").each(function() {
+        $(".controls__table thead tr:first-of-type th").each(function () {
           if ($(this).offset().left == $(start).offset().left) {
-            $(this).css({ width: startWidthAbove + (e.pageX - startX) });
+            $(this).css({
+              width: startWidthAbove + (e.pageX - startX - 2) * 2,
+            });
           }
-        })
+        });
         $(tableCell).each(function () {
-          $(this).css({ width: startWidth + (e.pageX - startX)/2 });
+          $(this).css({ width: startWidth + (e.pageX - startX) });
 
-          $(this).next().css({ width: startWidth + (e.pageX - startX)/2 });
+          $(this)
+            .next()
+            .css({ width: startWidth + (e.pageX - startX) });
         });
       }
     }
@@ -2841,23 +2941,23 @@ $(".breadcrumbs__change")
     rotateBtn($(this));
   });
 
-$(window)
-  .scroll(function () {
-    // sliding menu active on scroll
-    if (!$(".sliding-menu").length) return;
+// $(window)
+//   .scroll(function () {
+//     // sliding menu active on scroll
+//     if (!$(".sliding-menu").length) return;
 
-    var scrollDistance = $(window).scrollTop();
+//     var scrollDistance = $(window).scrollTop();
 
-    $("*[data-nav-section]")
-      .not(".js_ignore_mark")
-      .each(function (i) {
-        if ($(this).position().top <= scrollDistance) {
-          $(".sliding-menu li").removeClass("active");
-          $(".sliding-menu li").eq(i).addClass("active");
-        }
-      });
-  })
-  .scroll();
+//     $("*[data-nav-section]")
+//       .not(".js_ignore_mark")
+//       .each(function (i) {
+//         if ($(this).position().top <= scrollDistance) {
+//           $(".sliding-menu li").removeClass("active");
+//           $(".sliding-menu li").eq(i).addClass("active");
+//         }
+//       });
+//   })
+//   .scroll();
 
 $("main").scroll(function () {
   if ($(this).scrollTop() > 100) {

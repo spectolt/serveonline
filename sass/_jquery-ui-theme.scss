@@ -997,9 +997,9 @@ a.ui-button:active,
 
 /* Overlays */
 .ui-widget-overlay {
-  background: #aaaaaa;
-  opacity: 0.3;
-  filter: Alpha(Opacity=30);
+  background: $darkblue;
+  opacity: 0.2;
+  filter: Alpha(Opacity=20);
   /* support: IE8 */
 }
 

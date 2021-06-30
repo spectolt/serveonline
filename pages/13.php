@@ -12,7 +12,7 @@ $thisPage = "reservations"; ?>
                     <div class="controls__top controls__top--profiles">
                         <div class="controls__group">
                             <button class="controls__group-btn controls__group-btn--recipient darkblue small paragraph">Grupuoti psl. gavėjus</button>
-                            <button class="controls__group-btn controls__group-btn--recipient darkblue small paragraph">Grupuoti specialistus</button>
+                            <button class="controls__group-btn controls__group-btn--specialist darkblue small paragraph">Grupuoti specialistus</button>
                         </div>
                         <div class="controls__buttons-container">
                             <button class="controls__button controls__button--print darkblue small transparent paragraph">Spausdinti</button>
