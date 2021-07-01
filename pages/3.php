@@ -26,7 +26,8 @@ $thisPage = "about-us"; ?>
         </div>
     </section>
     <section class="solutions">
-    <div class="background">
+        <div class="background">
+            <div class="backdrop"></div>
             <div class="circle circle--4"></div>
             <div class="overlay"></div>
         </div>
@@ -36,7 +37,16 @@ $thisPage = "about-us"; ?>
                 Paprasta įsidiegti į savo svetainę, socialinius tinklus – </br>
                 gera stebėti didėjančius pardavimus. </p>
         </div>
-
+    </section>
+    <section class="features">
+        <div class="background">
+            <div class="backdrop-bg"></div>
+            <div class="backdrop"></div>
+            <div class="circle circle--1"></div>
+            <div class="circle circle--2"></div>
+            <div class="circle circle--3"></div>
+            <div class="overlay"></div>
+        </div>
     </section>
     <?php require_once('footer-menu-homepage.php'); ?>
 </main>

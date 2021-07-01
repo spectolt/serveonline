@@ -5,6 +5,16 @@
   top: 0;
   left: 0;
   z-index: 0;
+  overflow: hidden;
+
+  .backdrop-bg {
+    background-color: $white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 
   .backdrop {
     background-color: rgba(16, 27, 81, 0.2);
@@ -13,6 +23,13 @@
     left: 0;
     width: 100%;
     height: 100%;
+  }
+
+  @mixin animation-mixin($name, $fromX, $toX, $fromY, $toY, $opacityFrom, $opacityTo) {
+    @keyframes #{$name} {
+      0% {transform: translate($fromX + px, $fromY + px); opacity: $opacityFrom;}
+      100% {transform: translate($toX + px, $toY + px); opacity: $opacityTo;}
+    }
   }
 
   .circle {
@@ -29,6 +46,7 @@
       top: -100%;
       left: -35%;
       background-color: #F0F0F0;
+      // animation: animation-mixin(circle-1, random(0, 50), random(50,100), random(0, 50), random(50,100), random(0, 50), random(50,100)) 2s;
     }
 
     &--2 {
@@ -59,6 +77,17 @@
       transform: translate(-50%, -50%);
       filter: none;
     }
+
+    @for $i from 1 through 4 {
+      @if $i == 3 {
+        @include animation-mixin(circle-#{$i}, random(50), random(100) - 150, random(50), random(100) + 50, random(50)/100 + 0.2, random(50)/100 + 0.5);
+      } @else {
+        @include animation-mixin(circle-#{$i}, random(50), random(100) - 150, random(50), random(100) + 50, random(50)/100 + 0.3, random(50)/100 + 0.5);
+      }
+      &--#{$i} {
+        animation: circle-#{$i} #{random(12)/2 + 4}s ease-in-out infinite alternate;
+      }
+    }
   }
 
   .overlay {
@@ -74,22 +103,36 @@
   }
 }
 
+// .parallax {
+//   position: relative;
+//   height: 750px;
+//   transform-style: preserve-3d;
+//   // background-color: rgba(255, 0, 0, 0.5);
+//   width: 100%;
+// }
+
 .opportunities {
-  // height: 750px;
+  height: 750px;
   padding:  0;
   position: relative;
   display: flex;
-  z-index: 1;
+  z-index: 2;
 
   @include breakpoint(xl) {
     flex-direction: column;
     height: auto;
   }
 
+  .background {
+    position: fixed;
+    height: 750px;
+    top: auto;
+  }
+
   &__content {
     max-width: 1500px;
     padding: 185px 0 185px 40px;
-    margin: 0 auto;
+    margin: 0;
     z-index: 1;
     position: relative;
 
@@ -146,8 +189,12 @@
     align-items: flex-end;
     min-width: 800px;
     width: 900px;
-    padding-top: 50px;
+    padding-top: 55px;
+    position: fixed;
+    right: 0;
+    // bottom: 0;
     // width: 60%;
+    
 
     @include breakpoint(1250px) {
       min-width: 700px;
@@ -166,12 +213,18 @@
   padding: 100px 0;
   position: relative;
   overflow: hidden;
+  z-index: 20;
+
+  .backdrop {
+    background-color: $white;
+  }
 
   &__content {
     max-width: 720px;
     margin: 0 auto;
     text-align: center;
     z-index: 1;
+    position: relative;
 
     h2{
       font-size: 3rem;
@@ -180,4 +233,10 @@
       font-size: 1.5rem;
     }
   }
+}
+
+.features {
+  height: 750px;
+  z-index: 10;
+  position: relative;
 }
