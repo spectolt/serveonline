@@ -1813,7 +1813,7 @@ function onDocumentReady(callback) {
         "Lapkričio",
         "Gruodžio",
       ],
-      beforeShow:function() {
+      beforeShow: function () {
         $(
           '<div class="ui-widget-overlay" style="width: 2000px; height: 2000px; z-index: 1000; left:0; top:0; position :fixed"></div>'
         ).insertBefore("#ui-datepicker-div");
@@ -1847,7 +1847,7 @@ function onDocumentReady(callback) {
         "Lapkričio",
         "Gruodžio",
       ],
-      beforeShow:function() {
+      beforeShow: function () {
         $(
           '<div class="ui-widget-overlay" style="width: 2000px; height: 2000px; z-index: 1000; left:0; top:0; position :fixed"></div>'
         ).insertBefore("#ui-datepicker-div");
@@ -2635,117 +2635,167 @@ function onDocumentReady(callback) {
   var startX, startWidth, startWidthAbove, resizedTh;
   var hasThAbove = false;
 
-  $(".controls__table th").on("mousedown touchstart", function (e) {
-    start = $(this);
-    tableCell = [];
-    pressed = true;
-    startX = e.pageX;
-    startWidth = $(this).width();
-    $(start).addClass("resizing");
+  // $(".controls__table th").on("mousedown touchstart", function (e) {
+  //   start = $(this);
+  //   tableCell = [];
+  //   pressed = true;
+  //   startX = e.pageX;
+  //   startWidth = $(this).width();
+  //   $(start).addClass("resizing");
 
-    if (
-      !$(this).closest(".controls__table").find("thead tr:nth-of-type(2)")
-        .length
-    ) {
-      $(this)
-        .closest(".controls__table")
-        .find("td")
-        .each(function () {
-          if ($(this).offset().left == $(start).offset().left) {
-            tableCell.push($(this));
-          }
-        });
-    } else {
-      //check if has th above
-      if (start.closest("tr").index() == 0) {
+  //   if (
+  //     !$(this).closest(".controls__table").find("thead tr:nth-of-type(2)")
+  //       .length
+  //   ) {
+  //     $(this)
+  //       .closest(".controls__table")
+  //       .find("td")
+  //       .each(function () {
+  //         if ($(this).offset().left == $(start).offset().left) {
+  //           tableCell.push($(this));
+  //         }
+  //       });
+  //   } else {
+  //     //check if has th above
+  //     if (start.closest("tr").index() == 0) {
+  //       hasThAbove = false;
+  //     } else {
+  //       hasThAbove = true;
+  //     }
+
+  //     if (hasThAbove) {
+  //       $(".controls__table thead tr:nth-of-type(2) th").each(function () {
+  //         if ($(this).hasClass("resizing")) {
+  //           resizedTh = $(this);
+  //           $(this)
+  //             .closest(".controls__table")
+  //             .find("td")
+  //             .each(function () {
+  //               if (
+  //                 startX >= $(this).offset().left &&
+  //                 startX <= $(this).offset().left + $(this).width()
+  //               ) {
+  //                 tableCell.push($(this));
+  //               }
+  //             });
+  //         }
+  //       });
+  //       $(".controls__table thead tr:nth-of-type(1) th").each(function () {
+  //         if (
+  //           resizedTh.offset().left >= $(this).offset().left &&
+  //           resizedTh.offset().left <= $(this).offset().left + $(this).width()
+  //         ) {
+  //           startWidthAbove = $(this).width();
+  //         }
+  //       });
+  //     } else {
+  //       $(".controls__table thead tr:first-of-type th").each(function () {
+  //         if ($(this).hasClass("resizing")) {
+  //           resizedTh = $(this);
+  //           $(this)
+  //             .closest(".controls__table")
+  //             .find("td")
+  //             .each(function () {
+  //               if (startX >= $(this).offset().left &&
+  //               startX <= $(this).offset().left + $(this).width()) {
+  //                 tableCell.push($(this));
+  //               }
+  //             });
+  //         }
+  //       });
+  //     }
+  //   }
+  //   // }
+  //   // else {
+  //   //   tableCell = $(this)
+  //   //     .closest(".controls__table")
+  //   //     .find("td:nth-of-type(" + index + ")");
+  //   //   console.log(tableCell);
+  //   // }
+  //   isDragging = false;
+  // });
+
+  // $(document).on("mousemove touchmove", function (e) {
+  //   if (pressed) {
+  //     isDragging = true;
+  //     if (!hasThAbove) {
+  //       $(start).css({ width: startWidth + (e.pageX - startX) });
+  //       $(tableCell).each(function () {
+  //         $(this).css({ width: startWidth + (e.pageX - startX) });
+  //       });
+  //     } else {
+  //       $(".controls__table thead tr:first-of-type th").each(function () {
+  //         if ($(this).offset().left == $(start).offset().left) {
+  //           $(this).css({
+  //             width: startWidthAbove + (e.pageX - startX - 2) * 2,
+  //           });
+  //         }
+  //       });
+  //       $(tableCell).each(function () {
+  //         $(this).css({ width: startWidth + (e.pageX - startX) });
+
+  //         $(this)
+  //           .next()
+  //           .css({ width: startWidth + (e.pageX - startX) });
+  //       });
+  //     }
+  //   }
+  // });
+
+  // $(document).on("mouseup touchend", function () {
+  //   if (pressed) {
+  //     $(start).removeClass("resizing");
+  //     pressed = false;
+  //   }
+  // });
+
+  var resizableEl, hasThAbove
+  var hasThBelow = false
+  var resizableTd;
+  $(".controls__table th").resizable({
+    handles: "e",
+    minWidth: 18,
+    start: function() {
+      resizableEl = $(this);
+      resizableElWidth = $(this).width();
+      resizableTd = []
+
+
+      if ($(this).closest("tr").index() == 0) {
         hasThAbove = false;
       } else {
         hasThAbove = true;
       }
 
-      if (hasThAbove) {
-        $(".controls__table thead tr:nth-of-type(2) th").each(function () {
-          if ($(this).hasClass("resizing")) {
-            resizedTh = $(this);
-            $(this)
-              .closest(".controls__table")
-              .find("td")
-              .each(function () {
-                if (
-                  startX >= $(this).offset().left &&
-                  startX <= $(this).offset().left + $(this).width()
-                ) {
-                  tableCell.push($(this));
-                }
-              });
-          }
-        });
-        $(".controls__table thead tr:nth-of-type(1) th").each(function () {
-          if (
-            resizedTh.offset().left >= $(this).offset().left &&
-            resizedTh.offset().left <= $(this).offset().left + $(this).width()
-          ) {
-            startWidthAbove = $(this).width();
-          }
-        });
+      $(this).closest("table").find("tr:nth-of-type(2) th").each(function() {
+        if ($(this).offset().left == resizableEl.offset().left) {
+          hasThBelow = true
+          return false;
+        } else {
+          hasThBelow = false;
+        }
+      })
+
+      $(this).closest(".controls__table").find("td").each(function() {
+        if($(this).offset().left - 5 <= resizableEl.offset().left && $(this).offset().left + 5 >= resizableEl.offset().left) {
+          resizableTd.push($(this));
+        }
+      })
+    },
+    resize: function (event, ui) {
+      if (!hasThAbove && !hasThBelow) {
+        resizableTd.forEach(function(item) {
+          item.css({width: ui.size.width})
+        })
+      } else if (hasThBelow) {
+        resizableTd.forEach(function(item) {
+          item.css({width: ui.size.width / 2})
+          item.next().css({width: ui.size.width / 2})
+        })
       } else {
-        $(".controls__table thead tr:first-of-type th").each(function () {
-          if ($(this).hasClass("resizing")) {
-            resizedTh = $(this);
-            $(this)
-              .closest(".controls__table")
-              .find("td")
-              .each(function () {
-                if ($(this).offset().left == $(resizedTh).offset().left) {
-                  tableCell.push($(this));
-                }
-              });
-          }
-        });
+        resizableEl.css({width: ""})
       }
-    }
-    // }
-    // else {
-    //   tableCell = $(this)
-    //     .closest(".controls__table")
-    //     .find("td:nth-of-type(" + index + ")");
-    //   console.log(tableCell);
-    // }
-    isDragging = false;
-  });
-
-  $(document).on("mousemove touchmove", function (e) {
-    if (pressed) {
-      isDragging = true;
-      if (!hasThAbove) {
-        $(start).css({ width: startWidth + (e.pageX - startX) });
-        $(tableCell).each(function () {
-          $(this).css({ width: startWidth + (e.pageX - startX) });
-        });
-      } else {
-        $(".controls__table thead tr:first-of-type th").each(function () {
-          if ($(this).offset().left == $(start).offset().left) {
-            $(this).css({
-              width: startWidthAbove + (e.pageX - startX - 2) * 2,
-            });
-          }
-        });
-        $(tableCell).each(function () {
-          $(this).css({ width: startWidth + (e.pageX - startX) });
-
-          $(this)
-            .next()
-            .css({ width: startWidth + (e.pageX - startX) });
-        });
-      }
-    }
-  });
-
-  $(document).on("mouseup touchend", function () {
-    if (pressed) {
-      $(start).removeClass("resizing");
-      pressed = false;
-    }
+    },
   });
 
   moveAction();

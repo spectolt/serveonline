@@ -248,9 +248,9 @@
       width: 100%;
       display: table;
 
-      th[colspan] {
-        cursor: initial;
-      }
+      // th[colspan] {
+      //   cursor: initial;
+      // }
     }
 
     th {
@@ -260,7 +260,7 @@
       height: 60px;
       font-family: "Sen", sans-serif;
       padding: 10px;
-      cursor: col-resize;
+      // cursor: col-resize;
 
       @include breakpoint(xs) {
         height: 54px;
