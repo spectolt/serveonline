@@ -77,7 +77,7 @@ $thisPage = "service-profiles"; ?>
                             </thead>
                             <tbody>
                                 <?php for ($y = 0; $y < 15; $y++) { ?>
-                                    <tr>
+                                    <tr tabindex="0">
                                         <td>
                                             <div class="checkbox"><input name="select_all" type="checkbox" id="select_<?php echo $y ?>" />
                                                 <label for="select_<?php echo $y ?>"></label>

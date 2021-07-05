@@ -24,7 +24,7 @@ $thisPage = "reservations"; ?>
                     <button class="expand-button"></button>
                     <div class="controls__table-container">
                         <table class="controls__table profiles__table">
-                        <thead>
+                            <thead>
                                 <tr>
                                 <th class="bottom-arrow top-arrow">
                                         Data
@@ -76,7 +76,7 @@ $thisPage = "reservations"; ?>
                             </thead>
                             <tbody>
                                 <?php for ($y = 0; $y < 15; $y++) { ?>
-                                    <tr>
+                                    <tr tabindex="0">
                                     <td>2020 02 20</td>
                                         <td>12:20</td>
                                         <td>12:20</td>

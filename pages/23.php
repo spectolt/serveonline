@@ -13,8 +13,8 @@
                         </div>
                     </div>
                     <div class="statistics__date">
-                        <p class="statistics__day statistics__day--from">Nuo <input class="statistics__datepicker"></p>
-                        <p class="statistics__day statistics__day--to">Iki <input class="statistics__datepicker"></p>
+                        <p class="statistics__day statistics__day--from">Nuo <input class="statistics__datepicker" readonly></p>
+                        <p class="statistics__day statistics__day--to">Iki <input class="statistics__datepicker" readonly></p>
                     </div>
                 </div>
                 <div class="stat-grid">

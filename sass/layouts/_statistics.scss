@@ -164,6 +164,8 @@
       background-size: 10%;
       border: none;
       margin-left: 15px;
+      border-radius: 0;
+      cursor: pointer;
 
       @include breakpoint(sm) {
         font-size: 1rem;
@@ -666,8 +668,14 @@
     #{$_this}__name{
       @include breakpoint(sm){
         margin-left: 5px;
+        
         p{
           margin-top: 0;
+          font-size: 1rem;
+        }
+
+        h2{
+          font-size: 1.5rem;
         }
       }
     }
@@ -735,6 +743,7 @@
 
       @include breakpoint(sm){
         padding-top: 17px;
+        margin-bottom: 10px;
       }
     }
 
@@ -745,6 +754,8 @@
 
       @include breakpoint(sm){
         margin-top: 9px;
+        margin-bottom: 10px;
+
         #{$_this}__day{
           margin-left: 3px;
         }

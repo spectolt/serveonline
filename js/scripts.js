@@ -269,7 +269,7 @@ function onDocumentReady(callback) {
             }
           }, 1);
           $(
-            '<div class="ui-widget-overlay" style="width: 2000px; height: 2000px; z-index: 1000; left:0; top:0; position :fixed"></div>'
+            '<div class="ui-widget-overlay" style="width: 100vw; height: 100vh; z-index: 1000; left:0; top:0; position :fixed"></div>'
           ).insertBefore("#ui-datepicker-div");
           setTimeout(function () {
             $("#ui-datepicker-div").css("z-index", 199999);
@@ -1862,7 +1862,19 @@ function onDocumentReady(callback) {
       },
     });
 
-  $(".timetable__date-input").datepicker();
+  $(".timetable__date-input").datepicker({
+    beforeShow: function () {
+      $(
+        '<div class="ui-widget-overlay" style="width: 100vw; height: 100vh; z-index: 1000; left:0; top:0; position :fixed"></div>'
+      ).insertBefore("#ui-datepicker-div");
+      setTimeout(function () {
+        $("#ui-datepicker-div").css("z-index", 199999);
+      }, 2);
+    },
+    onClose: function () {
+      $(".ui-widget-overlay").hide();
+    },
+  });
 
   $("#timetable-from").change(function () {
     $(".timetable__datepicker--from").datepicker("setDate", $(this).val());
@@ -1966,7 +1978,7 @@ function onDocumentReady(callback) {
   }
 
   sliderInit(document.querySelector(".timetable__container"));
-  sliderInit(document.querySelector(".details__item--languages h4"));
+  // sliderInit(document.querySelector(".details__item--languages h4"));
 
   $(".checkbox-children .radio label")
     .not(".js_ignore_mark")
@@ -2073,14 +2085,14 @@ function onDocumentReady(callback) {
       if (window.matchMedia("(min-width: 701px)").matches) {
         $("html, body").animate(
           {
-            scrollTop: $(this).offset().top - 40,
+            scrollTop: $(this).offset().top - 80,
           },
           300
         );
       } else {
         $("html, body").animate(
           {
-            scrollTop: $(this).offset().top - 80,
+            scrollTop: $(this).offset().top - 100,
           },
           300
         );
@@ -2749,17 +2761,16 @@ function onDocumentReady(callback) {
   //   }
   // });
 
-  var resizableEl, hasThAbove
-  var hasThBelow = false
+  var resizableEl, hasThAbove;
+  var hasThBelow = false;
   var resizableTd;
   $(".controls__table th").resizable({
     handles: "e",
     minWidth: 18,
-    start: function() {
+    start: function () {
       resizableEl = $(this);
       resizableElWidth = $(this).width();
-      resizableTd = []
-
+      resizableTd = [];
 
       if ($(this).closest("tr").index() == 0) {
         hasThAbove = false;
@@ -2767,33 +2778,42 @@ function onDocumentReady(callback) {
         hasThAbove = true;
       }
 
-      $(this).closest("table").find("tr:nth-of-type(2) th").each(function() {
-        if ($(this).offset().left == resizableEl.offset().left) {
-          hasThBelow = true
-          return false;
-        } else {
-          hasThBelow = false;
-        }
-      })
+      $(this)
+        .closest("table")
+        .find("tr:nth-of-type(2) th")
+        .each(function () {
+          if ($(this).offset().left == resizableEl.offset().left) {
+            hasThBelow = true;
+            return false;
+          } else {
+            hasThBelow = false;
+          }
+        });
 
-      $(this).closest(".controls__table").find("td").each(function() {
-        if($(this).offset().left - 5 <= resizableEl.offset().left && $(this).offset().left + 5 >= resizableEl.offset().left) {
-          resizableTd.push($(this));
-        }
-      })
+      $(this)
+        .closest(".controls__table")
+        .find("td")
+        .each(function () {
+          if (
+            $(this).offset().left - 5 <= resizableEl.offset().left &&
+            $(this).offset().left + 5 >= resizableEl.offset().left
+          ) {
+            resizableTd.push($(this));
+          }
+        });
     },
     resize: function (event, ui) {
       if (!hasThAbove && !hasThBelow) {
-        resizableTd.forEach(function(item) {
-          item.css({width: ui.size.width})
-        })
+        resizableTd.forEach(function (item) {
+          item.css({ width: ui.size.width });
+        });
       } else if (hasThBelow) {
-        resizableTd.forEach(function(item) {
-          item.css({width: ui.size.width / 2})
-          item.next().css({width: ui.size.width / 2})
-        })
+        resizableTd.forEach(function (item) {
+          item.css({ width: ui.size.width / 2 });
+          item.next().css({ width: ui.size.width / 2 });
+        });
       } else {
-        resizableEl.css({width: ""})
+        resizableEl.css({ width: "" });
       }
     },
   });
@@ -2838,27 +2858,99 @@ function sliderInit(slider) {
       scrollLeft = slider.scrollLeft;
       scrollTop = slider.scrollTop;
     };
+
+    var startDraggingMobile = function (e) {
+      mouseDown = true;
+      startX = e.touches[0].pageX - slider.offsetLeft;
+      startY = e.touches[0].pageY - slider.offsetTop;
+      scrollLeft = slider.scrollLeft;
+      scrollTop = slider.scrollTop;
+    };
+
     var stopDragging = function (event) {
       mouseDown = false;
     };
 
-    slider.addEventListener("mousemove", (e) => {
-      e.preventDefault();
-      if (!mouseDown) {
-        return;
-      }
-      const x = e.pageX - slider.offsetLeft;
-      const y = e.pageY - slider.offsetTop;
-      const scrollX = x - startX;
-      const scrollY = y - startY;
-      slider.scrollLeft = scrollLeft - scrollX;
-      slider.scrollTop = scrollTop - scrollY;
-      lastPos = slider.scrollLeft;
-    });
+    slider.addEventListener(
+      "mousemove",
+      function (e) {
+        e.preventDefault();
+        if (!mouseDown) {
+          return;
+        }
+
+        const x = e.pageX - slider.offsetLeft;
+        const y = e.pageY - slider.offsetTop;
+        const scrollX = x - startX;
+        const scrollY = y - startY;
+        let scrollXMod = scrollX;
+        let scrollYMod = scrollY;
+
+        window.setTimeout(function () {
+          if (scrollY < 0) {
+            scrollYMod = scrollY * -1;
+          }
+
+          if (scrollX < 0) {
+            scrollXMod = scrollX * -1;
+          }
+
+          if (scrollXMod <= scrollYMod) {
+            slider.scrollTop = scrollTop - scrollY;
+          } else {
+            slider.scrollLeft = scrollLeft - scrollX;
+          }
+        }, 10);
+
+        lastPos = slider.scrollLeft;
+      },
+      false
+    );
+
+    slider.addEventListener(
+      "touchmove",
+      function (e) {
+        e.preventDefault();
+        if (!mouseDown) {
+          return;
+        }
+
+        const x = e.touches[0].pageX - slider.offsetLeft;
+        const y = e.touches[0].pageY - slider.offsetTop;
+        const scrollX = x - startX;
+        const scrollY = y - startY;
+        let scrollXMod = scrollX;
+        let scrollYMod = scrollY;
+
+        window.setTimeout(function () {
+          if (scrollY < 0) {
+            scrollYMod = scrollY * -1;
+          }
+
+          if (scrollX < 0) {
+            scrollXMod = scrollX * -1;
+          }
+
+          if (scrollXMod <= scrollYMod) {
+            slider.scrollTop = scrollTop - scrollY;
+            
+          } else {
+            slider.scrollLeft = scrollLeft - scrollX;
+          }
+        }, 10);
+
+        lastPos = slider.scrollLeft;
+      },
+      false
+    );
 
     // Add the event listeners
     slider.addEventListener("mousedown", startDragging, false);
+    slider.addEventListener("touchstart", startDraggingMobile, false);
+
     slider.addEventListener("mouseup", stopDragging, false);
+    slider.addEventListener("touchend", stopDragging, false);
+
     slider.addEventListener("mouseleave", stopDragging, false);
   }
 }

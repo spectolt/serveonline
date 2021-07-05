@@ -94,7 +94,7 @@ $thisPage = "company-report"; ?>
                             </thead>
                             <tbody>
                                 <?php for ($y = 0; $y < 20; $y++) { ?>
-                                    <tr>
+                                    <tr tabindex="0">
                                         <td>
                                             <div class="checkbox"><input name="select_all" type="checkbox" id="select_<?php echo $y ?>" />
                                                 <label for="select_<?php echo $y ?>"></label>
