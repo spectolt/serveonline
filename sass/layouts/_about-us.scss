@@ -411,8 +411,13 @@
 
     p {
       color: $white;
+      font-size: 1.125rem;
+
       a {
+        color: $white;
         display: block;
+        text-decoration: underline;
+        margin: 30px 0;
       }
     }
   }

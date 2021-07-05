@@ -24746,188 +24746,188 @@ section.product .product__block--company .slick-track {
 
 @-webkit-keyframes circle-1 {
   0% {
-    -webkit-transform: translate(27px, 30px) scale(1);
-            transform: translate(27px, 30px) scale(1);
-    opacity: 0.59;
+    -webkit-transform: translate(50px, 48px) scale(1);
+            transform: translate(50px, 48px) scale(1);
+    opacity: 0.65;
   }
   100% {
-    -webkit-transform: translate(9px, 141px) scale(1.2);
-            transform: translate(9px, 141px) scale(1.2);
-    opacity: 0.91;
+    -webkit-transform: translate(-8px, 90px) scale(1.2);
+            transform: translate(-8px, 90px) scale(1.2);
+    opacity: 0.72;
   }
 }
 
 @keyframes circle-1 {
   0% {
-    -webkit-transform: translate(27px, 30px) scale(1);
-            transform: translate(27px, 30px) scale(1);
-    opacity: 0.59;
+    -webkit-transform: translate(50px, 48px) scale(1);
+            transform: translate(50px, 48px) scale(1);
+    opacity: 0.65;
   }
   100% {
-    -webkit-transform: translate(9px, 141px) scale(1.2);
-            transform: translate(9px, 141px) scale(1.2);
-    opacity: 0.91;
+    -webkit-transform: translate(-8px, 90px) scale(1.2);
+            transform: translate(-8px, 90px) scale(1.2);
+    opacity: 0.72;
   }
 }
 
 .background .circle--1 {
-  -webkit-animation: circle-1 8.5s ease-in-out infinite alternate;
-          animation: circle-1 8.5s ease-in-out infinite alternate;
+  -webkit-animation: circle-1 7.5s ease-in-out infinite alternate;
+          animation: circle-1 7.5s ease-in-out infinite alternate;
 }
 
 @-webkit-keyframes circle-2 {
   0% {
-    -webkit-transform: translate(45px, 18px) scale(1);
-            transform: translate(45px, 18px) scale(1);
-    opacity: 0.36;
+    -webkit-transform: translate(28px, 39px) scale(1);
+            transform: translate(28px, 39px) scale(1);
+    opacity: 0.33;
   }
   100% {
-    -webkit-transform: translate(7px, 61px) scale(1.2);
-            transform: translate(7px, 61px) scale(1.2);
-    opacity: 0.64;
+    -webkit-transform: translate(10px, 139px) scale(1.2);
+            transform: translate(10px, 139px) scale(1.2);
+    opacity: 0.57;
   }
 }
 
 @keyframes circle-2 {
   0% {
-    -webkit-transform: translate(45px, 18px) scale(1);
-            transform: translate(45px, 18px) scale(1);
-    opacity: 0.36;
+    -webkit-transform: translate(28px, 39px) scale(1);
+            transform: translate(28px, 39px) scale(1);
+    opacity: 0.33;
   }
   100% {
-    -webkit-transform: translate(7px, 61px) scale(1.2);
-            transform: translate(7px, 61px) scale(1.2);
-    opacity: 0.64;
+    -webkit-transform: translate(10px, 139px) scale(1.2);
+            transform: translate(10px, 139px) scale(1.2);
+    opacity: 0.57;
   }
 }
 
 .background .circle--2 {
-  -webkit-animation: circle-2 7s ease-in-out infinite alternate;
-          animation: circle-2 7s ease-in-out infinite alternate;
+  -webkit-animation: circle-2 7.5s ease-in-out infinite alternate;
+          animation: circle-2 7.5s ease-in-out infinite alternate;
 }
 
 @-webkit-keyframes circle-3 {
   0% {
-    -webkit-transform: translate(19px, 6px) scale(1);
-            transform: translate(19px, 6px) scale(1);
-    opacity: 0.7;
+    -webkit-transform: translate(17px, 48px) scale(1);
+            transform: translate(17px, 48px) scale(1);
+    opacity: 0.37;
   }
   100% {
-    -webkit-transform: translate(-118px, 100px) scale(1.2);
-            transform: translate(-118px, 100px) scale(1.2);
-    opacity: 0.87;
+    -webkit-transform: translate(-146px, 109px) scale(1.2);
+            transform: translate(-146px, 109px) scale(1.2);
+    opacity: 0.68;
   }
 }
 
 @keyframes circle-3 {
   0% {
-    -webkit-transform: translate(19px, 6px) scale(1);
-            transform: translate(19px, 6px) scale(1);
-    opacity: 0.7;
+    -webkit-transform: translate(17px, 48px) scale(1);
+            transform: translate(17px, 48px) scale(1);
+    opacity: 0.37;
   }
   100% {
-    -webkit-transform: translate(-118px, 100px) scale(1.2);
-            transform: translate(-118px, 100px) scale(1.2);
-    opacity: 0.87;
+    -webkit-transform: translate(-146px, 109px) scale(1.2);
+            transform: translate(-146px, 109px) scale(1.2);
+    opacity: 0.68;
   }
 }
 
 .background .circle--3 {
-  -webkit-animation: circle-3 6.5s ease-in-out infinite alternate;
-          animation: circle-3 6.5s ease-in-out infinite alternate;
+  -webkit-animation: circle-3 7.5s ease-in-out infinite alternate;
+          animation: circle-3 7.5s ease-in-out infinite alternate;
 }
 
 @-webkit-keyframes circle-4 {
   0% {
-    -webkit-transform: translate(27px, 6px) scale(1);
-            transform: translate(27px, 6px) scale(1);
-    opacity: 0.38;
+    -webkit-transform: translate(38px, 47px) scale(1);
+            transform: translate(38px, 47px) scale(1);
+    opacity: 0.43;
   }
   100% {
-    -webkit-transform: translate(32px, 64px) scale(1.2);
-            transform: translate(32px, 64px) scale(1.2);
-    opacity: 0.57;
+    -webkit-transform: translate(-33px, 126px) scale(1.2);
+            transform: translate(-33px, 126px) scale(1.2);
+    opacity: 0.72;
   }
 }
 
 @keyframes circle-4 {
   0% {
-    -webkit-transform: translate(27px, 6px) scale(1);
-            transform: translate(27px, 6px) scale(1);
-    opacity: 0.38;
+    -webkit-transform: translate(38px, 47px) scale(1);
+            transform: translate(38px, 47px) scale(1);
+    opacity: 0.43;
   }
   100% {
-    -webkit-transform: translate(32px, 64px) scale(1.2);
-            transform: translate(32px, 64px) scale(1.2);
-    opacity: 0.57;
+    -webkit-transform: translate(-33px, 126px) scale(1.2);
+            transform: translate(-33px, 126px) scale(1.2);
+    opacity: 0.72;
   }
 }
 
 .background .circle--4 {
-  -webkit-animation: circle-4 8s ease-in-out infinite alternate;
-          animation: circle-4 8s ease-in-out infinite alternate;
+  -webkit-animation: circle-4 9s ease-in-out infinite alternate;
+          animation: circle-4 9s ease-in-out infinite alternate;
 }
 
 @-webkit-keyframes circle-5 {
   0% {
-    -webkit-transform: translate(8px, 10px) scale(1);
-            transform: translate(8px, 10px) scale(1);
-    opacity: 0.4;
+    -webkit-transform: translate(48px, 41px) scale(1);
+            transform: translate(48px, 41px) scale(1);
+    opacity: 0.72;
   }
   100% {
-    -webkit-transform: translate(24px, 78px) scale(1.2);
-            transform: translate(24px, 78px) scale(1.2);
-    opacity: 0.69;
+    -webkit-transform: translate(40px, 91px) scale(1.2);
+            transform: translate(40px, 91px) scale(1.2);
+    opacity: 0.82;
   }
 }
 
 @keyframes circle-5 {
   0% {
-    -webkit-transform: translate(8px, 10px) scale(1);
-            transform: translate(8px, 10px) scale(1);
-    opacity: 0.4;
+    -webkit-transform: translate(48px, 41px) scale(1);
+            transform: translate(48px, 41px) scale(1);
+    opacity: 0.72;
   }
   100% {
-    -webkit-transform: translate(24px, 78px) scale(1.2);
-            transform: translate(24px, 78px) scale(1.2);
-    opacity: 0.69;
+    -webkit-transform: translate(40px, 91px) scale(1.2);
+            transform: translate(40px, 91px) scale(1.2);
+    opacity: 0.82;
   }
 }
 
 .background .circle--5 {
-  -webkit-animation: circle-5 5s ease-in-out infinite alternate;
-          animation: circle-5 5s ease-in-out infinite alternate;
+  -webkit-animation: circle-5 6.5s ease-in-out infinite alternate;
+          animation: circle-5 6.5s ease-in-out infinite alternate;
 }
 
 @-webkit-keyframes circle-6 {
   0% {
-    -webkit-transform: translate(38px, 20px) scale(1);
-            transform: translate(38px, 20px) scale(1);
-    opacity: 0.59;
+    -webkit-transform: translate(15px, 29px) scale(1);
+            transform: translate(15px, 29px) scale(1);
+    opacity: 0.41;
   }
   100% {
-    -webkit-transform: translate(-9px, 117px) scale(1.2);
-            transform: translate(-9px, 117px) scale(1.2);
-    opacity: 0.69;
+    -webkit-transform: translate(44px, 124px) scale(1.2);
+            transform: translate(44px, 124px) scale(1.2);
+    opacity: 0.95;
   }
 }
 
 @keyframes circle-6 {
   0% {
-    -webkit-transform: translate(38px, 20px) scale(1);
-            transform: translate(38px, 20px) scale(1);
-    opacity: 0.59;
+    -webkit-transform: translate(15px, 29px) scale(1);
+            transform: translate(15px, 29px) scale(1);
+    opacity: 0.41;
   }
   100% {
-    -webkit-transform: translate(-9px, 117px) scale(1.2);
-            transform: translate(-9px, 117px) scale(1.2);
-    opacity: 0.69;
+    -webkit-transform: translate(44px, 124px) scale(1.2);
+            transform: translate(44px, 124px) scale(1.2);
+    opacity: 0.95;
   }
 }
 
 .background .circle--6 {
-  -webkit-animation: circle-6 7.5s ease-in-out infinite alternate;
-          animation: circle-6 7.5s ease-in-out infinite alternate;
+  -webkit-animation: circle-6 5s ease-in-out infinite alternate;
+          animation: circle-6 5s ease-in-out infinite alternate;
 }
 
 .background .overlay {
@@ -25174,9 +25174,13 @@ section.product .product__block--company .slick-track {
 
 .tools__content p {
   color: #fff;
+  font-size: 1.125rem;
 }
 
 .tools__content p a {
+  color: #fff;
   display: block;
+  text-decoration: underline;
+  margin: 30px 0;
 }
 /*# sourceMappingURL=style.css.map */
