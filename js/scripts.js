@@ -167,7 +167,6 @@ function onDocumentReady(callback) {
       this._updateDatepicker(inst);
     };
 
-
     //event dates
     var Event = function (text) {
       this.text = text;
@@ -235,8 +234,8 @@ function onDocumentReady(callback) {
             $(".specialist__overlay").removeClass("hidden");
           }
 
-          dpDivLeft = dpDiv.offset().left;
-          dpDivTop = dpDiv.offset().top;
+          // dpDivLeft = dpDiv.offset().left;
+          // dpDivTop = dpDiv.offset().top;
         },
 
         beforeShowDay: function (date) {
@@ -286,8 +285,11 @@ function onDocumentReady(callback) {
             $("#ui-datepicker-div").css("z-index", 199999);
           }, 2);
 
-          dp = input;
-          dpDiv = inst.dpDiv;
+          // dp = input;
+          // dpDiv = inst.dpDiv;
+          console.log(inst.inline)
+
+
         },
         onClose: function (dateText, inst) {
           $(".ui-widget-overlay").remove();
@@ -336,8 +338,8 @@ function onDocumentReady(callback) {
           $(".product__nav-input").datepicker("setDate", getDate);
           $(this).datepicker("setDate", getDate2);
           $(this).blur();
-          dpDivLeft = dpDiv.offset().left;
-          dpDivTop = dpDiv.offset().top;
+          // dpDivLeft = dpDiv.offset().left;
+          // dpDivTop = dpDiv.offset().top;
         },
 
         beforeShowDay: function (date) {
@@ -367,8 +369,8 @@ function onDocumentReady(callback) {
             $("#ui-datepicker-div").css("z-index", 199999);
           }, 2);
 
-          dp = input;
-          dpDiv = inst.dpDiv;
+          // dp = input;
+          // dpDiv = inst.dpDiv;
           
         },
         onClose: function (dateText, inst) {
@@ -420,17 +422,6 @@ function onDocumentReady(callback) {
       .not(".js_ignore_mark")
       .on("click", function () {
         $(popup).fadeOut(300);
-        // $(dp).not(".js_ignore_mark").datepicker({
-        //   beforeShow: function(input, inst) {
-        //     $(inst.dpDiv).css({left: dpDivLeft});
-        //     console.log( $(inst.dpDiv))
-        //   }
-        // })
-
-        // $(dp).not(".js_ignore_mark").datepicker('show')
-        // window.setTimeout(function(){
-        //   $(dp).datepicker('widget').css({left: dpDivLeft, top: dpDivTop});
-        // },1)
       });
 
     $(".product__nav-icon")
