@@ -270,7 +270,7 @@ $thisPage = "specialist-profile" ?>
                     </div>
                     <div class="company__container">
                         <div class="timetable__container disable-scrollbars">
-                            <?php for ($j = 0; $j < 5; $j++) { ?>
+                            <?php for ($j = 0; $j < 15; $j++) { ?>
                                 <div class="timetable__week <?php if ($j == 2) echo "selected-week selected-week--from ";
                                                             if ($j == 3) echo "selected-week selected-week--to " ?>">
                                     <?php for ($i = 0; $i < 7; $i++) { ?>

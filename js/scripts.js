@@ -2886,7 +2886,7 @@ function sliderInit(slider) {
         let scrollXMod = scrollX;
         let scrollYMod = scrollY;
 
-        window.setTimeout(function () {
+        // window.setTimeout(function () {
           if (scrollY < 0) {
             scrollYMod = scrollY * -1;
           }
@@ -2900,7 +2900,7 @@ function sliderInit(slider) {
           } else {
             slider.scrollLeft = scrollLeft - scrollX;
           }
-        }, 10);
+        // }, 10);
 
         lastPos = slider.scrollLeft;
       },
@@ -2922,7 +2922,7 @@ function sliderInit(slider) {
         let scrollXMod = scrollX;
         let scrollYMod = scrollY;
 
-        window.setTimeout(function () {
+        // window.setTimeout(function () {
           if (scrollY < 0) {
             scrollYMod = scrollY * -1;
           }
@@ -2937,7 +2937,7 @@ function sliderInit(slider) {
           } else {
             slider.scrollLeft = scrollLeft - scrollX;
           }
-        }, 10);
+        // }, 10);
 
         lastPos = slider.scrollLeft;
       },

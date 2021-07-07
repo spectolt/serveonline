@@ -55,7 +55,7 @@ $thisPage = "about-us"; ?>
                 specialistai</h3>
             <button class="about-us__button darkblue">Prisijunk ir išbandyk!</button>
         </div>
-        <div class="features__content features__content--right parallax__layer parallax__layer--back">
+        <div class="features__content features__content--right parallax__layer parallax__layer--base">
             <div class="features__item features__item--clients">
                 <img src="../img/icons/people.svg" alt="" class="features__icon">
                 <h3>Klientų ratas nuolat plečiasi</h3>
