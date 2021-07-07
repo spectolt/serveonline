@@ -463,6 +463,7 @@ footer.container {
             &--active {
               // background-color: $color__controls-sidebar-background;
               padding: 10px 20px;
+              transition: background-color .3s ease-in-out;
 
               a {
                 font-weight: bold;
@@ -485,6 +486,7 @@ footer.container {
 
             .site-aside__datepicker-container {
               position: relative;
+              height: 35px;
 
               &:after {
                 content: "";
@@ -507,8 +509,9 @@ footer.container {
               font-size: 0.875rem;
               padding: 10px 15px;
               border-radius: 5px;
-              border: 1px solid $gray;
+              border: 1px solid #afb0b9;
               width: 100%;
+              height: 100%;
             }
 
             .select2-container {

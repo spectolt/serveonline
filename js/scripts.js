@@ -167,6 +167,7 @@ function onDocumentReady(callback) {
       this._updateDatepicker(inst);
     };
 
+
     //event dates
     var Event = function (text) {
       this.text = text;
@@ -177,9 +178,17 @@ function onDocumentReady(callback) {
     eventDates[new Date("07/28/2021")] = new Event("Event02");
 
     var availableDates = {};
-    availableDates[new Date("07/05/2021")] = new Date("06/05/2021");
-    availableDates[new Date("07/12/2021")] = new Date("06/12/2021");
-    availableDates[new Date("07/13/2021")] = new Date("06/13/2021");
+    availableDates[new Date("07/05/2021")] = new Date("07/05/2021");
+    availableDates[new Date("07/12/2021")] = new Date("07/12/2021");
+    availableDates[new Date("07/13/2021")] = new Date("07/13/2021");
+
+    jQuery.datepicker._checkExternalClick = function(e) {
+      if($(e.target).closest(".ui-widget-overlay").length) {
+        $(".hasDatepicker").datepicker("hide")
+      }
+    };
+
+    var dp, dpDiv, dpDivLeft, dpDivTop;
 
     $(".js-datepicker")
       .not(".js_ignore_mark")
@@ -225,6 +234,9 @@ function onDocumentReady(callback) {
           if ($(".specialist__overlay")) {
             $(".specialist__overlay").removeClass("hidden");
           }
+
+          dpDivLeft = dpDiv.offset().left;
+          dpDivTop = dpDiv.offset().top;
         },
 
         beforeShowDay: function (date) {
@@ -249,7 +261,6 @@ function onDocumentReady(callback) {
           var offsetLeft = $(this).closest(".product__nav").offset();
           window.setTimeout(function () {
             dpTop = $("#ui-datepicker-div").offset().top;
-            console.log(dpTop);
 
             if (window.matchMedia("(max-width: 900px)").matches) {
               $(inst.dpDiv).css({
@@ -274,6 +285,9 @@ function onDocumentReady(callback) {
           setTimeout(function () {
             $("#ui-datepicker-div").css("z-index", 199999);
           }, 2);
+
+          dp = input;
+          dpDiv = inst.dpDiv;
         },
         onClose: function (dateText, inst) {
           $(".ui-widget-overlay").remove();
@@ -322,6 +336,8 @@ function onDocumentReady(callback) {
           $(".product__nav-input").datepicker("setDate", getDate);
           $(this).datepicker("setDate", getDate2);
           $(this).blur();
+          dpDivLeft = dpDiv.offset().left;
+          dpDivTop = dpDiv.offset().top;
         },
 
         beforeShowDay: function (date) {
@@ -332,7 +348,7 @@ function onDocumentReady(callback) {
             return [true, "", ""];
           }
         },
-        beforeShow: function () {
+        beforeShow: function (input, inst) {
           dpTop = $("#ui-datepicker-div").offset().top;
           var position = $(this).closest(".product__nav");
 
@@ -350,12 +366,16 @@ function onDocumentReady(callback) {
           setTimeout(function () {
             $("#ui-datepicker-div").css("z-index", 199999);
           }, 2);
+
+          dp = input;
+          dpDiv = inst.dpDiv;
+          
         },
         onClose: function (dateText, inst) {
           $(".ui-widget-overlay").remove();
         },
       })
-      .datepicker("setDate", "+0");
+      .datepicker("setDate", "+0")
 
     var popup = $(
       "<div class='ui-datepicker-popup'><div class='ui-datepicker-popup__header'>" +
@@ -400,6 +420,17 @@ function onDocumentReady(callback) {
       .not(".js_ignore_mark")
       .on("click", function () {
         $(popup).fadeOut(300);
+        // $(dp).not(".js_ignore_mark").datepicker({
+        //   beforeShow: function(input, inst) {
+        //     $(inst.dpDiv).css({left: dpDivLeft});
+        //     console.log( $(inst.dpDiv))
+        //   }
+        // })
+
+        // $(dp).not(".js_ignore_mark").datepicker('show')
+        // window.setTimeout(function(){
+        //   $(dp).datepicker('widget').css({left: dpDivLeft, top: dpDivTop});
+        // },1)
       });
 
     $(".product__nav-icon")
@@ -2971,7 +3002,7 @@ function sliderInit(slider) {
       $(slider).animate({
         scrollTop: "-=" + speedY * scrollY,
         scrollLeft: "-=" + speedX * scrollX
-      }, { duration: 100, easing: 'easeOutCubic' })      
+      }, { duration: 300, easing: 'easeOutCubic' })      
     };
 
     // Add the event listeners
