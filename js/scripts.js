@@ -2850,9 +2850,14 @@ function sliderInit(slider) {
     lastPos = 0;
     var mouseDown = false;
     var startX, scrollLeft, scrollTop;
+    var scrollTopFinal, scrollLeftFinal;
+    var x, y, scrollX, scrollY;
+    var time1;
 
     var startDragging = function (e) {
       mouseDown = true;
+      time1 = new Date().getTime();
+
       startX = e.pageX - slider.offsetLeft;
       startY = e.pageY - slider.offsetTop;
       scrollLeft = slider.scrollLeft;
@@ -2861,28 +2866,27 @@ function sliderInit(slider) {
 
     var startDraggingMobile = function (e) {
       mouseDown = true;
+      time1 = new Date().getTime();
+
       startX = e.touches[0].pageX - slider.offsetLeft;
       startY = e.touches[0].pageY - slider.offsetTop;
       scrollLeft = slider.scrollLeft;
       scrollTop = slider.scrollTop;
     };
 
-    var stopDragging = function (event) {
-      mouseDown = false;
-    };
-
     slider.addEventListener(
       "mousemove",
       function (e) {
         e.preventDefault();
+
         if (!mouseDown) {
           return;
         }
 
-        const x = e.pageX - slider.offsetLeft;
-        const y = e.pageY - slider.offsetTop;
-        const scrollX = x - startX;
-        const scrollY = y - startY;
+        x = e.pageX - slider.offsetLeft;
+        y = e.pageY - slider.offsetTop;
+        scrollX = x - startX;
+        scrollY = y - startY;
         let scrollXMod = scrollX;
         let scrollYMod = scrollY;
 
@@ -2896,9 +2900,11 @@ function sliderInit(slider) {
           }
 
           if (scrollXMod <= scrollYMod) {
-            slider.scrollTop = scrollTop - scrollY;
+            scrollTopFinal = scrollTop - scrollY;
+            slider.scrollTop = scrollTopFinal;
           } else {
-            slider.scrollLeft = scrollLeft - scrollX;
+            scrollLeftFinal = scrollLeft - scrollX;
+            slider.scrollLeft = scrollLeftFinal;
           }
         // }, 10);
 
@@ -2911,14 +2917,15 @@ function sliderInit(slider) {
       "touchmove",
       function (e) {
         e.preventDefault();
+
         if (!mouseDown) {
           return;
         }
 
-        const x = e.touches[0].pageX - slider.offsetLeft;
-        const y = e.touches[0].pageY - slider.offsetTop;
-        const scrollX = x - startX;
-        const scrollY = y - startY;
+        x = e.touches[0].pageX - slider.offsetLeft;
+        y = e.touches[0].pageY - slider.offsetTop;
+        scrollX = x - startX;
+        scrollY = y - startY;
         let scrollXMod = scrollX;
         let scrollYMod = scrollY;
 
@@ -2932,17 +2939,40 @@ function sliderInit(slider) {
           }
 
           if (scrollXMod <= scrollYMod) {
-            slider.scrollTop = scrollTop - scrollY;
-            
+            scrollTopFinal = scrollTop - scrollY;
+            slider.scrollTop = scrollTopFinal;
           } else {
-            slider.scrollLeft = scrollLeft - scrollX;
+            scrollLeftFinal = scrollLeft - scrollX;
+            slider.scrollLeft = scrollLeftFinal;
           }
         // }, 10);
 
         lastPos = slider.scrollLeft;
+        console.log(scrollY)
       },
       false
     );
+    
+    var stopDragging = function (event) {
+      mouseDown = false;
+      var time2 = new Date().getTime();
+      var timeDiff = time2 - time1;
+      var speedY = (scrollTopFinal - scrollTop) / timeDiff
+      var speedX = (scrollLeftFinal - scrollLeft) / timeDiff
+
+      if (speedX < 0) {
+        speedX = speedX * -1;
+      }
+
+      if (speedY < 0) {
+        speedY = speedY * -1;
+      }
+
+      $(slider).animate({
+        scrollTop: "-=" + speedY * scrollY,
+        scrollLeft: "-=" + speedX * scrollX
+      }, { duration: 100, easing: 'easeOutCubic' })      
+    };
 
     // Add the event listeners
     slider.addEventListener("mousedown", startDragging, false);
@@ -2951,7 +2981,7 @@ function sliderInit(slider) {
     slider.addEventListener("mouseup", stopDragging, false);
     slider.addEventListener("touchend", stopDragging, false);
 
-    slider.addEventListener("mouseleave", stopDragging, false);
+    // slider.addEventListener("mouseleave", stopDragging, false);
   }
 }
 
