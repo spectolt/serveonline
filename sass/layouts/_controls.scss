@@ -1151,12 +1151,21 @@
         margin: 0;
         max-width: none;
         width: 100%;
+        justify-content: left;
       }
     }
     button {
       @include breakpoint(sm) {
         justify-content: center;
       }
+    }
+
+    .controls__delete{
+      margin-right: 5px;
+    }
+    
+    .controls__cancel{
+      margin-left: 0px;
     }
   }
 
@@ -1201,6 +1210,12 @@
         label {
           &:before {
             top: -7px;
+            left: 3px;
+          }
+
+          &::after {
+            top: -3px;
+            left: 6px;
           }
         }
       }
@@ -1209,7 +1224,7 @@
     th,
     td {
       &:first-of-type {
-        width: 32px;
+        width: 40px;
       }
       &:nth-of-type(2) {
         width: 78px;
