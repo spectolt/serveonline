@@ -674,8 +674,12 @@ td.ui-datepicker-today a {
 
 td.ui-datepicker-highlight a {
   position: relative;
+}
 
-  &:after {
+td.ui-datepicker-highlight {
+  position: relative;
+
+  .flag {
     content: "";
     width: 12px;
     height: 15px;
@@ -687,6 +691,11 @@ td.ui-datepicker-highlight a {
     //margin-right: 10px;
     position: absolute;
     top: 2px;
+    right: 0;
+
+    &:hover {
+      background-color: initial;
+    }
   }
 }
 

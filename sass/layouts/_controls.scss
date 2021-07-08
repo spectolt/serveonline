@@ -1083,6 +1083,32 @@
     border-right: none;
   }
   &__table {
+    thead{
+      th{
+        &::after{
+          bottom: 10px;
+        }
+      }
+    }
+
+    th,
+    td {
+      font-size: 0.75rem;
+      font-weight: 400;
+      &:first-of-type {
+        width: 99px;
+        text-align: center;
+        vertical-align: middle;
+      }
+      &:nth-of-type(2){
+        width: 980px;
+      }
+      &:last-of-type{
+        width: 149px;
+        vertical-align: middle;
+      }
+    }
+
     td {
       padding: 10px;
       border: 1px solid $lightgray;
@@ -1108,6 +1134,7 @@
       margin: 0;
       float: left;
       width: calc(100% - 45px);
+      font-size: 0.75rem;
     }
     button.controls__edit {
       margin: 0;

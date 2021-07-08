@@ -2,48 +2,49 @@
 $thisPage = "messages"; ?>
 
 <?php require_once('header.php'); ?>
-<main class="site-main site-main--aside">
+<main class="site-main site-main--aside hasTable">
     <section class="page-content page-content--controls page-content--messages">
         <div class="page-content__wrapper">
             <section class="controls messages">
-                <h1 class="title">Pranešimai</h1>
-                <div class="controls__top">
-                    <ul class="controls__languages">
+                <div class="controls__header">
+                    <h1 class="title">Pranešimai</h1>
+                    <div class="controls__top">
+                        <!-- <ul class="controls__languages">
                         <li class="paragraph active"><a href="#">LT</a></li>
                         <li class="paragraph"><a href="#">EN</a></li>
                         <li class="paragraph"><a href="#">RU</a></li>
-                    </ul>
+                    </ul> -->
+                    </div>
                 </div>
-                <div class="controls__table-container">
-                    <table class="controls__table messages__table">
-                        <thead>
-                            <tr>
-                                <th>Sukūrimo data</th>
-                                <th>Pranešimo vieta</th>
-                                <th>Pranešimo ID</th>
-                                <th>Pranešimo data</th>
-                                <th>Pranešimo tekstas</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php for ($y = 0; $y < 4; $y++) { ?>
+                <div class="controls__table-container-wrapper">
+                    <button class="expand-button"></button>
+                    <div class="controls__table-container">
+                        <table class="controls__table messages__table">
+                            <thead>
                                 <tr>
-                                    <td>2020 05 01</td>
-                                    <td>Registracija</td>
-                                    <td>12345678</td>
-                                    <td>Įspėjimas</td>
-                                    <td class="messages__text">
-                                        <p>Aromatherapy Associates eterinių aliejų masažas, tai
-                                            specializuotas masažas, sudarytas iš Rytų ir Vakarų tradicijų,
-                                            dėmesį skiriant nugarai, galvai, kaklui, pečiams ir pėdoms,
-                                            praturtintas grynų eterinių aliejų kvapais ir naudingosiomis
-                                            savybėmis.</p>
-                                        <button class="controls__edit"></button>
-                                    </td>
+                                    <th class="top-arrow bottom-arrow">ID</th>
+                                    <th class="top-arrow bottom-arrow">Pranešimo tekstas</th>
+                                    <th class="top-arrow bottom-arrow">Pranešimo vieta</th>
                                 </tr>
-                            <?php } ?>
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                <?php for ($y = 0; $y < 4; $y++) { ?>
+                                    <tr>
+                                        <td>12345678</td>
+                                        <td class="messages__text">
+                                            <p>Aromatherapy Associates eterinių aliejų masažas, tai
+                                                specializuotas masažas, sudarytas iš Rytų ir Vakarų tradicijų,
+                                                dėmesį skiriant nugarai, galvai, kaklui, pečiams ir pėdoms,
+                                                praturtintas grynų eterinių aliejų kvapais ir naudingosiomis
+                                                savybėmis.</p>
+                                            <button class="controls__edit"></button>
+                                        </td>
+                                        <td>Specialistai</td>
+                                    </tr>
+                                <?php } ?>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </section>
             <div class="pagination">

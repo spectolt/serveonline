@@ -242,12 +242,18 @@ function onDocumentReady(callback) {
           var available = availableDates[date];
           var highlight = eventDates[date];
           if (available && highlight) {
+            setTimeout(function () {
+              $('<span class="flag"></span>').appendTo(".ui-datepicker-highlight");
+            }, 2);
             return [
               true,
               "ui-datepicker-available ui-datepicker-highlight",
               "",
             ];
           } else if (highlight) {
+            setTimeout(function () {
+              $('<span class="flag"></span>').appendTo(".ui-datepicker-highlight");
+            }, 2);
             return [true, "ui-datepicker-highlight", ""];
           } else if (available) {
             return [true, "ui-datepicker-available", ""];
@@ -281,15 +287,6 @@ function onDocumentReady(callback) {
           $(
             '<div class="ui-widget-overlay" style="width: 100vw; height: 100vh; z-index: 1000; left:0; top:0; position :fixed"></div>'
           ).insertBefore("#ui-datepicker-div");
-          setTimeout(function () {
-            $("#ui-datepicker-div").css("z-index", 199999);
-          }, 2);
-
-          // dp = input;
-          // dpDiv = inst.dpDiv;
-          console.log(inst.inline)
-
-
         },
         onClose: function (dateText, inst) {
           $(".ui-widget-overlay").remove();
@@ -343,9 +340,24 @@ function onDocumentReady(callback) {
         },
 
         beforeShowDay: function (date) {
+          var available = availableDates[date];
           var highlight = eventDates[date];
-          if (highlight) {
+          if (available && highlight) {
+            setTimeout(function () {
+              $('<span class="flag"></span>').appendTo(".ui-datepicker-highlight");
+            }, 2);
+            return [
+              true,
+              "ui-datepicker-available ui-datepicker-highlight",
+              "",
+            ];
+          } else if (highlight) {
+            setTimeout(function () {
+              $('<span class="flag"></span>').appendTo(".ui-datepicker-highlight");
+            }, 2);
             return [true, "ui-datepicker-highlight", ""];
+          } else if (available) {
+            return [true, "ui-datepicker-available", ""];
           } else {
             return [true, "", ""];
           }
