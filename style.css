@@ -3207,6 +3207,10 @@ table.calendar .calendar__more-times--hidden {
   }
 }
 
+.warning-popup-container .warning-popup__content--new-message {
+  padding-bottom: 0;
+}
+
 .warning-popup-container .warning-popup__button-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -24877,27 +24881,27 @@ section.product .product__block--company .slick-track {
 
 @-webkit-keyframes circle-1 {
   0% {
-    -webkit-transform: translate(6px, 25px) scale(1);
-            transform: translate(6px, 25px) scale(1);
-    opacity: 0.43;
+    -webkit-transform: translate(9px, 36px) scale(1);
+            transform: translate(9px, 36px) scale(1);
+    opacity: 0.6;
   }
   100% {
-    -webkit-transform: translate(-34px, 93px) scale(1.2);
-            transform: translate(-34px, 93px) scale(1.2);
-    opacity: 0.6;
+    -webkit-transform: translate(0px, 72px) scale(1.2);
+            transform: translate(0px, 72px) scale(1.2);
+    opacity: 0.96;
   }
 }
 
 @keyframes circle-1 {
   0% {
-    -webkit-transform: translate(6px, 25px) scale(1);
-            transform: translate(6px, 25px) scale(1);
-    opacity: 0.43;
+    -webkit-transform: translate(9px, 36px) scale(1);
+            transform: translate(9px, 36px) scale(1);
+    opacity: 0.6;
   }
   100% {
-    -webkit-transform: translate(-34px, 93px) scale(1.2);
-            transform: translate(-34px, 93px) scale(1.2);
-    opacity: 0.6;
+    -webkit-transform: translate(0px, 72px) scale(1.2);
+            transform: translate(0px, 72px) scale(1.2);
+    opacity: 0.96;
   }
 }
 
@@ -24908,58 +24912,58 @@ section.product .product__block--company .slick-track {
 
 @-webkit-keyframes circle-2 {
   0% {
-    -webkit-transform: translate(10px, 34px) scale(1);
-            transform: translate(10px, 34px) scale(1);
-    opacity: 0.76;
+    -webkit-transform: translate(38px, 5px) scale(1);
+            transform: translate(38px, 5px) scale(1);
+    opacity: 0.33;
   }
   100% {
-    -webkit-transform: translate(34px, 82px) scale(1.2);
-            transform: translate(34px, 82px) scale(1.2);
-    opacity: 0.66;
+    -webkit-transform: translate(40px, 147px) scale(1.2);
+            transform: translate(40px, 147px) scale(1.2);
+    opacity: 0.56;
   }
 }
 
 @keyframes circle-2 {
   0% {
-    -webkit-transform: translate(10px, 34px) scale(1);
-            transform: translate(10px, 34px) scale(1);
-    opacity: 0.76;
+    -webkit-transform: translate(38px, 5px) scale(1);
+            transform: translate(38px, 5px) scale(1);
+    opacity: 0.33;
   }
   100% {
-    -webkit-transform: translate(34px, 82px) scale(1.2);
-            transform: translate(34px, 82px) scale(1.2);
-    opacity: 0.66;
+    -webkit-transform: translate(40px, 147px) scale(1.2);
+            transform: translate(40px, 147px) scale(1.2);
+    opacity: 0.56;
   }
 }
 
 .about-us .background .circle--2 {
-  -webkit-animation: circle-2 5s ease-in-out infinite alternate;
-          animation: circle-2 5s ease-in-out infinite alternate;
+  -webkit-animation: circle-2 5.5s ease-in-out infinite alternate;
+          animation: circle-2 5.5s ease-in-out infinite alternate;
 }
 
 @-webkit-keyframes circle-3 {
   0% {
-    -webkit-transform: translate(46px, 31px) scale(1);
-            transform: translate(46px, 31px) scale(1);
-    opacity: 0.68;
+    -webkit-transform: translate(27px, 26px) scale(1);
+            transform: translate(27px, 26px) scale(1);
+    opacity: 0.58;
   }
   100% {
-    -webkit-transform: translate(-139px, 103px) scale(1.2);
-            transform: translate(-139px, 103px) scale(1.2);
-    opacity: 1;
+    -webkit-transform: translate(-58px, 120px) scale(1.2);
+            transform: translate(-58px, 120px) scale(1.2);
+    opacity: 0.69;
   }
 }
 
 @keyframes circle-3 {
   0% {
-    -webkit-transform: translate(46px, 31px) scale(1);
-            transform: translate(46px, 31px) scale(1);
-    opacity: 0.68;
+    -webkit-transform: translate(27px, 26px) scale(1);
+            transform: translate(27px, 26px) scale(1);
+    opacity: 0.58;
   }
   100% {
-    -webkit-transform: translate(-139px, 103px) scale(1.2);
-            transform: translate(-139px, 103px) scale(1.2);
-    opacity: 1;
+    -webkit-transform: translate(-58px, 120px) scale(1.2);
+            transform: translate(-58px, 120px) scale(1.2);
+    opacity: 0.69;
   }
 }
 
@@ -24970,27 +24974,27 @@ section.product .product__block--company .slick-track {
 
 @-webkit-keyframes circle-4 {
   0% {
-    -webkit-transform: translate(7px, 28px) scale(1);
-            transform: translate(7px, 28px) scale(1);
-    opacity: 0.65;
+    -webkit-transform: translate(39px, 41px) scale(1);
+            transform: translate(39px, 41px) scale(1);
+    opacity: 0.72;
   }
   100% {
-    -webkit-transform: translate(31px, 51px) scale(1.2);
-            transform: translate(31px, 51px) scale(1.2);
-    opacity: 0.96;
+    -webkit-transform: translate(16px, 61px) scale(1.2);
+            transform: translate(16px, 61px) scale(1.2);
+    opacity: 0.71;
   }
 }
 
 @keyframes circle-4 {
   0% {
-    -webkit-transform: translate(7px, 28px) scale(1);
-            transform: translate(7px, 28px) scale(1);
-    opacity: 0.65;
+    -webkit-transform: translate(39px, 41px) scale(1);
+            transform: translate(39px, 41px) scale(1);
+    opacity: 0.72;
   }
   100% {
-    -webkit-transform: translate(31px, 51px) scale(1.2);
-            transform: translate(31px, 51px) scale(1.2);
-    opacity: 0.96;
+    -webkit-transform: translate(16px, 61px) scale(1.2);
+            transform: translate(16px, 61px) scale(1.2);
+    opacity: 0.71;
   }
 }
 
@@ -25001,64 +25005,64 @@ section.product .product__block--company .slick-track {
 
 @-webkit-keyframes circle-5 {
   0% {
-    -webkit-transform: translate(44px, 34px) scale(1);
-            transform: translate(44px, 34px) scale(1);
-    opacity: 0.69;
+    -webkit-transform: translate(23px, 23px) scale(1);
+            transform: translate(23px, 23px) scale(1);
+    opacity: 0.37;
   }
   100% {
-    -webkit-transform: translate(-26px, 97px) scale(1.2);
-            transform: translate(-26px, 97px) scale(1.2);
-    opacity: 0.87;
+    -webkit-transform: translate(-9px, 75px) scale(1.2);
+            transform: translate(-9px, 75px) scale(1.2);
+    opacity: 0.58;
   }
 }
 
 @keyframes circle-5 {
   0% {
-    -webkit-transform: translate(44px, 34px) scale(1);
-            transform: translate(44px, 34px) scale(1);
-    opacity: 0.69;
+    -webkit-transform: translate(23px, 23px) scale(1);
+            transform: translate(23px, 23px) scale(1);
+    opacity: 0.37;
   }
   100% {
-    -webkit-transform: translate(-26px, 97px) scale(1.2);
-            transform: translate(-26px, 97px) scale(1.2);
-    opacity: 0.87;
+    -webkit-transform: translate(-9px, 75px) scale(1.2);
+            transform: translate(-9px, 75px) scale(1.2);
+    opacity: 0.58;
   }
 }
 
 .about-us .background .circle--5 {
-  -webkit-animation: circle-5 7.5s ease-in-out infinite alternate;
-          animation: circle-5 7.5s ease-in-out infinite alternate;
+  -webkit-animation: circle-5 6s ease-in-out infinite alternate;
+          animation: circle-5 6s ease-in-out infinite alternate;
 }
 
 @-webkit-keyframes circle-6 {
   0% {
-    -webkit-transform: translate(30px, 36px) scale(1);
-            transform: translate(30px, 36px) scale(1);
-    opacity: 0.79;
+    -webkit-transform: translate(7px, 17px) scale(1);
+            transform: translate(7px, 17px) scale(1);
+    opacity: 0.75;
   }
   100% {
-    -webkit-transform: translate(-37px, 109px) scale(1.2);
-            transform: translate(-37px, 109px) scale(1.2);
-    opacity: 0.8;
+    -webkit-transform: translate(44px, 85px) scale(1.2);
+            transform: translate(44px, 85px) scale(1.2);
+    opacity: 0.85;
   }
 }
 
 @keyframes circle-6 {
   0% {
-    -webkit-transform: translate(30px, 36px) scale(1);
-            transform: translate(30px, 36px) scale(1);
-    opacity: 0.79;
+    -webkit-transform: translate(7px, 17px) scale(1);
+            transform: translate(7px, 17px) scale(1);
+    opacity: 0.75;
   }
   100% {
-    -webkit-transform: translate(-37px, 109px) scale(1.2);
-            transform: translate(-37px, 109px) scale(1.2);
-    opacity: 0.8;
+    -webkit-transform: translate(44px, 85px) scale(1.2);
+            transform: translate(44px, 85px) scale(1.2);
+    opacity: 0.85;
   }
 }
 
 .about-us .background .circle--6 {
-  -webkit-animation: circle-6 6.5s ease-in-out infinite alternate;
-          animation: circle-6 6.5s ease-in-out infinite alternate;
+  -webkit-animation: circle-6 7s ease-in-out infinite alternate;
+          animation: circle-6 7s ease-in-out infinite alternate;
 }
 
 .about-us .background .overlay {

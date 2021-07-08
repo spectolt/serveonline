@@ -20,7 +20,7 @@
             <h4>Nauja SMS žinutė</h4>
             <button class="warning-popup__close">
         </div>
-        <div class="warning-popup__content warning-popup__content--message">
+        <div class="warning-popup__content warning-popup__content--new-message">
             <div class="warning-popup__inputs-container">
                 <select data-placeholder="Pasirinkite žinutės temą" data-minimum-results-for-search="Infinity">
                     <option></option>
