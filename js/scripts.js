@@ -184,6 +184,7 @@ function onDocumentReady(callback) {
     jQuery.datepicker._checkExternalClick = function(e) {
       if($(e.target).closest(".ui-widget-overlay").length) {
         $(".hasDatepicker").datepicker("hide")
+        $(".ui-datepicker-popup").fadeOut("300")
       }
     };
 
