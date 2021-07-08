@@ -13755,6 +13755,77 @@ section.product .product__block--company .slick-track {
 }
 
 @media (max-width: 700px) {
+  .messages--settings .languages {
+    grid-column: span 2;
+  }
+}
+
+.messages--settings .controls__table th:after {
+  bottom: 10px;
+}
+
+.messages--settings .controls__table th,
+.messages--settings .controls__table td {
+  font-size: 12px;
+  font-weight: 400;
+  vertical-align: middle;
+  padding-left: 10px;
+}
+
+.messages--settings .controls__table th:first-of-type,
+.messages--settings .controls__table td:first-of-type {
+  width: 86px;
+}
+
+.messages--settings .controls__table th:nth-of-type(2),
+.messages--settings .controls__table td:nth-of-type(2) {
+  width: 108px;
+  text-align: center;
+}
+
+.messages--settings .controls__table th:nth-of-type(3),
+.messages--settings .controls__table td:nth-of-type(3) {
+  width: 110px;
+  text-align: center;
+}
+
+.messages--settings .controls__table th:nth-of-type(4),
+.messages--settings .controls__table td:nth-of-type(4) {
+  width: 492px;
+}
+
+.messages--settings .controls__table th:nth-of-type(5),
+.messages--settings .controls__table td:nth-of-type(5) {
+  width: 70px;
+  text-align: center;
+}
+
+.messages--settings .controls__table th:nth-of-type(6),
+.messages--settings .controls__table td:nth-of-type(6) {
+  width: 76px;
+}
+
+.messages--settings .controls__table th:nth-of-type(7),
+.messages--settings .controls__table td:nth-of-type(7) {
+  width: 82px;
+}
+
+.messages--settings .controls__table th:nth-of-type(8),
+.messages--settings .controls__table td:nth-of-type(8) {
+  width: 137px;
+}
+
+.messages--settings .controls__table th:last-of-type,
+.messages--settings .controls__table td:last-of-type {
+  width: 104px;
+}
+
+.messages--settings .controls__table .messages__text p {
+  font-size: 0.875rem;
+  width: auto;
+}
+
+@media (max-width: 700px) {
   .messages-settings .controls__top .controls__delete,
   .messages-settings .controls__top .controls__cancel {
     margin: 0;
@@ -24806,188 +24877,188 @@ section.product .product__block--company .slick-track {
 
 @-webkit-keyframes circle-1 {
   0% {
-    -webkit-transform: translate(48px, 20px) scale(1);
-            transform: translate(48px, 20px) scale(1);
-    opacity: 0.78;
+    -webkit-transform: translate(6px, 25px) scale(1);
+            transform: translate(6px, 25px) scale(1);
+    opacity: 0.43;
   }
   100% {
-    -webkit-transform: translate(9px, 105px) scale(1.2);
-            transform: translate(9px, 105px) scale(1.2);
-    opacity: 0.81;
+    -webkit-transform: translate(-34px, 93px) scale(1.2);
+            transform: translate(-34px, 93px) scale(1.2);
+    opacity: 0.6;
   }
 }
 
 @keyframes circle-1 {
   0% {
-    -webkit-transform: translate(48px, 20px) scale(1);
-            transform: translate(48px, 20px) scale(1);
-    opacity: 0.78;
+    -webkit-transform: translate(6px, 25px) scale(1);
+            transform: translate(6px, 25px) scale(1);
+    opacity: 0.43;
   }
   100% {
-    -webkit-transform: translate(9px, 105px) scale(1.2);
-            transform: translate(9px, 105px) scale(1.2);
-    opacity: 0.81;
+    -webkit-transform: translate(-34px, 93px) scale(1.2);
+            transform: translate(-34px, 93px) scale(1.2);
+    opacity: 0.6;
   }
 }
 
 .about-us .background .circle--1 {
-  -webkit-animation: circle-1 5s ease-in-out infinite alternate;
-          animation: circle-1 5s ease-in-out infinite alternate;
+  -webkit-animation: circle-1 5.5s ease-in-out infinite alternate;
+          animation: circle-1 5.5s ease-in-out infinite alternate;
 }
 
 @-webkit-keyframes circle-2 {
   0% {
-    -webkit-transform: translate(27px, 28px) scale(1);
-            transform: translate(27px, 28px) scale(1);
-    opacity: 0.71;
+    -webkit-transform: translate(10px, 34px) scale(1);
+            transform: translate(10px, 34px) scale(1);
+    opacity: 0.76;
   }
   100% {
-    -webkit-transform: translate(-34px, 115px) scale(1.2);
-            transform: translate(-34px, 115px) scale(1.2);
-    opacity: 0.65;
+    -webkit-transform: translate(34px, 82px) scale(1.2);
+            transform: translate(34px, 82px) scale(1.2);
+    opacity: 0.66;
   }
 }
 
 @keyframes circle-2 {
   0% {
-    -webkit-transform: translate(27px, 28px) scale(1);
-            transform: translate(27px, 28px) scale(1);
-    opacity: 0.71;
+    -webkit-transform: translate(10px, 34px) scale(1);
+            transform: translate(10px, 34px) scale(1);
+    opacity: 0.76;
   }
   100% {
-    -webkit-transform: translate(-34px, 115px) scale(1.2);
-            transform: translate(-34px, 115px) scale(1.2);
-    opacity: 0.65;
+    -webkit-transform: translate(34px, 82px) scale(1.2);
+            transform: translate(34px, 82px) scale(1.2);
+    opacity: 0.66;
   }
 }
 
 .about-us .background .circle--2 {
-  -webkit-animation: circle-2 8s ease-in-out infinite alternate;
-          animation: circle-2 8s ease-in-out infinite alternate;
+  -webkit-animation: circle-2 5s ease-in-out infinite alternate;
+          animation: circle-2 5s ease-in-out infinite alternate;
 }
 
 @-webkit-keyframes circle-3 {
   0% {
-    -webkit-transform: translate(8px, 29px) scale(1);
-            transform: translate(8px, 29px) scale(1);
-    opacity: 0.49;
+    -webkit-transform: translate(46px, 31px) scale(1);
+            transform: translate(46px, 31px) scale(1);
+    opacity: 0.68;
   }
   100% {
-    -webkit-transform: translate(-149px, 109px) scale(1.2);
-            transform: translate(-149px, 109px) scale(1.2);
-    opacity: 0.79;
+    -webkit-transform: translate(-139px, 103px) scale(1.2);
+            transform: translate(-139px, 103px) scale(1.2);
+    opacity: 1;
   }
 }
 
 @keyframes circle-3 {
   0% {
-    -webkit-transform: translate(8px, 29px) scale(1);
-            transform: translate(8px, 29px) scale(1);
-    opacity: 0.49;
+    -webkit-transform: translate(46px, 31px) scale(1);
+            transform: translate(46px, 31px) scale(1);
+    opacity: 0.68;
   }
   100% {
-    -webkit-transform: translate(-149px, 109px) scale(1.2);
-            transform: translate(-149px, 109px) scale(1.2);
-    opacity: 0.79;
+    -webkit-transform: translate(-139px, 103px) scale(1.2);
+            transform: translate(-139px, 103px) scale(1.2);
+    opacity: 1;
   }
 }
 
 .about-us .background .circle--3 {
-  -webkit-animation: circle-3 6s ease-in-out infinite alternate;
-          animation: circle-3 6s ease-in-out infinite alternate;
+  -webkit-animation: circle-3 4.5s ease-in-out infinite alternate;
+          animation: circle-3 4.5s ease-in-out infinite alternate;
 }
 
 @-webkit-keyframes circle-4 {
   0% {
-    -webkit-transform: translate(14px, 11px) scale(1);
-            transform: translate(14px, 11px) scale(1);
-    opacity: 0.33;
+    -webkit-transform: translate(7px, 28px) scale(1);
+            transform: translate(7px, 28px) scale(1);
+    opacity: 0.65;
   }
   100% {
-    -webkit-transform: translate(-41px, 108px) scale(1.2);
-            transform: translate(-41px, 108px) scale(1.2);
-    opacity: 0.66;
+    -webkit-transform: translate(31px, 51px) scale(1.2);
+            transform: translate(31px, 51px) scale(1.2);
+    opacity: 0.96;
   }
 }
 
 @keyframes circle-4 {
   0% {
-    -webkit-transform: translate(14px, 11px) scale(1);
-            transform: translate(14px, 11px) scale(1);
-    opacity: 0.33;
+    -webkit-transform: translate(7px, 28px) scale(1);
+            transform: translate(7px, 28px) scale(1);
+    opacity: 0.65;
   }
   100% {
-    -webkit-transform: translate(-41px, 108px) scale(1.2);
-            transform: translate(-41px, 108px) scale(1.2);
-    opacity: 0.66;
+    -webkit-transform: translate(31px, 51px) scale(1.2);
+            transform: translate(31px, 51px) scale(1.2);
+    opacity: 0.96;
   }
 }
 
 .about-us .background .circle--4 {
-  -webkit-animation: circle-4 7s ease-in-out infinite alternate;
-          animation: circle-4 7s ease-in-out infinite alternate;
+  -webkit-animation: circle-4 9.5s ease-in-out infinite alternate;
+          animation: circle-4 9.5s ease-in-out infinite alternate;
 }
 
 @-webkit-keyframes circle-5 {
   0% {
-    -webkit-transform: translate(35px, 6px) scale(1);
-            transform: translate(35px, 6px) scale(1);
-    opacity: 0.35;
+    -webkit-transform: translate(44px, 34px) scale(1);
+            transform: translate(44px, 34px) scale(1);
+    opacity: 0.69;
   }
   100% {
-    -webkit-transform: translate(1px, 78px) scale(1.2);
-            transform: translate(1px, 78px) scale(1.2);
-    opacity: 0.54;
+    -webkit-transform: translate(-26px, 97px) scale(1.2);
+            transform: translate(-26px, 97px) scale(1.2);
+    opacity: 0.87;
   }
 }
 
 @keyframes circle-5 {
   0% {
-    -webkit-transform: translate(35px, 6px) scale(1);
-            transform: translate(35px, 6px) scale(1);
-    opacity: 0.35;
+    -webkit-transform: translate(44px, 34px) scale(1);
+            transform: translate(44px, 34px) scale(1);
+    opacity: 0.69;
   }
   100% {
-    -webkit-transform: translate(1px, 78px) scale(1.2);
-            transform: translate(1px, 78px) scale(1.2);
-    opacity: 0.54;
+    -webkit-transform: translate(-26px, 97px) scale(1.2);
+            transform: translate(-26px, 97px) scale(1.2);
+    opacity: 0.87;
   }
 }
 
 .about-us .background .circle--5 {
-  -webkit-animation: circle-5 9.5s ease-in-out infinite alternate;
-          animation: circle-5 9.5s ease-in-out infinite alternate;
+  -webkit-animation: circle-5 7.5s ease-in-out infinite alternate;
+          animation: circle-5 7.5s ease-in-out infinite alternate;
 }
 
 @-webkit-keyframes circle-6 {
   0% {
-    -webkit-transform: translate(32px, 41px) scale(1);
-            transform: translate(32px, 41px) scale(1);
-    opacity: 0.53;
+    -webkit-transform: translate(30px, 36px) scale(1);
+            transform: translate(30px, 36px) scale(1);
+    opacity: 0.79;
   }
   100% {
-    -webkit-transform: translate(-2px, 62px) scale(1.2);
-            transform: translate(-2px, 62px) scale(1.2);
-    opacity: 0.71;
+    -webkit-transform: translate(-37px, 109px) scale(1.2);
+            transform: translate(-37px, 109px) scale(1.2);
+    opacity: 0.8;
   }
 }
 
 @keyframes circle-6 {
   0% {
-    -webkit-transform: translate(32px, 41px) scale(1);
-            transform: translate(32px, 41px) scale(1);
-    opacity: 0.53;
+    -webkit-transform: translate(30px, 36px) scale(1);
+            transform: translate(30px, 36px) scale(1);
+    opacity: 0.79;
   }
   100% {
-    -webkit-transform: translate(-2px, 62px) scale(1.2);
-            transform: translate(-2px, 62px) scale(1.2);
-    opacity: 0.71;
+    -webkit-transform: translate(-37px, 109px) scale(1.2);
+            transform: translate(-37px, 109px) scale(1.2);
+    opacity: 0.8;
   }
 }
 
 .about-us .background .circle--6 {
-  -webkit-animation: circle-6 8.5s ease-in-out infinite alternate;
-          animation: circle-6 8.5s ease-in-out infinite alternate;
+  -webkit-animation: circle-6 6.5s ease-in-out infinite alternate;
+          animation: circle-6 6.5s ease-in-out infinite alternate;
 }
 
 .about-us .background .overlay {

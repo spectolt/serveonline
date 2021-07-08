@@ -1143,6 +1143,65 @@
   }
 }
 
+.messages--settings{
+  .languages{
+    @include breakpoint(sm){
+      grid-column: span 2;
+    }
+  }
+  .controls__table {
+    th{
+      &:after{
+        bottom: 10px;
+      }
+    }
+    th,
+    td {
+      font-size: 12px;
+      font-weight: 400;
+      vertical-align: middle;
+      padding-left: 10px;
+      &:first-of-type {
+        width: 86px;
+      }
+      &:nth-of-type(2) {
+        width: 108px;
+        text-align: center;
+      }
+      &:nth-of-type(3) {
+        width: 110px;
+        text-align: center;
+
+      }
+      &:nth-of-type(4) {
+        width: 492px;
+      }
+      &:nth-of-type(5) {
+        width: 70px;
+        text-align: center;
+      }
+      &:nth-of-type(6) {
+        width: 76px;
+      }
+      &:nth-of-type(7) {
+        width: 82px;
+      }
+      &:nth-of-type(8) {
+        width: 137px;
+      }
+      &:last-of-type {
+        width: 104px;
+      }
+    }
+    .messages__text{
+      p{
+        font-size: 0.875rem;
+        width: auto;
+      }
+    }
+  }
+}
+
 .messages-settings {
   .controls__top {
     .controls__delete,
@@ -1163,7 +1222,7 @@
     .controls__delete{
       margin-right: 5px;
     }
-    
+
     .controls__cancel{
       margin-left: 0px;
     }
