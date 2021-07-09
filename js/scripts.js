@@ -1,7 +1,12 @@
 $(document).ready(onDocumentReady, changeTextWidth());
 
 function onDocumentReady(callback) {
-  var dpTop;
+  //removes ability to overscroll on ios
+  document.body.addEventListener("touchmove", function(e){ e.preventDefault(); }, false);
+  $(document).on("dblclick", function(e) {
+    e.preventDefault();
+  })
+
   //today button sets the date
   $.datepicker._gotoToday = function (id) {
     var inst = this._getInst($(id)[0]);
@@ -187,8 +192,6 @@ function onDocumentReady(callback) {
         $(".ui-datepicker-popup").fadeOut("300")
       }
     };
-
-    var dp, dpDiv, dpDivLeft, dpDivTop;
 
     $(".js-datepicker")
       .not(".js_ignore_mark")

@@ -11,6 +11,10 @@ html {
   overflow-x: hidden;
 }
 
+*{
+  touch-action: manipulation;
+}
+
 html,
 body {
   -webkit-overflow-scrolling: auto;
