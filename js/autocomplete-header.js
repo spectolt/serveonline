@@ -193,8 +193,8 @@ if ($("main.hasUiAutocomplete").length > 0) {
       return false;
     });
 
-  $(document).on("click", ".product-header-chosen__trash", function () {
-    $(this).closest(".product-header-chosen").remove();
+  $(document).on("click", ".product-chosen__trash", function () {
+    $(this).closest(".product-chosen").remove();
     $("#search-product").fadeIn(300);
     $("input#search-product").val("");
     $("input#search-product").focus();

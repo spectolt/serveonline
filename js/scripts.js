@@ -2,10 +2,16 @@ $(document).ready(onDocumentReady, changeTextWidth());
 
 function onDocumentReady(callback) {
   //removes ability to overscroll on ios
-  document.body.addEventListener("touchmove", function(e){ e.preventDefault(); }, false);
-  $(document).on("dblclick", function(e) {
+  document.body.addEventListener(
+    "touchmove",
+    function (e) {
+      e.preventDefault();
+    },
+    false
+  );
+  $(document).on("dblclick", function (e) {
     e.preventDefault();
-  })
+  });
 
   //today button sets the date
   $.datepicker._gotoToday = function (id) {
@@ -132,7 +138,7 @@ function onDocumentReady(callback) {
             $(this).addClass("change-search-icon");
           } else {
             $(this).find("span").html("Ieškoti");
-            $(".product-header-chosen").fadeOut(300);
+            $(".product-chosen").fadeOut(300);
             $("input#search-product").fadeIn(300);
           }
         }
@@ -186,10 +192,10 @@ function onDocumentReady(callback) {
     availableDates[new Date("07/12/2021")] = new Date("07/12/2021");
     availableDates[new Date("07/13/2021")] = new Date("07/13/2021");
 
-    jQuery.datepicker._checkExternalClick = function(e) {
-      if($(e.target).closest(".ui-widget-overlay").length) {
-        $(".hasDatepicker").datepicker("hide")
-        $(".ui-datepicker-popup").fadeOut("300")
+    jQuery.datepicker._checkExternalClick = function (e) {
+      if ($(e.target).closest(".ui-widget-overlay").length) {
+        $(".hasDatepicker").datepicker("hide");
+        $(".ui-datepicker-popup").fadeOut("300");
       }
     };
 
@@ -247,7 +253,9 @@ function onDocumentReady(callback) {
           var highlight = eventDates[date];
           if (available && highlight) {
             setTimeout(function () {
-              $('<span class="flag"></span>').appendTo(".ui-datepicker-highlight");
+              $('<span class="flag"></span>').appendTo(
+                ".ui-datepicker-highlight"
+              );
             }, 2);
             return [
               true,
@@ -256,7 +264,9 @@ function onDocumentReady(callback) {
             ];
           } else if (highlight) {
             setTimeout(function () {
-              $('<span class="flag"></span>').appendTo(".ui-datepicker-highlight");
+              $('<span class="flag"></span>').appendTo(
+                ".ui-datepicker-highlight"
+              );
             }, 2);
             return [true, "ui-datepicker-highlight", ""];
           } else if (available) {
@@ -348,7 +358,9 @@ function onDocumentReady(callback) {
           var highlight = eventDates[date];
           if (available && highlight) {
             setTimeout(function () {
-              $('<span class="flag"></span>').appendTo(".ui-datepicker-highlight");
+              $('<span class="flag"></span>').appendTo(
+                ".ui-datepicker-highlight"
+              );
             }, 2);
             return [
               true,
@@ -357,7 +369,9 @@ function onDocumentReady(callback) {
             ];
           } else if (highlight) {
             setTimeout(function () {
-              $('<span class="flag"></span>').appendTo(".ui-datepicker-highlight");
+              $('<span class="flag"></span>').appendTo(
+                ".ui-datepicker-highlight"
+              );
             }, 2);
             return [true, "ui-datepicker-highlight", ""];
           } else if (available) {
@@ -387,13 +401,12 @@ function onDocumentReady(callback) {
 
           // dp = input;
           // dpDiv = inst.dpDiv;
-          
         },
         onClose: function (dateText, inst) {
           $(".ui-widget-overlay").remove();
         },
       })
-      .datepicker("setDate", "+0")
+      .datepicker("setDate", "+0");
 
     var popup = $(
       "<div class='ui-datepicker-popup'><div class='ui-datepicker-popup__header'>" +
@@ -631,7 +644,7 @@ function onDocumentReady(callback) {
         $("input#search-product").val("");
         $(".search-panel input").val("");
         $(".ui-autocomplete").css("display", "none");
-        $(".product-header-chosen").remove();
+        $(".product-chosen").remove();
         $(".search-panel__select").val(null).trigger("change");
         $(".search-container__submit span").html("Ieškoti");
         $(".search-container__submit").removeClass("change-search-icon");
@@ -695,7 +708,7 @@ function onDocumentReady(callback) {
       $("#time").val($("#time option:first-child").val()).trigger("change");
       $(".search-container__submit span").html("Ieškoti");
       $(".search-container__submit").removeClass("change-search-icon");
-      $(".product-header-chosen").remove();
+      $(".product-chosen").remove();
       $("#search-product").css("display", "block");
       $(".site-aside__block input").prop("checked", false);
       $("#distance_asc").prop("checked", true);
@@ -2856,6 +2869,18 @@ function onDocumentReady(callback) {
     },
   });
 
+  $("input:radio:checked").data("chk", true);
+
+  $(".site-aside .radio input")
+    .not(".js_ignore_mark")
+    .on("click", function (e) {
+      $(".radio input[name='" + $(this).attr("name") + "']:radio")
+        .not(this)
+        .removeData("chk");
+      $(this).data("chk", !$(this).data("chk"));
+      $(this).prop("checked", $(this).data("chk"));
+    });
+
   moveAction();
   moveOrder();
   changePadding();
@@ -2929,21 +2954,21 @@ function sliderInit(slider) {
         let scrollYMod = scrollY;
 
         // window.setTimeout(function () {
-          if (scrollY < 0) {
-            scrollYMod = scrollY * -1;
-          }
+        if (scrollY < 0) {
+          scrollYMod = scrollY * -1;
+        }
 
-          if (scrollX < 0) {
-            scrollXMod = scrollX * -1;
-          }
+        if (scrollX < 0) {
+          scrollXMod = scrollX * -1;
+        }
 
-          if (scrollXMod <= scrollYMod) {
-            scrollTopFinal = scrollTop - scrollY;
-            slider.scrollTop = scrollTopFinal;
-          } else {
-            scrollLeftFinal = scrollLeft - scrollX;
-            slider.scrollLeft = scrollLeftFinal;
-          }
+        if (scrollXMod <= scrollYMod) {
+          scrollTopFinal = scrollTop - scrollY;
+          slider.scrollTop = scrollTopFinal;
+        } else {
+          scrollLeftFinal = scrollLeft - scrollX;
+          slider.scrollLeft = scrollLeftFinal;
+        }
         // }, 10);
 
         lastPos = slider.scrollLeft;
@@ -2968,35 +2993,35 @@ function sliderInit(slider) {
         let scrollYMod = scrollY;
 
         // window.setTimeout(function () {
-          if (scrollY < 0) {
-            scrollYMod = scrollY * -1;
-          }
+        if (scrollY < 0) {
+          scrollYMod = scrollY * -1;
+        }
 
-          if (scrollX < 0) {
-            scrollXMod = scrollX * -1;
-          }
+        if (scrollX < 0) {
+          scrollXMod = scrollX * -1;
+        }
 
-          if (scrollXMod <= scrollYMod) {
-            scrollTopFinal = scrollTop - scrollY;
-            slider.scrollTop = scrollTopFinal;
-          } else {
-            scrollLeftFinal = scrollLeft - scrollX;
-            slider.scrollLeft = scrollLeftFinal;
-          }
+        if (scrollXMod <= scrollYMod) {
+          scrollTopFinal = scrollTop - scrollY;
+          slider.scrollTop = scrollTopFinal;
+        } else {
+          scrollLeftFinal = scrollLeft - scrollX;
+          slider.scrollLeft = scrollLeftFinal;
+        }
         // }, 10);
 
         lastPos = slider.scrollLeft;
-        console.log(scrollY)
+        console.log(scrollY);
       },
       false
     );
-    
+
     var stopDragging = function (event) {
       mouseDown = false;
       var time2 = new Date().getTime();
       var timeDiff = time2 - time1;
-      var speedY = (scrollTopFinal - scrollTop) / timeDiff
-      var speedX = (scrollLeftFinal - scrollLeft) / timeDiff
+      var speedY = (scrollTopFinal - scrollTop) / timeDiff;
+      var speedX = (scrollLeftFinal - scrollLeft) / timeDiff;
 
       if (speedX < 0) {
         speedX = speedX * -1;
@@ -3006,10 +3031,13 @@ function sliderInit(slider) {
         speedY = speedY * -1;
       }
 
-      $(slider).animate({
-        scrollTop: "-=" + speedY * scrollY,
-        scrollLeft: "-=" + speedX * scrollX
-      }, { duration: 300, easing: 'easeOutCubic' })      
+      $(slider).animate(
+        {
+          scrollTop: "-=" + speedY * scrollY,
+          scrollLeft: "-=" + speedX * scrollX,
+        },
+        { duration: 300, easing: "easeOutCubic" }
+      );
     };
 
     // Add the event listeners

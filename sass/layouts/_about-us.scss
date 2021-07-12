@@ -264,19 +264,24 @@
       max-width: calc(100vw - #{$_photo-width-1440});
     }
 
-    @include breakpoint(1250px) {
-      padding-top: 50px;
+    @include breakpoint(xl) {
+      max-width: 100%;
     }
 
-    @include breakpoint(xl) {
-      padding: 50px 0 0 0;
-    }
+    // @include breakpoint(1250px) {
+    //   padding-top: 50px;
+    // }
+
+    // @include breakpoint(xl) {
+    //   padding: 50px 0 0 0;
+    // }
 
     h1 {
       font-size: 4.5rem;
       margin-top: 0px;
       margin-bottom: 37px;
       font-weight: 800;
+      width: 90vw;
     }
 
     h3 {
@@ -330,8 +335,10 @@
 
     @include breakpoint(xl) {
       margin: 0 auto;
-      width: 50%;
+      // width: 50%;
       min-width: 0;
+      position: relative;
+      right: 0;
     }
   }
 }

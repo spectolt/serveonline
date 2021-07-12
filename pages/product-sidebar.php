@@ -14,7 +14,7 @@
             <div class="site-aside__block">
                 <h3 class="title title--padding">Rikiuoti pagal atstumą</h3>
                 <div class="radio">
-                    <input name="distance" type="radio" id="distance_asc" class="" value="asc" checked/>
+                    <input name="distance" type="radio" id="distance_asc" class="" checked/>
                     <label for="distance_asc">Arčiausiai nuo manęs</label>
                 </div>
             </div>

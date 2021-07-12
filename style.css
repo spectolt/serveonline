@@ -24886,33 +24886,33 @@ section.product .product__block--company .slick-track {
 }
 
 .about-us .background .circle--1 {
-  -webkit-animation: circle-1 6.5s ease-in-out infinite alternate;
-          animation: circle-1 6.5s ease-in-out infinite alternate;
+  -webkit-animation: circle-1 5s ease-in-out infinite alternate;
+          animation: circle-1 5s ease-in-out infinite alternate;
 }
 
 .about-us .background .circle--2 {
-  -webkit-animation: circle-2 8s ease-in-out infinite alternate;
-          animation: circle-2 8s ease-in-out infinite alternate;
+  -webkit-animation: circle-2 5.5s ease-in-out infinite alternate;
+          animation: circle-2 5.5s ease-in-out infinite alternate;
 }
 
 .about-us .background .circle--3 {
-  -webkit-animation: circle-3 6.5s ease-in-out infinite alternate;
-          animation: circle-3 6.5s ease-in-out infinite alternate;
+  -webkit-animation: circle-3 6s ease-in-out infinite alternate;
+          animation: circle-3 6s ease-in-out infinite alternate;
 }
 
 .about-us .background .circle--4 {
-  -webkit-animation: circle-4 7s ease-in-out infinite alternate;
-          animation: circle-4 7s ease-in-out infinite alternate;
+  -webkit-animation: circle-4 6.5s ease-in-out infinite alternate;
+          animation: circle-4 6.5s ease-in-out infinite alternate;
 }
 
 .about-us .background .circle--5 {
-  -webkit-animation: circle-5 7.5s ease-in-out infinite alternate;
-          animation: circle-5 7.5s ease-in-out infinite alternate;
+  -webkit-animation: circle-5 8s ease-in-out infinite alternate;
+          animation: circle-5 8s ease-in-out infinite alternate;
 }
 
 .about-us .background .circle--6 {
-  -webkit-animation: circle-6 8s ease-in-out infinite alternate;
-          animation: circle-6 8s ease-in-out infinite alternate;
+  -webkit-animation: circle-6 5.5s ease-in-out infinite alternate;
+          animation: circle-6 5.5s ease-in-out infinite alternate;
 }
 
 .about-us .background .overlay {
@@ -24956,15 +24956,9 @@ section.product .product__block--company .slick-track {
   }
 }
 
-@media (max-width: 1250px) {
-  .opportunities__content {
-    padding-top: 50px;
-  }
-}
-
 @media (max-width: 1180px) {
   .opportunities__content {
-    padding: 50px 0 0 0;
+    max-width: 100%;
   }
 }
 
@@ -24973,6 +24967,7 @@ section.product .product__block--company .slick-track {
   margin-top: 0px;
   margin-bottom: 37px;
   font-weight: 800;
+  width: 90vw;
 }
 
 .opportunities__content h3 {
@@ -25030,8 +25025,9 @@ section.product .product__block--company .slick-track {
 @media (max-width: 1180px) {
   .opportunities .opportunities__photo {
     margin: 0 auto;
-    width: 50%;
     min-width: 0;
+    position: relative;
+    right: 0;
   }
 }
 
