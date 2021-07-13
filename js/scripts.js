@@ -3241,7 +3241,7 @@ function hasScrolled() {
   // This is necessary so you never see what is "behind" the navbar.
   if (st > lastScrollTop && st > navbarHeight) {
     // Scroll Down
-    if (!$("section.specialist")) {
+    if (!$("section.specialist").length) {
       $(".site-header").removeClass("site-header--show");
     }
 
