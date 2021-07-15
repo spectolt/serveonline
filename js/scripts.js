@@ -2881,6 +2881,23 @@ function onDocumentReady(callback) {
       $(this).prop("checked", $(this).data("chk"));
     });
 
+  $(".vert-slider .vert-slider__items li").not(".js_ignore_mark").on("click", function() {
+    $(this).addClass("active")
+    $(this).siblings("li").removeClass("active");
+
+    var index = $(this).index() + 1
+    var vertSlider = $(this).closest(".vert-slider")
+    var slideContainer = $(vertSlider).find(".vert-slider__slides")
+    var slide = $(vertSlider).find(".vert-slider__slide:nth-of-type(" + index + ")")
+    console.log(slide.position().top)
+
+    // $(slideContainer).scroll()
+    // $(slideContainer).animate({
+    //   scrollTop: slide.position().top
+    // }, 300, "swing");
+    slide[0].scrollIntoView({behavior: "smooth",})
+  })
+
   moveAction();
   moveOrder();
   changePadding();

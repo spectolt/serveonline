@@ -49,6 +49,7 @@
 
   h2 {
     font-size: 3rem;
+    font-weight: 900;
   }
 
   p {
@@ -64,6 +65,7 @@
     z-index: 0;
     overflow: hidden;
     top: -30%;
+    pointer-events: none;
 
     .backdrop-bg {
       background-color: $white;
@@ -456,8 +458,6 @@
 
     h2 {
       color: $white;
-      font-size: 3rem;
-      font-weight: 900;
     }
 
     p {
@@ -469,7 +469,26 @@
         display: block;
         text-decoration: underline;
         margin: 30px 0;
+        font-weight: 700;
       }
     }
+  }
+}
+
+.professionals {
+  padding: 100px 0;
+
+  h2, p {
+    text-align: center;
+    z-index: 1;
+  }
+
+  .background {
+    top: -50%;
+  }
+
+  &__slider {
+    padding: 90px 0 0 40px;
+    z-index: 1;
   }
 }

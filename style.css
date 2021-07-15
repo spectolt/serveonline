@@ -5559,6 +5559,118 @@ div.services-list.services-list--company-profile .services-list__blocks {
   margin-left: 10px;
 }
 
+.vert-slider {
+  max-height: 615px;
+  max-width: 1720px;
+  margin-left: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.vert-slider__items {
+  height: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: auto;
+  min-width: 17.4%;
+  padding-right: 30px;
+  border-right: 1px solid #d9d9d9;
+}
+
+.vert-slider__items li {
+  width: 100%;
+  padding: 20px 15px;
+  -webkit-box-shadow: 0 0 10px rgba(15, 29, 91, 0.1);
+          box-shadow: 0 0 10px rgba(15, 29, 91, 0.1);
+  margin-bottom: 10px;
+  border-radius: 0 25px 25px 0;
+  font-family: "Sen", sans-serif;
+  font-weight: 600;
+  border-left: 5px solid #fff;
+  -webkit-transition: border-left 0.3s ease-in-out, font-weight 0.3s ease-in-out;
+  transition: border-left 0.3s ease-in-out, font-weight 0.3s ease-in-out;
+  white-space: nowrap;
+  min-width: 230px;
+}
+
+.vert-slider__items li.active {
+  border-left: 5px solid #ff9954;
+  font-weight: 900;
+}
+
+.vert-slider__slides {
+  overflow: auto;
+  position: relative;
+}
+
+.vert-slider__slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+}
+
+.vert-slider__slide-content {
+  margin-left: 30px;
+}
+
+.vert-slider__slide h3 {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-top: 0;
+}
+
+.vert-slider__slide ul {
+  padding: 0;
+  list-style: none;
+  margin: 0 60px 0 0;
+}
+
+.vert-slider__slide ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+}
+
+.vert-slider__slide ul li::before {
+  content: "⬤";
+  color: #ff9954;
+  margin-right: 20px;
+}
+
+.vert-slider__slide-image {
+  max-width: 800px;
+  width: 100%;
+  border-radius: 15px 0 0 15px;
+  overflow: hidden;
+  max-height: 100%;
+  -ms-flex-item-align: center;
+      align-self: center;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 57.5%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+
+.vert-slider__slide-image img {
+  min-width: 100%;
+  min-height: 100%;
+}
+
 .select2-container {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -24777,6 +24889,7 @@ section.product .product__block--company .slick-track {
 
 .about-us h2 {
   font-size: 3rem;
+  font-weight: 900;
 }
 
 .about-us p {
@@ -24791,6 +24904,7 @@ section.product .product__block--company .slick-track {
   z-index: 0;
   overflow: hidden;
   top: -30%;
+  pointer-events: none;
 }
 
 .about-us .background .backdrop-bg {
@@ -24886,33 +25000,33 @@ section.product .product__block--company .slick-track {
 }
 
 .about-us .background .circle--1 {
-  -webkit-animation: circle-1 5s ease-in-out infinite alternate;
-          animation: circle-1 5s ease-in-out infinite alternate;
+  -webkit-animation: circle-1 7.5s ease-in-out infinite alternate;
+          animation: circle-1 7.5s ease-in-out infinite alternate;
 }
 
 .about-us .background .circle--2 {
-  -webkit-animation: circle-2 5.5s ease-in-out infinite alternate;
-          animation: circle-2 5.5s ease-in-out infinite alternate;
+  -webkit-animation: circle-2 4.5s ease-in-out infinite alternate;
+          animation: circle-2 4.5s ease-in-out infinite alternate;
 }
 
 .about-us .background .circle--3 {
-  -webkit-animation: circle-3 6s ease-in-out infinite alternate;
-          animation: circle-3 6s ease-in-out infinite alternate;
+  -webkit-animation: circle-3 4.5s ease-in-out infinite alternate;
+          animation: circle-3 4.5s ease-in-out infinite alternate;
 }
 
 .about-us .background .circle--4 {
-  -webkit-animation: circle-4 6.5s ease-in-out infinite alternate;
-          animation: circle-4 6.5s ease-in-out infinite alternate;
+  -webkit-animation: circle-4 10s ease-in-out infinite alternate;
+          animation: circle-4 10s ease-in-out infinite alternate;
 }
 
 .about-us .background .circle--5 {
-  -webkit-animation: circle-5 8s ease-in-out infinite alternate;
-          animation: circle-5 8s ease-in-out infinite alternate;
+  -webkit-animation: circle-5 6s ease-in-out infinite alternate;
+          animation: circle-5 6s ease-in-out infinite alternate;
 }
 
 .about-us .background .circle--6 {
-  -webkit-animation: circle-6 5.5s ease-in-out infinite alternate;
-          animation: circle-6 5.5s ease-in-out infinite alternate;
+  -webkit-animation: circle-6 8s ease-in-out infinite alternate;
+          animation: circle-6 8s ease-in-out infinite alternate;
 }
 
 .about-us .background .overlay {
@@ -25148,8 +25262,6 @@ section.product .product__block--company .slick-track {
 
 .tools__content h2 {
   color: #fff;
-  font-size: 3rem;
-  font-weight: 900;
 }
 
 .tools__content p {
@@ -25162,5 +25274,24 @@ section.product .product__block--company .slick-track {
   display: block;
   text-decoration: underline;
   margin: 30px 0;
+  font-weight: 700;
+}
+
+.professionals {
+  padding: 100px 0;
+}
+
+.professionals h2, .professionals p {
+  text-align: center;
+  z-index: 1;
+}
+
+.professionals .background {
+  top: -50%;
+}
+
+.professionals__slider {
+  padding: 90px 0 0 40px;
+  z-index: 1;
 }
 /*# sourceMappingURL=style.css.map */
