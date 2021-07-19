@@ -1,6 +1,13 @@
 <?php $thisCat = "about";
 $thisPage = "about-us"; ?>
 
+<?php
+$areas = array('Odontologijos klinikos', 'Klinikos ir estetinė medicina', 'Grožio salonai', 'SPA ir masažo kabinetai', 'Sportas ir reabilitacija', 'Veterinarija', '???', '???');
+$icons = array('../img/icons/odontology.svg', '../img/icons/clinic.svg', '../img/icons/beauty.svg', '../img/icons/spa.svg', '../img/icons/sport.svg', '../img/icons/vet.svg', '../img/icons/cars.svg', '../img/icons/clean.svg');
+$areasClass = array("odontology", "clinic", "beauty", "spa", "sport", "vet", "cars", "clean");
+$colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2')
+?>
+
 <?php require_once('header.php'); ?>
 <main class="site-main about-us parallax">
     <section class="opportunities parallax__group">
@@ -113,7 +120,7 @@ $thisPage = "about-us"; ?>
                     <li>Medicinos įstaigoms</li>
                 </ul>
             </div>
-            <div class="vert-slider__slides disable-scrollbars">
+            <div class="vert-slider__slides">
                 <div class="vert-slider__slide">
                     <div class="vert-slider__slide-content">
                         <h3>Registracijų kalendorius</h3>
@@ -121,7 +128,7 @@ $thisPage = "about-us"; ?>
                             <li>Darbo planavimas ir klientų aptarnavimas - iš bet kokio įrenginio, nepriklausomai nuo Jūsų buvimo vietos.</li>
                             <li>Visos telefonu ar internetu gautos klientų registracijos matomos viename tvarkaraščio lange.</li>
                             <li>Galimybė kalendoriuje sudaryti laukiančiųjų sąrašą.</li>
-                            <li>Skirtingų prieigų  personalui suteikimas pagal darbuotojų veiklos sritį.</li>
+                            <li>Skirtingų prieigų personalui suteikimas pagal darbuotojų veiklos sritį.</li>
                         </ul>
                     </div>
                     <div class="vert-slider__slide-image">
@@ -139,7 +146,7 @@ $thisPage = "about-us"; ?>
                         </ul>
                     </div>
                     <div class="vert-slider__slide-image">
-                        <img src="../img/priimamasis@2x.jpg">
+                        <img src="../img/prof-1.jpg">
                     </div>
                 </div>
                 <div class="vert-slider__slide">
@@ -152,7 +159,7 @@ $thisPage = "about-us"; ?>
                         </ul>
                     </div>
                     <div class="vert-slider__slide-image">
-                        <img src="../img/priimamasis@2x.jpg">
+                        <img src="../img/prof-2.png">
                     </div>
                 </div>
                 <div class="vert-slider__slide">
@@ -166,7 +173,7 @@ $thisPage = "about-us"; ?>
                         </ul>
                     </div>
                     <div class="vert-slider__slide-image">
-                        <img src="../img/priimamasis@2x.jpg">
+                        <img src="../img/prof-4.jpg">
                     </div>
                 </div>
                 <div class="vert-slider__slide">
@@ -180,7 +187,7 @@ $thisPage = "about-us"; ?>
                         </ul>
                     </div>
                     <div class="vert-slider__slide-image">
-                        <img src="../img/priimamasis@2x.jpg">
+                        <img src="../img/prof-3.jpg">
                     </div>
                 </div>
                 <div class="vert-slider__slide">
@@ -193,9 +200,382 @@ $thisPage = "about-us"; ?>
                         </ul>
                     </div>
                     <div class="vert-slider__slide-image">
-                        <img src="../img/priimamasis@2x.jpg">
+                        <img src="../img/prof-5.jpg">
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+    <section class="calc">
+        <div class="background">
+            <div class="backdrop"></div>
+            <div class="circle circle--1"></div>
+            <div class="circle circle--2"></div>
+            <div class="circle circle--3"></div>
+            <div class="overlay"></div>
+        </div>
+        <div class="calc__desc">
+            <h2>Kainos skaičiuoklė</h2>
+            <p>Pasirinkite paslaugų sritį ir specialistų skaičių, norėdami apskaičiuoti geriausio pasiūlymo kainą.<br>
+                Jokių papildomų mokesčių nėra.</p>
+            <div class="calc__areas">
+                <?php for ($y = 0; $y < count($areas); $y++) { ?>
+                    <div class="calc__area calc__area--<?php echo $areasClass[$y] ?>">
+                        <div class="calc__area-img" tabindex="0" style="background-color: <?php echo $colors[$y] ?>"><img src=<?php echo "$icons[$y]" ?> alt=<?php echo $areas[$y] ?>></div>
+                        <div class="calc__area-desc">
+                            <p><?php echo $areas[$y] ?></p>
+                        </div>
+                    </div>
+                <?php } ?>
+            </div>
+            <div class="calc__input">
+                Specialistų skaičius
+                <input type="number" name="specialists" value="0" min="0" max="999" size="3">
+                <div class="number-button-container">
+                    <button class="number-up"></button>
+                    <button class="number-down"></button>
+                </div>
+            </div>
+        </div>
+        <div class="calc__plan">
+            <h2 class="calc__plan-title">BASIC</h2>
+            <div class="calc__plan-content">
+                <h2 class="calc__plan-price">7€<span>/mėn.</span></h2>
+                <div class="checkbox">
+                    <input type="checkbox" name="reservations" id="reservations">
+                    <label for="reservations">Paslaugų rezervacijos internetu</label>
+                </div>
+                <ul>
+                    <li><p>Paslaugų rezervacijos internetu 24 val. per parą, 7 dienos per savaitę <span class="question-mark">?</span></p>
+                        <div class="plan-desc">
+                            <h3 class="plan-desc__title">Reitingai, atsiliepimų valdymas</h3>
+                            <p>Nam libero tempore, cum soluta
+                                nobis est eligendi optio cumque
+                                nihil impedit quo minus id quod
+                                maxime placeat facere possimus, ty
+                                omnis voluptas assumenda est,
+                                omnis dolor repellendus.
+                                Temporibus autem quibusdam et
+                                aut officiis debitis.</p>
+                            <button class="plan-desc__more darkblue transparent">Plačiau</button>
+                        </div>
+                    </li>
+                    <li><p>Reklama: Google, soc. tinkluose, el. paštu <span class="question-mark">?</span></p>
+                        <div class="plan-desc">
+                            <h3 class="plan-desc__title">Reitingai, atsiliepimų valdymas</h3>
+                            <p>Nam libero tempore, cum soluta
+                                nobis est eligendi optio cumque
+                                nihil impedit quo minus id quod
+                                maxime placeat facere possimus, ty
+                                omnis voluptas assumenda est,
+                                omnis dolor repellendus.
+                                Temporibus autem quibusdam et
+                                aut officiis debitis.</p>
+                            <button class="plan-desc__more darkblue transparent">Plačiau</button>
+                        </div>
+                    </li>
+                    <li><p>Integracija su SERVE PROFESSIONALS sistema <span class="question-mark">?</span></p>
+                        <div class="plan-desc">
+                            <h3 class="plan-desc__title">Reitingai, atsiliepimų valdymas</h3>
+                            <p>Nam libero tempore, cum soluta
+                                nobis est eligendi optio cumque
+                                nihil impedit quo minus id quod
+                                maxime placeat facere possimus, ty
+                                omnis voluptas assumenda est,
+                                omnis dolor repellendus.
+                                Temporibus autem quibusdam et
+                                aut officiis debitis.</p>
+                            <button class="plan-desc__more darkblue transparent">Plačiau</button>
+                        </div>
+                    </li>
+                    <li class="expandable"><p>Automatiniai: priminimai, kvietimai, informavimai <span class="question-mark">?</span></p>
+                        <div class="plan-desc">
+                            <h3 class="plan-desc__title">Reitingai, atsiliepimų valdymas</h3>
+                            <p>Nam libero tempore, cum soluta
+                                nobis est eligendi optio cumque
+                                nihil impedit quo minus id quod
+                                maxime placeat facere possimus, ty
+                                omnis voluptas assumenda est,
+                                omnis dolor repellendus.
+                                Temporibus autem quibusdam et
+                                aut officiis debitis.</p>
+                            <button class="plan-desc__more darkblue transparent">Plačiau</button>
+                        </div>
+                    </li>
+                    <ul>
+                        <li><p>Rezervacijos patvirtinimas paslaugų gavėjui <span class="question-mark">?</span></p>
+                            <div class="plan-desc">
+                                <h3 class="plan-desc__title">Reitingai, atsiliepimų valdymas</h3>
+                                <p>Nam libero tempore, cum soluta
+                                    nobis est eligendi optio cumque
+                                    nihil impedit quo minus id quod
+                                    maxime placeat facere possimus, ty
+                                    omnis voluptas assumenda est,
+                                    omnis dolor repellendus.
+                                    Temporibus autem quibusdam et
+                                    aut officiis debitis.</p>
+                                <button class="plan-desc__more darkblue transparent">Plačiau</button>
+                            </div>
+                        </li>
+                        <li><p>Priminimas apie vizitą prieš 1 d. paslaugų gavėjui <span class="question-mark">?</span></p>
+                            <div class="plan-desc">
+                                <h3 class="plan-desc__title">Reitingai, atsiliepimų valdymas</h3>
+                                <p>Nam libero tempore, cum soluta
+                                    nobis est eligendi optio cumque
+                                    nihil impedit quo minus id quod
+                                    maxime placeat facere possimus, ty
+                                    omnis voluptas assumenda est,
+                                    omnis dolor repellendus.
+                                    Temporibus autem quibusdam et
+                                    aut officiis debitis.</p>
+                                <button class="plan-desc__more darkblue transparent">Plačiau</button>
+                            </div>
+                        </li>
+                        <li><p>Priminimas apie periodines paslaugas prieš 10 - 30 d. paslaugų gavėjui <span class="question-mark">?</span></p>
+                            <div class="plan-desc">
+                                <h3 class="plan-desc__title">Reitingai, atsiliepimų valdymas</h3>
+                                <p>Nam libero tempore, cum soluta
+                                    nobis est eligendi optio cumque
+                                    nihil impedit quo minus id quod
+                                    maxime placeat facere possimus, ty
+                                    omnis voluptas assumenda est,
+                                    omnis dolor repellendus.
+                                    Temporibus autem quibusdam et
+                                    aut officiis debitis.</p>
+                                <button class="plan-desc__more darkblue transparent">Plačiau</button>
+                            </div>
+                        </li>
+                        <li><p>Pranešimas apie naują rezervaciją specialistui <span class="question-mark">?</span></p>
+                            <div class="plan-desc">
+                                <h3 class="plan-desc__title">Reitingai, atsiliepimų valdymas</h3>
+                                <p>Nam libero tempore, cum soluta
+                                    nobis est eligendi optio cumque
+                                    nihil impedit quo minus id quod
+                                    maxime placeat facere possimus, ty
+                                    omnis voluptas assumenda est,
+                                    omnis dolor repellendus.
+                                    Temporibus autem quibusdam et
+                                    aut officiis debitis.</p>
+                                <button class="plan-desc__more darkblue transparent">Plačiau</button>
+                            </div>
+                        </li>
+                    </ul>
+                    <li><p>Rezervacijos įkėlimas į telefono kalendorių (Apple, Google, Windows) <span class="question-mark">?</span></p>
+                        <div class="plan-desc">
+                            <h3 class="plan-desc__title">Reitingai, atsiliepimų valdymas</h3>
+                            <p>Nam libero tempore, cum soluta
+                                nobis est eligendi optio cumque
+                                nihil impedit quo minus id quod
+                                maxime placeat facere possimus, ty
+                                omnis voluptas assumenda est,
+                                omnis dolor repellendus.
+                                Temporibus autem quibusdam et
+                                aut officiis debitis.</p>
+                            <button class="plan-desc__more darkblue transparent">Plačiau</button>
+                        </div>
+                    </li>
+                    <li><p>Galimybė palikti rekomendaciją paslaugų gavėjui <span class="question-mark">?</span></p>
+                        <div class="plan-desc">
+                            <h3 class="plan-desc__title">Reitingai, atsiliepimų valdymas</h3>
+                            <p>Nam libero tempore, cum soluta
+                                nobis est eligendi optio cumque
+                                nihil impedit quo minus id quod
+                                maxime placeat facere possimus, ty
+                                omnis voluptas assumenda est,
+                                omnis dolor repellendus.
+                                Temporibus autem quibusdam et
+                                aut officiis debitis.</p>
+                            <button class="plan-desc__more darkblue transparent">Plačiau</button>
+                        </div>
+                    </li>
+                    <li class="expandable"><p>Atskaitos paslaugų gavėjui <span class="question-mark">?</span></p>
+                        <div class="plan-desc">
+                            <h3 class="plan-desc__title">Reitingai, atsiliepimų valdymas</h3>
+                            <p>Nam libero tempore, cum soluta
+                                nobis est eligendi optio cumque
+                                nihil impedit quo minus id quod
+                                maxime placeat facere possimus, ty
+                                omnis voluptas assumenda est,
+                                omnis dolor repellendus.
+                                Temporibus autem quibusdam et
+                                aut officiis debitis.</p>
+                            <button class="plan-desc__more darkblue transparent">Plačiau</button>
+                        </div>
+                    </li>
+                    <ul>
+                        <li><p>Lorem ipsum <span class="question-mark">?</span></p>
+                            <div class="plan-desc">
+                                <h3 class="plan-desc__title">Reitingai, atsiliepimų valdymas</h3>
+                                <p>Nam libero tempore, cum soluta
+                                    nobis est eligendi optio cumque
+                                    nihil impedit quo minus id quod
+                                    maxime placeat facere possimus, ty
+                                    omnis voluptas assumenda est,
+                                    omnis dolor repellendus.
+                                    Temporibus autem quibusdam et
+                                    aut officiis debitis.</p>
+                                <button class="plan-desc__more darkblue transparent">Plačiau</button>
+                            </div>
+                        </li>
+                        <li><p>Lorem ipsum <span class="question-mark">?</span></p>
+                            <div class="plan-desc">
+                                <h3 class="plan-desc__title">Reitingai, atsiliepimų valdymas</h3>
+                                <p>Nam libero tempore, cum soluta
+                                    nobis est eligendi optio cumque
+                                    nihil impedit quo minus id quod
+                                    maxime placeat facere possimus, ty
+                                    omnis voluptas assumenda est,
+                                    omnis dolor repellendus.
+                                    Temporibus autem quibusdam et
+                                    aut officiis debitis.</p>
+                                <button class="plan-desc__more darkblue transparent">Plačiau</button>
+                            </div>
+                        </li>
+                    </ul>
+                    <li class="expandable"><p>Atskaitos specialistui, įmonei <span class="question-mark">?</span></p>
+                        <div class="plan-desc">
+                            <h3 class="plan-desc__title">Reitingai, atsiliepimų valdymas</h3>
+                            <p>Nam libero tempore, cum soluta
+                                nobis est eligendi optio cumque
+                                nihil impedit quo minus id quod
+                                maxime placeat facere possimus, ty
+                                omnis voluptas assumenda est,
+                                omnis dolor repellendus.
+                                Temporibus autem quibusdam et
+                                aut officiis debitis.</p>
+                            <button class="plan-desc__more darkblue transparent">Plačiau</button>
+                        </div>
+                    </li>
+                    <ul>
+                        <li><p>Lorem ipsum <span class="question-mark">?</span></p>
+                            <div class="plan-desc">
+                                <h3 class="plan-desc__title">Reitingai, atsiliepimų valdymas</h3>
+                                <p>Nam libero tempore, cum soluta
+                                    nobis est eligendi optio cumque
+                                    nihil impedit quo minus id quod
+                                    maxime placeat facere possimus, ty
+                                    omnis voluptas assumenda est,
+                                    omnis dolor repellendus.
+                                    Temporibus autem quibusdam et
+                                    aut officiis debitis.</p>
+                                <button class="plan-desc__more darkblue transparent">Plačiau</button>
+                            </div>
+                        </li>
+                        <li><p>Lorem ipsum <span class="question-mark">?</span></p>
+                            <div class="plan-desc">
+                                <h3 class="plan-desc__title">Reitingai, atsiliepimų valdymas</h3>
+                                <p>Nam libero tempore, cum soluta
+                                    nobis est eligendi optio cumque
+                                    nihil impedit quo minus id quod
+                                    maxime placeat facere possimus, ty
+                                    omnis voluptas assumenda est,
+                                    omnis dolor repellendus.
+                                    Temporibus autem quibusdam et
+                                    aut officiis debitis.</p>
+                                <button class="plan-desc__more darkblue transparent">Plačiau</button>
+                            </div>
+                        </li>
+                    </ul>
+                    <li><p>Personalo valdymas <span class="question-mark">?</span></p>
+                        <div class="plan-desc">
+                            <h3 class="plan-desc__title">Reitingai, atsiliepimų valdymas</h3>
+                            <p>Nam libero tempore, cum soluta
+                                nobis est eligendi optio cumque
+                                nihil impedit quo minus id quod
+                                maxime placeat facere possimus, ty
+                                omnis voluptas assumenda est,
+                                omnis dolor repellendus.
+                                Temporibus autem quibusdam et
+                                aut officiis debitis.</p>
+                            <button class="plan-desc__more darkblue transparent">Plačiau</button>
+                        </div>
+                    </li>
+                    <li><p>Fotosesija (objekto interjeras, darbuotojai – tik naujai prisijungusiems) <span class="question-mark">?</span></p>
+                        <div class="plan-desc">
+                            <h3 class="plan-desc__title">Reitingai, atsiliepimų valdymas</h3>
+                            <p>Nam libero tempore, cum soluta
+                                nobis est eligendi optio cumque
+                                nihil impedit quo minus id quod
+                                maxime placeat facere possimus, ty
+                                omnis voluptas assumenda est,
+                                omnis dolor repellendus.
+                                Temporibus autem quibusdam et
+                                aut officiis debitis.</p>
+                            <button class="plan-desc__more darkblue transparent">Plačiau</button>
+                        </div>
+                    </li>
+                    <li><p>Rezervacijų mygtukas BOOK NOW (Facebook, Instagram, jūsų internetinėje svetainėje) <span class="question-mark">?</span></p>
+                        <div class="plan-desc">
+                            <h3 class="plan-desc__title">Reitingai, atsiliepimų valdymas</h3>
+                            <p>Nam libero tempore, cum soluta
+                                nobis est eligendi optio cumque
+                                nihil impedit quo minus id quod
+                                maxime placeat facere possimus, ty
+                                omnis voluptas assumenda est,
+                                omnis dolor repellendus.
+                                Temporibus autem quibusdam et
+                                aut officiis debitis.</p>
+                            <button class="plan-desc__more darkblue transparent">Plačiau</button>
+                        </div>
+                    </li>
+                    <li><p>Įmonės profilio individualus spalvinis dizainas (už papildomą kainą) <span class="question-mark">?</span></p>
+                        <div class="plan-desc">
+                            <h3 class="plan-desc__title">Reitingai, atsiliepimų valdymas</h3>
+                            <p>Nam libero tempore, cum soluta
+                                nobis est eligendi optio cumque
+                                nihil impedit quo minus id quod
+                                maxime placeat facere possimus, ty
+                                omnis voluptas assumenda est,
+                                omnis dolor repellendus.
+                                Temporibus autem quibusdam et
+                                aut officiis debitis.</p>
+                            <button class="plan-desc__more darkblue transparent">Plačiau</button>
+                        </div>
+                    </li>
+                    <li><p>Paslaugų apmokėjimas (kuriama) <span class="question-mark">?</span></p>
+                        <div class="plan-desc">
+                            <h3 class="plan-desc__title">Reitingai, atsiliepimų valdymas</h3>
+                            <p>Nam libero tempore, cum soluta
+                                nobis est eligendi optio cumque
+                                nihil impedit quo minus id quod
+                                maxime placeat facere possimus, ty
+                                omnis voluptas assumenda est,
+                                omnis dolor repellendus.
+                                Temporibus autem quibusdam et
+                                aut officiis debitis.</p>
+                            <button class="plan-desc__more darkblue transparent">Plačiau</button>
+                        </div>
+                    </li>
+                    <li><p>Reitingai, atsiliepimų valdymas (kuriama) <span class="question-mark">?</span></p>
+                        <div class="plan-desc">
+                            <h3 class="plan-desc__title">Reitingai, atsiliepimų valdymas</h3>
+                            <p>Nam libero tempore, cum soluta
+                                nobis est eligendi optio cumque
+                                nihil impedit quo minus id quod
+                                maxime placeat facere possimus, ty
+                                omnis voluptas assumenda est,
+                                omnis dolor repellendus.
+                                Temporibus autem quibusdam et
+                                aut officiis debitis.</p>
+                            <button class="plan-desc__more darkblue transparent">Plačiau</button>
+                        </div>
+                    </li>
+                    <li><p>Palaikymas <span class="question-mark">?</span></p>
+                        <div class="plan-desc">
+                            <h3 class="plan-desc__title">Reitingai, atsiliepimų valdymas</h3>
+                            <p>Nam libero tempore, cum soluta
+                                nobis est eligendi optio cumque
+                                nihil impedit quo minus id quod
+                                maxime placeat facere possimus, ty
+                                omnis voluptas assumenda est,
+                                omnis dolor repellendus.
+                                Temporibus autem quibusdam et
+                                aut officiis debitis.</p>
+                            <button class="plan-desc__more darkblue transparent">Plačiau</button>
+                        </div>
+                    </li>
+                </ul>
+                <button class="calc__plan-order darkblue" type="button">Užsakyti</button>
             </div>
         </div>
     </section>

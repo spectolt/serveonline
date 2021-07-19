@@ -2889,14 +2889,34 @@ function onDocumentReady(callback) {
     var vertSlider = $(this).closest(".vert-slider")
     var slideContainer = $(vertSlider).find(".vert-slider__slides")
     var slide = $(vertSlider).find(".vert-slider__slide:nth-of-type(" + index + ")")
-    console.log(slide.position().top)
 
     // $(slideContainer).scroll()
-    // $(slideContainer).animate({
-    //   scrollTop: slide.position().top
-    // }, 300, "swing");
-    slide[0].scrollIntoView({behavior: "smooth",})
+    $(slideContainer).animate({
+      scrollTop: "+=" + slide.position().top
+    }, 300, "swing");
+    // slide[0].scrollIntoView({behavior: "smooth",})
   })
+
+  $(".calc__plan .expandable").not(".js_ignore_mark").on("click", function(e) {
+    e.preventDefault()
+    $(this).toggleClass("rotate-arr")
+    $(this).next("ul").toggleClass("expanded")
+    return false
+  })
+
+  $(".question-mark").not(".js_ignore_mark").on("click", function() {
+    var planDesc = $(this).closest("li").find(".plan-desc")
+    var listItem = $(this).closest("li")
+    var width = $(this).closest("p").width()
+
+    $(".plan-desc").removeClass("visible")
+    $(planDesc).toggleClass("visible")
+    $(planDesc).css({left: width})
+  })
+  
+  // $(".plan-desc").not(".js_ignore_mark").each(function(){
+  //   // console.log(width)
+  // })
 
   moveAction();
   moveOrder();

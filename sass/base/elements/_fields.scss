@@ -77,6 +77,10 @@ input:disabled {
   }
 }
 
+input[type=number] {
+  -moz-appearance:textfield;
+}
+
 select {
   border: 1px solid $color__border-input;
 }
