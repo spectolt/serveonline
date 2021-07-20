@@ -1,9 +1,13 @@
 .vert-slider {
   // max-height: 525px;
-  max-height: 615px;
+  // max-height: 650px;
   max-width: 1720px;
   margin-left: auto;
   display: flex;
+
+  @include breakpoint(xl) {
+    flex-direction: column;
+  }
 
   &__items {
     height: 100%;
@@ -14,6 +18,21 @@
     min-width: 17.4%;
     padding-right: 30px;
     border-right: 1px solid #d9d9d9;
+
+    @include breakpoint(xl) {
+      display: flex;
+      flex-wrap: wrap;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+      margin-right: 40px;
+      border-right: 0;
+      // border-bottom: 1px solid #d9d9d9;
+    }
+
+    @include breakpoint(sm) {
+      margin-right: 0;
+      padding-right: 0;
+    }
 
     li {
       width: 100%;
@@ -27,6 +46,18 @@
       transition: border-left 0.3s ease-in-out, font-weight 0.3s ease-in-out;
       white-space: nowrap;
       min-width: 230px;
+      background-color: $white;
+
+      @include breakpoint(xl) {
+        width: auto;
+        border-radius: 0;
+        margin-right: 10px;
+      }
+
+      @include breakpoint(xs) {
+        width: 100%;
+        margin-right: 0;
+      }
 
       &.active {
         border-left: 5px solid $orange;
@@ -42,16 +73,40 @@
 
   &__slide {
     display: flex;
-    height: 100%;
+    // height: 100%;
+
+    @include breakpoint(900px) {
+      flex-direction: column;
+    }
+
+    @include breakpoint(xs) {
+      width: 100%;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-in-out;
+      margin-bottom: 20px;
+
+      &.visible {
+        max-height: 1000px;
+      }
+    }
 
     &-content {
       margin-left: 30px;
+
+      @include breakpoint(sm) {
+        margin-left: 0;
+      }
     }
 
     h3 {
       font-size: 2rem;
       font-weight: 900;
       margin-top: 0;
+
+      @include breakpoint(xs) {
+        font-size: 1.375rem;
+      }
     }
 
     ul {
@@ -59,10 +114,23 @@
       list-style: none;
       margin: 0 60px 0 0;
 
+      @include breakpoint(xs) {
+        margin-right: 0;
+      }
+
       li {
         display: flex;
         font-size: 1.25rem;
         margin-bottom: 30px;
+
+        @include breakpoint(xs) {
+          font-size: 1rem;
+          margin-bottom: 10px;
+          padding: 0;
+          box-shadow: none;
+          white-space: initial;
+          background-color: transparent;
+        }
 
         &::before {
           content: "⬤";
@@ -81,10 +149,19 @@
       align-self: center;
       overflow: hidden;
       display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 57.5%;
-    flex: 1 0 auto;
+      justify-content: center;
+      align-items: center;
+      width: 57.5%;
+      flex: 1 0 auto;
+
+      @include breakpoint(900px) {
+        border-radius: 15px;
+      }
+
+      @include breakpoint(sm) {
+        width: 100%;
+        flex: initial;
+      }
 
       img {
         min-width: 100%;

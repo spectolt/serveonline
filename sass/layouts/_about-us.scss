@@ -6,6 +6,10 @@
   -webkit-perspective: 1px;
   perspective: 1px;
   backface-visibility: hidden;
+
+  @include breakpoint(xl) {
+    perspective: 0;
+  }
 }
 
 .parallax__layer {
@@ -23,14 +27,26 @@
 
 .parallax__layer--back {
   transform: translateZ(-0.5px) scale(1.5);
+
+  @include breakpoint(xl) {
+    transform: unset;
+  }
 }
 
 .parallax__layer--deep {
   transform: translateZ(-1.5px) scale(2.5);
+
+  @include breakpoint(xl) {
+    transform: unset;
+  }
 }
 
 .parallax__layer--deeper {
   transform: translateZ(-3px) scale(4.1);
+
+  @include breakpoint(xl) {
+    transform: unset;
+  }
 }
 
 .parallax__group {
@@ -46,15 +62,28 @@
     border-radius: 35px;
     padding-left: 50px;
     padding-right: 50px;
+
+    @include breakpoint(xs) {
+      font-size: 1.125rem;
+    }
   }
 
   h2 {
     font-size: 3rem;
     font-weight: 900;
+    margin-top: 0;
+
+    @include breakpoint(xs) {
+      font-size: 2rem;
+    }
   }
 
   p {
     font-size: 1.5rem;
+
+    @include breakpoint(xs) {
+      font-size: 1rem;
+    }
   }
 
   .background {
@@ -137,6 +166,10 @@
         right: -10%;
         background-color: $orange;
         color: $orange;
+
+        @include breakpoint(xs) {
+          top: -30%;
+        }
       }
 
       &--3 {
@@ -273,11 +306,14 @@
     // position: fixed;
     // height: 750px;
     // top: auto;
+    @include breakpoint(xl) {
+      top: 0;
+    }
   }
 
   &__content {
     max-width: calc(100vw - #{$_photo-width});
-    padding: 185px 0 185px 40px;
+    padding: 185px 0 185px calc(max(10vw, 40px));
     margin: 0;
     z-index: 1;
     position: relative;
@@ -288,15 +324,13 @@
 
     @include breakpoint(xl) {
       max-width: 100%;
+      padding: 60px 40px 0;
     }
 
-    // @include breakpoint(1250px) {
-    //   padding-top: 50px;
-    // }
-
-    // @include breakpoint(xl) {
-    //   padding: 50px 0 0 0;
-    // }
+    @include breakpoint(xs) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
 
     h1 {
       font-size: 4.5rem;
@@ -304,21 +338,34 @@
       margin-bottom: 37px;
       font-weight: 800;
       width: 90vw;
+
+      @include breakpoint(xs) {
+        font-size: 3rem;
+      }
     }
 
     h3 {
       font-family: "Roboto", sans-serif;
       font-size: 1.75rem;
       color: $orange;
+      
+      @include breakpoint(xs) {
+        font-size: 1.375rem;
+      }
     }
     p {
-      font-size: 1.5rem;
+      // font-size: 1.5rem;
       margin-bottom: 0px;
     }
+
     ul {
       li {
         font-weight: 700;
         font-size: 1.5rem;
+
+        @include breakpoint(xs) {
+          font-size: 1rem;
+        }
       }
     }
   }
@@ -361,6 +408,11 @@
       min-width: 0;
       position: relative;
       right: 0;
+      padding: 20px 0 0 0;
+    }
+
+    @include breakpoint(l) {
+      width: 100%;
     }
   }
 }
@@ -370,6 +422,10 @@
   position: relative;
   overflow: hidden;
   z-index: 20;
+
+  @include breakpoint(sm) {
+    padding: 60px 0;
+  }
 
   .background {
     .backdrop {
@@ -391,10 +447,15 @@
 }
 
 .features {
-  height: 750px;
+  height: auto;
+  min-height: 750px;
   z-index: 10;
   position: relative;
   display: flex;
+
+  @include breakpoint(xl) {
+    flex-direction: column;
+  }
 
   .background {
     // position: fixed;
@@ -408,21 +469,54 @@
   &__content {
     // position: relative;
     padding: 100px 40px;
+    z-index: 1;
+
+    @include breakpoint(xs) {
+      padding: 60px 20px;
+    }
 
     h3 {
       margin-top: 0;
       font-size: 1.875rem;
+
+      @include breakpoint(xs) {
+        font-size: 1.375rem;
+      }
     }
 
     p {
       font-size: 1.125rem;
+
+      @include breakpoint(xs) {
+        font-size: 1rem;
+      }
+    }
+
+    &--left {
+      flex-shrink: 0;
+      padding-left: calc(max(10vw, 40px));
+
+      @include breakpoint(xl) {
+        padding-bottom: 0;
+        text-align: center;
+        padding-left: 40px;
+      }
     }
 
     &--right {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-gap: 20px;
-      left: 35%;
+      // left: 35%;
+      padding-right: calc(max(10vw, 40px));
+
+      @include breakpoint(xs)  {
+        grid-template-columns: 1fr;
+      }
+
+      @include breakpoint(xl) {
+        padding-right: 40px;
+      }
     }
   }
 
@@ -455,6 +549,10 @@
 
     &--main {
       height: 120px;
+
+      @include breakpoint(xs) {
+        height: 100px;
+      }
     }
   }
 }
@@ -465,16 +563,39 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: auto 100%;
-  height: 855px;
+  min-height: 855px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+
+  @include breakpoint(l) {
+    min-height: 1000px;
+    align-items: flex-end;
+  }
+
+  @include breakpoint(sm) {
+    min-height: 650px;
+    background-position: left top;
+    background-size: auto 50%;
+    background-attachment: initial;
+
+  }
 
   &__content {
     padding: 40px;
     border-radius: 10px 0 0 10px;
     background-color: $darkblue;
     width: 45%;
+
+    @include breakpoint(l) {
+      width: 100%;
+      border-radius: 0;
+    }
+
+    @include breakpoint(xs) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
 
     h2 {
       color: $white;
@@ -483,6 +604,10 @@
     p {
       color: $white;
       font-size: 1.125rem;
+
+      @include breakpoint(xs) {
+        font-size: 1rem;
+      }
 
       a {
         color: inherit;
@@ -498,6 +623,19 @@
 .professionals {
   padding: 100px 0;
 
+  @include breakpoint(xl) {
+    padding-bottom: 40px;
+  }
+
+  @include breakpoint(xs) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .background {
+    z-index: -1;
+  }
+
   h2,
   p {
     text-align: center;
@@ -509,17 +647,40 @@
   }
 
   &__slider {
-    padding: 90px 0 0 40px;
+    padding: 90px 0 0 calc(max(10vw, 40px));
     z-index: 1;
+
+    @include breakpoint(xl) {
+      padding-left: 40px;
+    }
+
+    @include breakpoint(xs) {
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 50px;
+    }
   }
 }
 
 .calc {
   display: flex;
-  padding: 100px 200px;
+  padding: 100px calc(max(10vw, 40px));
   align-items: flex-start;
   position: relative;
   // overflow: hidden;
+
+  @include breakpoint(xl) {
+    padding: 100px 40px;
+  }
+
+  @include breakpoint(l) {
+    flex-direction: column;
+  }
+
+  @include breakpoint(xs) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 
   h2 {
     margin-top: 0;
@@ -536,6 +697,11 @@
     flex-basis: 50%;
     padding-right: 115px;
     flex-shrink: 0;
+
+    @include breakpoint(l) {
+      padding-right: 0;
+      margin-bottom: 30px;
+    }
   }
 
   &__areas {
@@ -545,6 +711,11 @@
     // grid-gap: 25px;
     margin-bottom: 45px;
     flex-wrap: wrap;
+    margin-right: -25px;
+
+    @include breakpoint(sm) {
+      justify-content: center;
+    }
   }
 
   &__area {
@@ -685,18 +856,24 @@
 
       li {
         // margin-bottom: 10px;
-        padding: 10px 20px 10px 65px;
+        padding: 10px 40px 10px 65px;
         font-weight: 600;
         position: relative;
+
+        @include breakpoint(xs) {
+          padding-left: 40px;
+          padding-right: 20px;
+        }
 
         &:hover {
           background-color: #f7f6f7;
         }
 
-        p {
+        p.calc__plan-def {
           font-size: 1rem;
           margin: 0;
           width: fit-content;
+          // position: relative;
         }
 
         &.expandable {
@@ -709,6 +886,10 @@
             transform: rotate(-90deg);
             left: 45px;
             transition: transform 0.3s ease-in-out;
+
+            @include breakpoint(sm) {
+              left: 20px;
+            }
           }
 
           &.rotate-arr {
@@ -738,13 +919,23 @@
         overflow: hidden;
 
         li {
-          padding: 5px 20px 5px 80px;
+          padding: 5px 40px 5px 80px;
           font-style: italic;
           font-weight: 400;
+
+          @include breakpoint(xs) {
+            padding-left: 55px;
+            padding-right: 20px;
+          }
         }
 
         &.expanded {
           max-height: 300px;
+        }
+        
+        .plan-desc {
+          font-style: normal;
+          padding-top: 5px;
         }
       }
     }
@@ -761,14 +952,64 @@
 .plan-desc {
   position: absolute;
   visibility: hidden;
-  width: 200px;
+  opacity: 0;
+  min-width: 200px;
   top: 0;
+  margin-top: -0.625rem;
+  padding-top: 5px;
+  z-index: 10;
+  background-color: $white;
+  border-radius: 5px;
+  border: 2px solid $darkblue;
+  transition: visibility .3s ease-in-out, opacity .3s ease-in-out;
 
   h3 {
     margin: 0;
+    white-space: nowrap;
+    background-color: $darkblue;
+    color: $white;
+    font-size: .6875rem;
+    width: fit-content;
+    padding: 5px 40px 5px 10px;
+    position: relative;
+
+    @include breakpoint(xs) {
+      padding-right: 20px;
+    }
+
+    &::before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: -1rem;
+      border-radius: 50% 0 0 50%;
+      width: 1rem;
+      height: 100%;
+      background-color: $darkblue;
+      background-image: url(./img/icons/angle-left-thin-white.svg);
+      background-size: 40%;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+  }
+
+  p.plan-desc__desc {
+    font-size: .6875rem;
+    margin-bottom: 30px;
+    padding: 0 10px;
+  }
+
+  &__more {
+    // margin-bottom: 10px;
+    border-radius: 20px;
+    margin: 0 10px 10px 10px;
+    width: calc(100% - 20px);
+    font-size: .75rem;
   }
 
   &.visible {
     visibility: visible;
+    opacity: 1;
   }
 }

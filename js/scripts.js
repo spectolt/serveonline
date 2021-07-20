@@ -789,6 +789,8 @@ function onDocumentReady(callback) {
       changeTextWidth();
       changePadding();
       paymentLayout();
+      highestSlide();
+      vertSlideMobile();
       // timetableLayout();
       aboutSpecialistLayout();
       var field = $(document.activeElement);
@@ -2881,42 +2883,68 @@ function onDocumentReady(callback) {
       $(this).prop("checked", $(this).data("chk"));
     });
 
-  $(".vert-slider .vert-slider__items li").not(".js_ignore_mark").on("click", function() {
-    $(this).addClass("active")
-    $(this).siblings("li").removeClass("active");
+  $(".vert-slider .vert-slider__items li")
+    .not(".js_ignore_mark")
+    .on("click", function () {
+      $(this).addClass("active");
+      $(this).siblings("li").removeClass("active");
 
-    var index = $(this).index() + 1
-    var vertSlider = $(this).closest(".vert-slider")
-    var slideContainer = $(vertSlider).find(".vert-slider__slides")
-    var slide = $(vertSlider).find(".vert-slider__slide:nth-of-type(" + index + ")")
+      var index = $(this).index() + 1;
+      var vertSlider = $(this).closest(".vert-slider");
+      var slideContainer = $(vertSlider).find(".vert-slider__slides");
+      var slide = $(vertSlider).find(
+        ".vert-slider__slide:nth-of-type(" + index + ")"
+      );
 
-    // $(slideContainer).scroll()
-    $(slideContainer).animate({
-      scrollTop: "+=" + slide.position().top
-    }, 300, "swing");
-    // slide[0].scrollIntoView({behavior: "smooth",})
-  })
+      // $(slideContainer).scroll()
+      if (window.matchMedia("(max-width: 600px)").matches) {
+        $(".vert-slider__slide").removeClass("visible")
+        $(this).next(".vert-slider__slide").addClass("visible");
+      } else {
+        $(slideContainer).animate(
+          {
+            scrollTop: "+=" + slide.position().top,
+          },
+          300,
+          "swing"
+        );
+      }
+    });
 
-  $(".calc__plan .expandable").not(".js_ignore_mark").on("click", function(e) {
-    e.preventDefault()
-    $(this).toggleClass("rotate-arr")
-    $(this).next("ul").toggleClass("expanded")
-    return false
-  })
+  $(".calc__plan .expandable")
+    .not(".js_ignore_mark")
+    .on("click", function (e) {
+      e.preventDefault();
+      if (e.target != this) {
+        return;
+      }
+      $(this).toggleClass("rotate-arr");
+      $(this).next("ul").toggleClass("expanded");
+    });
 
-  $(".question-mark").not(".js_ignore_mark").on("click", function() {
-    var planDesc = $(this).closest("li").find(".plan-desc")
-    var listItem = $(this).closest("li")
-    var width = $(this).closest("p").width()
+  $(document).click(function (e) {
+    console.log($(e.target));
+    if (!$(e.target).closest(".question-mark, .plan-desc").length) {
+      $(".plan-desc").removeClass("visible");
+    }
+  });
 
-    $(".plan-desc").removeClass("visible")
-    $(planDesc).toggleClass("visible")
-    $(planDesc).css({left: width})
-  })
-  
-  // $(".plan-desc").not(".js_ignore_mark").each(function(){
-  //   // console.log(width)
-  // })
+  $(".question-mark")
+    .not(".js_ignore_mark")
+    .on("click", function () {
+      var listItem = $(this).closest("li");
+      var planDesc = $(listItem).find(".plan-desc");
+      var qMark = $(this).closest("p").find(".question-mark");
+      var leftOffset = $(qMark).position().left + $(qMark).width();
+
+      $(".plan-desc").removeClass("visible");
+      $(planDesc).toggleClass("visible");
+      $(planDesc).css({
+        left: leftOffset + 20,
+        width: $(planDesc).find("h3").outerWidth() + 2,
+        top: $(qMark).position().top,
+      });
+    });
 
   moveAction();
   moveOrder();
@@ -2925,6 +2953,8 @@ function onDocumentReady(callback) {
   paymentLayout();
   // timetableLayout();
   aboutSpecialistLayout();
+  highestSlide();
+  vertSlideMobile();
 
   setTimeout(function () {
     changeTextWidth();
@@ -3709,5 +3739,47 @@ function aboutSpecialistLayout() {
     $(".specialist #apie-specialista").removeClass("hidden");
     $(".specialist #registruokis").removeClass("hidden");
     isResized = false;
+  }
+}
+
+function highestSlide() {
+  //finding highest slide
+  var highestSlide = null;
+  var hi = 0;
+  var height = 0;
+  $(".vert-slider__slide")
+    .not(".js_ignore_mark")
+    .each(function () {
+      $(this).removeAttr("style");
+      height = $(this).prop("scrollHeight");
+      if (height > hi) {
+        highestSlide = $(this);
+        hi = height;
+      }
+    });
+
+  if (window.matchMedia("(min-width: 601px)").matches) {
+    $(".vert-slider__slide")
+      .not(".js_ignore_mark")
+      .each(function () {
+        $(this).css({ height: hi });
+      });
+  }
+
+  $(".vert-slider__slides").not(".js_ignore_mark").css({ maxHeight: hi });
+}
+
+function vertSlideMobile() {
+  var asideItems = $(".vert-slider__items li:not('.js_ignore_mark')");
+  var slides = $(".vert-slider__slide:not('.js_ignore_mark')");
+
+  if (window.matchMedia("(max-width: 600px)").matches) {
+    asideItems.each(function (index) {
+      $(slides[index]).insertAfter($(this));
+    });
+  } else {
+    $(slides).each(function () {
+      $(this).appendTo($(".vert-slider__slides"));
+    });
   }
 }
