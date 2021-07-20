@@ -24959,6 +24959,8 @@ section.product .product__block--company .slick-track {
   overflow-y: auto;
   -webkit-perspective: 1px;
   perspective: 1px;
+  -webkit-perspective-origin: 0 0;
+          perspective-origin: 0 0;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
 }
@@ -24976,6 +24978,8 @@ section.product .product__block--company .slick-track {
   left: 0;
   right: 0;
   bottom: 0;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
 }
 
 .parallax__layer--base {
@@ -25020,9 +25024,6 @@ section.product .product__block--company .slick-track {
 }
 
 .parallax__group {
-  position: relative;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
   overflow: hidden;
 }
 
@@ -25301,7 +25302,7 @@ section.product .product__block--company .slick-track {
   padding-top: 55px;
   right: 0;
   left: auto;
-  right: -155px;
+  right: -355px;
 }
 
 @media (max-width: 1440px) {
@@ -25574,6 +25575,7 @@ section.product .product__block--company .slick-track {
 
 .professionals {
   padding: 100px 0;
+  position: relative;
 }
 
 @media (max-width: 1180px) {
@@ -25704,6 +25706,14 @@ section.product .product__block--company .slick-track {
   height: 100px;
   position: relative;
   margin: 0 25px 25px 0;
+}
+
+@media (max-width: 700px) {
+  .calc__area {
+    margin: 0 15px 15px 0;
+    width: 80px;
+    height: 80px;
+  }
 }
 
 .calc__area-img {

@@ -5,6 +5,7 @@
   overflow-y: auto;
   -webkit-perspective: 1px;
   perspective: 1px;
+  perspective-origin: 0 0;
   backface-visibility: hidden;
 
   @include breakpoint(xl) {
@@ -19,6 +20,7 @@
   left: 0;
   right: 0;
   bottom: 0;
+  transform-origin: 0 0;
 }
 
 .parallax__layer--base {
@@ -50,9 +52,9 @@
 }
 
 .parallax__group {
-  position: relative;
-  // height: 100vh;
-  transform-style: preserve-3d;
+  // position: relative;
+  // // height: 100vh;
+  // transform-style: preserve-3d;
   overflow: hidden;
 }
 
@@ -390,7 +392,7 @@
     // bottom: 0;
     // width: 60%;
     left: auto;
-    right: -155px;
+    right: -355px;
 
     @include breakpoint(1440px) {
       min-width: $_photo-width-1440;
@@ -622,6 +624,7 @@
 
 .professionals {
   padding: 100px 0;
+  position: relative;
 
   @include breakpoint(xl) {
     padding-bottom: 40px;
@@ -723,6 +726,12 @@
     height: 100px;
     position: relative;
     margin: 0 25px 25px 0;
+
+    @include breakpoint(sm) {
+      margin: 0 15px 15px 0;
+      width: 80px;
+      height: 80px;
+    }
 
     &-img {
       width: 100%;

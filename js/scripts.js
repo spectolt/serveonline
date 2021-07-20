@@ -2946,6 +2946,15 @@ function onDocumentReady(callback) {
       });
     });
 
+  var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+  if(isSafari) {
+    $(".about-us .background").removeClass("parallax__layer parallax__layer--deeper").css({top: 0, height: "100%"})
+    $(".about-us").children().removeClass("parallax__group")
+    console.log($(".about-us").children(), $(".about-us > *"))
+
+  }
+  
   moveAction();
   moveOrder();
   changePadding();
