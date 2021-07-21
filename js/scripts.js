@@ -252,22 +252,22 @@ function onDocumentReady(callback) {
           var available = availableDates[date];
           var highlight = eventDates[date];
           if (available && highlight) {
-            setTimeout(function () {
-              $('<span class="flag"></span>').appendTo(
-                ".ui-datepicker-highlight"
-              );
-            }, 2);
+            // setTimeout(function () {
+            //   $('<span class="flag"></span>').appendTo(
+            //     ".ui-datepicker-highlight"
+            //   );
+            // }, 2);
             return [
               true,
               "ui-datepicker-available ui-datepicker-highlight",
               "",
             ];
           } else if (highlight) {
-            setTimeout(function () {
-              $('<span class="flag"></span>').appendTo(
-                ".ui-datepicker-highlight"
-              );
-            }, 2);
+            // setTimeout(function () {
+            //   $('<span class="flag"></span>').appendTo(
+            //     ".ui-datepicker-highlight"
+            //   );
+            // }, 2);
             return [true, "ui-datepicker-highlight", ""];
           } else if (available) {
             return [true, "ui-datepicker-available", ""];
@@ -357,22 +357,22 @@ function onDocumentReady(callback) {
           var available = availableDates[date];
           var highlight = eventDates[date];
           if (available && highlight) {
-            setTimeout(function () {
-              $('<span class="flag"></span>').appendTo(
-                ".ui-datepicker-highlight"
-              );
-            }, 2);
+            // setTimeout(function () {
+            //   $('<span class="flag"></span>').appendTo(
+            //     ".ui-datepicker-highlight"
+            //   );
+            // }, 2);
             return [
               true,
               "ui-datepicker-available ui-datepicker-highlight",
               "",
             ];
           } else if (highlight) {
-            setTimeout(function () {
-              $('<span class="flag"></span>').appendTo(
-                ".ui-datepicker-highlight"
-              );
-            }, 2);
+            // setTimeout(function () {
+            //   $('<span class="flag"></span>').appendTo(
+            //     ".ui-datepicker-highlight"
+            //   );
+            // }, 2);
             return [true, "ui-datepicker-highlight", ""];
           } else if (available) {
             return [true, "ui-datepicker-available", ""];

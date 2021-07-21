@@ -7040,11 +7040,7 @@ td.ui-datepicker-highlight a {
   position: relative;
 }
 
-td.ui-datepicker-highlight {
-  position: relative;
-}
-
-td.ui-datepicker-highlight .flag {
+td.ui-datepicker-highlight a::before {
   content: "";
   width: 12px;
   height: 15px;
@@ -7054,12 +7050,16 @@ td.ui-datepicker-highlight .flag {
   background-repeat: no-repeat;
   position: absolute;
   top: 2px;
-  right: 0;
+  right: -10px;
   cursor: pointer;
 }
 
-td.ui-datepicker-highlight .flag:hover {
+td.ui-datepicker-highlight a::before:hover {
   background-color: initial;
+}
+
+td.ui-datepicker-highlight {
+  position: relative;
 }
 
 td.ui-datepicker-available a {

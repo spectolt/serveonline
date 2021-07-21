@@ -674,12 +674,8 @@ td.ui-datepicker-today a {
 
 td.ui-datepicker-highlight a {
   position: relative;
-}
 
-td.ui-datepicker-highlight {
-  position: relative;
-
-  .flag {
+  &::before {
     content: "";
     width: 12px;
     height: 15px;
@@ -691,13 +687,17 @@ td.ui-datepicker-highlight {
     //margin-right: 10px;
     position: absolute;
     top: 2px;
-    right: 0;
+    right: -10px;
     cursor: pointer;
 
     &:hover {
       background-color: initial;
     }
   }
+}
+
+td.ui-datepicker-highlight {
+  position: relative;
 }
 
 td.ui-datepicker-available a {
