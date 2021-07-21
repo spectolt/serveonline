@@ -84,7 +84,7 @@
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.3s ease-in-out;
-      margin-bottom: 20px;
+      // margin-bottom: 20px;
 
       &.visible {
         max-height: 1000px;
@@ -161,6 +161,7 @@
       @include breakpoint(sm) {
         width: 100%;
         flex: initial;
+        margin-bottom: 20px;
       }
 
       img {
