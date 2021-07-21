@@ -25012,8 +25012,8 @@ section.product .product__block--company .slick-track {
 }
 
 .parallax__layer--deeper {
-  -webkit-transform: translateZ(-3px) scale(4.1);
-          transform: translateZ(-3px) scale(4.1);
+  -webkit-transform: translateZ(-3px) scale(4.1) !important;
+          transform: translateZ(-3px) scale(4.1) !important;
 }
 
 @media (max-width: 1180px) {
@@ -25208,6 +25208,11 @@ section.product .product__block--company .slick-track {
   }
 }
 
+.opportunities .background {
+  -webkit-transform: translateZ(-1px) scale(2.1) translateX(25%) translateY(25%);
+          transform: translateZ(-1px) scale(2.1) translateX(25%) translateY(25%);
+}
+
 @media (max-width: 1180px) {
   .opportunities .background {
     top: 0;
@@ -25290,7 +25295,7 @@ section.product .product__block--company .slick-track {
 }
 
 .opportunities .opportunities__photo {
-  z-index: 1;
+  z-index: 10;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -25945,7 +25950,7 @@ section.product .product__block--company .slick-track {
 }
 
 .calc__plan ul li {
-  padding: 10px 40px 10px 65px;
+  padding: 5px 40px 5px 65px;
   font-weight: 600;
   position: relative;
 }
@@ -25973,13 +25978,17 @@ section.product .product__block--company .slick-track {
   position: relative;
 }
 
-.calc__plan ul li.expandable:before {
+.calc__plan ul li.expandable p {
+  position: relative;
+}
+
+.calc__plan ul li.expandable p:before {
   content: url("./img/icons/angle-down.svg");
   display: block;
   position: absolute;
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
-  left: 45px;
+  right: -25px;
   -webkit-transition: -webkit-transform 0.3s ease-in-out;
   transition: -webkit-transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out;
@@ -25987,21 +25996,21 @@ section.product .product__block--company .slick-track {
 }
 
 @media (max-width: 700px) {
-  .calc__plan ul li.expandable:before {
-    left: 20px;
+  .calc__plan ul li.expandable p:before {
+    right: -15px;
   }
 }
 
-.calc__plan ul li.expandable.rotate-arr::before {
+.calc__plan ul li.expandable p.rotate-arr::before {
   -webkit-transform: rotate(0);
           transform: rotate(0);
 }
 
 .calc__plan ul li .question-mark {
-  border: 1px solid #CFD0D8;
-  color: #CFD0D8;
+  border: 1px solid #cfd0d8;
+  color: #cfd0d8;
   border-radius: 50%;
-  font-size: .6875rem;
+  font-size: 0.6875rem;
   width: 1rem;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -26014,6 +26023,7 @@ section.product .product__block--company .slick-track {
           justify-content: center;
   margin-left: 5px;
   font-style: normal;
+  display: none;
 }
 
 .calc__plan ul ul {
@@ -26064,8 +26074,8 @@ section.product .product__block--company .slick-track {
   background-color: #fff;
   border-radius: 5px;
   border: 2px solid #101b51;
-  -webkit-transition: visibility .3s ease-in-out, opacity .3s ease-in-out;
-  transition: visibility .3s ease-in-out, opacity .3s ease-in-out;
+  -webkit-transition: visibility 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transition: visibility 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 .plan-desc h3 {
@@ -26073,7 +26083,7 @@ section.product .product__block--company .slick-track {
   white-space: nowrap;
   background-color: #101b51;
   color: #fff;
-  font-size: .6875rem;
+  font-size: 0.6875rem;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -26104,7 +26114,7 @@ section.product .product__block--company .slick-track {
 }
 
 .plan-desc p.plan-desc__desc {
-  font-size: .6875rem;
+  font-size: 0.6875rem;
   margin-bottom: 30px;
   padding: 0 10px;
 }
@@ -26113,7 +26123,7 @@ section.product .product__block--company .slick-track {
   border-radius: 20px;
   margin: 0 10px 10px 10px;
   width: calc(100% - 20px);
-  font-size: .75rem;
+  font-size: 0.75rem;
 }
 
 .plan-desc.visible {

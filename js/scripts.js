@@ -1288,7 +1288,7 @@ function onDocumentReady(callback) {
       );
     });
 
-  $("input[name='after-discount'")
+  $("input[name='after-discount']")
     .not(".js_ignore_mark")
     .on("input", function () {
       if (parseInt($(this).val(), 10) > 0) {
@@ -2914,11 +2914,11 @@ function onDocumentReady(callback) {
   $(".calc__plan .expandable")
     .not(".js_ignore_mark")
     .on("click", function (e) {
-      e.preventDefault();
-      if (e.target != this) {
-        return;
-      }
-      $(this).toggleClass("rotate-arr");
+      // e.preventDefault();
+      // if (e.target != this) {
+      //   return;
+      // }
+      $(this).find("p").toggleClass("rotate-arr");
       $(this).next("ul").toggleClass("expanded");
     });
 

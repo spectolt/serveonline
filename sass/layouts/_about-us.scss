@@ -44,7 +44,7 @@
 }
 
 .parallax__layer--deeper {
-  transform: translateZ(-3px) scale(4.1);
+  transform: translateZ(-3px) scale(4.1) !important;
 
   @include breakpoint(xl) {
     transform: unset;
@@ -146,7 +146,7 @@
       box-shadow: 0 0 75px 75px;
       // filter: brightness(115%);
       // -ms-filter: blur(75px) brightness(115%);
-      // filter: blur(75px) brightness(115%); 
+      // filter: blur(75px) brightness(115%);
       // backface-visibility: hidden;
       // @supports ((-webkit-backdrop-filter: blur(2em)) or (backdrop-filter: blur(2em))) {
       //   filter: none;
@@ -264,7 +264,7 @@
     // @supports (-moz-appearance:none) {
     //   .circle {
     //     display: none;
-    //   } 
+    //   }
     //  }
 
     .overlay {
@@ -308,6 +308,7 @@
     // position: fixed;
     // height: 750px;
     // top: auto;
+    transform: translateZ(-1px) scale(2.1) translateX(25%) translateY(25%);
     @include breakpoint(xl) {
       top: 0;
     }
@@ -350,7 +351,7 @@
       font-family: "Roboto", sans-serif;
       font-size: 1.75rem;
       color: $orange;
-      
+
       @include breakpoint(xs) {
         font-size: 1.375rem;
       }
@@ -379,7 +380,7 @@
   }
 
   & .opportunities__photo {
-    z-index: 1;
+    z-index: 10;
     display: flex;
     align-items: flex-end;
     min-width: $_photo-width;
@@ -512,7 +513,7 @@
       // left: 35%;
       padding-right: calc(max(10vw, 40px));
 
-      @include breakpoint(xs)  {
+      @include breakpoint(xs) {
         grid-template-columns: 1fr;
       }
 
@@ -580,7 +581,6 @@
     background-position: left top;
     background-size: auto 50%;
     background-attachment: initial;
-
   }
 
   &__content {
@@ -865,7 +865,7 @@
 
       li {
         // margin-bottom: 10px;
-        padding: 10px 40px 10px 65px;
+        padding: 5px 40px 5px 65px;
         font-weight: 600;
         position: relative;
 
@@ -888,37 +888,42 @@
         &.expandable {
           position: relative;
 
-          &:before {
-            content: url("./img/icons/angle-down.svg");
-            display: block;
-            position: absolute;
-            transform: rotate(-90deg);
-            left: 45px;
-            transition: transform 0.3s ease-in-out;
+          p {
+            position: relative;
 
-            @include breakpoint(sm) {
-              left: 20px;
+            &:before {
+              content: url("./img/icons/angle-down.svg");
+              display: block;
+              position: absolute;
+              transform: rotate(-90deg);
+              right: -25px;
+              transition: transform 0.3s ease-in-out;
+
+              @include breakpoint(sm) {
+                right: -15px;
+              }
             }
-          }
 
-          &.rotate-arr {
-            &::before {
-              transform: rotate(0);
+            &.rotate-arr {
+              &::before {
+                transform: rotate(0);
+              }
             }
           }
         }
 
         .question-mark {
-          border: 1px solid #CFD0D8;
-          color: #CFD0D8;
+          border: 1px solid #cfd0d8;
+          color: #cfd0d8;
           border-radius: 50%;
-          font-size: .6875rem;
+          font-size: 0.6875rem;
           width: 1rem;
           display: inline-flex;
           align-items: center;
           justify-content: center;
           margin-left: 5px;
           font-style: normal;
+          display: none; //paskui pakeisti
         }
       }
 
@@ -941,7 +946,7 @@
         &.expanded {
           max-height: 300px;
         }
-        
+
         .plan-desc {
           font-style: normal;
           padding-top: 5px;
@@ -970,14 +975,14 @@
   background-color: $white;
   border-radius: 5px;
   border: 2px solid $darkblue;
-  transition: visibility .3s ease-in-out, opacity .3s ease-in-out;
+  transition: visibility 0.3s ease-in-out, opacity 0.3s ease-in-out;
 
   h3 {
     margin: 0;
     white-space: nowrap;
     background-color: $darkblue;
     color: $white;
-    font-size: .6875rem;
+    font-size: 0.6875rem;
     width: fit-content;
     padding: 5px 40px 5px 10px;
     position: relative;
@@ -1004,7 +1009,7 @@
   }
 
   p.plan-desc__desc {
-    font-size: .6875rem;
+    font-size: 0.6875rem;
     margin-bottom: 30px;
     padding: 0 10px;
   }
@@ -1014,7 +1019,7 @@
     border-radius: 20px;
     margin: 0 10px 10px 10px;
     width: calc(100% - 20px);
-    font-size: .75rem;
+    font-size: 0.75rem;
   }
 
   &.visible {

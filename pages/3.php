@@ -121,10 +121,10 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
             <h2 class="calc__plan-title">BASIC</h2>
             <div class="calc__plan-content">
                 <h2 class="calc__plan-price">7€<span>/mėn.</span></h2>
-                <div class="checkbox">
+                <!-- <div class="checkbox">
                     <input type="checkbox" name="reservations" id="reservations">
                     <label for="reservations">Paslaugų rezervacijos internetu</label>
-                </div>
+                </div> -->
                 <ul>
                     <li>
                         <p class="calc__plan-def">Paslaugų rezervacijos internetu 24 val. per parą, 7 dienos per savaitę <span class="question-mark">?</span></p>
@@ -482,6 +482,18 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
             </div>
         </div>
     </section>
+    <section class="tools parallax__group">
+        <div class="tools__content">
+            <h2>Dar daugiau įrankių</h2>
+            <p>
+                „Serve Online“ – naujausia funkcija, papildžiusi įvairių paslaugų segmentams pritaikytą verslo valdymo sistemą
+
+                <a href="#">„Serve Professionals“.</a>
+
+                Nuo 2008 m. siūlome Lietuvoje veikiantiems specialistams personalizuotas galimybes. Subūrėme didelę verslo bendruomenę, vienijančią per 3 000 įvairių paslaugų teikėjus.
+            </p>
+        </div>
+    </section>
     <section class="professionals parallax__group">
         <div class="background">
             <div class="circle circle--static"></div>
@@ -587,18 +599,6 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <section class="tools parallax__group">
-        <div class="tools__content">
-            <h2>Dar daugiau įrankių</h2>
-            <p>
-                „Serve Online“ – naujausia funkcija, papildžiusi įvairių paslaugų segmentams pritaikytą verslo valdymo sistemą
-
-                <a href="#">„Serve Professionals“.</a>
-
-                Nuo 2008 m. siūlome Lietuvoje veikiantiems specialistams personalizuotas galimybes. Subūrėme didelę verslo bendruomenę, vienijančią per 3 000 įvairių paslaugų teikėjus.
-            </p>
         </div>
     </section>
     <?php require_once('footer-menu-homepage.php'); ?>
