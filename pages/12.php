@@ -14,8 +14,8 @@ $thisPage = "specialist-profile" ?>
                         <div class="company__nav-container">
                             <ul class="company__nav">
                                 <li class="active"><a href="#krepselis">Mano krepšelis</a></li>
-                                <li><a href="#registracijos">Rezervacijos</a></li>
-                                <li><a href="#registraciju-istorija">Rezervacijų istorija</a></li>
+                                <li><a href="#registracijos">Užsakymai</a></li>
+                                <li><a href="#registraciju-istorija">Praeities užsakymai</a></li>
                                 <li><a href="#rekomendacijos">Rekomendacijos</a></li>
                                 <li><a href="#bendra-informacija">Bendra informacija</a></li>
                                 <li><a href="#prisijungimas">Prisijungimas</a></li>

@@ -888,14 +888,14 @@ function onDocumentReady(callback) {
             $(this).removeClass("white-text");
             $(this).css("color", "#8d92a3");
           } else {
-            $(this).css("color", "#101b51");
+            $(this).css("color", "#0F1D5B");
           }
         });
       }
       inputs.css("background-color", color);
       inputs.css(
         "color",
-        isDark($(this).css("background-color")) ? "white" : "#101b51"
+        isDark($(this).css("background-color")) ? "white" : "#0F1D5B"
       );
       if (isDark($(this).css("background-color"))) {
         $(this).closest("tr").find("td input").addClass("white-text");
@@ -1000,7 +1000,7 @@ function onDocumentReady(callback) {
   $('.areas__area img[src$=".svg"]')
     .not(".js_ignore_mark")
     .each(imgToSvg)
-    .css("fill", "#101b51");
+    .css("fill", "#0F1D5B");
 
   $(".site-aside__datepicker")
     .not(".js_ignore_mark")
@@ -2171,7 +2171,7 @@ function onDocumentReady(callback) {
       displayModeBar: false,
       showlegend: false,
       marker: {
-        color: "#101b51",
+        color: "#0F1D5B",
       },
       hoverinfo: "none",
     },
@@ -2214,7 +2214,7 @@ function onDocumentReady(callback) {
   //       colors: [
   //         '#5055be',
   //         '#c0c2e8',
-  //         '#101b51',
+  //         '#0F1D5B',
   //         '#ff9954',
   //         '#ffb35b'
   //       ]
@@ -2238,7 +2238,7 @@ function onDocumentReady(callback) {
   //       colors: [
   //         '#5055be',
   //         '#c0c2e8',
-  //         '#101b51',
+  //         '#0F1D5B',
   //         '#ff9954',
   //         '#ffb35b'
   //       ]
@@ -2250,14 +2250,14 @@ function onDocumentReady(callback) {
     {
       domain: { column: 2 },
       values: [60, 200],
-      labels: ["Vyrai", "Moterys"],
+      labels: ["Registravosi per Serve Online", "Registravosi per nuosavus kanalus"],
       type: "pie",
       textinfo: "none",
       hoverinfo: "label+value",
       automargin: true,
       hole: 0.6,
       marker: {
-        colors: ["#5055be", "#c0c2e8", "#101b51", "#ff9954", "#ffb35b"],
+        colors: ["#5055be", "#c0c2e8", "#0F1D5B", "#ff9954", "#ffb35b"],
       },
     },
   ];
@@ -2333,7 +2333,7 @@ function onDocumentReady(callback) {
       automargin: true,
       // hoverinfo: "label+value",
       marker: {
-        colors: ["#5055be", "#c0c2e8", "#101b51", "#ff9954", "#ffb35b"],
+        colors: ["#5055be", "#c0c2e8", "#0F1D5B", "#ff9954", "#ffb35b"],
         line: {
           color: "#f4f4f6",
           width: 1,
@@ -2355,7 +2355,7 @@ function onDocumentReady(callback) {
       xaxis: "x2",
       yaxis: "y2",
       marker: {
-        colors: ["#5055be", "#c0c2e8", "#101b51", "#ff9954", "#ffb35b"],
+        colors: ["#5055be", "#c0c2e8", "#0F1D5B", "#ff9954", "#ffb35b"],
         line: {
           color: "#f4f4f6",
           width: 1,
@@ -2365,7 +2365,7 @@ function onDocumentReady(callback) {
     {
       domain: { x: donutGridX(2), y: donutGridY(2) },
       values: [60, 200],
-      labels: ["Vyrai", "Moterys"],
+      labels: ["Registravosi per Serve Online", "Registravosi per nuosavus kanalus"],
       type: "pie",
       textinfo: "label+value",
       texttemplate: "%{label}<br><b>%{value}</b>",
@@ -2375,7 +2375,7 @@ function onDocumentReady(callback) {
       automargin: true,
       hoverinfo: "none",
       marker: {
-        colors: ["#101b51", "#ffb35b", "#c0c2e8"],
+        colors: ["#0F1D5B", "#ffb35b", "#c0c2e8"],
         line: {
           color: "#f4f4f6",
           width: 1,
@@ -2457,7 +2457,7 @@ function onDocumentReady(callback) {
           hoverinfo: "none",
           automargin: true,
           marker: {
-            colors: ["#5055be", "#c0c2e8", "#101b51", "#ff9954", "#ffb35b"],
+            colors: ["#5055be", "#c0c2e8", "#0F1D5B", "#ff9954", "#ffb35b"],
             line: {
               color: "#f4f4f6",
               width: 1,
@@ -2479,7 +2479,7 @@ function onDocumentReady(callback) {
           xaxis: "x2",
           yaxis: "y2",
           marker: {
-            colors: ["#5055be", "#c0c2e8", "#101b51", "#ff9954", "#ffb35b"],
+            colors: ["#5055be", "#c0c2e8", "#0F1D5B", "#ff9954", "#ffb35b"],
             line: {
               color: "#f4f4f6",
               width: 1,
@@ -2489,7 +2489,7 @@ function onDocumentReady(callback) {
         {
           domain: { x: donutGridX(2), y: donutGridY(2) },
           values: [60, 200],
-          labels: ["Vyrai", "Moterys"],
+          labels: ["Registravosi per Serve Online", "Registravosi per nuosavus kanalus"],
           type: "pie",
           textinfo: "label+value",
           texttemplate: "%{label}<br><b>%{value}</b>",
@@ -2499,7 +2499,7 @@ function onDocumentReady(callback) {
           automargin: true,
           hoverinfo: "none",
           marker: {
-            colors: ["#101b51", "#ffb35b", "#c0c2e8"],
+            colors: ["#0F1D5B", "#ffb35b", "#c0c2e8"],
             line: {
               color: "#f4f4f6",
               width: 1,

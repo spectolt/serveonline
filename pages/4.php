@@ -37,7 +37,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
         <div class="page-content__wrapper">
             <section class="product">
                 <div class="product__header">
-                    <h1 class="title">Rezervuokis</h1>
+                    <h1 class="title">Registruokis</h1>
                     <div class="product__nav">
                         <button class="product__nav-button product__nav-button--prev"></button>
                         <div>

@@ -82,7 +82,7 @@ $thisPage = "specialist" ?>
                 <div class="specialist__overlay hidden"></div>
                 <section class="group__tab" id="registruokis">
                     <div class="sticky">
-                        <h3 class="register-title">Rezervuok nemokamai</h3>
+                        <h3 class="register-title">Registruokis nemokamai</h3>
                         <div class="product__chosen">
                             <div class="autocomplete-product">
                                 <div class="product-action__info">

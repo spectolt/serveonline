@@ -11,7 +11,7 @@ $class = array('clinic', 'odontology', 'vet', 'beauty', 'spa', 'sport');
     <section class="main-screen">
         <div class="main-screen__info">
             <h1 class="title title--home">Atrask savo<span style="display: block;">geriausią specialistą!</span></h1>
-            <h2 class="subtitle subtitle--home">Įvairių paslaugų rezervacijos nemokamai</h2>
+            <h2 class="subtitle subtitle--home">Įvairių paslaugų užsakymų registravimas nemokamai</h2>
             <div class="main-screen__areas">
                 <?php for ($y = 0; $y < 6; $y++) { ?>
                     <div class="main-screen__area">
