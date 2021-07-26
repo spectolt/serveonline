@@ -25250,7 +25250,7 @@ section.product .product__block--company .slick-track {
 .opportunities__content h1 {
   font-size: 4.5rem;
   margin-top: 0px;
-  margin-bottom: 37px;
+  margin-bottom: 40px;
   font-weight: 800;
   width: 90vw;
 }
@@ -25265,6 +25265,7 @@ section.product .product__block--company .slick-track {
   font-family: "Roboto", sans-serif;
   font-size: 1.75rem;
   color: #ff9954;
+  margin: 20px 0;
 }
 
 @media (max-width: 600px) {
@@ -25274,7 +25275,12 @@ section.product .product__block--company .slick-track {
 }
 
 .opportunities__content p {
+  margin-top: 0;
   margin-bottom: 20px;
+}
+
+.opportunities__content p:last-of-type {
+  margin-bottom: 80px;
 }
 
 .opportunities__content ul li {
@@ -25607,6 +25613,7 @@ section.product .product__block--company .slick-track {
   z-index: 1;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 40px;
 }
 
 .professionals .background {
@@ -25667,6 +25674,7 @@ section.product .product__block--company .slick-track {
 
 .calc h2 {
   margin-top: 0;
+  margin-bottom: 30px;
 }
 
 .calc .background {
@@ -25686,8 +25694,8 @@ section.product .product__block--company .slick-track {
 
 @media (max-width: 991px) {
   .calc__desc {
-    padding-right: 0;
-    margin-bottom: 30px;
+    padding-left: 0;
+    margin-top: 30px;
   }
 }
 
@@ -25959,8 +25967,8 @@ section.product .product__block--company .slick-track {
 }
 
 .calc__plan ul li {
-  padding: 5px 40px 5px 65px;
-  font-weight: 600;
+  padding: 3px 40px 3px 65px;
+  font-weight: 400;
   position: relative;
 }
 
@@ -25983,6 +25991,13 @@ section.product .product__block--company .slick-track {
   width: fit-content;
 }
 
+.calc__plan ul li p.calc__plan-def::before {
+  content: "●";
+  color: #ff9954;
+  display: inline-block;
+  margin-right: 10px;
+}
+
 .calc__plan ul li.expandable {
   position: relative;
 }
@@ -25991,9 +26006,9 @@ section.product .product__block--company .slick-track {
   position: relative;
 }
 
-.calc__plan ul li.expandable p:before {
+.calc__plan ul li.expandable p::after {
   content: url("./img/icons/angle-left-bold.svg");
-  display: block;
+  display: inline-block;
   position: absolute;
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
@@ -26006,12 +26021,12 @@ section.product .product__block--company .slick-track {
 }
 
 @media (max-width: 700px) {
-  .calc__plan ul li.expandable p:before {
+  .calc__plan ul li.expandable p::after {
     right: -15px;
   }
 }
 
-.calc__plan ul li.expandable p.rotate-arr::before {
+.calc__plan ul li.expandable p.rotate-arr::after {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
 }
@@ -26038,13 +26053,13 @@ section.product .product__block--company .slick-track {
 
 .calc__plan ul ul {
   max-height: 0;
-  -webkit-transition: max-height 0.3s ease-in-out;
-  transition: max-height 0.3s ease-in-out;
+  -webkit-transition: max-height 0.3s ease-in-out, margin 0.3s ease-in-out;
+  transition: max-height 0.3s ease-in-out, margin 0.3s ease-in-out;
   overflow: hidden;
 }
 
 .calc__plan ul ul li {
-  padding: 5px 40px 5px 80px;
+  padding: 3px 40px 3px 80px;
   font-style: italic;
   font-weight: 400;
 }
@@ -26056,8 +26071,13 @@ section.product .product__block--company .slick-track {
   }
 }
 
+.calc__plan ul ul li p.calc__plan-def::before {
+  content: "";
+}
+
 .calc__plan ul ul.expanded {
   max-height: 300px;
+  margin: 17px 0;
 }
 
 .calc__plan ul ul .plan-desc {
@@ -26067,7 +26087,7 @@ section.product .product__block--company .slick-track {
 
 .calc__plan-order {
   width: calc(100% - 100px);
-  margin: 40px 50px 30px;
+  margin: 47px 50px 30px;
   font-size: 1.375rem;
   border-radius: 25px;
 }

@@ -789,8 +789,8 @@ function onDocumentReady(callback) {
       changeTextWidth();
       changePadding();
       paymentLayout();
-      highestSlide();
       vertSlideMobile();
+      highestSlide();
       // timetableLayout();
       aboutSpecialistLayout();
       var field = $(document.activeElement);
@@ -2250,7 +2250,7 @@ function onDocumentReady(callback) {
     {
       domain: { column: 2 },
       values: [60, 200],
-      labels: ["Registravosi per Serve Online", "Registravosi per nuosavus kanalus"],
+      labels: ["Registravosi per <br /> Serve Online", "Registravosi per <br /> nuosavus kanalus"],
       type: "pie",
       textinfo: "none",
       hoverinfo: "label+value",
@@ -2365,7 +2365,7 @@ function onDocumentReady(callback) {
     {
       domain: { x: donutGridX(2), y: donutGridY(2) },
       values: [60, 200],
-      labels: ["Registravosi per Serve Online", "Registravosi per nuosavus kanalus"],
+      labels: ["Registravosi per <br /> Serve Online", "Registravosi per <br /> nuosavus kanalus"],
       type: "pie",
       textinfo: "label+value",
       texttemplate: "%{label}<br><b>%{value}</b>",
@@ -2489,7 +2489,7 @@ function onDocumentReady(callback) {
         {
           domain: { x: donutGridX(2), y: donutGridY(2) },
           values: [60, 200],
-          labels: ["Registravosi per Serve Online", "Registravosi per nuosavus kanalus"],
+          labels: ["Registravosi per <br /> Serve Online", "Registravosi per <br /> nuosavus kanalus"],
           type: "pie",
           textinfo: "label+value",
           texttemplate: "%{label}<br><b>%{value}</b>",
@@ -2898,8 +2898,12 @@ function onDocumentReady(callback) {
 
       // $(slideContainer).scroll()
       if (window.matchMedia("(max-width: 600px)").matches) {
-        $(".vert-slider__slide").removeClass("visible")
-        $(this).next(".vert-slider__slide").addClass("visible");
+        if (!$(this).next(".vert-slider__slide").hasClass("visible")) {
+          $(".vert-slider__slide").removeClass("visible")
+          $(this).next(".vert-slider__slide").addClass("visible")
+        } else {
+          $(".vert-slider__slide").removeClass("visible")
+        }
       } else {
         $(slideContainer).animate(
           {
@@ -2923,7 +2927,6 @@ function onDocumentReady(callback) {
     });
 
   $(document).click(function (e) {
-    console.log($(e.target));
     if (!$(e.target).closest(".question-mark, .plan-desc").length) {
       $(".plan-desc").removeClass("visible");
     }
@@ -2951,8 +2954,6 @@ function onDocumentReady(callback) {
   if(isSafari) {
     $(".about-us .background").not(".professionals .background").removeClass("parallax__layer parallax__layer--deeper").css({top: 0, height: "100%"})
     $(".about-us").children().removeClass("parallax__group")
-    console.log($(".about-us").children(), $(".about-us > *"))
-
   }
   
   moveAction();
@@ -2962,8 +2963,8 @@ function onDocumentReady(callback) {
   paymentLayout();
   // timetableLayout();
   aboutSpecialistLayout();
-  highestSlide();
   vertSlideMobile();
+  highestSlide();
 
   setTimeout(function () {
     changeTextWidth();
@@ -3778,17 +3779,59 @@ function highestSlide() {
   $(".vert-slider__slides").not(".js_ignore_mark").css({ maxHeight: hi });
 }
 
+var tabs = document.querySelectorAll(".vert-slider__items li")
+var tabContents = document.querySelectorAll(".vert-slider__slide")
+var isTabVisible			
+
 function vertSlideMobile() {
-  var asideItems = $(".vert-slider__items li:not('.js_ignore_mark')");
-  var slides = $(".vert-slider__slide:not('.js_ignore_mark')");
+  // var asideItems = $(".vert-slider__items li:not('.js_ignore_mark')");
+  // var slides = $(".vert-slider__slide:not('.js_ignore_mark')");
+
+  // if (window.matchMedia("(max-width: 600px)").matches) {
+  //   asideItems.each(function (index) {
+  //     $(slides[index]).insertAfter($(this));
+  //   });
+  // } else {
+  //   $(slides).each(function () {
+  //     $(this).appendTo($(".vert-slider__slides"));
+  //   });
+  // }
+
+
 
   if (window.matchMedia("(max-width: 600px)").matches) {
-    asideItems.each(function (index) {
-      $(slides[index]).insertAfter($(this));
-    });
-  } else {
-    $(slides).each(function () {
-      $(this).appendTo($(".vert-slider__slides"));
-    });
-  }
+		tabContents.forEach( (element, index) => {
+			tabs[index].insertAdjacentElement('afterEnd', element)
+			// element.addEventListener("click", function(e) {
+			// 	e.stopPropagation()
+			// })
+		})
+    // tabs.forEach( (tab, index) => {
+    //   tab.addEventListener("click", function() {
+    //     // if (this.nextElementSibling.classList.contains('visible')) {
+    //     //   isTabVisible = true
+    //     // } else {
+    //     //   isTabVisible = false
+    //     // }
+
+    //     console.log(this.nextElementSibling.classList)
+
+    //     if (!this.nextElementSibling.classList.contains('visible')) {
+    //       tabContents.forEach((element, index) => {
+    //         element.classList.remove('visible')
+    //       })
+
+    //       this.nextElementSibling.classList.add('visible')
+    //       // isTabVisible = true 
+    //     } else {
+    //       this.nextElementSibling.classList.remove('visible')
+    //       // isTabVisible = false
+    //     }
+    //   })
+    // })
+	} else {
+		tabContents.forEach( (element, index) => {
+			document.querySelector(".vert-slider__slides").insertAdjacentElement('beforeEnd', element)
+		})
+	}
 }

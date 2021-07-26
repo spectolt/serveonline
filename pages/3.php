@@ -21,8 +21,8 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
         <div class="opportunities__content parallax__layer parallax__layer--base">
             <h1>Galimybės verslui</h1>
             <h3>Valdyk savo verslą išmaniai, patogiai ir saugiai!</h3>
-            <p>Serve Online – populiari paslaugų užsakymų internetu platforma.<br />
-                Perkelk savo verslą ten, kur potencialūs klientai.</p>
+            <p>SERVE ONLINE – populiari paslaugų užsakymų internetu platforma.</p>
+            <p>Perkelk savo verslą ten, kur potencialūs klientai.</p>
             <button class="about-us__button darkblue">Prisijunk ir išbandyk!</button>
         </div>
         <div class="opportunities__photo parallax__layer parallax__layer--back">
@@ -101,7 +101,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                 </div> -->
                 <ul>
                     <li>
-                        <p class="calc__plan-def">Paslaugų rezervacijos internetu 24 val. per parą, 7 dienos per savaitę <span class="question-mark">?</span></p>
+                        <p class="calc__plan-def">Paslaugų registracijos internetu 24/7, 7 dienos per savaitę <span class="question-mark">?</span></p>
                         <div class="plan-desc">
                             <h3 class="plan-desc__title">Reitingai, atsiliepimų valdymas</h3>
                             <p class="plan-desc__desc">Nam libero tempore, cum soluta
@@ -116,7 +116,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                         </div>
                     </li>
                     <li>
-                        <p class="calc__plan-def">Reklama: Google, soc. tinkluose, el. paštu <span class="question-mark">?</span></p>
+                        <p class="calc__plan-def">Reklama: Google, soc. medijoje, el. paštu <span class="question-mark">?</span></p>
                         <div class="plan-desc">
                             <h3 class="plan-desc__title">Reitingai, atsiliepimų valdymas</h3>
                             <p class="plan-desc__desc">Nam libero tempore, cum soluta
@@ -162,7 +162,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                     </li>
                     <ul>
                         <li>
-                            <p class="calc__plan-def">Rezervacijos patvirtinimas paslaugų gavėjui <span class="question-mark">?</span></p>
+                            <p class="calc__plan-def">Registracijos įkėlimas į telefono kalendorių (Google, iOS, Windows) <span class="question-mark">?</span></p>
                             <div class="plan-desc">
                                 <h3 class="plan-desc__title">Reitingai, atsiliepimų valdymas</h3>
                                 <p class="plan-desc__desc">Nam libero tempore, cum soluta
@@ -362,7 +362,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                         </div>
                     </li>
                     <li>
-                        <p class="calc__plan-def">Fotosesija (objekto interjeras, darbuotojai – tik naujai prisijungusiems) <span class="question-mark">?</span></p>
+                        <p class="calc__plan-def">Fotosesija (interjeras, darbuotojai – tik naujai prisijungusiems) <span class="question-mark">?</span></p>
                         <div class="plan-desc">
                             <h3 class="plan-desc__title">Reitingai, atsiliepimų valdymas</h3>
                             <p class="plan-desc__desc">Nam libero tempore, cum soluta
@@ -377,7 +377,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                         </div>
                     </li>
                     <li>
-                        <p class="calc__plan-def">Rezervacijų mygtukas BOOK NOW (Facebook, Instagram, jūsų internetinėje svetainėje) <span class="question-mark">?</span></p>
+                        <p class="calc__plan-def">Registracijų mygtukas BOOK NOW (Soc. medijoje, jūsų verslo svetainėje) <span class="question-mark">?</span></p>
                         <div class="plan-desc">
                             <h3 class="plan-desc__title">Reitingai, atsiliepimų valdymas</h3>
                             <p class="plan-desc__desc">Nam libero tempore, cum soluta
@@ -574,7 +574,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                             <li>Prekių sandėlis: neribotas sandėlių kiekis, FIFO principas, mažmeninė ir didmeninė prekyba, realizacijos informacija realiu laiku, likučių kontrolė, pardavimų skatinimas darbuotojų motyvavimo programoje. </li>
                             <li>Kasa: mokėjimai grynaisiais, kortelėmis, bankiniu pavedimu, avansinės įmokos, dovanų kuponai, abonementai. Kasos orderiai, kvitai, faktūros, klientų lojalumo programa, visų operacijų apskaita.</li>
                             <li>Sąsaja su buhalterine programa „Rivilė“.</li>
-                            <li>Dokumentų pasirašymas elektroniniu rašytiniu parašu planšetėse.</li>
+                            <li>Dokumentų pasirašymas elektroniniu rašytiniu parašu planšetėse (kuriama).</li>
                         </ul>
                     </div>
                     <div class="vert-slider__slide-image">
@@ -585,7 +585,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                     <div class="vert-slider__slide-content">
                         <h3>Medicinos įstaigoms</h3>
                         <ul>
-                            <li>Automatizuota integracija su sistema „E-sveikata“: elektroninė sveikatos istorija gydytojams ir pacientams.</li>
+                            <li>Automatizuota integracija su sistema „E-sveikata“: elektroninė sveikatos istorija gydytojams ir pacientams (kuriama).</li>
                             <li>Teritorinių ligonių kasų kompensacijų administravimas.</li>
                             <li>Gydymo planų sudarymas, receptai, gydytojų įrašų formos, medicininiai dokumentai, veiklos ataskaitos.</li>
                         </ul>
