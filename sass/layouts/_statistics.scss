@@ -481,11 +481,11 @@
       &.js-plotly-plot {
         height: 200px;
 
-        @include breakpoint(l) {
-          height: 400px;
-        }
+        // @include breakpoint(l) {
+        //   height: 400px;
+        // }
 
-        @include breakpoint(sm) {
+        @include breakpoint(l) {
           height: 600px;
         }
       }
@@ -496,7 +496,7 @@
         &:first-of-type {
           transform: translateX(-70px);
 
-          @include breakpoint(sm) {
+          @include breakpoint(l) {
             transform: none;
           }
         }
@@ -514,7 +514,7 @@
             transform: translateX(70px);
           }
 
-          @include breakpoint(sm) {
+          @include breakpoint(l) {
             transform: none;
           }
         }
@@ -526,7 +526,7 @@
         &[data-index="0"] {
           transform: translateX(-70px);
 
-          @include breakpoint(sm) {
+          @include breakpoint(l) {
             transform: none;
           }
         }
@@ -534,7 +534,7 @@
         &:last-of-type {
           transform: translateX(70px);
 
-          @include breakpoint(sm) {
+          @include breakpoint(l) {
             transform: none;
           }
         }

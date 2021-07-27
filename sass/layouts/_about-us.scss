@@ -195,6 +195,11 @@
         left: 50%;
         transform: translate(-50%, -50%);
         filter: none;
+
+        @include breakpoint(xs) {
+          width: 300px;
+          height: 300px;
+        }
       }
 
       &--4 {
@@ -367,16 +372,21 @@
       }
     }
 
-    ul {
-      li {
-        font-weight: 700;
-        font-size: 1.5rem;
-
-        @include breakpoint(xs) {
-          font-size: 1rem;
-        }
-      }
+    &-name {
+      font-weight: 900;
+      font-family: 'Sen', sans-serif;
     }
+
+    // ul {
+    //   li {
+    //     font-weight: 700;
+    //     font-size: 1.5rem;
+
+    //     @include breakpoint(xs) {
+    //       font-size: 1rem;
+    //     }
+    //   }
+    // }
   }
 
   ul {
@@ -654,6 +664,10 @@
     margin: 0 auto;
     padding: 0 40px;
   }
+  
+  h2 {
+    margin-bottom: 25px;
+  }
 
   .background {
     top: -50%;
@@ -915,10 +929,11 @@
             &::after {
               content: url("./img/icons/angle-left-bold.svg");
               display: inline-block;
-              position: absolute;
+              // position: absolute;
               transform: rotate(-90deg);
               width: 8px;
-              right: -25px;
+              margin-left: 10px;
+              // right: -25px;
               transition: transform 0.3s ease-in-out;
 
               @include breakpoint(sm) {

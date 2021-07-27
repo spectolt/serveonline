@@ -24255,12 +24255,6 @@ section.product .product__block--company .slick-track {
 
 @media (max-width: 991px) {
   .statistics .stat-grid__client-donut.js-plotly-plot {
-    height: 400px;
-  }
-}
-
-@media (max-width: 700px) {
-  .statistics .stat-grid__client-donut.js-plotly-plot {
     height: 600px;
   }
 }
@@ -24270,7 +24264,7 @@ section.product .product__block--company .slick-track {
           transform: translateX(-70px);
 }
 
-@media (max-width: 700px) {
+@media (max-width: 991px) {
   .statistics .stat-grid .pielayer g.trace:first-of-type {
     -webkit-transform: none;
             transform: none;
@@ -24296,7 +24290,7 @@ section.product .product__block--company .slick-track {
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 991px) {
   .statistics .stat-grid .pielayer g.trace:nth-of-type(2) {
     -webkit-transform: none;
             transform: none;
@@ -24308,7 +24302,7 @@ section.product .product__block--company .slick-track {
           transform: translateX(-70px);
 }
 
-@media (max-width: 700px) {
+@media (max-width: 991px) {
   .statistics .stat-grid .infolayer .annotation[data-index="0"] {
     -webkit-transform: none;
             transform: none;
@@ -24320,7 +24314,7 @@ section.product .product__block--company .slick-track {
           transform: translateX(70px);
 }
 
-@media (max-width: 700px) {
+@media (max-width: 991px) {
   .statistics .stat-grid .infolayer .annotation:last-of-type {
     -webkit-transform: none;
             transform: none;
@@ -25151,6 +25145,13 @@ section.product .product__block--company .slick-track {
           filter: none;
 }
 
+@media (max-width: 600px) {
+  .about-us .background .circle--static {
+    width: 300px;
+    height: 300px;
+  }
+}
+
 .about-us .background .circle--4 {
   background-color: #7fd6da;
   color: #7fd6da;
@@ -25283,15 +25284,9 @@ section.product .product__block--company .slick-track {
   margin-bottom: 80px;
 }
 
-.opportunities__content ul li {
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-
-@media (max-width: 600px) {
-  .opportunities__content ul li {
-    font-size: 1rem;
-  }
+.opportunities__content-name {
+  font-weight: 900;
+  font-family: 'Sen', sans-serif;
 }
 
 .opportunities ul {
@@ -25614,6 +25609,10 @@ section.product .product__block--company .slick-track {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 40px;
+}
+
+.professionals h2 {
+  margin-bottom: 25px;
 }
 
 .professionals .background {
@@ -26009,11 +26008,10 @@ section.product .product__block--company .slick-track {
 .calc__plan ul li.expandable p::after {
   content: url("./img/icons/angle-left-bold.svg");
   display: inline-block;
-  position: absolute;
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
   width: 8px;
-  right: -25px;
+  margin-left: 10px;
   -webkit-transition: -webkit-transform 0.3s ease-in-out;
   transition: -webkit-transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out;

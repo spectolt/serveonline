@@ -2199,112 +2199,23 @@ function onDocumentReady(callback) {
     };
   }
 
-  // var donutData1 = [
+  // donutData3 = [
   //   {
-  //     values: [105, 155],
-  //     labels: ["Sugrįžę<br>klientai", "Vienkartiniai<br>klientai"],
+  //     domain: { column: 2 },
+  //     values: [60, 200],
+  //     labels: ["Registravosi per <br /> Serve Online", "Registravosi per <br /> nuosavus kanalus"],
   //     type: "pie",
   //     textinfo: "none",
-  //     textposition: "outside",
+  //     hoverinfo: "label+value",
   //     automargin: true,
   //     hole: 0.6,
-  //     // hoverinfo: 'none',
-  //     hoverinfo: "label+value",
   //     marker: {
-  //       colors: [
-  //         '#5055be',
-  //         '#c0c2e8',
-  //         '#0F1D5B',
-  //         '#ff9954',
-  //         '#ffb35b'
-  //       ]
-  //     }
-  //   },
-  // ];
-
-  // var donutData2 = [
-  //       {
-  //     domain: { column: 1 },
-  //     values: [20, 40, 60, 20, 20],
-  //     labels: ["Vilnius", "Kaunas", "Klaipėda", "Panevėžys", "Kiti"],
-  //     type: "pie",
-  //     textinfo: "none",
-  //     // textposition: "outside",
-  //     automargin: true,
-  //     hole: 0.6,
-  //     // hoverinfo: 'none',
-  //     hoverinfo: "label+value",
-  //     marker: {
-  //       colors: [
-  //         '#5055be',
-  //         '#c0c2e8',
-  //         '#0F1D5B',
-  //         '#ff9954',
-  //         '#ffb35b'
-  //       ]
-  //     }
-  //   },
-  // ];
-
-  donutData3 = [
-    {
-      domain: { column: 2 },
-      values: [60, 200],
-      labels: ["Registravosi per <br /> Serve Online", "Registravosi per <br /> nuosavus kanalus"],
-      type: "pie",
-      textinfo: "none",
-      hoverinfo: "label+value",
-      automargin: true,
-      hole: 0.6,
-      marker: {
-        colors: ["#5055be", "#c0c2e8", "#0F1D5B", "#ff9954", "#ffb35b"],
-      },
-    },
-  ];
-
-  // var donutLayout = {
-  //   annotations: [
-  //     {
-  //       font: {
-  //         size: 20,
-  //         family: 'Roboto',
-  //       },
-  //       showarrow: false,
-  //       text: "260",
-  //       x: 0.5,
-  //       y: 0.5,
+  //       colors: ["#5055be", "#c0c2e8", "#0F1D5B", "#ff9954", "#ffb35b"],
   //     },
-  //   ],
-  //   showlegend: true,
-  //   margin: { t: 0, b: 0, l: 0, r: 0 },
-  //   font: {
-  //     family: 'Roboto',
-  //     size: 16,
-  //     color: '#040404'
   //   },
-  //   hoverlabel: {
-  //     bgcolor: 'inherit',
-  //     bordercolor: 'white',
-  //     font: {
-  //       family: 'Roboto',
-  //       size: 16
-  //     }
-  //   },
-  //   horizontalspacing: 10,
-  //   verticalspacing: 10,
-  // };
-
-  // clients1 = document.querySelector(".stat-grid__client-donut--comeback");
-  // clients2 = document.querySelector(".stat-grid__client-donut--cities");
-  // clients3 = document.querySelector(".stat-grid__client-donut--gender");
+  // ];
 
   clients4 = document.querySelector(".stat-grid__client-donut--test");
-
-  // if (clients1) {
-  //   Plotly.newPlot(clients1, donutData1, donutLayout, config);
-  //   Plotly.newPlot(clients2, donutData2, donutLayout, config);
-  //   Plotly.newPlot(clients3, donutData3, donutLayout, config);
-  // }
 
   function getDomain(i) {
     var N = 3;
@@ -2564,6 +2475,7 @@ function onDocumentReady(callback) {
       if (clients4) {
         Plotly.purge(clients4);
         Plotly.newPlot(clients4, donutData4, donutLayout2, config);
+        $(".pielayer .trace:last-of-type .slice:last-of-type g.slicetext").not(".js_ignore_mark").css("transform", "translateY(20px)")
       }
     }, 100);
   });
@@ -2572,24 +2484,27 @@ function onDocumentReady(callback) {
     var N = 3;
     if (window.matchMedia("(min-width: 992px)").matches) {
       return [(i * 1) / N, ((i + 1) * 1) / N];
-    } else if (
-      window.matchMedia("(min-width: 701px) and (max-width: 991px)").matches
-    ) {
-      if (i == 0) {
-        return [0, 0.5];
-      } else if (i == 2) {
-        return [0, 1];
-      } else {
-        return [0.5, 1];
-      }
-    } else if (window.matchMedia("(max-width: 700px)").matches) {
+    } 
+    // else 
+    // if (
+    //   window.matchMedia("(min-width: 701px) and (max-width: 991px)").matches
+    // ) {
+    //   if (i == 0) {
+    //     return [0, 0.5];
+    //   } else if (i == 2) {
+    //     return [0, 1];
+    //   } else {
+    //     return [0.5, 1];
+    //   }
+    // } 
+    else {
       return [0, 1];
     }
   }
 
   function donutGridY(i) {
     var N = 3;
-    if (window.matchMedia("(max-width: 700px)").matches) {
+    if (window.matchMedia("(max-width: 991px)").matches) {
       if (i == 0) {
         return [0.74, 1];
       } else if (i == 1) {
@@ -2597,21 +2512,22 @@ function onDocumentReady(callback) {
       } else {
         return [0, 0.26];
       }
-    } else if (
-      window.matchMedia("(min-width: 701px) and (max-width: 991px)").matches
-    ) {
-      if (i < 2) {
-        return [0.55, 1];
-      } else {
-        return [0, 0.45];
-      }
+    // } 
+    // else if (
+    //   window.matchMedia("(min-width: 701px) and (max-width: 991px)").matches
+    // ) {
+    //   if (i < 2) {
+    //     return [0.55, 1];
+    //   } else {
+    //     return [0, 0.45];
+    //   }
     } else {
       return [0, 0];
     }
   }
 
   function labelX(i) {
-    if (window.matchMedia("(min-width: 991px)").matches) {
+    if (window.matchMedia("(min-width: 992px)").matches) {
       if (i == 0) {
         return 0.166;
       } else if (i == 1) {
@@ -2619,15 +2535,17 @@ function onDocumentReady(callback) {
       } else {
         return 0.834;
       }
-    } else if (
-      window.matchMedia("(min-width: 701px) and (max-width: 991px)").matches
-    ) {
-      if (i == 0) {
-        return 0.25;
-      } else if (i == 2) {
-        return 0.75;
-      }
-    } else {
+    } 
+    // else if (
+    //   window.matchMedia("(min-width: 701px) and (max-width: 991px)").matches
+    // ) {
+    //   if (i == 0) {
+    //     return 0.25;
+    //   } else if (i == 2) {
+    //     return 0.75;
+    //   }
+    // } 
+    else {
       return 0.5;
     }
   }
@@ -2635,15 +2553,17 @@ function onDocumentReady(callback) {
   function labelY(i) {
     if (window.matchMedia("(min-width: 991px)").matches) {
       return 0.5;
-    } else if (
-      window.matchMedia("(min-width: 701px) and (max-width: 991px)").matches
-    ) {
-      if (i == 0 || i == 2) {
-        return 0.815;
-      } else if (i == 1) {
-        return 0.185;
-      }
-    } else {
+    } 
+    // else if (
+    //   window.matchMedia("(min-width: 701px) and (max-width: 991px)").matches
+    // ) {
+    //   if (i == 0 || i == 2) {
+    //     return 0.815;
+    //   } else if (i == 1) {
+    //     return 0.185;
+    //   }
+    // } 
+    else {
       if (i == 0) {
         return 0.105;
       } else if (i == 1) {
@@ -2656,6 +2576,7 @@ function onDocumentReady(callback) {
 
   if (clients4) {
     Plotly.newPlot(clients4, donutData4, donutLayout2, config);
+    $(".pielayer .trace:last-of-type .slice:last-of-type g.slicetext").not(".js_ignore_mark").css("transform", "translateY(20px)")
   }
 
   if ($(".specialist__datepicker")) {

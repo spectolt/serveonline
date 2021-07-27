@@ -21,7 +21,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
         <div class="opportunities__content parallax__layer parallax__layer--base">
             <h1>Galimybės verslui</h1>
             <h3>Valdyk savo verslą išmaniai, patogiai ir saugiai!</h3>
-            <p>SERVE ONLINE – populiari paslaugų užsakymų internetu platforma.</p>
+            <p><span class="opportunities__content-name">Serve Online</span> – populiari paslaugų užsakymų internetu platforma.</p>
             <p>Perkelk savo verslą ten, kur potencialūs klientai.</p>
             <button class="about-us__button darkblue">Prisijunk ir išbandyk!</button>
         </div>
@@ -101,7 +101,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                 </div> -->
                 <ul>
                     <li>
-                        <p class="calc__plan-def">Paslaugų registracijos internetu 24/7, 7 dienos per savaitę <span class="question-mark">?</span></p>
+                        <p class="calc__plan-def">Paslaugų registracijos internetu 24/7 <span class="question-mark">?</span></p>
                         <div class="plan-desc">
                             <h3 class="plan-desc__title">Reitingai, atsiliepimų valdymas</h3>
                             <p class="plan-desc__desc">Nam libero tempore, cum soluta
@@ -162,7 +162,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                     </li>
                     <ul>
                         <li>
-                            <p class="calc__plan-def">Registracijos įkėlimas į telefono kalendorių (Google, iOS, Windows) <span class="question-mark">?</span></p>
+                            <p class="calc__plan-def">Rezervacijos patvirtinimas paslaugų gavėjui <span class="question-mark">?</span></p>
                             <div class="plan-desc">
                                 <h3 class="plan-desc__title">Reitingai, atsiliepimų valdymas</h3>
                                 <p class="plan-desc__desc">Nam libero tempore, cum soluta
@@ -223,7 +223,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                         </li>
                     </ul>
                     <li>
-                        <p class="calc__plan-def">Rezervacijos įkėlimas į telefono kalendorių (Apple, Google, Windows) <span class="question-mark">?</span></p>
+                        <p class="calc__plan-def">Registracijos įkėlimas į telefono kalendorių (Google, iOS, Windows) <span class="question-mark">?</span></p>
                         <div class="plan-desc">
                             <h3 class="plan-desc__title">Reitingai, atsiliepimų valdymas</h3>
                             <p class="plan-desc__desc">Nam libero tempore, cum soluta
@@ -253,7 +253,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                         </div>
                     </li>
                     <li class="expandable">
-                        <p class="calc__plan-def">Atskaitos paslaugų gavėjui <span class="question-mark">?</span></p>
+                        <p class="calc__plan-def">Ataskaitos paslaugų gavėjui <span class="question-mark">?</span></p>
                         <div class="plan-desc">
                             <h3 class="plan-desc__title">Reitingai, atsiliepimų valdymas</h3>
                             <p class="plan-desc__desc">Nam libero tempore, cum soluta
@@ -269,7 +269,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                     </li>
                     <ul>
                         <li>
-                            <p class="calc__plan-def">Lorem ipsum <span class="question-mark">?</span></p>
+                            <p class="calc__plan-def">Laukiančios rezervacijos <span class="question-mark">?</span></p>
                             <div class="plan-desc">
                                 <h3 class="plan-desc__title">Reitingai, atsiliepimų valdymas</h3>
                                 <p class="plan-desc__desc">Nam libero tempore, cum soluta
@@ -284,7 +284,22 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                             </div>
                         </li>
                         <li>
-                            <p class="calc__plan-def">Lorem ipsum <span class="question-mark">?</span></p>
+                            <p class="calc__plan-def">Buvusių rezervacijų istorija <span class="question-mark">?</span></p>
+                            <div class="plan-desc">
+                                <h3 class="plan-desc__title">Reitingai, atsiliepimų valdymas</h3>
+                                <p class="plan-desc__desc">Nam libero tempore, cum soluta
+                                    nobis est eligendi optio cumque
+                                    nihil impedit quo minus id quod
+                                    maxime placeat facere possimus, ty
+                                    omnis voluptas assumenda est,
+                                    omnis dolor repellendus.
+                                    Temporibus autem quibusdam et
+                                    aut officiis debitis.</p>
+                                <button class="plan-desc__more small darkblue transparent">Plačiau</button>
+                            </div>
+                        </li>
+                        <li>
+                            <p class="calc__plan-def">„Mano“ specialistų paliktos rekomendacijos <span class="question-mark">?</span></p>
                             <div class="plan-desc">
                                 <h3 class="plan-desc__title">Reitingai, atsiliepimų valdymas</h3>
                                 <p class="plan-desc__desc">Nam libero tempore, cum soluta
@@ -316,7 +331,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                     </li>
                     <ul>
                         <li>
-                            <p class="calc__plan-def">Lorem ipsum <span class="question-mark">?</span></p>
+                            <p class="calc__plan-def">Naujų ir grįžusių klientų ataskaita bei finansiniai rodikliai <span class="question-mark">?</span></p>
                             <div class="plan-desc">
                                 <h3 class="plan-desc__title">Reitingai, atsiliepimų valdymas</h3>
                                 <p class="plan-desc__desc">Nam libero tempore, cum soluta
@@ -331,7 +346,52 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                             </div>
                         </li>
                         <li>
-                            <p class="calc__plan-def">Lorem ipsum <span class="question-mark">?</span></p>
+                            <p class="calc__plan-def">Profilio peržiūrų ir nepavykusių rezervacijų ataskaita <span class="question-mark">?</span></p>
+                            <div class="plan-desc">
+                                <h3 class="plan-desc__title">Reitingai, atsiliepimų valdymas</h3>
+                                <p class="plan-desc__desc">Nam libero tempore, cum soluta
+                                    nobis est eligendi optio cumque
+                                    nihil impedit quo minus id quod
+                                    maxime placeat facere possimus, ty
+                                    omnis voluptas assumenda est,
+                                    omnis dolor repellendus.
+                                    Temporibus autem quibusdam et
+                                    aut officiis debitis.</p>
+                                <button class="plan-desc__more small darkblue transparent">Plačiau</button>
+                            </div>
+                        </li>
+                        <li>
+                            <p class="calc__plan-def">Pažymėjo „Mano“ ataskaita <span class="question-mark">?</span></p>
+                            <div class="plan-desc">
+                                <h3 class="plan-desc__title">Reitingai, atsiliepimų valdymas</h3>
+                                <p class="plan-desc__desc">Nam libero tempore, cum soluta
+                                    nobis est eligendi optio cumque
+                                    nihil impedit quo minus id quod
+                                    maxime placeat facere possimus, ty
+                                    omnis voluptas assumenda est,
+                                    omnis dolor repellendus.
+                                    Temporibus autem quibusdam et
+                                    aut officiis debitis.</p>
+                                <button class="plan-desc__more small darkblue transparent">Plačiau</button>
+                            </div>
+                        </li>
+                        <li>
+                            <p class="calc__plan-def">Klientų, pasinaudojusių specialisto rekomendacijom, ataskaita <span class="question-mark">?</span></p>
+                            <div class="plan-desc">
+                                <h3 class="plan-desc__title">Reitingai, atsiliepimų valdymas</h3>
+                                <p class="plan-desc__desc">Nam libero tempore, cum soluta
+                                    nobis est eligendi optio cumque
+                                    nihil impedit quo minus id quod
+                                    maxime placeat facere possimus, ty
+                                    omnis voluptas assumenda est,
+                                    omnis dolor repellendus.
+                                    Temporibus autem quibusdam et
+                                    aut officiis debitis.</p>
+                                <button class="plan-desc__more small darkblue transparent">Plačiau</button>
+                            </div>
+                        </li>
+                        <li>
+                            <p class="calc__plan-def">TOP klientų atskaita <span class="question-mark">?</span></p>
                             <div class="plan-desc">
                                 <h3 class="plan-desc__title">Reitingai, atsiliepimų valdymas</h3>
                                 <p class="plan-desc__desc">Nam libero tempore, cum soluta
@@ -346,7 +406,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                             </div>
                         </li>
                     </ul>
-                    <li>
+                    <li class="expandable">
                         <p class="calc__plan-def">Personalo valdymas <span class="question-mark">?</span></p>
                         <div class="plan-desc">
                             <h3 class="plan-desc__title">Reitingai, atsiliepimų valdymas</h3>
@@ -361,6 +421,38 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                             <button class="plan-desc__more small darkblue transparent">Plačiau</button>
                         </div>
                     </li>
+                    <ul>
+                        <li>
+                            <p class="calc__plan-def">Skirtinga darbuotų priega prie duomenų <span class="question-mark">?</span></p>
+                            <div class="plan-desc">
+                                <h3 class="plan-desc__title">Reitingai, atsiliepimų valdymas</h3>
+                                <p class="plan-desc__desc">Nam libero tempore, cum soluta
+                                    nobis est eligendi optio cumque
+                                    nihil impedit quo minus id quod
+                                    maxime placeat facere possimus, ty
+                                    omnis voluptas assumenda est,
+                                    omnis dolor repellendus.
+                                    Temporibus autem quibusdam et
+                                    aut officiis debitis.</p>
+                                <button class="plan-desc__more small darkblue transparent">Plačiau</button>
+                            </div>
+                        </li>
+                        <li>
+                            <p class="calc__plan-def">Darbo grafikai, individualios paslaugos, kainos, trukmės <span class="question-mark">?</span></p>
+                            <div class="plan-desc">
+                                <h3 class="plan-desc__title">Reitingai, atsiliepimų valdymas</h3>
+                                <p class="plan-desc__desc">Nam libero tempore, cum soluta
+                                    nobis est eligendi optio cumque
+                                    nihil impedit quo minus id quod
+                                    maxime placeat facere possimus, ty
+                                    omnis voluptas assumenda est,
+                                    omnis dolor repellendus.
+                                    Temporibus autem quibusdam et
+                                    aut officiis debitis.</p>
+                                <button class="plan-desc__more small darkblue transparent">Plačiau</button>
+                            </div>
+                        </li>
+                    </ul>
                     <li>
                         <p class="calc__plan-def">Fotosesija (interjeras, darbuotojai – tik naujai prisijungusiems) <span class="question-mark">?</span></p>
                         <div class="plan-desc">
