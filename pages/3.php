@@ -10,7 +10,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
 
 <?php require_once('header.php'); ?>
 <main class="site-main about-us parallax">
-    <section class="opportunities parallax__group">
+    <section class="about-us__section opportunities parallax__group">
         <div class="background parallax__layer parallax__layer--deeper">
             <div class="backdrop"></div>
             <div class="circle circle--1"></div>
@@ -29,7 +29,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
             <img src="../img/specialistė-kirpėja-2.png">
         </div>
     </section>
-    <section class="solutions parallax__group">
+    <section class="about-us__section solutions parallax__group">
         <div class="background">
             <div class="backdrop"></div>
             <div class="circle circle--static"></div>
@@ -42,7 +42,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                 gera stebėti didėjančius pardavimus. </p>
         </div>
     </section>
-    <section class="features parallax__group">
+    <section class="about-us__section features parallax__group">
         <div class="background parallax__layer parallax__layer--deeper">
             <div class="backdrop-bg"></div>
             <div class="backdrop"></div>
@@ -83,7 +83,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
         </div>
         <!-- </div> -->
     </section>
-    <section class="calc parallax__group">
+    <section class="about-us__section calc parallax__group">
         <div class="background parallax__layer parallax__layer--deeper">
             <div class="backdrop"></div>
             <div class="circle circle--1"></div>
@@ -571,7 +571,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
             </div>
         </div>
     </section>
-    <section class="tools parallax__group">
+    <section class="about-us__section tools parallax__group">
         <div class="tools__content">
             <h2>Dar daugiau įrankių</h2>
             <p>„Serve Online“ internetinė registracija papildo įvairių paslaugų verslui pritaikytą vidinių veiklos procesų valdymo sistemą
@@ -582,7 +582,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
             </p>
         </div>
     </section>
-    <section class="professionals parallax__group">
+    <section class="about-us__section professionals parallax__group">
         <div class="background">
             <div class="circle circle--static"></div>
         </div>

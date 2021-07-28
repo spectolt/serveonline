@@ -5,7 +5,7 @@
   margin-left: auto;
   display: flex;
 
-  @include breakpoint(xl) {
+  @include breakpoint(1280px) {
     flex-direction: column;
   }
 
@@ -19,12 +19,13 @@
     padding-right: 30px;
     border-right: 1px solid #d9d9d9;
 
-    @include breakpoint(xl) {
-      display: flex;
-      flex-wrap: wrap;
+    @include breakpoint(1280px) {
+      display: grid;
+      // flex-wrap: wrap;
+      grid-template-columns: repeat(auto-fill, 50%);
       padding-bottom: 20px;
       margin-bottom: 20px;
-      margin-right: 40px;
+      margin-right: 0;
       border-right: 0;
       // border-bottom: 1px solid #d9d9d9;
     }
@@ -32,6 +33,7 @@
     @include breakpoint(sm) {
       margin-right: 0;
       padding-right: 0;
+      grid-template-columns: 100%;
     }
 
     li {
@@ -52,6 +54,7 @@
         width: auto;
         border-radius: 0;
         margin-right: 10px;
+        flex: 1 0;
       }
 
       @include breakpoint(xs) {
@@ -130,12 +133,18 @@
           box-shadow: none;
           white-space: initial;
           background-color: transparent;
+          font-weight: 400;
         }
 
         &::before {
           content: "⬤";
           color: $orange;
           margin-right: 20px;
+
+          @include breakpoint(xs) {
+            content: "●";
+            margin-right: 10px;
+          }
         }
       }
     }
@@ -146,7 +155,7 @@
       border-radius: 15px 0 0 15px;
       overflow: hidden;
       max-height: 100%;
-      align-self: center;
+      align-self: flex-start;
       overflow: hidden;
       display: flex;
       justify-content: center;
@@ -156,6 +165,7 @@
 
       @include breakpoint(900px) {
         border-radius: 15px;
+        align-self: center;
       }
 
       @include breakpoint(sm) {

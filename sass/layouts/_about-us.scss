@@ -10,6 +10,7 @@
 
   @include breakpoint(xl) {
     perspective: 0;
+    overflow: visible;
   }
 }
 
@@ -30,8 +31,8 @@
 .parallax__layer--back {
   transform: translateZ(-0.5px) scale(1.5);
 
-  @include breakpoint(xl) {
-    transform: unset;
+  @include breakpoint(1280px) {
+    transform: unset !important;
   }
 }
 
@@ -39,7 +40,7 @@
   transform: translateZ(-1.5px) scale(2.5);
 
   @include breakpoint(xl) {
-    transform: unset;
+    transform: unset !important;
   }
 }
 
@@ -47,7 +48,7 @@
   transform: translateZ(-3px) scale(4.1) !important;
 
   @include breakpoint(xl) {
-    transform: unset;
+    transform: unset !important;
   }
 }
 
@@ -68,6 +69,10 @@
     @include breakpoint(xs) {
       font-size: 1.125rem;
     }
+  }
+
+  &__section {
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
   }
 
   h2 {
@@ -304,7 +309,7 @@
   display: flex;
   z-index: 2;
 
-  @include breakpoint(xl) {
+  @include breakpoint(1280px) {
     flex-direction: column;
     height: auto;
   }
@@ -330,7 +335,7 @@
       max-width: calc(100vw - #{$_photo-width-1440});
     }
 
-    @include breakpoint(xl) {
+    @include breakpoint(1280px) {
       max-width: 100%;
       padding: 60px 40px 0;
     }
@@ -369,6 +374,10 @@
 
       &:last-of-type {
         margin-bottom: 80px;
+
+        @include breakpoint(1280px) {
+          margin-bottom: 50px;
+        }
       }
     }
 
@@ -416,12 +425,9 @@
       width: $_photo-width-1440;
     }
 
-    @include breakpoint(1250px) {
+    @include breakpoint(1280px) {
       min-width: 700px;
       width: 800px;
-    }
-
-    @include breakpoint(xl) {
       margin: 0 auto;
       // width: 50%;
       min-width: 0;
@@ -429,6 +435,15 @@
       right: 0;
       padding: 20px 0 0 0;
     }
+
+    // @include breakpoint(xl) {
+    //   margin: 0 auto;
+    //   // width: 50%;
+    //   min-width: 0;
+    //   position: relative;
+    //   right: 0;
+    //   padding: 20px 0 0 0;
+    // }
 
     @include breakpoint(l) {
       width: 100%;
@@ -457,11 +472,15 @@
   }
 
   &__content {
-    max-width: 720px;
+    max-width: 800px;
     margin: 0 auto;
     text-align: center;
     z-index: 1;
     position: relative;
+
+    p {
+      padding: 0 20px;
+    }
   }
 }
 
@@ -652,6 +671,10 @@
     padding-bottom: 60px;
   }
 
+  p {
+    font-size: 1.25rem;
+  }
+
   .background {
     z-index: -1;
   }
@@ -677,6 +700,10 @@
     padding: 90px 0 0 calc(max(10vw, 40px));
     z-index: 1;
 
+    @include breakpoint(1280px) {
+      padding-left: 40px;
+    }
+
     @include breakpoint(xl) {
       padding-left: 40px;
     }
@@ -697,7 +724,7 @@
   // overflow: hidden;
 
   @include breakpoint(xl) {
-    padding: 100px 40px;
+    padding: 60px 40px;
   }
 
   @include breakpoint(l) {
@@ -735,16 +762,25 @@
   &__areas {
     // display: grid;
     // grid-template-columns: repeat(5, 1fr);
-    display: flex;
+    // display: flex;
     // grid-gap: 25px;
-    margin-bottom: 45px;
-    flex-wrap: wrap;
-    margin-right: -25px;
-    justify-content: space-between;
+    // margin-bottom: 45px;
+    // flex-wrap: wrap;
+    margin-bottom: 25px;
+    // justify-content: flex-start;
+    display: grid; /* 1 */
+    grid-template-columns: repeat(auto-fill, 100px); /* 2 */
+    column-gap: 25px; /* 3 */
+    justify-content: space-between; /* 4 */
 
     @include breakpoint(sm) {
-      justify-content: center;
+      grid-template-columns: repeat(auto-fill, 80px);
+      column-gap: 15px;
     }
+
+    // @include breakpoint(1500px) {
+    //   justify-content: flex-start;
+    // }
   }
 
   &__area {
