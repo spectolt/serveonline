@@ -26029,6 +26029,7 @@ section.product .product__block--company .slick-track {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  position: relative;
 }
 
 .calc__plan ul li p.calc__plan-def::before {
@@ -26036,6 +26037,8 @@ section.product .product__block--company .slick-track {
   color: #ff9954;
   display: inline-block;
   margin-right: 10px;
+  position: absolute;
+  left: -20px;
 }
 
 .calc__plan ul li.expandable {

@@ -946,13 +946,15 @@
           font-size: 1rem;
           margin: 0;
           width: fit-content;
-          // position: relative;
+          position: relative;
 
           &::before {
             content: "●";
             color: $orange;
             display: inline-block;
             margin-right: 10px;
+            position: absolute;
+            left: -20px;
           }
         }
 

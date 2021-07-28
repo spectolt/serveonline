@@ -37,8 +37,8 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
         </div>
         <div class="solutions__content">
             <h2>Sprendimai</h2>
-            <p>Potencialūs paslaugų pirkėjai – vienoje SERVE ONLINE platformoje. <br>
-                Paprasta įsidiegti į savo svetainę, socialinius tinklus – </br>
+            <p>Potencialūs paslaugų pirkėjai – vienoje SERVE ONLINE platformoje.
+                Paprasta įsidiegti į savo svetainę, socialinius tinklus –
                 gera stebėti didėjančius pardavimus. </p>
         </div>
     </section>
