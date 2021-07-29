@@ -67,7 +67,9 @@
     padding-right: 50px;
 
     @include breakpoint(xs) {
-      font-size: 1.125rem;
+      font-size: 1rem;
+      padding-left: 30px;
+      padding-right: 30px;
     }
   }
 
@@ -235,6 +237,12 @@
         height: 1257px;
         top: 0;
         right: -50%;
+
+        @include breakpoint(900px) {
+          width: 500px;
+          height: 500px;
+          right: -100%;
+        }
       }
 
       // @for $i from 1 through 6 {
@@ -338,6 +346,7 @@
     @include breakpoint(1280px) {
       max-width: 100%;
       padding: 60px 40px 0;
+      text-align: center;
     }
 
     @include breakpoint(xs) {
@@ -354,6 +363,10 @@
 
       @include breakpoint(xs) {
         font-size: 3rem;
+      }
+
+      @include breakpoint(xxs) {
+        font-size: 2.5rem;
       }
     }
 
@@ -381,10 +394,10 @@
       }
     }
 
-    &-name {
-      font-weight: 900;
-      font-family: 'Sen', sans-serif;
-    }
+    // &-name {
+    //   font-weight: 400;
+    //   font-family: 'Sen', sans-serif;
+    // }
 
     // ul {
     //   li {
@@ -540,6 +553,10 @@
         text-align: center;
         padding-left: 40px;
       }
+
+      @include breakpoint(xs) {
+        padding-left: 20px;
+      }
     }
 
     &--right {
@@ -549,12 +566,13 @@
       // left: 35%;
       padding-right: calc(max(10vw, 40px));
 
-      @include breakpoint(xs) {
-        grid-template-columns: 1fr;
-      }
-
       @include breakpoint(xl) {
         padding-right: 40px;
+      }
+      
+      @include breakpoint(xs) {
+        grid-template-columns: 1fr;
+        padding-right: 20px;
       }
     }
   }
@@ -565,6 +583,11 @@
     overflow: hidden;
     padding: 20px;
     background-color: $white;
+
+    @include breakpoint(l) {
+      border-left-width: 5px;
+      border-radius: 5px;
+    }
 
     &--clients {
       border-left-color: $orange;
@@ -585,12 +608,25 @@
 
   &__icon {
     height: 55px;
+    margin-bottom: 15px;
+
+    @include breakpoint(l) {
+      height: 40px;
+    }
+
+    @include breakpoint(xxs) {
+      height: 30px;
+    }
 
     &--main {
       height: 120px;
 
-      @include breakpoint(xs) {
+      @include breakpoint(l) {
         height: 100px;
+      }
+
+      @include breakpoint(sm) {
+        height: 80px;
       }
     }
   }
@@ -613,10 +649,19 @@
   }
 
   @include breakpoint(sm) {
-    min-height: 650px;
+    min-height: 800px;
     background-position: left top;
     background-size: auto 50%;
     background-attachment: initial;
+  }
+
+  @include breakpoint(xs) {
+    min-height: 650px;
+  }
+
+  @include breakpoint(xxs) {
+    background-size: auto 40%;
+    min-height: 700px;
   }
 
   &__content {
@@ -627,7 +672,12 @@
 
     @include breakpoint(l) {
       width: 100%;
-      border-radius: 0;
+      border-radius: 15px;
+    }
+
+    @include breakpoint(sm) {
+      width: 80%;
+      margin: 0 auto 0;
     }
 
     @include breakpoint(xs) {
@@ -673,6 +723,10 @@
 
   p {
     font-size: 1.25rem;
+
+    @include breakpoint(xs) {
+      font-size: inherit;
+    }
   }
 
   .background {
@@ -739,6 +793,10 @@
   h2 {
     margin-top: 0;
     margin-bottom: 30px;
+
+    @include breakpoint(xs) {
+      margin-bottom: 25px;
+    } 
   }
 
   .background {
@@ -756,6 +814,7 @@
     @include breakpoint(l) {
       padding-left: 0;
       margin-top: 30px;
+      text-align: center;
     }
   }
 
@@ -864,10 +923,17 @@
     padding: 5px 20px;
     width: 100%;
     border: none;
+    white-space: initial;
+    // width: 3em;
 
     input {
       text-align: right;
       margin-left: auto;
+      width: 2em;
+
+      @include breakpoint(xs) {
+        margin-right: 15px;
+      }
     }
   }
 
@@ -906,14 +972,26 @@
       font-size: 4.375rem;
       color: $orange;
 
+      @include breakpoint(xs) {
+        margin-bottom: 25px;
+      }
+
       span {
         font-size: 1.75rem;
         font-weight: 400;
+
+        @include breakpoint(xs) {
+          font-size: 1.25rem;
+        }
       }
     }
 
     &-content {
       padding: 20px 0;
+
+      @include breakpoint(xs) {
+        padding-top: 0;
+      }
 
       .checkbox {
         margin-bottom: 20px;
@@ -936,6 +1014,9 @@
         @include breakpoint(xs) {
           padding-left: 40px;
           padding-right: 20px;
+          padding-top: 7px;
+          padding-bottom: 7px;
+          line-height: 1.1;
         }
 
         &:hover {

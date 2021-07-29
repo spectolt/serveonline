@@ -42,7 +42,7 @@
       box-shadow: 0 0 10px rgba(15, 29, 91, 0.1);
       margin-bottom: 10px;
       border-radius: 0 25px 25px 0;
-      font-family: "Sen", sans-serif;
+      // font-family: "Sen", sans-serif;
       font-weight: 600;
       border-left: 5px solid $white;
       transition: border-left 0.3s ease-in-out, font-weight 0.3s ease-in-out;
@@ -50,9 +50,12 @@
       min-width: 230px;
       background-color: $white;
 
+      @include breakpoint(1280px) {
+        border-radius: 5px;
+      }
+
       @include breakpoint(xl) {
         width: auto;
-        border-radius: 0;
         margin-right: 10px;
         flex: 1 0;
       }
@@ -60,11 +63,17 @@
       @include breakpoint(xs) {
         width: 100%;
         margin-right: 0;
+        border-left-width: 3px;
+        padding: 15px;
       }
 
       &.active {
         border-left: 5px solid $orange;
         font-weight: 900;
+
+        @include breakpoint(xs) {
+          border-left-width: 3px;
+        }
       }
     }
   }
@@ -86,11 +95,14 @@
       width: 100%;
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.3s ease-in-out;
+      transition: max-height 0.3s ease-in-out, visibility 0.3s ease-in-out, padding-top .3s ease-in-out;
       // margin-bottom: 20px;
+      visibility: hidden;
 
       &.visible {
         max-height: 1000px;
+        visibility: visible;
+        padding-top: 20px;
       }
     }
 
@@ -128,7 +140,7 @@
 
         @include breakpoint(xs) {
           font-size: 1rem;
-          margin-bottom: 10px;
+          margin-bottom: 15px;
           padding: 0;
           box-shadow: none;
           white-space: initial;
@@ -144,6 +156,8 @@
           @include breakpoint(xs) {
             content: "●";
             margin-right: 10px;
+            position: absolute;
+            margin-left: -15px;
           }
         }
       }
@@ -172,6 +186,7 @@
         width: 100%;
         flex: initial;
         margin-bottom: 20px;
+        border-radius: 7px;
       }
 
       img {

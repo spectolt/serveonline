@@ -3302,6 +3302,10 @@ var navbarHeight = $(".site-header").outerHeight();
 
 $(window).scroll(function (event) {
   didScroll = true;
+  if (didScroll) {
+    hasScrolled();
+    didScroll = false;
+  }
 });
 
 setInterval(function () {
@@ -3309,7 +3313,7 @@ setInterval(function () {
     hasScrolled();
     didScroll = false;
   }
-}, 250);
+}, 50);
 
 function gotoTopPosition(el, element, scrollBtn, pixels, yPos = "bottom") {
   const footer = $("footer");
