@@ -26328,4 +26328,118 @@ section.product .product__block--company .slick-track {
   visibility: visible;
   opacity: 1;
 }
+
+.policy {
+  margin: 0 200px 40px 200px;
+}
+
+@media (max-width: 991px) {
+  .policy {
+    margin: 0 150px 40px 150px;
+  }
+}
+
+@media (max-width: 700px) {
+  .policy {
+    margin: 0 40px 40px 40px;
+  }
+}
+
+.policy-top h2 {
+  font-size: 4.5rem;
+  font-weight: 800;
+  margin-bottom: 60px;
+  padding-top: 50px;
+}
+
+@media (max-width: 700px) {
+  .policy-top h2 {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    padding-top: 25px;
+  }
+}
+
+.policy .content .dashed {
+  margin-left: 28px;
+}
+
+.policy .content .dashed-left {
+  margin-left: -15px;
+}
+
+.policy .content h4 {
+  font-size: 1.125rem;
+}
+
+@media (max-width: 700px) {
+  .policy .content h4 {
+    font-size: 1rem;
+  }
+}
+
+.policy .content h4:nth-of-type(5) {
+  margin-top: 155px;
+}
+
+.policy .content .number {
+  width: 0px;
+  float: left;
+}
+
+.policy .content .text {
+  text-indent: 33px;
+  padding-left: 50px;
+}
+
+.policy .content span {
+  margin-top: 25px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+}
+
+.policy .content span p {
+  font-size: 0.75rem;
+}
+
+.policy .content span p:first-of-type {
+  text-indent: 35px;
+}
+
+.policy ul {
+  margin: 0;
+}
+
+.policy ul.dashed {
+  list-style-type: none;
+}
+
+.policy ul.dashed li {
+  text-indent: -5px;
+}
+
+@media (max-width: 700px) {
+  .policy ul.dashed li {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .policy ul.dashed li {
+    font-size: 0.75rem;
+  }
+}
+
+.policy ul.dashed li:before {
+  content: "-";
+  text-indent: -5px;
+  margin-right: 5px;
+  margin-left: 8px;
+}
+
+.policy p {
+  margin: 0;
+}
 /*# sourceMappingURL=style.css.map */

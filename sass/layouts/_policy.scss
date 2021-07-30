@@ -1,0 +1,83 @@
+.policy {
+  margin: 0 200px 40px 200px;
+  @include breakpoint(l) {
+    margin: 0 150px 40px 150px;
+  }
+  @include breakpoint(sm) {
+    margin: 0 40px 40px 40px;
+  }
+  &-top {
+    h2 {
+      font-size: 4.5rem;
+      font-weight: 800;
+      margin-bottom: 60px;
+      padding-top: 50px;
+      @include breakpoint(sm) {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+        padding-top: 25px;
+      }
+    }
+  }
+  .content {
+    .dashed {
+      margin-left: 28px;
+      &-left {
+        margin-left: -15px;
+      }
+    }
+    h4 {
+      font-size: 1.125rem;
+      @include breakpoint(sm) {
+        font-size: 1rem;
+      }
+      &:nth-of-type(5) {
+        margin-top: 155px;
+      }
+    }
+    .number {
+      width: 0px;
+      float: left;
+    }
+    .text {
+      text-indent: 33px;
+      padding-left: 50px;
+    }
+    span {
+      margin-top: 25px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      p {
+        font-size: 0.75rem;
+        &:first-of-type {
+          text-indent: 35px;
+        }
+      }
+    }
+  }
+
+  ul {
+    margin: 0;
+    &.dashed {
+      list-style-type: none;
+      li {
+        text-indent: -5px;
+        @include breakpoint(sm) {
+          font-size: 1rem;
+        }
+        @include breakpoint(600px) {
+          font-size: 0.75rem;
+        }
+        &:before {
+          content: "-";
+          text-indent: -5px;
+          margin-right: 5px;
+          margin-left: 8px;
+        }
+      }
+    }
+  }
+  p {
+    margin: 0;
+  }
+}
