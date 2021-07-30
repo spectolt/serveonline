@@ -104,6 +104,7 @@ table.calendar {
       }
     }
 
+    &.active,
     &:hover {
       color: $darkblue;
       background: $orange;

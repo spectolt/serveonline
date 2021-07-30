@@ -2900,6 +2900,10 @@ function onDocumentReady(callback) {
     $(".about-us").children().removeClass("parallax__group");
   }
 
+  $(".calendar tbody td p").not(".js_ignore_mark").on("click", function() {
+    $(this).addClass("active")
+  })
+
   moveAction();
   moveOrder();
   changePadding();

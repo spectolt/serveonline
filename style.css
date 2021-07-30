@@ -2650,7 +2650,7 @@ table.calendar p:empty:hover {
   }
 }
 
-table.calendar p:hover {
+table.calendar p.active, table.calendar p:hover {
   color: #0F1D5B;
   background: #ff9954;
 }

@@ -11,7 +11,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
 ?>
 
 <?php require_once('header.php'); ?>
-<main class="site-main site-main--aside hasUiDatepicker">
+<main class="site-main site-main--aside hasUiDatepicker hasUiAutocomplete">
     <?php require_once('product-sidebar.php'); ?>
     <section class="page-content page-content--sidebar">
         <section class="breadcrumbs">
