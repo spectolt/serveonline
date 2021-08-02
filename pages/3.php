@@ -20,8 +20,8 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
         </div>
         <div class="opportunities__content parallax__layer parallax__layer--base">
             <h1>Galimybės verslui</h1>
-            <h3>Valdyk savo verslą išmaniai, patogiai ir saugiai!</h3>
-            <p><span class="opportunities__content-name">Serve Online</span> – populiari paslaugų užsakymų internetu platforma.</p>
+            <h3>Perkelk savo verslą ten, kur potencialūs klientai.</h3>
+            <p><span class="opportunities__content-name">Serve Online</span> – greitas ir paprastas informacijos valdymas, duomenų apdorojimas ir sprendimų priėmimas.</p>
             <p>Perkelk savo verslą ten, kur potencialūs klientai.</p>
             <button class="about-us__button darkblue">Prisijunk ir išbandyk!</button>
         </div>
@@ -549,8 +549,8 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
         </div>
         <div class="calc__desc">
             <h2>Kainos skaičiuoklė</h2>
-            <p>Pasirinkite paslaugų sritį ir specialistų skaičių, norėdami apskaičiuoti geriausio pasiūlymo kainą.<br>
-                Jokių papildomų mokesčių nėra.</p>
+            <p>Kad apskaičiuoti kainą pasirinkite paslaugų sritį ir specialistų skaičių.<br>
+                Jokių papildomų mokesčių nėra.</p> 
             <div class="calc__areas">
                 <?php for ($y = 0; $y < count($areas); $y++) { ?>
                     <div class="calc__area calc__area--<?php echo $areasClass[$y] ?>">
@@ -588,8 +588,8 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
         </div>
         <div class="professionals__about">
             <h2>Serve Professionals galimybės</h2>
-            <p>Išsami duomenų kaupimo ir tvarkymo sistema įvairių paslaugų ir medicinos įstaigoms. Integracija su Serve Online,
-                E-Sveikata, buhalterine programa, papildoma techn. įranga. Saugi, nuolat tobulinama verslo valdymo sistema.</p>
+            <p>Serve Professionals saugi, nuolat tobulinama verslo valdymo sistema skirta įvairias paslaugas teikiančioms įstaigoms.<br>
+                Integracija su E-Sveikata, buhalterine programa, papildoma technine įranga.</p>
         </div>
         <div class="professionals__slider vert-slider">
             <div class="vert-slider__aside">

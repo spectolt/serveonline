@@ -53,7 +53,7 @@
                 <button type="button" class="search-container__close"></button>
             </div>
         <?php } ?>
-        <header class="site-header site-header--show <?php if ($thisCat == "company" || $thisCat == "login") echo "site-header--company"?>">
+        <header class="site-header site-header--show <?php if ($thisCat == "company" || $thisCat == "login" || $thisCat == "about") echo "site-header--company"?>">
             <?php if ($thisCat != "company" && $thisCat != "login" && $thisCat != "about") { ?>
                 <button class="site-header__hamburger"></button>
             <?php } ?>

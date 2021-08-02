@@ -533,6 +533,7 @@
 
       @include breakpoint(xs) {
         font-size: 1.375rem;
+        margin-bottom: 10px;
       }
     }
 
@@ -541,6 +542,7 @@
 
       @include breakpoint(xs) {
         font-size: 1rem;
+        margin: 0;
       }
     }
 
@@ -589,6 +591,10 @@
       border-radius: 5px;
     }
 
+    @include breakpoint(xs) {
+      padding: 15px 10px;
+    }
+
     &--clients {
       border-left-color: $orange;
     }
@@ -612,6 +618,10 @@
 
     @include breakpoint(l) {
       height: 40px;
+    }
+
+    @include breakpoint(xs) {
+      margin-bottom: 10px;
     }
 
     @include breakpoint(xxs) {
@@ -677,7 +687,7 @@
 
     @include breakpoint(sm) {
       width: 80%;
-      margin: 0 auto 0;
+      margin: 0 auto 30px;
     }
 
     @include breakpoint(xs) {
@@ -718,7 +728,7 @@
 
   @include breakpoint(xs) {
     padding-top: 60px;
-    padding-bottom: 60px;
+    padding-bottom: 0;
   }
 
   p {
@@ -782,7 +792,7 @@
   }
 
   @include breakpoint(l) {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 
   @include breakpoint(xs) {
@@ -795,7 +805,7 @@
     margin-bottom: 30px;
 
     @include breakpoint(xs) {
-      margin-bottom: 25px;
+      margin-bottom: 8px;
     } 
   }
 
@@ -813,8 +823,9 @@
 
     @include breakpoint(l) {
       padding-left: 0;
-      margin-top: 30px;
+      margin-bottom: 30px;
       text-align: center;
+      width: 100%;
     }
   }
 
@@ -874,6 +885,7 @@
       &:hover ~ .calc__area-desc {
         visibility: visible;
         opacity: 1;
+        z-index: 1;
       }
     }
 
@@ -949,12 +961,16 @@
       text-align: center;
     }
 
-    &-title {
+    & .calc__plan-title {
       background-color: $orange;
       color: $white;
       margin: 0;
       position: relative;
       border-radius: 10px 10px 0 0;
+
+      @include breakpoint(xs) {
+        margin-bottom: 15px;
+      }
 
       &::after {
         content: "";
@@ -990,7 +1006,7 @@
       padding: 20px 0;
 
       @include breakpoint(xs) {
-        padding-top: 0;
+        padding: 0;
       }
 
       .checkbox {
@@ -1028,6 +1044,10 @@
           margin: 0;
           width: fit-content;
           position: relative;
+
+          @include breakpoint(xs) {
+            font-size: 0.875rem;
+          }
 
           &::before {
             content: "●";
@@ -1123,6 +1143,10 @@
       margin: 47px 50px 30px;
       font-size: 1.375rem;
       border-radius: 25px;
+
+      @include breakpoint(xs) {
+        margin: 8px 50px 15px;
+      }
     }
   }
 }

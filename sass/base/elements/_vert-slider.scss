@@ -34,6 +34,7 @@
       margin-right: 0;
       padding-right: 0;
       grid-template-columns: 100%;
+      padding-bottom: 10px;
     }
 
     li {
@@ -137,10 +138,11 @@
         display: flex;
         font-size: 1.25rem;
         margin-bottom: 30px;
+        border: none;
 
         @include breakpoint(xs) {
-          font-size: 1rem;
-          margin-bottom: 15px;
+          font-size: 0.875rem;
+          margin-bottom: 5px;
           padding: 0;
           box-shadow: none;
           white-space: initial;
@@ -156,8 +158,8 @@
           @include breakpoint(xs) {
             content: "●";
             margin-right: 10px;
-            position: absolute;
-            margin-left: -15px;
+            // position: absolute;
+            // margin-left: -15px;
           }
         }
       }

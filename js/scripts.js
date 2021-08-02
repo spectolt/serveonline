@@ -2820,6 +2820,12 @@ function onDocumentReady(callback) {
   setTimeout(function(){
     $(".vert-slider__slides").css({ maxHeight: $(".vert-slider__slide.visible").height() });
   },100)
+
+  if (window.matchMedia("(max-width: 600px)").matches) {
+    $(".vert-slider__slide").not(".js_ignore_mark").removeClass("visible")
+    $(".vert-slider .vert-slider__items li").not(".js_ignore_mark").removeClass("active")
+  }
+  
   $(".vert-slider .vert-slider__items li")
     .not(".js_ignore_mark")
     .on("click", function () {
@@ -2901,6 +2907,7 @@ function onDocumentReady(callback) {
   }
 
   $(".calendar tbody td p").not(".js_ignore_mark").on("click", function() {
+    $(".calendar tbody td p").removeClass("active")
     $(this).addClass("active")
   })
 
@@ -3783,5 +3790,13 @@ function vertSlideMobile() {
         .querySelector(".vert-slider__slides")
         .insertAdjacentElement("beforeEnd", element);
     });
+    // $(slideContainer).animate(
+    //   {
+    //     scrollTop: "+=" + slide.position().top,
+    //     maxHeight: slide.height(),
+    //   },
+    //   300,
+    //   "swing"
+    // );
   }
 }
