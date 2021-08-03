@@ -25081,6 +25081,7 @@ section.product .product__block--company .slick-track {
 .about-us__section {
   -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
           box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 .about-us h2 {
@@ -25264,11 +25265,6 @@ section.product .product__block--company .slick-track {
             flex-direction: column;
     height: auto;
   }
-}
-
-.opportunities .background {
-  -webkit-transform: translateZ(-1px) scale(2.1) translateX(25%) translateY(25%);
-          transform: translateZ(-1px) scale(2.1) translateX(25%) translateY(25%);
 }
 
 @media (max-width: 1180px) {

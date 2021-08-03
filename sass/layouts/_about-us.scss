@@ -75,6 +75,7 @@
 
   &__section {
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    overflow:hidden;
   }
 
   h2 {
@@ -326,7 +327,7 @@
     // position: fixed;
     // height: 750px;
     // top: auto;
-    transform: translateZ(-1px) scale(2.1) translateX(25%) translateY(25%);
+    // transform: translateZ(-1px) scale(2.1) translateX(25%) translateY(25%);
     @include breakpoint(xl) {
       top: 0;
     }
