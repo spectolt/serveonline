@@ -20,7 +20,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                 <img src="../img/icons/beauty.svg">
             </div>
             <button class="breadcrumbs__change paragraph">Grožio salonai ir kirpyklos</button>
-            <button class="breadcrumbs__cart"><span>2</span></button>
+            <button class="cart-icon"><span>2</span></button>
         </section>
         <div class="breadcrumbs__more">
             <ul>
@@ -155,6 +155,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                                         <h4>Greitasis odos atjauninimas lazeriu</h4>
                                         <div class="product-action__duration">01:00</div>
                                         <div class="product-action__price">45€<strike>60€</strike></div>
+                                        <div class="product-action__periodicity">6 sav.</div>
                                     </div>
                                     <button class="button cyan transparent small product-action__order">Rezervuok</button>
                                 </div>

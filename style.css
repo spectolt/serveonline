@@ -5733,6 +5733,7 @@ div.services-list.services-list--company-profile .services-list__blocks {
 @media (max-width: 600px) {
   .vert-slider__slide ul {
     margin-right: 0;
+    margin-bottom: 20px;
   }
 }
 
@@ -5818,6 +5819,41 @@ div.services-list.services-list--company-profile .services-list__blocks {
 .vert-slider__slide-image img {
   min-width: 100%;
   min-height: 100%;
+}
+
+.cart-icon {
+  position: relative;
+  padding: 0;
+  background: transparent;
+  margin-left: auto;
+}
+
+.cart-icon span {
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 14px;
+  color: #ff9954;
+}
+
+.cart-icon:before {
+  content: "";
+  width: 22px;
+  height: 22px;
+  background-image: url("img/icons/cart.svg");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .cart-icon:before {
+    width: 18px;
+    height: 18px;
+  }
 }
 
 .select2-container {
@@ -10228,7 +10264,6 @@ body {
 body {
   margin-top: 70px;
   height: calc(100% - 70px);
-  overflow-x: hidden;
   position: relative;
 }
 
@@ -10505,6 +10540,12 @@ footer.container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.site-header .site-header__item--cart-icon {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 @media (max-width: 991px) {
@@ -11721,41 +11762,6 @@ section.breadcrumbs .breadcrumbs__change:after {
 @media (max-width: 600px) {
   section.breadcrumbs .breadcrumbs__change:after {
     margin-left: 20px;
-  }
-}
-
-section.breadcrumbs .breadcrumbs__cart {
-  position: relative;
-  padding: 0;
-  background: transparent;
-  margin-left: auto;
-}
-
-section.breadcrumbs .breadcrumbs__cart span {
-  position: absolute;
-  bottom: -5px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  font-size: 14px;
-  color: #ff9954;
-}
-
-section.breadcrumbs .breadcrumbs__cart:before {
-  content: "";
-  width: 22px;
-  height: 22px;
-  background-image: url("img/icons/cart.svg");
-  background-size: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: block;
-}
-
-@media (max-width: 600px) {
-  section.breadcrumbs .breadcrumbs__cart:before {
-    width: 18px;
-    height: 18px;
   }
 }
 

@@ -33,7 +33,7 @@ body {
 body {
   margin-top: 70px;
   height: calc(100% - 70px);
-  overflow-x:hidden;
+  // overflow-x:hidden;
   position: relative;
 
   @include breakpoint(l) {
@@ -245,6 +245,10 @@ footer.container {
 
       &.back-button {
         display: flex;
+      }
+
+      &--cart-icon {
+        align-self: center;
       }
     }
   }

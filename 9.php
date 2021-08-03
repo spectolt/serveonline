@@ -7,7 +7,7 @@
         <section class="breadcrumbs">
             <a href="#" class="breadcrumbs__change">Pakeisti</a>
             <span class="breadcrumbs__location">GROŽIO SALONAI</span>
-            <button class="breadcrumbs__cart"><span>2</span></button>
+            <button class="cart-icon"><span>2</span></button>
         </section>
         <div class="page-content__wrapper">            
             <section class="product">

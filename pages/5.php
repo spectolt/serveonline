@@ -21,7 +21,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                 <img src="../img/icons/beauty.svg">
             </div>
             <button class="breadcrumbs__change paragraph">Grožio salonai ir kirpyklos</button>
-            <button class="breadcrumbs__cart"><span>2</span></button>
+            <button class="cart-icon"><span>2</span></button>
         </section>
         <div class="breadcrumbs__more">
             <ul>

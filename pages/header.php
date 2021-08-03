@@ -69,12 +69,17 @@
                     <li class="site-header__item paragraph"><a href="#"><?php if ($thisCat == "controls") echo "Atsijungti";
                                                                         else echo "Prisijungti" ?></a></li>
                 </ul>
+                <?php if($thisPage != "place") { ?>
                 <ul class="site-header__menu site-header__menu--main">
                     <li class="site-header__item site-header__item--search"><a href="#"></a></li>
                 </ul>
+                <?php } ?>
             <?php } else if($thisCat == "company" || $thisCat == "login" || $thisCat == "about") { ?>
                 <ul class="site-header__menu site-header__menu--main site-header__menu--company">
                     <li class="site-header__item back-button"><a href="#">Atgal</a></li>
+                    <?php if($thisPage == "specialist")  {?>
+                        <li class="site-header__item site-header__item--cart-icon"><button class="cart-icon"><span>2</span></button></li>
+                    <?php } ?>
                 </ul>
             <?php } ?>
         </header>

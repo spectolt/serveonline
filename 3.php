@@ -3,7 +3,7 @@
 <section class="breadcrumbs">
     <a href="#" class="breadcrumbs__change">Pakeisti</a>
     <span class="breadcrumbs__location">Grožio salonai | Vilnius</span>
-    <button class="breadcrumbs__cart"></button>
+    <button class="cart-icon"></button>
 </section>
 
 <main class="site-main container">

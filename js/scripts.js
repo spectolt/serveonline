@@ -183,14 +183,14 @@ function onDocumentReady(callback) {
       this.text = text;
     };
     var eventDates = {};
-    eventDates[new Date("07/20/2021")] = new Event("Event01");
-    eventDates[new Date("07/12/2021")] = new Event("Event02");
-    eventDates[new Date("07/28/2021")] = new Event("Event02");
+    eventDates[new Date("08/20/2021")] = new Event("Event01");
+    eventDates[new Date("08/12/2021")] = new Event("Event02");
+    eventDates[new Date("08/28/2021")] = new Event("Event02");
 
     var availableDates = {};
-    availableDates[new Date("07/05/2021")] = new Date("07/05/2021");
-    availableDates[new Date("07/12/2021")] = new Date("07/12/2021");
-    availableDates[new Date("07/13/2021")] = new Date("07/13/2021");
+    availableDates[new Date("08/05/2021")] = new Date("08/05/2021");
+    availableDates[new Date("08/12/2021")] = new Date("08/12/2021");
+    availableDates[new Date("08/13/2021")] = new Date("08/13/2021");
 
     jQuery.datepicker._checkExternalClick = function (e) {
       if ($(e.target).closest(".ui-widget-overlay").length) {
@@ -459,6 +459,8 @@ function onDocumentReady(callback) {
       .click(function () {
         $(this).next(".product__nav-input").datepicker("show");
       });
+
+    $(".specialist__datepicker").not(".js_ignore_mark").datepicker("option", "showButtonPanel", false)
 
     //prevent ios from scrolling to input
     $(".js-datepicker")
@@ -2591,12 +2593,12 @@ function onDocumentReady(callback) {
       .css("transform", "translateY(20px)");
   }
 
-  if ($(".specialist__datepicker")) {
-    $(".specialist__datepicker .ui-datepicker-today")
-      .not(".js_ignore_mark")
-      .trigger("click");
-    $(".specialist__overlay").addClass("hidden");
-  }
+  // if ($(".specialist__datepicker")) {
+  //   $(".specialist__datepicker .ui-datepicker-today")
+  //     .not(".js_ignore_mark")
+  //     .trigger("click");
+  //   $(".specialist__overlay").addClass("hidden");
+  // }
 
   //add or remove overlay on click
   $(".specialist__overlay")
