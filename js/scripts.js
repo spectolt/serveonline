@@ -2906,6 +2906,7 @@ function onDocumentReady(callback) {
       .removeClass("parallax__layer parallax__layer--deeper")
       .css({ top: 0, height: "100%" });
     $(".about-us").children().removeClass("parallax__group");
+    $(".opportunities__photo").removeClass("parallax__layer parallax__layer--back")
   }
 
   $(".calendar tbody td p").not(".js_ignore_mark").on("click", function() {
