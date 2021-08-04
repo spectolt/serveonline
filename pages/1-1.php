@@ -35,7 +35,7 @@ $thisPage = "policy"; ?>
             <div class="content">
                 <h4>1. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sąvokos</h4>  
                 <p class="number">1.1.</p>  
-                <p class="text"> Duomenų valdytojas – UAB „Serve online“ (toliau – Įmonė), juridinio asmens 
+                <p class="text">Duomenų valdytojas – UAB „Serve online“ (toliau – Įmonė), juridinio asmens 
                     kodas 305520901, registracijos adresas Vilnius, Elnių g. 9-24. 
                 </p> 
                <p class="number">1.2.</p> 

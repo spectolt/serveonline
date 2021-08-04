@@ -26504,6 +26504,7 @@ section.product .product__block--company .slick-track {
 
 .policy {
   margin: 0 200px 40px 200px;
+  font-weight: 300;
 }
 
 @media (max-width: 991px) {
@@ -26561,7 +26562,6 @@ section.product .product__block--company .slick-track {
 }
 
 .policy .content .text {
-  text-indent: 33px;
   padding-left: 50px;
 }
 
