@@ -657,10 +657,11 @@
   @include breakpoint(l) {
     min-height: 1000px;
     align-items: flex-end;
+    background-color: $white;
   }
 
   @include breakpoint(sm) {
-    min-height: 800px;
+    min-height: 650px;
     background-position: left top;
     background-size: auto 50%;
     background-attachment: initial;
@@ -689,6 +690,7 @@
     @include breakpoint(sm) {
       width: 80%;
       margin: 0 auto 30px;
+      padding: 20px;
     }
 
     @include breakpoint(xs) {
@@ -703,6 +705,10 @@
     p {
       color: $white;
       font-size: 1.125rem;
+
+      @include breakpoint(sm){
+        margin-bottom: 0;
+      }
 
       @include breakpoint(xs) {
         font-size: 1rem;

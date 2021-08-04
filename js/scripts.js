@@ -2914,6 +2914,16 @@ function onDocumentReady(callback) {
     $(this).addClass("active")
   })
 
+  $(".site-header__item--cart-icon .cart-icon").not(".js_ignore_mark").on("click", function() {
+    $(".my-cart-container").addClass("visible")
+  }) 
+  
+  $(document).on("click", ".my-cart-container:not('.js_ignore_mark')", function(e) {
+    if(!$(e.target).closest(".my-cart").length || $(e.target).closest(".product__close").length) {
+      $(".my-cart-container").removeClass("visible")
+    }
+  })
+
   moveAction();
   moveOrder();
   changePadding();

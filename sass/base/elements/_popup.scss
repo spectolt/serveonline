@@ -280,10 +280,14 @@
     }
 
     table {
-      th {
-        padding-top: 0;
-        padding-bottom: 0;
+      thead tr {
         height: 32px;
+      }
+
+      th {
+        // padding-top: 0;
+        // padding-bottom: 0;
+        height: 100%;
         font-weight: 400;
         font-size: 0.75rem;
         width: auto;

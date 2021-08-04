@@ -128,7 +128,7 @@
 
       .autocomplete-product--choice.active {
         &::before {
-        border-radius: 5px;
+          border-radius: 5px;
         }
       }
 
@@ -1199,7 +1199,7 @@
           height: 25px;
           width: 25px;
           padding: 4px 0;
-          margin: 0 auto; 
+          margin: 0 auto;
 
           // @include breakpoint(sm) {
           //   margin: 0 auto;
@@ -1292,5 +1292,103 @@
     position: fixed;
     z-index: 0;
     background-color: rgba(16, 27, 81, 0.15);
+  }
+}
+
+.my-cart-container {
+  z-index: 10;
+  display: none;
+
+  &.visible {
+    display: block;
+  }
+}
+
+.my-cart {
+  background-color: white;
+  position: absolute;
+  z-index: 3;
+  margin-top: 70px;
+  border-radius: 5px;
+  right: 2px;
+  padding: 45px 0 0;
+  width: 865px;
+  @include breakpoint(900px) {
+    width: 100%;
+  }
+  @include breakpoint(sm) {
+    padding: 30px 0 0;
+  }
+  h2.title {
+    font-family: "Sen", sans-serif;
+    font-weight: 400;
+    font-size: 1.875rem;
+    margin: 0 0 40px 40px;
+    @include breakpoint(sm) {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+    &:before {
+      content: url(img/icons/cart-darkblue.svg);
+      width: 29px;
+      height: 29px;
+      display: inline-block;
+      margin-right: 15px;
+      top: 6px;
+      left: 2px;
+      position: relative;
+    }
+  }
+  .product__close {
+    width: 20px;
+    height: 20px;
+    background-image: url("img/icons/search-close.svg");
+    background-color: transparent;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    float: right;
+    position: relative;
+    top: 8px;
+    margin-right: 40px;
+    @include breakpoint(sm) {
+      margin-right: 20px;
+    }
+  }
+  .cart {
+    margin: 0 40px 30px 40px;
+    @include breakpoint(889px) {
+      padding: 10px 10px 0;
+    }
+    @include breakpoint(sm) {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+    &__header {
+      h3 {
+        font-size: 1rem;
+      }
+      .time {
+        font-size: 1.125rem;
+        margin-right: 10px;
+      }
+      h4 {
+        font-size: 0.875rem;
+      }
+    }
+    &__name {
+      h4 {
+        font-size: 0.875rem;
+        font-weight: 400;
+      }
+    }
+  }
+  .user-profile__price {
+    font-size: 1.5rem;
+    @include breakpoint(sm) {
+      font-size: 1.125rem;
+    }
+  }
+  .user-profile__reserve--cart {
+    border-radius: 0 0 5px 5px;
   }
 }

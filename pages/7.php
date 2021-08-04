@@ -3,6 +3,105 @@ $thisPage = "specialist" ?>
 
 <?php require_once('header.php'); ?>
 <main class="site-main site-main--aside hasUiAutocomplete hasUiDatepicker">
+    <div class="my-cart-container">
+        <div class="ui-widget-overlay"></div>
+        <section class="my-cart">
+            <button class="product__close"></button>           
+            <h2 class="title">Mano krepšelis</h2> 
+            <div class="cart">
+            <div class="cart__header">
+                <div class="cart__about cart__about--time">
+                    <h3 class="time">17:30</h3>
+                    <h4>2020 Vasario 4, ketvirtadienis</h4>
+                </div>
+                <div class="cart__about cart__about--company">
+                    <h3>East Islan Spa centras</h3>
+                    <h4>M. Valančiaus g. 23, Kaunas</h4>
+                </div>
+            </div>
+            <div class="cart__info">
+                <div class="cart__specialist">
+                    <div class="cart__photo"></div>
+                    <div class="cart__name">
+                        <h3>Vardas Pavardė</h3>
+                        <h4>Pareigos</h4>
+                    </div>
+                </div>
+                <div class="cart__products">
+                    <div class="product-action product__block-action">
+                        <div class="product-action__info">
+                            <h4>Visų pl. dažymas ir kirpimas</h4>
+                            <div class="product-action__duration">01:00</div>
+                            <div class="product-action__price">45€</div>
+                            <div class="product-action__periodicity">6 sav.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cart__buttons company__button-container">
+                <button class="cyan transparent cart__trash">Pašalinti</button>
+                <button class="cyan cart__change-time">Keisti laiką</button>
+                <button class="orange cart__reserve">Rezervuoti</button>
+            </div>
+            <div class="confirm-overlay">
+                <div class="confirm-overlay__item">
+                    <h4>Laukiama patvirtinimo</h4>
+                </div>
+            </div>
+            </div>
+            <div class="cart">
+                <div class="cart__header">
+                    <div class="cart__about cart__about--time">
+                        <h3>17:30</h3>
+                        <h4>2020 Vasario 4, ketvirtadienis</h4>
+                    </div>
+                    <div class="cart__about cart__about--company">
+                        <h3>East Islan Spa centras</h3>
+                        <h4>M. Valančiaus g. 23, Kaunas</h4>
+                    </div>
+                </div>
+                <div class="cart__info">
+                    <div class="cart__specialist">
+                        <div class="cart__photo"></div>
+                        <div class="cart__name">
+                            <h3>Vardas Pavardė</h3>
+                            <h4>Pareigos</h4>
+                        </div>
+                    </div>
+                    <div class="cart__products">
+                        <div class="product-action product__block-action">
+                            <div class="product-action__info">
+                                <h4>Visų pl. dažymas ir kirpimas</h4>
+                                <div class="product-action__duration">01:00</div>
+                                <div class="product-action__price">45€</div>
+                                <div class="product-action__periodicity">6 sav.</div>
+                            </div>
+                        </div>
+                        <div class="product-action product__block-action">
+                            <div class="product-action__info">
+                                <h4>Visų pl. dažymas ir kirpimas</h4>
+                                <div class="product-action__duration">01:00</div>
+                                <div class="product-action__price">45€</div>
+                                <div class="product-action__periodicity">6 sav.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart__buttons company__button-container">
+                    <button class="cyan transparent cart__trash">Pašalinti</button>
+                    <button class="cyan cart__change-time">Keisti laiką</button>
+                    <button class="orange cart__reserve">Rezervuoti</button>
+                </div>
+                <div class="confirm-overlay">
+                    <div class="confirm-overlay__item">
+                        <h4>Laukiama patvirtinimo</h4>
+                    </div>
+                </div>
+            </div> 
+            <h2 class="user-profile__price">Iš viso: <span>225,00€</span></h2>
+            <button class="orange small user-profile__reserve user-profile__reserve--cart">Rezervuoti viską</button>           
+        </section>
+    </div>
     <section class="page-content page-content--company">
         <div class="page-content__wrapper">
             <section class="company product specialist">

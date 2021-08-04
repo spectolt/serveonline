@@ -22,7 +22,6 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
             <h1>Galimybės verslui</h1>
             <h3>Perkelk savo verslą ten, kur potencialūs klientai.</h3>
             <p><span class="opportunities__content-name">Serve Online</span> – greitas ir paprastas informacijos valdymas, duomenų apdorojimas ir sprendimų priėmimas.</p>
-            <p>Perkelk savo verslą ten, kur potencialūs klientai.</p>
             <button class="about-us__button darkblue">Prisijunk ir išbandyk!</button>
         </div>
         <div class="opportunities__photo parallax__layer parallax__layer--back">
@@ -37,7 +36,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
         </div>
         <div class="solutions__content">
             <h2>Sprendimai</h2>
-            <p>Potencialūs paslaugų pirkėjai – vienoje SERVE ONLINE platformoje.
+            <p>Potencialūs paslaugų pirkėjai – vienoje Serve Online platformoje.
                 Paprasta įsidiegti į savo svetainę, socialinius tinklus –
                 gera stebėti didėjančius pardavimus. </p>
         </div>
@@ -589,7 +588,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
         <div class="professionals__about">
             <h2>Serve Professionals galimybės</h2>
             <p>Serve Professionals saugi, nuolat tobulinama verslo valdymo sistema skirta įvairias paslaugas teikiančioms įstaigoms.<br>
-                Integracija su E-Sveikata, buhalterine programa, papildoma technine įranga.</p>
+                Integracija su E. sveikata, buhalterine programa, papildoma technine įranga.</p>
         </div>
         <div class="professionals__slider vert-slider">
             <div class="vert-slider__aside">
