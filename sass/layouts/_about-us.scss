@@ -75,7 +75,7 @@
 
   &__section {
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
-    overflow:hidden;
+    overflow: hidden;
   }
 
   h2 {
@@ -572,7 +572,7 @@
       @include breakpoint(xl) {
         padding-right: 40px;
       }
-      
+
       @include breakpoint(xs) {
         grid-template-columns: 1fr;
         padding-right: 20px;
@@ -706,7 +706,7 @@
       color: $white;
       font-size: 1.125rem;
 
-      @include breakpoint(sm){
+      @include breakpoint(sm) {
         margin-bottom: 0;
       }
 
@@ -758,7 +758,7 @@
     margin: 0 auto;
     padding: 0 40px;
   }
-  
+
   h2 {
     margin-bottom: 25px;
   }
@@ -813,7 +813,7 @@
 
     @include breakpoint(xs) {
       margin-bottom: 8px;
-    } 
+    }
   }
 
   .background {
@@ -1128,7 +1128,7 @@
 
           p.calc__plan-def {
             font-weight: 400;
-            
+
             &::before {
               content: "";
               display: none;
@@ -1239,87 +1239,126 @@
   z-index: 20;
 }
 
-.join-and-try{
+.join-and-try {
   // position: absolute;
   z-index: 21;
   width: 100%;
   // bottom: -3708px;
-  .try{
+  .try {
     background-color: #f7f6f7;
     width: 927px;
     margin: auto;
     border-radius: 10px;
-    padding: 114px 105px 105px;
-    @include breakpoint(l){
+    padding: 60px;
+    @include breakpoint(l) {
       width: 90%;
       padding: 80px 65px 65px;
     }
-    @include breakpoint(sm){
+    @include breakpoint(sm) {
       padding: 60px 35px 35px;
       width: 85%;
     }
-    @include breakpoint(435px){
+    @include breakpoint(435px) {
       padding: 30px 15px 15px;
     }
-    .input-container{
-      &--company{
-        margin-top: 35px;
-        input{
-          background: url(./img/icons/imone.svg) no-repeat scroll 32px 15px;
-          background-size: 26px 40px;
-          @include breakpoint(sm){
-            background: url(./img/icons/imone.svg) no-repeat scroll 18px 10px;
+    .input-container {
+      position: relative;
+      input {
+        @-webkit-keyframes autofill {
+          to {
+            color: inherit;
+            background: transparent;
+          }
+        }
+        &:-webkit-autofill {
+          -webkit-box-shadow: 0 0 0 50px white inset;
+        }
+        &:-webkit-autofill:focus {
+          -webkit-box-shadow: 0 0 0 50px white inset;
+        }
+
+        &::placeholder {
+          color: #b2b4c9;
+        }
+      }
+
+      .input-icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 90px;
+        height: 100%;
+        background-size: 25%;
+      }
+
+      &--company {
+        margin-top: 20px;
+        .input-icon {
+          background: url(./img/icons/imone-gray.svg) no-repeat scroll 35px 13px;
+          background-size: 20px;
+          @include breakpoint(sm) {
+            background: url(./img/icons/imone-gray.svg) no-repeat scroll 18px 10px;
             background-size: 20px 30px;
           }
         }
       }
-      &--name{
-        input{
-          background: url(./img/icons/person.svg) no-repeat scroll 24px 15px;
-          background-size: 42px 39px;
-          @include breakpoint(sm){
-            background: url(./img/icons/person.svg) no-repeat scroll 14px 10px;
-            background-size: 30px 30px;
+      &--name {
+        .input-icon {
+          background: url(./img/icons/person-gray.svg) no-repeat scroll 31px 13px;
+          background-size: 25px;
+          @include breakpoint(sm) {
+            background: url(./img/icons/person-gray.svg) no-repeat scroll 14px 10px;
+            background-size: 30%;
           }
         }
       }
-      &--phone{
-        input{
-          background: url(./img/icons/phone.svg) no-repeat scroll 32px 14px;
-          background-size: 27px 42px;
-          @include breakpoint(sm){
-            background: url(./img/icons/phone.svg) no-repeat scroll 16px 10px;
+      &--phone {
+        .input-icon {
+          background: url(./img/icons/phone-gray.svg) no-repeat scroll 35px 14px;
+          background-size: 18px;
+          @include breakpoint(sm) {
+            background: url(./img/icons/phone-gray.svg) no-repeat scroll 16px 10px;
             background-size: 25px 30px;
           }
         }
       }
-      &--email{
-        input{
-          background: url(./img/icons/envelope.svg) no-repeat scroll 25px 20px;
-          background-size: 42px 30px;  
-          @include breakpoint(sm){
-            background: url(./img/icons/envelope.svg) no-repeat scroll 14px 13px;
+      &--email {
+        .input-icon {
+          background: url(./img/icons/envelope-gray.svg) no-repeat scroll 31px 20px;
+          background-size: 25px;
+          @include breakpoint(sm) {
+            background: url(./img/icons/envelope-gray.svg) no-repeat scroll 14px 13px;
             background-size: 30px 22px;
-          }      
+          }
         }
       }
     }
-    .calc{
-      &__area-img{
-        box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, .1);
+    .calc {
+      &__areas {
+        grid-template-columns: repeat(auto-fill, 75px);
+        margin: 0;
       }
-      &__input{
-        height: 70px;
-        box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, .1); 
-        @include breakpoint(sm){
+
+      &__area {
+        width: 80px;
+        height: 80px;
+      }
+
+      &__area-img {
+        box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+      }
+      &__input {
+        // height: 70px;
+        box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+        @include breakpoint(sm) {
           height: 50px;
         }
       }
-      &__plan-order{
+      &__plan-order {
         margin: 60px 0 0;
         width: 100%;
         height: 50px;
-        @include breakpoint(sm){
+        @include breakpoint(sm) {
           font-size: 1.25rem;
           height: 35px;
           padding: 0;
@@ -1327,68 +1366,81 @@
         }
       }
     }
-    h2{
-      margin-bottom: 55px;
-      @include breakpoint(sm){
+    h2 {
+      margin-bottom: 30px;
+      @include breakpoint(sm) {
         font-size: 2rem;
-        margin-bottom: 35px;
+        margin-bottom: 20px;
       }
     }
-    input[type="text"]{
+    input[type="text"] {
+      padding: 30px;
       padding-left: 90px;
       width: 100%;
-      height: 70px;
+      // height: 70px;
       border-radius: 40px;
       border: none;
-      box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, .05);
+      box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.05);
       background-color: white;
-      @include breakpoint(sm){
+
+      @include breakpoint(sm) {
         height: 50px;
+        padding: 20px;
         padding-left: 50px;
       }
     }
-    input[type="radio"]{
+    input[type="radio"] {
       position: absolute;
       top: 0;
       left: 0;
       opacity: 0;
     }
-    .input-container{
-      margin-bottom: 30px;
-      
-      &--other{
-        input[type="text"]{
+    .input-container {
+      margin-bottom: 20px;
+
+      &--other {
+        input[type="text"] {
           padding-left: 20px !important;
         }
       }
     }
-    .radio{
-      &:nth-of-type(2){
-        label{
+    .radio {
+      display: inline-block;
+      width: auto;
+      margin-right: 20px;
+
+      input ~ label {
           color: #b2b4b9;
-          &:before{
+          &:before {
             border: 1px solid #b2b4b9;
           }
         }
+
+      input:checked ~ label {
+        color: $darkblue;
+        &::before {
+          background-image: url(img/icons/check.svg);
+          border: none;
+        }
       }
-      label{
-        font-family: 'Sen', sans-serif;
-        font-size: 1.75rem;
+      label {
+        font-family: "Sen", sans-serif;
+        font-size: 1.5rem;
         font-weight: 800;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
         padding-left: 35px;
-        
-        @include breakpoint(sm){
+
+        @include breakpoint(sm) {
           font-size: 1.25rem;
           margin-bottom: 10px;
         }
-        &:before{
+        &:before {
           content: "";
           position: absolute;
-          top: 5px;
+          top: 2px;
           left: 0;
-          border: 1px solid #0F1D5B;
-          background-image: url(img/icons/check.svg);
+          border: 1px solid #0f1d5b;
+          // background-image: url(img/icons/check.svg);
           background-size: 22px 17px;
           background-repeat: no-repeat;
           background-position: center;
@@ -1398,14 +1450,14 @@
           transition: border-color 0.3s ease-in-out, background 0.3s ease-in-out;
           border-radius: 50%;
           z-index: 1;
-          @include breakpoint(sm){
+          @include breakpoint(sm) {
             top: 2px;
             width: 20px;
             height: 20px;
             background-size: 16px 14px;
           }
         }
-        &:after{
+        &:after {
           content: "";
           position: absolute;
           top: 9px;
@@ -1413,7 +1465,7 @@
           display: inline-block;
           width: 15px;
           height: 17px;
-          background-image: url(img/icons/check.svg);
+          // background-image: url(img/icons/check.svg);
           background-color: inherit;
           background-size: 100%;
           background-position: center;
@@ -1421,7 +1473,7 @@
           opacity: 0;
           transition: opacity 0.3s ease-in-out;
           z-index: 2;
-          @include breakpoint(sm){
+          @include breakpoint(sm) {
             width: 14px;
             height: 13px;
             top: 6px;

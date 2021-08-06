@@ -576,7 +576,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                     <h2>Prisijunk ir išbandyk</h2>
                     <form class="">
                         <div class="radio">
-                            <input name="specialist" type="radio" id="person" class="" value="1" required="">
+                            <input name="specialist" type="radio" id="person" class="" value="1" required="" checked>
                             <label for="person">Juridinis asmuo</label>
                         </div>
                         <div class="radio">
