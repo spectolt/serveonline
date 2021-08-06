@@ -9,6 +9,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
 ?>
 
 <?php require_once('header.php'); ?>
+<div class="ui-widget-overlay hidden"></div>
 <main class="site-main about-us parallax">
     <section class="about-us__section opportunities parallax__group">
         <div class="background parallax__layer parallax__layer--deeper">
@@ -543,7 +544,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                         </div>
                     </li>
                 </ul>
-                <button class="calc__plan-order darkblue" type="button">Užsakyti</button>
+                <button class="calc__plan-order calc__plan-order--main darkblue" type="button">Užsakyti</button>
             </div>
         </div>
         <div class="calc__desc">
@@ -569,6 +570,62 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                 </div>
             </div>
         </div>
+        <section class="join-and-try-container hidden">
+            <div class="join-and-try">
+                <div class="try">
+                    <h2>Prisijunk ir išbandyk</h2>
+                    <form class="">
+                        <div class="radio">
+                            <input name="specialist" type="radio" id="person" class="" value="1" required="">
+                            <label for="person">Juridinis asmuo</label>
+                        </div>
+                        <div class="radio">
+                            <input name="specialist" type="radio" id="specialist" class="" value="1" required="">
+                            <label for="specialist">Savarankiškas specialistas</label>
+                        </div>
+                        <div class="input-container input-container--company">
+                            <input type="text" class="company-name" name="title" placeholder="Įmonės pavadinimas">
+                            <span class="input-icon"></span>
+                        </div>
+                        <div class="input-container input-container--name">
+                            <input type="text" class="company-name" name="name" placeholder="Jūsų vadas, pavardė">
+                            <span class="input-icon"></span>
+                        </div>
+                        <div class="input-container input-container--phone">
+                            <input type="text" class="company-name" name="phone" placeholder="Tel. numeris">
+                            <span class="input-icon"></span>
+                        </div>
+                        <div class="input-container input-container--email">
+                            <input type="text" class="company-name" name="email" placeholder="El. pašto adresas">
+                            <span class="input-icon"></span>
+                        </div>
+                        <div class="calc__areas">
+                            <?php for ($y = 0; $y < count($areas); $y++) { ?>
+                                <div class="calc__area calc__area--<?php echo $areasClass[$y] ?>">
+                                <div class="calc__area-img" tabindex="0" style="background-color: <?php echo $colors[$y] ?>"><img src=<?php echo "$icons[$y]" ?> alt=<?php echo $areas[$y] ?>></div>
+                                    <div class="calc__area-desc">
+                                        <p><?php echo $areas[$y] ?></p>
+                                    </div>
+                                </div>
+                            <?php } ?>
+                        </div>
+                        <div class="input-container input-container--other">
+                            <input type="text" class="other" name="title" placeholder="Jeigu užsiimate kita veiklos sritimi &#8211; prašome įrašyti čia">
+                            <span class="input-icon"></span>
+                        </div>
+                        <div class="calc__input">
+                            Specialistų skaičius
+                            <input type="number" name="specialists" value="1" min="0" max="999" size="3">
+                            <div class="number-button-container">
+                                <button class="number-up"></button>
+                                <button class="number-down"></button>
+                            </div>
+                        </div>
+                        <button type="submit" value="Submit" class="calc__plan-order orange">Užsakyti</button>
+                    </form>
+                </div> 
+            <div>
+        </section>
     </section>
     <section class="about-us__section tools parallax__group">
         <div class="tools__content">

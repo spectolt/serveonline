@@ -1051,6 +1051,7 @@
           margin: 0;
           width: fit-content;
           position: relative;
+          font-weight: 500;
 
           @include breakpoint(xs) {
             font-size: 0.875rem;
@@ -1126,6 +1127,8 @@
           }
 
           p.calc__plan-def {
+            font-weight: 400;
+            
             &::before {
               content: "";
               display: none;
@@ -1220,5 +1223,212 @@
   &.visible {
     visibility: visible;
     opacity: 1;
+  }
+}
+
+.join-and-try-container {
+  position: absolute;
+  z-index: 21;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+}
+
+.ui-widget-overlay {
+  z-index: 20;
+}
+
+.join-and-try{
+  // position: absolute;
+  z-index: 21;
+  width: 100%;
+  // bottom: -3708px;
+  .try{
+    background-color: #f7f6f7;
+    width: 927px;
+    margin: auto;
+    border-radius: 10px;
+    padding: 114px 105px 105px;
+    @include breakpoint(l){
+      width: 90%;
+      padding: 80px 65px 65px;
+    }
+    @include breakpoint(sm){
+      padding: 60px 35px 35px;
+      width: 85%;
+    }
+    @include breakpoint(435px){
+      padding: 30px 15px 15px;
+    }
+    .input-container{
+      &--company{
+        margin-top: 35px;
+        input{
+          background: url(./img/icons/imone.svg) no-repeat scroll 32px 15px;
+          background-size: 26px 40px;
+          @include breakpoint(sm){
+            background: url(./img/icons/imone.svg) no-repeat scroll 18px 10px;
+            background-size: 20px 30px;
+          }
+        }
+      }
+      &--name{
+        input{
+          background: url(./img/icons/person.svg) no-repeat scroll 24px 15px;
+          background-size: 42px 39px;
+          @include breakpoint(sm){
+            background: url(./img/icons/person.svg) no-repeat scroll 14px 10px;
+            background-size: 30px 30px;
+          }
+        }
+      }
+      &--phone{
+        input{
+          background: url(./img/icons/phone.svg) no-repeat scroll 32px 14px;
+          background-size: 27px 42px;
+          @include breakpoint(sm){
+            background: url(./img/icons/phone.svg) no-repeat scroll 16px 10px;
+            background-size: 25px 30px;
+          }
+        }
+      }
+      &--email{
+        input{
+          background: url(./img/icons/envelope.svg) no-repeat scroll 25px 20px;
+          background-size: 42px 30px;  
+          @include breakpoint(sm){
+            background: url(./img/icons/envelope.svg) no-repeat scroll 14px 13px;
+            background-size: 30px 22px;
+          }      
+        }
+      }
+    }
+    .calc{
+      &__area-img{
+        box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, .1);
+      }
+      &__input{
+        height: 70px;
+        box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, .1); 
+        @include breakpoint(sm){
+          height: 50px;
+        }
+      }
+      &__plan-order{
+        margin: 60px 0 0;
+        width: 100%;
+        height: 50px;
+        @include breakpoint(sm){
+          font-size: 1.25rem;
+          height: 35px;
+          padding: 0;
+          margin-top: 30px;
+        }
+      }
+    }
+    h2{
+      margin-bottom: 55px;
+      @include breakpoint(sm){
+        font-size: 2rem;
+        margin-bottom: 35px;
+      }
+    }
+    input[type="text"]{
+      padding-left: 90px;
+      width: 100%;
+      height: 70px;
+      border-radius: 40px;
+      border: none;
+      box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, .05);
+      background-color: white;
+      @include breakpoint(sm){
+        height: 50px;
+        padding-left: 50px;
+      }
+    }
+    input[type="radio"]{
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+    }
+    .input-container{
+      margin-bottom: 30px;
+      
+      &--other{
+        input[type="text"]{
+          padding-left: 20px !important;
+        }
+      }
+    }
+    .radio{
+      &:nth-of-type(2){
+        label{
+          color: #b2b4b9;
+          &:before{
+            border: 1px solid #b2b4b9;
+          }
+        }
+      }
+      label{
+        font-family: 'Sen', sans-serif;
+        font-size: 1.75rem;
+        font-weight: 800;
+        margin-bottom: 20px;
+        padding-left: 35px;
+        
+        @include breakpoint(sm){
+          font-size: 1.25rem;
+          margin-bottom: 10px;
+        }
+        &:before{
+          content: "";
+          position: absolute;
+          top: 5px;
+          left: 0;
+          border: 1px solid #0F1D5B;
+          background-image: url(img/icons/check.svg);
+          background-size: 22px 17px;
+          background-repeat: no-repeat;
+          background-position: center;
+          width: 25px;
+          height: 25px;
+          margin-right: 10px;
+          transition: border-color 0.3s ease-in-out, background 0.3s ease-in-out;
+          border-radius: 50%;
+          z-index: 1;
+          @include breakpoint(sm){
+            top: 2px;
+            width: 20px;
+            height: 20px;
+            background-size: 16px 14px;
+          }
+        }
+        &:after{
+          content: "";
+          position: absolute;
+          top: 9px;
+          left: 5px;
+          display: inline-block;
+          width: 15px;
+          height: 17px;
+          background-image: url(img/icons/check.svg);
+          background-color: inherit;
+          background-size: 100%;
+          background-position: center;
+          background-repeat: no-repeat;
+          opacity: 0;
+          transition: opacity 0.3s ease-in-out;
+          z-index: 2;
+          @include breakpoint(sm){
+            width: 14px;
+            height: 13px;
+            top: 6px;
+            left: 3px;
+          }
+        }
+      }
+    }
   }
 }

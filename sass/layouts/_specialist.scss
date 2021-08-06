@@ -1296,7 +1296,7 @@
 }
 
 .my-cart-container {
-  z-index: 10;
+  z-index: 100;
   display: none;
 
   &.visible {
@@ -1307,7 +1307,7 @@
 .my-cart {
   background-color: white;
   position: absolute;
-  z-index: 3;
+  z-index: 100;
   margin-top: 70px;
   border-radius: 5px;
   right: 2px;

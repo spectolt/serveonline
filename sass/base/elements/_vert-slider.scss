@@ -42,7 +42,7 @@
       padding: 20px 15px;
       box-shadow: 0 0 10px rgba(15, 29, 91, 0.1);
       margin-bottom: 10px;
-      border-radius: 0 25px 25px 0;
+      border-radius: 0 100px 100px 0;
       // font-family: "Sen", sans-serif;
       font-weight: 600;
       border-left: 5px solid $white;
@@ -87,6 +87,8 @@
   &__slide {
     display: flex;
     // height: 100%;
+    visibility: hidden;
+    transition: visibility .3s ease-in-out;
 
     @include breakpoint(900px) {
       flex-direction: column;
@@ -105,6 +107,10 @@
         visibility: visible;
         padding-top: 20px;
       }
+    }
+
+    &.visible {
+      visibility: visible;
     }
 
     &-content {
@@ -155,10 +161,14 @@
           content: "⬤";
           color: $orange;
           margin-right: 20px;
+          line-height: 1.5;
+          font-size: 80%;
 
           @include breakpoint(xs) {
             content: "●";
             margin-right: 10px;
+            font-size: 100%;
+            line-height: inherit;
             // position: absolute;
             // margin-left: -15px;
           }

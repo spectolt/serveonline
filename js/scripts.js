@@ -460,7 +460,9 @@ function onDocumentReady(callback) {
         $(this).next(".product__nav-input").datepicker("show");
       });
 
-    $(".specialist__datepicker").not(".js_ignore_mark").datepicker("option", "showButtonPanel", false)
+    $(".specialist__datepicker")
+      .not(".js_ignore_mark")
+      .datepicker("option", "showButtonPanel", false);
 
     //prevent ios from scrolling to input
     $(".js-datepicker")
@@ -820,7 +822,9 @@ function onDocumentReady(callback) {
         $(".services-list__blocks").insertAfter(".services-list__aside");
       }
 
-      $(".vert-slider__slides").css({ maxHeight: $(".vert-slider__slide.visible").height() });
+      $(".vert-slider__slides").css({
+        maxHeight: $(".vert-slider__slide.visible").height(),
+      });
     }, 100);
   });
 
@@ -2819,15 +2823,19 @@ function onDocumentReady(callback) {
     });
 
   //
-  setTimeout(function(){
-    $(".vert-slider__slides").css({ maxHeight: $(".vert-slider__slide.visible").height() });
-  },100)
+  setTimeout(function () {
+    $(".vert-slider__slides").css({
+      maxHeight: $(".vert-slider__slide.visible").height(),
+    });
+  }, 100);
 
   if (window.matchMedia("(max-width: 600px)").matches) {
-    $(".vert-slider__slide").not(".js_ignore_mark").removeClass("visible")
-    $(".vert-slider .vert-slider__items li").not(".js_ignore_mark").removeClass("active")
+    $(".vert-slider__slide").not(".js_ignore_mark").removeClass("visible");
+    $(".vert-slider .vert-slider__items li")
+      .not(".js_ignore_mark")
+      .removeClass("active");
   }
-  
+
   $(".vert-slider .vert-slider__items li")
     .not(".js_ignore_mark")
     .on("click", function () {
@@ -2851,8 +2859,8 @@ function onDocumentReady(callback) {
         }
       } else {
         // $(slideContainer).css({maxHeight: slide.height()})
-        $(".vert-slider__slide").removeClass("visible")
-        $(slide).addClass("visible")
+        $(".vert-slider__slide").removeClass("visible");
+        $(slide).addClass("visible");
         $(slideContainer).animate(
           {
             scrollTop: "+=" + slide.position().top,
@@ -2906,23 +2914,70 @@ function onDocumentReady(callback) {
       .removeClass("parallax__layer parallax__layer--deeper")
       .css({ top: 0, height: "100%" });
     $(".about-us").children().removeClass("parallax__group");
-    $(".opportunities__photo").removeClass("parallax__layer parallax__layer--back")
+    $(".opportunities__photo").removeClass(
+      "parallax__layer parallax__layer--back"
+    );
   }
 
-  $(".calendar tbody td p").not(".js_ignore_mark").on("click", function() {
-    $(".calendar tbody td p").removeClass("active")
-    $(this).addClass("active")
-  })
+  $(".calendar tbody td p")
+    .not(".js_ignore_mark")
+    .on("click", function () {
+      $(".calendar tbody td p").removeClass("active");
+      $(this).addClass("active");
+    });
 
-  $(".site-header__item--cart-icon .cart-icon").not(".js_ignore_mark").on("click", function() {
-    $(".my-cart-container").addClass("visible")
-  }) 
-  
-  $(document).on("click", ".my-cart-container:not('.js_ignore_mark')", function(e) {
-    if(!$(e.target).closest(".my-cart").length || $(e.target).closest(".product__close").length) {
-      $(".my-cart-container").removeClass("visible")
+  $(".site-header__item--cart-icon .cart-icon")
+    .not(".js_ignore_mark")
+    .on("click", function () {
+      $(".my-cart-container").addClass("visible");
+    });
+
+  $(document).on(
+    "click",
+    ".my-cart-container:not('.js_ignore_mark')",
+    function (e) {
+      if (
+        !$(e.target).closest(".my-cart").length ||
+        $(e.target).closest(".product__close").length
+      ) {
+        $(".my-cart-container").removeClass("visible");
+      }
     }
-  })
+  );
+
+  $(".calc__plan-order--main")
+    .not(".js_ignore_mark")
+    .on("click", function () {
+      var y = $("main").scrollTop() - 70;
+      $("html").css({ scrollBehavior: "unset" });
+      $(".about-us").css({
+        perspective: "none",
+        overflowX: "visible",
+        overflowY: "visible",
+      });
+      $(".calc").css({ overflow: "visible" });
+      $(".calc .background").each(function () {
+        this.style.setProperty("transform", "none", "important");
+      });
+      $(".ui-widget-overlay").removeClass("hidden");
+      $(".join-and-try-container").removeClass("hidden");
+      $("body,html").animate({ scrollTop: y }, 0);
+    });
+
+  $(document).on("click", function (e) {
+    if (!$(e.target).closest(".try, .calc__plan-order--main").length) {
+      $("html").css({ scrollBehavior: "smooth" });
+      $(".about-us").css({
+        perspective: "1px",
+        overflowX: "hidden",
+        overflowY: "auto",
+      });
+      $(".calc").css({ overflow: "visible" });
+      $(".ui-widget-overlay").addClass("hidden");
+      $(".join-and-try-container").addClass("hidden");
+      $(".site-header").addClass("site-header--show");
+    }
+  });
 
   moveAction();
   moveOrder();
