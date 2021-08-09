@@ -2965,14 +2965,14 @@ function onDocumentReady(callback) {
     });
 
   $(document).on("click", function (e) {
-    if (!$(e.target).closest(".try, .calc__plan-order--main").length) {
+    if (!$(e.target).closest(".try, .calc__plan-order--main").length && !$(".join-and-try-container").hasClass("hidden")) {
       $("html").css({ scrollBehavior: "smooth" });
       $(".about-us").css({
         perspective: "1px",
         overflowX: "hidden",
         overflowY: "auto",
       });
-      $(".calc").css({ overflow: "visible" });
+      $(".calc").css({ overflow: "hidden" });
       $(".ui-widget-overlay").addClass("hidden");
       $(".join-and-try-container").addClass("hidden");
       $(".site-header").addClass("site-header--show");
