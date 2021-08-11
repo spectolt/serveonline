@@ -2963,13 +2963,14 @@ function onDocumentReady(callback) {
     .on("click", function () {
       $("html").css({ scrollBehavior: "unset" });
       if (window.matchMedia("(min-width: 1181px)").matches) {
+        var y = $("main").scrollTop();
         $(".about-us").css({
           perspective: "none",
           overflowX: "visible",
           overflowY: "visible",
         });
-        var y = $("main").scrollTop();
         $("body,html").animate({ scrollTop: y }, 0);
+        console.log(y)
       } else {
         var y = $("html").scrollTop();
       }

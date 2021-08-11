@@ -9,7 +9,7 @@
         <button>Lietuvių</button>
         <div class="site-footer__langs-items">
             <a href="#">English</a>
-            <a href="#">Руский</a>
+            <a href="#">Русский</a>
         </div>
     </div>
 </footer>

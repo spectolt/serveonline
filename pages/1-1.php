@@ -2,8 +2,8 @@
 $thisPage = "policy"; ?>
 
 <?php require_once('header.php'); ?>
-<main class="">
-    <div class="policy">
+<main class="site-main">
+    <section class="policy">
         <div class="policy-top">
             <h2>Privatumo politika</h2>
         </div>
@@ -545,7 +545,7 @@ $thisPage = "policy"; ?>
                 </p>
             </div>
         </div>
-    </div>
+    </section>
     <?php require_once('footer-menu-homepage.php'); ?>
 </main>
 
