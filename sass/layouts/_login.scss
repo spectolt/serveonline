@@ -213,6 +213,22 @@ section {
       width: 100%;
       flex-basis: 40%;
     }
+
+    .select2-container {
+      width: 100% !important;
+
+      .select2-selection {
+        padding-left: 40px;
+
+        .select2-selection__rendered {
+          padding-left: 10px;
+
+          @include breakpoint(sm) {
+            padding-left: 0;
+          }
+        }
+      }
+    }
   }
 }
 

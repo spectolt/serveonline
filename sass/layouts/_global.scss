@@ -188,6 +188,10 @@ footer.container {
 
       @include breakpoint(xs) {
         font-size: 0.875rem;
+
+        &:last-of-type {
+          margin-right: 0;
+        }
       }
 
       &:nth-last-child(n + 5),

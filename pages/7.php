@@ -38,16 +38,6 @@ $thisPage = "specialist" ?>
                     </div>
                 </div>
             </div>
-            <div class="cart__buttons company__button-container">
-                <button class="cyan transparent cart__trash">Pašalinti</button>
-                <button class="cyan cart__change-time">Keisti laiką</button>
-                <button class="orange cart__reserve">Rezervuoti</button>
-            </div>
-            <div class="confirm-overlay">
-                <div class="confirm-overlay__item">
-                    <h4>Laukiama patvirtinimo</h4>
-                </div>
-            </div>
             </div>
             <div class="cart">
                 <div class="cart__header">
@@ -87,19 +77,9 @@ $thisPage = "specialist" ?>
                         </div>
                     </div>
                 </div>
-                <div class="cart__buttons company__button-container">
-                    <button class="cyan transparent cart__trash">Pašalinti</button>
-                    <button class="cyan cart__change-time">Keisti laiką</button>
-                    <button class="orange cart__reserve">Rezervuoti</button>
-                </div>
-                <div class="confirm-overlay">
-                    <div class="confirm-overlay__item">
-                        <h4>Laukiama patvirtinimo</h4>
-                    </div>
-                </div>
             </div> 
             <h2 class="user-profile__price">Iš viso: <span>225,00€</span></h2>
-            <button class="orange small user-profile__reserve user-profile__reserve--cart">Rezervuoti viską</button>           
+            <button class="orange small user-profile__reserve user-profile__reserve--cart">Atidaryti registravimo langą</button>           
         </section>
     </div>
     <section class="page-content page-content--company">

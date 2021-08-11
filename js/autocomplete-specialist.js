@@ -257,5 +257,6 @@ if ($("main.hasUiAutocomplete").length > 0) {
   //show autocomplete list on add button
   $(".product__chosen-add").on("click", function () {
     input.autocomplete("search", "");
+    
   });
 }

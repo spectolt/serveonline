@@ -380,6 +380,25 @@
       margin-top: 16px;
     }
   }
+
+  &--login {
+    .warning-popup__content{
+      p {
+        margin: 20px 0;
+        text-align: center;
+      }
+
+      .code-inputs-container {
+        text-align: center;
+      }
+
+      .code-input {
+        width: 2rem;
+        border-radius: 10px;
+        text-align: center;
+      }
+    }
+  }
 }
 
 .select2-container--warning .select2-results__option--selectable {

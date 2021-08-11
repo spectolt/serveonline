@@ -469,7 +469,7 @@
   padding: 100px 0;
   position: relative;
   overflow: hidden;
-  z-index: 20;
+  z-index: 19;
 
   @include breakpoint(sm) {
     padding: 60px 0;
@@ -1292,7 +1292,7 @@
       }
 
       &--company {
-        margin-top: 20px;
+        // margin-top: 20px;
         .input-icon {
           background: url(./img/icons/imone-gray.svg) no-repeat scroll 35px 13px;
           background-size: 20px;
@@ -1368,6 +1368,9 @@
     }
     h2 {
       margin-bottom: 30px;
+      font-size: 3rem;
+      font-weight: 900;
+      
       @include breakpoint(sm) {
         font-size: 2rem;
         margin-bottom: 20px;
@@ -1408,6 +1411,7 @@
       display: inline-block;
       width: auto;
       margin-right: 20px;
+      margin-bottom: 20px;
 
       input ~ label {
           color: #b2b4b9;

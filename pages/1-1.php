@@ -298,7 +298,7 @@ $thisPage = "policy"; ?>
                     savo interneto naršyklės nustatymus bei kontroliuoti slapukų kiekį. Naudingas 
                     nuorodas, kaip atsisakyti slapukų, rasite žemiau: 
                 </p>
-                <ul class="dashed dashed-left">
+                <ul class="dashed">
                     <li>
                         Chrome naršyklei: https://support.google.com/chrome/answer/95647?hl=en; 
                     </li>

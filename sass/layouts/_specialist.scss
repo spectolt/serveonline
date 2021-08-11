@@ -1356,6 +1356,8 @@
   }
   .cart {
     margin: 0 40px 30px 40px;
+    border-bottom: 1px solid $lightgray;
+    
     @include breakpoint(889px) {
       padding: 10px 10px 0;
     }

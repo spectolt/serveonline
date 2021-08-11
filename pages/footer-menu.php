@@ -8,8 +8,8 @@
     <div class="site-footer__langs">
         <button>Lietuvių</button>
         <div class="site-footer__langs-items">
-            <a href="#">Anglų</a>
-            <a href="#">Rusų</a>
+            <a href="#">English</a>
+            <a href="#">Руский</a>
         </div>
     </div>
 </footer>
