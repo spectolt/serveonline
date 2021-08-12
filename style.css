@@ -5742,7 +5742,7 @@ div.services-list.services-list--company-profile .services-list__blocks {
 }
 
 .vert-slider__slide h3 {
-  font-size: 2rem;
+  font-size: 1.75rem;
   font-weight: 900;
   margin-top: 0;
 }
@@ -25244,7 +25244,7 @@ section.product .product__block--company .slick-track {
 }
 
 .about-us__button {
-  font-size: 1.375rem;
+  font-size: 1.25rem;
   border-radius: 35px;
   padding-left: 50px;
   padding-right: 50px;
@@ -25265,19 +25265,19 @@ section.product .product__block--company .slick-track {
 }
 
 .about-us h2 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 900;
   margin-top: 0;
 }
 
 @media (max-width: 600px) {
   .about-us h2 {
-    font-size: 1.875rem;
+    font-size: 1.75rem;
   }
 }
 
 .about-us p {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 @media (max-width: 600px) {
@@ -25461,6 +25461,12 @@ section.product .product__block--company .slick-track {
   position: relative;
 }
 
+@media screen and (min-width: 1800px) {
+  .opportunities__content {
+    max-width: calc(100vw - 900px - 200px);
+  }
+}
+
 @media (max-width: 1440px) {
   .opportunities__content {
     max-width: calc(100vw - 800px);
@@ -25483,7 +25489,7 @@ section.product .product__block--company .slick-track {
 }
 
 .opportunities__content h1 {
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   margin-top: 0px;
   margin-bottom: 40px;
   font-weight: 800;
@@ -25492,26 +25498,26 @@ section.product .product__block--company .slick-track {
 
 @media (max-width: 600px) {
   .opportunities__content h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 }
 
 @media (max-width: 400px) {
   .opportunities__content h1 {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
   }
 }
 
 .opportunities__content h3 {
   font-family: "Roboto", sans-serif;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   color: #ff9954;
   margin: 20px 0;
 }
 
 @media (max-width: 600px) {
   .opportunities__content h3 {
-    font-size: 1.375rem;
+    font-size: 1.25rem;
   }
 }
 
@@ -25646,7 +25652,7 @@ section.product .product__block--company .slick-track {
 
 .features__content h3 {
   margin-top: 0;
-  font-size: 1.875rem;
+  font-size: 1.75rem;
   font-weight: 900;
 }
 
@@ -25762,6 +25768,7 @@ section.product .product__block--company .slick-track {
 @media (max-width: 600px) {
   .features__icon {
     margin-bottom: 10px;
+    height: 35px;
   }
 }
 
@@ -25826,7 +25833,7 @@ section.product .product__block--company .slick-track {
 
 @media (max-width: 600px) {
   .tools {
-    min-height: 650px;
+    min-height: 600px;
   }
 }
 
@@ -26056,8 +26063,8 @@ section.product .product__block--company .slick-track {
 
 @media (max-width: 700px) {
   .calc__areas {
-    -ms-grid-columns: (80px)[auto-fill];
-        grid-template-columns: repeat(auto-fill, 80px);
+    -ms-grid-columns: (70px)[auto-fill];
+        grid-template-columns: repeat(auto-fill, 70px);
     -webkit-column-gap: 15px;
             column-gap: 15px;
   }
@@ -26073,8 +26080,8 @@ section.product .product__block--company .slick-track {
 @media (max-width: 700px) {
   .calc__area {
     margin: 0 15px 15px 0;
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
   }
 }
 
@@ -26177,6 +26184,7 @@ section.product .product__block--company .slick-track {
   width: 100%;
   border: none;
   white-space: initial;
+  font-size: 1rem;
 }
 
 @media (max-width: 700px) {
@@ -26584,7 +26592,7 @@ section.product .product__block--company .slick-track {
   width: 927px;
   margin: auto;
   border-radius: 10px;
-  padding: 50px;
+  padding: 40px;
 }
 
 @media (max-width: 991px) {
@@ -26596,8 +26604,7 @@ section.product .product__block--company .slick-track {
 
 @media (max-width: 700px) {
   .join-and-try .try {
-    padding: 60px 35px 35px;
-    width: 85%;
+    padding: 30px;
   }
 }
 
@@ -26649,68 +26656,93 @@ section.product .product__block--company .slick-track {
   width: 90px;
   height: 100%;
   background-size: 25%;
+  background-position: center;
+}
+
+@media (max-width: 700px) {
+  .join-and-try .try .input-container .input-icon {
+    width: 50px;
+  }
 }
 
 .join-and-try .try .input-container--company .input-icon {
-  background: url(./img/icons/imone-gray.svg) no-repeat scroll 35px 13px;
+  background-image: url(./img/icons/imone-gray.svg);
+  background-repeat: no-repeat;
   background-size: 20px;
 }
 
 @media (max-width: 700px) {
   .join-and-try .try .input-container--company .input-icon {
-    background: url(./img/icons/imone-gray.svg) no-repeat scroll 18px 10px;
-    background-size: 20px 30px;
+    background-image: url(./img/icons/imone-gray.svg);
+    background-size: 15px;
   }
 }
 
 .join-and-try .try .input-container--name .input-icon {
-  background: url(./img/icons/person-gray.svg) no-repeat scroll 31px 13px;
+  background-image: url(./img/icons/person-gray.svg);
+  background-repeat: no-repeat;
   background-size: 25px;
 }
 
 @media (max-width: 700px) {
   .join-and-try .try .input-container--name .input-icon {
-    background: url(./img/icons/person-gray.svg) no-repeat scroll 14px 10px;
-    background-size: 30%;
+    background-image: url(./img/icons/person-gray.svg);
+    background-size: 20px;
   }
 }
 
 .join-and-try .try .input-container--phone .input-icon {
-  background: url(./img/icons/phone-gray.svg) no-repeat scroll 35px 14px;
+  background-image: url(./img/icons/phone-gray.svg);
+  background-repeat: no-repeat;
   background-size: 18px;
 }
 
 @media (max-width: 700px) {
   .join-and-try .try .input-container--phone .input-icon {
-    background: url(./img/icons/phone-gray.svg) no-repeat scroll 16px 10px;
-    background-size: 25px 30px;
+    background-image: url(./img/icons/phone-gray.svg);
+    background-size: 13px;
   }
 }
 
 .join-and-try .try .input-container--email .input-icon {
-  background: url(./img/icons/envelope-gray.svg) no-repeat scroll 31px 20px;
+  background-image: url(./img/icons/envelope-gray.svg);
+  background-repeat: no-repeat;
   background-size: 25px;
 }
 
 @media (max-width: 700px) {
   .join-and-try .try .input-container--email .input-icon {
-    background: url(./img/icons/envelope-gray.svg) no-repeat scroll 14px 13px;
-    background-size: 30px 22px;
+    background-image: url(./img/icons/envelope-gray.svg);
+    background-size: 22px;
   }
 }
 
 .join-and-try .try .calc__areas {
-  -ms-grid-columns: (70px)[auto-fill];
-      grid-template-columns: repeat(auto-fill, 70px);
+  -ms-grid-columns: (70px)[auto-fit];
+      grid-template-columns: repeat(auto-fit, 70px);
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin: 0;
 }
 
+@media (max-width: 600px) {
+  .join-and-try .try .calc__areas {
+    -ms-grid-columns: (50px)[auto-fit];
+        grid-template-columns: repeat(auto-fit, 50px);
+  }
+}
+
 .join-and-try .try .calc__area {
-  width: 80px;
-  height: 80px;
+  width: 65px;
+  height: 65px;
+}
+
+@media (max-width: 600px) {
+  .join-and-try .try .calc__area {
+    width: 50px;
+    height: 50px;
+  }
 }
 
 .join-and-try .try .calc__area-img {
@@ -26723,9 +26755,13 @@ section.product .product__block--company .slick-track {
           box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width: 700px) {
-  .join-and-try .try .calc__input {
-    height: 50px;
+.join-and-try .try .calc__input input {
+  font-size: 2rem;
+}
+
+@media (max-width: 600px) {
+  .join-and-try .try .calc__input input {
+    font-size: 1.75rem;
   }
 }
 
@@ -26740,26 +26776,26 @@ section.product .product__block--company .slick-track {
     font-size: 1.25rem;
     height: 35px;
     padding: 0;
-    margin-top: 30px;
+    margin-top: 20px;
   }
 }
 
 .join-and-try .try h2 {
   margin-bottom: 30px;
   margin-top: 0;
-  font-size: 2.5rem;
   font-weight: 900;
 }
 
 @media (max-width: 700px) {
   .join-and-try .try h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-bottom: 20px;
   }
 }
 
 .join-and-try .try input[type="text"] {
-  padding: 25px;
+  padding: 12px;
+  height: auto;
   padding-left: 90px;
   width: 100%;
   border-radius: 40px;
@@ -26771,8 +26807,7 @@ section.product .product__block--company .slick-track {
 
 @media (max-width: 700px) {
   .join-and-try .try input[type="text"] {
-    height: 50px;
-    padding: 20px;
+    padding: 8px;
     padding-left: 50px;
   }
 }
@@ -26797,6 +26832,12 @@ section.product .product__block--company .slick-track {
   width: auto;
   margin-right: 20px;
   margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+  .join-and-try .try .radio {
+    margin-bottom: 5px;
+  }
 }
 
 .join-and-try .try .radio input ~ label {
@@ -26826,7 +26867,7 @@ section.product .product__block--company .slick-track {
 
 @media (max-width: 700px) {
   .join-and-try .try .radio label {
-    font-size: 1.25rem;
+    font-size: 1rem;
     margin-bottom: 10px;
   }
 }
