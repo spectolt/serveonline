@@ -11,6 +11,10 @@
     perspective: 0;
     overflow: visible;
   }
+
+  @include breakpoint(xs) {
+    height: 100%;
+  }
 }
 
 .parallax__layer {
@@ -58,6 +62,10 @@
 }
 
 .about-us {
+  @include breakpoint(xs) {
+    height: 100%;
+  }
+  
   &__button {
     // font-size: 1.375rem;
     font-size: 1.25rem;
@@ -75,6 +83,9 @@
   &__section {
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    position: relative;
+    z-index: 19;
+    background-color: $white;
   }
 
   h2 {
@@ -295,6 +306,7 @@
       width: 100%;
       height: 100%;
       position: absolute;
+      top: 0;
       // background-color: $white;
     }
   }
@@ -323,13 +335,41 @@
     height: auto;
   }
 
+  @include breakpoint(xs) {
+    height: calc(100vh - calc(100vh - 100%));
+  }
+
   .background {
     // position: fixed;
     // height: 750px;
     // top: auto;
     // transform: translateZ(-1px) scale(2.1) translateX(25%) translateY(25%);
+    top: 0;
+    padding-bottom: 70px;
+    position: fixed;
+    height: inherit;
+    box-sizing: content-box;
+
+    @include breakpoint(1280px) {
+      position: static;
+      padding: 0;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      & > * {
+        position: absolute;
+      }
+      
+    }
+
     @include breakpoint(xl) {
       top: 0;
+    }
+
+    @include breakpoint(xs) {
+      display: flex;
     }
   }
 
@@ -433,12 +473,11 @@
     // max-width: 50%;
     padding-top: 55px;
     // position: fixed;
+    margin-left: auto;
+    z-index: 9;
+    position: absolute;
+    bottom: 0;
     right: 0;
-    // bottom: calc(100vh - 750px - 70px);
-    // bottom: 0;
-    // width: 60%;
-    left: auto;
-    right: -355px;
 
     @include breakpoint(1440px) {
       min-width: $_photo-width-1440;
@@ -467,6 +506,21 @@
 
     @include breakpoint(l) {
       width: 100%;
+    }
+
+    @include breakpoint(xs) {
+      width: 100%;
+      max-height: 100%;
+      flex-basis: 100%;
+      flex-shrink: 1;
+      min-height: 0;
+      margin: 0 auto;
+      flex-direction: column;
+      
+      img {
+        max-height: 100%;
+        margin: 0 auto;
+      }
     }
   }
 }
@@ -676,12 +730,12 @@
   }
 
   @include breakpoint(xs) {
-    min-height: 600px;
+    min-height: 550px;
   }
 
   @include breakpoint(xxs) {
     background-size: auto 40%;
-    min-height: 700px;
+    min-height: 650px;
   }
 
   &__content {
@@ -1395,7 +1449,7 @@
         margin: 40px 0 0;
         width: 100%;
         height: 50px;
-        
+
         @include breakpoint(sm) {
           font-size: 1.25rem;
           height: 35px;
@@ -1409,7 +1463,7 @@
       margin-top: 0;
       // font-size: 2.5rem;
       font-weight: 900;
-      
+
       @include breakpoint(sm) {
         font-size: 1.5rem;
         margin-bottom: 20px;
@@ -1458,11 +1512,11 @@
       }
 
       input ~ label {
-          color: #b2b4b9;
-          &:before {
-            border: 1px solid #b2b4b9;
-          }
+        color: #b2b4b9;
+        &:before {
+          border: 1px solid #b2b4b9;
         }
+      }
 
       input:checked ~ label {
         color: $darkblue;

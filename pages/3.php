@@ -57,8 +57,8 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                     Specialistų skaičius
                     <input type="number" name="specialists" value="1" min="0" max="999" size="3">
                     <div class="number-button-container">
-                        <button class="number-up"></button>
-                        <button class="number-down"></button>
+                        <button type="button" class="number-up"></button>
+                        <button type="button" class="number-down"></button>
                     </div>
                 </div>
                 <button type="submit" value="Submit" class="calc__plan-order orange">Užsakyti</button>
@@ -66,23 +66,24 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
         </div>
         <div>
 </section>
-<main class="site-main about-us parallax">
+<main class="site-main about-us">
     <section class="about-us__section opportunities parallax__group">
-        <div class="background parallax__layer parallax__layer--deeper">
-            <div class="backdrop"></div>
-            <div class="circle circle--1"></div>
-            <div class="circle circle--2"></div>
-            <div class="circle circle--3"></div>
-            <div class="overlay"></div>
-        </div>
+
         <div class="opportunities__content parallax__layer parallax__layer--base">
             <h1>Galimybės verslui</h1>
             <h3>Perkelk savo verslą ten, kur potencialūs klientai.</h3>
             <p><span class="opportunities__content-name">Serve Online</span> – greitas ir paprastas informacijos valdymas, duomenų apdorojimas ir sprendimų priėmimas.</p>
             <button class="about-us__button darkblue">Prisijunk ir išbandyk!</button>
         </div>
-        <div class="opportunities__photo parallax__layer parallax__layer--back">
-            <img src="../img/specialistė-kirpėja-2.png">
+        <div class="background parallax__layer">
+            <div class="backdrop"></div>
+            <div class="circle circle--1"></div>
+            <div class="circle circle--2"></div>
+            <div class="circle circle--3"></div>
+            <div class="overlay"></div>
+            <div class="opportunities__photo">
+                <img src="../img/specialistė-kirpėja-2.png">
+            </div>
         </div>
     </section>
     <section class="about-us__section solutions parallax__group">

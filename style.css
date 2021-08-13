@@ -10307,6 +10307,19 @@ body {
   }
 }
 
+@media (max-width: 600px) {
+  body {
+    margin-top: 60px;
+    height: calc(100% - 60px);
+  }
+}
+
+@media (max-width: 600px) {
+  #page {
+    height: 100%;
+  }
+}
+
 main.container,
 footer.container {
   max-width: 1440px;
@@ -25188,6 +25201,12 @@ section.product .product__block--company .slick-track {
   }
 }
 
+@media (max-width: 600px) {
+  .parallax {
+    height: 100%;
+  }
+}
+
 .parallax__layer {
   position: absolute;
   top: 0;
@@ -25243,6 +25262,12 @@ section.product .product__block--company .slick-track {
   overflow: hidden;
 }
 
+@media (max-width: 600px) {
+  .about-us {
+    height: 100%;
+  }
+}
+
 .about-us__button {
   font-size: 1.25rem;
   border-radius: 35px;
@@ -25262,6 +25287,9 @@ section.product .product__block--company .slick-track {
   -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
           box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  position: relative;
+  z-index: 19;
+  background-color: #fff;
 }
 
 .about-us h2 {
@@ -25425,6 +25453,7 @@ section.product .product__block--company .slick-track {
   width: 100%;
   height: 100%;
   position: absolute;
+  top: 0;
 }
 
 .opportunities {
@@ -25447,9 +25476,46 @@ section.product .product__block--company .slick-track {
   }
 }
 
+@media (max-width: 600px) {
+  .opportunities {
+    height: calc(100vh - calc(100vh - 100%));
+  }
+}
+
+.opportunities .background {
+  top: 0;
+  padding-bottom: 70px;
+  position: fixed;
+  height: inherit;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+@media (max-width: 1280px) {
+  .opportunities .background {
+    position: static;
+    padding: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  .opportunities .background > * {
+    position: absolute;
+  }
+}
+
 @media (max-width: 1180px) {
   .opportunities .background {
     top: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .opportunities .background {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 
@@ -25553,9 +25619,11 @@ section.product .product__block--company .slick-track {
   min-width: 900px;
   width: 900px;
   padding-top: 55px;
+  margin-left: auto;
+  z-index: 9;
+  position: absolute;
+  bottom: 0;
   right: 0;
-  left: auto;
-  right: -355px;
 }
 
 @media (max-width: 1440px) {
@@ -25580,6 +25648,27 @@ section.product .product__block--company .slick-track {
 @media (max-width: 991px) {
   .opportunities .opportunities__photo {
     width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .opportunities .opportunities__photo {
+    width: 100%;
+    max-height: 100%;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    -ms-flex-negative: 1;
+        flex-shrink: 1;
+    min-height: 0;
+    margin: 0 auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .opportunities .opportunities__photo img {
+    max-height: 100%;
+    margin: 0 auto;
   }
 }
 
@@ -25833,14 +25922,14 @@ section.product .product__block--company .slick-track {
 
 @media (max-width: 600px) {
   .tools {
-    min-height: 600px;
+    min-height: 550px;
   }
 }
 
 @media (max-width: 400px) {
   .tools {
     background-size: auto 40%;
-    min-height: 700px;
+    min-height: 650px;
   }
 }
 
