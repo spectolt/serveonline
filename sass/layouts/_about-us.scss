@@ -1,6 +1,5 @@
 .parallax {
   height: calc(100vh - 70px);
-  // font-size: 200%;
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-perspective: 1px;
@@ -12,11 +11,14 @@
     perspective: 0;
     overflow: visible;
   }
+
+  @include breakpoint(xs) {
+    height: 100%;
+  }
 }
 
 .parallax__layer {
   position: absolute;
-  // padding: calc(100vh - 70px) 0;
   top: 0;
   left: 0;
   right: 0;
@@ -60,8 +62,13 @@
 }
 
 .about-us {
+  @include breakpoint(xs) {
+    height: 100%;
+  }
+  
   &__button {
-    font-size: 1.375rem;
+    // font-size: 1.375rem;
+    font-size: 1.25rem;
     border-radius: 35px;
     padding-left: 50px;
     padding-right: 50px;
@@ -76,20 +83,24 @@
   &__section {
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    position: relative;
+    z-index: 19;
+    background-color: $white;
   }
 
   h2 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 900;
     margin-top: 0;
 
     @include breakpoint(xs) {
-      font-size: 1.875rem;
+      font-size: 1.75rem;
     }
   }
 
   p {
-    font-size: 1.5rem;
+    // font-size: 1.5rem;
+    font-size: 1.25rem;
 
     @include breakpoint(xs) {
       font-size: 1rem;
@@ -295,6 +306,7 @@
       width: 100%;
       height: 100%;
       position: absolute;
+      top: 0;
       // background-color: $white;
     }
   }
@@ -323,13 +335,41 @@
     height: auto;
   }
 
+  @include breakpoint(xs) {
+    height: calc(100vh - calc(100vh - 100%));
+  }
+
   .background {
     // position: fixed;
     // height: 750px;
     // top: auto;
     // transform: translateZ(-1px) scale(2.1) translateX(25%) translateY(25%);
+    top: 0;
+    padding-bottom: 70px;
+    position: fixed;
+    height: inherit;
+    box-sizing: content-box;
+
+    @include breakpoint(1280px) {
+      position: static;
+      padding: 0;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      & > * {
+        position: absolute;
+      }
+      
+    }
+
     @include breakpoint(xl) {
       top: 0;
+    }
+
+    @include breakpoint(xs) {
+      display: flex;
     }
   }
 
@@ -339,6 +379,10 @@
     margin: 0;
     z-index: 1;
     position: relative;
+
+    @media screen and (min-width: 1800px) {
+      max-width: calc(100vw - #{$_photo-width} - 200px);
+    }
 
     @include breakpoint(1440px) {
       max-width: calc(100vw - #{$_photo-width-1440});
@@ -356,29 +400,31 @@
     }
 
     h1 {
-      font-size: 4.5rem;
+      // font-size: 4.5rem;
+      font-size: 3.5rem;
       margin-top: 0px;
       margin-bottom: 40px;
       font-weight: 800;
       width: 90vw;
 
       @include breakpoint(xs) {
-        font-size: 3rem;
+        font-size: 2.5rem;
       }
 
       @include breakpoint(xxs) {
-        font-size: 2.5rem;
+        font-size: 2.25rem;
       }
     }
 
     h3 {
       font-family: "Roboto", sans-serif;
-      font-size: 1.75rem;
+      // font-size: 1.75rem;
+      font-size: 1.5rem;
       color: $orange;
       margin: 20px 0;
 
       @include breakpoint(xs) {
-        font-size: 1.375rem;
+        font-size: 1.25rem;
       }
     }
     p {
@@ -427,12 +473,11 @@
     // max-width: 50%;
     padding-top: 55px;
     // position: fixed;
+    margin-left: auto;
+    z-index: 9;
+    position: absolute;
+    bottom: 0;
     right: 0;
-    // bottom: calc(100vh - 750px - 70px);
-    // bottom: 0;
-    // width: 60%;
-    left: auto;
-    right: -355px;
 
     @include breakpoint(1440px) {
       min-width: $_photo-width-1440;
@@ -462,6 +507,21 @@
     @include breakpoint(l) {
       width: 100%;
     }
+
+    @include breakpoint(xs) {
+      width: 100%;
+      max-height: 100%;
+      flex-basis: 100%;
+      flex-shrink: 1;
+      min-height: 0;
+      margin: 0 auto;
+      flex-direction: column;
+      
+      img {
+        max-height: 100%;
+        margin: 0 auto;
+      }
+    }
   }
 }
 
@@ -469,7 +529,7 @@
   padding: 100px 0;
   position: relative;
   overflow: hidden;
-  z-index: 20;
+  z-index: 19;
 
   @include breakpoint(sm) {
     padding: 60px 0;
@@ -529,7 +589,8 @@
 
     h3 {
       margin-top: 0;
-      font-size: 1.875rem;
+      // font-size: 1.875rem;
+      font-size: 1.75rem;
       font-weight: 900;
 
       @include breakpoint(xs) {
@@ -623,6 +684,7 @@
 
     @include breakpoint(xs) {
       margin-bottom: 10px;
+      height: 35px;
     }
 
     @include breakpoint(xxs) {
@@ -668,12 +730,12 @@
   }
 
   @include breakpoint(xs) {
-    min-height: 650px;
+    min-height: 550px;
   }
 
   @include breakpoint(xxs) {
     background-size: auto 40%;
-    min-height: 700px;
+    min-height: 650px;
   }
 
   &__content {
@@ -851,7 +913,7 @@
     justify-content: space-between; /* 4 */
 
     @include breakpoint(sm) {
-      grid-template-columns: repeat(auto-fill, 80px);
+      grid-template-columns: repeat(auto-fill, 70px);
       column-gap: 15px;
     }
 
@@ -868,8 +930,8 @@
 
     @include breakpoint(sm) {
       margin: 0 15px 15px 0;
-      width: 80px;
-      height: 80px;
+      width: 70px;
+      height: 70px;
     }
 
     &-img {
@@ -944,6 +1006,7 @@
     border: none;
     white-space: initial;
     // width: 3em;
+    font-size: 1rem;
 
     input {
       text-align: right;
@@ -1244,19 +1307,20 @@
   z-index: 21;
   width: 100%;
   // bottom: -3708px;
+
   .try {
     background-color: #f7f6f7;
     width: 927px;
     margin: auto;
     border-radius: 10px;
-    padding: 60px;
+    padding: 40px;
     @include breakpoint(l) {
       width: 90%;
       padding: 80px 65px 65px;
     }
     @include breakpoint(sm) {
-      padding: 60px 35px 35px;
-      width: 85%;
+      padding: 30px;
+      // width: 90%;
     }
     @include breakpoint(435px) {
       padding: 30px 15px 15px;
@@ -1289,59 +1353,78 @@
         width: 90px;
         height: 100%;
         background-size: 25%;
+        background-position: center;
+
+        @include breakpoint(sm) {
+          width: 50px;
+        }
       }
 
       &--company {
-        margin-top: 20px;
+        // margin-top: 20px;
         .input-icon {
-          background: url(./img/icons/imone-gray.svg) no-repeat scroll 35px 13px;
+          background-image: url(./img/icons/imone-gray.svg);
+          background-repeat: no-repeat;
           background-size: 20px;
           @include breakpoint(sm) {
-            background: url(./img/icons/imone-gray.svg) no-repeat scroll 18px 10px;
-            background-size: 20px 30px;
+            background-image: url(./img/icons/imone-gray.svg);
+            background-size: 15px;
           }
         }
       }
       &--name {
         .input-icon {
-          background: url(./img/icons/person-gray.svg) no-repeat scroll 31px 13px;
+          background-image: url(./img/icons/person-gray.svg);
+          background-repeat: no-repeat;
           background-size: 25px;
           @include breakpoint(sm) {
-            background: url(./img/icons/person-gray.svg) no-repeat scroll 14px 10px;
-            background-size: 30%;
+            background-image: url(./img/icons/person-gray.svg);
+            background-size: 20px;
           }
         }
       }
       &--phone {
         .input-icon {
-          background: url(./img/icons/phone-gray.svg) no-repeat scroll 35px 14px;
+          background-image: url(./img/icons/phone-gray.svg);
+          background-repeat: no-repeat;
           background-size: 18px;
           @include breakpoint(sm) {
-            background: url(./img/icons/phone-gray.svg) no-repeat scroll 16px 10px;
-            background-size: 25px 30px;
+            background-image: url(./img/icons/phone-gray.svg);
+            background-size: 13px;
           }
         }
       }
       &--email {
         .input-icon {
-          background: url(./img/icons/envelope-gray.svg) no-repeat scroll 31px 20px;
+          background-image: url(./img/icons/envelope-gray.svg);
+          background-repeat: no-repeat;
           background-size: 25px;
           @include breakpoint(sm) {
-            background: url(./img/icons/envelope-gray.svg) no-repeat scroll 14px 13px;
-            background-size: 30px 22px;
+            background-image: url(./img/icons/envelope-gray.svg);
+            background-size: 22px;
           }
         }
       }
     }
     .calc {
       &__areas {
-        grid-template-columns: repeat(auto-fill, 75px);
+        grid-template-columns: repeat(auto-fit, 70px);
+        justify-content: space-between;
         margin: 0;
+
+        @include breakpoint(xs) {
+          grid-template-columns: repeat(auto-fit, 50px);
+        }
       }
 
       &__area {
-        width: 80px;
-        height: 80px;
+        width: 65px;
+        height: 65px;
+
+        @include breakpoint(xs) {
+          width: 50px;
+          height: 50px;
+        }
       }
 
       &__area-img {
@@ -1350,31 +1433,45 @@
       &__input {
         // height: 70px;
         box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
-        @include breakpoint(sm) {
-          height: 50px;
+        // @include breakpoint(sm) {
+        //   // height: 50px;
+        // }
+
+        input {
+          font-size: 2rem;
+
+          @include breakpoint(xs) {
+            font-size: 1.75rem;
+          }
         }
       }
       &__plan-order {
-        margin: 60px 0 0;
+        margin: 40px 0 0;
         width: 100%;
         height: 50px;
+
         @include breakpoint(sm) {
           font-size: 1.25rem;
           height: 35px;
           padding: 0;
-          margin-top: 30px;
+          margin-top: 20px;
         }
       }
     }
     h2 {
       margin-bottom: 30px;
+      margin-top: 0;
+      // font-size: 2.5rem;
+      font-weight: 900;
+
       @include breakpoint(sm) {
-        font-size: 2rem;
+        font-size: 1.5rem;
         margin-bottom: 20px;
       }
     }
     input[type="text"] {
-      padding: 30px;
+      padding: 12px;
+      height: auto;
       padding-left: 90px;
       width: 100%;
       // height: 70px;
@@ -1384,8 +1481,8 @@
       background-color: white;
 
       @include breakpoint(sm) {
-        height: 50px;
-        padding: 20px;
+        // height: 50px;
+        padding: 8px;
         padding-left: 50px;
       }
     }
@@ -1408,30 +1505,36 @@
       display: inline-block;
       width: auto;
       margin-right: 20px;
+      margin-bottom: 20px;
+
+      @include breakpoint(xs) {
+        margin-bottom: 5px;
+      }
 
       input ~ label {
-          color: #b2b4b9;
-          &:before {
-            border: 1px solid #b2b4b9;
-          }
+        color: #b2b4b9;
+        &:before {
+          border: 1px solid #b2b4b9;
         }
+      }
 
       input:checked ~ label {
         color: $darkblue;
         &::before {
           background-image: url(img/icons/check.svg);
           border: none;
+          background-size: 70%;
         }
       }
       label {
         font-family: "Sen", sans-serif;
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         font-weight: 800;
-        margin-bottom: 15px;
+        // margin-bottom: 15px;
         padding-left: 35px;
 
         @include breakpoint(sm) {
-          font-size: 1.25rem;
+          font-size: 1rem;
           margin-bottom: 10px;
         }
         &:before {
@@ -1444,8 +1547,8 @@
           background-size: 22px 17px;
           background-repeat: no-repeat;
           background-position: center;
-          width: 25px;
-          height: 25px;
+          width: 20px;
+          height: 20px;
           margin-right: 10px;
           transition: border-color 0.3s ease-in-out, background 0.3s ease-in-out;
           border-radius: 50%;
@@ -1463,8 +1566,8 @@
           top: 9px;
           left: 5px;
           display: inline-block;
-          width: 15px;
-          height: 17px;
+          width: 11px;
+          height: 12px;
           // background-image: url(img/icons/check.svg);
           background-color: inherit;
           background-size: 100%;

@@ -230,6 +230,9 @@ function onDocumentReady(callback) {
           if (event) {
             var selectedDate = $(".ui-datepicker-current-day");
             popup.show(300);
+            if ($(".specialist").length) {
+              $(".specialist__overlay").css("z-index", "999");
+            }
           }
           changeTextWidth();
 
@@ -340,6 +343,9 @@ function onDocumentReady(callback) {
           if (event) {
             var selectedDate = $(".ui-datepicker-current-day");
             popup.show(300);
+            if ($(".specialist").length) {
+              $(".specialist__overlay").css("z-index", "999");
+            }
           }
           changeTextWidth();
 
@@ -447,10 +453,17 @@ function onDocumentReady(callback) {
         "</div>"
     );
     $(popup).appendTo("body");
+    $(".specialist__overlay")
+      .not(".js_ignore_mark")
+      .on("click", function () {
+        $(popup).fadeOut(300);
+        $(".specialist__overlay").css("z-index", "0");
+      });
     $(".ui-datepicker-popup__close")
       .not(".js_ignore_mark")
       .on("click", function () {
         $(popup).fadeOut(300);
+        $(".specialist__overlay").css("z-index", "0");
       });
 
     $(".product__nav-icon")
@@ -1412,7 +1425,7 @@ function onDocumentReady(callback) {
 
   $(document).on(
     "click",
-    ".warning-popup-container:not(.js_ignore_mark)",
+    ".warning-popup-container:not(.js_ignore_mark):not(.warning-popup-container--login)",
     function (e) {
       if (
         !$(e.target).closest(".warning-popup").length ||
@@ -2945,37 +2958,72 @@ function onDocumentReady(callback) {
     }
   );
 
-  $(".calc__plan-order--main")
+  $(".about-us__button")
     .not(".js_ignore_mark")
     .on("click", function () {
-      var y = $("main").scrollTop() - 70;
       $("html").css({ scrollBehavior: "unset" });
-      $(".about-us").css({
-        perspective: "none",
-        overflowX: "visible",
-        overflowY: "visible",
-      });
-      $(".calc").css({ overflow: "visible" });
+      if (window.matchMedia("(min-width: 1181px)").matches) {
+        var y = $("main").scrollTop();
+        $(".about-us").css({
+          perspective: "none",
+          overflowX: "visible",
+          overflowY: "visible",
+        });
+        $("body,html").animate({ scrollTop: y }, 0);
+        console.log(y)
+      } else {
+        var y = $("html").scrollTop();
+      }
+      // $(".calc").css({ overflow: "visible" });
       $(".calc .background").each(function () {
         this.style.setProperty("transform", "none", "important");
       });
       $(".ui-widget-overlay").removeClass("hidden");
-      $(".join-and-try-container").removeClass("hidden");
-      $("body,html").animate({ scrollTop: y }, 0);
+      $(".join-and-try-container").removeClass("hidden").css("top", y);
     });
 
-  $(document).on("click", function (e) {
-    if (!$(e.target).closest(".try, .calc__plan-order--main").length) {
-      $("html").css({ scrollBehavior: "smooth" });
-      $(".about-us").css({
-        perspective: "1px",
-        overflowX: "hidden",
-        overflowY: "auto",
-      });
-      $(".calc").css({ overflow: "visible" });
-      $(".ui-widget-overlay").addClass("hidden");
-      $(".join-and-try-container").addClass("hidden");
-      $(".site-header").addClass("site-header--show");
+  if ($("main.about-us").length) {
+    $(document).on("click", function (e) {
+      if (
+        !$(e.target).closest(".try, .about-us__button").length &&
+        !$(".join-and-try-container").hasClass("hidden")
+      ) {
+        $("html").css({ scrollBehavior: "smooth" });
+        if (window.matchMedia("(min-width: 1181px)").matches) {
+          $(".about-us").css({
+            perspective: "1px",
+            overflowX: "hidden",
+            overflowY: "auto",
+          });
+        }
+        // $(".calc").css({ overflow: "hidden" });
+        $(".ui-widget-overlay").addClass("hidden");
+        $(".join-and-try-container").addClass("hidden");
+        $(".site-header").addClass("site-header--show");
+      }
+    });
+  }
+
+  $(".join-and-try input[name='specialist-type']")
+    .not(".js_ignore_mark")
+    .on("change", function () {
+      if ($(this).closest("#specialist").prop("checked")) {
+        $(this)
+          .closest(".join-and-try")
+          .find(".input-container--company, .calc__input")
+          .addClass("hidden");
+      } else {
+        $(this)
+          .closest(".join-and-try")
+          .find(".input-container--company, .calc__input")
+          .removeClass("hidden");
+      }
+    });
+
+  $(".code-input").on("input", function () {
+    var maxLength = $(this).attr("length");
+    if ($(this).val().length == maxLength) {
+      $(this).next("input").focus();
     }
   });
 

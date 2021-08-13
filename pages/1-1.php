@@ -2,8 +2,8 @@
 $thisPage = "policy"; ?>
 
 <?php require_once('header.php'); ?>
-<main class="">
-    <div class="policy">
+<main class="site-main">
+    <section class="policy">
         <div class="policy-top">
             <h2>Privatumo politika</h2>
         </div>
@@ -298,7 +298,7 @@ $thisPage = "policy"; ?>
                     savo interneto naršyklės nustatymus bei kontroliuoti slapukų kiekį. Naudingas 
                     nuorodas, kaip atsisakyti slapukų, rasite žemiau: 
                 </p>
-                <ul class="dashed dashed-left">
+                <ul class="dashed">
                     <li>
                         Chrome naršyklei: https://support.google.com/chrome/answer/95647?hl=en; 
                     </li>
@@ -545,7 +545,7 @@ $thisPage = "policy"; ?>
                 </p>
             </div>
         </div>
-    </div>
+    </section>
     <?php require_once('footer-menu-homepage.php'); ?>
 </main>
 

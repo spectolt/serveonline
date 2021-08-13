@@ -8,6 +8,22 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
 ?>
 
 <?php require_once('header.php'); ?>
+<div class="warning-popup-container warning-popup-container--login">
+    <div class="warning-popup">
+        <div class="warning-popup__header">
+            <h4>Tel. numerio patvirtinimas</h4>
+            <!-- <button class="warning-popup__close"> -->
+        </div>
+        <div class="warning-popup__content">
+            <p>Jums SMS žinute išsiųstas patvirtinimo kodas, prašome suvesti jį čia</p>
+            <div class="code-inputs-container">
+                <?php for ($y = 0; $y < 4; $y++) { ?>
+                    <input type="number" max="9" length="1" class="code-input">
+                <?php } ?>
+            </div>
+        </div>
+    </div>
+</div>
 <main class="site-main container">
     <section class="login">
         <div class="login__blocks">
@@ -43,7 +59,12 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                         <input type="tel" name="phone" placeholder="+370 XXXXXXXX" />
                     </div>
                     <div class="input-wrapper input-wrapper--half input-wrapper--city">
-                        <input type="text" name="city" placeholder="Miestas" />
+                        <!-- <input type="text" name="city" placeholder="Miestas" /> -->
+                        <select id="city" data-placeholder="Miestas">
+                            <option></option>
+                            <option>Vilnius</option>
+                            <option>Kaunas</option>
+                        </select>
                     </div>
                     <div class="input-wrapper input-wrapper--half input-wrapper--lock">
                         <input type="password" name="password" placeholder="Slaptažodis" />

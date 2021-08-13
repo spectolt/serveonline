@@ -40,6 +40,17 @@ body {
     margin-top: 63px;
     height: calc(100% - 63px);
   }
+
+  @include breakpoint(xs) {
+    margin-top: 60px;
+    height: calc(100% - 60px);
+  }
+}
+
+#page {
+  @include breakpoint(xs) {
+    height: 100%;
+  }
 }
 
 main.container,
@@ -188,6 +199,10 @@ footer.container {
 
       @include breakpoint(xs) {
         font-size: 0.875rem;
+
+        &:last-of-type {
+          margin-right: 0;
+        }
       }
 
       &:nth-last-child(n + 5),
