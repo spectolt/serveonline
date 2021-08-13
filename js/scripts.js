@@ -2912,7 +2912,7 @@ function onDocumentReady(callback) {
     $(".about-us .background")
       .not(".professionals .background")
       .removeClass("parallax__layer parallax__layer--deeper")
-      .css({ top: 0, height: "100%" });
+      .css({ top: 0});
     $(".about-us").children().removeClass("parallax__group");
     $(".opportunities__photo").removeClass(
       "parallax__layer parallax__layer--back"
