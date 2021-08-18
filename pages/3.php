@@ -651,7 +651,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                     <li>Kliento kortelė</li>
                     <li>SMS priminimai</li>
                     <li>Duomenų kaupimas</li>
-                    <li>Valdymo integracijos</li>
+                    <li>Integruotas valdymas</li>
                     <li>Medicinos įstaigoms</li>
                 </ul>
             </div>
