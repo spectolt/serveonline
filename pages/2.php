@@ -21,6 +21,9 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                     <input type="number" max="9" length="1" class="code-input">
                 <?php } ?>
             </div>
+            <div class="warning-popup__button-container">
+                <button class='orange'>Atsiųsti kodą pakartotinai</button>
+            </div>
         </div>
     </div>
 </div>

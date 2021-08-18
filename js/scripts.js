@@ -1425,7 +1425,7 @@ function onDocumentReady(callback) {
 
   $(document).on(
     "click",
-    ".warning-popup-container:not(.js_ignore_mark):not(.warning-popup-container--login)",
+    ".warning-popup-container:not(.js_ignore_mark)",
     function (e) {
       if (
         !$(e.target).closest(".warning-popup").length ||
