@@ -11550,9 +11550,14 @@ section.login .login__forgot {
   margin-bottom: 40px;
 }
 
-section.login .login__forgot a {
+section.login .login__forgot button {
   font-weight: 500;
   text-decoration: underline;
+  background-color: inherit;
+  font-family: inherit;
+  border-radius: inherit;
+  color: inherit;
+  padding: 0;
 }
 
 section.login .login__gender {

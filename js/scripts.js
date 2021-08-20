@@ -1431,7 +1431,7 @@ function onDocumentReady(callback) {
         !$(e.target).closest(".warning-popup").length ||
         $(e.target).hasClass("warning-popup__close")
       ) {
-        $(this).fadeOut(300);
+        $(this).addClass("hidden");
       }
     }
   );
@@ -3026,6 +3026,12 @@ function onDocumentReady(callback) {
       $(this).next("input").focus();
     }
   });
+
+  $(".login__forgot button").not(".js_ignore_mark").on("click", function() {
+    $(".warning-popup-container--forgot").removeClass('hidden')
+    console.log($(".input-wrapper--email input").val())
+    $(".input-wrapper--email-forgot input").val($(".input-wrapper--email input").val())
+  })
 
   moveAction();
   moveOrder();

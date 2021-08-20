@@ -27,25 +27,42 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
         </div>
     </div>
 </div>
+<div class="warning-popup-container warning-popup-container--login warning-popup-container--forgot hidden">
+    <div class="warning-popup">
+        <div class="warning-popup__header">
+            <h4>Slaptažodžio atkūrimas</h4>
+            <button class="warning-popup__close">
+        </div>
+        <div class="warning-popup__content">
+            <p>Įveskite savo el. pašto adresą</p>
+            <div class="input-wrapper input-wrapper--envelope input-wrapper--email-forgot">
+                <input type="email" name="email" placeholder="El. paštas" />
+            </div>
+            <div class="warning-popup__button-container">
+                <button class='orange'>Atkurti slaptažodį</button>
+            </div>
+        </div>
+    </div>
+</div>
 <main class="site-main container">
     <section class="login">
         <div class="login__blocks">
             <div class="login__block">
                 <h2 class="title">Prisijungti</h2>
                 <form class="login__form">
-                    <div class="input-wrapper input-wrapper--envelope">
+                    <div class="input-wrapper input-wrapper--envelope input-wrapper--email">
                         <input type="email" name="email" placeholder="El. paštas" />
                     </div>
                     <div class="input-wrapper input-wrapper--eye">
                         <input type="password" name="password" placeholder="Slaptažodis" />
                     </div>
                     <div class="input-wrapper login__forgot">
-                        <a href="#" class="">Pamiršai slaptažodį?</a>
+                        <button type="button" class="">Pamiršai slaptažodį?</button>
                     </div>
 
                     <div class="login__button-container">
-                        <button class="button orange login__button--half login__button--submit">Prisijungti</button>
-                        <button class="button blue login__button--half login__button--fb">Prisijungti per <div class="login__button-fb"></div></button>
+                        <button type="submit" class="button orange login__button--half login__button--submit">Prisijungti</button>
+                        <button type="button" class="button blue login__button--half login__button--fb">Prisijungti per <div class="login__button-fb"></div></button>
                     </div>
                 </form>
             </div>

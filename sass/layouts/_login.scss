@@ -74,9 +74,14 @@ section {
         text-align: right;
         margin-bottom: 40px;
 
-        a {
+        button {
           font-weight: 500;
           text-decoration: underline;
+          background-color: inherit;
+          font-family: inherit;
+          border-radius: inherit;
+          color:inherit;
+          padding: 0;
         }
       }
 
