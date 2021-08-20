@@ -48,7 +48,9 @@ if ($("main.hasUiAutocomplete").length > 0) {
         var wrapper = $(".specialist .ui-autocomplete-wrapper");
         var wrapperHeight =
           $(window).height() - wrapper[0].getBoundingClientRect().top;
-        $(wrapper).css("max-height", wrapperHeight);
+        $(wrapper).css({maxHeight: wrapperHeight, height: wrapperHeight});
+
+        $(".specialist__calendar-container").addClass("overlay")
 
         if ($(".product__chosen").is(":visible")) {
           $(".specialist .ui-autocomplete").css("top", "0");
