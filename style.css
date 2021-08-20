@@ -22114,6 +22114,7 @@ section.product .product__block--company .slick-track {
 
 .specialist .product__search .ui-autocomplete .ui-autocomplete-wrapper {
   max-height: 60vh;
+  min-height: 250px;
 }
 
 .specialist .product__search .ui-autocomplete .autocomplete-product:hover {
