@@ -27406,4 +27406,56 @@ section.product .product__block--company .slick-track {
     float: right;
   }
 }
+
+.err {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (max-width: 700px) {
+  .err {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 20px;
+  }
+}
+
+.err__content {
+  -ms-flex-preferred-size: calc(50% - 40px);
+      flex-basis: calc(50% - 40px);
+}
+
+@media (max-width: 700px) {
+  .err__content {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+}
+
+.err__image {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  width: 100%;
+}
+
+.err h1 {
+  font-size: 8rem;
+  margin-top: 0;
+}
+
+@media (max-width: 700px) {
+  .err h1 {
+    font-size: 5rem;
+  }
+}
 /*# sourceMappingURL=style.css.map */
