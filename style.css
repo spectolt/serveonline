@@ -27411,7 +27411,7 @@ section.product .product__block--company .slick-track {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 100%;
+  min-height: 100%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -27427,6 +27427,7 @@ section.product .product__block--company .slick-track {
         -ms-flex-direction: column;
             flex-direction: column;
     padding: 20px;
+    min-height: initial;
   }
 }
 
@@ -27439,6 +27440,7 @@ section.product .product__block--company .slick-track {
   .err__content {
     text-align: center;
     margin-bottom: 30px;
+    margin-top: 30px;
   }
 }
 
