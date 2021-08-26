@@ -39,7 +39,7 @@ $thisPage = "contacts"; ?>
 
                     <h2>Darbo laikas</h2>
                     <p class="days">Darbo dienos: I - V</p>
-                    <p class="hours">Darbo valandos: 08:00 - 17:00</p>
+                    <p class="hours">Darbo valandos: 08:00 - 20:00</p>
                     <img alt="" src="../img/illustrations/home-services.svg" class="ct-image">
                 </div>
             </div>

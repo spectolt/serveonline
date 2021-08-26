@@ -26,8 +26,11 @@ $thisPage = "reservations"; ?>
                         <table class="controls__table profiles__table">
                             <thead>
                                 <tr>
-                                <th class="bottom-arrow top-arrow">
-                                        Data
+                                    <th class="bottom-arrow top-arrow">
+                                        Registracijos data
+                                    </th>
+                                    <th class="bottom-arrow top-arrow">
+                                        Užsakymo data
                                     </th>
                                     <th class="bottom-arrow top-arrow">
                                         Laikas nuo
@@ -77,7 +80,8 @@ $thisPage = "reservations"; ?>
                             <tbody>
                                 <?php for ($y = 0; $y < 15; $y++) { ?>
                                     <tr tabindex="0">
-                                    <td>2020 02 20</td>
+                                        <td>2020 02 20</td>
+                                        <td>2020 02 20</td>
                                         <td>12:20</td>
                                         <td>12:20</td>
                                         <td>Patvirtintas</td>
@@ -96,6 +100,7 @@ $thisPage = "reservations"; ?>
                             </tbody>
                             <tfoot>
                                 <tr>
+                                    <td></td>
                                     <td></td>
                                     <td></td>
                                     <td></td>

@@ -15031,7 +15031,7 @@ section.product .product__block--company .slick-track {
 
 .reservations .controls__table th:nth-of-type(2),
 .reservations .controls__table td:nth-of-type(2) {
-  width: 58px;
+  width: 89px;
 }
 
 .reservations .controls__table th:nth-of-type(3),
@@ -15041,51 +15041,56 @@ section.product .product__block--company .slick-track {
 
 .reservations .controls__table th:nth-of-type(4),
 .reservations .controls__table td:nth-of-type(4) {
-  width: 91px;
+  width: 58px;
 }
 
 .reservations .controls__table th:nth-of-type(5),
 .reservations .controls__table td:nth-of-type(5) {
-  width: 74px;
+  width: 91px;
 }
 
 .reservations .controls__table th:nth-of-type(6),
 .reservations .controls__table td:nth-of-type(6) {
-  width: 113px;
+  width: 74px;
 }
 
 .reservations .controls__table th:nth-of-type(7),
 .reservations .controls__table td:nth-of-type(7) {
-  width: 114px;
+  width: 113px;
 }
 
 .reservations .controls__table th:nth-of-type(8),
 .reservations .controls__table td:nth-of-type(8) {
-  width: 147px;
+  width: 114px;
 }
 
 .reservations .controls__table th:nth-of-type(9),
 .reservations .controls__table td:nth-of-type(9) {
-  width: 140px;
+  width: 147px;
 }
 
 .reservations .controls__table th:nth-of-type(10),
 .reservations .controls__table td:nth-of-type(10) {
-  width: 85px;
+  width: 140px;
 }
 
 .reservations .controls__table th:nth-of-type(11),
 .reservations .controls__table td:nth-of-type(11) {
-  width: 247px;
+  width: 85px;
 }
 
 .reservations .controls__table th:nth-of-type(12),
 .reservations .controls__table td:nth-of-type(12) {
-  width: 103px;
+  width: 247px;
 }
 
 .reservations .controls__table th:nth-of-type(13),
 .reservations .controls__table td:nth-of-type(13) {
+  width: 103px;
+}
+
+.reservations .controls__table th:nth-of-type(14),
+.reservations .controls__table td:nth-of-type(14) {
   width: 65px;
 }
 
@@ -15102,11 +15107,11 @@ section.product .product__block--company .slick-track {
   text-align: center;
 }
 
-.reservations .controls__table td:nth-of-type(2), .reservations .controls__table td:nth-of-type(3) {
+.reservations .controls__table td:nth-of-type(3), .reservations .controls__table td:nth-of-type(4) {
   font-size: 1rem;
 }
 
-.reservations .controls__table td:nth-of-type(12) {
+.reservations .controls__table td:nth-of-type(13) {
   text-align: right;
 }
 

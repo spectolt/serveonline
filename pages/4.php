@@ -157,7 +157,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                                         <div class="product-action__price">45€<strike>60€</strike></div>
                                         <div class="product-action__periodicity">6 sav.</div>
                                     </div>
-                                    <button class="button cyan transparent small product-action__order">Rezervuok</button>
+                                    <button class="button cyan transparent small product-action__order">Užsakyti</button>
                                 </div>
                             <?php } ?>
                         </div>
