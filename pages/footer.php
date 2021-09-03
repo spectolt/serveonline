@@ -10,6 +10,6 @@
 <script src="../js/slick.min.js"></script>
 <script src="../js/autocomplete-header.js"></script>
 <script src="../js/autocomplete-specialist.js"></script>
-<script type="text/javascript" src="../js/scripts.js?v=1.0" charset="utf-8"></script>
+<script async type="text/javascript" src="../js/scripts.js?v=1.0" charset="utf-8"></script>
 </body>
 </html>

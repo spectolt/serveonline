@@ -667,7 +667,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                         </ul>
                     </div>
                     <div class="vert-slider__slide-image">
-                        <img src="../img/priimamasis@2x.jpg">
+                        <img src="../img/3-1.jpg">
                     </div>
                 </div>
                 <div class="vert-slider__slide">
@@ -681,7 +681,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                         </ul>
                     </div>
                     <div class="vert-slider__slide-image">
-                        <img src="../img/prof-1.jpg">
+                        <img src="../img/3-2.jpg">
                     </div>
                 </div>
                 <div class="vert-slider__slide">
@@ -694,7 +694,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                         </ul>
                     </div>
                     <div class="vert-slider__slide-image">
-                        <img src="../img/prof-2.png">
+                        <img src="../img/3-3.jpg">
                     </div>
                 </div>
                 <div class="vert-slider__slide">
@@ -707,7 +707,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                         </ul>
                     </div>
                     <div class="vert-slider__slide-image">
-                        <img src="../img/prof-4.jpg">
+                        <img src="../img/3-4.jpg">
                     </div>
                 </div>
                 <div class="vert-slider__slide">
@@ -723,7 +723,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                         </ul>
                     </div>
                     <div class="vert-slider__slide-image">
-                        <img src="../img/prof-3.jpg">
+                        <img src="../img/3-5.jpg">
                     </div>
                 </div>
                 <div class="vert-slider__slide">
@@ -736,7 +736,7 @@ $colors = array('#fec994', '#cce2ff', '#fed9c9', '#ffefd8', '#e2c4ae', '#c1e1d2'
                         </ul>
                     </div>
                     <div class="vert-slider__slide-image">
-                        <img src="../img/prof-5.jpg">
+                        <img src="../img/3-6.jpg">
                     </div>
                 </div>
             </div>

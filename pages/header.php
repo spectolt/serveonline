@@ -43,6 +43,12 @@
                     <option>Pogrupis</option>
                     <option>Paslaugos pavadinimas</option>
                     <option>Paslaugos detalizavimas</option>
+                <?php } else if ($thisPage == "reservations") { ?>
+                    <option></option>
+                    <option>Paslaugų gavėjas</option>
+                    <option>Specialistas</option>
+                    <option>Įmonių grupė</option>
+                    <option>Įmonė / Filialas</option>
                 <?php } ?>
                 </select>
                 </div>
