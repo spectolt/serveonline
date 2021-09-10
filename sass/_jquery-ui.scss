@@ -379,7 +379,7 @@ button.ui-button::-moz-focus-inner {
   }
 
   &__time {
-    font-family: "Sen", sans-serif;
+    font-family: 'hero-new', sans-serif;
     font-size: 1.5rem;
     font-weight: 800;
     margin: 0;
@@ -517,7 +517,7 @@ button.ui-button::-moz-focus-inner {
 .ui-datepicker .ui-datepicker-header {
   position: relative;
   padding: 0;
-  font-family: "Sen", sans-serif;
+  font-family: 'hero-new', sans-serif;
 }
 
 .ui-datepicker .ui-datepicker-prev,
@@ -649,7 +649,7 @@ button.ui-button::-moz-focus-inner {
   overflow: visible;
   border: 1px solid $darkblue;
   background: $darkblue;
-  font-family: "Sen", sans-serif;
+  font-family: 'hero-new', sans-serif;
   color: $white;
   margin-right: 20px;
 }

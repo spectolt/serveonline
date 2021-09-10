@@ -71,7 +71,7 @@
         font-weight: 600;
         margin: 0;
         text-align: left;
-        font-family: "Sen", sans-serif;
+        font-family: 'hero-new', sans-serif;
 
         @include breakpoint(sm) {
           font-size: 1rem;
@@ -411,5 +411,5 @@
 
 .select2-container--warning .select2-results__option--selectable {
   font-weight: bold;
-  font-family: "Sen", sans-serif;
+  font-family: 'hero-new', sans-serif;
 }

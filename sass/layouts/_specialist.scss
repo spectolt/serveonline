@@ -706,7 +706,7 @@
         }
         h4 {
           font-size: 0.875rem;
-          font-family: "Sen", sans-serif;
+          font-family: 'hero-new', sans-serif;
 
           @include breakpoint(sm) {
             padding-left: 0;
@@ -897,7 +897,7 @@
       .product__text {
         text-align: justify;
         color: #aeb1bd;
-        font-family: "Sen", sans-serif;
+        font-family: 'hero-new', sans-serif;
         font-size: 0.875rem;
         margin: 0;
         line-height: 1;
@@ -922,7 +922,7 @@
         margin-bottom: 10px;
         margin-top: 40px;
         font-size: 1.125rem;
-        font-family: "Sen", sans-serif;
+        font-family: 'hero-new', sans-serif;
         font-weight: 400;
 
         @include breakpoint(sm) {
@@ -988,7 +988,7 @@
 
         .autocomplete-product-checkbox,
         .autocomplete-product-title--main {
-          font-family: "Sen", sans-serif;
+          font-family: 'hero-new', sans-serif;
 
           @include breakpoint(sm) {
             font-size: 1rem;
@@ -1078,7 +1078,7 @@
     .product__choose-marked {
       width: 100%;
       border-radius: 0px 0px 5px 5px;
-      font-family: "Sen", sans-serif;
+      font-family: 'hero-new', sans-serif;
       font-weight: 700;
       font-size: 1.5rem;
 
@@ -1321,7 +1321,7 @@
     padding: 30px 0 0;
   }
   h2.title {
-    font-family: "Sen", sans-serif;
+    font-family: 'hero-new', sans-serif;
     font-weight: 400;
     font-size: 1.875rem;
     margin: 0 0 40px 40px;

@@ -1,0 +1,108 @@
+.homepage {
+  &__section {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .circle {
+    position: fixed;
+    border-radius: 50%;
+
+    &--1 {
+      left: -13px;
+      bottom: -200px;
+      width: 544px;
+      height: 544px;
+      background-color: #fcf2d7;
+    }
+
+    &--2 {
+      width: 718px;
+      height: 718px;
+      top: 50%;
+      transform: translate(50%, -50%);
+      background-color: #eaedf8;
+      right: 0;
+    }
+  }
+}
+
+.hero-section {
+  background: #f7f6f7;
+  background: radial-gradient(circle at 70% bottom, #fbe3e5 10%, #f7f6f7 35%);
+  padding: 200px 40px 140px;
+
+  &__content {
+    max-width: 1520px;
+    margin: 0 auto;
+    position: relative;
+
+    h1 {
+      margin-bottom: 40px;
+      margin-top: 0;
+      font-weight: 800;
+    }
+
+    h2 {
+      color: $orange;
+      font-size: 1.625rem;
+      font-weight: 600;
+    }
+  }
+
+  &__areas {
+    // height: 300px;
+    width: 100%;
+    border: 1px solid #dfdfdf;
+    border-radius: 20px;
+    padding: 50px;
+    margin-top: 130px;
+    display: grid; /* 1 */
+    grid-template-columns: repeat(auto-fill, 260px); /* 2 */
+    justify-content: space-between; /* 4 */
+    gap: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+
+    h4 {
+      margin: 0;
+      font-weight: 800;
+      margin-left: 15px;
+      flex: 1;
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+
+      &:hover > .hero-section__areas-icon {
+        transform: scale(1.1);
+        box-shadow: inset -1px -1px 1px rgba(0, 0, 0, 0.1),
+          inset 1px 1px 1px rgba(255, 255, 255, 0.8), -10px -10px 20px;
+      }
+    }
+
+    &-icon {
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease-in-out;
+      box-shadow: inset -1px -1px 1px rgba(0, 0, 0, 0.1),
+        inset 1px 1px 1px rgba(255, 255, 255, 0.8);
+
+      img {
+        height: 45%;
+      }
+    }
+  }
+
+  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    &__areas {
+      -webkit-backdrop-filter: blur(30px);
+      backdrop-filter: blur(30px);
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+  }
+}

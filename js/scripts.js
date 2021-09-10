@@ -2324,7 +2324,7 @@ function onDocumentReady(callback) {
       {
         font: {
           size: 20,
-          family: "Sen",
+          family: 'hero-new',
         },
         showarrow: false,
         text: "<b>260</b>",
@@ -2335,7 +2335,7 @@ function onDocumentReady(callback) {
       {
         font: {
           size: 20,
-          family: "Sen",
+          family: 'hero-new',
         },
         showarrow: false,
         text: "<b>260</b>",
@@ -2346,7 +2346,7 @@ function onDocumentReady(callback) {
       {
         font: {
           size: 20,
-          family: "Sen",
+          family: 'hero-new',
         },
         showarrow: false,
         text: "<b>260</b>",
@@ -2450,7 +2450,7 @@ function onDocumentReady(callback) {
           {
             font: {
               size: 20,
-              family: "Sen",
+              family: 'hero-new',
             },
             showarrow: false,
             text: "<b>260</b>",
@@ -2461,7 +2461,7 @@ function onDocumentReady(callback) {
           {
             font: {
               size: 20,
-              family: "Sen",
+              family: 'hero-new',
             },
             showarrow: false,
             text: "<b>260</b>",
@@ -2472,7 +2472,7 @@ function onDocumentReady(callback) {
           {
             font: {
               size: 20,
-              family: "Sen",
+              family: 'hero-new',
             },
             showarrow: false,
             text: "<b>260</b>",
