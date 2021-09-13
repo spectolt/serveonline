@@ -16,7 +16,7 @@ $thisPage = "messages-sent"; ?>
                 <div class="controls__table-container-wrapper">
                     <button class="expand-button"></button>
                     <div class="controls__table-container">
-                        <table class="controls__table messages__table">
+                        <table class="controls__table messages-settings__table">
                             <thead>
                                 <tr>
                                     <th></th>

@@ -13187,6 +13187,7 @@ section.product .product__block--company .slick-track {
   height: 100%;
   font-family: "hero-new", sans-serif;
   padding: 10px;
+  word-break: keep-all;
 }
 
 @media (max-width: 600px) {
@@ -13208,10 +13209,17 @@ section.product .product__block--company .slick-track {
   padding: 5px;
   vertical-align: top;
   height: 100%;
+  border-right: 1px solid #e8e8e8;
+  border-bottom: 1px solid #e8e8e8;
 }
 
 .controls__table td:first-of-type {
   padding-left: 10px;
+  border-left: none;
+}
+
+.controls__table td:last-of-type {
+  border-right: none;
 }
 
 .controls__table td button {
@@ -13560,12 +13568,16 @@ section.product .product__block--company .slick-track {
 }
 
 .areas__table tbody tr:hover, .areas__table tbody tr:focus {
-  background-color: inherit;
+  background-color: inherit !important;
 }
 
 .areas__table tr:first-child th:last-child {
   border-right: none;
   border-top-right-radius: 0;
+}
+
+.areas__table td {
+  border: none;
 }
 
 .areas__table th:first-child,
@@ -13923,16 +13935,17 @@ section.product .product__block--company .slick-track {
   border-collapse: collapse;
 }
 
-.services__table tr {
+.services__table tbody tr {
   height: auto;
 }
 
-.services__table tr:hover, .services__table tr:focus {
-  background-color: inherit;
+.services__table tbody tr:hover, .services__table tbody tr:focus {
+  background-color: inherit !important;
 }
 
 .services__table td {
   height: auto;
+  border: none;
 }
 
 .services__table:first-of-type {
@@ -14054,11 +14067,6 @@ section.product .product__block--company .slick-track {
   background-color: #ff9954;
 }
 
-.messages .controls__table-container {
-  border-left: none;
-  border-right: none;
-}
-
 .messages__table thead th::after {
   bottom: 10px;
 }
@@ -14089,15 +14097,6 @@ section.product .product__block--company .slick-track {
 
 .messages__table td {
   padding: 10px;
-  border: 1px solid #e8e8e8;
-}
-
-.messages__table tr td:first-child {
-  border-left: none;
-}
-
-.messages__table tr td:last-child {
-  border-right: none;
 }
 
 .messages__table tbody tr:nth-of-type(6n + 4),
@@ -14130,7 +14129,7 @@ section.product .product__block--company .slick-track {
 
 .messages--settings .controls__table th,
 .messages--settings .controls__table td {
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 400;
   vertical-align: middle;
   padding-left: 10px;
@@ -14155,27 +14154,32 @@ section.product .product__block--company .slick-track {
 
 .messages--settings .controls__table th:nth-of-type(4),
 .messages--settings .controls__table td:nth-of-type(4) {
-  width: 492px;
+  width: 110px;
 }
 
 .messages--settings .controls__table th:nth-of-type(5),
 .messages--settings .controls__table td:nth-of-type(5) {
-  width: 70px;
-  text-align: center;
+  width: 492px;
 }
 
 .messages--settings .controls__table th:nth-of-type(6),
 .messages--settings .controls__table td:nth-of-type(6) {
-  width: 76px;
+  width: 70px;
+  text-align: center;
 }
 
 .messages--settings .controls__table th:nth-of-type(7),
 .messages--settings .controls__table td:nth-of-type(7) {
-  width: 82px;
+  width: 76px;
 }
 
 .messages--settings .controls__table th:nth-of-type(8),
 .messages--settings .controls__table td:nth-of-type(8) {
+  width: 82px;
+}
+
+.messages--settings .controls__table th:nth-of-type(9),
+.messages--settings .controls__table td:nth-of-type(9) {
   width: 137px;
 }
 
@@ -14223,101 +14227,109 @@ section.product .product__block--company .slick-track {
   }
 }
 
-.messages-settings .messages__table td button {
+.messages-settings__table td button {
   margin: 0;
 }
 
-.messages-settings .messages__table thead th::after,
-.messages-settings .messages__table td::after,
-.messages-settings .messages__table td::before {
+.messages-settings__table thead th::after,
+.messages-settings__table td::after,
+.messages-settings__table td::before {
   bottom: 10px;
 }
 
-.messages-settings .messages__table th,
-.messages-settings .messages__table td,
-.messages-settings .messages__table p {
+.messages-settings__table th,
+.messages-settings__table td,
+.messages-settings__table p {
   font-size: 0.75rem;
 }
 
-.messages-settings .messages__table th {
+.messages-settings__table th {
   vertical-align: middle;
   padding: 10px 6px;
   font-weight: 400;
 }
 
-.messages-settings .messages__table td {
+.messages-settings__table tbody tr:nth-of-type(2n) {
+  background-color: #f4f4f6;
+}
+
+.messages-settings__table td {
   vertical-align: middle;
   padding: 8px;
 }
 
-.messages-settings .messages__table td:last-of-type {
+.messages-settings__table td:last-of-type {
   width: 123px;
 }
 
-.messages-settings .messages__table td .checkbox label:before {
+.messages-settings__table td .checkbox label:before {
   top: -7px;
   left: 3px;
 }
 
-.messages-settings .messages__table td .checkbox label::after {
+.messages-settings__table td .checkbox label::after {
   top: -3px;
   left: 6px;
 }
 
-.messages-settings .messages__table th:first-of-type,
-.messages-settings .messages__table td:first-of-type {
+.messages-settings__table th:first-of-type,
+.messages-settings__table td:first-of-type {
   width: 40px;
 }
 
-.messages-settings .messages__table th:nth-of-type(2),
-.messages-settings .messages__table td:nth-of-type(2) {
+.messages-settings__table th:nth-of-type(2),
+.messages-settings__table td:nth-of-type(2) {
   width: 78px;
 }
 
-.messages-settings .messages__table th:nth-of-type(3),
-.messages-settings .messages__table td:nth-of-type(3) {
+.messages-settings__table th:nth-of-type(3),
+.messages-settings__table td:nth-of-type(3) {
   width: 106px;
 }
 
-.messages-settings .messages__table th:nth-of-type(4),
-.messages-settings .messages__table td:nth-of-type(4) {
+.messages-settings__table th:nth-of-type(4),
+.messages-settings__table td:nth-of-type(4) {
   width: 160px;
 }
 
-.messages-settings .messages__table th:nth-of-type(5),
-.messages-settings .messages__table td:nth-of-type(5) {
+.messages-settings__table th:nth-of-type(5),
+.messages-settings__table td:nth-of-type(5) {
   width: 112px;
   text-align: center;
 }
 
-.messages-settings .messages__table th:nth-of-type(6),
-.messages-settings .messages__table td:nth-of-type(6) {
+.messages-settings__table th:nth-of-type(6),
+.messages-settings__table td:nth-of-type(6) {
   width: 367px;
 }
 
-.messages-settings .messages__table th:nth-of-type(7),
-.messages-settings .messages__table td:nth-of-type(7) {
+.messages-settings__table th:nth-of-type(7),
+.messages-settings__table td:nth-of-type(7) {
   width: 77px;
   text-align: center;
 }
 
-.messages-settings .messages__table th:nth-of-type(8),
-.messages-settings .messages__table td:nth-of-type(8) {
+.messages-settings__table th:nth-of-type(8),
+.messages-settings__table td:nth-of-type(8) {
   width: 74px;
 }
 
-.messages-settings .messages__table th:nth-of-type(9),
-.messages-settings .messages__table td:nth-of-type(9) {
+.messages-settings__table th:nth-of-type(9),
+.messages-settings__table td:nth-of-type(9) {
   width: 86px;
 }
 
-.messages-settings .messages__table th:last-of-type,
-.messages-settings .messages__table td:last-of-type {
+.messages-settings__table th:last-of-type,
+.messages-settings__table td:last-of-type {
   width: 131px;
 }
 
 .profiles__table th .checkbox input[type="checkbox"]:checked ~ label:before {
   background-color: rgba(255, 255, 255, 0.49);
+}
+
+.profiles__table thead tr {
+  height: 30px;
 }
 
 .profiles__table th:first-of-type,
@@ -14463,8 +14475,6 @@ section.product .product__block--company .slick-track {
 }
 
 .profiles__table tbody td {
-  border-left: 1px solid #e8e8e8;
-  border-top: 1px solid #e8e8e8;
   vertical-align: middle;
   padding: 0 8px;
   font-size: 0.75rem;

@@ -25,10 +25,34 @@ $thisPage = "messages"; ?>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php for ($y = 0; $y < 10; $y++) { ?>
+                                <?php for ($y = 0; $y < 3; $y++) { ?>
                                     <tr>
                                         <td>12345678</td>
                                         <td>Lietuvių</td>
+                                        <td class="messages__text">
+                                            <p>Aromatherapy Associates eterinių aliejų masažas, tai
+                                                specializuotas masažas, sudarytas iš Rytų ir Vakarų tradicijų,
+                                                dėmesį skiriant nugarai, galvai, kaklui, pečiams ir pėdoms,
+                                                praturtintas grynų eterinių aliejų kvapais ir naudingosiomis
+                                                savybėmis.</p>
+                                            <button class="controls__edit"></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>12345678</td>
+                                        <td>Anglų</td>
+                                        <td class="messages__text">
+                                            <p>Aromatherapy Associates eterinių aliejų masažas, tai
+                                                specializuotas masažas, sudarytas iš Rytų ir Vakarų tradicijų,
+                                                dėmesį skiriant nugarai, galvai, kaklui, pečiams ir pėdoms,
+                                                praturtintas grynų eterinių aliejų kvapais ir naudingosiomis
+                                                savybėmis.</p>
+                                            <button class="controls__edit"></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>12345678</td>
+                                        <td>Rusų</td>
                                         <td class="messages__text">
                                             <p>Aromatherapy Associates eterinių aliejų masažas, tai
                                                 specializuotas masažas, sudarytas iš Rytų ir Vakarų tradicijų,

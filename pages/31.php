@@ -15,7 +15,7 @@ $thisPage = "messages-inbox"; ?>
                 <div class="controls__table-container-wrapper">
                     <button class="expand-button"></button>
                     <div class="controls__table-container">
-                        <table class="controls__table messages__table">
+                        <table class="controls__table messages-settings__table">
                             <thead>
                                 <tr>
                                     <th></th>
@@ -27,7 +27,7 @@ $thisPage = "messages-inbox"; ?>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php for ($y = 0; $y < 4; $y++) { ?>
+                                <?php for ($y = 0; $y < 10; $y++) { ?>
                                     <tr>
                                         <td>
                                             <div class="checkbox">
