@@ -16854,6 +16854,12 @@ section.product .product__block--company .slick-track {
   padding: 200px 40px 140px;
 }
 
+@media (max-width: 700px) {
+  .hero-section {
+    padding: 100px 20px 70px;
+  }
+}
+
 .hero-section__content {
   max-width: 1520px;
   margin: 0 auto;
@@ -16872,17 +16878,23 @@ section.product .product__block--company .slick-track {
   font-weight: 600;
 }
 
+@media (max-width: 700px) {
+  .hero-section__content h2 {
+    font-size: 1.25rem;
+  }
+}
+
 .hero-section__areas {
   width: 100%;
   border: 1px solid #dfdfdf;
   border-radius: 20px;
-  padding: 50px;
+  padding: 40px;
   margin-top: 130px;
   display: -ms-grid;
   display: grid;
   /* 1 */
-  -ms-grid-columns: (260px)[auto-fill];
-      grid-template-columns: repeat(auto-fill, 260px);
+  -ms-grid-columns: (minmax(250px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   /* 2 */
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -16892,6 +16904,16 @@ section.product .product__block--company .slick-track {
   background-color: rgba(255, 255, 255, 0.8);
 }
 
+@media (max-width: 700px) {
+  .hero-section__areas {
+    margin-top: 65px;
+    padding: 20px;
+    -ms-grid-columns: (minmax(180px, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
+  }
+}
+
 .hero-section__areas h4 {
   margin: 0;
   font-weight: 800;
@@ -16899,6 +16921,12 @@ section.product .product__block--company .slick-track {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+}
+
+@media (max-width: 700px) {
+  .hero-section__areas h4 {
+    font-size: 0.75rem;
+  }
 }
 
 .hero-section__areas-item {
@@ -16936,6 +16964,13 @@ section.product .product__block--company .slick-track {
   transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
   -webkit-box-shadow: inset -1px -1px 1px rgba(0, 0, 0, 0.1), inset 1px 1px 1px rgba(255, 255, 255, 0.8);
           box-shadow: inset -1px -1px 1px rgba(0, 0, 0, 0.1), inset 1px 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 700px) {
+  .hero-section__areas-icon {
+    width: 50px;
+    height: 50px;
+  }
 }
 
 .hero-section__areas-icon img {
