@@ -441,14 +441,20 @@
                 <div class="site-aside__item <?php if ($thisPage == "messages") echo "site-aside__item--active site-aside__item--open"; ?>">
                     <a href="#">Pranešimai</a>
                     <div class="site-aside__filters <?php if ($thisPage != "messages") echo "hidden"; ?>">
-                        <p>Sukūrimo data</p>
-                        <div class="site-aside__datepicker-container">
+                        <p>Kalba</p>
+                        <!-- <div class="site-aside__datepicker-container">
                             <input class="site-aside__datepicker" placeholder="Nuo">
                         </div>
                         <p>Sukūrimo data</p>
                         <div class="site-aside__datepicker-container">
                             <input class="site-aside__datepicker" placeholder="Iki">
-                        </div>
+                        </div> -->
+                        <select class="js-dropdown-placeholder">
+                            <option selected>Visi</option>
+                            <option>Lietuvių</option>
+                            <option>Anglų</option>
+                            <option>Rusų</option>
+                        </select>
                     </div>
                 </div>
                 <div class="site-aside__item <?php if ($thisPage == "services") echo "site-aside__item--active site-aside__item--open"; ?>">

@@ -248,6 +248,7 @@
       position: relative;
       width: 100%;
       display: table;
+      height: 60px;
 
       // th[colspan] {
       //   cursor: initial;
@@ -258,8 +259,8 @@
       border-left: 1px solid $washedblue;
       background-color: $darkblue;
       color: $white;
-      height: 60px;
-      font-family: 'hero-new', sans-serif;
+      height: 100%;
+      font-family: "hero-new", sans-serif;
       padding: 10px;
       // cursor: col-resize;
 
@@ -268,7 +269,8 @@
       }
     }
 
-    th[colspan], th[rowspan] {
+    th[colspan],
+    th[rowspan] {
       height: 100%;
     }
 
@@ -630,7 +632,8 @@
     tbody tr {
       height: 35px;
 
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         background-color: inherit;
       }
     }
@@ -952,7 +955,8 @@
     tr {
       height: auto;
 
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         background-color: inherit;
       }
     }
@@ -1083,9 +1087,9 @@
     border-right: none;
   }
   &__table {
-    thead{
-      th{
-        &::after{
+    thead {
+      th {
+        &::after {
           bottom: 10px;
         }
       }
@@ -1100,12 +1104,12 @@
         text-align: center;
         vertical-align: middle;
       }
-      &:nth-of-type(2){
-        width: 980px;
-      }
-      &:last-of-type{
-        width: 149px;
+      &:nth-of-type(2) {
+        width: 129px;
         vertical-align: middle;
+      }
+      &:last-of-type {
+        width: 500px;
       }
     }
 
@@ -1123,7 +1127,9 @@
     }
 
     tbody {
-      tr:nth-of-type(2n) {
+      tr:nth-of-type(6n + 4),
+      tr:nth-of-type(6n + 5),
+      tr:nth-of-type(6n + 6) {
         background-color: $darkgray;
       }
     }
@@ -1143,15 +1149,15 @@
   }
 }
 
-.messages--settings{
-  .languages{
-    @include breakpoint(sm){
+.messages--settings {
+  .languages {
+    @include breakpoint(sm) {
       grid-column: span 2;
     }
   }
   .controls__table {
-    th{
-      &:after{
+    th {
+      &:after {
         bottom: 10px;
       }
     }
@@ -1171,7 +1177,6 @@
       &:nth-of-type(3) {
         width: 110px;
         text-align: center;
-
       }
       &:nth-of-type(4) {
         width: 492px;
@@ -1193,8 +1198,8 @@
         width: 104px;
       }
     }
-    .messages__text{
-      p{
+    .messages__text {
+      p {
         font-size: 0.875rem;
         width: auto;
       }
@@ -1219,11 +1224,11 @@
       }
     }
 
-    .controls__delete{
+    .controls__delete {
       margin-right: 5px;
     }
 
-    .controls__cancel{
+    .controls__cancel {
       margin-left: 0px;
     }
   }
@@ -1925,7 +1930,7 @@
   }
   .controls__table {
     th {
-      font-family: 'hero-new', sans-serif;
+      font-family: "hero-new", sans-serif;
       padding-top: 10px;
     }
 
@@ -2340,7 +2345,7 @@
       grid-template-columns: repeat(2, 1fr);
       grid-gap: 10px;
       margin-right: 0;
-      
+
       button {
         width: 100%;
         // text-align: center;

@@ -5778,14 +5778,14 @@ div.services-list.services-list--company-profile .services-list__blocks {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  font-size: 1.125rem;
-  margin-bottom: 30px;
+  font-size: 1rem;
+  margin-bottom: 20px;
   border: none;
 }
 
 @media (max-width: 600px) {
   .vert-slider__slide ul li {
-    font-size: 0.875rem;
+    font-size: 0.75rem;
     margin-bottom: 5px;
     padding: 0;
     -webkit-box-shadow: none;
@@ -5801,7 +5801,7 @@ div.services-list.services-list--company-profile .services-list__blocks {
   color: #ff9954;
   margin-right: 20px;
   line-height: 1.5;
-  font-size: 75%;
+  font-size: 0.75rem;
 }
 
 @media (max-width: 600px) {
@@ -11152,6 +11152,7 @@ footer.container {
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
   width: 100%;
+  z-index: 100;
 }
 
 @media (max-width: 991px) {
@@ -13176,14 +13177,15 @@ section.product .product__block--company .slick-track {
   position: relative;
   width: 100%;
   display: table;
+  height: 60px;
 }
 
 .controls__table th {
   border-left: 1px solid #454e78;
   background-color: #0F1D5B;
   color: #fff;
-  height: 60px;
-  font-family: 'hero-new', sans-serif;
+  height: 100%;
+  font-family: "hero-new", sans-serif;
   padding: 10px;
 }
 
@@ -13193,7 +13195,8 @@ section.product .product__block--company .slick-track {
   }
 }
 
-.controls__table th[colspan], .controls__table th[rowspan] {
+.controls__table th[colspan],
+.controls__table th[rowspan] {
   height: 100%;
 }
 
@@ -14075,13 +14078,13 @@ section.product .product__block--company .slick-track {
 
 .messages__table th:nth-of-type(2),
 .messages__table td:nth-of-type(2) {
-  width: 980px;
+  width: 129px;
+  vertical-align: middle;
 }
 
 .messages__table th:last-of-type,
 .messages__table td:last-of-type {
-  width: 149px;
-  vertical-align: middle;
+  width: 500px;
 }
 
 .messages__table td {
@@ -14097,7 +14100,9 @@ section.product .product__block--company .slick-track {
   border-right: none;
 }
 
-.messages__table tbody tr:nth-of-type(2n) {
+.messages__table tbody tr:nth-of-type(6n + 4),
+.messages__table tbody tr:nth-of-type(6n + 5),
+.messages__table tbody tr:nth-of-type(6n + 6) {
   background-color: #f4f4f6;
 }
 
@@ -15008,7 +15013,7 @@ section.product .product__block--company .slick-track {
 }
 
 .reservations .controls__table th {
-  font-family: 'hero-new', sans-serif;
+  font-family: "hero-new", sans-serif;
   padding-top: 10px;
 }
 
@@ -23597,11 +23602,17 @@ section.product .product__block--company .slick-track {
 
 .my-cart-container {
   z-index: 100;
-  display: none;
+  visibility: hidden;
 }
 
 .my-cart-container.visible {
-  display: block;
+  visibility: visible;
+}
+
+.my-cart-container.visible > .my-cart {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  visibility: visible;
 }
 
 .my-cart {
@@ -23613,6 +23624,23 @@ section.product .product__block--company .slick-track {
   right: 2px;
   padding: 45px 0 0;
   width: 865px;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: .3s;
+          transition-duration: .3s;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  visibility: hidden;
+  height: calc(100vh - 70px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 @media (max-width: 900px) {
@@ -23663,6 +23691,8 @@ section.product .product__block--company .slick-track {
   position: relative;
   top: 8px;
   margin-right: 40px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 
 @media (max-width: 700px) {
@@ -23709,6 +23739,7 @@ section.product .product__block--company .slick-track {
 
 .my-cart .user-profile__price {
   font-size: 1.5rem;
+  margin-top: auto;
 }
 
 @media (max-width: 700px) {
@@ -26098,7 +26129,7 @@ section.product .product__block--company .slick-track {
 @media (max-width: 700px) {
   .tools__content {
     width: 80%;
-    margin: 0 auto 30px;
+    margin: 0 auto 1px;
     padding: 20px;
   }
 }

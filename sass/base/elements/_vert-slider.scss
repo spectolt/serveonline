@@ -143,12 +143,12 @@
 
       li {
         display: flex;
-        font-size: 1.125rem;
-        margin-bottom: 30px;
+        font-size: 1rem;
+        margin-bottom: 20px;
         border: none;
 
         @include breakpoint(xs) {
-          font-size: 0.875rem;
+          font-size: 0.75rem;
           margin-bottom: 5px;
           padding: 0;
           box-shadow: none;
@@ -162,7 +162,7 @@
           color: $orange;
           margin-right: 20px;
           line-height: 1.5;
-          font-size: 75%;
+          font-size: 0.75rem;
 
           @include breakpoint(xs) {
             content: "●";

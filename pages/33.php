@@ -9,11 +9,8 @@ $thisPage = "messages"; ?>
                 <div class="controls__header">
                     <h1 class="title">Pranešimai</h1>
                     <div class="controls__top">
-                        <!-- <ul class="controls__languages">
-                        <li class="paragraph active"><a href="#">LT</a></li>
-                        <li class="paragraph"><a href="#">EN</a></li>
-                        <li class="paragraph"><a href="#">RU</a></li>
-                    </ul> -->
+                        <button class="controls__restore orange transparent small paragraph">Atstatyti</button>
+                        <button class="controls__save orange small paragraph">Saugoti</button>
                     </div>
                 </div>
                 <div class="controls__table-container-wrapper">
@@ -23,14 +20,15 @@ $thisPage = "messages"; ?>
                             <thead>
                                 <tr>
                                     <th class="top-arrow bottom-arrow">ID</th>
+                                    <th class="top-arrow bottom-arrow">Kalba</th>
                                     <th class="top-arrow bottom-arrow">Pranešimo tekstas</th>
-                                    <th class="top-arrow bottom-arrow">Pranešimo vieta</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php for ($y = 0; $y < 4; $y++) { ?>
+                                <?php for ($y = 0; $y < 10; $y++) { ?>
                                     <tr>
                                         <td>12345678</td>
+                                        <td>Lietuvių</td>
                                         <td class="messages__text">
                                             <p>Aromatherapy Associates eterinių aliejų masažas, tai
                                                 specializuotas masažas, sudarytas iš Rytų ir Vakarų tradicijų,
@@ -39,7 +37,6 @@ $thisPage = "messages"; ?>
                                                 savybėmis.</p>
                                             <button class="controls__edit"></button>
                                         </td>
-                                        <td>Specialistai</td>
                                     </tr>
                                 <?php } ?>
                             </tbody>
