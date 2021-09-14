@@ -74,7 +74,7 @@
   }
   .group__tab {
     margin-top: 40px;
-    border: none;
+    // border: none;
 
     p {
       margin-top: 45px;
@@ -261,6 +261,12 @@
       padding-top: 5px;
       padding-bottom: 5px;
       height: 32px;
+    }
+  }
+
+  .input-container--language {
+    .select2-container {
+      width: 40% !important;
     }
   }
 }

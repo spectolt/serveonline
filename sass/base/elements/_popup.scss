@@ -76,6 +76,11 @@
         @include breakpoint(sm) {
           font-size: 1rem;
         }
+
+        &.warning-popup__language {
+          font-size: 1rem;
+          font-weight: 400;
+        }
       }
 
       &--delete {

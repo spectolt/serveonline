@@ -42,6 +42,7 @@
                     <option>Darbuotojas</option>
                 </select>
             </div>
+            <p class="warning-popup__language">Lietuvių</p>
             <div class="warning-popup__textarea">
                 <textarea placeholder="Žinutė"></textarea>
             </div>

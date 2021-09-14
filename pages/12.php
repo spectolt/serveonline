@@ -243,6 +243,16 @@ $thisPage = "specialist-profile" ?>
                             <span class="input-icon">
                         </div>
                     </div>
+                    <h4>Kalba, kuria norite gauti SMS pranešimus</h4>
+                    <div class="input-container input-container--language">
+                        <select class="select-input" data-placeholder="Pasirinkite">
+                            <option></option>
+                            <option>Lietuvių</option>
+                            <option>Anglų</option>
+                            <option>Rusų</option>
+                        </select>
+                        <span class="input-icon"></span>
+                    </div>
                     <h4>Patvirtinimai</h4>
                     <div class="checkbox">
                         <input type="checkbox" name="confirmation" id="privacy">
@@ -271,13 +281,13 @@ $thisPage = "specialist-profile" ?>
                             </div>
                         </div>
                         <div class="login-details login-details--pass login-details--old-pass">
-                            <p class="password--info">Naujas slaptažodis</p> 
+                            <p class="password--info">Naujas slaptažodis</p>
                             <div class="input-container input-container--password-eye">
                                 <input type="password" name="login" value="1234">
                                 <span class="input-icon"></span>
                             </div>
                         </div>
-                        <p class="password--info"  id="pass-info">Slaptažodis, ne mažiau 8 simbolių, kuriuos sudaro: skaičiai, raidės, bent viena didžioji raidė</p>
+                        <p class="password--info" id="pass-info">Slaptažodis, ne mažiau 8 simbolių, kuriuos sudaro: skaičiai, raidės, bent viena didžioji raidė</p>
                     </div>
                     <div class="cart__buttons company__button-container">
                         <button class="orange transparent">Atšaukti</button>

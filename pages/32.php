@@ -1,7 +1,7 @@
 <?php $thisCat = "controls";
 $thisPage = "messages-settings"; ?>
 
-<?php require_once ('header.php'); ?>
+<?php require_once('header.php'); ?>
 
 <main class="site-main site-main--aside hasTable hasUiAutocomplete">
     <section class="page-content page-content--controls">
@@ -16,7 +16,7 @@ $thisPage = "messages-settings"; ?>
                             <li class="paragraph"><a href="#">RU</a></li>
                         </ul> -->
                         <button class="controls__new darkblue transparent small paragraph">Nauja SMS</button>
-                        <button class="controls__new darkblue transparent small paragraph">Nauja notification</button>
+                        <!-- <button class="controls__new darkblue transparent small paragraph">Nauja notification</button> -->
                     </div>
                 </div>
                 <div class="controls__table-container-wrapper">
@@ -35,6 +35,7 @@ $thisPage = "messages-settings"; ?>
                                     <th class="top-arrow bottom-arrow">Sukūrimo data</th>
                                     <th class="top-arrow bottom-arrow">Sukūrė</th>
                                     <th></th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -51,10 +52,10 @@ $thisPage = "messages-settings"; ?>
                                         <td>12345678</td>
                                         <td>2020 05 01</td>
                                         <td>Vardas Pavardė</td>
-                                        <td><button class="controls__trash"></button>
-                                            <button class="controls__edit">
-                                            </button>
+                                        <td>
+                                            <button class="controls__edit"></button>
                                         </td>
+                                        <td></td>
                                     </tr>
                                     <tr>
                                         <td>Automatinė notification</td>
@@ -68,10 +69,10 @@ $thisPage = "messages-settings"; ?>
                                         <td>12345678</td>
                                         <td>2020 05 01</td>
                                         <td>Vardas Pavardė</td>
-                                        <td><button class="controls__trash"></button>
-                                            <button class="controls__edit">
-                                            </button>
+                                        <td>
+                                            <button class="controls__edit"></button>
                                         </td>
+                                        <td><button class="controls__trash"></button></td>
                                     </tr>
                                     <tr>
                                         <td>Automatinė notification</td>
@@ -85,10 +86,10 @@ $thisPage = "messages-settings"; ?>
                                         <td>12345678</td>
                                         <td>2020 05 01</td>
                                         <td>Vardas Pavardė</td>
-                                        <td><button class="controls__trash"></button>
-                                            <button class="controls__edit">
-                                            </button>
+                                        <td>
+                                            <button class="controls__edit"></button>
                                         </td>
+                                        <td></td>
                                     </tr>
                                 <?php } ?>
                             </tbody>

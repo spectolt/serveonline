@@ -1163,15 +1163,22 @@
 }
 
 .messages--settings {
-  .languages {
-    @include breakpoint(sm) {
-      grid-column: span 2;
-    }
-  }
+  // .languages {
+  //   @include breakpoint(sm) {
+  //     grid-column: span 2;
+  //   }
+  // }
   .controls__table {
     th {
       &:after {
         bottom: 10px;
+      }
+    }
+
+    tbody {
+      td:nth-of-type(2n + 1),
+      td:nth-of-type(2n) {
+        border-bottom: none;
       }
     }
 
@@ -1211,8 +1218,11 @@
       &:nth-of-type(9) {
         width: 137px;
       }
+      &:nth-of-type(10) {
+        width: 55px;
+      }
       &:last-of-type {
-        width: 104px;
+        width: 55px;
       }
     }
     .messages__text {

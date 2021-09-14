@@ -158,14 +158,14 @@
         }
 
         &::before {
-          content: "⬤";
+          content: "●";
           color: $orange;
           margin-right: 20px;
-          line-height: 1.5;
-          font-size: 0.75rem;
+          line-height: 1;
+          // font-size: 0.75rem;
 
           @include breakpoint(xs) {
-            content: "●";
+            // content: "●";
             margin-right: 10px;
             font-size: 100%;
             line-height: inherit;

@@ -3169,6 +3169,11 @@ table.calendar .calendar__more-times--hidden {
   }
 }
 
+.warning-popup-container .warning-popup__content p.warning-popup__language {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
 .warning-popup-container .warning-popup__content--delete {
   padding-bottom: 0;
 }
@@ -5797,16 +5802,14 @@ div.services-list.services-list--company-profile .services-list__blocks {
 }
 
 .vert-slider__slide ul li::before {
-  content: "⬤";
+  content: "●";
   color: #ff9954;
   margin-right: 20px;
-  line-height: 1.5;
-  font-size: 0.75rem;
+  line-height: 1;
 }
 
 @media (max-width: 600px) {
   .vert-slider__slide ul li::before {
-    content: "●";
     margin-right: 10px;
     font-size: 100%;
     line-height: inherit;
@@ -14117,14 +14120,13 @@ section.product .product__block--company .slick-track {
   float: left;
 }
 
-@media (max-width: 700px) {
-  .messages--settings .languages {
-    grid-column: span 2;
-  }
-}
-
 .messages--settings .controls__table th:after {
   bottom: 10px;
+}
+
+.messages--settings .controls__table tbody td:nth-of-type(2n + 1),
+.messages--settings .controls__table tbody td:nth-of-type(2n) {
+  border-bottom: none;
 }
 
 .messages--settings .controls__table th,
@@ -14183,9 +14185,14 @@ section.product .product__block--company .slick-track {
   width: 137px;
 }
 
+.messages--settings .controls__table th:nth-of-type(10),
+.messages--settings .controls__table td:nth-of-type(10) {
+  width: 55px;
+}
+
 .messages--settings .controls__table th:last-of-type,
 .messages--settings .controls__table td:last-of-type {
-  width: 104px;
+  width: 55px;
 }
 
 .messages--settings .controls__table .messages__text p {
@@ -20882,7 +20889,6 @@ section.product .product__block--company .slick-track {
 
 .user-profile .group__tab {
   margin-top: 40px;
-  border: none;
 }
 
 .user-profile .group__tab p {
@@ -21115,6 +21121,10 @@ section.product .product__block--company .slick-track {
     padding-bottom: 5px;
     height: 32px;
   }
+}
+
+.user-profile .input-container--language .select2-container {
+  width: 40% !important;
 }
 
 .company-profile .company__header {
