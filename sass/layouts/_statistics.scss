@@ -136,26 +136,26 @@
       }
     }
 
-    .statistics__day {
-      @include breakpoint(sm) {
-        margin-left: 11px;
-      }
-    }
+    // .statistics__day {
+    //   @include breakpoint(sm) {
+    //     margin-left: 11px;
+    //   }
+    // }
 
-    .statistics__day--from {
-      // margin-right: 7px;
-      margin-bottom: 0;
-    }
+    // .statistics__day--from {
+    //   // margin-right: 7px;
+    //   margin-bottom: 0;
+    // }
 
-    .statistics__day--to {
-      margin-bottom: 0;
+    // .statistics__day--to {
+    //   margin-bottom: 0;
 
-      @include breakpoint(430px) {
-        input{
-          margin-left: 12px;
-        }
-      }
-    }
+    //   @include breakpoint(430px) {
+    //     input{
+    //       margin-left: 12px;
+    //     }
+    //   }
+    // }
 
     input {
       font-weight: 700;
@@ -180,6 +180,17 @@
     }
   }
 
+  &__select-date {
+    &--year {
+      min-width: 100px;
+      margin-right: 10px;
+    }
+
+    &--month {
+      min-width: 150px;
+    }
+  }
+
   .stat-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -197,13 +208,13 @@
       grid-template-rows: 150px 150px repeat(4, 145px) auto;
     }
 
-    .align-left{
-      justify-content: end;
+    .align-center{
+      justify-content: center;
 
-      .smaller{
-        margin-top: 5px;
-        margin-left: 0;
-      }
+      // .smaller{
+      //   margin-top: 5px;
+      //   margin-left: 0;
+      // }
     }
 
     hr {
@@ -283,7 +294,7 @@
       padding: 15px 20px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: center;
 
       @include breakpoint(sm) {
         padding: 13px 8px;
@@ -350,9 +361,9 @@
           }
         }
 
-        span {
-          margin-left: 10px;
-        }
+        // span {
+        //   margin-left: 10px;
+        // }
       }
     }
 

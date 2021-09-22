@@ -1,7 +1,7 @@
 <?php $thisCat = "controls";
 $thisPage = "company-report"; ?>
 
-<?php require_once ('header.php'); ?>
+<?php require_once('header.php'); ?>
 
 <main class="site-main site-main--aside hasTable hasUiAutocomplete">
     <section class="page-content page-content--controls">
@@ -22,7 +22,10 @@ $thisPage = "company-report"; ?>
                         <table class="controls__table profiles__table profiles__table--specialists">
                             <thead>
                                 <tr>
-                                    <th class="bottom-arrow top-arrow" rowspan="2">
+                                    <th class="bottom-arrow top-arrow has-checkbox" rowspan="2">
+                                        <div class="checkbox"><input name="select_all" type="checkbox" id="select-all" />
+                                            <label for="select-all"></label>
+                                        </div>
                                     </th>
                                     <th class="bottom-arrow top-arrow" rowspan="2">
                                         Įmonių grupė
@@ -67,19 +70,10 @@ $thisPage = "company-report"; ?>
                                         Vidutinė<br>kaina
                                     </th>
                                     <th class="bottom-arrow top-arrow" rowspan="2">
-                                        Moterų
+                                        Registravosi per Serve Online
                                     </th>
                                     <th class="bottom-arrow top-arrow" rowspan="2">
-                                        Vyrų
-                                    </th>
-                                    <th class="bottom-arrow top-arrow" rowspan="2">
-                                        Sugrįžę<br>klientai
-                                    </th>
-                                    <th class="bottom-arrow top-arrow" rowspan="2">
-                                        Vienkartinai<br>užsiregistravo
-                                    </th>
-                                    <th class="bottom-arrow top-arrow" rowspan="2">
-                                        Unikalių<br>klientų
+                                        Registravosi per nuosavus kanalus
                                     </th>
                                     <th rowspan="2"></th>
                                 </tr>
@@ -119,9 +113,6 @@ $thisPage = "company-report"; ?>
                                         <td>0</td>
                                         <td>0</td>
                                         <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
                                         <td class="left-arrow"></td>
                                     </tr>
                                 <?php } ?>
@@ -132,9 +123,6 @@ $thisPage = "company-report"; ?>
                                     <td>999999</td>
                                     <td>999999</td>
                                     <td>999999</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
                                     <td></td>
                                     <td></td>
                                     <td></td>

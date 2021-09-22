@@ -3033,6 +3033,13 @@ function onDocumentReady(callback) {
     $(".input-wrapper--email-forgot input").val($(".input-wrapper--email input").val())
   })
 
+  $(".warning-popup__textarea").each(function () {
+    this.setAttribute("style", "height:" + (this.scrollHeight) + "px;overflow-y:hidden;");
+  }).on("input", function () {
+    this.style.height = "auto";
+    this.style.height = (this.scrollHeight) + "px";
+  });
+
   moveAction();
   moveOrder();
   changePadding();

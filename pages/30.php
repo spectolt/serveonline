@@ -10,7 +10,6 @@ $thisPage = "messages-sent"; ?>
                     <h1 class="title">Išsiųstos SMS</h1>
                     <div class="controls__top">
                         <button class="controls__delete darkblue transparent small paragraph">Trinti</button>
-                        <button class="controls__cancel darkblue transparent small paragraph">Atšaukti siuntimą</button>
                     </div>
                 </div>
                 <div class="controls__table-container-wrapper">
@@ -19,7 +18,11 @@ $thisPage = "messages-sent"; ?>
                         <table class="controls__table messages-settings__table">
                             <thead>
                                 <tr>
-                                    <th></th>
+                                    <th class="bottom-arrow top-arrow has-checkbox">
+                                        <div class="checkbox"><input name="select_all" type="checkbox" id="select-all" />
+                                            <label for="select-all"></label>
+                                        </div>
+                                    </th>
                                     <th class="top-arrow bottom-arrow">Sukūrimo data</th>
                                     <th class="top-arrow bottom-arrow">Gavėjo tipas</th>
                                     <th class="top-arrow bottom-arrow">Žinutės tipas</th>

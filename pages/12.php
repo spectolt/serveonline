@@ -174,10 +174,10 @@ $thisPage = "specialist-profile" ?>
                     <p class="recommendations-p">Jūsų specialistas rekomenduoja pas jį registruoti šias paslaugas</p>
                     <div class="cart">
                         <div class="cart__header">
-                            <div class="cart__about cart__about--time">
+                            <!-- <div class="cart__about cart__about--time">
                                 <h3>17:30</h3>
                                 <h4>2020 Vasario 4, ketvirtadienis</h4>
-                            </div>
+                            </div> -->
                             <div class="cart__about cart__about--company">
                                 <h3>East Islan Spa centras</h3>
                                 <h4>M. Valančiaus g. 23, Kaunas</h4>

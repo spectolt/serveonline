@@ -19,9 +19,9 @@ $thisPage = "messages"; ?>
                         <table class="controls__table messages__table">
                             <thead>
                                 <tr>
-                                    <th class="top-arrow bottom-arrow">ID</th>
-                                    <th class="top-arrow bottom-arrow">Kalba</th>
-                                    <th class="top-arrow bottom-arrow">Pranešimo tekstas</th>
+                                    <th class="top-arrow bottom-arrow"><div class="th-inner center">ID</div></th>
+                                    <th class="top-arrow bottom-arrow"><div class="th-inner center">Kalba</div></th>
+                                    <th class="top-arrow bottom-arrow"><div class="th-inner center">Pranešimo tekstas</div></th>
                                 </tr>
                             </thead>
                             <tbody>

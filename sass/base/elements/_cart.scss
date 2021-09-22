@@ -54,6 +54,16 @@
         }
       }
 
+      &--company {
+        flex-basis: 64.5%;
+        margin-left: auto;
+        
+        @include breakpoint(sm) {
+          flex-basis: 100%;
+          margin-left: 0;
+        }
+      }
+
       &--time-reservations {
         flex-direction: column;
         align-items: flex-start;

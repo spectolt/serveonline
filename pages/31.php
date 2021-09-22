@@ -5,7 +5,7 @@ $thisPage = "messages-inbox"; ?>
 <main class="site-main site-main--aside hasTable">
     <section class="page-content page-content--controls page-content--messages">
         <div class="page-content__wrapper">
-            <section class="controls messages-settings">
+            <section class="controls messages-settings messages-settings--received">
                 <div class="controls__header">
                     <h1 class="title">Gautos SMS</h1>
                     <div class="controls__top">
@@ -18,7 +18,11 @@ $thisPage = "messages-inbox"; ?>
                         <table class="controls__table messages-settings__table">
                             <thead>
                                 <tr>
-                                    <th></th>
+                                <th class="bottom-arrow top-arrow has-checkbox">
+                                        <div class="checkbox"><input name="select_all" type="checkbox" id="select-all" />
+                                            <label for="select-all"></label>
+                                        </div>
+                                    </th>
                                     <th>Gavimo data, laikas</th>
                                     <th>Siuntėjo tipas</th>
                                     <th>Siuntėjas</th>

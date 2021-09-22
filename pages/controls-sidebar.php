@@ -197,14 +197,34 @@
                     <div class="site-aside__item <?php if ($thisPage == "company-profiles") echo "site-aside__item--active site-aside__item--open"; ?>">
                         <a href="#">Įmonių profiliai</a>
                         <div class="site-aside__filters <?php if ($thisPage != "company-profiles") echo "hidden"; ?>">
-                            <p>Registracijos data nuo</p>
+                            <!-- <p>Registracijos data nuo</p>
                             <div class="site-aside__datepicker-container">
                                 <input class="site-aside__datepicker" placeholder="Nuo">
                             </div>
                             <p>Registracijos data iki</p>
                             <div class="site-aside__datepicker-container">
                                 <input class="site-aside__datepicker" placeholder="Iki">
-                            </div>
+                            </div> -->
+                            <p>Metai</p>
+                            <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
+                                <option>2021</option>
+                                <option>2020</option>
+                            </select>
+                            <p>Mėnuo</p>
+                            <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
+                                <option>Sausis</option>
+                                <option>Vasaris</option>
+                                <option>Kovas</option>
+                                <option>Balandis</option>
+                                <option>Gegužė</option>
+                                <option>Birželis</option>
+                                <option>Liepa</option>
+                                <option>Rugpjūtis</option>
+                                <option>Rugsėjis</option>
+                                <option>Spalis</option>
+                                <option>Lapkritis</option>
+                                <option>Gruodis</option>
+                            </select>
                             <p>Sritis</p>
                             <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
                                 <option></option>
@@ -247,14 +267,34 @@
                     <div class="site-aside__item <?php if ($thisPage == "company-report") echo "site-aside__item--active site-aside__item--open"; ?>">
                         <a href="#">Ataskaita įmonei</a>
                         <div class="site-aside__filters <?php if ($thisPage != "company-report") echo "hidden"; ?>">
-                            <p>Data</p>
+                            <!-- <p>Data</p>
                             <div class="site-aside__datepicker-container">
                                 <input class="site-aside__datepicker" placeholder="Nuo">
                             </div>
                             <p>Data</p>
                             <div class="site-aside__datepicker-container">
                                 <input class="site-aside__datepicker" placeholder="Iki">
-                            </div>
+                            </div> -->
+                            <p>Metai</p>
+                            <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
+                                <option>2021</option>
+                                <option>2020</option>
+                            </select>
+                            <p>Mėnuo</p>
+                            <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
+                                <option>Sausis</option>
+                                <option>Vasaris</option>
+                                <option>Kovas</option>
+                                <option>Balandis</option>
+                                <option>Gegužė</option>
+                                <option>Birželis</option>
+                                <option>Liepa</option>
+                                <option>Rugpjūtis</option>
+                                <option>Rugsėjis</option>
+                                <option>Spalis</option>
+                                <option>Lapkritis</option>
+                                <option>Gruodis</option>
+                            </select>
                             <p>Sritis</p>
                             <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
                                 <option></option>
@@ -287,14 +327,34 @@
                 <div class="site-aside__item <?php if ($thisPage == "report") echo "site-aside__item--active site-aside__item--open"; ?>">
                         <a href="#">Veiklos ataskaita specialistui</a>
                         <div class="site-aside__filters <?php if ($thisPage != "report") echo "hidden"; ?>">
-                            <p>Data</p>
+                            <!-- <p>Data</p>
                             <div class="site-aside__datepicker-container">
                                 <input class="site-aside__datepicker" placeholder="Nuo">
                             </div>
                             <p>Data</p>
                             <div class="site-aside__datepicker-container">
                                 <input class="site-aside__datepicker" placeholder="Iki">
-                            </div>
+                            </div> -->
+                            <p>Metai</p>
+                            <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
+                                <option>2021</option>
+                                <option>2020</option>
+                            </select>
+                            <p>Mėnuo</p>
+                            <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
+                                <option>Sausis</option>
+                                <option>Vasaris</option>
+                                <option>Kovas</option>
+                                <option>Balandis</option>
+                                <option>Gegužė</option>
+                                <option>Birželis</option>
+                                <option>Liepa</option>
+                                <option>Rugpjūtis</option>
+                                <option>Rugsėjis</option>
+                                <option>Spalis</option>
+                                <option>Lapkritis</option>
+                                <option>Gruodis</option>
+                            </select>
                             <p>Sritis</p>
                             <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
                                 <option>Visi</option>

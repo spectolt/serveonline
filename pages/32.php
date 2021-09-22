@@ -28,7 +28,7 @@ $thisPage = "messages-settings"; ?>
                                     <th class="top-arrow bottom-arrow">Žinutės tipas</th>
                                     <th class="top-arrow bottom-arrow">Žinutės tema</th>
                                     <th class="top-arrow bottom-arrow">Gavėjas</th>
-                                    <th class="top-arrow bottom-arrow">Kalba</th>
+                                    <!-- <th class="top-arrow bottom-arrow">Kalba</th> -->
                                     <th>Žinutės tekstas</th>
                                     <th>Simbolių skaičius</th>
                                     <th>ID</th>
@@ -41,27 +41,25 @@ $thisPage = "messages-settings"; ?>
                             <tbody>
                                 <?php for ($y = 0; $y < 3; $y++) { ?>
                                     <tr>
-                                        <td>Automatinė notification</td>
-                                        <td>Patvirtinimas</td>
-                                        <td>Įmonės administratorius</td>
-                                        <td>Lietuvių</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <!-- <td>Lietuvių</td> -->
                                         <td class="messages__text">
                                             <p>Jūsų rezervacija patvirtinta: #data# #valanda#, #specialistas#, #adresas#, #tel. nr.#. Pasikeitus planams, galite ją atšaukti savo profilio puslapyje “Registracijos”. Ar norite išsaugoti ją savo kalendoriuje?</p>
                                         </td>
                                         <td>340</td>
-                                        <td>12345678</td>
-                                        <td>2020 05 01</td>
-                                        <td>Vardas Pavardė</td>
-                                        <td>
-                                            <button class="controls__edit"></button>
-                                        </td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
                                         <td></td>
                                     </tr>
                                     <tr>
                                         <td>Automatinė notification</td>
                                         <td>Patvirtinimas</td>
                                         <td>Įmonės administratorius</td>
-                                        <td>Anglų</td>
+                                        <!-- <td>Anglų</td> -->
                                         <td class="messages__text">
                                             <p>Jūsų rezervacija patvirtinta: #data# #valanda#, #specialistas#, #adresas#, #tel. nr.#. Pasikeitus planams, galite ją atšaukti savo profilio puslapyje “Registracijos”. Ar norite išsaugoti ją savo kalendoriuje?</p>
                                         </td>
@@ -75,20 +73,18 @@ $thisPage = "messages-settings"; ?>
                                         <td><button class="controls__trash"></button></td>
                                     </tr>
                                     <tr>
-                                        <td>Automatinė notification</td>
-                                        <td>Patvirtinimas</td>
-                                        <td>Įmonės administratorius</td>
-                                        <td>Rusų</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <!-- <td>Rusų</td> -->
                                         <td class="messages__text">
                                             <p>Jūsų rezervacija patvirtinta: #data# #valanda#, #specialistas#, #adresas#, #tel. nr.#. Pasikeitus planams, galite ją atšaukti savo profilio puslapyje “Registracijos”. Ar norite išsaugoti ją savo kalendoriuje?</p>
                                         </td>
                                         <td>340</td>
-                                        <td>12345678</td>
-                                        <td>2020 05 01</td>
-                                        <td>Vardas Pavardė</td>
-                                        <td>
-                                            <button class="controls__edit"></button>
-                                        </td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
                                         <td></td>
                                     </tr>
                                 <?php } ?>

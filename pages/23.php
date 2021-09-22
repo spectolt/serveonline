@@ -13,8 +13,28 @@
                         </div>
                     </div>
                     <div class="statistics__date">
-                        <p class="statistics__day statistics__day--from">Nuo <input class="statistics__datepicker" readonly></p>
-                        <p class="statistics__day statistics__day--to">Iki <input class="statistics__datepicker" readonly></p>
+                        <div class="statistics__select-date statistics__select-date--year">
+                            <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
+                                <option>2021</option>
+                                <option>2020</option>
+                            </select>
+                        </div>
+                        <div class="statistics__select-date statistics__select-date--month">
+                            <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
+                                <option>Sausis</option>
+                                <option>Vasaris</option>
+                                <option>Kovas</option>
+                                <option>Balandis</option>
+                                <option>Gegužė</option>
+                                <option>Birželis</option>
+                                <option>Liepa</option>
+                                <option>Rugpjūtis</option>
+                                <option>Rugsėjis</option>
+                                <option>Spalis</option>
+                                <option>Lapkritis</option>
+                                <option>Gruodis</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
                 <div class="stat-grid">
@@ -100,26 +120,26 @@
                     </div>
                     <div class="stat-grid__item">
                         <div class="stat-grid__top">
-                            <h2>3</h2>
+                            <h2 class="align-center">3</h2>
                         </div>
                         <hr>
                         <div class="stat-grid__bottom">
-                            <h3>Pažymėjo <b>Mano</b></h3>
+                            <h3>Pažymėjo <span class="heart-icon">Mano</span></h3>
                         </div>
                     </div>
                     <div class="stat-grid__item">
                         <div class="stat-grid__top">
-                            <h2>38 d.</h2>
+                            <h2 class="align-center">1,2 dienų</h2>
                         </div>
                         <hr>
                         <div class="stat-grid__bottom">
                             <h3><b>Registracijos dažnumas</b></h3>
-                            <h3>Vidutiniškai</h3>
+                            <h3>per paskutinius 12 mėn.</h3>
                         </div>
                     </div>
                     <div class="stat-grid__item">
                         <div class="stat-grid__top">
-                            <h2>38</h2>
+                            <h2 class="align-center">38 klientai</h2>
                         </div>
                         <hr>
                         <div class="stat-grid__bottom">
@@ -129,13 +149,12 @@
                     </div>
                     <div class="stat-grid__item">
                         <div class="stat-grid__top">
-                            <h2>38 €</h2>
-                            <h3 class="right-align"><span class="up">0.6%</span></h3>
+                            <h2 class="align-center">38€</h2>
                         </div>
                         <hr>
                         <div class="stat-grid__bottom">
-                            <h3><b>Vidutinė kaina</b></h3>
-                            <h3>registracijos</h3>
+                            <h3><b>Vid. registracijos kaina</b></h3>
+                            <h3>per paskutinius 12 mėn.</h3>
                         </div>
                     </div>
                     <div class="stat-grid__item stat-grid__clients stat-grid__clients--unique">
@@ -168,7 +187,6 @@
                 <?php } ?>
                 <div class="statistics__button-container">
                     <button class="darkblue transparent button--icon button--send">Siųsti ataskaitą el. paštu</button>
-                    <button class="darkblue transparent button--icon button--print">Spausdinti</button>
                 </div>
             </section>
             <?php require_once('footer-menu.php'); ?>

@@ -1,7 +1,7 @@
 <?php $thisCat = "controls";
 $thisPage = "employee-profiles"; ?>
 
-<?php require_once ('header.php'); ?>
+<?php require_once('header.php'); ?>
 
 <main class="site-main site-main--aside hasTable hasUiAutocomplete">
     <section class="page-content page-content--controls">
@@ -13,7 +13,7 @@ $thisPage = "employee-profiles"; ?>
                         <div class="controls__group">
                         </div>
                         <div class="controls__buttons-container">
-                            <button class="controls__button controls__button--new darkblue small transparent paragraph">Naujas</button> 
+                            <button class="controls__button controls__button--new darkblue small transparent paragraph">Naujas</button>
                             <button class="controls__button controls__button--trash darkblue small transparent paragraph">Trinti</button>
                             <button class="controls__button controls__button--activate darkblue small transparent paragraph">Aktyvuoti</button>
                             <button class="controls__button controls__button--print darkblue small transparent paragraph">Spausdinti</button>
@@ -27,7 +27,10 @@ $thisPage = "employee-profiles"; ?>
                         <table class="controls__table profiles__table profiles__table--specialists">
                             <thead>
                                 <tr>
-                                    <th class="bottom-arrow top-arrow" rowspan="2">
+                                    <th class="bottom-arrow top-arrow has-checkbox" rowspan="2">
+                                        <div class="checkbox"><input name="select_all" type="checkbox" id="select-all" />
+                                            <label for="select-all"></label>
+                                        </div>
                                     </th>
                                     <th class="bottom-arrow top-arrow" rowspan="2">
                                         Įdarbinimo<br>data

@@ -80,6 +80,7 @@
         &.warning-popup__language {
           font-size: 1rem;
           font-weight: 400;
+          margin-bottom: 5px;
         }
       }
 
@@ -127,6 +128,19 @@
 
       &--new-message {
         padding-bottom: 0;
+      }
+
+      &--report {
+        p {
+          font-family: 'Roboto', sans-serif;
+          font-size: 1rem;
+          font-weight: 400;
+          margin-bottom: 10px;
+
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+        }
       }
     }
 
@@ -186,24 +200,25 @@
     }
 
     &__textarea {
-      width: calc(100% + 80px);
-      margin-left: -40px;
-      border-top: 1px solid $gray;
+      border: 1px solid $lightgray;
+      // width: calc(100% + 80px);
+      // margin-left: -40px;
+      // border-top: 1px solid $gray;
 
-      @include breakpoint(sm) {
-        width: calc(100% + 60px);
-        margin-left: -30px;
-      }
+      // @include breakpoint(sm) {
+      //   width: calc(100% + 60px);
+      //   margin-left: -30px;
+      // }
 
-      textarea {
-        border: none;
-        padding: 20px 40px;
-        height: 200px;
+      // textarea {
+      //   border: none;
+      //   padding: 20px 40px;
+      //   // height: 200px;
 
-        @include breakpoint(sm) {
-          padding: 20px 30px;
-        }
-      }
+      //   @include breakpoint(sm) {
+      //     padding: 20px 30px;
+      //   }
+      // }
     }
 
     &__button-container {
