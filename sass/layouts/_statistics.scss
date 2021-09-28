@@ -86,7 +86,7 @@
     }
 
     p {
-      font-family: 'hero-new', sans-serif;
+      font-family: 'sofia-pro', sans-serif;
       font-weight: 400;
       font-size: 1rem;
       margin-bottom: 0px;
@@ -126,7 +126,7 @@
     // }
 
     p {
-      font-family: 'hero-new', sans-serif;
+      font-family: 'sofia-pro', sans-serif;
       font-weight: 400;
       font-size: 1.125rem;
       margin-top: 10px;
@@ -181,6 +181,7 @@
   }
 
   &__select-date {
+    
     &--year {
       min-width: 100px;
       margin-right: 10px;
@@ -616,7 +617,7 @@
 
     h2 {
       margin: 0;
-      font-family: 'hero-new', sans-serif;
+      font-family: 'sofia-pro', sans-serif;
       font-weight: 600;
       font-size: 1.5rem;
 
@@ -822,5 +823,18 @@
         padding: 10px;
       }
     }
+  }
+}
+
+.select2-dropdown--statistics {
+  max-height: 40vh;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    border-width: 2px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-width: 2px;
   }
 }

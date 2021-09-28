@@ -24,13 +24,13 @@
                         <!-- <p class="statistics__day statistics__day--from">Nuo <input class="statistics__datepicker" readonly></p>
                         <p class="statistics__day statistics__day--to">Iki <input class="statistics__datepicker" readonly></p> -->
                         <div class="statistics__select-date statistics__select-date--year">
-                            <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
+                            <select data-placeholder="Pasirinkite" data-minimum-results-for-search="Infinity" class="js-dropdown-placeholder">
                                 <option>2021</option>
                                 <option>2020</option>
                             </select>
                         </div>
                         <div class="statistics__select-date statistics__select-date--month">
-                            <select data-placeholder="Pasirinkite" class="js-dropdown-placeholder">
+                            <select data-placeholder="Pasirinkite" data-minimum-results-for-search="Infinity" class="js-dropdown-placeholder">
                                 <option>Sausis</option>
                                 <option>Vasaris</option>
                                 <option>Kovas</option>

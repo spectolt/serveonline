@@ -280,7 +280,7 @@
       background-color: $darkblue;
       color: $white;
       // height: 60px;
-      font-family: "hero-new", sans-serif;
+      font-family: "sofia-pro", sans-serif;
       padding: 10px;
       // cursor: col-resize;
       word-break: keep-all;
@@ -319,6 +319,12 @@
           top: 50%;
           transform: translate(-50%, -50%);
           position: absolute;
+        }
+      }
+
+      &:last-of-type {
+        .ui-resizable-handle {
+          display: none !important;
         }
       }
     }
@@ -1447,6 +1453,14 @@
           }
         }
       }
+
+      td:last-of-type {
+        width: auto;
+
+        @include breakpoint(880px) {
+          width: 367px;
+        }
+      }
     }
   }
 }
@@ -1536,7 +1550,7 @@
       }
     }
     tbody {
-      overflow-y: scroll;
+      // overflow-y: scroll;
 
       tr:nth-of-type(2n) {
         background-color: $darkgray;
@@ -2033,7 +2047,7 @@
   }
   .controls__table {
     th {
-      font-family: "hero-new", sans-serif;
+      font-family: "sofia-pro", sans-serif;
       padding-top: 10px;
     }
 

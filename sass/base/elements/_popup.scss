@@ -71,7 +71,7 @@
         font-weight: 600;
         margin: 0;
         text-align: left;
-        font-family: 'hero-new', sans-serif;
+        font-family: 'sofia-pro', sans-serif;
 
         @include breakpoint(sm) {
           font-size: 1rem;
@@ -139,6 +139,16 @@
 
           &:last-of-type {
             margin-bottom: 0;
+          }
+        }
+
+        .warning-popup__button-container {
+          margin-left: -30px;
+          width: calc(100% + 60px);
+
+          @include breakpoint(sm) {
+            margin-left: -10px;
+            width: calc(100% + 20px);
           }
         }
       }
@@ -431,5 +441,5 @@
 
 .select2-container--warning .select2-results__option--selectable {
   font-weight: bold;
-  font-family: 'hero-new', sans-serif;
+  font-family: 'sofia-pro', sans-serif;
 }

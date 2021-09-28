@@ -36,15 +36,15 @@ body {
   // overflow-x:hidden;
   position: relative;
 
-  @include breakpoint(l) {
-    margin-top: 63px;
-    height: calc(100% - 63px);
-  }
+  // @include breakpoint(l) {
+  //   margin-top: 63px;
+  //   height: calc(100% - 63px);
+  // }
 
-  @include breakpoint(xs) {
-    margin-top: 60px;
-    height: calc(100% - 60px);
-  }
+  // @include breakpoint(xs) {
+  //   margin-top: 60px;
+  //   height: calc(100% - 60px);
+  // }
 }
 
 #page {

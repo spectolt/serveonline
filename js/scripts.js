@@ -2324,7 +2324,7 @@ function onDocumentReady(callback) {
       {
         font: {
           size: 20,
-          family: 'hero-new',
+          family: 'sofia-pro',
         },
         showarrow: false,
         text: "<b>260</b>",
@@ -2335,7 +2335,7 @@ function onDocumentReady(callback) {
       {
         font: {
           size: 20,
-          family: 'hero-new',
+          family: 'sofia-pro',
         },
         showarrow: false,
         text: "<b>260</b>",
@@ -2346,7 +2346,7 @@ function onDocumentReady(callback) {
       {
         font: {
           size: 20,
-          family: 'hero-new',
+          family: 'sofia-pro',
         },
         showarrow: false,
         text: "<b>260</b>",
@@ -2450,7 +2450,7 @@ function onDocumentReady(callback) {
           {
             font: {
               size: 20,
-              family: 'hero-new',
+              family: 'sofia-pro',
             },
             showarrow: false,
             text: "<b>260</b>",
@@ -2461,7 +2461,7 @@ function onDocumentReady(callback) {
           {
             font: {
               size: 20,
-              family: 'hero-new',
+              family: 'sofia-pro',
             },
             showarrow: false,
             text: "<b>260</b>",
@@ -2472,7 +2472,7 @@ function onDocumentReady(callback) {
           {
             font: {
               size: 20,
-              family: 'hero-new',
+              family: 'sofia-pro',
             },
             showarrow: false,
             text: "<b>260</b>",
@@ -3039,6 +3039,10 @@ function onDocumentReady(callback) {
     this.style.height = "auto";
     this.style.height = (this.scrollHeight) + "px";
   });
+
+  $(".statistics__select-date select").not(".js_ignore_mark").select2({
+    dropdownCssClass: "select2-dropdown--statistics"
+  })
 
   moveAction();
   moveOrder();

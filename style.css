@@ -360,7 +360,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'hero-new', sans-serif;
+  font-family: 'sofia-pro', sans-serif;
   clear: both;
 }
 
@@ -562,7 +562,7 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  font-family: 'hero-new', sans-serif;
+  font-family: 'sofia-pro', sans-serif;
   font-weight: 600;
   border: 0;
   border-radius: 5px;
@@ -1983,7 +1983,7 @@ select.select-input ~ span.select2-container .select2-selection__arrow {
 .search-container .ui-autocomplete#ui-id-2 .ui-menu-item-wrapper {
   margin-bottom: 0;
   background: transparent;
-  font-family: 'hero-new', sans-serif;
+  font-family: 'sofia-pro', sans-serif;
   font-size: 1.125rem;
   padding: 15px;
   color: #0F1D5B;
@@ -2185,7 +2185,7 @@ select.select-input ~ span.select2-container .select2-selection__arrow {
 }
 
 .select2-dropdown--controls li {
-  font-family: 'hero-new', sans-serif;
+  font-family: 'sofia-pro', sans-serif;
   font-weight: 600;
   margin: 10px;
 }
@@ -2682,7 +2682,7 @@ table.calendar .calendar__more-times--hidden {
   background-color: #f4f4f6;
   padding: 10px 0;
   border-radius: 5px;
-  font-family: 'hero-new', sans-serif;
+  font-family: 'sofia-pro', sans-serif;
   font-weight: 600;
   margin-right: 20px;
   margin-left: 10px;
@@ -3160,7 +3160,7 @@ table.calendar .calendar__more-times--hidden {
   font-weight: 600;
   margin: 0;
   text-align: left;
-  font-family: 'hero-new', sans-serif;
+  font-family: 'sofia-pro', sans-serif;
 }
 
 @media (max-width: 700px) {
@@ -3235,6 +3235,18 @@ table.calendar .calendar__more-times--hidden {
 
 .warning-popup-container .warning-popup__content--report p:last-of-type {
   margin-bottom: 0;
+}
+
+.warning-popup-container .warning-popup__content--report .warning-popup__button-container {
+  margin-left: -30px;
+  width: calc(100% + 60px);
+}
+
+@media (max-width: 700px) {
+  .warning-popup-container .warning-popup__content--report .warning-popup__button-container {
+    margin-left: -10px;
+    width: calc(100% + 20px);
+  }
 }
 
 .warning-popup-container .warning-popup__button-container {
@@ -3531,7 +3543,7 @@ table.calendar .calendar__more-times--hidden {
 
 .select2-container--warning .select2-results__option--selectable {
   font-weight: bold;
-  font-family: 'hero-new', sans-serif;
+  font-family: 'sofia-pro', sans-serif;
 }
 
 div.services-list {
@@ -6830,7 +6842,7 @@ button.ui-button::-moz-focus-inner {
 }
 
 .ui-datepicker-popup__time {
-  font-family: 'hero-new', sans-serif;
+  font-family: 'sofia-pro', sans-serif;
   font-size: 1.5rem;
   font-weight: 800;
   margin: 0;
@@ -6992,7 +7004,7 @@ button.ui-button::-moz-focus-inner {
 .ui-datepicker .ui-datepicker-header {
   position: relative;
   padding: 0;
-  font-family: 'hero-new', sans-serif;
+  font-family: 'sofia-pro', sans-serif;
 }
 
 .ui-datepicker .ui-datepicker-prev,
@@ -7136,7 +7148,7 @@ button.ui-button::-moz-focus-inner {
   overflow: visible;
   border: 1px solid #0F1D5B;
   background: #0F1D5B;
-  font-family: 'hero-new', sans-serif;
+  font-family: 'sofia-pro', sans-serif;
   color: #fff;
   margin-right: 20px;
 }
@@ -9708,7 +9720,7 @@ a.ui-button:active,
 }
 
 .ui-autocomplete .autocomplete-category {
-  font-family: 'hero-new', sans-serif;
+  font-family: 'sofia-pro', sans-serif;
   font-size: 1.5rem;
   cursor: inherit;
   color: #0F1D5B;
@@ -9722,7 +9734,7 @@ a.ui-button:active,
 }
 
 .ui-autocomplete .autocomplete-subcategory {
-  font-family: 'hero-new', sans-serif;
+  font-family: 'sofia-pro', sans-serif;
   font-size: 1.125rem;
   font-weight: 400;
   cursor: inherit;
@@ -9743,7 +9755,7 @@ a.ui-button:active,
   width: 100%;
   font-size: 1.5rem;
   border-radius: 0 0 5px 5px;
-  font-family: 'hero-new', sans-serif;
+  font-family: 'sofia-pro', sans-serif;
 }
 
 @media (max-width: 600px) {
@@ -9757,7 +9769,7 @@ a.ui-button:active,
   top: 30px;
   right: 30px;
   color: #e54651;
-  font-family: 'hero-new', sans-serif;
+  font-family: 'sofia-pro', sans-serif;
   margin: 0;
 }
 
@@ -10320,20 +10332,6 @@ body {
   margin-top: 70px;
   height: calc(100% - 70px);
   position: relative;
-}
-
-@media (max-width: 991px) {
-  body {
-    margin-top: 63px;
-    height: calc(100% - 63px);
-  }
-}
-
-@media (max-width: 600px) {
-  body {
-    margin-top: 60px;
-    height: calc(100% - 60px);
-  }
 }
 
 @media (max-width: 600px) {
@@ -11712,7 +11710,7 @@ section.login .login__passwords {
   width: 100%;
   margin: 25px 0 40px 0;
   margin-top: 0px;
-  font-family: 'hero-new', regular;
+  font-family: 'sofia-pro', regular;
 }
 
 @media (max-width: 700px) {
@@ -12135,7 +12133,7 @@ section.product .product__nav-hide {
 
 section.product .product__nav-input {
   cursor: pointer;
-  font-family: 'hero-new', sans-serif;
+  font-family: 'sofia-pro', sans-serif;
   font-size: 1.5rem;
   font-weight: 600;
   padding: 0;
@@ -12726,7 +12724,7 @@ section.product .product__block-like:before {
 }
 
 section.product .product__block-recommend {
-  font-family: 'hero-new', sans-serif;
+  font-family: 'sofia-pro', sans-serif;
   width: 100%;
   margin: 20px 0 10px 0;
 }
@@ -13218,7 +13216,7 @@ section.product .product__block--company .slick-track {
   border-left: 1px solid #454e78;
   background-color: #0F1D5B;
   color: #fff;
-  font-family: "hero-new", sans-serif;
+  font-family: "sofia-pro", sans-serif;
   padding: 10px;
   word-break: keep-all;
 }
@@ -13248,6 +13246,10 @@ section.product .product__block--company .slick-track {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   position: absolute;
+}
+
+.controls__table th:last-of-type .ui-resizable-handle {
+  display: none !important;
 }
 
 .controls__table .th-inner {
@@ -14417,6 +14419,16 @@ section.product .product__block--company .slick-track {
   }
 }
 
+.messages-settings--received .messages-settings__table td:last-of-type {
+  width: auto;
+}
+
+@media (max-width: 880px) {
+  .messages-settings--received .messages-settings__table td:last-of-type {
+    width: 367px;
+  }
+}
+
 .profiles__table thead tr {
   height: 30px;
 }
@@ -14529,10 +14541,6 @@ section.product .product__block--company .slick-track {
 
 .profiles__table th:first-of-type {
   padding: 0;
-}
-
-.profiles__table tbody {
-  overflow-y: scroll;
 }
 
 .profiles__table tbody tr:nth-of-type(2n) {
@@ -15087,7 +15095,7 @@ section.product .product__block--company .slick-track {
 }
 
 .reservations .controls__table th {
-  font-family: "hero-new", sans-serif;
+  font-family: "sofia-pro", sans-serif;
   padding-top: 10px;
 }
 
@@ -17339,7 +17347,7 @@ section.product .product__block--company .slick-track {
   list-style: none;
   margin-right: 30px;
   padding-bottom: 10px;
-  font-family: 'hero-new', sans-serif;
+  font-family: 'sofia-pro', sans-serif;
   font-size: 1.5rem;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -18723,7 +18731,7 @@ section.product .product__block--company .slick-track {
   display: -ms-flexbox;
   display: flex;
   font-size: 1.5rem;
-  font-family: 'hero-new', sans-serif;
+  font-family: 'sofia-pro', sans-serif;
   border: 1px solid #0F1D5B;
   border-radius: 35px;
   height: 60px;
@@ -18749,7 +18757,7 @@ section.product .product__block--company .slick-track {
 .company__tab .company__payment-inputs input {
   min-width: 60px;
   height: 100%;
-  font-family: 'hero-new', sans-serif;
+  font-family: 'sofia-pro', sans-serif;
   font-weight: 600;
   font-size: 2.25rem;
   padding: 0 5px;
@@ -18843,7 +18851,7 @@ section.product .product__block--company .slick-track {
 
 .company__tab .company__payment .payment-plan__label {
   width: 100%;
-  font-family: 'hero-new', sans-serif;
+  font-family: 'sofia-pro', sans-serif;
   font-size: 1.5rem;
   color: #fff;
   background-color: #0F1D5B;
@@ -18957,7 +18965,7 @@ section.product .product__block--company .slick-track {
   font-size: 1.875rem;
   text-transform: uppercase;
   font-weight: 900;
-  font-family: 'hero-new', sans-serif;
+  font-family: 'sofia-pro', sans-serif;
 }
 
 .company__tab .company__payment .payment-plan tbody tr:first-of-type td:not(:first-of-type) {
@@ -19085,7 +19093,7 @@ section.product .product__block--company .slick-track {
 }
 
 .company__tab .company__payment .payment-plan__price span {
-  font-family: 'hero-new', sans-serif;
+  font-family: 'sofia-pro', sans-serif;
 }
 
 .company__tab .company__payment .payment-plan__price span b {
@@ -19221,7 +19229,7 @@ section.product .product__block--company .slick-track {
 .company__tab .company__payment .payment-plan__mobile .payment-plan__price-mobile span b {
   font-size: 1.5rem;
   text-transform: uppercase;
-  font-family: 'hero-new', sans-serif;
+  font-family: 'sofia-pro', sans-serif;
 }
 
 .company__tab .company__payment .payment-plan__mobile .payment-plan__main-functions {
@@ -20274,7 +20282,7 @@ section.product .product__block--company .slick-track {
       flex-basis: 100%;
   margin: 0 0 10px;
   font-size: 1.25rem;
-  font-family: 'hero-new', sans-serif;
+  font-family: 'sofia-pro', sans-serif;
 }
 
 @media (max-width: 890px) {
@@ -20874,7 +20882,7 @@ section.product .product__block--company .slick-track {
 
 .user-profile .company__container--login #pass-info {
   font-size: 0.875rem;
-  font-family: 'hero-new', sans-serif;
+  font-family: 'sofia-pro', sans-serif;
   -ms-flex-preferred-size: 35%;
       flex-basis: 35%;
   margin-top: 25px;
@@ -23000,7 +23008,7 @@ section.product .product__block--company .slick-track {
 
 .specialist #registruokis .product__chosen .product-action__info h4 {
   font-size: 0.875rem;
-  font-family: 'hero-new', sans-serif;
+  font-family: 'sofia-pro', sans-serif;
 }
 
 @media (max-width: 700px) {
@@ -23227,7 +23235,7 @@ section.product .product__block--company .slick-track {
 .specialist #registruokis .ui-autocomplete-wrapper .product__text {
   text-align: justify;
   color: #aeb1bd;
-  font-family: 'hero-new', sans-serif;
+  font-family: 'sofia-pro', sans-serif;
   font-size: 0.875rem;
   margin: 0;
   line-height: 1;
@@ -23254,7 +23262,7 @@ section.product .product__block--company .slick-track {
   margin-bottom: 10px;
   margin-top: 40px;
   font-size: 1.125rem;
-  font-family: 'hero-new', sans-serif;
+  font-family: 'sofia-pro', sans-serif;
   font-weight: 400;
 }
 
@@ -23326,7 +23334,7 @@ section.product .product__block--company .slick-track {
 
 .specialist #registruokis .ui-autocomplete-wrapper .ui-menu-item .autocomplete-product-checkbox,
 .specialist #registruokis .ui-autocomplete-wrapper .ui-menu-item .autocomplete-product-title--main {
-  font-family: 'hero-new', sans-serif;
+  font-family: 'sofia-pro', sans-serif;
 }
 
 @media (max-width: 700px) {
@@ -23424,7 +23432,7 @@ section.product .product__block--company .slick-track {
 .specialist #registruokis .product__choose-marked {
   width: 100%;
   border-radius: 0px 0px 5px 5px;
-  font-family: 'hero-new', sans-serif;
+  font-family: 'sofia-pro', sans-serif;
   font-weight: 700;
   font-size: 1.5rem;
 }
@@ -23718,7 +23726,7 @@ section.product .product__block--company .slick-track {
 }
 
 .my-cart h2.title {
-  font-family: 'hero-new', sans-serif;
+  font-family: 'sofia-pro', sans-serif;
   font-weight: 400;
   font-size: 1.875rem;
   margin: 0 0 40px 40px;
@@ -23930,7 +23938,7 @@ section.product .product__block--company .slick-track {
 
 .page-content__wrapper--register .product__block-top .product__block-info .product__block-address a {
   position: relative;
-  font-family: 'hero-new', sans-serif;
+  font-family: 'sofia-pro', sans-serif;
   font-weight: bold;
   font-size: 1.125rem;
   -ms-flex-preferred-size: 70%;
@@ -24257,7 +24265,7 @@ section.product .product__block--company .slick-track {
 }
 
 .statistics__name p {
-  font-family: 'hero-new', sans-serif;
+  font-family: 'sofia-pro', sans-serif;
   font-weight: 400;
   font-size: 1rem;
   margin-bottom: 0px;
@@ -24305,7 +24313,7 @@ section.product .product__block--company .slick-track {
 }
 
 .statistics__date p {
-  font-family: 'hero-new', sans-serif;
+  font-family: 'sofia-pro', sans-serif;
   font-weight: 400;
   font-size: 1.125rem;
   margin-top: 10px;
@@ -24863,7 +24871,7 @@ section.product .product__block--company .slick-track {
 
 .statistics__client h2 {
   margin: 0;
-  font-family: 'hero-new', sans-serif;
+  font-family: 'sofia-pro', sans-serif;
   font-weight: 600;
   font-size: 1.5rem;
 }
@@ -25080,6 +25088,19 @@ section.product .product__block--company .slick-track {
     margin-bottom: 0;
     padding: 10px;
   }
+}
+
+.select2-dropdown--statistics {
+  max-height: 40vh;
+}
+
+.select2-dropdown--statistics::-webkit-scrollbar {
+  width: 8px;
+  border-width: 2px;
+}
+
+.select2-dropdown--statistics::-webkit-scrollbar-thumb {
+  border-width: 2px;
 }
 
 .specialist-rights .company__container {
@@ -26476,7 +26497,7 @@ section.product .product__block--company .slick-track {
   display: -ms-flexbox;
   display: flex;
   font-size: 1.5rem;
-  font-family: 'hero-new', sans-serif;
+  font-family: 'sofia-pro', sans-serif;
   border: 1px solid #0F1D5B;
   border-radius: 35px;
   height: 60px;
@@ -26508,7 +26529,7 @@ section.product .product__block--company .slick-track {
 .calc__input input {
   min-width: 60px;
   height: 100%;
-  font-family: 'hero-new', sans-serif;
+  font-family: 'sofia-pro', sans-serif;
   font-weight: 600;
   font-size: 2.25rem;
   padding: 0 5px;
@@ -27169,7 +27190,7 @@ section.product .product__block--company .slick-track {
 }
 
 .join-and-try .try .radio label {
-  font-family: 'hero-new', sans-serif;
+  font-family: 'sofia-pro', sans-serif;
   font-size: 1.25rem;
   font-weight: 800;
   padding-left: 35px;
