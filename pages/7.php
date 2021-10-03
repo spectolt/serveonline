@@ -6,38 +6,38 @@ $thisPage = "specialist" ?>
     <div class="my-cart-container">
         <div class="ui-widget-overlay"></div>
         <section class="my-cart">
-            <button class="product__close"></button>           
-            <h2 class="title">Mano krepšelis</h2> 
+            <button class="product__close"></button>
+            <h2 class="title">Mano krepšelis</h2>
             <div class="cart">
-            <div class="cart__header">
-                <div class="cart__about cart__about--time">
-                    <h3 class="time">17:30</h3>
-                    <h4>2020 Vasario 4, ketvirtadienis</h4>
-                </div>
-                <div class="cart__about cart__about--company">
-                    <h3>East Islan Spa centras</h3>
-                    <h4>M. Valančiaus g. 23, Kaunas</h4>
-                </div>
-            </div>
-            <div class="cart__info">
-                <div class="cart__specialist">
-                    <div class="cart__photo"></div>
-                    <div class="cart__name">
-                        <h3>Vardas Pavardė</h3>
-                        <h4>Pareigos</h4>
+                <div class="cart__header">
+                    <div class="cart__about cart__about--time">
+                        <h3 class="time">17:30</h3>
+                        <h4>2020 Vasario 4, ketvirtadienis</h4>
+                    </div>
+                    <div class="cart__about cart__about--company">
+                        <h3>East Islan Spa centras</h3>
+                        <h4>M. Valančiaus g. 23, Kaunas</h4>
                     </div>
                 </div>
-                <div class="cart__products">
-                    <div class="product-action product__block-action">
-                        <div class="product-action__info">
-                            <h4>Visų pl. dažymas ir kirpimas</h4>
-                            <div class="product-action__duration">01:00</div>
-                            <div class="product-action__price">45€</div>
-                            <div class="product-action__periodicity">6 sav.</div>
+                <div class="cart__info">
+                    <div class="cart__specialist">
+                        <div class="cart__photo"></div>
+                        <div class="cart__name">
+                            <h3>Vardas Pavardė</h3>
+                            <h4>Pareigos</h4>
+                        </div>
+                    </div>
+                    <div class="cart__products">
+                        <div class="product-action product__block-action">
+                            <div class="product-action__info">
+                                <h4>Visų pl. dažymas ir kirpimas</h4>
+                                <div class="product-action__duration">01:00</div>
+                                <div class="product-action__price">45€</div>
+                                <div class="product-action__periodicity">6 sav.</div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
             </div>
             <div class="cart">
                 <div class="cart__header">
@@ -77,9 +77,9 @@ $thisPage = "specialist" ?>
                         </div>
                     </div>
                 </div>
-            </div> 
+            </div>
             <h2 class="user-profile__price">Iš viso: <span>225,00€</span></h2>
-            <button class="orange small user-profile__reserve user-profile__reserve--cart">Atidaryti registravimo langą</button>           
+            <button class="orange small user-profile__reserve user-profile__reserve--cart">Atidaryti registravimo langą</button>
         </section>
     </div>
     <section class="page-content page-content--company">
@@ -188,6 +188,85 @@ $thisPage = "specialist" ?>
                         <div class="product__search input-wrapper">
                             <input type="text" id="search-specialist" placeholder="Pasirinkite paslaugą">
                             <span class="input-icon"></span>
+                            <ul class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" style="top:54px">
+                                <div class="ui-autocomplete-wrapper">
+                                    <div class="product__notice">
+                                        <p class="product__text">Jūsų buvusios rezervacijos paryškintos</p>
+                                        <button class="product__close"></button>
+                                    </div>
+                                    <h3 class="autocomplete-subcategory">Moterų kirpimas</h3>
+                                    <li class="ui-menu-item" tabindex="-1">
+                                        <div class='autocomplete-product active ui-menu-item-wrapper'>
+                                            <div class='checkbox'>
+                                                <input type='checkbox' class='autocomplete-product-input' id='item-0'>
+                                                <label class='autocomplete-product-checkbox' for='item-0'>
+                                                    <span class='autocomplete-product-title'>Visų pl. dažymas ir modelinis kirpimas 1
+                                                        <button class='autocomplete-product-button'>Plačiau</button>
+                                                    </span>
+                                                    <span class='autocomplete-product-desc paragraph hidden'>Visų pl. dažymas viena spalva, galvos plovimas, modelinis kirpimas, dieninis sušukavimas, dieninis sušukavi sušukavimas,Visų pl. dažymas viena spalva, galvos plovimas, modelinis kirpimas, dieninis sušukavimas, dieninis sušukavimas, dieninis sušukavimas, Visų pl. dažymas viena spalva, galvos plovimas, modelinis kirpimas, dieni sušukavimas, dieninis sušukavimas,dieninis sušukavimas.</span>
+                                                    <div class="product-action">
+                                                        <div class="product-action__info">
+                                                            <div class="product-action__duration">01:00</div>
+                                                            <div class="product-action__price">45€<strike>60€</strike></div>
+                                                            <div class="product-action__periodicity">6 sav.</div>
+                                                        </div>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <h3 class="autocomplete-subcategory">Vyrų kirpimas</h3>
+                                    <li class="ui-menu-item" tabindex="-1">
+                                        <div class='autocomplete-product autocomplete-product--choices ui-menu-item-wrapper'>
+                                            <span class='product-expand'></span>
+                                            <span class='autocomplete-product-title autocomplete-product-title--main'>
+                                                Visų pl. dažymas ir modelinis kirpimas 1
+                                                <button class='autocomplete-product-button'>Plačiau</button></span><span class='autocomplete-product-desc paragraph hidden'>
+                                                Visų pl. dažymas viena spalva, galvos plovimas, modelinis kirpimas, dieninis sušukavimas, dieninis sušukavi sušukavimas,Visų pl. dažymas viena spalva, galvos plovimas, modelinis kirpimas, dieninis sušukavimas, dieninis sušukavimas, dieninis sušukavimas, Visų pl. dažymas viena spalva, galvos plovimas, modelinis kirpimas, dieni sušukavimas, dieninis sušukavimas,dieninis sušukavimas.
+                                            </span>
+                                            <div class='autocomplete-product autocomplete-product--choice product-choice hidden active'>
+                                                <div class='checkbox'><input type='checkbox' class='autocomplete-product-input' id='item-1-0'><label class='autocomplete-product-checkbox' for='item-1-0'><span class='autocomplete-product-title'>
+                                                            Trumpi plaukai
+                                                        </span>
+                                                        <div class="product-action">
+                                                            <div class="product-action__info">
+                                                                <div class="product-action__duration">01:00</div>
+                                                                <div class="product-action__price">45€<strike>60€</strike></div>
+                                                                <div class="product-action__periodicity">6 sav.</div>
+                                                            </div>
+                                                        </div>
+                                                    </label></div>
+                                            </div>
+                                            <div class='autocomplete-product autocomplete-product--choice product-choice hidden'>
+                                                <div class='checkbox'><input type='checkbox' class='autocomplete-product-input' id='item-1-1'><label class='autocomplete-product-checkbox' for='item-1-1'><span class='autocomplete-product-title'>
+                                                            Vidutiniai plaukai
+                                                        </span>
+                                                        <div class="product-action">
+                                                            <div class="product-action__info">
+                                                                <div class="product-action__duration">01:00</div>
+                                                                <div class="product-action__price">45€<strike>60€</strike></div>
+                                                                <div class="product-action__periodicity">6 sav.</div>
+                                                            </div>
+                                                        </div>
+                                                    </label></div>
+                                            </div>
+                                            <div class='autocomplete-product autocomplete-product--choice product-choice hidden'>
+                                                <div class='checkbox'><input type='checkbox' class='autocomplete-product-input' id='item-1-2'><label class='autocomplete-product-checkbox' for='item-1-2'><span class='autocomplete-product-title'>
+                                                            Ilgi plaukai
+                                                        </span>
+                                                        <div class="product-action">
+                                                            <div class="product-action__info">
+                                                                <div class="product-action__duration">01:00</div>
+                                                                <div class="product-action__price">45€<strike>60€</strike></div>
+                                                                <div class="product-action__periodicity">6 sav.</div>
+                                                            </div>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                    </li>
+                                </div>
+                            </ul>
                         </div>
                         <div class="specialist__calendar-container">
                             <div class="specialist__datepicker js-datepicker">
@@ -209,7 +288,9 @@ $thisPage = "specialist" ?>
                                 <tbody>
                                     <?php for ($i = 0; $i < 7; $i++) { ?>
                                         <tr>
-                                            <td><p>09:15</p></td>
+                                            <td>
+                                                <p>09:15</p>
+                                            </td>
                                             <td>
                                                 <p></p>
                                             </td>

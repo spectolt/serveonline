@@ -1,9 +1,10 @@
 .specialist {
-  display: flex;
-  flex-direction: column;
-  max-height: 2000px;
-  flex-wrap: wrap;
-  flex: 0 0 auto;
+  // display: flex;
+  // flex-direction: column;
+  // max-height: 2000px;
+  // flex-wrap: wrap;
+  // flex: 0 0 auto;
+  column-count: 2;
 
   @include breakpoint(l) {
     column-count: 1;
@@ -164,7 +165,7 @@
 
 .specialist {
   .company__header.company__header {
-    width: 50%;
+    width: 100%;
     padding-right: 0;
 
     @include breakpoint(l) {
@@ -242,17 +243,20 @@
       }
     }
   }
+
   #apie-specialista {
     margin-top: 35px;
     margin-right: 30px;
-    width: 50%;
+    width: 100%;
+    padding-bottom: 40px;
 
-    @include breakpoint(l) {
-      width: 100%;
-    }
+    // @include breakpoint(l) {
+    //   width: 100%;
+    // }
 
     @include breakpoint(sm) {
       margin-top: 30px;
+      padding-bottom: 0;
 
       .specialist__profession {
         font-size: 0.875rem;
@@ -669,22 +673,29 @@
     margin-left: 30px;
     position: sticky;
     top: 0;
-    width: 50%;
+    width: 100%;
     padding-top: 105px;
     margin-top: 0;
     z-index: 2;
+    height: 100%;
 
     @include breakpoint(l) {
       margin-left: 0;
-      width: 100%;
+      // width: 100%;
       position: relative;
       padding-top: 0;
       margin-top: 30px;
+      height: auto;
     }
 
     @include breakpoint(sm) {
       margin-left: 0;
       margin-bottom: 30px;
+    }
+
+    .sticky {
+      position: sticky;
+      top: 105px;
     }
 
     .product__chosen {

@@ -22190,19 +22190,8 @@ section.product .product__block--company .slick-track {
 }
 
 .specialist {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  max-height: 2000px;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
+  -webkit-column-count: 2;
+          column-count: 2;
 }
 
 @media (max-width: 991px) {
@@ -22379,7 +22368,7 @@ section.product .product__block--company .slick-track {
 }
 
 .specialist .company__header.company__header {
-  width: 50%;
+  width: 100%;
   padding-right: 0;
 }
 
@@ -22479,18 +22468,14 @@ section.product .product__block--company .slick-track {
 .specialist #apie-specialista {
   margin-top: 35px;
   margin-right: 30px;
-  width: 50%;
-}
-
-@media (max-width: 991px) {
-  .specialist #apie-specialista {
-    width: 100%;
-  }
+  width: 100%;
+  padding-bottom: 40px;
 }
 
 @media (max-width: 700px) {
   .specialist #apie-specialista {
     margin-top: 30px;
+    padding-bottom: 0;
   }
   .specialist #apie-specialista .specialist__profession {
     font-size: 0.875rem;
@@ -22964,19 +22949,20 @@ section.product .product__block--company .slick-track {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  width: 50%;
+  width: 100%;
   padding-top: 105px;
   margin-top: 0;
   z-index: 2;
+  height: 100%;
 }
 
 @media (max-width: 991px) {
   .specialist #registruokis {
     margin-left: 0;
-    width: 100%;
     position: relative;
     padding-top: 0;
     margin-top: 30px;
+    height: auto;
   }
 }
 
@@ -22985,6 +22971,12 @@ section.product .product__block--company .slick-track {
     margin-left: 0;
     margin-bottom: 30px;
   }
+}
+
+.specialist #registruokis .sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 105px;
 }
 
 .specialist #registruokis .product__chosen {
