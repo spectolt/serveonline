@@ -22308,6 +22308,7 @@ section.product .product__block--company .slick-track {
   -webkit-box-shadow: 0 5px 10px 3px rgba(0, 0, 0, 0.19);
           box-shadow: 0 5px 10px 3px rgba(0, 0, 0, 0.19);
   overflow: hidden;
+  display: none;
 }
 
 @media (max-width: 991px) {

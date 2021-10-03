@@ -4,7 +4,7 @@ if ($("main.hasUiAutocomplete").length > 0) {
   var input = $("#search-specialist").not(".js_ignore_mark");
 
   $(input).prop("readonly", "readonly");
-  $(input).siblings(".ui-autocomplete").css("display", "none")
+  // $(input).siblings(".ui-autocomplete").css("display", "none")
 
   $(input).on("click", function () {
     if (!isOpen) {
